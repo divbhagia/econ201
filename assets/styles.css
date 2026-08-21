@@ -112,15 +112,15 @@ table.schedule-table th, table.schedule-table td {
 }
 table.schedule-table thead th { border-bottom: 2px solid #393A3B !important; text-align: left; }
 table.schedule-table th[scope="row"] {
-  width: 6.2em; text-align: left; background-color: #fff;
+  width: 5.2em; text-align: left; background-color: #fff;
   white-space: nowrap; font-weight: 400;
 }
 table.schedule-table th[scope="rowgroup"] {
-  width: 8.5em; background-color: #fff; font-weight: 700; text-align: left;
+  width: 7.8em; background-color: #fff; font-weight: 700; text-align: left;
 }
 table.schedule-table td.lec { width: 2.8em; text-align: center !important; }
 table.schedule-table td.topics { width: auto; text-align: left !important; }
-table.schedule-table td.refs { width: 6.4em; text-align: left !important; font-size: 0.95em; }
+table.schedule-table td.refs { width: 5.2em; text-align: left !important; font-size: 0.95em; }
 table.schedule-table td.mat {
   width: 5.4em; text-align: center !important; font-size: 1.15em;
   letter-spacing: 0.12em; white-space: nowrap;

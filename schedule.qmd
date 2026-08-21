@@ -5,8 +5,8 @@ toc: false
 format: html
 ---
 
-The plan for the semester, one row per class meeting. Materials appear here as
-we reach each lecture. For materials grouped by module, see the
+Materials appear here as we reach each lecture. For materials grouped by
+module, see the
 [Content](content/the-big-picture.qmd) pages.
 
 Readings refer to sections of
@@ -22,14 +22,13 @@ Quizzes are given at the start of class on the dates marked below.
 ```{=html}
 <div class="table-scroll" tabindex="0" role="region" aria-label="Semester schedule table">
 <table class="schedule-table">
-<caption>Fall 2026 course schedule, one row per class meeting.</caption>
 <thead>
 <tr>
-  <th scope="col">Module</th>
-  <th scope="col">Date</th>
+  <th scope="col" style="width:7.8em">Module</th>
+  <th scope="col" style="width:5.2em">Date</th>
   <th scope="col">Topic</th>
-  <th scope="col">Reading</th>
-  <th scope="col">Materials</th>
+  <th scope="col" style="width:5.2em">Reading</th>
+  <th scope="col" style="width:5.4em">Materials</th>
 </tr>
 </thead>
 <tbody>

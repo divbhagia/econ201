@@ -13,11 +13,9 @@ The key components of the syllabus are outlined below. The [complete syllabus (P
 ## Overview
 ### Overview
 
-Economics is about the choices people make when they cannot have everything they want, and about what happens when those choices meet each other in markets. This course builds that idea up from the ground.
+For most of human history, living standards barely changed. Then, beginning around 1700, they took off, first in Britain and then across much of the world. Behind this takeoff was a new way of organizing economic life, capitalism, built on private property, markets, and firms. This course is about the nuts and bolts of how that system works.
 
-We start with the big picture: why living standards took off in some places and not others, and what that has to do with technology, incentives, and inequality. From there we zoom in on the individual decision-maker and the central idea of the course, opportunity cost: every choice means giving something up, and good decisions weigh what you gain against what you forgo. We then turn to firms, asking how production costs arise, how a firm chooses price and output to maximize profit, and how sensitive customers are to price. Next we put buyers and sellers together to see how supply and demand determine prices, how to measure whether a market outcome is good for society, and what happens when government steps in with taxes or price controls. We close with what happens when markets fail: pollution, public goods, and markets with hidden information.
-
-Throughout, each topic starts with something real, such as housing costs in Southern California, gig-economy wages, or grocery prices, and then develops the economic framework that explains it. Most class sessions include structured problem-solving in pairs, so you practice the reasoning during class rather than only on your own afterward.
+We build the core tools of microeconomics and use them to answer everyday questions along the way: Why are almost all the big brands in the grocery store owned by ten companies? Why does Cheerios cost more than the store brand sitting right next to it, and why do people keep buying it anyway? When bird flu sent egg prices soaring, were companies profiting or just surviving? If the government taxes gasoline, who bears the burden, the oil companies or you? Is capping rent to make housing affordable a good idea? Why do we end up with more pollution than anyone actually wants? And why do some things, like parks and street cleaning, need to be provided by the government instead of businesses?
 
 ## Learning Goals
 ### Learning Goals
@@ -32,27 +30,14 @@ Upon successful completion of this course, students will be able to:
 - Calculate marginal products and marginal costs, and use this information to determine profit-maximizing decisions
 - Understand the characteristics related to market structures (perfect competition, monopoly, monopolistic competition, oligopoly)
 
-## Assessment
-### Assessment
-
-There are **eight in-class quizzes**, typically on Mondays, each about ten minutes and covering the preceding week of class. They are not meant to be hard; they are checkpoints that tell you and me whether the ideas are landing while there is still time to act on it. Questions are similar to the practice problems and to what we do in class.
-
-Your **two lowest quiz scores are dropped**, so only your best six count. Because that drop is built in, there are no make-up quizzes: a missed quiz simply becomes one of your dropped scores.
-
-Each week I post a set of **practice problems** with full solutions. They are not collected or graded, but they are the main way to prepare for the quizzes and exams, which draw directly on them. Attempt them before looking at the solutions: reading a worked solution feels like understanding, while working the problem is what produces it.
-
-You will also write a short paper using the tools of this course to analyze an economic issue, in two parts worth 5% and 10% of your grade, so that feedback on the first part can improve the second. Detailed instructions and the rubric will be posted here.
-
 ## Material
-### Course Material
+### Required Texts
 
-The complete textbook is **free and open access** online, and you are not required to buy anything:
+The required textbook for this course is *The Economy 2.0: Microeconomics* by CORE Econ. The complete textbook is *free and open access*, available online at:
 
-- [*The Economy 2.0: Microeconomics* by CORE Econ](https://books.core-econ.org/the-economy/index.html)
+- [https://books.core-econ.org/the-economy/microeconomics.html](https://books.core-econ.org/the-economy/microeconomics.html)
 
-The online edition is the version I will refer to in class, and it is all you need. If you prefer reading on paper, a printed paperback is available from the publisher (Hackett, ISBN 978-1-64792-160-6), but it is entirely optional and buys you nothing extra for this course.
-
-Assigned sections are listed in the course schedule. Lecture slides, worksheets, and practice problems will be posted on this website.
+The online edition is the version I will refer to in class, and it is all you need. If you prefer reading on paper, a printed paperback is available from the publisher (Hackett, ISBN 978-1-64792-160-6). Assigned sections from the textbook are listed in the course schedule at the end of this syllabus. Lecture slides, worksheets, and practice problems will be posted on the course website.
 
 ## Grading
 ### Grading Criteria
@@ -61,9 +46,9 @@ Your grade will be determined according to the following breakdown:
 
 | Component | Percentage |
 |:---------------------------|:----------:|
-| Quizzes (8 in class, lowest 2 dropped) | 30 |
 | Writing assignment, Part 1 | 5 |
 | Writing assignment, Part 2 | 10 |
+| Quizzes (8 in class, lowest 2 dropped) | 30 |
 | Midterm 1 | 15 |
 | Midterm 2 | 15 |
 | Final Exam (cumulative) | 25 |

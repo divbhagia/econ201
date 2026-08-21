@@ -9,7 +9,7 @@ format: html
 
 ::: {.g-col-12 .g-col-md-6 .g-col-lg-8}
 <p style="font-size:1.25em;">
-Learn how people and firms make decisions, how markets coordinate millions of those decisions, why markets sometimes fail, and when government intervention helps or hurts.
+For most of human history, living standards barely changed. Then, beginning around 1700, they took off. Behind that takeoff was a new way of organizing economic life: capitalism, built on private property, markets, and firms. This course is about the nuts and bolts of how that system works.
 </p>
 
 ECON 201 | Fall 2026 | College of Business and Economics | California State University

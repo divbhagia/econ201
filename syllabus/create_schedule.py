@@ -417,13 +417,12 @@ table = (
     '<div class="table-scroll" tabindex="0" role="region" '
     'aria-label="Semester schedule table">\n'
     '<table class="schedule-table">\n'
-    '<caption>Fall 2026 course schedule, one row per class meeting.</caption>\n'
     '<thead>\n<tr>\n'
-    '  <th scope="col">Module</th>\n'
-    '  <th scope="col">Date</th>\n'
+    '  <th scope="col" style="width:7.8em">Module</th>\n'
+    '  <th scope="col" style="width:5.2em">Date</th>\n'
     '  <th scope="col">Topic</th>\n'
-    '  <th scope="col">Reading</th>\n'
-    '  <th scope="col">Materials</th>\n'
+    '  <th scope="col" style="width:5.2em">Reading</th>\n'
+    '  <th scope="col" style="width:5.4em">Materials</th>\n'
     '</tr>\n</thead>\n<tbody>\n' + "\n".join(html_rows) + '\n</tbody>\n</table>\n</div>\n'
 )
 
@@ -435,8 +434,8 @@ toc: false
 format: html
 ---
 
-The plan for the semester, one row per class meeting. Materials appear here as
-we reach each lecture. For materials grouped by module, see the
+Materials appear here as we reach each lecture. For materials grouped by
+module, see the
 [Content](content/{first_slug}.qmd) pages.
 
 Readings refer to sections of
