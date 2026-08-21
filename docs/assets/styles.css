@@ -116,13 +116,13 @@ table.schedule-table th[scope="row"] {
   white-space: nowrap; font-weight: 400;
 }
 table.schedule-table th[scope="rowgroup"] {
-  width: 8.5em; background-color: #fff; font-weight: 700; text-align: left;
+  width: 7.8em; background-color: #fff; font-weight: 700; text-align: left;
 }
 table.schedule-table td.lec { width: 2.8em; text-align: center !important; }
 table.schedule-table td.topics { width: auto; text-align: left !important; }
 table.schedule-table td.refs { width: 5.2em; text-align: left !important; font-size: 0.95em; }
 table.schedule-table td.mat {
-  width: 4.4em; text-align: center !important; font-size: 1.15em;
+  width: 5.4em; text-align: center !important; font-size: 1.15em;
   letter-spacing: 0.12em; white-space: nowrap;
 }
 table.schedule-table tr.assessment td { text-align: left !important; background-color: #FDF3EA !important; }
