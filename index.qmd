@@ -1,0 +1,44 @@
+---
+title: "Principles of Microeconomics"
+sidebar: false
+toc: false
+page-layout: full
+format: html
+---
+::: {.grid .intro}
+
+::: {.g-col-12 .g-col-md-6 .g-col-lg-8}
+<p style="font-size:1.25em;">
+Learn how people and firms make decisions, how markets coordinate millions of those decisions, why markets sometimes fail, and when government intervention helps or hurts.
+</p>
+
+ECON 201 | Fall 2026 | College of Business and Economics | California State University
+
+::: {.grid .course-details}
+
+::: {.g-col-12 .g-col-md-12 .g-col-lg-4}
+## Instructor
+{{< fa user >}} &nbsp; [Dr. Div Bhagia](https://www.dbhagia.com) <br>
+{{< fa university >}} &nbsp; Office: SGMH 3361 <br>
+{{< fa envelope >}} &nbsp; [dbhagia@fullerton.edu](mailto:dbhagia@fullerton.edu) <br>
+:::
+
+::: {.g-col-12 .g-col-md-12 .g-col-lg-8}
+## Course Details
+{{< fa location-dot >}} &nbsp; SGMH 1506, Monday & Wednesday, 1:00-2:15 PM <br>
+{{< fa clock >}} &nbsp; Office hours:
+<ul style="margin-top: 0; margin-left: -1.5em;">
+- Wednesday, 2:30-5:15 PM, or
+- By appointment (in-person or on [Zoom](https://fullerton.zoom.us/j/81895171931))
+</ul>
+:::
+
+:::
+
+:::
+
+::: {.g-col-12 .g-col-md-6 .g-col-lg-4}
+<img src="/slides/img/core-cover.jpg" alt="Cover of The Economy 2.0: Microeconomics, the free CORE Econ textbook used in this course" width="315"/>
+:::
+
+:::

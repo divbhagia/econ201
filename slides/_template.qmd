@@ -1,0 +1,91 @@
+---
+title: "Lecture Title"
+subtitle: "ECON 201: Principles of Microeconomics"
+author: "Div Bhagia"
+format:
+  revealjs:
+    theme: [default, ../assets/slides.scss]
+    embed-resources: true
+    slide-number: true
+    footer: "ECON 201 · Lecture N"
+    filters:
+      - ../assets/strip-notes.lua
+    filters:
+      - ../assets/section-slides.lua
+---
+
+<!--
+Patterns available in this theme. Copy the ones you need and delete the rest.
+Leading underscore in the filename keeps this file out of the rendered site.
+
+Slide classes:
+  {.center}   centre the slide vertically, title included (reveal's own)
+  {.tcenter}  centre the text horizontally
+  {.smaller}  shrink the type on a dense slide (Quarto's own)
+-->
+
+## One idea, no figure {.center}
+
+::: {.big}
+State the point in one sentence, with the *key term* marked.
+
+A second line if it genuinely needs one.
+:::
+
+## Text beside a figure
+
+:::: {.columns}
+::: {.column width="52%"}
+- First point
+- Second point
+
+::: {.takeaway}
+The sentence you want them to leave with.
+:::
+:::
+
+::: {.column width="48%"}
+![](img/figure-name.png)
+
+::: {.figcap}
+Source: CORE Figure X.Y
+:::
+:::
+::::
+
+## Two parallel lists
+
+:::: {.columns}
+::: {.column width="50%"}
+**Left heading**
+
+- Point
+- Point
+:::
+
+::: {.column width="50%"}
+**Right heading**
+
+- Point
+- Point
+:::
+::::
+
+## A table
+
+| Column | Value |
+|:--|--:|
+| Row | 1 |
+| Row | 2 |
+
+## Reveal points one at a time
+
+::: {.incremental}
+- First
+- Then this
+- Then this
+:::
+
+::: {.notes}
+Speaker notes go here. Press S in the browser to open presenter view.
+:::

@@ -1,0 +1,37 @@
+---
+title: "Market Successes and Failures"
+subtitle: "Module V"
+sidebar: false
+toc: false
+format: html
+---
+
+Materials are posted as we go. See the [Schedule](../schedule.qmd) for dates and assessments. *All links open in a new tab.*
+
+::: {.lecture}
+<h2>Lecture 21: Bananas, fish, and cancer: Private vs. social value wedge</h2>
+
+<p><strong>Reading:</strong> 10.1&ndash;10.2</p>
+<p class="lecture-links dim">Materials posted closer to the date.</p>
+:::
+
+::: {.lecture}
+<h2>Lecture 22: Closing the wedge: Property rights, bargaining, and regulation</h2>
+
+<p><strong>Reading:</strong> 10.3&ndash;10.5</p>
+<p class="lecture-links dim">Materials posted closer to the date.</p>
+:::
+
+::: {.lecture}
+<h2>Lecture 23: Free riders and empty oceans: Public goods and common resources</h2>
+
+<p><strong>Reading:</strong> 10.6&ndash;10.7</p>
+<p class="lecture-links dim">Materials posted closer to the date.</p>
+:::
+
+::: {.lecture}
+<h2>Lecture 24: The limits of markets</h2>
+
+<p><strong>Reading:</strong> 10.8&ndash;10.11</p>
+<p class="lecture-links dim">Materials posted closer to the date.</p>
+:::

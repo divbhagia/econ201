@@ -1,0 +1,162 @@
+/*-- scss:defaults --*/
+// ECON 201 slide theme. Typography matches the course website (custom.scss):
+// Fira Sans Condensed headings, Lato body, burnt orange accent.
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@400;600;700&family=Lato:wght@400;700&display=swap');
+
+$accent: #BF5700;
+$ink: #1a1a1a;
+$muted: #6b6b6b;
+
+$body-bg: #ffffff;
+$body-color: $ink;
+$link-color: $accent;
+$presentation-heading-color: $ink;
+$presentation-heading-font: 'Fira Sans Condensed', Helvetica, sans-serif;
+$presentation-font-family: Lato, Helvetica, sans-serif;
+$presentation-font-size-root: 44px;
+
+/*-- scss:rules --*/
+
+// Slide headings: near-black with an accent rule. Orange is reserved for
+// emphasis and section dividers, which keeps contrast high on a projector.
+.reveal h2 {
+  color: #BF5700;
+  font-size: 1.6em;
+  font-weight: 700;
+  border-bottom: 2px solid #e8c3a3;
+  padding-bottom: 0.15em;
+  margin-bottom: 0.5em;
+}
+// Titles sit at the top of every slide and stay there, because reveal sets
+// `display: block` inline on the current slide (flex layouts are ignored).
+// Use `{.center}` on a slide whose whole content, title included, should be
+// centred vertically; that is reveal's own mechanism.
+.reveal .slides section { text-align: left; }
+.reveal .slides section > h2:first-child { margin-top: 0; }
+
+// Contact line under a slide title.
+.reveal .contact {
+  color: #6b6b6b;
+  font-size: 0.75em;
+  margin-bottom: 0.8em;
+}
+.reveal .contact p { margin: 0.15em 0; }
+
+// Row of photos with arrows between them, e.g. Delhi -> Boston -> SoCal.
+.reveal .journey {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  margin-top: 0.2em;
+}
+.reveal .journey figure { margin: 0; text-align: center; }
+.reveal .journey img {
+  height: 430px;
+  width: 330px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin: 0;
+  display: block;
+}
+// Small second row on the same slide, e.g. the dog and the toddler.
+.reveal .journey.mini { margin-top: 0.25em; }
+.reveal .journey.mini img { height: 132px; width: 150px; }
+.reveal .journey.mini figcaption { font-size: 0.45em; }
+// Crop from the bottom of the frame instead of the middle.
+.reveal .journey img.crop-bottom { object-position: center bottom; }
+.reveal .journey figcaption {
+  font-size: 0.5em;
+  color: #6b6b6b;
+  margin-top: 0.2em;
+}
+.reveal .journey .arrow {
+  font-size: 1.4em;
+  color: #BF5700;
+  line-height: 1;
+  padding-bottom: 1.2em;
+}
+
+// Book cover, sized to the slide body.
+.reveal img.cover {
+  height: 500px;
+  width: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 4px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.18);
+}
+
+// Poll QR code.
+.reveal img.qr {
+  height: 380px;
+  width: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 6px;
+}
+
+// `{.tcenter}` centres the text horizontally on that slide.
+.reveal .slides section.tcenter,
+.reveal .slides section.tcenter h2,
+.reveal .slides section.tcenter p { text-align: center; }
+
+// Title slide. The title is sized down because later lecture titles run
+// long ("Bananas, fish, and cancer: Private vs. social value wedge").
+// Quarto renders the title slide as section.quarto-title-block, not #title-slide.
+.reveal .slides section.quarto-title-block {
+  justify-content: center;
+  text-align: center;
+}
+.reveal .slides section.quarto-title-block h1.title {
+  color: #BF5700;
+  font-size: 1.6em;
+  font-weight: 700;
+  line-height: 1.15;
+  border-bottom: none;
+  margin-bottom: 0.35em;
+}
+.reveal .slides section.quarto-title-block p.subtitle {
+  color: #1a1a1a;
+  font-size: 0.95em;
+  font-weight: 600;
+  line-height: 1.45;
+}
+.reveal .slides section.quarto-title-block .quarto-title-author-name {
+  color: #6b6b6b;
+  font-size: 0.8em;
+  margin-top: 1.2em;
+}
+
+// One-idea slides: pair with `## Title {.center}` for vertical centring.
+.reveal .big { font-size: 1.3em; line-height: 1.4; }
+.reveal .dim, .reveal .figcap { color: #6b6b6b; }
+.reveal .figcap { font-size: 0.6em; }
+
+// Boxed takeaway, for the sentence you want them to leave with.
+.reveal .takeaway {
+  background: #FDF3EA;
+  border-left: 6px solid #BF5700;
+  padding: 0.5em 0.8em;
+  margin-top: 0.6em;
+}
+
+// Inline emphasis: *word* renders as accent-coloured bold, not italic.
+.reveal em {
+  color: #BF5700;
+  font-style: normal;
+  font-weight: 700;
+}
+
+// Tighter list and table spacing, so a long list still fits at full size
+// rather than needing a smaller font on one slide.
+.reveal ul, .reveal ol { margin-bottom: 0; }
+.reveal ul li, .reveal ol li { margin-bottom: 0.12em; line-height: 1.22; }
+.reveal table { font-size: 0.88em; }
+// Rules above and below a table, booktabs style.
+.reveal .ruled table {
+  border-top: 2.5px solid #1a1a1a;
+  border-bottom: 2.5px solid #1a1a1a;
+}
+.reveal table td, .reveal table th { padding: 0.1em 0.4em; }
+.reveal .columns { align-items: center; }

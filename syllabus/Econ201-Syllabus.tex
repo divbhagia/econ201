@@ -1,0 +1,354 @@
+% !TEX program = lualatex
+%% ----------------------------
+% Setup
+%% ----------------------------
+% NOTE: compile with LuaLaTeX. PDF tagging (tagging=on) is silently skipped
+% under XeLaTeX, which would produce an untagged PDF that still claims UA-2.
+\DocumentMetadata{
+  pdfstandard=UA-2,
+  pdfversion=2.0,
+  lang=en-US,
+  tagging=on
+}
+\documentclass{syllabus}
+
+\newcommand{\coursename}{ECON 201: Principles of Microeconomics}
+
+%% Schedule table spans multiple pages, so it needs longtable + tabularx
+\usepackage{xltabular}
+\usepackage{multirow}
+\usepackage{colortbl}
+%% Vertically center the flexible (X) column to match the fixed m-columns
+\renewcommand\tabularxcolumn[1]{m{#1}}
+
+%% ----------------------------
+% Document information
+%% ----------------------------
+
+\hypersetup{
+  pdftitle={\coursename},
+}
+
+%% ----------------------------
+% Header
+%% ----------------------------
+\usepackage{fancyhdr}
+\pagestyle{fancyplain}
+\fancyhf{}
+\lhead{ \fancyplain{}{\coursename} }
+\rhead{ \fancyplain{}{Syllabus} }
+\fancyfoot[c] {\thepage\ }
+\thispagestyle{plain}
+
+
+%% ----------------------------
+% Begin document
+%% ----------------------------
+\begin{document}
+\courseheader{\coursename}{Fall 2026}{Department of Economics}{cbe-logo.png}
+
+% Section 1: Faculty Information
+
+\begin{minipage}[t]{\textwidth}
+\rule{\textwidth}{0.5pt} \\
+\setstretch{1.15}
+\textbf{Instruction modality:} In-person \\
+\textbf{Class and exam location:} SGMH 1506 \\
+\textbf{Class days and time:} Monday and Wednesday, 1:00--2:15 PM \\
+\textbf{Course website:} \href{https://www.dbhagia.com/econ201/}{dbhagia.com/econ201} \\ \vspace{-0.5em}
+
+\textbf{Instructor:} Div Bhagia \vspace{-0.5em}
+{\setstretch{0.5}
+\begin{itemize}[nosep]
+\item[] \textbf{Office:} SGMH 3361
+\item[] \textbf{Email:} dbhagia@fullerton.edu
+\item[] \textbf{Phone:} (657) 278-2914
+\item[] \textbf{Office hours:} Wednesday, 2:30--5:15 PM, or by appointment (in-person or on \href{https://fullerton.zoom.us/j/81895171931}{Zoom})
+\end{itemize}} \vspace{-1em}
+\rule{\textwidth}{0.5pt}
+\end{minipage}
+
+
+\section*{Technical Problems}
+If you encounter any technical difficulties, contact the instructor immediately to document the problem. Then, contact: \href{https://www.fullerton.edu/it/services/helpdesk/}{student IT help desk}, \href{mailto:StudentITHelpDesk@fullerton.edu}{email}, phone = 657-278-8888, walk-in \href{http://www.fullerton.edu/it/students/sgc/index.php}{Student Genius Center}, online chat - log into \href{http://my.fullerton.edu}{Portal}; click ``Online IT Help''; click ``Live Chat.'' \underline{For issues with Canvas}: Canvas Support Hotline = 657-278-8888, \href{https://canvashelp.fullerton.edu/}{search the CSUF Canvas Guides with AI Assistant}, or \href{https://titans.service-now.com/sp?id=sc_cat_item&sys_id=f88efe80ebea6a10fb7cfcffcad0cdc6&subject=Canvas}{report a problem.}
+
+\section*{Response Time}
+I usually respond to emails or LMS messages within 48 hours (excluding weekends or holidays).
+
+\section*{Course Communication}
+All course announcements and individual emails are sent through CANVAS, which only uses CSUF email accounts. Therefore, you MUST check your CSUF email on a regular basis (several times a week) for the duration of the course.
+
+\section*{Course Information}
+
+\subsection*{Prerequisites}
+None.
+
+\subsection*{University Catalog Description}
+
+Principles of individual consumer and producer decision-making in various market structures, the price system, market performance and government policy.
+
+\subsection*{Additional Course Description}
+
+For most of human history, living standards barely changed. Then, beginning around 1700, they took off, first in Britain and then across much of the world. Behind this takeoff was a new way of organizing economic life, capitalism, built on private property, markets, and firms. This course is about the nuts and bolts of how that system works.
+
+We build the core tools of microeconomics and use them to answer everyday questions along the way: Why are almost all the big brands in the grocery store owned by ten companies? Why does Cheerios cost more than the store brand sitting right next to it, and why do people keep buying it anyway? When bird flu sent egg prices soaring, were companies profiting or just surviving? If the government taxes gasoline, who bears the burden, the oil companies or you? Is capping rent to make housing affordable a good idea? Why do we end up with more pollution than anyone actually wants? And why do some things, like parks and street cleaning, need to be provided by the government instead of businesses?
+
+\subsection*{Withdrawal Deadlines}
+
+The deadline to drop this class without a ``W'' is \textit{Tuesday, September 8, 2026}. Authorization to withdraw after September 8 shall be granted only for the most serious and compelling reasons, e.g., a documented physical, medical, emotional, or other condition that limits the student's full participation in the class. Poor academic performance, e.g., lack of effort or poor attendance, is not evidence of a serious reason for withdrawal.
+
+\section*{Student Learning Outcomes}
+
+\subsection*{Core Topics}
+\begin{enumerate}
+\itemsep0em
+\item Opportunity cost and specialization (ie. gains from trade) 
+\item Demand, supply, and equilibrium
+\item Elasticity
+\item Economic surplus and efficiency  
+\item Government interventions
+\item Production, cost, and profit-maximization
+\item Market structure 
+\end{enumerate}
+
+
+\subsection*{Learning Objectives}
+
+Upon successful completion of this course, students will be able to:
+\begin{enumerate}
+\itemsep0em
+\item Understand how to measure opportunity cost and apply it to determine optimal choices or trade-offs
+\item Determine a predicted market equilibrium using information from graphs or tables describing demand and supply decisions
+\item Calculate elasticities (own price, income, or cross-price) using price and quantity data
+\item Understand how to measure economic surplus and apply it to determine the efficiency of trades or transactions
+\item Use the supply and demand model to predict the equilibrium effects of government interventions in markets
+\item Calculate marginal products and marginal costs, and use this information to determine profit-maximizing decisions
+\item Understand the characteristics related to market structures (perfect competition, monopoly, monopolistic competition, oligopoly)
+\end{enumerate}
+
+
+
+\section*{General Education}
+
+ECON 201 satisfies \textit{General Education Area 4A, Introduction to the Social and Behavioral Sciences}. Per UPS 411.201, students completing courses in subarea 4A shall:
+\begin{enumerate}
+\itemsep0em
+\item Understand the purpose of the social sciences and the distinguishing features of the social sciences
+\item Understand and explain major social science concepts, methods, and theories and apply them to concrete problems of contemporary society
+\item Reflect on what it means to be a social, historical, cultural, psychological, and political being
+\item Reflect on their own social, cultural, and political experiences in light of social science concepts, methods, and theories
+\item Understand the integrated nature of social, political, and economic behaviors and institutions in different geographical and historical contexts
+\item Understand processes of social, political, and cultural change and differentiation in a variety of cultural contexts
+\end{enumerate}
+
+\noindent As a GE course, ECON 201 includes a \textit{writing requirement}. This is met by the two-part writing assignment, worth 15\% of the course grade and described under Grading Policies and Standards below. You will receive careful and timely feedback on Part 1 in time to improve your writing for Part 2, and the evaluation of your writing counts toward your final course grade.
+
+
+\section*{Required Texts}
+
+The required textbook for this course is \textit{The Economy 2.0: Microeconomics} by CORE Econ. The complete textbook is \textit{free and open access}, available online at:
+\begin{itemize}
+\item[] \href{https://books.core-econ.org/the-economy/microeconomics.html}{https://books.core-econ.org/the-economy/microeconomics.html}
+\end{itemize}
+
+\noindent The online edition is the version I will refer to in class, and it is all you need. If you prefer reading on paper, a printed paperback is available from the publisher (Hackett, ISBN 978-1-64792-160-6). Assigned sections from the textbook are listed in the course schedule at the end of this syllabus. Lecture slides, worksheets, and practice problems will be posted on the course website.
+
+\section*{Conduct in the Classroom}
+Use of phones, laptops, or other digital devices is not allowed during the lecture, except when explicitly instructed to do so. Randomized Controlled Trials (RCTs) conducted at West Point show that in-class computer use inhibits learning. Here is a \href{https://oema.army.mil/pub/2017_Carter_Greenberg_Walker_Computer_Usage_RCT_USMA.pdf}{link} to the paper. Tablets used for taking notes that remain flat on the desk are allowed.
+
+\section*{Grading Policies and Standards}
+
+\subsection*{Grading Scale}
+In this course, the plus/minus system will be used. The grade breakdown is as follows:
+
+{\setstretch{1.0}
+\begin{itemize}[nosep]
+\item[] A+: 100\% to 98\%
+\item[] A: $<$98\% to 93\% (outstanding performance)
+\item[] A-: $<$93\% to 90\%
+\item[] B+: $<$90\% to 87\%
+\item[] B: $<$87\% to 84\% (good performance)
+\item[] B-: $<$84\% to 80\%
+\item[] C+: $<$80\% to 77\%
+\item[] C: $<$77\% to 74\% (acceptable performance)
+\item[] C-: $<$74\% to 70\%
+\item[] D+: $<$70\% to 67\%
+\item[] D: $<$67\% to 64\% (poor performance)
+\item[] D-: $<$64\% to 61\%
+\item[] F: $<$61\% to 0\%
+\end{itemize}}
+
+\noindent Economics majors and CBE majors must earn a grade of C or higher in this course to receive credit toward their degree.
+
+\subsection*{Grade Breakdown}
+
+\noindent Your grade will be determined according to the following breakdown:
+\begin{center}
+\begin{tabularx}{0.72\textwidth}{Xc}
+\hline
+  \textbf{Assignment}        & \textbf{Percentage} \\ \hline
+Writing assignment, Part 1 & 5 \\
+Writing assignment, Part 2 & 10 \\
+Quizzes (8 in class, lowest 2 dropped) & 30 \\
+Midterm 1 & 15 \\
+Midterm 2 & 15 \\
+Final Exam (cumulative) & 25 \\
+\hline
+Total & 100 \\
+\hline
+\end{tabularx}
+\end{center}
+
+
+\subsection*{Attendance and Participation}
+
+While not separately graded, regular attendance and participation are required to succeed in this course. Missing class means missing quizzes and the in-class worksheet practice that exams draw on. Extended absences will therefore negatively affect your performance, so reach out if you have concerns about your ability to participate.
+
+\subsection*{Examinations}
+
+Exams are given in person on the dates in the course schedule. These dates are fixed. Exams are closed-book and closed-note and include a combination of multiple-choice and short-answer questions. The final exam is \textit{cumulative}.
+
+Requests for re-evaluation of graded material must be made within one week of the return of the assignment. All requests must be accompanied by a written explanation of your dispute. It is your responsibility to consult any posted rubrics or keys prior to making a re-grade request.
+
+
+\subsection*{Assignment Descriptions}
+
+\begin{itemize}
+	\item \textbf{Writing Assignment}: You will complete a writing assignment in two parts, worth 5\% and 10\% of your final grade. You will receive feedback on the first part and should use it to improve the second. Due dates are listed in the course schedule, and detailed instructions and the grading rubric will be posted on the course website closer to each deadline.
+\item \textbf{Practice Problems:} Each week, I post a set of practice problems on the course website, along with full solutions. They are \textit{not collected or graded}, but you should attempt them each week to keep pace with the course and to do well on quizzes. Work them on your own before looking at the solutions because reading a worked solution feels like understanding, whereas working the problem produces it. You are welcome to work through the problems with classmates and come to office hours for help.
+\item \textbf{Quizzes}: There are \textit{eight quizzes}, together worth 30\% of the course grade and weighted equally. They are given in class on the days marked in the course schedule, typically Mondays. Each takes about 10 minutes at the start of class and covers the preceding week of class. These are checkpoints to make sure you are keeping up, and the questions are similar to the practice problems and to what we do in class. \textit{The two lowest quiz scores are dropped}, which covers the ordinary reasons you might miss a quiz or have an off day, \textbf{so there are no make-up quizzes in any circumstances}.
+\end{itemize}
+
+\subsection*{Extra credit}
+
+There are no extra credit options in this course.
+
+\subsection*{Make-up and late submission policy}
+
+Make-up exams will only be offered under very limited circumstances. It is your responsibility to notify me either in advance or within 24 hours of missing an exam. There are no make-up quizzes; the two dropped quiz scores serve as the make-up policy.
+
+For the writing assignment, work submitted after the due date will incur a 10\% per day penalty, up to a maximum of 50\%. Communicate with me immediately if you encounter a problem that may affect your ability to submit work on time.
+
+\subsection*{Generative AI Policy}
+
+You may use generative AI tools as a \textit{tutor}, and I encourage it for that purpose. Asking an AI tool to explain a concept a different way, to walk you through a practice problem, or to quiz you before an exam is a good use of your time.
+
+You may \textit{not} submit AI-generated text as your own writing, and you may not use AI to produce answers you could not reconstruct and explain yourself. On the writing assignment you must include a brief note describing how you used AI tools, if at all. An honest description of substantial use is not penalized; an undisclosed one is a violation of academic integrity.
+
+\subsection*{Alternative procedures for submitting work}
+
+In case of technical difficulties with CANVAS or other online resources, I will communicate with students directly through CSUF email and will provide directions on alternative methods for submitting work and/or may extend submission deadlines. If email is not available, students may contact the department office for guidance.
+
+\subsection*{Authentication of student work}
+
+All assignments submitted for a grade in this class must be your individual work unless otherwise indicated. Student work will be authenticated by submission in class for in-person work and through Canvas for work submitted online.
+
+\subsection*{Retention of student work}
+
+Work submitted for a grade in this course, either as a hardcopy or through the CANVAS course site, shall be retained for a reasonable time after the semester is completed, not to exceed the last day of the subsequent semester. Exam material is exempt from this policy; however, students have the right to review their work in the presence of the faculty member.
+
+%%%%%%%% Academic Integrity
+\section*{Academic Integrity}
+It is expected that any work submitted for a grade in this course will be the sole product of the individual student, unless otherwise permitted. Presenting work from other sources as your own is unacceptable and will result in a notification to the Dean of Students of a violation of campus standards. Behaviors that seek to gain an unfair advantage or negatively impact the ability of others to learn will also result in a report to the Dean of Students.
+
+The consequences for cheating or other actions contrary to CSUF student conduct policies can be severe. Communicate with me if you find yourself in a situation that might lead to a poor decision.
+
+You are encouraged to use the resources provided in this course. The use of sites, including but not limited to Chegg and Course Hero, which require subscriptions and provide solutions to homework problems, exam questions, etc., is explicitly prohibited in this course and is considered academic dishonesty.
+
+Working together is encouraged. Study groups, working through practice problems with classmates, and discussing worksheet questions in class are all good ways to learn. However, any sharing of assignments, even if only intended to help, or using communication tools for unauthorized collaboration, is considered academic dishonesty. Unless otherwise explicitly stated, assignments and examinations must be completed on your own.
+
+\section*{Technical Requirements}
+Students are expected to
+\begin{enumerate}
+\item Have basic computer competency which includes:
+\begin{enumerate}
+\item	The ability to use a personal computer to locate, create, move, copy, delete, name, rename, and save files and folders on hard drives, secondary storage devices such as USB drives, and cloud such as Google Drive (Titan Apps) and Dropbox
+\item	The ability to use a word processing program to create, edit, format, store, retrieve, and print documents
+\item	The ability to use their CSUF email accounts to receive, create, edit, print, save, and send an e-mail message with and without an attached file
+\item	The ability to use an Internet browser such as Chrome, Safari, Firefox, or Microsoft® Edge to search and access web sites in the World Wide Web
+\end{enumerate}
+\item	Have ongoing reliable access to a computer with Internet connectivity for regular course assignments
+\item	Utilize updated version of Microsoft® Office (for P.C. or Mac) including Word, PowerPoint, and Excel to learn content and communicate with colleagues and faculty; have the ability to regularly print assignments
+\item	Maintain and access their CSUF student email account at least three times weekly
+\item	Use Internet search and retrieval skills to complete assignments
+\item	Apply their educational technology skills to complete expected competencies
+\item	Utilize other software applications as course requirements dictate
+\item	Utilize the LMS to access course materials and complete assignments
+\end{enumerate}
+
+
+
+\section*{CBE Assessment Statement}
+The programs offered in the College of Business and Economics (CBE) at Cal State Fullerton are designed to provide every student with the knowledge and skills essential for a successful career in business. Since assessment plays a vital role in the college's drive to offer the best, several assessment tools are implemented to constantly evaluate our program as well as our students' progress. Students, faculty, and staff should expect to participate in CBE assessment activities. In doing so, the college can measure its strengths and weaknesses and continue cultivating a climate of excellence in its students and programs.
+
+Assurance of Learning (AoL) is an integral part of both our AACSB and WASC accreditation. Please visit the \href{https://business.fullerton.edu/assessment}{Assessment and Instructional Support website} for more information on our college-based assurance of learning efforts.
+
+\section*{College and University Learning Resources}
+
+
+\subsection*{Wall Street Journal}
+You get a FREE subscription to the Wall Street Journal through the University. Activate your school-sponsored membership here: \href{https://partner.wsj.com/p/1110800011/register?mod=wsj_CSUF_360}{WSJ.com/ActivateCSUF}.
+
+\subsection*{University Learning Center}
+The goal of the University Learning Center is to provide all CSUF students with academic support in an inviting and contemporary environment.  The staff of the University Learning Center will assist students with their academic assignments, general study skills, and computer user needs. The ULC staff work with all students from diverse backgrounds in most undergraduate general education courses, including those in science and math, humanities and social sciences, as well as other subjects. They offer one-to-one peer tutoring, online writing review, and many more services.  More information can be found on the University Learning Center website.
+
+\subsection*{Writing Center}
+The Writing Center offers 30-minute, one-on-one peer tutoring sessions and workshops aimed at providing assistance for all written assignments and student writing concerns. Writing Center services are available to students from all disciplines. Registration and appointment schedules are available at the Writing Center Appointment Scheduling System. Walk-in appointments are also available on a first-come, first-served basis to students who have registered online. More information can be found at the  Writing Center webpage.  The Writing Center is located on the first floor of the Pollak Library. Their phone number is (657) 278-3650.
+
+
+% Section 9: Student Resources Website
+\section*{Student Resources Website}
+
+\noindent It is the student's responsibility to read and understand the required and important \href{https://fdc.fullerton.edu/teaching/student-info-syllabi.html}{student information for course syllabi}. Included is information about:
+{\setstretch{1.0}
+\begin{itemize}[nosep]
+\item University learning goals
+\item General Education learning objectives
+\item Netiquette/appropriate online behavior
+\item Students' rights to accommodations
+\item Campus student support resources
+\item Academic integrity
+\item Emergency preparedness/what to do
+\item Library services
+\item Student IT services and competencies
+\item Software privacy and accessibility
+\item Accessibility statement
+\item Diversity statement
+\item Land acknowledgement
+\item Final exam schedule
+\item Semester calendar
+\end{itemize}
+}
+
+\vspace{0.5em}
+\noindent When you need help immediately or to report a dangerous situation, call 911. University Police non-emergency line: (657) 278-2515.
+
+%%%%% Schedule
+\clearpage
+\section*{\centering Tentative Course Schedule} \vspace{0.5em}
+
+{\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{4pt}
+%% Interior rules are \cmidrule (\cline breaks PDF tagging); booktabs pads
+%% around its rules, so zero that out to keep the row heights unchanged.
+\setlength{\aboverulesep}{0pt}
+\setlength{\belowrulesep}{0pt}
+\setlength{\cmidrulewidth}{\arrayrulewidth}
+\begin{center}
+\begin{xltabular}{\textwidth}{|C{2.2cm}|C{1.25cm}|C{0.7cm}|X|C{1.85cm}|C{1.85cm}|}
+\Xhline{1.75\arrayrulewidth}
+\textbf{Module} & \textbf{Date} & \textbf{Lec.} & \textbf{Topic}  & \textbf{Reading} & \textbf{Due}  \\
+\Xhline{1.75\arrayrulewidth}
+\endfirsthead
+\Xhline{1.75\arrayrulewidth}
+\textbf{Module} & \textbf{Date} & \textbf{Lec.} & \textbf{Topic}  & \textbf{Reading} & \textbf{Due}  \\
+\Xhline{1.75\arrayrulewidth}
+\endhead
+\Xhline{1.75\arrayrulewidth}
+\endlastfoot
+\input{schedule.tex}
+\end{xltabular}
+\end{center}
+}
+
+\end{document}

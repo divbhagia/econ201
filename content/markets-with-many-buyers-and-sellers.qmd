@@ -1,0 +1,58 @@
+---
+title: "Markets with Many Buyers and Sellers"
+subtitle: "Module IV"
+sidebar: false
+toc: false
+format: html
+---
+
+Materials are posted as we go. See the [Schedule](../schedule.qmd) for dates and assessments. *All links open in a new tab.*
+
+::: {.lecture}
+<h2>Lecture 14: Classroom market experiment</h2>
+
+
+<p class="lecture-links dim">Materials posted closer to the date.</p>
+:::
+
+::: {.lecture}
+<h2>Lecture 15: Cotton, war, and world markets: Supply and demand</h2>
+
+<p><strong>Reading:</strong> 8.1&ndash;8.2</p>
+<p class="lecture-links dim">Materials posted closer to the date.</p>
+:::
+
+::: {.lecture}
+<h2>Lecture 16: Taking prices as given: Firms and consumers in competitive markets</h2>
+
+<p><strong>Reading:</strong> 8.3&ndash;8.4</p>
+<p class="lecture-links dim">Materials posted closer to the date.</p>
+:::
+
+::: {.lecture}
+<h2>Lecture 17: Who gets what: Allocation, distribution, and the gains from trade</h2>
+
+<p><strong>Reading:</strong> 8.5</p>
+<p class="lecture-links dim">Materials posted closer to the date.</p>
+:::
+
+::: {.lecture}
+<h2>Lecture 18: The quinoa boom: Shifts in supply and demand</h2>
+
+<p><strong>Reading:</strong> 8.6</p>
+<p class="lecture-links dim">Materials posted closer to the date.</p>
+:::
+
+::: {.lecture}
+<h2>Lecture 19: Oil booms and busts: Market dynamics in the short run and long run</h2>
+
+<p><strong>Reading:</strong> 8.7&ndash;8.10</p>
+<p class="lecture-links dim">Materials posted closer to the date.</p>
+:::
+
+::: {.lecture}
+<h2>Lecture 20: Salt taxes and rent control: Governments in the market</h2>
+
+<p><strong>Reading:</strong> 8.12&ndash;8.13</p>
+<p class="lecture-links dim">Materials posted closer to the date.</p>
+:::

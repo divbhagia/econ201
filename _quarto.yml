@@ -1,0 +1,58 @@
+project:
+  type: website
+  output-dir: docs
+  render:
+    - "*.qmd"
+    - "content/*.qmd"
+    - "slides/*.qmd"
+  resources:
+    - syllabus/Econ201-Syllabus.pdf
+
+# Speaker notes are stripped from everything published to docs/.
+# Build a presenter copy with: -M strip-notes:false
+strip-notes: true
+
+execute:
+  freeze: auto
+
+website:
+  title: "Principles of Microeconomics"
+  navbar:
+    right:
+      - text: "Home"
+        file: index.qmd
+      - text: "Syllabus"
+        file: syllabus.qmd
+      - text: "Schedule"
+        file: schedule.qmd
+      - text: "Content"
+        file: content/the-big-picture.qmd
+      - icon: github
+        href: https://divbhagia.github.io/econ201/
+        aria-label: GitHub repository for this course
+
+  page-footer:
+      2026 Div Bhagia | [CC BY-NC 4.0 License](https://creativecommons.org/licenses/by-nc/4.0/) |Made with [Quarto](https://quarto.org/)
+
+format:
+  html:
+    theme: assets/custom.scss
+    toc: true
+    link-external-newwindow: true
+    css: assets/styles.css
+  revealjs:
+    # Published decks link their assets so git stores each image once. Build a
+    # self-contained copy with: -M embed-resources:true
+    embed-resources: false
+    pdf-separate-fragments: false
+    navigation-mode: linear
+    hash-type: number
+    slide-number: true
+    controls: true
+    progress: true
+    transition: fade
+    transition-speed: fast
+    center: false
+    code-overflow: wrap
+    highlight-style: a11y-dark
+    mathjax: true

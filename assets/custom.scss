@@ -1,0 +1,88 @@
+/*-- scss:defaults --*/
+
+
+@import url(https://fonts.googleapis.com/css?family=Fira+Mono&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700&display=swap);
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,700;1,400;1,700&family=Fira+Sans+Condensed:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+
+// fonts
+$font-family-sans-serif: Lato, Helvetica, sans-serif !default;
+$font-family-monospace: "Fira Mono", monospace;
+$headings-font-family: Fira Sans Condensed, Helvetica, sans-serif !default;
+
+//  Colors
+$gray: #393A3B;
+$gray2: #747576;
+// Burnt orange; 4.59:1 contrast on white, passes WCAG AA for links and
+// for white navbar text on this background.
+$primary: #BF5700 !default;
+$secondary: #e8e1e1 !default;
+
+// navbar background color to primary
+$navbar-bg: $primary !default;
+
+/*-- scss:rules --*/
+$font-size-base: 1.1rem ;
+body {
+  font-size: $font-size-base;
+}
+h1 {
+  font-weight: 700;
+  font-size: 2.25 * $font-size-base;
+}
+h2, h3 {
+  font-weight: 700;
+  font-size: 1.7 * $font-size-base;
+}
+h4 {
+  font-weight: 600;
+  font-size: 1.25 * $font-size-base;
+}
+.sidebar-item-text {
+  font-size: 0.9 * $font-size-base; 
+  color: $gray !important;
+}
+.sidebar-item-text:hover {
+  color: $primary !important;
+}
+.sidebar-link.active {
+  color: $primary !important;
+  font-weight: 700;
+}
+.nav-link {
+  font-size: 0.9 * $font-size-base; 
+}
+#toc-title {
+  font-size: 0.9 * $font-size-base; 
+}
+#quarto-header {
+  //text-transform: uppercase;
+  font-family: Lato, Helvetica, sans-serif;
+  font-weight: 900;
+  font-size: 1.1rem;
+}
+.navbar-brand {
+  font-size: 1.35rem;
+}
+
+// iframes for slides 
+iframe.slide-deck {
+  display: none;
+}
+@media (min-width: 1025px) {
+  iframe.slide-deck {
+    display: block; /* or inline-block, depending on your layout needs */
+    border: 3px solid gray; /* Replace 'gray' with your color value */
+    width: 80%;
+    height: 100vh;
+  }
+}
+
+.ar4x3 {
+  aspect-ratio: 4 / 3;  
+}
+
+.ar3x2 {
+  aspect-ratio: 3 / 2;  
+}

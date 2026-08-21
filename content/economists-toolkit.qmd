@@ -1,0 +1,23 @@
+---
+title: "The Economist's Toolkit"
+subtitle: "Module II"
+sidebar: false
+toc: false
+format: html
+---
+
+Materials are posted as we go. See the [Schedule](../schedule.qmd) for dates and assessments. *All links open in a new tab.*
+
+::: {.lecture}
+<h2>Lecture 3: Making economic decisions: Opportunity cost, rents, and incentives</h2>
+
+<p><strong>Reading:</strong> 2.2; 2.8</p>
+<p class="lecture-links dim">Materials posted closer to the date.</p>
+:::
+
+::: {.lecture}
+<h2>Lecture 4: Why do markets matter? Specialization and comparative advantage</h2>
+
+<p><strong>Reading:</strong> 2.3</p>
+<p class="lecture-links dim">Materials posted closer to the date.</p>
+:::

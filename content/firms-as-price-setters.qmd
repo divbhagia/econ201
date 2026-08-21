@@ -1,0 +1,72 @@
+---
+title: "Firms as Price Setters"
+subtitle: "Module III"
+sidebar: false
+toc: false
+format: html
+---
+
+Materials are posted as we go. See the [Schedule](../schedule.qmd) for dates and assessments. *All links open in a new tab.*
+
+::: {.lecture}
+<h2>Lecture 5: Winning brands and the price of Cheerios</h2>
+
+<p><strong>Reading:</strong> 7.1&ndash;7.2</p>
+<p class="lecture-links dim">Materials posted closer to the date.</p>
+:::
+
+::: {.lecture}
+<h2>Lecture 6: What does it cost to make a car? Scale and the cost of production</h2>
+
+<p><strong>Reading:</strong> 7.3&ndash;7.4</p>
+<p class="lecture-links dim">Materials posted closer to the date.</p>
+:::
+
+::: {.lecture}
+<h2>Lecture 7: Who can get away with raising prices? Demand and elasticity</h2>
+
+<p><strong>Reading:</strong> 7.5</p>
+<p class="lecture-links dim">Materials posted closer to the date.</p>
+:::
+
+::: {.lecture}
+<h2>Lecture 8: Steak, ramen, and recessions: Other elasticities</h2>
+
+
+<p class="lecture-links dim">Materials posted closer to the date.</p>
+:::
+
+::: {.lecture}
+<h2>Lecture 9: Sweet spot: Choosing the price and quantity that maximize profit</h2>
+
+<p><strong>Reading:</strong> 7.6</p>
+<p class="lecture-links dim">Materials posted closer to the date.</p>
+:::
+
+::: {.lecture}
+<h2>Lecture 10: The surplus from a sale and who captures it</h2>
+
+<p><strong>Reading:</strong> 7.7</p>
+<p class="lecture-links dim">Materials posted closer to the date.</p>
+:::
+
+::: {.lecture}
+<h2>Lecture 11: Standing out from the crowd: Product differentiation and competition</h2>
+
+<p><strong>Reading:</strong> 7.8&ndash;7.9</p>
+<p class="lecture-links dim">Materials posted closer to the date.</p>
+:::
+
+::: {.lecture}
+<h2>Lecture 12: Price wars: Strategic price setting and Nash equilibrium</h2>
+
+<p><strong>Reading:</strong> 7.10; 4.2&ndash;4.3</p>
+<p class="lecture-links dim">Materials posted closer to the date.</p>
+:::
+
+::: {.lecture}
+<h2>Lecture 13: Winner takes the market: Natural monopolies and competition policy</h2>
+
+<p><strong>Reading:</strong> 7.11&ndash;7.12</p>
+<p class="lecture-links dim">Materials posted closer to the date.</p>
+:::

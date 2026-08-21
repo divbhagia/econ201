@@ -1,0 +1,8 @@
+# Presenter build: keeps the speaker notes and inlines every asset, so the
+# file works anywhere on its own. Never publish output built with this.
+#   quarto render slides/lecture1.qmd --profile presenter -o lecture1-presenter.html
+strip-notes: false
+
+format:
+  revealjs:
+    embed-resources: true

@@ -1,0 +1,23 @@
+---
+title: "Review"
+subtitle: "Module VI"
+sidebar: false
+toc: false
+format: html
+---
+
+Materials are posted as we go. See the [Schedule](../schedule.qmd) for dates and assessments. *All links open in a new tab.*
+
+::: {.lecture}
+<h2>Lecture 25: Review and Synthesis I</h2>
+
+
+<p class="lecture-links dim">Materials posted closer to the date.</p>
+:::
+
+::: {.lecture}
+<h2>Lecture 26: Review and Synthesis II</h2>
+
+
+<p class="lecture-links dim">Materials posted closer to the date.</p>
+:::

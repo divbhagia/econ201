@@ -1,0 +1,68 @@
+
+# Ignore certain directories and files
+grades/
+quizzes/
+references/
+
+# Canvas API script: kept out of the public repo.
+canvas-upload.py
+
+# Student data and credentials. grades/ is already excluded above; these
+# patterns are a second line of defence in case such a file lands elsewhere.
+canvas-token*
+scores*.csv
+roster*.csv
+*.env
+.env*
+
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+*.nav
+*.snm
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+.texpadtmp/
+
+# Python
+__pycache__/
+*.pyc
+
+# macOS and Windows
+.DS_Store
+._*
+Thumbs.db
+
+# Editors
+.vscode/
+*.swp
+*~
+
+# Dropbox sync artifacts. These appeared repeatedly during batch test runs.
+*conflicted copy*
+
+# Presenter copies of slides: these keep the speaker notes, so they must
+# never reach the public site.
+*-presenter.html
+
+# Quarto site build. The leading slash keeps these to the project root, so
+# the equivalent asset folders inside docs/ stay tracked and the published
+# site does not lose its resources.
+/.quarto/
+/site_libs/
+/_freeze/
+/*_files/
+*.quarto_ipynb
+
+# Editor and notebook droppings
+.ipynb_checkpoints/
+.Rhistory
+
+**/*.quarto_ipynb
