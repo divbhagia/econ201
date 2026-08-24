@@ -112,11 +112,11 @@ table.schedule-table th, table.schedule-table td {
 }
 table.schedule-table thead th { border-bottom: 2px solid #393A3B !important; text-align: left; }
 table.schedule-table th[scope="row"] {
-  width: 5.2em; text-align: left; background-color: #fff;
+  width: 5.6em; text-align: left; background-color: #fff;
   white-space: nowrap; font-weight: 400;
 }
 table.schedule-table th[scope="rowgroup"] {
-  width: 7.8em; background-color: #fff; font-weight: 700; text-align: left;
+  width: 7.4em; background-color: #fff; font-weight: 700; text-align: left;
 }
 table.schedule-table td.lec { width: 2.8em; text-align: center !important; }
 table.schedule-table td.topics { width: auto; text-align: left !important; }
@@ -130,6 +130,139 @@ table.schedule-table tr.recess td { text-align: left !important; background-colo
 /* Heavier rule where each module block starts */
 table.schedule-table tr.module-start > * { border-top: 2px solid #393A3B !important; }
 table.schedule-table tbody tr:last-child > * { border-bottom: none; }
+
+/* ---------- Schedule table: tablet ---------- */
+
+/* Around iPad-portrait width the five columns still fit, but only just. Trim
+   the fixed columns and the padding so the Topic column keeps enough room to
+   set two or three words per line instead of one. */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  table.schedule-table { font-size: 0.92em; }
+  table.schedule-table th, table.schedule-table td { padding: 6px 5px; }
+  table.schedule-table thead th:nth-child(1),
+  table.schedule-table th[scope="rowgroup"] { width: 6.4em !important; }
+  table.schedule-table thead th:nth-child(2),
+  table.schedule-table th[scope="row"] { width: 5.6em !important; }
+  table.schedule-table thead th:nth-child(4),
+  table.schedule-table td.refs { width: 4.6em !important; }
+  table.schedule-table thead th:nth-child(5),
+  table.schedule-table td.mat { width: 5.1em !important; }
+}
+
+/* ---------- Schedule table: phone ---------- */
+
+/* A fixed-layout table at width:100% cannot overflow, so on a phone the four
+   fixed columns take the whole screen and Topic collapses to one word per
+   line. Below the md breakpoint the same markup restyles into one card per
+   class meeting: module band, date, topic, then labeled reading and
+   materials lines. No horizontal scrolling, and the source order already
+   reads correctly for screen readers. */
+@media (max-width: 767.98px) {
+  .table-scroll { overflow-x: visible; }
+
+  table.schedule-table,
+  table.schedule-table tbody,
+  table.schedule-table tr,
+  table.schedule-table th,
+  table.schedule-table td {
+    display: block;
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: none;
+  }
+
+  table.schedule-table {
+    table-layout: auto;
+    border: none !important;
+    border-radius: 0;
+  }
+
+  /* The column headers are replaced by the inline labels below, but stay in
+     the document for assistive technology. */
+  table.schedule-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  table.schedule-table tbody tr {
+    border: 1px solid #d8d8d8 !important;
+    border-radius: 6px;
+    padding: 0.7em 0.85em;
+    margin-bottom: 0.7em;
+    background-color: #fff;
+  }
+  table.schedule-table tbody tr.module-start > *,
+  table.schedule-table tbody tr:last-child > * { border-top: none !important; }
+
+  table.schedule-table th,
+  table.schedule-table td {
+    border: none !important;
+    padding: 0 !important;
+    text-align: left !important;
+    background-color: transparent !important;
+    white-space: normal;
+  }
+  /* Cells with no content would otherwise leave a gap inside the card */
+  table.schedule-table th:empty,
+  table.schedule-table td:empty { display: none; }
+
+  /* The module name heads the first card of its block */
+  table.schedule-table th[scope="rowgroup"] {
+    font-family: "Fira Sans Condensed", Helvetica, sans-serif;
+    font-size: 0.82em;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #BF5700;
+    padding-bottom: 0.35em !important;
+    margin-bottom: 0.55em;
+    border-bottom: 2px solid #BF5700 !important;
+  }
+  table.schedule-table th[scope="rowgroup"] a { color: inherit; }
+
+  table.schedule-table th[scope="row"] {
+    font-weight: 700;
+    color: #393A3B;
+    margin-bottom: 0.1em;
+  }
+
+  table.schedule-table td.topics { margin-bottom: 0.35em; }
+
+  /* These three carry !important text-align in the desktop rules above */
+  table.schedule-table td.topics,
+  table.schedule-table td.refs,
+  table.schedule-table td.mat { text-align: left !important; }
+  table.schedule-table td.refs,
+  table.schedule-table td.mat {
+    font-size: 0.95em;
+    letter-spacing: normal;
+  }
+  table.schedule-table td.refs::before,
+  table.schedule-table td.mat::before {
+    display: inline-block;
+    min-width: 5.6em;
+    color: #747576;
+    font-size: 0.92em;
+  }
+  table.schedule-table td.refs::before { content: "Reading"; }
+  table.schedule-table td.mat::before { content: "Materials"; }
+  table.schedule-table td.mat { font-size: 1.05em; }
+  table.schedule-table td.mat a { margin-right: 0.35em; }
+
+  /* Exam and campus-closure rows keep their tint, now on the card itself */
+  table.schedule-table tbody tr.assessment {
+    background-color: #FDF3EA !important;
+    border-color: #e8c3a3 !important;
+  }
+  table.schedule-table tbody tr.recess { background-color: #f6f6f6 !important; }
+  table.schedule-table tr.assessment td,
+  table.schedule-table tr.recess td { background-color: transparent !important; }
+}
 
 /* ---------- Lecture blocks on module content pages ---------- */
 
