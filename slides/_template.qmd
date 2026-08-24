@@ -85,7 +85,3 @@ Source: CORE Figure X.Y
 - Then this
 - Then this
 :::
-
-::: {.notes}
-Speaker notes go here. Press S in the browser to open presenter view.
-:::

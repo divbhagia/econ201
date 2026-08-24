@@ -66,3 +66,6 @@ Thumbs.db
 .Rhistory
 
 **/*.quarto_ipynb
+
+# Local backup of speaker notes: never publish or commit
+*-notes-backup.md

@@ -7,9 +7,7 @@ format: html
 
 Materials appear here as we reach each lecture. For materials grouped by
 module, see the
-[Content](content/the-big-picture.qmd) pages.
-
-Readings refer to sections of
+[Content](content/the-big-picture.qmd) pages. Readings refer to sections of
 [*The Economy 2.0: Microeconomics*](https://books.core-econ.org/the-economy/microeconomics).
 Quizzes are given at the start of class on the dates marked below.
 

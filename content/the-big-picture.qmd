@@ -6,7 +6,7 @@ toc: false
 format: html
 ---
 
-Materials are posted as we go. See the [Schedule](../schedule.qmd) for dates and assessments. *All links open in a new tab.*
+Materials are posted as we go. See the [Schedule](../schedule.qmd) for dates and assessments.
 
 ::: {.lecture}
 <h2>Lecture 1: Introduction to the course</h2>
