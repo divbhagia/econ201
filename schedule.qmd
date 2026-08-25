@@ -32,35 +32,35 @@ Quizzes are given at the start of class on the dates marked below.
 <tbody>
 <tr class="module-start"><th scope="rowgroup" rowspan="2"><a href="content/the-big-picture.html">The Big Picture</a></th><th scope="row">Mon 8/24</th><td class="topics">Introduction to the course</td><td class="refs"></td><td class="mat"><a href="slides/lecture1.html" target="_blank" rel="noopener" aria-label="Lecture 1 slides (opens in a new tab)"><span aria-hidden="true">🖥️</span></a></td></tr>
 <tr class=""><th scope="row">Wed 8/26</th><td class="topics">The capitalist takeoff: Prosperity and its shadows</td><td class="refs">1.1&ndash;1.5; 1.8&ndash;1.10</td><td class="mat"></td></tr>
-<tr class="module-start"><th scope="rowgroup" rowspan="2"><a href="content/economists-toolkit.html">The Economist's Toolkit</a></th><th scope="row">Mon 8/31</th><td class="topics"><strong>Quiz 1</strong>: Making economic decisions: Opportunity cost, rents, and incentives</td><td class="refs">2.2; 2.8</td><td class="mat"></td></tr>
+<tr class="module-start"><th scope="rowgroup" rowspan="2"><a href="content/economists-toolkit.html">The Economist's Toolkit</a></th><th scope="row">Mon 8/31</th><td class="topics"><strong>Quiz 1</strong>; Making economic decisions: Opportunity cost, rents, and incentives</td><td class="refs">2.2; 2.8</td><td class="mat"></td></tr>
 <tr class=""><th scope="row">Wed 9/2</th><td class="topics">Why do markets matter? Specialization and comparative advantage</td><td class="refs">2.3</td><td class="mat"></td></tr>
 <tr class="recess module-start"><td></td><th scope="row">Mon 9/7</th><td colspan="3">Labor Day (campus closed)</td></tr>
-<tr class="module-start"><th scope="rowgroup" rowspan="9"><a href="content/firms-as-price-setters.html">Firms as Price Setters</a></th><th scope="row">Wed 9/9</th><td class="topics"><strong>Quiz 2</strong>: Winning brands and the price of Cheerios</td><td class="refs">7.1&ndash;7.2</td><td class="mat"></td></tr>
+<tr class="module-start"><th scope="rowgroup" rowspan="9"><a href="content/firms-as-price-setters.html">Firms as Price Setters</a></th><th scope="row">Wed 9/9</th><td class="topics"><strong>Quiz 2</strong>; Winning brands and the price of Cheerios</td><td class="refs">7.1&ndash;7.2</td><td class="mat"></td></tr>
 <tr class=""><th scope="row">Mon 9/14</th><td class="topics">What does it cost to make a car? Scale and the cost of production</td><td class="refs">7.3&ndash;7.4</td><td class="mat"></td></tr>
 <tr class=""><th scope="row">Wed 9/16</th><td class="topics">Who can get away with raising prices? Demand and elasticity</td><td class="refs">7.5</td><td class="mat"></td></tr>
-<tr class=""><th scope="row">Mon 9/21</th><td class="topics"><strong>Quiz 3</strong>: Steak, ramen, and recessions: Other elasticities</td><td class="refs"></td><td class="mat"></td></tr>
+<tr class=""><th scope="row">Mon 9/21</th><td class="topics"><strong>Quiz 3</strong>; Steak, ramen, and recessions: Other elasticities</td><td class="refs"></td><td class="mat"></td></tr>
 <tr class=""><th scope="row">Wed 9/23</th><td class="topics">Sweet spot: Choosing the price and quantity that maximize profit</td><td class="refs">7.6</td><td class="mat"></td></tr>
-<tr class=""><th scope="row">Mon 9/28</th><td class="topics"><strong>Quiz 4</strong>: The surplus from a sale and who captures it</td><td class="refs">7.7</td><td class="mat"></td></tr>
+<tr class=""><th scope="row">Mon 9/28</th><td class="topics"><strong>Quiz 4</strong>; The surplus from a sale and who captures it</td><td class="refs">7.7</td><td class="mat"></td></tr>
 <tr class=""><th scope="row">Wed 9/30</th><td class="topics">Standing out from the crowd: Product differentiation and competition</td><td class="refs">7.8&ndash;7.9</td><td class="mat"></td></tr>
-<tr class=""><th scope="row">Mon 10/5</th><td class="topics"><strong>Quiz 5</strong>: Price wars: Strategic price setting and Nash equilibrium</td><td class="refs">7.10; 4.2&ndash;4.3</td><td class="mat"></td></tr>
+<tr class=""><th scope="row">Mon 10/5</th><td class="topics"><strong>Quiz 5</strong>; Price wars: Strategic price setting and Nash equilibrium</td><td class="refs">7.10; 4.2&ndash;4.3</td><td class="mat"></td></tr>
 <tr class=""><th scope="row">Wed 10/7</th><td class="topics">Winner takes the market: Natural monopolies and competition policy</td><td class="refs">7.11&ndash;7.12</td><td class="mat"></td></tr>
 <tr class="assessment module-start"><td></td><th scope="row">Mon 10/12</th><td colspan="3"><strong>Midterm 1</strong></td></tr>
 <tr class="module-start"><th scope="rowgroup" rowspan="7"><a href="content/markets-with-many-buyers-and-sellers.html">Markets with Many Buyers and Sellers</a></th><th scope="row">Wed 10/14</th><td class="topics">Classroom market experiment</td><td class="refs"></td><td class="mat"></td></tr>
 <tr class=""><th scope="row">Mon 10/19</th><td class="topics">Cotton, war, and world markets: Supply and demand</td><td class="refs">8.1&ndash;8.2</td><td class="mat"></td></tr>
 <tr class=""><th scope="row">Wed 10/21</th><td class="topics">Taking prices as given: Firms and consumers in competitive markets</td><td class="refs">8.3&ndash;8.4</td><td class="mat"></td></tr>
-<tr class=""><th scope="row">Mon 10/26</th><td class="topics"><strong>Quiz 6</strong>: Who gets what: Allocation, distribution, and the gains from trade</td><td class="refs">8.5</td><td class="mat"></td></tr>
+<tr class=""><th scope="row">Mon 10/26</th><td class="topics"><strong>Quiz 6</strong>; Who gets what: Allocation, distribution, and the gains from trade</td><td class="refs">8.5</td><td class="mat"></td></tr>
 <tr class=""><th scope="row">Wed 10/28</th><td class="topics">The quinoa boom: Shifts in supply and demand</td><td class="refs">8.6</td><td class="mat"></td></tr>
-<tr class=""><th scope="row">Mon 11/2</th><td class="topics"><strong>Quiz 7</strong>: Oil booms and busts: Market dynamics in the short run and long run</td><td class="refs">8.7&ndash;8.10</td><td class="mat"></td></tr>
+<tr class=""><th scope="row">Mon 11/2</th><td class="topics"><strong>Quiz 7</strong>; Oil booms and busts: Market dynamics in the short run and long run</td><td class="refs">8.7&ndash;8.10</td><td class="mat"></td></tr>
 <tr class=""><th scope="row">Wed 11/4</th><td class="topics">Salt taxes and rent control: Governments in the market</td><td class="refs">8.12&ndash;8.13</td><td class="mat"></td></tr>
 <tr class="assessment module-start"><td></td><th scope="row">Mon 11/9</th><td colspan="3"><strong>Midterm 2</strong></td></tr>
 <tr class="recess"><td></td><th scope="row">Wed 11/11</th><td colspan="3">Veterans Day (campus closed)</td></tr>
-<tr class="module-start"><th scope="rowgroup" rowspan="6"><a href="content/market-successes-and-failures.html">Market Successes and Failures</a></th><th scope="row">Mon 11/16</th><td class="topics"><strong>Writing 1</strong>: Bananas, fish, and cancer: Private vs. social value wedge</td><td class="refs">10.1&ndash;10.2</td><td class="mat"></td></tr>
+<tr class="module-start"><th scope="rowgroup" rowspan="6"><a href="content/market-successes-and-failures.html">Market Successes and Failures</a></th><th scope="row">Mon 11/16</th><td class="topics"><strong>Writing 1</strong>; Bananas, fish, and cancer: Private vs. social value wedge</td><td class="refs">10.1&ndash;10.2</td><td class="mat"></td></tr>
 <tr class=""><th scope="row">Wed 11/18</th><td class="topics">Closing the wedge: Property rights, bargaining, and regulation</td><td class="refs">10.3&ndash;10.5</td><td class="mat"></td></tr>
 <tr class="recess"><th scope="row">Mon 11/23</th><td colspan="3">Fall Recess (no classes)</td></tr>
 <tr class="recess"><th scope="row">Wed 11/25</th><td colspan="3">Fall Recess (no classes)</td></tr>
-<tr class=""><th scope="row">Mon 11/30</th><td class="topics"><strong>Quiz 8</strong>: Free riders and empty oceans: Public goods and common resources</td><td class="refs">10.6&ndash;10.7</td><td class="mat"></td></tr>
+<tr class=""><th scope="row">Mon 11/30</th><td class="topics"><strong>Quiz 8</strong>; Free riders and empty oceans: Public goods and common resources</td><td class="refs">10.6&ndash;10.7</td><td class="mat"></td></tr>
 <tr class=""><th scope="row">Wed 12/2</th><td class="topics">The limits of markets</td><td class="refs">10.8&ndash;10.11</td><td class="mat"></td></tr>
-<tr class="module-start"><th scope="rowgroup" rowspan="2"><a href="content/review.html">Review</a></th><th scope="row">Mon 12/7</th><td class="topics"><strong>Writing 2</strong>: Review and Synthesis I</td><td class="refs"></td><td class="mat"></td></tr>
+<tr class="module-start"><th scope="rowgroup" rowspan="2"><a href="content/review.html">Review</a></th><th scope="row">Mon 12/7</th><td class="topics"><strong>Writing 2</strong>; Review and Synthesis I</td><td class="refs"></td><td class="mat"></td></tr>
 <tr class=""><th scope="row">Wed 12/9</th><td class="topics">Review and Synthesis II</td><td class="refs"></td><td class="mat"></td></tr>
 <tr class="assessment module-start"><td></td><th scope="row">Mon 12/14</th><td colspan="3"><strong>Final exam (1:00&ndash;2:50 PM)</strong></td></tr>
 </tbody>

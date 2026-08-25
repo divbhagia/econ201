@@ -405,7 +405,7 @@ for r in rows:
                          f'{due}</td></tr>')
     else:
         lec = r["Lecture"]
-        due = (f'<strong>{r["Due"]}</strong>: ' if r.get("Due") else "")
+        due = (f'<strong>{r["Due"]}</strong>; ' if r.get("Due") else "")
         html_rows.append(
             f'<tr class="{edge.strip()}">{mod_cell}{date_cell}'
             f'<td class="topics">{due}{_web(r["Topics"])}</td>'
@@ -418,8 +418,8 @@ table = (
     'aria-label="Semester schedule table">\n'
     '<table class="schedule-table">\n'
     '<thead>\n<tr>\n'
-    '  <th scope="col" style="width:7.8em">Module</th>\n'
-    '  <th scope="col" style="width:5.2em">Date</th>\n'
+    '  <th scope="col" style="width:7.4em">Module</th>\n'
+    '  <th scope="col" style="width:5.6em">Date</th>\n'
     '  <th scope="col">Topic</th>\n'
     '  <th scope="col" style="width:5.2em">Reading</th>\n'
     '  <th scope="col" style="width:5.4em">Materials</th>\n'
@@ -436,10 +436,8 @@ format: html
 
 Materials appear here as we reach each lecture. For materials grouped by
 module, see the
-[Content](content/{first_slug}.qmd) pages.
-
-Readings refer to sections of
-[*The Economy 2.0: Microeconomics*](https://books.core-econ.org/the-economy/index.html).
+[Content](content/{first_slug}.qmd) pages. Readings refer to sections of
+[*The Economy 2.0: Microeconomics*](https://books.core-econ.org/the-economy/microeconomics).
 Quizzes are given at the start of class on the dates marked below.
 
 <p class="materials-legend">
@@ -494,7 +492,7 @@ for idx, (label, sessions) in enumerate(MODULES.items()):
     page = (f'---\ntitle: "{label}"\nsubtitle: "Module {ROMAN[idx]}"\n'
             f'sidebar: false\ntoc: false\nformat: html\n---\n\n'
             f'Materials are posted as we go. See the [Schedule](../schedule.qmd) '
-            f'for dates and assessments. *All links open in a new tab.*\n\n'
+            f'for dates and assessments.\n\n'
             + "\n".join(blocks))
     (content_dir / f"{slug}.qmd").write_text(page)
 

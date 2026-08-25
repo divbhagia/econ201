@@ -13,7 +13,7 @@ $link-color: $accent;
 $presentation-heading-color: $ink;
 $presentation-heading-font: 'Fira Sans Condensed', Helvetica, sans-serif;
 $presentation-font-family: Lato, Helvetica, sans-serif;
-$presentation-font-size-root: 44px;
+$presentation-font-size-root: 40px;
 
 /*-- scss:rules --*/
 
@@ -132,6 +132,12 @@ $presentation-font-size-root: 44px;
 .reveal .big { font-size: 1.3em; line-height: 1.4; }
 .reveal .dim, .reveal .figcap { color: #6b6b6b; }
 .reveal .figcap { font-size: 0.6em; }
+
+// Commentary beside a figure: a step down from body size so three or four
+// short points fit in a 40% column without crowding the chart.
+.reveal .commentary { font-size: 0.82em; }
+.reveal .commentary ul li { margin-bottom: 0.35em; line-height: 1.25; }
+.reveal .commentary .takeaway { font-size: 1.05em; }
 
 // Boxed takeaway, for the sentence you want them to leave with.
 .reveal .takeaway {
