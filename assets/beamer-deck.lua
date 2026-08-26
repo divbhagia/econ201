@@ -33,6 +33,9 @@ local function build_path(src)
   return (src:gsub('%.svg$', '.pdf'))
 end
 
+-- The frame is 16:9 and only about 77mm of it is body, so the height cap is
+-- what decides the width of a wide chart, not \linewidth. \figmaxht is set in
+-- the preamble (scripts/build_slides_pdf.py); tune the deck there, once.
 local function graphic(src, alt, width, height)
   local opts = {}
   if width  then opts[#opts+1] = 'width='  .. to_length(width)  end
@@ -40,8 +43,10 @@ local function graphic(src, alt, width, height)
   if not width and not height then
     -- No size given: fill the column, but never past the frame.
     opts[#opts+1] = 'width=\\linewidth'
-    opts[#opts+1] = 'height=0.62\\textheight'
   end
+  -- A width alone lets a tall image run off the bottom, so cap every figure
+  -- that was not given an explicit height of its own.
+  if not height then opts[#opts+1] = 'height=\\figmaxht' end
   opts[#opts+1] = 'keepaspectratio'
   opts[#opts+1] = 'alt={' .. tex_escape(alt) .. '}'
   return '\\includegraphics[' .. table.concat(opts, ',') .. ']{' .. build_path(src) .. '}'
@@ -64,6 +69,14 @@ end
 
 -- Attribution under a quotation ([Name]{.who}) goes on its own line.
 function Span(el)
+  -- [Title]{.book}: italic in the text colour, as on the web deck. A switch,
+  -- not \textit, so the tagging code sees no argument-taking command.
+  if el.classes:includes('book') then
+    local inner = pandoc.List({pandoc.RawInline('latex', '{\\itshape ')})
+    inner:extend(el.content)
+    inner:insert(pandoc.RawInline('latex', '}'))
+    return inner
+  end
   if el.classes:includes('who') then
     local inner = pandoc.List({pandoc.RawInline('latex', '\\\\{\\small ')})
     inner:extend(el.content)
@@ -119,9 +132,43 @@ local function space_between_lists(blocks)
   end
   return out
 end
+-- How much of the frame a figure may take depends on what else is on the
+-- slide. A figure on its own can have nearly the whole body; one with a
+-- caption or a line of instructions under it has to leave room, or the text
+-- below runs off the bottom edge. \figmaxht is set per frame, so the
+-- \setlength is local to that frame group and the preamble default stands
+-- everywhere else.
+local function slide_fig_height(blocks)
+  local out, slide = pandoc.List(), pandoc.List()
+  local function emit(g)
+    local fig, other = false, false
+    for _, b in ipairs(g) do
+      if b.t == 'RawBlock' and b.text:match('\\includegraphics') then fig = true
+      elseif b.t ~= 'Header' and b.t ~= 'RawBlock' then other = true end
+    end
+    if fig then
+      local at = (#g > 0 and g[1].t == 'Header') and 2 or 1
+      g:insert(at, pandoc.RawBlock('latex', '\\setlength{\\figmaxht}{'
+        .. (other and '0.74' or '0.88') .. '\\textheight}'))
+    end
+    out:extend(g)
+  end
+  for _, b in ipairs(blocks) do
+    if b.t == 'Header' and b.level == 2 then
+      if #slide > 0 then emit(slide) end
+      slide = pandoc.List({b})
+    else
+      slide:insert(b)
+    end
+  end
+  if #slide > 0 then emit(slide) end
+  return out
+end
+
 function Pandoc(doc)
   space_lists(doc.blocks, 0)
   doc.blocks = space_between_lists(doc.blocks)
+  doc.blocks = slide_fig_height(doc.blocks)
   return doc
 end
 
@@ -131,22 +178,36 @@ end
 -- captions on one line beneath, each image keeping its alt text.
 local function journey(div)
   local pics, caps, in_cap, cap = {}, {}, false, {}
-  div:walk({
-    RawInline = function(r)
-      if not r.format:match('html') then return nil end
-      local src, alt = r.text:match('<img%s+src="([^"]+)"%s+alt="([^"]*)"')
-      if src then pics[#pics+1] = graphic(src, alt, nil, '0.42\\textheight') end
-      if r.text:match('^<figcaption') then in_cap, cap = true, {} end
-      if r.text:match('^</figcaption') then
-        in_cap = false; caps[#caps+1] = tex_escape(table.concat(cap, ' '))
+  -- <img> arrives as a RawInline and <figcaption> as a RawBlock, and walk()
+  -- visits every inline before any block, so which caption a word belongs to
+  -- is only knowable by reading the blocks in order.
+  local function tag(text)
+    local src, alt = text:match('<img%s+src="([^"]+)"%s+alt="([^"]*)"')
+    -- Three photos side by side: each needs a width cap as well as a height
+    -- one, or a landscape shot pushes the row past \linewidth and it wraps.
+    if src then pics[#pics+1] = graphic(src, alt, '30%', '0.72\\textheight') end
+    if text:match('<figcaption') then in_cap, cap = true, {} end
+    if text:match('</figcaption') then
+      in_cap = false; caps[#caps+1] = tex_escape(table.concat(cap, ''))
+    end
+  end
+  for _, b in ipairs(div.content) do
+    if b.t == 'RawBlock' and b.format:match('html') then
+      tag(b.text)
+    elseif b.t == 'Plain' or b.t == 'Para' then
+      local words = {}
+      for _, i in ipairs(b.content) do
+        if i.t == 'RawInline' and i.format:match('html') then tag(i.text)
+        else words[#words+1] = pandoc.utils.stringify(i) end
       end
-    end,
-    Str = function(t) if in_cap then cap[#cap+1] = t.text end end,
-  })
+      if in_cap and #words > 0 then cap[#cap+1] = table.concat(words, '') end
+    end
+  end
   if #pics == 0 then return nil end
   local out = '\\begin{center}' .. table.concat(pics, '\\hspace{1em}')
   if #caps > 0 then
-    out = out .. '\\\\[0.3em]' .. table.concat(caps, ' \\quad $\\rightarrow$ \\quad ')
+    out = out .. '\\\\[0.4em]{\\footnotesize\\color{muted}'
+      .. table.concat(caps, ' \\quad {\\color{accent}$\\rightarrow$} \\quad ') .. '}'
   end
   return pandoc.RawBlock('latex', out .. '\\end{center}')
 end
@@ -163,6 +224,21 @@ end
 -- paragraph, which the tagging code cannot represent.
 function Div(el)
   if el.classes:includes('journey') then return journey(el) end
+  -- Muted text keeps its size and position; only the source line under a
+  -- figure is also small and centred, as on the web deck.
+  if el.classes:includes('dim') then
+    local out = pandoc.List({pandoc.RawBlock('latex', '\\begingroup\\color{muted}')})
+    out:extend(el.content)
+    out:insert(pandoc.RawBlock('latex', '\\par\\endgroup'))
+    return out
+  end
+  if el.classes:includes('figcap') then
+    local out = pandoc.List({pandoc.RawBlock('latex',
+      '\\vspace{0.3em}\\begingroup\\footnotesize\\color{muted}\\centering')})
+    out:extend(el.content)
+    out:insert(pandoc.RawBlock('latex', '\\par\\endgroup'))
+    return out
+  end
   if el.classes:includes('column') then return column(el) end
   if el.classes:includes('takeaway') then
     local out = pandoc.List({pandoc.RawBlock('latex', '\\vspace{0.6em}')})

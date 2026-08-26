@@ -31,28 +31,79 @@ PREAMBLE = r"""\DocumentMetadata{pdfstandard=UA-2,pdfversion=2.0,lang=en-US,tagg
 \usepackage{longtable,booktabs,array}
 \providecommand{\tightlist}{}
 \providecommand{\note}[1]{}
-\setmainfont{Lato}
-\setsansfont{Lato}
-\newfontfamily\headingfont{Fira Sans Condensed}
+% Ligatures=TeX on every family: without it -- prints as two hyphens rather
+% than an en dash, which is what the heading font was doing.
+\setmainfont{Lato}[Ligatures=TeX]
+\setsansfont{Lato}[Ligatures=TeX]
+\newfontfamily\headingfont{Fira Sans Condensed}[Ligatures=TeX]
 \DeclareColor{accent}[HTML]{BF5700}
 \DeclareColor{ink}[HTML]{1A1A1A}
+\DeclareColor{muted}[HTML]{595A5B}
 \DeclareColor{structure}[HTML]{1A1A1A}
 \color{ink}
+% The web deck spaces consecutive statements (.plain p, 0.6em); LaTeX runs
+% them together, so a slide of short paragraphs reads as one block of text.
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.6em plus 0.2em}
 % The frame title is the running head. ltx-talk's geometry (top 10mm, header
 % 10mm, headsep 2mm) starts that box above the paper edge, so the title sits
 % jammed against the top; a deeper top margin moves the whole header down.
-\geometry{tmargin=16mm}
-\EditInstance{header}{std}{color = accent, font = \Large\bfseries\headingfont, height = 1.8cm}
+\geometry{tmargin=15mm, bmargin=7mm}
+\EditInstance{header}{std}{color = accent, font = \Large\bfseries\headingfont, height = 1.7cm}
 \EditInstance{frametitle}{header}{color = accent, font = \Large\bfseries\headingfont}
 \EditInstance{titlepage-element}{title}{color = accent, font = \LARGE\bfseries\headingfont}
 \EditInstance{titlepage-element}{subtitle}{color = ink, font = \large\bfseries}
-\EditInstance{footer}{std}{element-order = {framenumber}}
+% Slide number: readable, and out of the way at the bottom right. The footer
+% box is left-aligned with a trailing \hfil, so the way to move its one
+% element right is to start the box there.
+\EditInstance{footer}{std}{element-order = {framenumber}, font = \small,
+  color = muted, left-hspace = 0.93\paperwidth}
+% How tall a figure may be. The body is ~78mm of a 100mm frame, so for any
+% chart wider than it is tall this, not \linewidth, sets the size on screen.
+\newlength{\figmaxht}
+\setlength{\figmaxht}{0.88\textheight}
 \date{}
 \ExplSyntaxOn
 \keys_set:nn { talk / frame } { vertical-alignment = top }
 \ExplSyntaxOff
 \renewcommand{\emph}[1]{\textcolor{accent}{\textbf{#1}}}
 """
+
+# Steps a frame is taken down by when its content does not fit. The figure cap
+# comes down with the type: on a figure slide the picture is what overflows.
+SHRINK_STEPS = [r"\setlength{\parskip}{0.3em}\setlength{\figmaxht}{0.95\figmaxht}",
+                r"\small\setlength{\parskip}{0.3em}\setlength{\figmaxht}{0.88\figmaxht}",
+                r"\footnotesize\setlength{\parskip}{0.25em}\setlength{\figmaxht}{0.78\figmaxht}"]
+
+# Frame opening, through the two setup lines the writer and the filter put at
+# the top of a frame, so a size change lands after \figmaxht is set, not before.
+FRAME_TOP = re.compile(
+    r"\\begin\{frame\}(?:\[[^\]]*\])?\{[^}]*\}"
+    r"(?:\\vspace\*\{[^}]*\})?"
+    r"(?:\s*\\phantomsection\\label\{[^}]*\})?"
+    r"(?:\s*\\setlength\{\\figmaxht\}\{[^}]*\})?")
+
+def apply_shrink(body, shrink):
+    """Insert a size command at the top of the frames listed in `shrink`."""
+    i = [0]
+    def rep(m):
+        i[0] += 1
+        return m.group(0) + shrink.get(i[0], "")
+    return FRAME_TOP.sub(rep, body)
+
+def frame_titles(doc):
+    return [m.group(1) for m in
+            re.finditer(r"\\begin\{frame\}(?:\[[^\]]*\])?\{([^}]*)\}", doc)]
+
+def overfull_frames(doc, log):
+    """(frame number, title, points over) for every frame taller than the body."""
+    lines, titles, out = doc.split("\n"), frame_titles(doc), []
+    for pt, ln in re.findall(r"Overfull \\vbox \(([\d.]+)pt too high\) "
+                             r"detected at line (\d+)", log):
+        i = sum(l.count(r"\begin{frame}") for l in lines[:int(ln)])
+        if 1 <= i <= len(titles):
+            out.append((i, titles[i - 1], float(pt)))
+    return out
 
 def meta_from_qmd(text):
     def grab(key):
@@ -64,6 +115,9 @@ def meta_from_qmd(text):
     out = f"\\title{{{title}}}\n"
     if subtitle: out += f"\\subtitle{{{subtitle}}}\n"
     if author: out += f"\\author{{{author}}}\n"
+    # The line break in the displayed title would otherwise close up the words
+    # in the document title a reader's title bar and a screen reader announce.
+    out += "\\hypersetup{pdftitle={%s}}\n" % title.replace(r"\\", " ").strip()
     return out
 
 def build(n):
@@ -95,16 +149,40 @@ def build(n):
         body = body.replace("\\frame{\\titlepage}",
                             "\\begin{frame}[vertical-alignment = center]{%s}\\maketitle[framestyle = wallpaper]\\end{frame}" % qtitle)
         body = re.sub(r"\\begin\{columns\}\[[^\]]*\]", r"\\begin{columns}", body)
+        # ltx-talk sets the columns row to \textwidth and puts \hfil between
+        # the columns, so a gutter only appears if the widths leave slack.
+        # Pandoc's widths sum to 1, which butts the text right against the
+        # figure; shaving 5% off each opens the gap the web deck has.
+        body = re.sub(r"\\begin\{column\}\{([\d.]+)\\linewidth\}",
+                      lambda m: r"\begin{column}{%.4f\linewidth}" % (float(m.group(1)) * 0.95),
+                      body)
         # Top-aligned frames start flush under the header; give the body the
         # same breathing room the web decks have below the title.
-        body = re.sub(r"(\\begin\{frame\}\{[^}]*\})(?!\\maketitle)", r"\1\\vspace*{0.9em}", body)
+        body = re.sub(r"(\\begin\{frame\}\{[^}]*\})(?!\\maketitle)", r"\1\\vspace*{0.5em}", body)
         body = re.sub(r"\[<\+\+?->?\]", "", body)          # itemize[<+->]
         body = re.sub(r"<\d+(-\d*)?>", "", body)           # \item<2-> etc.
-        doc = PREAMBLE + meta_from_qmd(qmd.read_text()) + "\\begin{document}\n" + body + "\n\\end{document}\n"
-        (tdp / "deck.tex").write_text(doc)
-        for _ in range(2):
+        # A frame whose content is taller than the body silently loses its last
+        # line; nothing else in the pipeline catches that, so the deck is
+        # compiled, the log read for overfull frames, and just those frames
+        # re-set a step smaller. Everything else keeps the full size.
+        head = PREAMBLE + meta_from_qmd(qmd.read_text()) + "\\begin{document}\n"
+        level, over = {}, []
+        for attempt in range(len(SHRINK_STEPS) + 1):
+            shrink = {i: SHRINK_STEPS[k] for i, k in level.items()}
+            doc = head + apply_shrink(body, shrink) + "\n\\end{document}\n"
+            (tdp / "deck.tex").write_text(doc)
             subprocess.run(["lualatex", "-interaction=nonstopmode", "deck.tex"],
                            cwd=td, capture_output=True)
+            if not (tdp / "deck.log").exists():
+                break
+            over = overfull_frames(doc, (tdp / "deck.log").read_text(errors="replace"))
+            if not over or attempt == len(SHRINK_STEPS):
+                break
+            for i, _, _ in over:
+                level[i] = min(level.get(i, -1) + 1, len(SHRINK_STEPS) - 1)
+        # a second pass so the frame count in the footer is right
+        subprocess.run(["lualatex", "-interaction=nonstopmode", "deck.tex"],
+                       cwd=td, capture_output=True)
         pdf = tdp / "deck.pdf"
         if not pdf.exists():
             log = (tdp / "deck.log").read_text(errors="replace")
@@ -112,6 +190,14 @@ def build(n):
             shutil.copy(tdp / "deck.tex", ROOT / "scripts" / f"failed-deck{n}.tex")
             sys.exit(f"lecture {n}: compile failed (kept scripts/failed-deck{n}.tex):\n"
                      + "\n".join(errs[:6]))
+        if level:
+            titles = frame_titles(doc)
+            print(f"    lecture {n}: tightened to fit: " + ", ".join(sorted(
+                f"{titles[i - 1]} (step {k + 1})" for i, k in level.items()
+                if 1 <= i <= len(titles))))
+        if over:
+            print(f"    lecture {n}: STILL runs off the bottom: "
+                  + "; ".join(f"{t} ({pt:.0f}pt)" for _, t, pt in over))
         v = subprocess.run(["verapdf", "--flavour", "ua2", "--format", "xml", str(pdf)],
                            capture_output=True, text=True)
         fails = re.findall(r'clause="([^"]*)"[^>]*testNumber="[^"]*"[^>]*status="failed"'
