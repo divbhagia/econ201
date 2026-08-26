@@ -20,5 +20,6 @@ Materials are posted as we go. See the [Schedule](../schedule.qmd) for dates and
 <h2>Lecture 2: The capitalist takeoff: Prosperity and its shadows</h2>
 
 <p><strong>Reading:</strong> 1.1&ndash;1.5; 1.8&ndash;1.10</p>
-<p class="lecture-links dim">Materials posted closer to the date.</p>
+<p class="lecture-links dim"><a class="btn btn-outline-primary" href="../slides/lecture2.html" target="_blank" rel="noopener" role="button" aria-label="Lecture 2 slides (opens in a new tab)">Slides</a>
+<a class="btn btn-outline-primary" href="../slides/lecture2.pdf" target="_blank" rel="noopener" role="button" aria-label="Lecture 2 slides as a tagged PDF (opens in a new tab)">Slides (PDF)</a></p>
 :::
