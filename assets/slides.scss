@@ -13,7 +13,7 @@ $link-color: $accent;
 $presentation-heading-color: $ink;
 $presentation-heading-font: 'Fira Sans Condensed', Helvetica, sans-serif;
 $presentation-font-family: Lato, Helvetica, sans-serif;
-$presentation-font-size-root: 40px;
+$presentation-font-size-root: 38px;
 
 /*-- scss:rules --*/
 
@@ -25,7 +25,7 @@ $presentation-font-size-root: 40px;
 .reveal h2 {
   color: #BF5700;
   text-align: center;
-  font-size: 1.45em;
+  font-size: 1.42em;
   font-weight: 700;
   border-bottom: 2px solid #e8c3a3;
   padding-bottom: 0.15em;
@@ -126,7 +126,7 @@ $presentation-font-size-root: 40px;
 }
 .reveal .slides section.quarto-title-block h1.title {
   color: #BF5700;
-  font-size: 1.45em;
+  font-size: 1.42em;
   font-weight: 700;
   line-height: 1.15;
   border-bottom: none;
@@ -147,7 +147,7 @@ $presentation-font-size-root: 40px;
 // One-idea slides: pair with `## Title {.center}` for vertical centring.
 .reveal .big { font-size: 1.3em; line-height: 1.4; }
 .reveal .dim, .reveal .figcap { color: #6b6b6b; }
-.reveal .figcap { font-size: 0.6em; }
+.reveal .figcap { font-size: 0.6em; text-align: center; }
 
 // A lone image on a slide is auto-stretched by Quarto to the remaining
 // height. It is a block, so centre it; otherwise it hugs the left edge.
@@ -166,11 +166,13 @@ $presentation-font-size-root: 40px;
   background: none;
   box-shadow: none;
   border-left: 5px solid #BF5700;
-  margin: 0.3em 0 0.5em 0.6em;
+  margin: 0.1em 0 0.5em 0.6em;
   padding: 0.1em 0 0.1em 0.7em;
   width: auto;
 }
 .reveal blockquote p { margin: 0; }
+// A quote right after a list sits closer to the line that introduces it.
+.reveal ul + blockquote, .reveal ol + blockquote { margin-top: -0.35em; }
 .reveal blockquote .who { display: block; font-style: normal; font-size: 0.8em; color: #6b6b6b; margin-top: 0.25em; }
 
 // Short statements without bullet markers, spaced like a wide list.
@@ -179,6 +181,10 @@ $presentation-font-size-root: 40px;
 
 // An image given an explicit width is not auto-stretched; centre it.
 .reveal .slides section > p > img { display: block; margin-left: auto; margin-right: auto; }
+
+// Titles of books and papers: italic in the text colour, not the orange
+// highlight that *emphasis* gets. Use [Title]{.book}.
+.reveal .book { font-style: italic; color: inherit; }
 
 // Boxed takeaway, for the sentence you want them to leave with.
 .reveal .takeaway {
@@ -214,9 +220,6 @@ $presentation-font-size-root: 40px;
 }
 .reveal table td, .reveal table th { padding: 0.1em 0.4em; }
 .reveal .columns { align-items: center; }
-// Text beside a figure runs about two points smaller than full-width text
-// (36px against the 40px root), since the column is narrow.
-.reveal .column { font-size: 0.9em; }
 // A lone image in a column arrives wrapped in a paragraph with a top margin;
 // drop it so figure and text start level.
 .reveal .column > p:first-child { margin-top: 0; }
