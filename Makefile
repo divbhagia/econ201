@@ -17,7 +17,7 @@ SHELL := /bin/bash
 # Published lectures; keep in step with MATERIALS in syllabus/create_schedule.py.
 # A deck not listed here is neither built as PDF nor rendered into the site, so
 # a lecture can be drafted in slides/ without appearing anywhere public.
-LECTURES := 1
+LECTURES := 2
 PUBLISHED_DECKS := $(foreach n,$(LECTURES),--include=slides/lecture$(n).qmd --include=slides/lecture$(n).pdf)
 TMP := $(TMPDIR)econ201-build
 AUX := aux,log,out,fls,fdb_latexmk,xdv,toc,synctex.gz
