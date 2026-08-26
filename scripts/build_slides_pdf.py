@@ -27,6 +27,8 @@ SLIDES = ROOT / "slides"
 PREAMBLE = r"""\DocumentMetadata{pdfstandard=UA-2,pdfversion=2.0,lang=en-US,tagging=on}
 \documentclass[frame-title-arg, font-size = 14pt]{ltx-talk}
 \usepackage{amsmath,graphicx}
+% pandoc sets tables as longtable with booktabs rules
+\usepackage{longtable,booktabs,array}
 \providecommand{\tightlist}{}
 \providecommand{\note}[1]{}
 \setmainfont{Lato}
@@ -36,7 +38,11 @@ PREAMBLE = r"""\DocumentMetadata{pdfstandard=UA-2,pdfversion=2.0,lang=en-US,tagg
 \DeclareColor{ink}[HTML]{1A1A1A}
 \DeclareColor{structure}[HTML]{1A1A1A}
 \color{ink}
-\EditInstance{header}{std}{color = accent, font = \Large\bfseries\headingfont, height = 1.5cm}
+% The frame title is the running head. ltx-talk's geometry (top 10mm, header
+% 10mm, headsep 2mm) starts that box above the paper edge, so the title sits
+% jammed against the top; a deeper top margin moves the whole header down.
+\geometry{tmargin=16mm}
+\EditInstance{header}{std}{color = accent, font = \Large\bfseries\headingfont, height = 1.8cm}
 \EditInstance{frametitle}{header}{color = accent, font = \Large\bfseries\headingfont}
 \EditInstance{titlepage-element}{title}{color = accent, font = \LARGE\bfseries\headingfont}
 \EditInstance{titlepage-element}{subtitle}{color = ink, font = \large\bfseries}

@@ -5,6 +5,7 @@
 #   make slides-pdf  tagged-PDF decks (ltx-talk) from the same slide sources
 #   make site        rebuild the website into docs/
 #   make audit       WCAG 2.1 AA check of docs/ (axe-core + reflow + veraPDF); run before pushing
+#   make verify      confirm docs/ still matches the last render; run right before git add
 #   make             schedule, slides-pdf, site
 #
 # The site renders in a temp copy outside Dropbox, then docs/ is synced to it
@@ -21,7 +22,7 @@ PUBLISHED_DECKS := $(foreach n,$(LECTURES),--include=slides/lecture$(n).qmd --in
 TMP := $(TMPDIR)econ201-build
 AUX := aux,log,out,fls,fdb_latexmk,xdv,toc,synctex.gz
 
-.PHONY: all syllabus schedule slides-pdf site audit
+.PHONY: all syllabus schedule slides-pdf site audit verify
 
 all: schedule slides-pdf site
 
@@ -77,3 +78,8 @@ site: schedule
 audit:
 	@echo "==> accessibility audit (WCAG 2.1 AA + PDF/UA-2)"
 	@python3 scripts/audit_a11y.py
+
+# Dropbox has restored deleted files into docs/ minutes after a clean build,
+# once between an audit and a git add. Cheap to run, so run it every time.
+verify:
+	@diff -rq $(TMP)/docs docs && echo "docs/ matches the last render"
