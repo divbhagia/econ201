@@ -6,8 +6,9 @@ Run from the course root:
     python3 slides/figures/make_lecture2.py            # uses cached data
     python3 slides/figures/make_lecture2.py --refresh  # re-download first
 
-Data, both served by Our World in Data and cached in slides/figures/data/
-so the figures rebuild offline and the numbers behind them live in the repo:
+Data, both served by Our World in Data and cached in slides/figures/data/,
+which is gitignored: the repo carries the charts, not the data. A fresh clone
+has no cache, so run with --refresh once to download it:
   maddison.csv   Maddison Project Database 2023, GDP per capita in 2011
                  international dollars, five countries
   co2-world.csv  Global Carbon Budget 2024, world CO2 emissions from fossil

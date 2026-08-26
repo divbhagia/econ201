@@ -57,3 +57,7 @@ scripts/failed-deck*.pdf
 
 # Leftover from an interrupted site build
 /docs-old/
+
+# Downloaded data. The figure scripts cache their sources here and can
+# re-fetch them with --refresh, so the repo carries the charts, not the data.
+slides/figures/data/
