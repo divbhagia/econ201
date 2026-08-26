@@ -330,6 +330,8 @@ MATERIALS = {
     # slides_pdf is the tagged-PDF copy of the deck (make slides-pdf), which
     # the accessibility statement promises for every published deck.
     1: {"slides": "slides/lecture1.html", "slides_pdf": "slides/lecture1.pdf"},
+    2: {"slides": "slides/lecture2.html", "slides_pdf": "slides/lecture2.pdf",
+        "worksheet": "worksheets/worksheet02.pdf"},
 }
 
 

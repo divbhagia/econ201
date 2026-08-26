@@ -2,6 +2,7 @@
 #
 #   make syllabus    regenerate the schedule, rebuild the syllabus PDF (slow: tagged compile)
 #   make schedule    regenerate schedule.qmd and the module content pages only
+#   make worksheets  tagged worksheet PDFs (lualatex), veraPDF-gated
 #   make slides-pdf  tagged-PDF decks (ltx-talk) from the same slide sources
 #   make site        rebuild the website into docs/
 #   make audit       WCAG 2.1 AA check of docs/ (axe-core + reflow + veraPDF); run before pushing
@@ -17,14 +18,14 @@ SHELL := /bin/bash
 # Published lectures; keep in step with MATERIALS in syllabus/create_schedule.py.
 # A deck not listed here is neither built as PDF nor rendered into the site, so
 # a lecture can be drafted in slides/ without appearing anywhere public.
-LECTURES := 2
+LECTURES := 1 2
 PUBLISHED_DECKS := $(foreach n,$(LECTURES),--include=slides/lecture$(n).qmd --include=slides/lecture$(n).pdf)
 TMP := $(TMPDIR)econ201-build
 AUX := aux,log,out,fls,fdb_latexmk,xdv,toc,synctex.gz
 
-.PHONY: all syllabus schedule slides-pdf site audit verify
+.PHONY: all syllabus schedule worksheets slides-pdf site audit verify
 
-all: schedule slides-pdf site
+all: schedule worksheets slides-pdf site
 
 schedule:
 	@echo "==> schedule table and module pages"
@@ -38,6 +39,21 @@ syllabus: schedule
 	  rm -f Econ201-Syllabus.{$(AUX)})
 	@pdfinfo syllabus/Econ201-Syllabus.pdf | awk '/^Pages/{print "    pages: " $$2}'
 	@verapdf --flavour ua2 --format text syllabus/Econ201-Syllabus.pdf 2>/dev/null | grep -E "^(PASS|FAIL)" | sed 's|/.*/||; s/^/    /'
+
+# Worksheets compile in place; Quarto copies the PDFs into docs/ via the
+# resources list in _quarto.yml. Each one is veraPDF-gated: a worksheet that
+# fails PDF/UA-2 is deleted rather than published.
+worksheets:
+	@echo "==> worksheets (lualatex, tagged)"
+	@for f in worksheets/*.tex; do \
+	  b=$$(basename "$$f" .tex); \
+	  (cd worksheets && lualatex -interaction=nonstopmode "$$b.tex" >/dev/null 2>&1; \
+	                   lualatex -interaction=nonstopmode "$$b.tex" >/dev/null 2>&1; \
+	   rm -f "$$b".{$(AUX)}); \
+	  r=$$(verapdf --flavour ua2 --format text "worksheets/$$b.pdf" 2>/dev/null | grep -oE "^(PASS|FAIL)"); \
+	  echo "    $$b.pdf: $$r (PDF/UA-2)"; \
+	  [ "$$r" = PASS ] || { rm -f "worksheets/$$b.pdf"; exit 1; }; \
+	done
 
 # Tagged-PDF slide decks from the same .qmd sources as the web decks, compiled
 # under ltx-talk (beamer refuses tagging). Each build veraPDF-gates its output.

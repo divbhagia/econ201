@@ -9,6 +9,8 @@ project:
     - syllabus/Econ201-Syllabus.pdf
     # Tagged-PDF slide decks built by `make slides-pdf`
     - "slides/*.pdf"
+    # Tagged worksheet PDFs built by `make worksheets`
+    - "worksheets/*.pdf"
 
 # Speaker notes are stripped from everything published to docs/.
 # Build a presenter copy with: -M strip-notes:false
