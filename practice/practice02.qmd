@@ -1,0 +1,376 @@
+---
+title: "Practice Problems 2"
+subtitle: "Lecture 2: The capitalist takeoff"
+sidebar: false
+toc: false
+format: html
+---
+
+These follow [Lecture 2](../slides/lecture2.html) in order, section by section,
+and the reading behind it (CORE 1.1&ndash;1.5 and 1.8&ndash;1.10). They are not
+graded, but attempt them all before the quiz: the quiz questions look like
+these. Each problem has a **Solution** toggle, so try it yourself first, then
+expand to check.
+
+## Guided reading
+
+Read sections **1.2**, **1.5**, and **1.8** closely, and skim the rest. Keep
+these questions in mind as you read: the answers are all in the text, and the
+problems below check the same ideas.
+
+**1.2 History's hockey stick**
+
+  a. What is the shape the section is named after, and what is on each axis?
+  b. Why does the book insist on GDP *per capita* rather than GDP?
+  c. What are international dollars, and what problem do they solve?
+  d. Which country's line turns upward first, and roughly when?
+
+**1.5 The continuous technological revolution**
+
+  a. What does a technology mean here, and how is that broader than everyday
+     use of the word?
+  b. What makes a change in technology *progress*?
+  c. What did the new technologies of the Industrial Revolution have in common
+     in the way they were powered?
+  d. Why does the book call the revolution *continuous* rather than a one-off
+     event?
+
+**1.8 Capitalist institutions**
+
+  a. What is an institution? What is an economic system?
+  b. Name the three institutions that define capitalism.
+  c. What exactly does owning something as private property entitle you to do?
+  d. What distinguishes a firm from a family growing food for itself?
+
+## History's hockey stick
+
+*The first two charts, and Activity 1 on your worksheet.*
+
+**1.** For most of the last thousand years, GDP per capita was roughly flat
+everywhere. Then it began to rise.
+
+  a. Roughly when did sustained growth begin in Britain?
+  b. Did every country's take-off happen at the same time? Order the five
+     countries on the chart from earliest to latest.
+  c. What does the flat part of the chart tell you about how a person's living
+     standard compared with their grandparents'?
+
+<details class="solution">
+<summary>Solution</summary>
+
+a. Around 1800. Growth is visible from about 1700 and unmistakable after 1800.
+
+b. No. Britain first, then the US during the 1800s, then Mexico, China, and
+   India, whose lines only turn upward in the second half of the twentieth
+   century.
+
+c. It was about the same. Living standards moved up and down with harvests,
+   disease, and war, but there was no sustained improvement from one
+   generation to the next.
+
+</details>
+
+**2.** On the chart we looked at, GDP per capita in 2022 was about \$56,000 in
+the US and about \$7,800 in India.
+
+  a. Roughly how many times higher was the US figure?
+  b. In 1800 the two were much closer together. What happened in between to
+     open the gap?
+
+<details class="solution">
+<summary>Solution</summary>
+
+a. About $56{,}000 \div 7{,}800 \approx 7$ times.
+
+b. Britain and then the US began sustained growth around 1800 and kept
+   growing for two centuries. India's take-off did not come until after 1950.
+   The gap is the result of starting at different times, not of one country
+   falling behind from a high level.
+
+</details>
+
+## Measuring prosperity
+
+*The GDP per capita slide.*
+
+**3.** Explain in one or two sentences:
+
+  a. What does GDP measure?
+  b. Why do we divide it by population before comparing countries?
+  c. Why is GDP per capita only a proxy for living standards, not the same
+     thing?
+
+<details class="solution">
+<summary>Solution</summary>
+
+a. GDP is a country's output: everything it produces in a year, valued at
+   market prices. That total is also everyone's total income.
+
+b. A larger country has a higher GDP simply because it has more people.
+   Dividing by population gives the average person's income, which is what we
+   want to compare.
+
+c. It is an average, so it says nothing about how income is shared out, and it
+   leaves out things people care about that are never bought or sold.
+
+</details>
+
+**4.** A haircut costs 300 pesos in Mexico City and \$30 in Los Angeles. The
+market exchange rate is 20 pesos per dollar.
+
+  a. Converted at the exchange rate, what does the Mexico City haircut cost in
+     dollars?
+  b. Both haircuts are the same service. What does your answer to (a) tell you
+     about converting Mexican incomes at the exchange rate?
+  c. What do economists do instead, and what are the resulting units called?
+
+<details class="solution">
+<summary>Solution</summary>
+
+a. $300 \div 20 = \$15$.
+
+b. The exchange rate makes the Mexican haircut look like half the service,
+   when it is the same haircut. Converting incomes this way understates what a
+   peso actually buys, so Mexico looks poorer than it is.
+
+c. They convert at *purchasing power parity* (PPP) rates, chosen so that \$20
+   buys in any country what \$20 buys in the US. Incomes converted this way are
+   measured in *international dollars*.
+
+</details>
+
+## Adam Smith
+
+*The founding question, and the Adam Smith slide.*
+
+**5.** Smith asked how millions of strangers, none of them in charge, end up
+supplying each other with what they need.
+
+  a. What name did he give his answer?
+  b. He wrote: "It is not from the benevolence of the butcher, the brewer, or
+     the baker, that we expect our dinner, but from their regard to their own
+     interest." Put that sentence in your own words.
+
+<details class="solution">
+<summary>Solution</summary>
+
+a. The *invisible hand*: markets coordinate the decisions of millions of
+   people with no one planning the result.
+
+b. The butcher sells you dinner because it is in their own interest to do so,
+   not because they care about you. Self-interested behavior, channeled through
+   markets, ends up serving other people.
+
+</details>
+
+**6.** Smith argued that prosperity came from the division of labor, and that
+the division of labor is limited by the extent of the market.
+
+  a. What is the *division of labor*?
+  b. In his pin factory, ten workers each doing one or two of eighteen steps
+     made close to 50,000 pins a day. How many could each make working alone?
+  c. What does "limited by the *extent of the market*" mean? Why could a
+     village not support the pin factory?
+  d. Name one thing that widened the market in Smith's time.
+
+<details class="solution">
+<summary>Solution</summary>
+
+a. Instead of each worker making a whole product, each specializes in one step
+   of the process.
+
+b. Barely one pin a day each. Specializing raised output by a factor of
+   thousands.
+
+c. Specialization only pays if the output can be sold. A village could not buy
+   50,000 pins a day, so a pin-maker there would have to make whole pins, and
+   other things besides, rather than specialize.
+
+d. Canals, better roads, or foreign trade. And the prosperity that followed
+   widened the market further.
+
+</details>
+
+## Technology
+
+*The technological revolution, and the technology slide.*
+
+**7.** In economics, "technology" means more than machines.
+
+  a. Give the economic definition of a technology.
+  b. Which of these is technological progress? Explain each.
+     (i) A bakery buys a second oven and bakes twice as many cakes.
+     (ii) A bakery finds a recipe that bakes the same cake with less flour and
+     in half the time.
+
+<details class="solution">
+<summary>Solution</summary>
+
+a. A technology is a process that takes a set of materials and other inputs,
+   including the work of people and machines, and creates an output. A cake
+   recipe is a technology.
+
+b. Only (ii). Technological progress reduces the inputs needed to produce a
+   given output. In (i) the bakery produces more, but it uses proportionally
+   more inputs to do it, so the technology itself has not changed. In (ii) the
+   same cake takes less flour and less time.
+
+</details>
+
+## Capitalism
+
+*From the capitalist revolution through the three institutions, and Activity 2
+on your worksheet.*
+
+**8.** Define each term, and say how the three relate to one another.
+
+  a. Economic system
+  b. Institutions
+  c. Capitalism
+
+<details class="solution">
+<summary>Solution</summary>
+
+a. A way of organizing the economy that is distinctive in its basic
+   institutions.
+
+b. The laws and informal rules that regulate social interactions among people,
+   and between people and the biosphere. The rules of the game.
+
+c. An economic system characterized by a particular combination of
+   institutions: private property, markets, and firms.
+
+So: institutions are the rules; an economic system is a way of organizing the
+economy defined by which rules it has; capitalism is the particular system
+built on those three.
+
+</details>
+
+**9.** Which of the three institutions are present in each case?
+
+  a. A family farm that grows food only for itself.
+  b. A Saturday farmers' market where growers sell their own produce.
+  c. A state-owned steel mill in East Germany in 1970.
+  d. A ride-sharing company with 1,000 drivers.
+
+<details class="solution">
+<summary>Solution</summary>
+
+a. Private property only. The family owns the farm, but nothing is bought or
+   sold and no one is hired.
+
+b. Private property and markets. Growers own what they sell and exchange
+   voluntarily, but each works for themselves rather than for a firm.
+
+c. Neither private property in capital goods nor firms in the capitalist
+   sense: the state owned the mill and output was set by a plan rather than by
+   an owner seeking profit.
+
+d. All three. The company owns capital, hires and directs drivers, and sells
+   rides on a market for profit.
+
+</details>
+
+**10.** Can a market work without private property? Can a firm exist without
+markets? Which institution has to be in place for the others to work, and why?
+
+<details class="solution">
+<summary>Solution</summary>
+
+Private property comes first. Exchange means transferring the right to use
+something, so if no one has the right to exclude others from a good or to
+transfer it, there is nothing to sell. A firm needs both: it must own its
+capital goods, and it must be able to sell its output on a market to make a
+profit.
+
+</details>
+
+## Did capitalism cause the take-off?
+
+*The causation slide, the two Germanies, and "why not everywhere?"*
+
+**11.** Capitalism spread and living standards rose at about the same time.
+
+  a. Why is that alone not enough to conclude that capitalism caused the rise?
+  b. What is a natural experiment?
+  c. Why is East versus West Germany after 1945 more convincing evidence than
+     comparing the US with India?
+
+<details class="solution">
+<summary>Solution</summary>
+
+a. Correlation is not causation. Something else could have caused both, or the
+   causation could run the other way, with rising living standards making
+   capitalist institutions more likely to spread.
+
+b. A situation in which similar people or places end up under different
+   conditions for reasons unrelated to the outcome being studied, so the
+   outcomes can be compared as if in an experiment.
+
+c. In 1950 the two Germanies had the same people, language, history, and
+   roughly the same income, and were then divided into a capitalist West and a
+   centrally planned East. Almost everything except the economic system was
+   held constant. The US and India differ in countless other ways, so a
+   comparison between them cannot isolate the effect of any one of them.
+
+</details>
+
+**12.** Most countries today are capitalist, yet living standards differ
+enormously. Give two reasons why.
+
+<details class="solution">
+<summary>Solution</summary>
+
+Any two of:
+
+- **Colonialism.** In India, living standards did not rise substantially until
+  well after independence from British rule. In much of Latin America,
+  independence in the early nineteenth century did not change economic
+  fortunes.
+- **Institutions and politics.** Capitalism is not one thing. Private property,
+  markets, or firms may fail or be poorly protected, and governments differ in
+  how well they regulate them.
+- **Public goods.** Governments also provide infrastructure, education, and the
+  rule of law, and countries differ greatly in how well they do this.
+
+</details>
+
+## The other hockey stick
+
+*Emissions, temperature, and the biosphere.*
+
+**13.** World carbon emissions have the same shape as the GDP chart: flat, then
+a steep rise.
+
+  a. Why do the two charts look alike?
+  b. The economy is drawn inside society, which is drawn inside the biosphere.
+     What does the economy take from the biosphere, and what does it send back?
+
+<details class="solution">
+<summary>Solution</summary>
+
+a. The technologies behind the take-off worked by burning carbon: coal for
+   steam engines and factories, then oil and gas. Producing more meant burning
+   more, so output and emissions rose together.
+
+b. It takes energy, materials, and food, and it returns waste, emissions, and
+   heat. The economy is not a closed loop: everything it makes starts as
+   something taken from the biosphere and ends as something returned to it.
+
+</details>
+
+**14.** Write down the definition of economics we ended on, and say which two
+kinds of interaction it covers.
+
+<details class="solution">
+<summary>Solution</summary>
+
+Economics is the study of how people interact with each other and with their
+natural environment in producing their livelihoods, and how this changes over
+time and differs across societies.
+
+The two interactions are between people (buying, selling, working, and the
+institutions that govern all of it) and between people and nature (what
+production takes from the biosphere and returns to it).
+
+</details>

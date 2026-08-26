@@ -42,7 +42,7 @@ Thumbs.db
 /.quarto/
 /site_libs/
 /_freeze/
-/*_files/
+*_files/
 *.quarto_ipynb
 
 # Editor and notebook droppings

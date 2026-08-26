@@ -317,3 +317,33 @@ mjx-container.mjx-scroll {
   overflow-y: hidden;
   vertical-align: middle;
 }
+
+/* ---------- Collapsible solutions on practice pages ---------- */
+
+/* Native <details>/<summary>: keyboard-operable and announced as a disclosure
+   widget by screen readers, with no JavaScript. Summary text is #8f4100
+   (7.7:1 on white, and still AA on the cream panel, where #BF5700 is not). */
+details.solution {
+  margin: 0.6em 0 1.4em 0;
+  border-left: 3px solid #BF5700;
+  background-color: #FDF3EA;
+  border-radius: 4px;
+  padding: 0 1em;
+}
+details.solution > summary {
+  cursor: pointer;
+  padding: 0.55em 0;
+  font-weight: 700;
+  color: #8f4100;
+  list-style-position: outside;
+}
+details.solution > summary:hover { text-decoration: underline; }
+details.solution > summary:focus-visible {
+  outline: 3px solid #8f4100;
+  outline-offset: 2px;
+}
+details.solution[open] > summary {
+  border-bottom: 1px solid #efdcc9;
+  margin-bottom: 0.6em;
+}
+details.solution > :last-child { padding-bottom: 0.8em; }

@@ -20,6 +20,11 @@ SHELL := /bin/bash
 # a lecture can be drafted in slides/ without appearing anywhere public.
 LECTURES := 1 2
 PUBLISHED_DECKS := $(foreach n,$(LECTURES),--include=slides/lecture$(n).qmd --include=slides/lecture$(n).pdf)
+# Published practice pages, same idea: a page absent from this list is not
+# rendered, so it is in the repo but nowhere on the site, not even site search.
+# Keep in step with MATERIALS in syllabus/create_schedule.py.
+PRACTICE :=
+PUBLISHED_PRACTICE := $(foreach n,$(PRACTICE),--include=practice/practice$(n).qmd)
 TMP := $(TMPDIR)econ201-build
 AUX := aux,log,out,fls,fdb_latexmk,xdv,toc,synctex.gz
 
@@ -67,7 +72,8 @@ site: schedule
 	@rsync -a --exclude .git --exclude grades --exclude quizzes --exclude references \
 	          --exclude canvas --exclude docs --exclude .quarto --exclude _freeze \
 	          $(PUBLISHED_DECKS) --exclude 'slides/lecture*.qmd' --exclude 'slides/lecture*.pdf' \
-	          --exclude 'slides/*_files' --exclude 'slides/figures' ./ $(TMP)/
+	          --exclude 'slides/*_files' --exclude 'slides/figures' \
+	          $(PUBLISHED_PRACTICE) --exclude 'practice/*' ./ $(TMP)/
 	@cd $(TMP) && quarto render
 	@# Dropbox restores files that are overwritten or deleted in place, a few
 	@# seconds after the fact, which used to leave stale pages in docs/. So the
@@ -76,14 +82,14 @@ site: schedule
 	@mkdir -p docs; ok=0; \
 	for i in 1 2 3 4 5 6; do \
 	  rsync -a --delete --checksum $(TMP)/docs/ docs/; sleep 12; \
-	  if diff -rq $(TMP)/docs docs >/dev/null; then ok=1; break; fi; \
+	  if diff -rq -x .DS_Store $(TMP)/docs docs >/dev/null; then ok=1; break; fi; \
 	  echo "    pass $$i: docs/ still differs from the render, syncing again"; \
 	done; \
 	[ $$ok = 1 ] || { echo "    docs/ never matched the render; Dropbox kept interfering. Run make site again."; exit 1; }
 	@# Dropbox has brought a deleted file back as late as 20 s after a clean
 	@# diff, so a passing check is confirmed once more after a longer wait.
-	@sleep 30; diff -rq $(TMP)/docs docs >/dev/null || { echo "    docs/ changed again after verifying; Dropbox restored something. Run make site again."; exit 1; }
-	@find docs -name "*conflicted copy*" -exec rm -rf {} + 2>/dev/null || true
+	@sleep 30; diff -rq -x .DS_Store $(TMP)/docs docs >/dev/null || { echo "    docs/ changed again after verifying; Dropbox restored something. Run make site again."; exit 1; }
+	@find docs \( -name "*conflicted copy*" -o -name .DS_Store \) -exec rm -rf {} + 2>/dev/null || true
 	@echo "    pages: $$(find $(TMP)/docs -name '*.html' ! -path '*site_libs*' | wc -l | tr -d ' ')"
 	@echo "    pdfs:  $$(find $(TMP)/docs -name '*.pdf' | wc -l | tr -d ' ')"
 	@echo "    docs/ verified identical to the render"
@@ -98,4 +104,4 @@ audit:
 # Dropbox has restored deleted files into docs/ minutes after a clean build,
 # once between an audit and a git add. Cheap to run, so run it every time.
 verify:
-	@diff -rq $(TMP)/docs docs && echo "docs/ matches the last render"
+	@diff -rq -x .DS_Store $(TMP)/docs docs && echo "docs/ matches the last render"

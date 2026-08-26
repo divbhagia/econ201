@@ -332,6 +332,10 @@ MATERIALS = {
     1: {"slides": "slides/lecture1.html", "slides_pdf": "slides/lecture1.pdf"},
     2: {"slides": "slides/lecture2.html", "slides_pdf": "slides/lecture2.pdf",
         "worksheet": "worksheets/worksheet02.pdf"},
+        # Practice problems for lecture 2 are drafted but not published yet.
+        # To publish: add the line below to lecture 2 above, and add 02 to
+        # PRACTICE in the Makefile so the page is actually rendered.
+        #   "practice": "practice/practice02.html",
 }
 
 

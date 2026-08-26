@@ -4,6 +4,7 @@ project:
   render:
     - "*.qmd"
     - "content/*.qmd"
+    - "practice/*.qmd"
     - "slides/*.qmd"
   resources:
     - syllabus/Econ201-Syllabus.pdf

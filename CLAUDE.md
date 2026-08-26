@@ -83,6 +83,13 @@ Gotchas that caused real failures:
 page must say `format: html` in its front matter or Quarto also renders it as
 a slide deck and the build fails on the rename.
 
+## Practice pages
+
+`practice/practiceNN.qmd`, gated exactly like the decks: only numbers listed in
+`PRACTICE` in the Makefile are rendered, so a page can be drafted in the repo
+without appearing on the site or in its search index. Publishing one means
+adding it to `PRACTICE` and to `MATERIALS` together.
+
 ## Schedule and content pages
 
 `schedule.qmd` and `content/*.qmd` are generated. Edit
