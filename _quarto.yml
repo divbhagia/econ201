@@ -7,6 +7,8 @@ project:
     - "slides/*.qmd"
   resources:
     - syllabus/Econ201-Syllabus.pdf
+    # Tagged-PDF slide decks built by `make slides-pdf`
+    - "slides/*.pdf"
 
 # Speaker notes are stripped from everything published to docs/.
 # Build a presenter copy with: -M strip-notes:false
@@ -32,7 +34,7 @@ website:
         aria-label: GitHub repository for this course
 
   page-footer:
-      2026 Div Bhagia | [CC BY-NC 4.0 License](https://creativecommons.org/licenses/by-nc/4.0/) |Made with [Quarto](https://quarto.org/)
+      2026 Div Bhagia | [CC BY-NC 4.0 License](https://creativecommons.org/licenses/by-nc/4.0/) | [Accessibility](/accessibility.qmd) | Made with [Quarto](https://quarto.org/)
 
 format:
   html:
@@ -40,7 +42,15 @@ format:
     toc: true
     link-external-newwindow: true
     css: assets/styles.css
+    # Makes equations that overflow a narrow viewport scrollable and
+    # keyboard-reachable (WCAG 1.4.10, 2.1.1). Keep.
+    include-after-body: assets/site-a11y.html
   revealjs:
+    # 16:9 so the deck fills a projector instead of being pillarboxed, and a
+    # moderate safe margin around the content.
+    width: 1280
+    height: 720
+    margin: 0.08
     # Published decks link their assets so git stores each image once. Build a
     # self-contained copy with: -M embed-resources:true
     embed-resources: false
@@ -54,5 +64,8 @@ format:
     transition-speed: fast
     center: false
     code-overflow: wrap
-    highlight-style: a11y-dark
+    highlight-style: a11y-light
     mathjax: true
+    # Fixes reveal.js chrome that fails WCAG at runtime: zoom blocked by the
+    # viewport meta, an unlabeled menu button, unfocusable menu panels. Keep.
+    include-after-body: assets/slides-a11y.html

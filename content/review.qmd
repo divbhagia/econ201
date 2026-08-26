@@ -1,5 +1,5 @@
 ---
-title: "Review"
+title: "practice problems"
 subtitle: "Module VI"
 sidebar: false
 toc: false

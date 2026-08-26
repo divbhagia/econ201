@@ -6,7 +6,7 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-de8274a4d1ecc1e6aaeaf6e5564b5074.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-b754b9fd3853d7e56faef54c29c5d52b.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.27">
 
   <meta name="author" content="Div Bhagia">
@@ -29,7 +29,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-177beca524bf2806c15121f2b5b3be4e.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-f3e495f982429b5e2b81da2493dfa878.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -469,12 +469,12 @@ SoCal
         // The "normal" size of the presentation, aspect ratio will be preserved
         // when the presentation is scaled to fit different resolutions. Can be
         // specified using percentage units.
-        width: 1050,
+        width: 1280,
 
-        height: 700,
+        height: 720,
 
         // Factor of the display size that should remain empty around the content
-        margin: 0.1,
+        margin: 8.0e-2,
 
         math: {
           mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
@@ -502,6 +502,28 @@ SoCal
           RevealZoom
         ]
       });
+    </script>
+    <script>
+    // Accessibility fixes for chrome that reveal.js and its menu plugin generate at
+    // runtime, so it cannot be fixed in the page source:
+    //  - the viewport meta ships user-scalable=no (fails WCAG 1.4.4: zoom blocked)
+    //  - the menu button is an icon-only link with no accessible name (2.4.4/4.1.2)
+    //  - menu panels scroll but are not keyboard-focusable (2.1.1)
+    (function () {
+      var meta = document.querySelector('meta[name="viewport"]');
+      if (meta) meta.setAttribute('content', 'width=device-width, initial-scale=1.0');
+      function fix() {
+        document.querySelectorAll('.slide-menu-button a').forEach(function (a) {
+          if (!a.getAttribute('aria-label')) a.setAttribute('aria-label', 'Slide menu');
+        });
+        document.querySelectorAll('.slide-menu-panel').forEach(function (p) {
+          if (!p.hasAttribute('tabindex')) p.setAttribute('tabindex', '0');
+        });
+      }
+      fix();
+      window.addEventListener('load', fix);
+      setTimeout(fix, 1500);
+    })();
     </script>
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {

@@ -1,5 +1,5 @@
 ---
-title: "The Big Picture"
+title: "practice problems"
 subtitle: "Module I"
 sidebar: false
 toc: false
@@ -12,7 +12,8 @@ Materials are posted as we go. See the [Schedule](../schedule.qmd) for dates and
 <h2>Lecture 1: Introduction to the course</h2>
 
 
-<p class="lecture-links"><a class="btn btn-outline-primary" href="../slides/lecture1.html" target="_blank" rel="noopener" role="button" aria-label="Lecture 1 slides (opens in a new tab)">Slides</a></p>
+<p class="lecture-links"><a class="btn btn-outline-primary" href="../slides/lecture1.html" target="_blank" rel="noopener" role="button" aria-label="Lecture 1 slides (opens in a new tab)">Slides</a>
+<a class="btn btn-outline-primary" href="../slides/lecture1.pdf" target="_blank" rel="noopener" role="button" aria-label="Lecture 1 slides as a tagged PDF (opens in a new tab)">Slides (PDF)</a></p>
 :::
 
 ::: {.lecture}

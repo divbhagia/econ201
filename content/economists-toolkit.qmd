@@ -1,5 +1,5 @@
 ---
-title: "The Economist's Toolkit"
+title: "practice problems"
 subtitle: "Module II"
 sidebar: false
 toc: false

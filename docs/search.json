@@ -16,42 +16,49 @@
   {
     "objectID": "content/the-big-picture.html",
     "href": "content/the-big-picture.html",
-    "title": "The Big Picture",
+    "title": "practice problems",
     "section": "",
-    "text": "Materials are posted as we go. See the Schedule for dates and assessments.\n\n\nLecture 1: Introduction to the course\n\n\nSlides\n\n\n\n\nLecture 2: The capitalist takeoff: Prosperity and its shadows\n\n\nReading: 1.1–1.5; 1.8–1.10\n\n\nMaterials posted closer to the date."
+    "text": "Materials are posted as we go. See the Schedule for dates and assessments.\n\n\nLecture 1: Introduction to the course\n\n\nSlides Slides (PDF)\n\n\n\n\nLecture 2: The capitalist takeoff: Prosperity and its shadows\n\n\nReading: 1.1–1.5; 1.8–1.10\n\n\nMaterials posted closer to the date."
   },
   {
     "objectID": "content/markets-with-many-buyers-and-sellers.html",
     "href": "content/markets-with-many-buyers-and-sellers.html",
-    "title": "Markets with Many Buyers and Sellers",
+    "title": "practice problems",
     "section": "",
     "text": "Materials are posted as we go. See the Schedule for dates and assessments.\n\n\nLecture 14: Classroom market experiment\n\n\nMaterials posted closer to the date.\n\n\n\n\nLecture 15: Cotton, war, and world markets: Supply and demand\n\n\nReading: 8.1–8.2\n\n\nMaterials posted closer to the date.\n\n\n\n\nLecture 16: Taking prices as given: Firms and consumers in competitive markets\n\n\nReading: 8.3–8.4\n\n\nMaterials posted closer to the date.\n\n\n\n\nLecture 17: Who gets what: Allocation, distribution, and the gains from trade\n\n\nReading: 8.5\n\n\nMaterials posted closer to the date.\n\n\n\n\nLecture 18: The quinoa boom: Shifts in supply and demand\n\n\nReading: 8.6\n\n\nMaterials posted closer to the date.\n\n\n\n\nLecture 19: Oil booms and busts: Market dynamics in the short run and long run\n\n\nReading: 8.7–8.10\n\n\nMaterials posted closer to the date.\n\n\n\n\nLecture 20: Salt taxes and rent control: Governments in the market\n\n\nReading: 8.12–8.13\n\n\nMaterials posted closer to the date."
   },
   {
     "objectID": "content/firms-as-price-setters.html",
     "href": "content/firms-as-price-setters.html",
-    "title": "Firms as Price Setters",
+    "title": "practice problems",
     "section": "",
     "text": "Materials are posted as we go. See the Schedule for dates and assessments.\n\n\nLecture 5: Winning brands and the price of Cheerios\n\n\nReading: 7.1–7.2\n\n\nMaterials posted closer to the date.\n\n\n\n\nLecture 6: What does it cost to make a car? Scale and the cost of production\n\n\nReading: 7.3–7.4\n\n\nMaterials posted closer to the date.\n\n\n\n\nLecture 7: Who can get away with raising prices? Demand and elasticity\n\n\nReading: 7.5\n\n\nMaterials posted closer to the date.\n\n\n\n\nLecture 8: Steak, ramen, and recessions: Other elasticities\n\n\nMaterials posted closer to the date.\n\n\n\n\nLecture 9: Sweet spot: Choosing the price and quantity that maximize profit\n\n\nReading: 7.6\n\n\nMaterials posted closer to the date.\n\n\n\n\nLecture 10: The surplus from a sale and who captures it\n\n\nReading: 7.7\n\n\nMaterials posted closer to the date.\n\n\n\n\nLecture 11: Standing out from the crowd: Product differentiation and competition\n\n\nReading: 7.8–7.9\n\n\nMaterials posted closer to the date.\n\n\n\n\nLecture 12: Price wars: Strategic price setting and Nash equilibrium\n\n\nReading: 7.10; 4.2–4.3\n\n\nMaterials posted closer to the date.\n\n\n\n\nLecture 13: Winner takes the market: Natural monopolies and competition policy\n\n\nReading: 7.11–7.12\n\n\nMaterials posted closer to the date."
   },
   {
+    "objectID": "accessibility.html",
+    "href": "accessibility.html",
+    "title": "Accessibility",
+    "section": "",
+    "text": "This site is designed to conform to the Web Content Accessibility Guidelines (WCAG) 2.1, Level AA, the standard adopted by the U.S. Department of Justice for state and local government web content under Title II of the ADA (28 CFR Part 35).\nWhat that looks like here:\n\nPages are semantic HTML with proper headings, landmarks, and labels, and work with keyboard navigation and screen readers.\nMathematics is rendered as MathML, so screen readers can read equations term by term rather than encountering an image.\nFigures carry text descriptions, tables carry header markup, and color is never the only carrier of meaning. Text contrast meets or exceeds the 4.5:1 minimum.\nPages reflow for small screens and zoom to 200% without horizontal scrolling; wide tables and equations scroll within their own frame and are keyboard-reachable.\nEvery PDF on the site (the syllabus, worksheets, slide decks) is tagged and validated against the PDF/UA-2 standard with veraPDF.\nLecture slides are keyboard-navigable and their content is available to screen readers. Each deck is also available as a tagged PDF (one slide per page, validated against PDF/UA-2) from the module pages under Content.\n\nIf you hit a barrier on this site or in any course material, please email me at dbhagia@fullerton.edu and I will fix it or provide the material in a form that works for you. For accommodations at CSUF more broadly, contact Disability Support Services.\nLast reviewed: August 2026."
+  },
+  {
     "objectID": "content/economists-toolkit.html",
     "href": "content/economists-toolkit.html",
-    "title": "The Economist’s Toolkit",
+    "title": "practice problems",
     "section": "",
     "text": "Materials are posted as we go. See the Schedule for dates and assessments.\n\n\nLecture 3: Making economic decisions: Opportunity cost, rents, and incentives\n\n\nReading: 2.2; 2.8\n\n\nMaterials posted closer to the date.\n\n\n\n\nLecture 4: Why do markets matter? Specialization and comparative advantage\n\n\nReading: 2.3\n\n\nMaterials posted closer to the date."
   },
   {
     "objectID": "content/market-successes-and-failures.html",
     "href": "content/market-successes-and-failures.html",
-    "title": "Market Successes and Failures",
+    "title": "practice problems",
     "section": "",
     "text": "Materials are posted as we go. See the Schedule for dates and assessments.\n\n\nLecture 21: Bananas, fish, and cancer: Private vs. social value wedge\n\n\nReading: 10.1–10.2\n\n\nMaterials posted closer to the date.\n\n\n\n\nLecture 22: Closing the wedge: Property rights, bargaining, and regulation\n\n\nReading: 10.3–10.5\n\n\nMaterials posted closer to the date.\n\n\n\n\nLecture 23: Free riders and empty oceans: Public goods and common resources\n\n\nReading: 10.6–10.7\n\n\nMaterials posted closer to the date.\n\n\n\n\nLecture 24: The limits of markets\n\n\nReading: 10.8–10.11\n\n\nMaterials posted closer to the date."
   },
   {
     "objectID": "content/review.html",
     "href": "content/review.html",
-    "title": "Review",
+    "title": "practice problems",
     "section": "",
     "text": "Materials are posted as we go. See the Schedule for dates and assessments.\n\n\nLecture 25: Review and Synthesis I\n\n\nMaterials posted closer to the date.\n\n\n\n\nLecture 26: Review and Synthesis II\n\n\nMaterials posted closer to the date."
   },

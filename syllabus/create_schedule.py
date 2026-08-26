@@ -327,7 +327,9 @@ MODULE_SLUG = {
 # number here, with whatever it has, and both the schedule and the module
 # page pick it up on the next run.
 MATERIALS = {
-    1: {"slides": "slides/lecture1.html"},
+    # slides_pdf is the tagged-PDF copy of the deck (make slides-pdf), which
+    # the accessibility statement promises for every published deck.
+    1: {"slides": "slides/lecture1.html", "slides_pdf": "slides/lecture1.pdf"},
 }
 
 
@@ -467,14 +469,16 @@ for idx, (label, sessions) in enumerate(MODULES.items()):
         topic, reading = PLAN[s]
         m = MATERIALS.get(lec, {})
         links = []
-        for key, text in (("slides", "Slides"),
-                          ("worksheet", "Worksheet"),
-                          ("practice", "Practice problems")):
+        for key, text, label in (
+                ("slides", "Slides", "slides"),
+                ("slides_pdf", "Slides (PDF)", "slides as a tagged PDF"),
+                ("worksheet", "Worksheet", "worksheet"),
+                ("practice", "Practice problems", "practice problems")):
             if m.get(key):
                 links.append(
                     f'<a class="btn btn-outline-primary" href="../{m[key]}" '
                     f'target="_blank" rel="noopener" role="button" '
-                    f'aria-label="Lecture {lec} {text.lower()} '
+                    f'aria-label="Lecture {lec} {label} '
                     f'(opens in a new tab)">{text}</a>'
                 )
         link_html = ('<p class="lecture-links">' + "\n".join(links) + '</p>'

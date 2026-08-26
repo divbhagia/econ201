@@ -8,9 +8,9 @@ format: html
 ::: {.grid .intro}
 
 ::: {.g-col-12 .g-col-md-6 .g-col-lg-8}
-<p style="font-size:1.25em;">
+::: {.hero}
 Learn how people and firms make decisions, how markets coordinate millions of those decisions, why markets sometimes fail, and when government intervention helps or hurts.
-</p>
+:::
 
 ECON 201 | Fall 2026 | College of Business and Economics | California State University
 
@@ -18,19 +18,20 @@ ECON 201 | Fall 2026 | College of Business and Economics | California State Univ
 
 ::: {.g-col-12 .g-col-md-12 .g-col-lg-4}
 ## Instructor
-{{< fa user >}} &nbsp; [Dr. Div Bhagia](https://www.dbhagia.com) <br>
-{{< fa university >}} &nbsp; Office: SGMH 3361 <br>
-{{< fa envelope >}} &nbsp; [dbhagia@fullerton.edu](mailto:dbhagia@fullerton.edu) <br>
+<span aria-hidden="true">{{< fa user >}}</span> &nbsp; [Dr. Div Bhagia](https://www.dbhagia.com) <br>
+<span aria-hidden="true">{{< fa university >}}</span> &nbsp; Office: SGMH 3361 <br>
+<span aria-hidden="true">{{< fa envelope >}}</span> &nbsp; [dbhagia@fullerton.edu](mailto:dbhagia@fullerton.edu) <br>
 :::
 
 ::: {.g-col-12 .g-col-md-12 .g-col-lg-8}
 ## Course Details
-{{< fa location-dot >}} &nbsp; SGMH 1506, Monday & Wednesday, 1:00-2:15 PM <br>
-{{< fa clock >}} &nbsp; Office hours:
-<ul style="margin-top: 0; margin-left: -1.5em;">
+<span aria-hidden="true">{{< fa location-dot >}}</span> &nbsp; SGMH 1506, Monday & Wednesday, 1:00-2:15 PM <br>
+<span aria-hidden="true">{{< fa clock >}}</span> &nbsp; Office hours:
+
+::: {.office-hours}
 - Wednesday, 2:30-5:15 PM, or
 - By appointment (in-person or on [Zoom](https://fullerton.zoom.us/j/81895171931))
-</ul>
+:::
 :::
 
 :::

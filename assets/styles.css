@@ -59,6 +59,10 @@ table {
 
 .quick-links { margin-bottom: 2.5rem; }
 
+/* Office-hours list on the home page: tight against the "Office hours:" line.
+   (A div + markdown list; a raw <ul> around list items emits invalid nesting.) */
+.office-hours ul { margin-top: 0; margin-bottom: 0.5em; }
+
 .qcard {
   height: 100%;
   border: 1px solid #e3e3e3;
@@ -218,7 +222,7 @@ table.schedule-table tbody tr:last-child > * { border-bottom: none; }
     font-weight: 700;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: #BF5700;
+    color: #8f4100;   /* 6.6:1 on the cream assessment card; #BF5700 fails there */
     padding-bottom: 0.35em !important;
     margin-bottom: 0.55em;
     border-bottom: 2px solid #BF5700 !important;
@@ -275,7 +279,7 @@ div.lecture {
 }
 div.lecture h2 {
   font-size: 1.35rem;
-  color: #BF5700;
+  color: #8f4100;   /* on the tinted block; #BF5700 is only 4.4:1 there */
   margin-top: 0;
   margin-bottom: 0.45em;
 }
@@ -285,8 +289,31 @@ p.lecture-links .btn {
   margin: 0.15em 0.35em 0.15em 0;
   font-size: 0.95rem;
   padding: 0.35em 0.9em;
-  color: #BF5700;
+  color: #8f4100;         /* on the tinted lecture block; #BF5700 is 4.4:1 there */
   border-color: #BF5700;
 }
 p.lecture-links .btn:hover { background-color: #BF5700; color: #fff; }
 p.lecture-links.dim { color: #6b6b6b; font-style: italic; }
+
+/* ---------- Reflow and equations (WCAG 1.4.10) ---------- */
+
+/* Images never force the page wider than the viewport, and a display
+   equation too wide for a phone scrolls inside its own box instead of
+   scrolling the whole page sideways. */
+main img { max-width: 100%; height: auto; }
+mjx-container[display="true"] {
+  display: block;
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
+}
+/* Applied by assets/site-a11y.html only to equations that actually poke past
+   the viewport (long inline ones, mostly). Not a blanket rule: overflow on an
+   inline-block shifts its baseline, so only offenders get it. */
+mjx-container.mjx-scroll {
+  display: inline-block;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  vertical-align: middle;
+}

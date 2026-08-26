@@ -3,17 +3,7 @@
 grades/
 quizzes/
 references/
-
-# Canvas API script: kept out of the public repo.
-canvas-upload.py
-
-# Student data and credentials. grades/ is already excluded above; these
-# patterns are a second line of defence in case such a file lands elsewhere.
-canvas-token*
-scores*.csv
-roster*.csv
-*.env
-.env*
+canvas/
 
 # LaTeX build artifacts
 *.aux
@@ -45,16 +35,10 @@ Thumbs.db
 *.swp
 *~
 
-# Dropbox sync artifacts. These appeared repeatedly during batch test runs.
+# Dropbox sync artifacts
 *conflicted copy*
 
-# Presenter copies of slides: these keep the speaker notes, so they must
-# never reach the public site.
-*-presenter.html
-
-# Quarto site build. The leading slash keeps these to the project root, so
-# the equivalent asset folders inside docs/ stay tracked and the published
-# site does not lose its resources.
+# Quarto site build artifacts
 /.quarto/
 /site_libs/
 /_freeze/
@@ -66,6 +50,10 @@ Thumbs.db
 .Rhistory
 
 **/*.quarto_ipynb
+/.luarc.json
 
-# Local backup of speaker notes: never publish or commit
-*-notes-backup.md
+# Kept by scripts/build_slides_pdf.py when a deck fails veraPDF, for inspection
+scripts/failed-deck*.pdf
+
+# Leftover from an interrupted site build
+/docs-old/

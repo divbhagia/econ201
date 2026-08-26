@@ -17,21 +17,37 @@ $presentation-font-size-root: 40px;
 
 /*-- scss:rules --*/
 
+// Reveal's default slide number is #848789, 3.6:1 on white: fails WCAG 1.4.3.
+.reveal .slide-number { color: #595a5b; background-color: transparent; }
+
 // Slide headings: near-black with an accent rule. Orange is reserved for
 // emphasis and section dividers, which keeps contrast high on a projector.
 .reveal h2 {
   color: #BF5700;
-  font-size: 1.6em;
+  text-align: center;
+  font-size: 1.45em;
   font-weight: 700;
   border-bottom: 2px solid #e8c3a3;
   padding-bottom: 0.15em;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.3em;
 }
 // Titles sit at the top of every slide and stay there, because reveal sets
 // `display: block` inline on the current slide (flex layouts are ignored).
 // Use `{.center}` on a slide whose whole content, title included, should be
 // centred vertically; that is reveal's own mechanism.
-.reveal .slides section { text-align: left; }
+// Extra breathing room on the sides beyond reveal's uniform safe margin.
+.reveal .slides section {
+  text-align: left;
+  padding-left: 64px;
+  padding-right: 64px;
+  box-sizing: border-box;
+}
+// Reveal sizes a lone image to the free height under the title, or to the
+// full slide width if that binds first. It ignores the padding above, so
+// full-slide figures are drawn with an aspect ratio under about 1.9 (see
+// slides/figures/make_lecture2.py), which keeps height the binding side.
+// Do not force the image height from CSS: Reveal measures free space by
+// zeroing the height, and an !important override breaks that.
 .reveal .slides section > h2:first-child { margin-top: 0; }
 
 // Contact line under a slide title.
@@ -110,7 +126,7 @@ $presentation-font-size-root: 40px;
 }
 .reveal .slides section.quarto-title-block h1.title {
   color: #BF5700;
-  font-size: 1.6em;
+  font-size: 1.45em;
   font-weight: 700;
   line-height: 1.15;
   border-bottom: none;
@@ -133,11 +149,36 @@ $presentation-font-size-root: 40px;
 .reveal .dim, .reveal .figcap { color: #6b6b6b; }
 .reveal .figcap { font-size: 0.6em; }
 
-// Commentary beside a figure: a step down from body size so three or four
-// short points fit in a 40% column without crowding the chart.
-.reveal .commentary { font-size: 0.82em; }
-.reveal .commentary ul li { margin-bottom: 0.35em; line-height: 1.25; }
-.reveal .commentary .takeaway { font-size: 1.05em; }
+// A lone image on a slide is auto-stretched by Quarto to the remaining
+// height. It is a block, so centre it; otherwise it hugs the left edge.
+.reveal .slides section img.r-stretch {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Quotations: italic, set off by a rule in the accent, no box or shadow.
+.reveal blockquote {
+  font-style: italic;
+  font-size: 0.92em;
+  line-height: 1.35;
+  color: #333;
+  background: none;
+  box-shadow: none;
+  border-left: 5px solid #BF5700;
+  margin: 0.3em 0 0.5em 0.6em;
+  padding: 0.1em 0 0.1em 0.7em;
+  width: auto;
+}
+.reveal blockquote p { margin: 0; }
+.reveal blockquote .who { display: block; font-style: normal; font-size: 0.8em; color: #6b6b6b; margin-top: 0.25em; }
+
+// Short statements without bullet markers, spaced like a wide list.
+.reveal .plain p { margin: 0 0 0.6em 0; }
+.reveal .plain blockquote { margin-top: 0.1em; }
+
+// An image given an explicit width is not auto-stretched; centre it.
+.reveal .slides section > p > img { display: block; margin-left: auto; margin-right: auto; }
 
 // Boxed takeaway, for the sentence you want them to leave with.
 .reveal .takeaway {
@@ -153,11 +194,18 @@ $presentation-font-size-root: 40px;
   font-style: normal;
   font-weight: 700;
 }
+// On the cream takeaway panel the accent is only 4.19:1; use the darker orange.
+.reveal .takeaway em { color: #8f4100; }
 
 // Tighter list and table spacing, so a long list still fits at full size
 // rather than needing a smaller font on one slide.
 .reveal ul, .reveal ol { margin-bottom: 0; }
 .reveal ul li, .reveal ol li { margin-bottom: 0.12em; line-height: 1.22; }
+// Wide spacing between first-level items; nested lists stay tight.
+.reveal .slides section > ul > li,
+.reveal .slides section > ol > li,
+.reveal .column > ul > li,
+.reveal .column > ol > li { margin-bottom: 0.6em; }
 .reveal table { font-size: 0.88em; }
 // Rules above and below a table, booktabs style.
 .reveal .ruled table {
@@ -166,3 +214,9 @@ $presentation-font-size-root: 40px;
 }
 .reveal table td, .reveal table th { padding: 0.1em 0.4em; }
 .reveal .columns { align-items: center; }
+// Text beside a figure runs about two points smaller than full-width text
+// (36px against the 40px root), since the column is narrow.
+.reveal .column { font-size: 0.9em; }
+// A lone image in a column arrives wrapped in a paragraph with a top margin;
+// drop it so figure and text start level.
+.reveal .column > p:first-child { margin-top: 0; }

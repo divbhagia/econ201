@@ -10,7 +10,6 @@ format:
     footer: "ECON 201 · Lecture N"
     filters:
       - ../assets/strip-notes.lua
-    filters:
       - ../assets/section-slides.lua
 ---
 
@@ -22,6 +21,9 @@ Slide classes:
   {.center}   centre the slide vertically, title included (reveal's own)
   {.tcenter}  centre the text horizontally
   {.smaller}  shrink the type on a dense slide (Quarto's own)
+
+Every image needs fig-alt saying what it shows (WCAG 1.1.1, and it is what
+the tagged-PDF deck uses too). Photos in raw HTML need alt="..." instead.
 -->
 
 ## One idea, no figure {.center}
@@ -45,7 +47,7 @@ The sentence you want them to leave with.
 :::
 
 ::: {.column width="48%"}
-![](img/figure-name.png)
+![](img/figure-name.png){fig-alt="What the figure shows, in a sentence or two: axes, series, and the pattern a sighted reader would take from it"}
 
 ::: {.figcap}
 Source: CORE Figure X.Y
