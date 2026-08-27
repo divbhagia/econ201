@@ -331,6 +331,7 @@ MATERIALS = {
     # the accessibility statement promises for every published deck.
     1: {"slides": "slides/lecture1.html", "slides_pdf": "slides/lecture1.pdf"},
     2: {"slides": "slides/lecture2.html", "slides_pdf": "slides/lecture2.pdf",
+        "practice": "practice/practice02.html",
         "worksheet": "worksheets/worksheet02.pdf"},
         # Practice problems for lecture 2 are drafted but not published yet.
         # To publish: add the line below to lecture 2 above, and add 02 to
@@ -357,10 +358,16 @@ def _icons(lec):
             f'aria-label="Lecture {lec} worksheet, PDF (opens in a new tab)">'
             f'<span aria-hidden="true">\U0001F5D2\uFE0F</span></a>'
         )
+    if m.get("notes"):
+        out.append(
+            f'<a href="{m["notes"]}" target="_blank" rel="noopener" '
+            f'aria-label="Lecture {lec} notes, PDF (opens in a new tab)">'
+            f'<span aria-hidden="true">\U0001F4C4</span></a>'
+        )
     if m.get("practice"):
         out.append(
             f'<a href="{m["practice"]}" target="_blank" rel="noopener" '
-            f'aria-label="Lecture {lec} practice problems (opens in a new tab)">'
+            f'aria-label="Lecture {lec} guided reading and practice (opens in a new tab)">'
             f'<span aria-hidden="true">\u270D\uFE0F</span></a>'
         )
     return " ".join(out)
@@ -451,7 +458,8 @@ Quizzes are given at the start of class on the dates marked below.
 <p class="materials-legend">
 <span aria-hidden="true">🖥️</span> Slides &nbsp;
 <span aria-hidden="true">🗒️</span> Worksheet (PDF) &nbsp;
-<span aria-hidden="true">✍️</span> Practice problems
+<span aria-hidden="true">📄</span> Notes (PDF) &nbsp;
+<span aria-hidden="true">✍️</span> Guided reading and practice
 </p>
 
 ```{{=html}}
@@ -475,16 +483,20 @@ for idx, (label, sessions) in enumerate(MODULES.items()):
         topic, reading = PLAN[s]
         m = MATERIALS.get(lec, {})
         links = []
-        for key, text, label in (
+        # `what`, not `label`: `label` is the module name this page is titled
+        # after, and shadowing it here silently retitled every module page.
+        for key, text, what in (
                 ("slides", "Slides", "slides"),
                 ("slides_pdf", "Slides (PDF)", "slides as a tagged PDF"),
-                ("worksheet", "Worksheet", "worksheet"),
-                ("practice", "Practice problems", "practice problems")):
+                ("notes", "Notes", "notes as a PDF"),
+                ("practice", "Guided reading and practice",
+                 "guided reading questions and practice problems"),
+                ("worksheet", "Worksheet", "worksheet")):
             if m.get(key):
                 links.append(
                     f'<a class="btn btn-outline-primary" href="../{m[key]}" '
                     f'target="_blank" rel="noopener" role="button" '
-                    f'aria-label="Lecture {lec} {label} '
+                    f'aria-label="Lecture {lec} {what} '
                     f'(opens in a new tab)">{text}</a>'
                 )
         link_html = ('<p class="lecture-links">' + "\n".join(links) + '</p>'

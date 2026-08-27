@@ -1,5 +1,5 @@
 ---
-title: "practice problems"
+title: "Firms as Price Setters"
 subtitle: "Module III"
 sidebar: false
 toc: false

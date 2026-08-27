@@ -1,5 +1,5 @@
 ---
-title: "practice problems"
+title: "Markets with Many Buyers and Sellers"
 subtitle: "Module IV"
 sidebar: false
 toc: false

@@ -72,7 +72,7 @@ Note: When comparing countries, GDP is converted so that \$20 buys what \$20 buy
 
 ::: {.fragment}
 - According to him, prosperity came from the *division of labor/specialization*, which is limited by the *extent of the market*.
-  - Pin factory example: ten workers, each doing one or two of 18 steps, made close to 50,000 pins a day. Working alone, barely one each.
+  - Pin factory example: ten workers, each doing one or two of 18 steps, made close to 50,000 pins a day. Working alone, none could have made twenty.
   - However, that many pins need buyers far beyond the town. Canals and trade increased the extent of the market.
 :::
 
@@ -135,12 +135,16 @@ Worksheet, Activity 2: pair up and work through both questions.
 ## Did Capitalism Cause the Take-off?
 
 - Capitalism spread and living standards rose at the same time. But *correlation is not causation*: something else could have caused both, or rising living standards might have caused capitalism to spread
-- To find out, economists look for a *natural experiment*: a situation in which similar people or places end up under different conditions by chance, so that the outcomes can be compared
-- The division of Germany after the Second World War is one. The same people, with the same history, were split into a capitalist West and a centrally planned East
+- To find out, economists look for a *natural experiment*: a study that exploits a difference in conditions between two populations that arose for external reasons, such as a difference in laws or policies
+- The division of Germany after the Second World War is one. Living standards in the two regions were similar before the war; afterwards the same people, with the same history, lived under a capitalist West and a centrally planned East
 
 ## Central Planning versus Capitalism
 
-![](img/germanies.svg){fig-alt="GDP per capita in West Germany and East Germany from 1950 to 1989, in 1990 international dollars. Both start near $2,000 to $4,000 in 1950. West Germany rises steadily to about $18,000 by 1989; East Germany rises more slowly to about $8,000. The gap widens every decade."}
+![](img/germanies.svg){fig-alt="GDP per capita in West Germany and East Germany from 1950 to 1989, in 1990 international dollars. West Germany starts near $4,300 and rises to about $18,000; East Germany starts near $2,100 and rises to about $8,400. East Germany stays at roughly half the Western level throughout."}
+
+::: {.plain}
+By 1989 income per person in the East was less than half the West's. But CORE is careful here: we cannot conclude that capitalism always grows faster and planning always stagnates. Japan and Spain grew just as fast with quite different institutions.
+:::
 
 ## Why Not Everywhere?
 
@@ -170,7 +174,7 @@ World carbon dioxide emissions from fossil fuels and industry, 1750 to 2024.
 ## What Is Economics? 
 
 ::: {.takeaway}
-*Economics* is the study of how people interact with each other and with their natural environment in producing their livelihoods, and how this changes over time and differs across societies.
+*Economics* is the study of how people interact with each other and with their natural environment in producing and acquiring their livelihoods, and how this changes over time and differs across societies.
 :::
 
 - In the next two weeks: how people and firms make decisions, and why specialization and trade make everyone better off
@@ -178,10 +182,10 @@ World carbon dioxide emissions from fossil fuels and industry, 1750 to 2024.
 
 ## What to Do Next
 
-- Read sections 1.2, 1.5, and 1.8 closely; you can skim the rest of the assigned reading. 
-- Go over the slides; a short summary of today will also be posted.
-- Work on the practice questions and finish the worksheet. 
-- *Quiz 1 is Monday*, on today's material
+- Read sections 1.2, 1.5, and 1.8 closely, with the *guided reading questions* in hand; skim the rest of the assigned reading
+- Go over the slides and the *lecture notes*, both posted on the course website
+- Work the *practice problems* with the solutions closed, and finish the worksheet
+- *Quiz 1 is Monday*: four questions, two from the practice problems, one from the guided reading, one you have not seen
 
 ## Sources {.smaller}
 

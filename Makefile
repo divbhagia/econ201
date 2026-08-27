@@ -23,7 +23,7 @@ PUBLISHED_DECKS := $(foreach n,$(LECTURES),--include=slides/lecture$(n).qmd --in
 # Published practice pages, same idea: a page absent from this list is not
 # rendered, so it is in the repo but nowhere on the site, not even site search.
 # Keep in step with MATERIALS in syllabus/create_schedule.py.
-PRACTICE :=
+PRACTICE := 02
 PUBLISHED_PRACTICE := $(foreach n,$(PRACTICE),--include=practice/practice$(n).qmd)
 TMP := $(TMPDIR)econ201-build
 AUX := aux,log,out,fls,fdb_latexmk,xdv,toc,synctex.gz
@@ -71,6 +71,7 @@ site: schedule
 	@rm -rf $(TMP)
 	@rsync -a --exclude .git --exclude grades --exclude quizzes --exclude references \
 	          --exclude canvas --exclude docs --exclude .quarto --exclude _freeze \
+	          --exclude notes \
 	          $(PUBLISHED_DECKS) --exclude 'slides/lecture*.qmd' --exclude 'slides/lecture*.pdf' \
 	          --exclude 'slides/*_files' --exclude 'slides/figures' \
 	          $(PUBLISHED_PRACTICE) --exclude 'practice/*' ./ $(TMP)/

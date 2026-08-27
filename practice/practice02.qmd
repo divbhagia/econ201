@@ -1,376 +1,170 @@
 ---
-title: "Practice Problems 2"
-subtitle: "Lecture 2: The capitalist takeoff"
+title: "Lecture 2: Guided Reading and Practice"
+subtitle: "The capitalist takeoff: prosperity and its shadows"
 sidebar: false
-toc: false
+toc: true
+toc-title: "On this page"
 format: html
 ---
 
-These follow [Lecture 2](../slides/lecture2.html) in order, section by section,
-and the reading behind it (CORE 1.1&ndash;1.5 and 1.8&ndash;1.10). They are not
-graded, but attempt them all before the quiz: the quiz questions look like
-these. Each problem has a **Solution** toggle, so try it yourself first, then
-expand to check.
+Below you will find guided reading questions for the three sections you were asked to read closely, and some practice problems. Do the reading with the guided reading questions in hand, then attempt the practice problems. The slides are [here](../slides/lecture2.html).
 
 ## Guided reading
 
-Read sections **1.2**, **1.5**, and **1.8** closely, and skim the rest. Keep
-these questions in mind as you read: the answers are all in the text, and the
-problems below check the same ideas.
+As you read sections **1.2**, **1.5**, and **1.8**, pause at each question and check that you can answer it before moving on.
 
 **1.2 History's hockey stick**
 
-  a. What is the shape the section is named after, and what is on each axis?
-  b. Why does the book insist on GDP *per capita* rather than GDP?
-  c. What are international dollars, and what problem do they solve?
-  d. Which country's line turns upward first, and roughly when?
+  a. Open the interactive version of Figure 1.1 and switch countries on and off. Can you find a country whose hockey stick has not yet tipped upward? 
+  b. The gist of the section is that living standards were flat for most of history and then took off. How does the section measure living standards?
+  c. What does Adam Smith mean by the *invisible hand*? 
+  d. According to Adam Smith, what is a significant source of prosperity, and what constrains it?
 
 **1.5 The continuous technological revolution**
 
-  a. What does a technology mean here, and how is that broader than everyday
-     use of the word?
-  b. What makes a change in technology *progress*?
-  c. What did the new technologies of the Industrial Revolution have in common
-     in the way they were powered?
-  d. Why does the book call the revolution *continuous* rather than a one-off
-     event?
+  a. How does the book define *technology*, and what homely example does it use? 
+  b. What then makes a change in technology count as *technological progress*?
+  c. How much more efficient was lighting in 1992 than 200 years earlier?
+  d. Why are steam engines considered a *general-purpose* technology (GPT)?
 
 **1.8 Capitalist institutions**
 
-  a. What is an institution? What is an economic system?
-  b. Name the three institutions that define capitalism.
-  c. What exactly does owning something as private property entitle you to do?
-  d. What distinguishes a firm from a family growing food for itself?
+  a. How does the book define capitalism, and what are its three components?
+  b. Why are markets and private property essential for firms to function?
+  c. How does a centrally planned economy differ from a market economy? Give some examples of centrally planned economies.
+  d. What are two ways that organizing production in firms increased worker productivity?
 
-## History's hockey stick
+## Practice problems
 
-*The first two charts, and Activity 1 on your worksheet.*
+Write your answer down before you open a **Solution**.
 
-**1.** For most of the last thousand years, GDP per capita was roughly flat
-everywhere. Then it began to rise.
+### Multiple choice
 
-  a. Roughly when did sustained growth begin in Britain?
-  b. Did every country's take-off happen at the same time? Order the five
-     countries on the chart from earliest to latest.
-  c. What does the flat part of the chart tell you about how a person's living
-     standard compared with their grandparents'?
+**1.** Which statement best describes what the hockey stick chart shows?
+
+  a. Rich countries have been far ahead of poor ones for many centuries.
+  b. All countries began to grow at about the same time, but at different speeds.
+  c. Living standards were low and similar almost everywhere for most of the past thousand years, and the large gaps between countries opened up only in the last two centuries.
+  d. Living standards have risen steadily in every country since the year 1000.
 
 <details class="solution">
 <summary>Solution</summary>
 
-a. Around 1800. Growth is visible from about 1700 and unmistakable after 1800.
-
-b. No. Britain first, then the US during the 1800s, then Mexico, China, and
-   India, whose lines only turn upward in the second half of the twentieth
-   century.
-
-c. It was about the same. Living standards moved up and down with harvests,
-   disease, and war, but there was no sustained improvement from one
-   generation to the next.
+**(c).** Today's gaps are not an old feature of the world: in 1600 the five countries on the chart are nearly indistinguishable. The divergence was produced by countries starting sustained growth at different times.
 
 </details>
 
-**2.** On the chart we looked at, GDP per capita in 2022 was about \$56,000 in
-the US and about \$7,800 in India.
+**2.** What does Adam Smith's *invisible hand* describe?
 
-  a. Roughly how many times higher was the US figure?
-  b. In 1800 the two were much closer together. What happened in between to
-     open the gap?
+  a. Governments steering the economy through regulation of prices and wages.
+  b. Self-interested individuals promoting the interest of society, though that was no part of their intention.
+  c. Wealthy individuals quietly controlling prices from behind the scenes.
+  d. The tendency of technology to keep improving from one generation to the next.
 
 <details class="solution">
 <summary>Solution</summary>
 
-a. About $56{,}000 \div 7{,}800 \approx 7$ times.
+**(b).** The *invisible hand* is Smith's metaphor for the way markets coordinate the self-interested actions of individuals into outcomes that serve society. Smith's famous illustration: we expect our dinner not from the benevolence of the butcher, the brewer, or the baker, but from their regard to their own interest. Each of them serves us because doing so serves themselves, and yet the result is that society gets fed, without anyone planning or intending it.
 
-b. Britain and then the US began sustained growth around 1800 and kept
-   growing for two centuries. India's take-off did not come until after 1950.
-   The gap is the result of starting at different times, not of one country
-   falling behind from a high level.
 
 </details>
 
-## Measuring prosperity
+**3.** Adam Smith said the division of labour/specialisation is limited by the *extent of the market*. What does that mean?
 
-*The GDP per capita slide.*
-
-**3.** Explain in one or two sentences:
-
-  a. What does GDP measure?
-  b. Why do we divide it by population before comparing countries?
-  c. Why is GDP per capita only a proxy for living standards, not the same
-     thing?
+  a. Only large firms are able to specialise.
+  b. Specialising is only worth doing if there are enough buyers for the extra output.
+  c. Governments must build canals and roads before firms can specialise.
+  d. Workers can only specialise if someone trains them first.
 
 <details class="solution">
 <summary>Solution</summary>
 
-a. GDP is a country's output: everything it produces in a year, valued at
-   market prices. That total is also everyone's total income.
+**(b).** Smith's pin factory shows that specialisation makes workers more productive: divided into separate tasks, ten workers could produce tens of thousands of pins a day, compared with a single worker on his own making just a few pins. But all those extra pins have to be sold to someone, so specialising is only worthwhile when the market is large enough to absorb the extra output. Smith mentions canals and foreign trade (option c) as ways of widening the market, not as preconditions for specialising.
+</details>
 
-b. A larger country has a higher GDP simply because it has more people.
-   Dividing by population gives the average person's income, which is what we
-   want to compare.
+**4.** *Technological progress* is defined as a change in technology that reduces the amount of resources (labour, machines, land, energy, time) needed to produce a given amount of output. A bakery makes one of the following changes. Which one is technological progress?
 
-c. It is an average, so it says nothing about how income is shared out, and it
-   leaves out things people care about that are never bought or sold.
+  a. It buys a second oven and bakes twice as many cakes.
+  b. It finds a supplier whose flour is cheaper, and its costs fall.
+  c. It reorganises the kitchen so the same staff bake the same cakes in three-quarters of the time.
+  d. It hires a marketing firm and sells more cakes at the same price.
+
+<details class="solution">
+<summary>Solution</summary>
+
+**(c).** Hold each option against the definition. In (c) the output is the same cakes, and the resources needed have fallen: less labour and less time. Note that no new equipment was involved, which the definition allows, because it is about the process rather than the hardware. In (a) output rises, but so do the inputs used to get it, so no resource has been economised per cake. In (b) the resources used are unchanged; only their price has fallen, and a price is not part of the definition. In (d) the bakery sells more of what it was already making, and the process is untouched.
 
 </details>
 
-**4.** A haircut costs 300 pesos in Mexico City and \$30 in Los Angeles. The
-market exchange rate is 20 pesos per dollar.
+**5.** Countries with more doctors per person have longer life expectancy. Does this mean training more doctors would lead to people living longer?
 
-  a. Converted at the exchange rate, what does the Mexico City haircut cost in
-     dollars?
-  b. Both haircuts are the same service. What does your answer to (a) tell you
-     about converting Mexican incomes at the exchange rate?
-  c. What do economists do instead, and what are the resulting units called?
+  a. The correlation is too weak to mean anything.
+  b. Richer countries can afford both more doctors and better food, housing, and sanitation.
+  c. Life expectancy cannot be measured accurately.
+  d. A correlation always shows causation.
 
 <details class="solution">
 <summary>Solution</summary>
 
-a. $300 \div 20 = \$15$.
-
-b. The exchange rate makes the Mexican haircut look like half the service,
-   when it is the same haircut. Converting incomes this way understates what a
-   peso actually buys, so Mexico looks poorer than it is.
-
-c. They convert at *purchasing power parity* (PPP) rates, chosen so that \$20
-   buys in any country what \$20 buys in the US. Incomes converted this way are
-   measured in *international dollars*.
+**(b).** Correlation is not causation. Richer countries can afford more doctors, and they can also afford clean water, better housing, and safer workplaces, all of which also lead to higher life expectancy. So the two numbers would rise together even if doctors made no difference at all. The story can also run the other way round: a healthier, wealthier population is one that can afford to train doctors in the first place. 
 
 </details>
 
-## Adam Smith
+### Short answer
 
-*The founding question, and the Adam Smith slide.*
-
-**5.** Smith asked how millions of strangers, none of them in charge, end up
-supplying each other with what they need.
-
-  a. What name did he give his answer?
-  b. He wrote: "It is not from the benevolence of the butcher, the brewer, or
-     the baker, that we expect our dinner, but from their regard to their own
-     interest." Put that sentence in your own words.
+**6.** According to the reading, what explains the early take-off of the western economies shown on the hockey stick chart?
 
 <details class="solution">
 <summary>Solution</summary>
 
-a. The *invisible hand*: markets coordinate the decisions of millions of
-   people with no one planning the result.
+An important part of the answer is two changes that happened around then, both of which raised the productivity of an individual worker.
 
-b. The butcher sells you dinner because it is in their own interest to do so,
-   not because they care about you. Self-interested behavior, channeled through
-   markets, ends up serving other people.
+1. **Technological progress.** A continuous wave of new technologies in textiles, energy, and transport, beginning with the Industrial Revolution and not stopping since.
+2. **Capitalism**, which worked in two ways. Firms competing with each other in markets had strong incentives to adopt and develop the new technologies, and to invest in capital goods that a small family enterprise could never have afforded, so the second change is what carried the first into use. And firms employing many workers, together with markets that came to link the whole world, allowed **specialisation** on a scale never seen before, which lets a firm produce more with the same number of employees.
+
 
 </details>
 
-**6.** Smith argued that prosperity came from the division of labor, and that
-the division of labor is limited by the extent of the market.
-
-  a. What is the *division of labor*?
-  b. In his pin factory, ten workers each doing one or two of eighteen steps
-     made close to 50,000 pins a day. How many could each make working alone?
-  c. What does "limited by the *extent of the market*" mean? Why could a
-     village not support the pin factory?
-  d. Name one thing that widened the market in Smith's time.
+**7.** Most countries today are capitalist by the definition we used: they have private property, markets, and firms. So why do living standards still differ so enormously between them?
 
 <details class="solution">
 <summary>Solution</summary>
 
-a. Instead of each worker making a whole product, each specializes in one step
-   of the process.
+Two broad reasons:
 
-b. Barely one pin a day each. Specializing raised output by a factor of
-   thousands.
+**Colonisation.** In China and India, living standards actually *fell* during the period when western Europe was taking off, and substantial improvement did not come before they gained independence from colonial rule or from interference by European nations. 
 
-c. Specialization only pays if the output can be sold. A village could not buy
-   50,000 pins a day, so a pin-maker there would have to make whole pins, and
-   other things besides, rather than specialize.
-
-d. Canals, better roads, or foreign trade. And the prosperity that followed
-   widened the market further.
+**Institutions, government, and politics.** Capitalism is not one thing. Private property, markets, or firms may work badly or be poorly protected. Governments differ enormously in how well they regulate them and in what they provide: infrastructure, education, and the rule of law. Not all capitalist economies are equally successful, which is why the same three institutions produce very different outcomes in different places. 
 
 </details>
 
-## Technology
-
-*The technological revolution, and the technology slide.*
-
-**7.** In economics, "technology" means more than machines.
-
-  a. Give the economic definition of a technology.
-  b. Which of these is technological progress? Explain each.
-     (i) A bakery buys a second oven and bakes twice as many cakes.
-     (ii) A bakery finds a recipe that bakes the same cake with less flour and
-     in half the time.
+**8.** Why do carbon emissions have the same hockey-stick shape as income? What connects the two?
 
 <details class="solution">
 <summary>Solution</summary>
 
-a. A technology is a process that takes a set of materials and other inputs,
-   including the work of people and machines, and creates an output. A cake
-   recipe is a technology.
-
-b. Only (ii). Technological progress reduces the inputs needed to produce a
-   given output. In (i) the bakery produces more, but it uses proportionally
-   more inputs to do it, so the technology itself has not changed. In (ii) the
-   same cake takes less flour and less time.
+The link is the Industrial Revolution, and the technological progress that followed it. The same wave of new technologies that raised output was built on harnessing energy from burning carbon: coal for the steam engine and the factories it powered, then oil and gas. So the thing that produced the rise in living standards is the thing that produced the emissions. Producing more meant burning more, the two lines climbed together, and northern hemisphere temperatures followed.
 
 </details>
 
-## Capitalism
-
-*From the capitalist revolution through the three institutions, and Activity 2
-on your worksheet.*
-
-**8.** Define each term, and say how the three relate to one another.
-
-  a. Economic system
-  b. Institutions
-  c. Capitalism
+**9.** In class we looked at a chart of West and East Germany from 1950 to 1989. What point was that chart making?
 
 <details class="solution">
 <summary>Solution</summary>
 
-a. A way of organizing the economy that is distinctive in its basic
-   institutions.
+Trying to answer the question "Did capitalism cause prosperity?" is tricky. The reading shows that the takeoff in living standards coincided with the spread of capitalism, but that is only a correlation. It could have been something else that caused both or that prosperity led to capitalism rather than the other way around. 
 
-b. The laws and informal rules that regulate social interactions among people,
-   and between people and the biosphere. The rules of the game.
-
-c. An economic system characterized by a particular combination of
-   institutions: private property, markets, and firms.
-
-So: institutions are the rules; an economic system is a way of organizing the
-economy defined by which rules it has; capitalism is the particular system
-built on those three.
+To do better than a correlation you want an experiment, but you cannot run one on a country. Germany after 1945 is the next best thing, a **natural experiment**: living standards in the two parts were the same in 1936, and they shared a language, a history, and a population. Then one half got capitalism and the other central planning. By 1989 income per person in the East was less than half that in the West. This presents some evidence that the difference in economic institutions was a factor in the divergence of living standards.
 
 </details>
 
-**9.** Which of the three institutions are present in each case?
-
-  a. A family farm that grows food only for itself.
-  b. A Saturday farmers' market where growers sell their own produce.
-  c. A state-owned steel mill in East Germany in 1970.
-  d. A ride-sharing company with 1,000 drivers.
+**10.** Capitalism's three institutions are not independent of one another. Could a market work if nothing were private property? Could a firm exist without markets?
 
 <details class="solution">
 <summary>Solution</summary>
 
-a. Private property only. The family owns the farm, but nothing is bought or
-   sold and no one is hired.
+A market could not work without private property as to sell something you must own it. If nobody holds those rights, there is nothing to transfer and no reason to pay. 
 
-b. Private property and markets. Growers own what they sell and exchange
-   voluntarily, but each works for themselves rather than for a firm.
-
-c. Neither private property in capital goods nor firms in the capitalist
-   sense: the state owned the mill and output was set by a plan rather than by
-   an owner seeking profit.
-
-d. All three. The company owns capital, hires and directs drivers, and sells
-   rides on a market for profit.
-
-</details>
-
-**10.** Can a market work without private property? Can a firm exist without
-markets? Which institution has to be in place for the others to work, and why?
-
-<details class="solution">
-<summary>Solution</summary>
-
-Private property comes first. Exchange means transferring the right to use
-something, so if no one has the right to exclude others from a good or to
-transfer it, there is nothing to sell. A firm needs both: it must own its
-capital goods, and it must be able to sell its output on a market to make a
-profit.
-
-</details>
-
-## Did capitalism cause the take-off?
-
-*The causation slide, the two Germanies, and "why not everywhere?"*
-
-**11.** Capitalism spread and living standards rose at about the same time.
-
-  a. Why is that alone not enough to conclude that capitalism caused the rise?
-  b. What is a natural experiment?
-  c. Why is East versus West Germany after 1945 more convincing evidence than
-     comparing the US with India?
-
-<details class="solution">
-<summary>Solution</summary>
-
-a. Correlation is not causation. Something else could have caused both, or the
-   causation could run the other way, with rising living standards making
-   capitalist institutions more likely to spread.
-
-b. A situation in which similar people or places end up under different
-   conditions for reasons unrelated to the outcome being studied, so the
-   outcomes can be compared as if in an experiment.
-
-c. In 1950 the two Germanies had the same people, language, history, and
-   roughly the same income, and were then divided into a capitalist West and a
-   centrally planned East. Almost everything except the economic system was
-   held constant. The US and India differ in countless other ways, so a
-   comparison between them cannot isolate the effect of any one of them.
-
-</details>
-
-**12.** Most countries today are capitalist, yet living standards differ
-enormously. Give two reasons why.
-
-<details class="solution">
-<summary>Solution</summary>
-
-Any two of:
-
-- **Colonialism.** In India, living standards did not rise substantially until
-  well after independence from British rule. In much of Latin America,
-  independence in the early nineteenth century did not change economic
-  fortunes.
-- **Institutions and politics.** Capitalism is not one thing. Private property,
-  markets, or firms may fail or be poorly protected, and governments differ in
-  how well they regulate them.
-- **Public goods.** Governments also provide infrastructure, education, and the
-  rule of law, and countries differ greatly in how well they do this.
-
-</details>
-
-## The other hockey stick
-
-*Emissions, temperature, and the biosphere.*
-
-**13.** World carbon emissions have the same shape as the GDP chart: flat, then
-a steep rise.
-
-  a. Why do the two charts look alike?
-  b. The economy is drawn inside society, which is drawn inside the biosphere.
-     What does the economy take from the biosphere, and what does it send back?
-
-<details class="solution">
-<summary>Solution</summary>
-
-a. The technologies behind the take-off worked by burning carbon: coal for
-   steam engines and factories, then oil and gas. Producing more meant burning
-   more, so output and emissions rose together.
-
-b. It takes energy, materials, and food, and it returns waste, emissions, and
-   heat. The economy is not a closed loop: everything it makes starts as
-   something taken from the biosphere and ends as something returned to it.
-
-</details>
-
-**14.** Write down the definition of economics we ended on, and say which two
-kinds of interaction it covers.
-
-<details class="solution">
-<summary>Solution</summary>
-
-Economics is the study of how people interact with each other and with their
-natural environment in producing their livelihoods, and how this changes over
-time and differs across societies.
-
-The two interactions are between people (buying, selling, working, and the
-institutions that govern all of it) and between people and nature (what
-production takes from the biosphere and returns to it).
+A firm could not exist without markets, and it also needs private property. It needs markets on two sides. It buys its inputs on markets, including hiring workers in the labour market, and it sells its output on markets at a price that has to more than cover what production cost, since that is where its profit comes from. And it needs private property because someone must own the buildings, equipment, and other capital goods it produces with, and own the output as well.
 
 </details>
