@@ -1,0 +1,85 @@
+% !TEX program = lualatex
+% ECON 201, Lecture 2 notes. Compile with LuaLaTeX so the PDF is tagged.
+% Build from the course root:
+%   latexmk -lualatex -cd notes/notes02.tex && latexmk -c -cd notes/notes02.tex
+%
+% Every claim here is checked against the assigned sections of CORE, The
+% Economy 2.0: Microeconomics, 1.1-1.5 and 1.8-1.10. Where the lecture used a
+% round number and the book gives a different one, the book wins.
+\DocumentMetadata{
+  pdfstandard=UA-2,
+  pdfversion=2.0,
+  lang=en-US,
+  tagging=on
+}
+\documentclass[11pt]{article}
+
+\usepackage[letterpaper, margin=0.8in, top=0.6in, bottom=0.55in]{geometry}
+\usepackage{fontspec}
+\setmainfont{Fira Sans}
+\usepackage{amsmath}
+\usepackage{microtype}
+\usepackage{xcolor}
+\definecolor{accent}{HTML}{BF5700}
+\definecolor{ink}{HTML}{1A1A1A}
+\usepackage{titlesec}
+\titleformat{\section}{\large\bfseries\color{accent}}{}{0pt}{}
+\titlespacing*{\section}{0pt}{9pt}{2pt}
+\usepackage{hyperref}
+\hypersetup{pdftitle={ECON 201 Lecture 2 notes: The capitalist takeoff},
+            pdfauthor={Div Bhagia}, colorlinks=true, urlcolor=accent}
+% Key terms and ideas: bold in the accent colour, like the section headings.
+\newcommand{\key}[1]{\textcolor{accent}{\textbf{#1}}}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+\color{ink}
+
+\begin{document}
+
+{\LARGE\bfseries\color{accent} Lecture 2: The Capitalist Takeoff}\hfill{\large ECON 201}
+
+\vspace{2pt}
+A recap of what we did in class. Slide numbers refer to the Lecture 2 deck. Reading: CORE sections 1.1--1.5 and 1.8--1.10.
+
+\section{History's Hockey Stick}
+
+The figure on slide 2 shows GDP per capita, a proxy for living standards, for the US, the UK, China, India, and Mexico over the last thousand years. GDP is the market value of the final goods and services an economy produces in a period, and since every dollar paid for output is a dollar of income to whoever produced it, the same total captures both what a country makes and what its people earn. By that definition a country with a large population will have a large GDP for that reason alone, so to compare living standards we divide by population and use GDP per capita.
+
+From the figure we can see that all five lines are flat and overlapping for centuries. Then, some time in the 1700s, the UK and the US begin to pull away, and their lines bend sharply upward, which is why the picture is known as history's hockey stick. China, India, and Mexico eventually show the same shape, but their rise comes much later.
+
+What is striking is how recent all of this is. The rapid rise, the prosperity we now take for granted, and the enormous gaps between countries are all creations of the last two centuries rather than inheritances from a distant past. It also raises a question. \emph{After centuries of no increase, why did living standards suddenly take off, and why did that happen in some countries and not in others?} The rest of the lecture attempts to answer it.
+
+\section{Adam Smith: The Invisible Hand and the Division of Labour}
+
+Adam Smith is widely regarded as the founder of modern economics. His most famous book, \emph{An Inquiry into the Nature and Causes of the Wealth of Nations}, published in 1776, set out to answer the question we have just asked, and two of its insights are relevant to our discussion here.
+
+\key{The invisible hand.} Everything you ate today reached you through the work of people you will never meet, none of them in charge and none of them acting out of concern for you. It works anyway. As Smith put it, it is not from the benevolence of the butcher, the brewer, or the baker that we expect our dinner, but from their regard to their own interest. Each is pursuing their own gain and is ``led by an invisible hand to promote an end which was no part of his intention.''
+
+\key{The division of labour.} In his pin factory, ten workers each performing one or two of eighteen distinct operations made close to 50,000 pins a day, where each working alone could not have made twenty. The gain from specialising is enormous, but it is limited by the \key{extent of the market}: you can only specialise to the degree that you can sell what you produce, and nobody in a village needs 50,000 pins a day. Canals and foreign trade widened the market, deeper specialisation followed, and the prosperity that resulted widened the market further.
+
+Smith also saw that markets have failings, and that governments have a role in correcting them, as well as in providing public goods such as roads and bridges that markets will not supply.
+
+\section{A Plausible Answer: Technological Progress and Capitalism}
+
+Two things changed in the 1700s and 1800s, the period in which the UK and the US pull away on the chart, and both raised how much a single worker could produce.
+
+The first was technological progress: a wave of new technologies in textiles, energy, and transport, among them the spinning jenny, the steam engine, and the railway. By \key{technological progress} we mean a change in technology that reduces the resources needed to produce a given amount of output. \key{Technology} here is used in a broader sense than in everyday speech: it is the description of a process that uses materials and other inputs, including the work of people and machines, to produce an output. A cake recipe is a technology in this sense, because it sets out the ingredients and the steps needed to produce the cake. A new recipe that produces the same cake with less flour and in half the time is technological progress.
+
+The second was a change in the economic system, to \key{capitalism}, which is built on three institutions: \key{private property}, \key{markets}, and \key{firms}. Private property and markets were not new. What changed was where production happened. Before 1600 most production in the world was carried out by individuals, such as shoemakers and blacksmiths, or by families on a farm, and firms played only a minor role. Under capitalism most production takes place in firms, where owners of capital goods hire workers, direct their work, and sell the output on markets for profit. That mattered for growth in two ways. Firms competing with each other had a strong incentive to adopt and develop new technology, and could afford capital goods that were beyond the reach of a family enterprise. And the growth of firms employing large numbers of workers, together with markets that came to link the whole world, allowed specialisation on a scale never seen before.
+
+This still leaves one question open. Living standards did not catch up everywhere, even though most countries today are capitalist. Part of the answer is history: in China and India living standards fell while western Europe was taking off, and substantial improvement did not come before they gained independence from colonial rule, though independence alone was not always enough, since in much of Latin America independence in the early nineteenth century did not change economic fortunes. The other part is that having the three institutions is not the same as their working well. Property rights can be insecure, markets can be dominated by a few sellers, and firms can be sheltered from competition, and governments differ enormously in how well they regulate them and in what they provide.
+
+\section{Did Capitalism Cause the Take-off?}
+
+Capitalism and the technological revolution arrived together, and incomes rose with them. That is suggestive, but it is only a \emph{correlation}: two things moving together. A relationship is \emph{causal} only if a change in one produces a change in the other, and we can point to a mechanism. There are rivals here. The Enlightenment, a new culture of free enquiry, also arrived just before the upturn. Was it institutions, culture, both, or something else?
+
+In the natural sciences a question like this is settled with an experiment, by changing one thing, holding everything else fixed, and comparing the results. You cannot do that to a country. So economists look for a \key{natural experiment}: a difference in conditions between two populations that arose for external reasons, such as a difference in laws or policies, which lets us compare as though someone had run the experiment for us. Germany after 1945 is one. In 1936, before the war, living standards in the two parts were the same. They were then split between a capitalist West and a centrally planned East, and by 1989, when the Wall fell, income per person in the East was less than half that in the West (slide 15). That is some evidence that the economic system mattered.
+
+\section{An Unintended Consequence}
+
+The take-off also cast a shadow. Carbon emissions have the same hockey-stick shape as income (slide 17), because the technologies that produced the growth ran on burning carbon, and northern hemisphere temperatures have followed (slide 18). The rise in living standards and the damage to the climate came from the same source.
+
+That is one reason to picture the economy as sitting inside society, which sits inside the biosphere (slide 19). Everything we produce begins as something taken from nature and ends as something returned to it. It is also why we should think of \key{economics} as the study of how people interact with each other and \emph{with their natural environment} in producing and acquiring their livelihoods, and how this changes over time and differs across societies.
+
+\end{document}

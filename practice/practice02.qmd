@@ -7,7 +7,7 @@ toc-title: "On this page"
 format: html
 ---
 
-Below you will find guided reading questions for the three sections you were asked to read closely, and some practice problems. Do the reading with the guided reading questions in hand, then attempt the practice problems. The slides are [here](../slides/lecture2.html).
+Below you will find guided reading questions for the three sections you were asked to read closely, and some practice problems. Do the reading with the guided reading questions in hand, then attempt the practice problems. A recap of the lecture is in the [lecture notes](../notes/notes02.pdf), and the slides are [here](../slides/lecture2.html).
 
 ## Guided reading
 

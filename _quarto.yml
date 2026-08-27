@@ -12,6 +12,8 @@ project:
     - "slides/*.pdf"
     # Tagged worksheet PDFs built by `make worksheets`
     - "worksheets/*.pdf"
+    # Tagged lecture notes
+    - "notes/*.pdf"
 
 # Speaker notes are stripped from everything published to docs/.
 # Build a presenter copy with: -M strip-notes:false

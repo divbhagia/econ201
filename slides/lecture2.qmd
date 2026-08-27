@@ -44,10 +44,6 @@ This plot shows GDP per capita, a proxy for living standards, for five countries
 ::: {.fragment}
 Larger countries will have higher GDP simply because they have more people, so divide by population to get *GDP per capita*.
 :::
-
-::: {.fragment}
-Note: When comparing countries, GDP is converted so that \$20 buys what \$20 buys in the US (*purchasing power parity*).
-:::
 :::
 
 ## The Founding Question of Economics
@@ -66,9 +62,9 @@ Note: When comparing countries, GDP is converted so that \$20 buys what \$20 buy
 
 ## Adam Smith (1723–1790)
 
-- His most famous idea, the *invisible hand*: markets coordinate the decisions of millions of strangers with no one planning it. 
+- His most famous idea, the *invisible hand*: markets coordinate the decisions of millions of strangers with no one planning it.
 
-> "It is not from the benevolence of the butcher, the brewer, or the baker, that we expect our dinner, but from their regard to their own interest."
+  > "It is not from the benevolence of the butcher, the brewer, or the baker, that we expect our dinner, but from their regard to their own interest."
 
 ::: {.fragment}
 - According to him, prosperity came from the *division of labor/specialization*, which is limited by the *extent of the market*.
@@ -90,11 +86,16 @@ Note: When comparing countries, GDP is converted so that \$20 buys what \$20 buy
 ## The Capitalist Revolution
 
 ::: {.takeaway}
-How did a world in which living conditions barely changed become one of continuous technological revolution, with each generation noticeably better off than the last?
+How did a world in which living conditions barely changed become one of continuous technological revolution, with each generation better off than the last?
 :::
 
 ::: {.fragment}
-A big part of the answer is the *capitalist revolution*: the emergence in the eighteenth century, and eventual global spread, of a new way of organizing the economy that we now call *capitalism*.
+A big part of the answer is the *capitalist revolution*: the emergence in the eighteenth century of a new way of organizing the economy that we now call *capitalism*. It raised what one worker could produce in two ways.
+:::
+
+::: {.fragment}
+- Firms competing in markets had *incentives to adopt* new technology, and could afford capital no family could
+- Firms and world markets allowed *specialisation* on an unprecedented scale
 :::
 
 ## The Rise of Capitalism
@@ -142,10 +143,6 @@ Worksheet, Activity 2: pair up and work through both questions.
 
 ![](img/germanies.svg){fig-alt="GDP per capita in West Germany and East Germany from 1950 to 1989, in 1990 international dollars. West Germany starts near $4,300 and rises to about $18,000; East Germany starts near $2,100 and rises to about $8,400. East Germany stays at roughly half the Western level throughout."}
 
-::: {.plain}
-By 1989 income per person in the East was less than half the West's. But CORE is careful here: we cannot conclude that capitalism always grows faster and planning always stagnates. Japan and Spain grew just as fast with quite different institutions.
-:::
-
 ## Why Not Everywhere?
 
 ::: {.plain}
@@ -153,7 +150,7 @@ Most countries today are capitalist. Why has sustained growth reached some and n
 :::
 
 - *Colonialism*: in India, living standards did not rise substantially until well after independence from British rule. In much of Latin America, independence in the early nineteenth century did not bring a change in economic fortunes
-- *Institutions and politics*: not all capitalist economies are equally successful. Private property, markets, or firms may fail, and governments differ in how well they regulate them and provide essential public goods such as infrastructure and education
+- *Institutions and politics*: not all capitalist economies are equally successful. Private property, markets, or firms may fail, and governments differ in how well they regulate them and provide essential public goods such as infrastructure, education, and the rule of law
 
 ## The Other Hockey Stick
 
@@ -183,8 +180,8 @@ World carbon dioxide emissions from fossil fuels and industry, 1750 to 2024.
 ## What to Do Next
 
 - Read sections 1.2, 1.5, and 1.8 closely, with the *guided reading questions* in hand; skim the rest of the assigned reading
-- Go over the slides and the *lecture notes*, both posted on the course website
-- Work the *practice problems* with the solutions closed, and finish the worksheet
+- Go over the *slides* and the *lecture notes*, both posted on the course website
+- Work the *practice problems*
 - *Quiz 1 is Monday*: four questions, two from the practice problems, one from the guided reading, one you have not seen
 
 ## Sources {.smaller}

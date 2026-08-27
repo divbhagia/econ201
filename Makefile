@@ -71,7 +71,6 @@ site: schedule
 	@rm -rf $(TMP)
 	@rsync -a --exclude .git --exclude grades --exclude quizzes --exclude references \
 	          --exclude canvas --exclude docs --exclude .quarto --exclude _freeze \
-	          --exclude notes \
 	          $(PUBLISHED_DECKS) --exclude 'slides/lecture*.qmd' --exclude 'slides/lecture*.pdf' \
 	          --exclude 'slides/*_files' --exclude 'slides/figures' \
 	          $(PUBLISHED_PRACTICE) --exclude 'practice/*' ./ $(TMP)/
