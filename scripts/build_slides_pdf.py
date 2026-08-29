@@ -25,7 +25,7 @@ SLIDES = ROOT / "slides"
 # experimental, so if a tlmgr update breaks an \EditInstance line, the visual
 # theme is all that is lost; tagging does not depend on it.
 PREAMBLE = r"""\DocumentMetadata{pdfstandard=UA-2,pdfversion=2.0,lang=en-US,tagging=on}
-\documentclass[frame-title-arg, font-size = 14pt]{ltx-talk}
+\documentclass[frame-title-arg, font-size = 13pt]{ltx-talk}
 \usepackage{amsmath,graphicx}
 % pandoc sets tables as longtable with booktabs rules
 \usepackage{longtable,booktabs,array}
@@ -44,7 +44,20 @@ PREAMBLE = r"""\DocumentMetadata{pdfstandard=UA-2,pdfversion=2.0,lang=en-US,tagg
 % The web deck spaces consecutive statements (.plain p, 0.6em); LaTeX runs
 % them together, so a slide of short paragraphs reads as one block of text.
 \setlength{\parindent}{0pt}
-\setlength{\parskip}{0.6em plus 0.2em}
+% Kept as its own length because ltx-talk's column environment runs
+% \@parboxrestore, which zeroes \parskip; the filter restores it from this.
+\newlength{\bodyparskip}
+\setlength{\bodyparskip}{0.6em}
+\setlength{\parskip}{\bodyparskip}
+% Space above and below a list or a quotation. \parskip does not reach inside a
+% list item, so this is the only thing separating a bullet from a quotation
+% nested under it. Zero here closes that gap up entirely.
+\setlength{\topsep}{0.5em}
+\setlength{\partopsep}{0pt}
+% Air between top-level list items, as a length so a crowded frame can tighten
+% it (assets/beamer-deck.lua emits \global\itemsep=\listsep).
+\newlength{\listsep}
+\setlength{\listsep}{0.9em}
 % The frame title is the running head. ltx-talk's geometry (top 10mm, header
 % 10mm, headsep 2mm) starts that box above the paper edge, so the title sits
 % jammed against the top; a deeper top margin moves the whole header down.
@@ -67,13 +80,26 @@ PREAMBLE = r"""\DocumentMetadata{pdfstandard=UA-2,pdfversion=2.0,lang=en-US,tagg
 \keys_set:nn { talk / frame } { vertical-alignment = top }
 \ExplSyntaxOff
 \renewcommand{\emph}[1]{\textcolor{accent}{\textbf{#1}}}
+% Quotations are italic on the web deck. A switch rather than \textit so the
+% tagging code is not handed an argument-taking command around a paragraph.
+% \parskip does not reach inside a list item, so a quotation nested under a
+% bullet gets only \topsep above it and reads as jammed against the bullet.
+% The extra goes on quote alone: center is a list too, and widening \topsep
+% globally pads every figure on the deck.
+\AddToHook{env/quote/before}{\addvspace{0.35em}}
+\AddToHook{env/quote/begin}{\itshape}
 """
 
 # Steps a frame is taken down by when its content does not fit. The figure cap
 # comes down with the type: on a figure slide the picture is what overflows.
-SHRINK_STEPS = [r"\setlength{\parskip}{0.3em}\setlength{\figmaxht}{0.95\figmaxht}",
-                r"\small\setlength{\parskip}{0.3em}\setlength{\figmaxht}{0.88\figmaxht}",
-                r"\footnotesize\setlength{\parskip}{0.25em}\setlength{\figmaxht}{0.78\figmaxht}"]
+SHRINK_STEPS = [
+    r"\setlength{\bodyparskip}{0.35em}\setlength{\parskip}{\bodyparskip}\setlength{\listsep}{0.35em}"
+    r"\setlength{\figmaxht}{0.95\figmaxht}",
+    r"\setlength{\bodyparskip}{0.2em}\setlength{\parskip}{\bodyparskip}\setlength{\listsep}{0.2em}"
+    r"\setlength{\figmaxht}{0.90\figmaxht}\linespread{0.97}\selectfont",
+    r"\setlength{\bodyparskip}{0.12em}\setlength{\parskip}{\bodyparskip}\setlength{\listsep}{0.12em}"
+    r"\setlength{\figmaxht}{0.82\figmaxht}\linespread{0.94}\selectfont",
+]
 
 # Frame opening, through the two setup lines the writer and the filter put at
 # the top of a frame, so a size change lands after \figmaxht is set, not before.

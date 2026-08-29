@@ -67,7 +67,8 @@ function RawInline(el)
   end
 end
 
--- Attribution under a quotation ([Name]{.who}) goes on its own line.
+-- Attribution under a quotation ([Name]{.who}) goes on its own line, and
+-- upright, since the quotation around it is italic.
 function Span(el)
   -- [Title]{.book}: italic in the text colour, as on the web deck. A switch,
   -- not \textit, so the tagging code sees no argument-taking command.
@@ -78,7 +79,7 @@ function Span(el)
     return inner
   end
   if el.classes:includes('who') then
-    local inner = pandoc.List({pandoc.RawInline('latex', '\\\\{\\small ')})
+    local inner = pandoc.List({pandoc.RawInline('latex', '\\\\{\\small\\upshape ')})
     inner:extend(el.content)
     inner:insert(pandoc.RawInline('latex', '}'))
     return inner
@@ -108,29 +109,12 @@ local function space_lists(blocks, depth)
         space_lists(item, depth + 1)
       end
       if depth == 0 and #b.content > 0 then
-        b.content[1]:insert(1, pandoc.RawBlock('latex', '\\global\\itemsep=0.6em'))
+        b.content[1]:insert(1, pandoc.RawBlock('latex', '\\global\\itemsep=\\listsep'))
       end
     elseif b.t == 'Div' or b.t == 'BlockQuote' then
       space_lists(b.content, depth)
     end
   end
-end
-local function ends_in_list(b)
-  if b.t == 'BulletList' or b.t == 'OrderedList' then return true end
-  if b.t == 'Div' and #b.content > 0 then return ends_in_list(b.content[#b.content]) end
-  return false
-end
-local function space_between_lists(blocks)
-  local out = pandoc.List()
-  for i, b in ipairs(blocks) do
-    if b.t == 'Div' then b.content = space_between_lists(b.content) end
-    out:insert(b)
-    local nxt = blocks[i + 1]
-    if nxt and ends_in_list(b) and nxt.t ~= 'Header' then
-      out:insert(pandoc.RawBlock('latex', '\\vspace{0.6em}'))
-    end
-  end
-  return out
 end
 -- How much of the frame a figure may take depends on what else is on the
 -- slide. A figure on its own can have nearly the whole body; one with a
@@ -167,7 +151,6 @@ end
 
 function Pandoc(doc)
   space_lists(doc.blocks, 0)
-  doc.blocks = space_between_lists(doc.blocks)
   doc.blocks = slide_fig_height(doc.blocks)
   return doc
 end
@@ -212,10 +195,12 @@ local function journey(div)
   return pandoc.RawBlock('latex', out .. '\\end{center}')
 end
 
--- Text beside a figure runs smaller on the web deck (0.9em); \small is the
--- nearest step, and it is what keeps a three-bullet column inside the frame.
+-- ltx-talk's column environment runs \@parboxrestore, which sets \parskip to
+-- zero, so paragraphs inside a column would otherwise run together with no
+-- separation at all. The type size is left alone: it should match the slides
+-- either side of it.
 local function column(div)
-  div.content:insert(1, pandoc.RawBlock('latex', '\\small'))
+  div.content:insert(1, pandoc.RawBlock('latex', '\\parskip=\\bodyparskip'))
   return div
 end
 
