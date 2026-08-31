@@ -33,6 +33,10 @@ table {
   }
 /* Plain data tables, e.g. on the practice pages: wrap in ::: {.freetable}
    to undo the schedule-oriented column widths above. */
+/* The md-breakpoint rule below turns .table-scroll off for the schedule's
+   card layout; a plain data table still needs its scroll container on a
+   phone, so the combined class wins on specificity. */
+.freetable.table-scroll { overflow-x: auto; }
 .freetable td:nth-child(1), .freetable th:nth-child(1) { width: auto; }
 .freetable td:nth-child(3), .freetable th:nth-child(3) { min-width: 0 !important; }
 .freetable td:nth-child(4), .freetable th:nth-child(4) { min-width: 0 !important; }
