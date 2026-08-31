@@ -2,7 +2,8 @@
 title: "Lecture 3: Practice"
 subtitle: "Making economic decisions: opportunity cost, rents, and incentives"
 sidebar: false
-toc: false
+toc: true
+toc-title: "On this page"
 format: html
 ---
 
