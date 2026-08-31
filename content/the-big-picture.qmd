@@ -1,7 +1,6 @@
 ---
 title: "The Big Picture"
 subtitle: "Module I"
-sidebar: false
 toc: false
 format: html
 ---

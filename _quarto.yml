@@ -33,22 +33,28 @@ website:
       - text: "Schedule"
         file: schedule.qmd
       - text: "Content"
-        menu:
-          - text: "I. The Big Picture"
-            file: content/the-big-picture.qmd
-          - text: "II. The Economist's Toolkit"
-            file: content/economists-toolkit.qmd
-          - text: "III. Firms as Price Setters"
-            file: content/firms-as-price-setters.qmd
-          - text: "IV. Markets with Many Buyers and Sellers"
-            file: content/markets-with-many-buyers-and-sellers.qmd
-          - text: "V. Market Successes and Failures"
-            file: content/market-successes-and-failures.qmd
-          - text: "VI. Review"
-            file: content/review.qmd
+        file: content/the-big-picture.qmd
       - icon: github
         href: https://divbhagia.github.io/econ201/
         aria-label: GitHub repository for this course
+
+  sidebar:
+    - title: "Content"
+      style: "docked"
+      search: false
+      contents:
+        - text: "I. The Big Picture"
+          file: content/the-big-picture.qmd
+        - text: "II. The Economist's Toolkit"
+          file: content/economists-toolkit.qmd
+        - text: "III. Firms as Price Setters"
+          file: content/firms-as-price-setters.qmd
+        - text: "IV. Markets with Many Buyers and Sellers"
+          file: content/markets-with-many-buyers-and-sellers.qmd
+        - text: "V. Market Successes and Failures"
+          file: content/market-successes-and-failures.qmd
+        - text: "VI. Review"
+          file: content/review.qmd
 
   page-footer:
       2026 Div Bhagia | [CC BY-NC 4.0 License](https://creativecommons.org/licenses/by-nc/4.0/) | [Accessibility](/accessibility.qmd) | Made with [Quarto](https://quarto.org/)

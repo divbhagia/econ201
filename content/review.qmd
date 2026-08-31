@@ -1,7 +1,6 @@
 ---
 title: "Review"
 subtitle: "Module VI"
-sidebar: false
 toc: false
 format: html
 ---

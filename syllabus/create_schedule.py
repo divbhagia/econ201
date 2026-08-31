@@ -518,8 +518,10 @@ for idx, (label, sessions) in enumerate(MODULES.items()):
             f'{link_html}\n'
             f':::\n'
         )
+    # The module pages carry the Modules sidebar from _quarto.yml, so a
+    # student can move between modules without going back to the navbar.
     page = (f'---\ntitle: "{label}"\nsubtitle: "Module {ROMAN[idx]}"\n'
-            f'sidebar: false\ntoc: false\nformat: html\n---\n\n'
+            f'toc: false\nformat: html\n---\n\n'
             f'Materials are posted as we go. See the [Schedule](../schedule.qmd) '
             f'for dates and assessments.\n\n'
             + "\n".join(blocks))
