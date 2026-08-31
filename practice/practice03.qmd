@@ -60,16 +60,16 @@ e. Two years later every print shop in town has the new press, and competition h
 - Old press: giving up the new press costs its net benefit = **$45,000**
 - New press: giving up the old press costs its net benefit = **$30,000**
 
-**(c)** Economic cost is direct cost plus opportunity cost, and the rule is to take the option whose benefit beats it.
+**(c)** Economic cost is direct cost plus opportunity cost.
 
-- Old press: $120,000 + $45,000 = $165,000, against a $150,000 benefit, so **−$15,000**
-- New press: $105,000 + $30,000 = $135,000, against a $150,000 benefit, so **+$15,000**
+- Old press: $120,000 + $45,000 = **$165,000**, more than the $150,000 benefit
+- New press: $105,000 + $30,000 = **$135,000**, less than the $150,000 benefit
 
-**She leases the new press.**
+**She leases the new press**, which is what comparing net benefits says too: $45,000 beats $30,000. The two tests always agree, because each option's opportunity cost is the other's net benefit.
 
-**(d)** Economic rent is the difference in net benefit between the option chosen and the next best one.
+**(d)** Economic rent is the net benefit of the option chosen minus its opportunity cost, which here is the difference between the two net benefits.
 
-- New press − old press: $45,000 − $30,000 = **$15,000 a year**
+- New press: $45,000 − $30,000 = **$15,000 a year**
 
 That is her innovation rent, earned by adopting before her rivals.
 
@@ -78,7 +78,7 @@ That is her innovation rent, earned by adopting before her rivals.
 - Old press: $120,000 − $120,000 = **$0**
 - New press: $120,000 − $105,000 = **$15,000**
 
-**Leasing is still the right choice**, and the rent is still $15,000. What has fallen is the level of profit: she netted $45,000 a year while she was the only shop with the new press, and $15,000 once everyone has it, because competition passed the cost saving on to customers. The reward for moving first was temporary, so firms keep looking for the next technology.
+**Leasing is still the right choice**, and the rent is still $15,000 ($15,000 − $0). What has fallen is the level of profit: she netted $45,000 a year while she was the only shop with the new press, and $15,000 once everyone has it, because competition passed the cost saving on to customers. The reward for moving first was temporary, so firms keep looking for the next technology.
 
 </details>
 
