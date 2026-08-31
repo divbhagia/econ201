@@ -15,41 +15,20 @@ Lena runs a small print shop. Her old press does the job, but it takes three ope
 - **Keep the old press.** Wages, ink, and maintenance come to \$120,000 a year.
 - **Lease the new press.** The lease is \$25,000 a year, and wages, ink, and maintenance fall to \$80,000. Total: \$105,000 a year.
 
-**(a)** Draw a table with a column for each option, and fill in the benefit, the direct cost, and the net benefit of each.
-
-<details class="solution">
-<summary>Solution</summary>
+**(a)** Fill in all five rows of this table, for each option.
 
 ::: {.freetable .table-scroll tabindex="0"}
 |  | Old press | New press |
-|:--|--:|--:|
-| Benefit | $150,000 | $150,000 |
-| Direct cost | $120,000 | $105,000 |
-| **Net benefit** | **$30,000** | **$45,000** |
+|:--|:--:|:--:|
+| Benefit |  |  |
+| Direct cost |  |  |
+| Net benefit |  |  |
+| Opportunity cost |  |  |
+| Economic cost |  |  |
+
 : {tbl-colwidths="[40,30,30]"}
 
 :::
-
-Net benefit is benefit minus direct cost.
-
-- Old press: $150,000 − $120,000 = **$30,000**
-- New press: $150,000 − $105,000 = **$45,000**
-
-</details>
-
-**(b)** Add a row for the opportunity cost of each option. Lena can run only one press.
-
-<details class="solution">
-<summary>Solution</summary>
-
-The opportunity cost of an option is what Lena gives up by choosing it, which is the net benefit of the next best alternative. With only two options, each one's opportunity cost is the other's net benefit.
-
-- Old press: giving up the new press costs its net benefit = **$45,000**
-- New press: giving up the old press costs its net benefit = **$30,000**
-
-</details>
-
-**(c)** Add a row for the economic cost of each option, and compare it with that option's benefit. Which press does Lena choose?
 
 <details class="solution">
 <summary>Solution</summary>
@@ -61,21 +40,42 @@ The opportunity cost of an option is what Lena gives up by choosing it, which is
 | Direct cost | $120,000 | $105,000 |
 | Net benefit | $30,000 | $45,000 |
 | Opportunity cost | $45,000 | $30,000 |
-| **Economic cost** | **$165,000** | **$135,000** |
+| Economic cost | $165,000 | $135,000 |
+
 : {tbl-colwidths="[40,30,30]"}
 
 :::
 
-Economic cost is direct cost plus opportunity cost.
+*Net benefit* is benefit minus direct cost.
 
-- Old press: $120,000 + $45,000 = **$165,000**, more than the $150,000 benefit
-- New press: $105,000 + $30,000 = **$135,000**, less than the $150,000 benefit
+- Old press: $150,000 − $120,000 = **$30,000**
+- New press: $150,000 − $105,000 = **$45,000**
+
+*Opportunity cost* is what Lena gives up by choosing an option, which is the net benefit of the next best alternative. With only two options, each one's opportunity cost is the other's net benefit.
+
+- Old press: giving up the new press costs its net benefit = **$45,000**
+- New press: giving up the old press costs its net benefit = **$30,000**
+
+*Economic cost* is direct cost plus opportunity cost.
+
+- Old press: $120,000 + $45,000 = **$165,000**
+- New press: $105,000 + $30,000 = **$135,000**
+
+</details>
+
+**(b)** Compare each option's economic cost with its benefit. Which press does Lena choose?
+
+<details class="solution">
+<summary>Solution</summary>
+
+- Old press: economic cost $165,000, more than the $150,000 benefit
+- New press: economic cost $135,000, less than the $150,000 benefit
 
 **She leases the new press**, which is what comparing net benefits says too: $45,000 beats $30,000. The two tests always agree, because each option's opportunity cost is the other's net benefit.
 
 </details>
 
-**(d)** What is her economic rent from that choice? When a rent comes from adopting a new technology, economists call it an *innovation rent*.
+**(c)** What is her economic rent from that choice? When a rent comes from adopting a new technology, economists call it an *innovation rent*.
 
 <details class="solution">
 <summary>Solution</summary>
@@ -88,7 +88,7 @@ That is her innovation rent, earned by adopting before her rivals.
 
 </details>
 
-**(e)** Two years later every print shop in town has the new press, and competition has pushed prices down: the same work now brings in \$120,000 a year with either press. Work out the net benefit of each option again. Is leasing still the right choice? What has happened to the extra profit Lena earned by moving first?
+**(d)** Two years later every print shop in town has the new press, and competition has pushed prices down: the same work now brings in \$120,000 a year with either press. Work out the net benefit of each option again. Is leasing still the right choice? What has happened to the extra profit Lena earned by moving first?
 
 <details class="solution">
 <summary>Solution</summary>
