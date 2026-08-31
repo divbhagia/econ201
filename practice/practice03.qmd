@@ -16,23 +16,23 @@ Lena runs a small print shop. Her old press does the job, but it takes three ope
 - **Keep the old press.** Wages, ink, and maintenance come to \$120,000 a year.
 - **Lease the new press.** The lease is \$25,000 a year, and wages, ink, and maintenance fall to \$80,000. Total: \$105,000 a year.
 
-**(a)** Fill in all five rows of this table, for each option.
+**(a)** Make a table with a column for each option, and work out five rows: benefit, direct cost, net benefit, opportunity cost, and economic cost.
+
+<details class="solution">
+<summary>Solution</summary>
 
 ::: {.freetable .table-scroll tabindex="0"}
 |  | Old press | New press |
-|:--|:--:|:--:|
-| Benefit |  |  |
-| Direct cost |  |  |
-| Net benefit |  |  |
-| Opportunity cost |  |  |
-| Economic cost |  |  |
+|:--|--:|--:|
+| Benefit | $150,000 | $150,000 |
+| Direct cost | $120,000 | $105,000 |
+| Net benefit | $30,000 | $45,000 |
+| Opportunity cost | $45,000 | $30,000 |
+| Economic cost | $165,000 | $135,000 |
 
 : {tbl-colwidths="[40,30,30]"}
 
 :::
-
-<details class="solution">
-<summary>Solution</summary>
 
 *Net benefit* is benefit minus direct cost.
 
