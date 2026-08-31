@@ -94,7 +94,10 @@ function Para(el)
     if x.t == 'RawInline' and x.text:match('^\\includegraphics') then tex = x.text
     elseif x.t == 'Image' then local i = Image(x); tex = i and i.text end
     if tex then
-      return pandoc.RawBlock('latex', '\\begin{center}' .. tex .. '\\end{center}')
+      -- A group with \centering, not the center environment: center is a
+      -- list, and its \topsep (plus \parskip on entry) pushed the image
+      -- below the top of a column, off the level of the text beside it.
+      return pandoc.RawBlock('latex', '{\\centering ' .. tex .. '\\par}')
     end
   end
 end
@@ -209,6 +212,17 @@ end
 -- paragraph, which the tagging code cannot represent.
 function Div(el)
   if el.classes:includes('journey') then return journey(el) end
+  -- An empty ::: {.gap} div, the counterpart of .gap in assets/slides.scss.
+  if el.classes:includes('gap') then
+    return pandoc.RawBlock('latex', '\\vspace{0.8em}')
+  end
+  -- {.big}: enlarged text, as .big does on the web deck (1.3em there).
+  if el.classes:includes('big') then
+    local out = pandoc.List({pandoc.RawBlock('latex', '\\begingroup\\Large')})
+    out:extend(el.content)
+    out:insert(pandoc.RawBlock('latex', '\\par\\endgroup'))
+    return out
+  end
   -- Muted text keeps its size and position; only the source line under a
   -- figure is also small and centred, as on the web deck.
   if el.classes:includes('dim') then

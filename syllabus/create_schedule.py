@@ -29,7 +29,7 @@ PLAN = {
     2: ("The capitalist takeoff: Prosperity and its shadows", "1.1--1.5; 1.8--1.10"),
     3: (
         "Making economic decisions: Opportunity cost, rents, and incentives",
-        "2.2; 2.8",
+        "2.2",
     ),
     4: ("Why do markets matter? Specialization and comparative advantage", "2.3"),
     5: ("Winning brands and the price of Cheerios", "7.1--7.2"),
@@ -334,7 +334,18 @@ MATERIALS = {
         "notes": "notes/notes02.pdf",
         "practice": "practice/practice02.html",
         "worksheet": "worksheets/worksheet02.pdf"},
+    3: {"slides": "slides/lecture3.html", "slides_pdf": "slides/lecture3.pdf",
+        "practice": "practice/practice03.html",
+        "worksheet": "worksheets/worksheet03.pdf"},
 }
+
+# Lecture 2's practice page bundles guided reading; from lecture 3 on the
+# pages are practice problems only, so the links say what each page is.
+def _practice_label(lec):
+    if lec == 2:
+        return ("Guided reading and practice",
+                "guided reading questions and practice problems")
+    return ("Practice problems", "practice problems")
 
 
 def _icons(lec):
@@ -364,7 +375,7 @@ def _icons(lec):
     if m.get("practice"):
         out.append(
             f'<a href="{m["practice"]}" target="_blank" rel="noopener" '
-            f'aria-label="Lecture {lec} guided reading and practice (opens in a new tab)">'
+            f'aria-label="Lecture {lec} {_practice_label(lec)[1]} (opens in a new tab)">'
             f'<span aria-hidden="true">\u270D\uFE0F</span></a>'
         )
     return " ".join(out)
@@ -456,7 +467,7 @@ Quizzes are given at the start of class on the dates marked below.
 <span aria-hidden="true">🖥️</span> Slides &nbsp;
 <span aria-hidden="true">🗒️</span> Worksheet (PDF) &nbsp;
 <span aria-hidden="true">📄</span> Notes (PDF) &nbsp;
-<span aria-hidden="true">✍️</span> Guided reading and practice
+<span aria-hidden="true">✍️</span> Practice
 </p>
 
 ```{{=html}}
@@ -486,8 +497,7 @@ for idx, (label, sessions) in enumerate(MODULES.items()):
                 ("slides", "Slides", "slides"),
                 ("slides_pdf", "Slides (PDF)", "slides as a tagged PDF"),
                 ("notes", "Notes", "notes as a PDF"),
-                ("practice", "Guided reading and practice",
-                 "guided reading questions and practice problems"),
+                ("practice", *_practice_label(lec)),
                 ("worksheet", "Worksheet", "worksheet")):
             if m.get(key):
                 links.append(

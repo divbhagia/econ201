@@ -1,0 +1,86 @@
+---
+title: "Lecture 3: Practice"
+subtitle: "Making economic decisions: opportunity cost, rents, and incentives"
+sidebar: false
+toc: false
+format: html
+---
+
+Work through each problem on paper before you open its **Solution**.
+
+## 1. Adopting a new technology
+
+Lena runs a small print shop. Her old press does the job, but it takes three operators. A supplier offers to lease her a digital press that needs one. Either way the shop sells the same work: **\$150,000 a year**.
+
+- **Keep the old press.** Wages, ink, and maintenance come to \$120,000 a year.
+- **Lease the new press.** The lease is \$25,000 a year, and wages, ink, and maintenance fall to \$80,000. Total: \$105,000 a year.
+
+::: {.freetable .table-scroll tabindex="0"}
+|  | Old press | New press |
+|:--|:--:|:--:|
+| Benefit | \_\_\_\_\_\_\_\_ | \_\_\_\_\_\_\_\_ |
+| Direct cost | \_\_\_\_\_\_\_\_ | \_\_\_\_\_\_\_\_ |
+| Net benefit | \_\_\_\_\_\_\_\_ | \_\_\_\_\_\_\_\_ |
+| Opportunity cost | \_\_\_\_\_\_\_\_ | \_\_\_\_\_\_\_\_ |
+| Economic cost | \_\_\_\_\_\_\_\_ | \_\_\_\_\_\_\_\_ |
+
+: {tbl-colwidths="[40,30,30]"}
+
+:::
+
+a. Fill in the first three rows: the benefit and direct cost of each option, then the net benefit of each.
+b. Fill in the opportunity cost row. Lena can run only one press, so her opportunity cost of one option is her net benefit from the other.
+c. Fill in the economic cost row and compare each option's economic cost with its benefit. Which press does Lena choose?
+d. What is her economic rent from that choice? When a rent comes from adopting a new technology, economists call it an *innovation rent*.
+e. Two years later every print shop in town has the new press, and competition has pushed prices down: the same work now brings in \$120,000 a year with either press. Work out the net benefit of each option again. Is leasing still the right choice? What has happened to the extra profit Lena earned by moving first?
+
+<details class="solution">
+<summary>Solution</summary>
+
+::: {.freetable .table-scroll tabindex="0"}
+|  | Old press | New press |
+|:--|--:|--:|
+| Benefit | $150,000 | $150,000 |
+| Direct cost | $120,000 | $105,000 |
+| Net benefit | $30,000 | $45,000 |
+| Opportunity cost | $45,000 | $30,000 |
+| Economic cost | $165,000 | $135,000 |
+
+: {tbl-colwidths="[40,30,30]"}
+
+:::
+
+**(a)** Old press: $150,000 minus $120,000 is $30,000. New press: $150,000 minus $105,000 is $45,000.
+
+**(b)** Each option's opportunity cost is the other's net benefit: $45,000 for keeping the old press, $30,000 for leasing the new one.
+
+**(c)** Old press: $120,000 plus $45,000 is $165,000, more than the $150,000 benefit. New press: $105,000 plus $30,000 is $135,000, less than $150,000. She leases the new press.
+
+**(d)** $45,000 minus $30,000 is $15,000 a year: her innovation rent from adopting before her rivals.
+
+**(e)** With revenue at $120,000, the old press nets $0 and the new press nets $15,000. Leasing is still the right choice, and by the same margin. What has vanished is the level of profit: while she was the only shop with the new press she netted $45,000 a year; once everyone has it, competition has passed the cost saving on to customers and she nets $15,000. The reward for moving first was temporary, which is exactly what makes firms keep looking for the next machine.
+
+</details>
+
+
+## 2. Is the shop really profitable?
+
+Lena's cousin looks at her books from problem 1 and says she cannot lose: either press turns a profit. But suppose Lena could close the shop and earn \$40,000 a year managing another print shop.
+
+a. With the old press, the shop nets \$30,000 a year. Was running it really profitable?
+b. With the new press it nets \$45,000 a year. Is it profitable now, and by how much?
+c. In one or two sentences: why do the books and the economist disagree about the same shop?
+d. With the old press, the numbers say the job wins. Is there any justification for Lena keeping the shop anyway?
+
+<details class="solution">
+<summary>Solution</summary>
+
+**(a)** No. The job is the outside option for Lena's own time, so the shop's net benefit has to beat \$40,000 a year. The old press nets \$30,000: \$10,000 less than the job, so in economic terms the shop was losing \$10,000 a year even though the books showed a profit.
+
+**(b)** Yes, but only just: \$45,000 beats the job by \$5,000 a year. That \$5,000 is her economic rent from running the shop rather than taking the job.
+
+**(c)** The books count the presses' costs and not Lena's time. Economics counts both: her time has an opportunity cost, the \$40,000 job, whether or not anyone writes it down.
+
+**(d)** Yes, if the table is missing a benefit. The comparison so far counts only money, and running your own shop can be worth something in itself: independence, pride, doing work you chose. The lecture's first move applies here too: put a number on it, the most Lena would pay to be her own boss rather than an employee. If that number is more than the \$10,000 gap, keeping the shop passes the decision rule after all. The framework was not wrong; the benefit column was incomplete.
+
+</details>

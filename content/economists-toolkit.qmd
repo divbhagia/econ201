@@ -11,8 +11,11 @@ Materials are posted as we go. See the [Schedule](../schedule.qmd) for dates and
 ::: {.lecture}
 <h2>Lecture 3: Making economic decisions: Opportunity cost, rents, and incentives</h2>
 
-<p><strong>Reading:</strong> 2.2; 2.8</p>
-<p class="lecture-links dim">Materials posted closer to the date.</p>
+<p><strong>Reading:</strong> 2.2</p>
+<p class="lecture-links"><a class="btn btn-outline-primary" href="../slides/lecture3.html" target="_blank" rel="noopener" role="button" aria-label="Lecture 3 slides (opens in a new tab)">Slides</a>
+<a class="btn btn-outline-primary" href="../slides/lecture3.pdf" target="_blank" rel="noopener" role="button" aria-label="Lecture 3 slides as a tagged PDF (opens in a new tab)">Slides (PDF)</a>
+<a class="btn btn-outline-primary" href="../practice/practice03.html" target="_blank" rel="noopener" role="button" aria-label="Lecture 3 practice problems (opens in a new tab)">Practice problems</a>
+<a class="btn btn-outline-primary" href="../worksheets/worksheet03.pdf" target="_blank" rel="noopener" role="button" aria-label="Lecture 3 worksheet (opens in a new tab)">Worksheet</a></p>
 :::
 
 ::: {.lecture}

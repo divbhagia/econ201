@@ -186,6 +186,11 @@ $presentation-font-size-root: 38px;
 // highlight that *emphasis* gets. Use [Title]{.book}.
 .reveal .book { font-style: italic; color: inherit; }
 
+// An empty `::: {.gap}` div: a small vertical space where a slide wants one,
+// which plain markdown cannot express. Keep in step with the .gap case in
+// assets/beamer-deck.lua, so both formats space the same slide alike.
+.reveal .gap { height: 0.8em; }
+
 // Boxed takeaway, for the sentence you want them to leave with.
 .reveal .takeaway {
   background: #FDF3EA;
@@ -219,6 +224,8 @@ $presentation-font-size-root: 38px;
   border-bottom: 2.5px solid #1a1a1a;
 }
 .reveal table td, .reveal table th { padding: 0.1em 0.4em; }
+// A total row (::: {.sumrow}, see assets/sum-table.lua) gets a rule above it.
+.reveal table tfoot td { border-top: 1px solid #1a1a1a; }
 .reveal .columns { align-items: center; }
 // A lone image in a column arrives wrapped in a paragraph with a top margin;
 // drop it so figure and text start level.

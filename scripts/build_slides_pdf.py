@@ -62,6 +62,9 @@ PREAMBLE = r"""\DocumentMetadata{pdfstandard=UA-2,pdfversion=2.0,lang=en-US,tagg
 % 10mm, headsep 2mm) starts that box above the paper edge, so the title sits
 % jammed against the top; a deeper top margin moves the whole header down.
 \geometry{tmargin=15mm, bmargin=7mm}
+% \footskip is the drop from the text block to the footer baseline, so
+% trimming it lifts the slide number off the bottom edge.
+\addtolength{\footskip}{-2mm}
 \EditInstance{header}{std}{color = accent, font = \Large\bfseries\headingfont, height = 1.7cm}
 \EditInstance{frametitle}{header}{color = accent, font = \Large\bfseries\headingfont}
 \EditInstance{titlepage-element}{title}{color = accent, font = \LARGE\bfseries\headingfont}
@@ -78,6 +81,10 @@ PREAMBLE = r"""\DocumentMetadata{pdfstandard=UA-2,pdfversion=2.0,lang=en-US,tagg
 \date{}
 \ExplSyntaxOn
 \keys_set:nn { talk / frame } { vertical-alignment = top }
+% Columns top-aligned, as on the web deck. ltx-talk's own default is center,
+% and pandoc's [T] sits on the columns wrapper, where the class ignores it,
+% so a short text column would float halfway down a tall figure column.
+\keys_set:nn { talk / column } { vertical-alignment = top }
 \ExplSyntaxOff
 \renewcommand{\emph}[1]{\textcolor{accent}{\textbf{#1}}}
 % Quotations are italic on the web deck. A switch rather than \textit so the
@@ -162,6 +169,7 @@ def build(n):
                 shutil.copy(f, idir / f.name)
         # frames from pandoc's beamer writer (body only; template discarded)
         r = subprocess.run(["quarto", "pandoc", str(qmd), "-t", "beamer",
+                            "--lua-filter", str(ROOT / "assets" / "sum-table.lua"),
                             "--lua-filter", str(ROOT / "assets" / "beamer-deck.lua"),
                             "--standalone"], capture_output=True, text=True, check=True)
         tex = r.stdout

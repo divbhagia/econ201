@@ -1,0 +1,106 @@
+% !TEX program = lualatex
+% ECON 201, Worksheet 3: Making Economic Decisions. Compile with LuaLaTeX so
+% the PDF is tagged (see syllabus/Econ201-Syllabus.tex for the same setup).
+% Build from the course root:
+%   latexmk -lualatex -cd worksheets/worksheet03.tex && latexmk -c -cd worksheets/worksheet03.tex
+\DocumentMetadata{
+  pdfstandard=UA-2,
+  pdfversion=2.0,
+  lang=en-US,
+  tagging=on
+}
+\documentclass[11pt]{article}
+
+\usepackage[letterpaper, margin=0.8in, top=0.6in, bottom=0.55in]{geometry}
+\usepackage{fontspec}
+\setmainfont{Fira Sans}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+% Questions are labelled by hand: under tagging=on, enumitem's enumerate
+% did not step its counter, so every item printed the same label.
+\newcounter{q}
+\newcommand{\Q}[1]{\stepcounter{q}\par\needspace{5\baselineskip}\vspace{3pt}\noindent\hangindent=1.7em\hangafter=1
+  \makebox[1.7em][l]{(\alph{q})}#1\par}
+\usepackage{xcolor}
+\usepackage{needspace}
+\definecolor{accent}{HTML}{BF5700}
+\usepackage{titlesec}
+\titleformat{\section}{\large\bfseries\color{accent}}{}{0pt}{}
+\titlespacing*{\section}{0pt}{6pt}{2pt}
+\usepackage{hyperref}
+\hypersetup{pdftitle={ECON 201 Worksheet: Making Economic Decisions}, pdfauthor={Div Bhagia}, hidelinks}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3pt}
+
+% Ruled answer space: n lines. Plain TeX loop; pgffor's \foreach breaks the
+% enumerate counter when used inside an item. Light grey rules, indented to
+% the question text and spaced for handwriting, so they read as writing
+% guides rather than section dividers.
+\definecolor{answerrule}{HTML}{B8B8B8}
+\newcount\answerlinecount
+\newcommand{\answerlines}[1]{%
+  \par\answerlinecount=#1
+  \loop\ifnum\answerlinecount>0
+    \vspace{16pt}\noindent\hspace*{1.7em}%
+    {\color{answerrule}\rule{\dimexpr\linewidth-1.7em\relax}{0.4pt}}\par
+    \advance\answerlinecount by -1
+  \repeat}
+
+% A cell to be filled in. Same width everywhere so the columns line up.
+\newcommand{\blank}{\rule{1.15in}{0.3pt}}
+
+\begin{document}
+
+{\LARGE\bfseries\color{accent} Worksheet: Making Economic Decisions}\hfill{\large ECON 201}
+
+\vspace{2pt}
+Write your answers in the spaces.
+
+\needspace{7\baselineskip}\section{Definitions from today}
+
+\begingroup\small\setlength{\parskip}{2pt}
+\textbf{\color{accent}Outside option.} the next best alternative, the thing you fall back on.\par
+\textbf{\color{accent}Opportunity cost.} what you give up by taking one action instead of the next best alternative.\par
+\textbf{\color{accent}Economic cost.} direct cost plus opportunity cost.\par
+\textbf{\color{accent}Economic rent.} the net benefit from the action you chose, minus the opportunity cost.\par
+\endgroup
+
+
+\needspace{12\baselineskip}\section{Would you go to the game?}\setcounter{q}{0}
+
+\Q{Fill in the numbers in the table. Your \textbf{benefit} from the game is the most you would pay for the Dodgers day. The \textbf{cost} of the shift is the least you would accept to work it. Then fill in the net benefit of each option.}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.45}
+\begin{tabular}{@{}p{1.9in}p{1.35in}p{1.35in}@{}}
+\toprule
+ & Go to the game & Work the shift \\
+\midrule
+Benefit & \blank & \$120 \\
+Direct cost & \$100 & \blank \\
+\midrule
+Net benefit & \blank & \blank \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\Q{Given these numbers, what is your opportunity cost of going to the game, with the shift on the table?}
+\answerlines{1}
+
+\Q{What is the economic cost of going to the game?}
+\answerlines{1}
+
+\Q{What is the economic cost of taking the shift?}
+\answerlines{1}
+
+\Q{So, which option do you choose? What is your economic rent from that option?}
+\answerlines{2}
+
+\Q{Now suppose there is no shift on offer: your alternative is a quiet afternoon at home. Do you go to the game now? What is your opportunity cost of going in this case?}
+\answerlines{2}
+
+\end{document}

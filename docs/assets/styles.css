@@ -31,6 +31,12 @@ table {
   td:nth-child(1) { 
       width: 3em;
   }
+/* Plain data tables, e.g. on the practice pages: wrap in ::: {.freetable}
+   to undo the schedule-oriented column widths above. */
+.freetable td:nth-child(1), .freetable th:nth-child(1) { width: auto; }
+.freetable td:nth-child(3), .freetable th:nth-child(3) { min-width: 0 !important; }
+.freetable td:nth-child(4), .freetable th:nth-child(4) { min-width: 0 !important; }
+
 /* ---------- Home page ---------- */
 
 /* The table rules above are meant for the schedule on the content page.
