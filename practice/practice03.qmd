@@ -34,19 +34,6 @@ Lena runs a small print shop. Her old press does the job, but it takes three ope
 <details class="solution">
 <summary>Solution</summary>
 
-::: {.freetable .table-scroll tabindex="0"}
-|  | Old press | New press |
-|:--|--:|--:|
-| Benefit | $150,000 | $150,000 |
-| Direct cost | $120,000 | $105,000 |
-| Net benefit | $30,000 | $45,000 |
-| Opportunity cost | $45,000 | $30,000 |
-| Economic cost | $165,000 | $135,000 |
-
-: {tbl-colwidths="[40,30,30]"}
-
-:::
-
 *Net benefit* is benefit minus direct cost.
 
 - Old press: $150,000 − $120,000 = **$30,000**
