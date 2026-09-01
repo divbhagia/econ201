@@ -207,6 +207,106 @@ ul.task-list li input[type="checkbox"] {
   });
 })();
 </script>
+<script>
+// Interactive multiple-choice questions on practice pages. Progressive
+// enhancement: without JavaScript the page shows the plain option list and
+// the collapsible solution, unchanged. With it, each div.mcq (authored as
+// ::: {.mcq answer="c"} in the .qmd) gets real radio or checkbox inputs, a
+// check button, and a role="status" feedback line that screen readers
+// announce. Native form controls keep this keyboard-operable for free.
+(function () {
+  'use strict';
+
+  function enhance(box, idx) {
+    var answers = (box.getAttribute('data-answer') || '')
+      .toLowerCase().split(',')
+      .map(function (s) { return s.trim(); })
+      .filter(Boolean);
+    var list = box.querySelector('ol');
+    if (!answers.length || !list) return;
+
+    var multi = answers.length > 1;
+    var name = 'mcq-' + idx;
+
+    // Group the options in a fieldset named by the question paragraph.
+    var q = box.querySelector('p');
+    var fs = document.createElement('fieldset');
+    fs.className = 'mcq-options';
+    if (q) {
+      if (!q.id) { q.id = name + '-q'; }
+      fs.setAttribute('aria-labelledby', q.id);
+    }
+    list.parentNode.insertBefore(fs, list);
+    fs.appendChild(list);
+
+    // Turn each list item into a labeled input. A label may not contain a
+    // <p>, so for loose lists move the paragraph's children instead.
+    Array.prototype.forEach.call(list.children, function (li, i) {
+      var src = (li.children.length === 1 &&
+                 li.firstElementChild.tagName === 'P')
+        ? li.firstElementChild : li;
+      var label = document.createElement('label');
+      var input = document.createElement('input');
+      input.type = multi ? 'checkbox' : 'radio';
+      input.name = name;
+      input.value = String.fromCharCode(97 + i);
+      label.appendChild(input);
+      while (src.firstChild) { label.appendChild(src.firstChild); }
+      if (src !== li) { li.removeChild(src); }
+      li.appendChild(label);
+    });
+
+    var controls = document.createElement('div');
+    controls.className = 'mcq-controls';
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'mcq-check';
+    btn.textContent = multi ? 'Check my answers' : 'Check my answer';
+    var fb = document.createElement('p');
+    fb.className = 'mcq-feedback';
+    fb.setAttribute('role', 'status');
+    controls.appendChild(btn);
+    controls.appendChild(fb);
+    fs.parentNode.insertBefore(controls, fs.nextSibling);
+
+    btn.addEventListener('click', function () {
+      var picked = Array.prototype.map.call(
+        fs.querySelectorAll('input:checked'),
+        function (el) { return el.value; });
+      var msg;
+      if (!picked.length) {
+        msg = multi ? 'Select one or more answers first.'
+                    : 'Select an answer first.';
+      } else if (picked.length === answers.length &&
+                 answers.every(function (a) {
+                   return picked.indexOf(a) !== -1;
+                 })) {
+        msg = 'Correct!';
+      } else if (multi) {
+        var missing = answers.some(function (a) {
+          return picked.indexOf(a) === -1;
+        });
+        msg = missing
+          ? "You haven't selected all the correct answers. Try again."
+          : 'At least one of your selections is incorrect. Try again.';
+      } else {
+        msg = 'Not quite. Try again, or open the solution below.';
+      }
+      fb.textContent = msg;
+    });
+  }
+
+  function init() {
+    Array.prototype.forEach.call(
+      document.querySelectorAll('div.mcq[data-answer]'), enhance);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

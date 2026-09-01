@@ -357,3 +357,46 @@ details.solution[open] > summary {
   margin-bottom: 0.6em;
 }
 details.solution > :last-child { padding-bottom: 0.8em; }
+
+/* ---------- Interactive multiple choice on practice pages ---------- */
+
+/* Built at runtime by assets/practice-quiz.html from div.mcq blocks. The
+   plain markdown option list is the no-JavaScript fallback. Colors are the
+   vetted theme browns; correctness is conveyed by the feedback wording,
+   never by color alone. */
+div.mcq fieldset.mcq-options {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+div.mcq fieldset.mcq-options ol { margin-bottom: 0.4em; }
+div.mcq fieldset.mcq-options li > label { cursor: pointer; }
+div.mcq fieldset.mcq-options input {
+  margin-right: 0.45em;
+  accent-color: #8f4100;
+}
+div.mcq fieldset.mcq-options input:focus-visible {
+  outline: 3px solid #8f4100;
+  outline-offset: 2px;
+}
+.mcq-controls { margin: 0.8em 0 0.4em 0; }
+button.mcq-check {
+  background-color: #8f4100; /* white on this is 7.7:1 */
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  padding: 0.45em 1.2em;
+  font-weight: 600;
+  font-size: 0.95em;
+  cursor: pointer;
+}
+button.mcq-check:hover { background-color: #6f3300; }
+button.mcq-check:focus-visible {
+  outline: 3px solid #8f4100;
+  outline-offset: 2px;
+}
+.mcq-feedback {
+  margin: 0.6em 0 0 0;
+  font-weight: 600;
+  color: #393A3B;
+}

@@ -190,6 +190,7 @@ ul.task-list li input[type="checkbox"] {
 <p>Write your answer down before you open a <strong>Solution</strong>.</p>
 <section id="multiple-choice" class="level3">
 <h3 class="anchored" data-anchor-id="multiple-choice">Multiple choice</h3>
+<div class="mcq" data-answer="c">
 <p><strong>1.</strong> Which statement best describes what the hockey stick chart shows?</p>
 <ol type="a">
 <li>Rich countries have been far ahead of poor ones for many centuries.</li>
@@ -203,6 +204,8 @@ Solution
 </summary>
 <p><strong>(c).</strong> Today’s gaps are not an old feature of the world: in 1600 the five countries on the chart are nearly indistinguishable. The divergence was produced by countries starting sustained growth at different times.</p>
 </details>
+</div>
+<div class="mcq" data-answer="b">
 <p><strong>2.</strong> What does Adam Smith’s <em>invisible hand</em> describe?</p>
 <ol type="a">
 <li>Governments steering the economy through regulation of prices and wages.</li>
@@ -216,6 +219,8 @@ Solution
 </summary>
 <p><strong>(b).</strong> The <em>invisible hand</em> is Smith’s metaphor for the way markets coordinate the self-interested actions of individuals into outcomes that serve society. Smith’s famous illustration: we expect our dinner not from the benevolence of the butcher, the brewer, or the baker, but from their regard to their own interest. Each of them serves us because doing so serves themselves, and yet the result is that society gets fed, without anyone planning or intending it.</p>
 </details>
+</div>
+<div class="mcq" data-answer="b">
 <p><strong>3.</strong> Adam Smith said the division of labour/specialisation is limited by the <em>extent of the market</em>. What does that mean?</p>
 <ol type="a">
 <li>Only large firms are able to specialise.</li>
@@ -229,6 +234,8 @@ Solution
 </summary>
 <strong>(b).</strong> Smith’s pin factory shows that specialisation makes workers more productive: divided into separate tasks, ten workers could produce tens of thousands of pins a day, compared with a single worker on his own making just a few pins. But all those extra pins have to be sold to someone, so specialising is only worthwhile when the market is large enough to absorb the extra output. Smith mentions canals and foreign trade (option c) as ways of widening the market, not as preconditions for specialising.
 </details>
+</div>
+<div class="mcq" data-answer="c">
 <p><strong>4.</strong> <em>Technological progress</em> is defined as a change in technology that reduces the amount of resources (labour, machines, land, energy, time) needed to produce a given amount of output. A bakery makes one of the following changes. Which one is technological progress?</p>
 <ol type="a">
 <li>It buys a second oven and bakes twice as many cakes.</li>
@@ -242,6 +249,8 @@ Solution
 </summary>
 <p><strong>(c).</strong> Hold each option against the definition. In (c) the output is the same cakes, and the resources needed have fallen: less labour and less time. Note that no new equipment was involved, which the definition allows, because it is about the process rather than the hardware. In (a) output rises, but so do the inputs used to get it, so no resource has been economised per cake. In (b) the resources used are unchanged; only their price has fallen, and a price is not part of the definition. In (d) the bakery sells more of what it was already making, and the process is untouched.</p>
 </details>
+</div>
+<div class="mcq" data-answer="b">
 <p><strong>5.</strong> Countries with more doctors per person have longer life expectancy. Does this mean training more doctors would lead to people living longer?</p>
 <ol type="a">
 <li>The correlation is too weak to mean anything.</li>
@@ -255,6 +264,7 @@ Solution
 </summary>
 <p><strong>(b).</strong> Correlation is not causation. Richer countries can afford more doctors, and they can also afford clean water, better housing, and safer workplaces, all of which also lead to higher life expectancy. So the two numbers would rise together even if doctors made no difference at all. The story can also run the other way round: a healthier, wealthier population is one that can afford to train doctors in the first place.</p>
 </details>
+</div>
 </section>
 <section id="short-answer" class="level3">
 <h3 class="anchored" data-anchor-id="short-answer">Short answer</h3>
@@ -334,6 +344,106 @@ Solution
   var t; window.addEventListener('resize', function () {
     clearTimeout(t); t = setTimeout(fix, 250);
   });
+})();
+</script>
+<script>
+// Interactive multiple-choice questions on practice pages. Progressive
+// enhancement: without JavaScript the page shows the plain option list and
+// the collapsible solution, unchanged. With it, each div.mcq (authored as
+// ::: {.mcq answer="c"} in the .qmd) gets real radio or checkbox inputs, a
+// check button, and a role="status" feedback line that screen readers
+// announce. Native form controls keep this keyboard-operable for free.
+(function () {
+  'use strict';
+
+  function enhance(box, idx) {
+    var answers = (box.getAttribute('data-answer') || '')
+      .toLowerCase().split(',')
+      .map(function (s) { return s.trim(); })
+      .filter(Boolean);
+    var list = box.querySelector('ol');
+    if (!answers.length || !list) return;
+
+    var multi = answers.length > 1;
+    var name = 'mcq-' + idx;
+
+    // Group the options in a fieldset named by the question paragraph.
+    var q = box.querySelector('p');
+    var fs = document.createElement('fieldset');
+    fs.className = 'mcq-options';
+    if (q) {
+      if (!q.id) { q.id = name + '-q'; }
+      fs.setAttribute('aria-labelledby', q.id);
+    }
+    list.parentNode.insertBefore(fs, list);
+    fs.appendChild(list);
+
+    // Turn each list item into a labeled input. A label may not contain a
+    // <p>, so for loose lists move the paragraph's children instead.
+    Array.prototype.forEach.call(list.children, function (li, i) {
+      var src = (li.children.length === 1 &&
+                 li.firstElementChild.tagName === 'P')
+        ? li.firstElementChild : li;
+      var label = document.createElement('label');
+      var input = document.createElement('input');
+      input.type = multi ? 'checkbox' : 'radio';
+      input.name = name;
+      input.value = String.fromCharCode(97 + i);
+      label.appendChild(input);
+      while (src.firstChild) { label.appendChild(src.firstChild); }
+      if (src !== li) { li.removeChild(src); }
+      li.appendChild(label);
+    });
+
+    var controls = document.createElement('div');
+    controls.className = 'mcq-controls';
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'mcq-check';
+    btn.textContent = multi ? 'Check my answers' : 'Check my answer';
+    var fb = document.createElement('p');
+    fb.className = 'mcq-feedback';
+    fb.setAttribute('role', 'status');
+    controls.appendChild(btn);
+    controls.appendChild(fb);
+    fs.parentNode.insertBefore(controls, fs.nextSibling);
+
+    btn.addEventListener('click', function () {
+      var picked = Array.prototype.map.call(
+        fs.querySelectorAll('input:checked'),
+        function (el) { return el.value; });
+      var msg;
+      if (!picked.length) {
+        msg = multi ? 'Select one or more answers first.'
+                    : 'Select an answer first.';
+      } else if (picked.length === answers.length &&
+                 answers.every(function (a) {
+                   return picked.indexOf(a) !== -1;
+                 })) {
+        msg = 'Correct!';
+      } else if (multi) {
+        var missing = answers.some(function (a) {
+          return picked.indexOf(a) === -1;
+        });
+        msg = missing
+          ? "You haven't selected all the correct answers. Try again."
+          : 'At least one of your selections is incorrect. Try again.';
+      } else {
+        msg = 'Not quite. Try again, or open the solution below.';
+      }
+      fb.textContent = msg;
+    });
+  }
+
+  function init() {
+    Array.prototype.forEach.call(
+      document.querySelectorAll('div.mcq[data-answer]'), enhance);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
 })();
 </script>
 <script id="quarto-html-after-body" type="application/javascript">

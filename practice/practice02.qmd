@@ -40,6 +40,8 @@ Write your answer down before you open a **Solution**.
 
 ### Multiple choice
 
+::: {.mcq answer="c"}
+
 **1.** Which statement best describes what the hockey stick chart shows?
 
   a. Rich countries have been far ahead of poor ones for many centuries.
@@ -53,6 +55,10 @@ Write your answer down before you open a **Solution**.
 **(c).** Today's gaps are not an old feature of the world: in 1600 the five countries on the chart are nearly indistinguishable. The divergence was produced by countries starting sustained growth at different times.
 
 </details>
+
+:::
+
+::: {.mcq answer="b"}
 
 **2.** What does Adam Smith's *invisible hand* describe?
 
@@ -69,6 +75,10 @@ Write your answer down before you open a **Solution**.
 
 </details>
 
+:::
+
+::: {.mcq answer="b"}
+
 **3.** Adam Smith said the division of labour/specialisation is limited by the *extent of the market*. What does that mean?
 
   a. Only large firms are able to specialise.
@@ -81,6 +91,10 @@ Write your answer down before you open a **Solution**.
 
 **(b).** Smith's pin factory shows that specialisation makes workers more productive: divided into separate tasks, ten workers could produce tens of thousands of pins a day, compared with a single worker on his own making just a few pins. But all those extra pins have to be sold to someone, so specialising is only worthwhile when the market is large enough to absorb the extra output. Smith mentions canals and foreign trade (option c) as ways of widening the market, not as preconditions for specialising.
 </details>
+
+:::
+
+::: {.mcq answer="c"}
 
 **4.** *Technological progress* is defined as a change in technology that reduces the amount of resources (labour, machines, land, energy, time) needed to produce a given amount of output. A bakery makes one of the following changes. Which one is technological progress?
 
@@ -96,6 +110,10 @@ Write your answer down before you open a **Solution**.
 
 </details>
 
+:::
+
+::: {.mcq answer="b"}
+
 **5.** Countries with more doctors per person have longer life expectancy. Does this mean training more doctors would lead to people living longer?
 
   a. The correlation is too weak to mean anything.
@@ -109,6 +127,8 @@ Write your answer down before you open a **Solution**.
 **(b).** Correlation is not causation. Richer countries can afford more doctors, and they can also afford clean water, better housing, and safer workplaces, all of which also lead to higher life expectancy. So the two numbers would rise together even if doctors made no difference at all. The story can also run the other way round: a healthier, wealthier population is one that can afford to train doctors in the first place. 
 
 </details>
+
+:::
 
 ### Short answer
 

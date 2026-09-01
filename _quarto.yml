@@ -65,9 +65,12 @@ format:
     toc: true
     link-external-newwindow: true
     css: assets/styles.css
-    # Makes equations that overflow a narrow viewport scrollable and
-    # keyboard-reachable (WCAG 1.4.10, 2.1.1). Keep.
-    include-after-body: assets/site-a11y.html
+    # site-a11y makes equations that overflow a narrow viewport scrollable
+    # and keyboard-reachable (WCAG 1.4.10, 2.1.1). Keep. practice-quiz turns
+    # div.mcq blocks on practice pages into checkable questions.
+    include-after-body:
+      - assets/site-a11y.html
+      - assets/practice-quiz.html
   revealjs:
     # 16:9 so the deck fills a projector instead of being pillarboxed, and a
     # moderate safe margin around the content.
