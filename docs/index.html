@@ -211,10 +211,11 @@ ul.task-list li input[type="checkbox"] {
 // Interactive multiple-choice questions on practice pages. Progressive
 // enhancement: without JavaScript the page shows the plain option list and
 // the collapsible solution, unchanged. With it, each div.mcq (authored as
-// ::: {.mcq answer="c"} in the .qmd) gets real radio or checkbox inputs, a
-// check button, and a role="status" feedback line that screen readers
-// announce. The solution box moves under the button and opens by itself on
-// a correct answer. Native form controls keep this keyboard-operable.
+// ::: {.mcq answer="c"} in the .qmd) gets real radio or checkbox inputs and
+// a single check button that replaces the Solution disclosure: the button
+// carries the same triangle marker, and a correct answer reveals the
+// solution text beneath the role="status" feedback line, flipping the
+// triangle down. Native form controls keep this keyboard-operable.
 (function () {
   'use strict';
 
@@ -268,19 +269,38 @@ ul.task-list li input[type="checkbox"] {
       li.appendChild(label);
     });
 
+    // The Solution disclosure is absorbed: its body becomes a hidden panel
+    // revealed on a correct answer, and the details element goes away.
+    var sol = null;
+    var det = box.querySelector('details.solution');
+    if (det) {
+      sol = document.createElement('div');
+      sol.className = 'mcq-solution';
+      sol.hidden = true;
+      var sum = det.querySelector('summary');
+      if (sum) { det.removeChild(sum); }
+      while (det.firstChild) { sol.appendChild(det.firstChild); }
+      det.parentNode.removeChild(det);
+    }
+
     var controls = document.createElement('div');
     controls.className = 'mcq-controls';
     var btn = document.createElement('button');
     btn.type = 'button';
     btn.className = 'mcq-check';
-    btn.textContent = multi ? 'Check my answers' : 'Check my answer';
+    var arrow = document.createElement('span');
+    arrow.className = 'mcq-arrow';
+    arrow.setAttribute('aria-hidden', 'true');
+    arrow.textContent = '▸';
+    btn.appendChild(arrow);
+    btn.appendChild(document.createTextNode(
+      ' ' + (multi ? 'Check my answers' : 'Check my answer')));
     var fb = document.createElement('p');
     fb.className = 'mcq-feedback';
     fb.setAttribute('role', 'status');
     controls.appendChild(btn);
     controls.appendChild(fb);
-    var det = box.querySelector('details.solution');
-    if (det) { controls.appendChild(det); }
+    if (sol) { controls.appendChild(sol); }
     fs.parentNode.insertBefore(controls, fs.nextSibling);
 
     btn.addEventListener('click', function () {
@@ -297,7 +317,7 @@ ul.task-list li input[type="checkbox"] {
                    return picked.indexOf(a) !== -1;
                  })) {
         correct = true;
-        msg = 'Correct!';
+        msg = sol ? 'Correct! The solution is below.' : 'Correct!';
       } else if (multi) {
         var missing = answers.some(function (a) {
           return picked.indexOf(a) === -1;
@@ -306,10 +326,13 @@ ul.task-list li input[type="checkbox"] {
           ? "You haven't selected all the correct answers. Try again."
           : 'At least one of your selections is incorrect. Try again.';
       } else {
-        msg = 'Not quite. Try again, or open the solution below.';
+        msg = 'Not quite. Try again.';
       }
       fb.textContent = msg;
-      if (correct && det) { det.open = true; }
+      if (sol) {
+        sol.hidden = !correct;
+        arrow.textContent = correct ? '▾' : '▸';
+      }
     });
   }
 

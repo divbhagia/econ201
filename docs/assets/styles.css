@@ -419,4 +419,13 @@ button.mcq-check:focus-visible {
   font-weight: 600;
   color: #393A3B;
 }
-.mcq-controls > details.solution { margin-top: 0.7em; }
+.mcq-arrow { color: #BF5700; }
+/* Solution body revealed on a correct answer; same panel as details.solution. */
+.mcq-controls > .mcq-solution {
+  margin-top: 0.7em;
+  border-left: 3px solid #BF5700;
+  background-color: #FDF3EA;
+  border-radius: 4px;
+  padding: 0.8em 1em;
+}
+.mcq-controls > .mcq-solution > :last-child { margin-bottom: 0; }
