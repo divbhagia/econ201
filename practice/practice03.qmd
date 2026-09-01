@@ -68,7 +68,7 @@ Economic cost is direct cost plus opportunity cost.
 <details class="solution">
 <summary>Solution</summary>
 
-Take the option whose benefit beats its economic cost. The old press costs $165,000 against a $150,000 benefit, so it fails; the new press costs $135,000 against the same benefit, so it passes. **She leases the new press**, which is what comparing net benefits says too: $45,000 beats $30,000.
+Compare the net benefits of the two options and take the higher: $45,000 with the new press against $30,000 with the old one. **She leases the new press.**
 
 Economic rent is the net benefit of the option chosen minus its opportunity cost.
 
