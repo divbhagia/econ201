@@ -361,36 +361,55 @@ details.solution > :last-child { padding-bottom: 0.8em; }
 /* ---------- Interactive multiple choice on practice pages ---------- */
 
 /* Built at runtime by assets/practice-quiz.html from div.mcq blocks. The
-   plain markdown option list is the no-JavaScript fallback. Colors are the
-   vetted theme browns; correctness is conveyed by the feedback wording,
-   never by color alone. */
+   plain markdown option list is the no-JavaScript fallback. Each option is
+   a label laid out as a grid (letter | input | text) so long options wrap
+   cleanly under the text column; the native ol marker is dropped because
+   it misaligns on multi-line items. Colors are the vetted theme browns;
+   correctness is conveyed by the feedback wording, never by color alone. */
 div.mcq fieldset.mcq-options {
   border: none;
   margin: 0;
   padding: 0;
 }
-div.mcq fieldset.mcq-options ol { margin-bottom: 0.4em; }
-div.mcq fieldset.mcq-options li > label { cursor: pointer; }
+div.mcq fieldset.mcq-options ol {
+  list-style: none;
+  margin: 0 0 0.5em 0;
+  padding-left: 0.25em;
+}
+div.mcq fieldset.mcq-options li { margin: 0.45em 0; }
+div.mcq fieldset.mcq-options li > label {
+  display: grid;
+  grid-template-columns: 1.3em auto 1fr;
+  column-gap: 0.45em;
+  align-items: start;
+  cursor: pointer;
+}
+.mcq-letter { text-align: right; }
 div.mcq fieldset.mcq-options input {
-  margin-right: 0.45em;
-  accent-color: #8f4100;
+  width: 1.15em;
+  height: 1.15em;
+  margin: 0.2em 0 0 0;
+  accent-color: #BF5700; /* navbar band color; 4.6:1 on white */
 }
 div.mcq fieldset.mcq-options input:focus-visible {
   outline: 3px solid #8f4100;
   outline-offset: 2px;
 }
 .mcq-controls { margin: 0.8em 0 0.4em 0; }
+/* Same look as the Solution disclosure: cream panel, brand-orange rule,
+   dark brown text (#8f4100 is AA on the cream, where #BF5700 is not). */
 button.mcq-check {
-  background-color: #8f4100; /* white on this is 7.7:1 */
-  color: #ffffff;
+  background-color: #FDF3EA;
+  color: #8f4100;
   border: none;
-  border-radius: 999px;
-  padding: 0.45em 1.2em;
-  font-weight: 600;
+  border-left: 3px solid #BF5700;
+  border-radius: 4px;
+  padding: 0.55em 1.1em;
+  font-weight: 700;
   font-size: 0.95em;
   cursor: pointer;
 }
-button.mcq-check:hover { background-color: #6f3300; }
+button.mcq-check:hover { text-decoration: underline; }
 button.mcq-check:focus-visible {
   outline: 3px solid #8f4100;
   outline-offset: 2px;
@@ -400,3 +419,4 @@ button.mcq-check:focus-visible {
   font-weight: 600;
   color: #393A3B;
 }
+.mcq-controls > details.solution { margin-top: 0.7em; }

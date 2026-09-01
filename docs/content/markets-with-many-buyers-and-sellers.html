@@ -313,7 +313,8 @@ Materials posted closer to the date.
 // the collapsible solution, unchanged. With it, each div.mcq (authored as
 // ::: {.mcq answer="c"} in the .qmd) gets real radio or checkbox inputs, a
 // check button, and a role="status" feedback line that screen readers
-// announce. Native form controls keep this keyboard-operable for free.
+// announce. The solution box moves under the button and opens by itself on
+// a correct answer. Native form controls keep this keyboard-operable.
 (function () {
   'use strict';
 
@@ -339,20 +340,31 @@ Materials posted closer to the date.
     list.parentNode.insertBefore(fs, list);
     fs.appendChild(list);
 
-    // Turn each list item into a labeled input. A label may not contain a
-    // <p>, so for loose lists move the paragraph's children instead.
+    // Each option becomes a label laid out as a three-column grid: letter,
+    // input, text. The grid keeps wrapped lines of long options aligned
+    // under the text column (the native ol marker misplaces itself on
+    // multi-line items, so the letter is ours and the marker is dropped by
+    // CSS). A label may not contain a <p>, so for loose lists move the
+    // paragraph's children instead.
     Array.prototype.forEach.call(list.children, function (li, i) {
       var src = (li.children.length === 1 &&
                  li.firstElementChild.tagName === 'P')
         ? li.firstElementChild : li;
-      var label = document.createElement('label');
+      var letter = document.createElement('span');
+      letter.className = 'mcq-letter';
+      letter.textContent = String.fromCharCode(97 + i) + '.';
       var input = document.createElement('input');
       input.type = multi ? 'checkbox' : 'radio';
       input.name = name;
       input.value = String.fromCharCode(97 + i);
-      label.appendChild(input);
-      while (src.firstChild) { label.appendChild(src.firstChild); }
+      var text = document.createElement('span');
+      text.className = 'mcq-text';
+      while (src.firstChild) { text.appendChild(src.firstChild); }
       if (src !== li) { li.removeChild(src); }
+      var label = document.createElement('label');
+      label.appendChild(letter);
+      label.appendChild(input);
+      label.appendChild(text);
       li.appendChild(label);
     });
 
@@ -367,6 +379,8 @@ Materials posted closer to the date.
     fb.setAttribute('role', 'status');
     controls.appendChild(btn);
     controls.appendChild(fb);
+    var det = box.querySelector('details.solution');
+    if (det) { controls.appendChild(det); }
     fs.parentNode.insertBefore(controls, fs.nextSibling);
 
     btn.addEventListener('click', function () {
@@ -374,6 +388,7 @@ Materials posted closer to the date.
         fs.querySelectorAll('input:checked'),
         function (el) { return el.value; });
       var msg;
+      var correct = false;
       if (!picked.length) {
         msg = multi ? 'Select one or more answers first.'
                     : 'Select an answer first.';
@@ -381,6 +396,7 @@ Materials posted closer to the date.
                  answers.every(function (a) {
                    return picked.indexOf(a) !== -1;
                  })) {
+        correct = true;
         msg = 'Correct!';
       } else if (multi) {
         var missing = answers.some(function (a) {
@@ -393,6 +409,7 @@ Materials posted closer to the date.
         msg = 'Not quite. Try again, or open the solution below.';
       }
       fb.textContent = msg;
+      if (correct && det) { det.open = true; }
     });
   }
 
