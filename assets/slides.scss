@@ -9,11 +9,11 @@ $muted: #6b6b6b;
 
 $body-bg: #ffffff;
 $body-color: $ink;
-$link-color: $accent;
+$link-color: #0072B2;
 $presentation-heading-color: $ink;
 $presentation-heading-font: 'Fira Sans Condensed', Helvetica, sans-serif;
 $presentation-font-family: Lato, Helvetica, sans-serif;
-$presentation-font-size-root: 38px;
+$presentation-font-size-root: 37px;
 
 /*-- scss:rules --*/
 
@@ -222,7 +222,14 @@ $presentation-font-size-root: 38px;
 .reveal .slides section > ol > li,
 .reveal .column > ul > li,
 .reveal .column > ol > li { margin-bottom: 0.6em; }
-.reveal table { font-size: 0.88em; }
+// Booktabs-style frame on every slide table, matching the tagged-PDF decks,
+// with even air above and a little more below.
+.reveal table {
+  font-size: 0.88em;
+  border-top: 2.5px solid #1a1a1a;
+  border-bottom: 2.5px solid #1a1a1a;
+  margin: 0.65em auto 0.85em auto;
+}
 // A rule above the last row: wrap a table whose final row is a total in
 // ::: {.totalrule}. HTML only; the tagged-PDF writer cannot add mid-rules,
 // so there the bold Total row stands alone.

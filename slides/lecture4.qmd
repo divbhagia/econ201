@@ -100,19 +100,14 @@ This seems obvious, but just two centuries ago, most families grew their own foo
 
 ## Why Specialize?
 
-::: incremental
 -   *Learning by doing*: we acquire skills as we produce things.
 -   *Differences in ability*: from skill, or from the soil, climate, and resources around us.
 -   *Economies of scale*: producing many units of a good often costs less per unit than producing a few.
-:::
 
 ## Meal Prep
 
 ::: plain
 Pablo and Lin are neighbors. Each spends about 8 hours on Sunday baking bread and making cheese for the week's meals. If they spent the whole day on just one food:
-:::
-
-::: gap
 :::
 
 |       | Loaves of bread | Pounds of cheese |
@@ -144,9 +139,6 @@ A person or a country has an *absolute advantage* in the production of a particu
 
 ::: plain
 So what does each of them give up? Pablo's Sunday can produce 12 loaves or 6 pounds of cheese, so for Pablo each pound of cheese costs 12 / 6 = 2 loaves of bread.
-:::
-
-::: gap
 :::
 
 | Opportunity cost of... |    1 pound of cheese |       1 loaf of bread |
@@ -194,9 +186,6 @@ Height shows absolute advantage; slope shows comparative advantage.
 If they cannot trade, each eats exactly what they make. Suppose each of them spends *75% of their time on bread and 25% on cheese*.
 :::
 
-::: gap
-:::
-
 ::: totalrule
 |              | Loaves of bread | Pounds of cheese |
 |:-------------|----------------:|-----------------:|
@@ -213,9 +202,6 @@ Under *self-sufficiency*, each person consumes exactly what they produce.
 
 ::: plain
 Now suppose *each of them makes only the food in which they have the comparative advantage*: so Pablo makes bread, and Lin makes cheese.
-:::
-
-::: gap
 :::
 
 |              | Loaves of bread | Pounds of cheese |
