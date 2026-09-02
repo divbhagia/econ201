@@ -1,0 +1,151 @@
+% !TEX program = lualatex
+% ECON 201, Worksheet 4: Specialization and Comparative Advantage. Compile
+% with LuaLaTeX so the PDF is tagged (same setup as worksheet03.tex).
+% Build from the course root:
+%   latexmk -lualatex -cd worksheets/worksheet04.tex && latexmk -c -cd worksheets/worksheet04.tex
+\DocumentMetadata{
+  pdfstandard=UA-2,
+  pdfversion=2.0,
+  lang=en-US,
+  tagging=on
+}
+\documentclass[11pt]{article}
+
+\usepackage[letterpaper, margin=0.8in, top=0.5in, bottom=0.45in]{geometry}
+\usepackage{fontspec}
+\setmainfont{Fira Sans}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+% Questions are labelled by hand: under tagging=on, enumitem's enumerate
+% did not step its counter, so every item printed the same label.
+\newcounter{q}
+\newcommand{\Q}[1]{\stepcounter{q}\par\needspace{5\baselineskip}\vspace{3pt}\noindent\hangindent=1.7em\hangafter=1
+  \makebox[1.7em][l]{(\alph{q})}#1\par}
+\usepackage{xcolor}
+\usepackage{needspace}
+\definecolor{accent}{HTML}{BF5700}
+\usepackage{titlesec}
+\titleformat{\section}{\large\bfseries\color{accent}}{}{0pt}{}
+\titlespacing*{\section}{0pt}{4pt}{2pt}
+\usepackage{hyperref}
+\hypersetup{pdftitle={ECON 201 Worksheet: Specialization and Comparative Advantage}, pdfauthor={Div Bhagia}, hidelinks}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2pt}
+
+% Ruled answer space: n lines. Plain TeX loop; pgffor's \foreach breaks the
+% enumerate counter when used inside an item.
+\definecolor{answerrule}{HTML}{B8B8B8}
+\newcount\answerlinecount
+\newcommand{\answerlines}[1]{%
+  \par\answerlinecount=#1
+  \loop\ifnum\answerlinecount>0
+    \vspace{12pt}\noindent\hspace*{1.7em}%
+    {\color{answerrule}\rule{\dimexpr\linewidth-1.7em\relax}{0.4pt}}\par
+    \advance\answerlinecount by -1
+  \repeat}
+
+% A cell to be filled in. Same width everywhere so the columns line up.
+\newcommand{\blank}{\rule{1.15in}{0.3pt}}
+
+\begin{document}
+
+{\LARGE\bfseries\color{accent} Worksheet: Specialization and Comparative Advantage}\hfill{\large ECON 201}
+
+\needspace{7\baselineskip}\section{Definitions from today}
+
+\begingroup\small\setlength{\parskip}{2pt}
+\textbf{\color{accent}Opportunity cost.} what you give up by taking one action instead of the next best alternative.\par
+\textbf{\color{accent}Absolute advantage.} being able to produce more of a good than someone else, using the same inputs.\par
+\textbf{\color{accent}Comparative advantage.} the ability to produce a good at a lower opportunity cost than another producer.\par
+\endgroup
+
+\needspace{12\baselineskip}\section{Pablo and Lin's Sunday}\setcounter{q}{0}
+
+Pablo and Lin each spend about 8 hours on Sunday baking bread and making cheese. If they spent the whole day on just one food, they could make:
+
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}p{1.2in}>{\centering\arraybackslash}p{1.7in}>{\centering\arraybackslash}p{1.7in}@{}}
+\toprule
+ & Loaves of bread & Pounds of cheese \\
+\midrule
+Pablo & 12 & 6 \\
+Lin & 2 & 4 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+They can also split the day between the two foods, and output scales with time. For example, if Pablo spent half the day on bread, he would make 6 loaves, and a quarter of the day on cheese would give him 1.5 pounds.
+
+\Q{Fill in the opportunity cost of each food for each person.}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}p{1.2in}p{1.7in}p{1.7in}@{}}
+\toprule
+ & 1 pound of cheese & 1 loaf of bread \\
+\midrule
+Pablo & \blank & \blank \\
+Lin & \blank & \blank \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\Q{Who has the absolute advantage in each food?}
+\answerlines{1}
+
+\Q{Who has the comparative advantage in each food?}
+\answerlines{1}
+
+\Q{Suppose each of them spends 75\% of the day on bread and 25\% on cheese. Fill in what each produces, and the totals.}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}p{1.2in}p{1.7in}p{1.7in}@{}}
+\toprule
+ & Loaves of bread & Pounds of cheese \\
+\midrule
+Pablo & \blank & \blank \\
+Lin & \blank & \blank \\
+\midrule
+Total & \blank & \blank \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\Q{Now each makes only the food in which they have the comparative advantage. How much bread and cheese is produced in total?}
+\answerlines{1}
+
+\Q{They agree on a deal: Lin sells Pablo 2 pounds of cheese for 2 loaves of bread. What does each of them end up consuming? Is each of them better off than in part (d)?}
+\answerlines{2}
+
+\Q{Between which two prices, in loaves of bread per pound of cheese, does trade make both of them better off?}
+\answerlines{1}
+
+\needspace{12\baselineskip}\section{One more pair}\setcounter{q}{0}
+
+Ana and Ben work at a campus bakery. In an hour, they can produce:
+
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}p{1.2in}>{\centering\arraybackslash}p{1.7in}>{\centering\arraybackslash}p{1.7in}@{}}
+\toprule
+ & Frosted cupcakes & Pots of coffee \\
+\midrule
+Ana & 12 & 4 \\
+Ben & 4 & 2 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\Q{Who has the absolute advantage in each task?}
+\answerlines{1}
+
+\Q{Who has the comparative advantage in each task?}
+\answerlines{2}
+
+\end{document}

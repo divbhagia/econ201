@@ -22,5 +22,6 @@ Materials are posted as we go. See the [Schedule](../schedule.qmd) for dates and
 
 <p><strong>Reading:</strong> 2.3</p>
 <p class="lecture-links"><a class="btn btn-outline-primary" href="../slides/lecture4.html" target="_blank" rel="noopener" role="button" aria-label="Lecture 4 slides (opens in a new tab)">Slides</a>
-<a class="btn btn-outline-primary" href="../slides/lecture4.pdf" target="_blank" rel="noopener" role="button" aria-label="Lecture 4 slides as a tagged PDF (opens in a new tab)">Slides (PDF)</a></p>
+<a class="btn btn-outline-primary" href="../slides/lecture4.pdf" target="_blank" rel="noopener" role="button" aria-label="Lecture 4 slides as a tagged PDF (opens in a new tab)">Slides (PDF)</a>
+<a class="btn btn-outline-primary" href="../worksheets/worksheet04.pdf" target="_blank" rel="noopener" role="button" aria-label="Lecture 4 worksheet (opens in a new tab)">Worksheet</a></p>
 :::
