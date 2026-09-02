@@ -11,281 +11,297 @@ format:
       - ../assets/strip-notes.lua
 ---
 
+## What Does a Free Seat Cost?
+
+:::: plain
+**A concert hall has unsold seats an hour before the show and lets students in free. The opportunity cost to the hall of admitting a student is:**
+
+::: gap
+:::
+
+a\) The regular ticket price.
+
+b\) The hall's cost per seat for the evening.
+
+c\) Close to zero, since the seat would otherwise be empty.
+
+d\) Negative, since the student will buy snacks.
+::::
+
+## The Sunk Cost Fallacy
+
+::: plain
+The hall is paid for and the seat would otherwise sit empty. What does letting one more student in really cost?
+:::
+
+-   It is tempting to count the hall's spending on the evening, but that money is spent whether the student comes in or not.
+-   A *sunk cost* is a cost that has already been incurred and cannot be recovered.
+-   Letting sunk costs sway what you decide next is such a common mistake that it has its own name: the *sunk cost fallacy*.
+    -   For example, sitting through a movie you are not enjoying because you paid for the ticket.
+
 ## Where We Left Off
 
-- A decision is a comparison: *benefit* against *economic cost*, which includes the *opportunity cost* of what you give up.
-- Every number in that comparison belonged to one person choosing between two options.
-- Today the same question, what do you give up, decides who should do what when *two* people can each do two things.
+-   Individuals make *choices* by weighing *costs* and *benefits*.
+-   The *economic cost* of an action is more than its direct cost: $$\text{economic cost} = \text{direct cost} + \text{opportunity cost}$$
+-   *Opportunity cost*: the value of the next-best alternative you give up.
+-   So far, we have said that capitalism expanded our opportunities to specialize, by enlarging the role of both *firms* and *markets*.
 
-::: {.gap}
+::: takeaway
+*Today*: why specialization and trading make us better off.
 :::
 
-::: {.plain}
-*Today*: [specialization]{.book}, [absolute advantage]{.book} and [comparative advantage]{.book}, and the [gains from trade]{.book}. One example with two farmers carries the whole lecture.
+## I, Pencil (Leonard Read, 1958)
+
+:::: {.columns}
+::: {.column width="70%"}
+::: plain
+A pencil tells the story of how it was made:
 :::
 
-## Nobody Makes Their Own Shoes
-
-::: {.plain}
-Almost nothing you used today was made by you.
+-   Wood from Oregon, graphite from Sri Lanka, brass from mined zinc and copper, an eraser from rapeseed oil.
+-   Thousands of workers involved, loggers, miners, sailors, none of whom set out to make a pencil.
+-   No single person knows how to make one from scratch.
+-   No one is in charge: markets coordinate all of them, Smith's *invisible hand* at work.
 :::
 
-- *People* specialize: some weld, some teach, some design buildings.
-- *Firms* specialize: often in a single step of making a single good.
-- *Countries* specialize: gold and knitwear are Cambodia's largest exports; Singapore's are integrated circuits.
-
-::: {.fragment}
-::: {.takeaway}
-Each of us produces a tiny slice of what we consume and gets the rest by *exchange*. That is what *specialization* means.
+::: {.column width="30%"}
+![](img/pencil.png){height="480" fig-alt="A plain wooden pencil, sharpened, with a metal ferrule and a pink eraser, standing upright."}
 :::
+::::
+
+## The £4 Toaster
+
+:::: {.columns}
+::: {.column width="55%"}
+-   In 2009, the designer Thomas Thwaites set out to build a toaster from scratch.
+-   He mined his own iron ore, smelted it, made plastic from potato starch, and drew his own copper wire.
+-   Nine months and about £1,187 later, his toaster worked for about five seconds before it began to melt.
+-   The store sold the same toaster for £3.94, about \$5.
+:::
+
+::: {.column width="45%"}
+![](img/toaster.jpg){fig-alt="Thomas Thwaites' homemade toaster: a lumpy appliance with a rough, cracked beige potato-starch shell, exposed metal parts, and a bare wire running to a crude plug."}
+:::
+::::
+
+## We All Specialize
+
+::: takeaway
+*Specialization*: each person does just one or a few of the large number of tasks necessary to complete some project or reach some goal.
+:::
+
+-   *People* specialize: some weld, some teach, some design buildings.
+-   *Firms* specialize: often in a single step of making a single good.
+-   *Countries* specialize: gold and knitwear are Cambodia's largest exports; Singapore's are integrated circuits.
+
+::: fragment
+This seems obvious, but just two centuries ago, most families grew their own food and made much of their own clothing.
 :::
 
 ## Why Specialize?
 
-::: {.incremental}
-- *Learning by doing*: we acquire skills as we produce things.
-- *Differences in ability*: from skill, or from the soil, climate, and resources around us.
-- *Economies of scale*: producing many units of a good often costs less per unit than producing a few.
+::: incremental
+-   *Learning by doing*: we acquire skills as we produce things.
+-   *Differences in ability*: from skill, or from the soil, climate, and resources around us.
+-   *Economies of scale*: producing many units of a good often costs less per unit than producing a few.
 :::
 
-::: {.fragment}
-Adam Smith's pin factory, from Lecture 2, was all three at once: ten workers splitting eighteen steps made nearly 50,000 pins a day, when alone none could have made twenty.
+## Meal Prep
+
+::: plain
+Pablo and Lin are neighbors. Each spends about 8 hours on Sunday baking bread and making cheese for the week's meals. If they spent the whole day on just one food:
 :::
 
-## Two People, Two Crops
-
-::: {.plain}
-Greta and Carlos each have a year to farm. Each can grow apples, wheat, or some of both.
+::: gap
 :::
 
-| If the whole year goes into one crop | Apples | Tons of wheat |
-|:--|--:|--:|
-| Greta | 1,250 | 50 |
-| Carlos | 1,000 | 20 |
+|       | Loaves of bread | Pounds of cheese |
+|:------|:---------------:|:----------------:|
+| Pablo |       12        |        6         |
+| Lin   |        2        |        4         |
 
-::: {.figcap}
-CORE Figure 2.2a
+::: plain
+They can also split the day: with half his time on each food, Pablo would make 6 loaves and 3 pounds of cheese.
 :::
 
-::: {.fragment}
-Greta grows more of *both*. Hands up: is there any reason for her to deal with Carlos at all?
-:::
-
-## Greta Has an Absolute Advantage in Both
-
-::: {.takeaway}
-*Absolute advantage*: being able to produce more of a good than someone else, using the same amount of inputs.
-:::
-
-- In apples, 1,250 against 1,000. In wheat, 50 against 20. Greta wins both.
-- The intuition most people start with: she should do everything herself, and Carlos has nothing to offer her.
-- That intuition is wrong, and seeing why is the point of today.
-
-## Ask the Opportunity Cost Question
-
-::: {.plain}
-Not "who grows more?" but "what does each of them *give up*?" Greta's year is 1,250 apples or 50 tons, so each ton of wheat costs her 1,250 / 50 = 25 apples.
-:::
-
-| Opportunity cost of... | 1 ton of wheat | 1 apple |
-|:--|--:|--:|
-| Greta | 1,250 / 50 = *25 apples* | 50 / 1,250 = 0.04 tons |
-| Carlos | 1,000 / 20 = 50 apples | 20 / 1,000 = *0.02 tons* |
-
-::: {.figcap}
-CORE Figure 2.2b
-:::
-
-::: {.fragment}
-A ton of wheat costs Carlos twice as many apples as it costs Greta. Turn it round and an apple costs Greta twice as much wheat as it costs Carlos.
-:::
-
-## Carlos Has a Comparative Advantage in Apples
-
-::: {.takeaway}
-*Comparative advantage*: being able to produce a good at a lower *opportunity cost* than someone else.
-:::
-
-- An apple costs Carlos 0.02 tons of wheat and Greta 0.04: Carlos has the comparative advantage in *apples*.
-- A ton of wheat costs Greta 25 apples and Carlos 50: Greta has the comparative advantage in *wheat*.
-- Greta out-grows Carlos in apples and still has no comparative advantage in them. Nobody has one in everything: relatively cheaper at one good means relatively dearer at the other.
-
-## The Same Numbers as a Picture
-
-:::: {.columns}
-::: {.column width="46%"}
-- Each line is every mix of apples and wheat that person could grow in a year.
-- Greta's is *higher* everywhere. Carlos's is *flatter*: he gives up less wheat per apple.
-
-::: {.takeaway}
-Height is absolute advantage. Slope is comparative advantage.
-:::
-:::
-
-::: {.column width="54%"}
-![](img/ppf-side.svg){fig-alt="Apples on the horizontal axis, tons of wheat on the vertical. Two straight lines: Greta's runs from 50 tons of wheat down to 1,250 apples, Carlos's from 20 tons down to 1,000 apples. Greta's line lies above Carlos's everywhere, but Carlos's is the flatter of the two."}
+:::: fragment
+::: takeaway
+*Think, pair, share*: Pablo can make more of *both* goods. Is there still a gain from trading with Lin? Think for a minute, then see what your neighbor thinks.
 :::
 ::::
 
-## On Their Own
+## Absolute Advantage
 
-::: {.plain}
-With nobody to trade with, each eats only what they grow. Say Greta puts 40% of her year into apples and Carlos puts 30% into his.
+::: takeaway
+A person or a country has an *absolute advantage* in the production of a particular good if, given a set of available inputs, they can produce more of it than another person or country.
 :::
 
-|  | Apples | Tons of wheat |
-|:--|--:|--:|
-| Greta | 0.4 × 1,250 = 500 | 0.6 × 50 = 30 |
-| Carlos | 0.3 × 1,000 = 300 | 0.7 × 20 = 14 |
-| **Together** | **800** | **44** |
+-   Pablo has an absolute advantage in both goods: 12 loaves versus 2, and 6 pounds of cheese versus 4.
+-   So it may seem that Pablo has nothing to gain from trading with Lin.
+-   But that turns out not to be right. To see why, we need to look at each person's *opportunity cost* of producing each good, not at who makes more.
 
-::: {.fragment}
-This is *self-sufficiency*: consumption equals production, person by person. Every slide from here compares against these numbers.
+## Opportunity Costs
+
+::: plain
+So what does each of them give up? Pablo's Sunday can produce 12 loaves or 6 pounds of cheese, so for Pablo each pound of cheese costs 12 / 6 = 2 loaves of bread.
 :::
 
-## Now Let Them Specialize
-
-::: {.plain}
-Each grows only the crop in which they have the *comparative advantage*: Greta wheat, Carlos apples.
+::: gap
 :::
 
-|  | Apples | Tons of wheat |
-|:--|--:|--:|
-| On their own | 800 | 44 |
-| Specialized | **1,000** | **50** |
+| Opportunity cost of... |    1 pound of cheese |       1 loaf of bread |
+|:-----------------------|---------------------:|----------------------:|
+| Pablo                  |    12 / 6 = 2 loaves | 6 / 12 = 0.5 pounds |
+| Lin                    | 2 / 4 = 0.5 loaves |      4 / 2 = 2 pounds |
 
-::: {.fragment}
-The same two people, the same year, the same fields: 200 more apples and 6 more tons of wheat. Nothing was invented and nobody worked harder.
+::: fragment
+A pound of cheese costs Pablo four times as much bread as it costs Lin. The other way around, a loaf costs Lin four times as much cheese as it costs Pablo.
 :::
 
-## Specializing on Its Own Is Not Enough
+## Comparative Advantage
 
-::: {.plain}
-Look at what each of them is actually holding at the end of the year.
+::: takeaway
+A person or a country has a *comparative advantage* in the production of a particular good if the cost to them of producing it, relative to the cost of another good, is lower than for another person or a country.
 :::
 
-|  |  | On their own | **Produces** |
-|:--|:--|--:|--:|
-| Greta | Apples | 500 | **0** |
-|  | Wheat | 30 | **50** |
-| Carlos | Apples | 300 | **1,000** |
-|  | Wheat | 14 | **0** |
+-   Cost of a pound of cheese: 0.5 loaves for Lin, 2 loaves for Pablo.\
+    $\Rightarrow$ Lin has the comparative advantage in *cheese*.
+-   Cost of a loaf of bread: 0.5 pounds for Pablo, 2 pounds for Lin.\
+    $\Rightarrow$ Pablo has the comparative advantage in *bread*.
+-   Nobody can have a comparative advantage in everything: relatively cheaper at one food means relatively more expensive at the other.
 
-::: {.fragment}
-Greta has 50 tons of wheat and not one apple. Carlos has 1,000 apples and no wheat. Specializing only pays off if they can *trade*.
-:::
+## The Example in a Picture
 
-## Striking a Deal
+:::::: columns
+:::: {.column width="46%"}
+-   Each line shows every mix of bread and cheese one person can make.
+-   This is called their production possibilities frontier, or *PPF*.
+-   Pablo's line is *higher*; Lin's is *flatter*: cheese costs Lin less bread.
 
-::: {.plain}
-Greta sells Carlos 15 tons of wheat for 600 apples.
-:::
-
-|  |  | On their own | Produces | **Trades** | **Consumes** |
-|:--|:--|--:|--:|:--|--:|
-| Greta | Apples | 500 | 0 | **buys 600** | **600** |
-|  | Wheat | 30 | 50 | **sells 15** | **35** |
-| Carlos | Apples | 300 | 1,000 | **sells 600** | **400** |
-|  | Wheat | 14 | 0 | **buys 15** | **15** |
-| Together | Apples | 800 | 1,000 |  | **1,000** |
-|  | Wheat | 44 | 50 |  | **50** |
-
-::: {.figcap}
-CORE Figure 2.2c
-:::
-
-::: {.fragment}
-Compare the first column of numbers with the last: every single number is bigger.
-:::
-
-## Both End Up Beyond Their Own Line
-
-:::: {.columns}
-::: {.column width="46%"}
-- Filled dots: what each grew, and ate, on their own.
-- Open diamonds: what each eats after specializing and trading. Both sit *above* that person's own line.
-
-::: {.takeaway}
-Trade lets each of them consume a mix neither could have grown alone.
-:::
-:::
-
-::: {.column width="54%"}
-![](img/ppf-trade-side.svg){fig-alt="The same two lines, Greta's from 50 tons of wheat to 1,250 apples and Carlos's from 20 tons to 1,000 apples. Filled dots mark each person alone: Greta at 500 apples and 30 tons, Carlos at 300 apples and 14 tons, each on that person's own line. Open diamonds mark consumption after trade: Greta at 600 apples and 35 tons, Carlos at 400 apples and 15 tons. Both diamonds sit above that person's own line, at combinations neither could have produced alone."}
+::: takeaway
+Height shows absolute advantage; slope shows comparative advantage.
 :::
 ::::
 
-## Everyone Has More of Both
+::: {.column width="54%"}
+![](img/ppf-side.svg){fig-alt="Pounds of cheese on the horizontal axis, loaves of bread on the vertical. Two straight lines: Pablo's runs from 12 loaves down to 6 pounds of cheese, Lin's from 2 loaves down to 4 pounds. Pablo's line lies above Lin's everywhere, but Lin's is the flatter of the two."}
+:::
+::::::
 
-![](img/gains-trade.svg){fig-alt="Two panels of paired bars comparing on their own against specialize then trade. Apples: Greta rises from 500 to 600, Carlos from 300 to 400, and the two together from 800 to 1,000. Tons of wheat: Greta rises from 30 to 35, Carlos from 14 to 15, and together from 44 to 50. Every bar rises."}
+## Self-Sufficiency
+
+::: plain
+If they cannot trade, each eats exactly what they make. Suppose each of them spends *75% of their time on bread and 25% on cheese*.
+:::
+
+::: gap
+:::
+
+::: totalrule
+|              | Loaves of bread | Pounds of cheese |
+|:-------------|----------------:|-----------------:|
+| Pablo        |    0.75 × 12 = 9 |    0.25 × 6 = 1.5 |
+| Lin          |   0.75 × 2 = 1.5 |      0.25 × 4 = 1 |
+| **Total** |        **10.5** |          **2.5** |
+:::
+
+::: fragment
+Under *self-sufficiency*, each person consumes exactly what they produce.
+:::
+
+## Specializing by Comparative Advantage
+
+::: plain
+Now suppose *each of them makes only the food in which they have the comparative advantage*: so Pablo makes bread, and Lin makes cheese.
+:::
+
+::: gap
+:::
+
+|              | Loaves of bread | Pounds of cheese |
+|:-------------|:---------------:|:----------------:|
+| On their own (total) |            10.5 |              2.5 |
+| Specialized  |          **12** |            **4** |
+
+::: fragment
+The two of them now produce *1.5 more loaves and 1.5 more pounds of cheese* than before, with the same skills and the same hours. Total output went up just from rearranging who does what.
+:::
+
+## Specialization Without Trade
+
+::: plain
+Total output is higher, but look at what each of them ends up with.
+:::
+
+|       |        | On their own | **Specialized** |
+|:------|:-------|:------------:|:------------:|
+| Pablo | Bread  |            9 |       **12** |
+|       | Cheese |          1.5 |        **0** |
+| Lin   | Bread  |          1.5 |        **0** |
+|       | Cheese |            1 |        **4** |
+
+::: fragment
+Pablo has 12 loaves and no cheese. Lin has 4 pounds of cheese and no bread. Specializing is only worthwhile if they can *trade*.
+:::
+
+## Specialization and Trade
+
+::: plain
+Now suppose they agree on a deal: *Lin sells Pablo 2 pounds of cheese for 2 loaves of bread*.
+:::
+
+::: totalrule2
+|          |        | On their own | Specialized | **Trades**  | **Consumes** |
+|:---------|:-------|:------------:|:--------:|:-----------:|:------------:|
+| Pablo    | Bread  |            9 |       12 | **sells 2** |       **10** |
+|          | Cheese |          1.5 |        0 | **buys 2**  |        **2** |
+| Lin      | Bread  |          1.5 |        0 | **buys 2**  |        **2** |
+|          | Cheese |            1 |        4 | **sells 2** |        **2** |
+| **Total** | Bread  |         10.5 |       12 |             |       **12** |
+|          | Cheese |          2.5 |        4 |             |        **4** |
+:::
+
+::: fragment
+Compare the first column with the last: both of them now consume more of both goods.
+:::
+
+## Trade in the Picture
+
+![](img/ppf-trade.svg){fig-alt="The two production possibility frontiers, Pablo's from 12 loaves of bread to 6 pounds of cheese and Lin's from 2 loaves to 4 pounds. Filled dots mark each person on their own: Pablo at 1.5 pounds and 9 loaves, Lin at 1 pound and 1.5 loaves, each on their own line. Open diamonds mark consumption after trade: Pablo at 2 pounds and 10 loaves, Lin at 2 pounds and 2 loaves. Both diamonds sit above that person's own line, at combinations neither could have made alone."}
 
 ## Why Did That Work?
 
-::: {.plain}
-Greta bought 600 apples from Carlos even though she could have grown them in less of her own time. Why was that sensible?
+::: plain
+Pablo bought 2 pounds of cheese from Lin, even though Pablo could have made them in less time. Why does that make sense?
 :::
 
-- Every hour Greta spends on apples costs a lot of wheat. An hour of Carlos's costs only a little.
-- So the question was never who is better at apples, but whose apples cost less *in wheat*: Carlos's.
-- Putting each person's time where it gives up the least is what makes the total grow.
+-   Every hour Pablo spends on cheese costs a lot of bread. An hour of Lin's costs only a little.
+-   What matters is not who is better at making cheese, but whose cheese costs less *in bread*. That is Lin.
 
-::: {.takeaway}
-Being worse at everything does not stop you from being the cheaper source of something.
+::: takeaway
+Someone can be worse at producing everything and still have a comparative advantage in something.
 :::
 
-## The Price Decides How the Gain Is Split
+## Sharing the Gains from Trade
 
-- The deal, 600 apples for 15 tons, is a *price*: 40 apples per ton of wheat.
-- Each trades only at a price better than growing the wheat alone.
+-   Their deal, 2 pounds of cheese for 2 loaves, comes down to a *price*: 1 loaf per pound of cheese.
+-   Neither will trade at a price worse than making the food on their own:
+    -   Lin sells only if the price is above 0.5 loaves per pound, the cost of making cheese.
+    -   Pablo buys only if the price is below 2 loaves per pound, the cost of making cheese at home.
+-   Any price between 0.5 and 2 loaves per pound makes both of them better off. Prices near 0.5 favor Pablo, and prices near 2 favor Lin.
 
-![](img/price-range.svg){.nostretch width="70%" fig-alt="A number line of prices for a ton of wheat, in apples, from 15 to 60. A blue mark at 25 is labelled Greta's cost of a ton, and an orange mark at 50 is labelled Carlos's cost of a ton. The band between them is shaded and labelled both gain; below 25 is labelled Greta refuses, she could grow it for less, and above 50 is labelled Carlos refuses, he could grow it for less. A diamond at 40 marks the deal, 40 apples per ton."}
+## Questions
 
-::: {.takeaway}
-Any price between 25 and 50 leaves both better off. Near 25 most of the gain goes to Carlos; near 50, to Greta.
+::: incremental
+-   Suppose Taylor Swift types faster than any assistant. Should she answer her own fan mail?
+-   You are better than your roommate at both cooking and cleaning. Should you do both?
+-   Should the United States import goods that it could produce more cheaply at home?
+-   Are there any downsides to specializing?
 :::
-
-## Your Turn
-
-::: {.plain}
-Same two farmers, a different bargain. This is Exercise 2.3 in the textbook.
-:::
-
-::: {.incremental}
-- A ton of wheat now buys 35 apples, and Greta sells 16 tons. Work out what each of them ends up eating. Are both still better off than on their own?
-- A ton of wheat buys only 20 apples. What happens to the deal?
-- Compare the 35-apple price with the 40-apple deal. Whose share of the gain grew?
-:::
-
-## So Why Do Markets Matter?
-
-- Specializing means depending on strangers for everything you did not make. Those 50,000 pins need buyers far beyond the town.
-- Smith's phrase for it: the division of labor is *limited by the extent of the market*. No market, no reason to specialize.
-- A market is where the counterparty is found, the price agreed, and the deal carried out, at a scale no pair of neighbors could manage.
-
-> Markets accomplish an extraordinary result: unintended cooperation on a global scale.
-> [CORE, Section 2.3]{.who}
-
-## The Other Way to Organize Specialists: The Firm
-
-- Inside the pin factory nobody buys pins from the worker at the next bench. A manager assigns the eighteen steps and the firm sells the pins.
-- Kutesmart, a Chinese tailoring firm, split a skilled tailor's job into more than 300 operations, each done by a worker with no tailoring skills.
-- Markets coordinate specialists through *prices*; firms coordinate them through *direction*. Capitalism expanded both.
-
-::: {.takeaway}
-Next week we go inside the firm: what it costs to make things, and how a firm chooses its price.
-:::
-
-## What the Model Leaves Out
-
-- No transport costs, no time spent haggling, no risk of the other side reneging.
-- Complete specialization is assumed. In practice people rarely put 100% of anything into one activity.
-- Specializing makes you dependent: a wheat grower whose crop fails has nothing to eat and nothing to sell.
-- Remember from last time: a model earns its keep by being useful, not by being complete.
 
 ## What to Do Next
 
-- Read section 2.3 closely with the *guided reading questions* in hand.
-- Go over the *slides* and the *lecture notes*, both posted on the course website.
-- Work the *practice problems*.
-- No class Monday, September 7 (Labor Day). We meet again Wednesday, September 9.
-- *Quiz 2 is that Wednesday* and covers Lectures 3 and 4.
+-   Before next class: read section *2.3*, go over the *slides* and the *worksheet*, and work the *practice problems*.
+-   While driving or at the gym, [listen to *An Economics Lesson from a Talking Pencil*, from Freakonomics Radio](https://freakonomics.com/podcast/an-economics-lesson-from-a-talking-pencil-update/).
+-   No class Monday (Labor Day). *Quiz 2 is Wednesday, September 9* (Lectures 3 and 4).
+-   Next week we go inside the firm: what it costs to make things, and how a firm chooses its price.

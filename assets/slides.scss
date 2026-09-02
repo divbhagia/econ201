@@ -17,6 +17,11 @@ $presentation-font-size-root: 38px;
 
 /*-- scss:rules --*/
 
+// Links in slide content are underlined, so a link is visibly different from
+// *emphasis*, which is the same orange but never underlined (WCAG 1.4.1 too:
+// color is not the only cue).
+.reveal .slides a { text-decoration: underline; }
+
 // Reveal's default slide number is #848789, 3.6:1 on white: fails WCAG 1.4.3.
 .reveal .slide-number { color: #595a5b; background-color: transparent; }
 
@@ -218,6 +223,15 @@ $presentation-font-size-root: 38px;
 .reveal .column > ul > li,
 .reveal .column > ol > li { margin-bottom: 0.6em; }
 .reveal table { font-size: 0.88em; }
+// A rule above the last row: wrap a table whose final row is a total in
+// ::: {.totalrule}. HTML only; the tagged-PDF writer cannot add mid-rules,
+// so there the bold Total row stands alone.
+.reveal .totalrule table tr:last-child td,
+.reveal .totalrule table tr:last-child th { border-top: 2.5px solid #1a1a1a; }
+// Same, for a total that spans the last two rows (bread and cheese).
+.reveal .totalrule2 table tr:nth-last-child(2) td,
+.reveal .totalrule2 table tr:nth-last-child(2) th { border-top: 2.5px solid #1a1a1a; }
+
 // Rules above and below a table, booktabs style.
 .reveal .ruled table {
   border-top: 2.5px solid #1a1a1a;
@@ -226,7 +240,9 @@ $presentation-font-size-root: 38px;
 .reveal table td, .reveal table th { padding: 0.1em 0.4em; }
 // A total row (::: {.sumrow}, see assets/sum-table.lua) gets a rule above it.
 .reveal table tfoot td { border-top: 1px solid #1a1a1a; }
-.reveal .columns { align-items: center; }
+// Quarto's reveal columns are not flex by default, which left this
+// centering inert; flex makes a short image column centre on its text.
+.reveal .columns { display: flex; align-items: center; }
 // A lone image in a column arrives wrapped in a paragraph with a top margin;
 // drop it so figure and text start level.
 .reveal .column > p:first-child { margin-top: 0; }

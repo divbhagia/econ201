@@ -5,21 +5,25 @@ Run from the course root:
 
     python3 slides/figures/make_lecture4.py
 
-No data downloads. Every number is CORE Unit 2.3's Greta-and-Carlos example,
-defined once at the top so the slides, the notes, and the worksheet quote the
-same figures, and so the opportunity costs and the gains are computed rather
-than typed.
+No data downloads. Every number is the lecture's Pablo-and-Lin example (two
+neighbors, one eight-hour Sunday of baking bread and making cheese), defined
+once at the top so the slides, the notes, and the worksheet quote the same
+figures, and so the opportunity costs and the gains are computed rather than
+typed. The textbook's section 2.3 runs the same argument with its own pair,
+Greta and Carlos.
+
+The numbers are engineered so that the story works: Pablo has the absolute
+advantage in both foods, Lin the comparative advantage in cheese, and complete
+specialization raises the total of BOTH foods. That last part requires Lin's
+cheese ceiling (4 lb) to exceed what the two consume under self-sufficiency
+(2.5 lb); a Lin who is too small in cheese would make total cheese fall.
 
 Output, in slides/img/:
   ppf-side.svg     the two production lines, at column size so the slide can
                    explain the picture beside it
-  ppf-trade-side.svg
-                   the same, plus what each produces alone and what each
-                   consumes after specializing and trading, which lies
-                   outside both lines
-  gains-trade.svg  before and after, apples and wheat, for each and in total
-  price-range.svg  the prices of a ton of wheat, in apples, at which both gain:
-                   between the two opportunity costs, with the deal marked
+  ppf-trade.svg    the same at full-slide size, plus what each produces alone
+                   and what each consumes after specializing and trading,
+                   which lies outside both lines
 
 Accessibility: Okabe-Ito derived colours, and every series labelled on the
 figure itself rather than in a legend keyed by colour; each bar carries its
@@ -40,9 +44,16 @@ from matplotlib import font_manager
 matplotlib.use("Agg")
 
 # matplotlib's font cache does not see fonts installed in ~/Library/Fonts,
-# so register the Fira Sans files directly. Falls back to sans-serif.
+# so register the Fira Sans files directly. Lato, the deck's body font, ships
+# inside TeX Live (the PDF build uses it from there), so register those TTFs
+# too; the figures then match the slide typography. Falls back to sans-serif.
 for f in Path.home().glob("Library/Fonts/FiraSans-*.otf"):
     font_manager.fontManager.addfont(str(f))
+import glob as _glob
+for pat in ("/usr/local/texlive/*/texmf-dist/fonts/truetype/typoland/lato/*.ttf",
+            str(Path.home() / "Library/Fonts/Lato-*.ttf")):
+    for f in _glob.glob(pat):
+        font_manager.fontManager.addfont(f)
 
 ROOT = Path(__file__).resolve().parents[2]
 IMG = ROOT / "slides" / "img"
@@ -55,8 +66,8 @@ SCRATCH = Path(os.environ["FIG_PREVIEW_DIR"]) if os.environ.get("FIG_PREVIEW_DIR
 
 INK = "#1a1a1a"
 GRID = "#d9d9d9"
-GRETA = "#0072B2"
-CARLOS = "#BF5700"
+PABLO = "#0072B2"
+LIN = "#BF5700"
 BEFORE = "#d9d9d9"
 AFTER = "#f0b27f"
 
@@ -67,7 +78,7 @@ FONT = 22
 
 plt.rcParams.update(
     {
-        "font.family": ["Fira Sans", "sans-serif"],
+        "font.family": ["Lato", "Fira Sans", "sans-serif"],
         "font.size": FONT,
         "svg.fonttype": "path",
         "pdf.fonttype": 42,
@@ -81,39 +92,44 @@ plt.rcParams.update(
 )
 
 # ------------------------------------------------------- the example ------
-# CORE Section 2.3. Output if all of the year goes into one crop.
+# Output if the whole eight-hour Sunday goes into one food.
 MAX = {
-    "Greta": {"apples": 1250, "wheat": 50},
-    "Carlos": {"apples": 1000, "wheat": 20},
+    "Pablo": {"cheese": 6, "bread": 12},
+    "Lin": {"cheese": 4, "bread": 2},
 }
-# Self-sufficiency: Greta spends 40% of her time on apples, Carlos 30%.
-SHARE_ON_APPLES = {"Greta": 0.40, "Carlos": 0.30}
-# The bargain they strike once they specialize: Greta sells wheat for apples.
-WHEAT_SOLD, APPLES_BOUGHT = 15, 600
+# Self-sufficiency: each spends six of the eight hours on bread, two on cheese.
+SHARE_ON_BREAD = {"Pablo": 0.75, "Lin": 0.75}
+# The bargain they strike once they specialize: Lin sells cheese for bread.
+CHEESE_SOLD, BREAD_PAID = 2, 2
 
-PEOPLE = ("Greta", "Carlos")
-GOODS = ("apples", "wheat")
-COLOR = {"Greta": GRETA, "Carlos": CARLOS}
+PEOPLE = ("Pablo", "Lin")
+GOODS = ("cheese", "bread")
+COLOR = {"Pablo": PABLO, "Lin": LIN}
 
 
 def alone(who: str) -> dict:
     """What each produces, and so consumes, with no one to trade with."""
-    s = SHARE_ON_APPLES[who]
-    return {"apples": MAX[who]["apples"] * s, "wheat": MAX[who]["wheat"] * (1 - s)}
+    s = SHARE_ON_BREAD[who]
+    return {"bread": MAX[who]["bread"] * s, "cheese": MAX[who]["cheese"] * (1 - s)}
 
 
 def opportunity_cost(who: str, good: str) -> float:
     """Units of the other good given up per unit of this one."""
-    other = "wheat" if good == "apples" else "apples"
+    other = "bread" if good == "cheese" else "cheese"
     return MAX[who][other] / MAX[who][good]
 
 
-# Specialize completely in the good of comparative advantage, then trade.
-SPECIALIST = {"Greta": "wheat", "Carlos": "apples"}
+# Specialize completely in the food of comparative advantage, then trade.
+SPECIALIST = {"Pablo": "bread", "Lin": "cheese"}
 AFTER_TRADE = {
-    "Greta": {"apples": APPLES_BOUGHT, "wheat": MAX["Greta"]["wheat"] - WHEAT_SOLD},
-    "Carlos": {"apples": MAX["Carlos"]["apples"] - APPLES_BOUGHT, "wheat": WHEAT_SOLD},
+    "Pablo": {"cheese": CHEESE_SOLD, "bread": MAX["Pablo"]["bread"] - BREAD_PAID},
+    "Lin": {"cheese": MAX["Lin"]["cheese"] - CHEESE_SOLD, "bread": BREAD_PAID},
 }
+
+
+def fmt(v: float) -> str:
+    """1.5 as 1.5, 2.0 as 2."""
+    return f"{v:g}"
 
 
 def save(fig, out: Path) -> None:
@@ -131,113 +147,76 @@ def save(fig, out: Path) -> None:
 # ----------------------------------------------------------- drawing ------
 
 def draw_ppf(out: Path, with_trade: bool, figsize=SIDE) -> None:
-    """Both production lines on one pair of axes.
+    """Both production lines on one pair of axes: cheese across, bread up.
 
-    Sharing the axes is the whole point: Greta's line is above Carlos's
-    everywhere, which is absolute advantage, while Carlos's is flatter, which
-    is his comparative advantage in apples. On the second version the two
-    consumption points sit above both lines, outside what either could reach
-    alone.
+    Sharing the axes is the whole point: Pablo's line is above Lin's
+    everywhere, which is absolute advantage, while Lin's is flatter, which
+    is her comparative advantage in cheese. The first version is the bare
+    lines, shown before self-sufficiency comes up; the second adds what each
+    produces alone and the two consumption points, which sit above both
+    lines, outside what either could reach alone.
     """
     fig, ax = plt.subplots(figsize=figsize, dpi=100)
     side = figsize == SIDE
-    fig.subplots_adjust(left=0.155 if side else 0.115, right=0.975 if side else 0.985,
+    fig.subplots_adjust(left=0.125 if side else 0.10, right=0.975 if side else 0.985,
                         top=0.97, bottom=0.15 if side else 0.145)
     ax.grid(color=GRID, lw=1, zorder=0)
     ax.set_axisbelow(True)
-    for side in ("top", "right"):
-        ax.spines[side].set_visible(False)
+    for s in ("top", "right"):
+        ax.spines[s].set_visible(False)
     ax.tick_params(length=5, width=1)
 
     for who in PEOPLE:
-        ax.plot([0, MAX[who]["apples"]], [MAX[who]["wheat"], 0], color=COLOR[who],
+        ax.plot([0, MAX[who]["cheese"]], [MAX[who]["bread"], 0], color=COLOR[who],
                 lw=2.6, solid_capstyle="round", zorder=5)
-        ax.annotate(who, xy=(28, MAX[who]["wheat"] - 2.6), ha="left", va="top",
-                    fontsize=FONT, color=COLOR[who], fontweight="bold", zorder=8)
+    # Name labels sit just above each line, clear of the line itself and of
+    # the alone/after-trade annotations on the with_trade version.
+    ax.annotate("Pablo", xy=(4.3, 3.55), ha="left", va="bottom",
+                fontsize=FONT, color=PABLO, fontweight="bold", zorder=8)
+    ax.annotate("Lin", xy=(3.0, 0.62), ha="left", va="bottom",
+                fontsize=FONT, color=LIN, fontweight="bold", zorder=8)
 
     if with_trade:
         for who in PEOPLE:
             a = alone(who)
-            ax.plot(a["apples"], a["wheat"], marker="o", ms=13, color=COLOR[who], zorder=7)
+            ax.plot(a["cheese"], a["bread"], marker="o", ms=13, color=COLOR[who], zorder=7)
             # Below and left of the point, which keeps it clear of the
             # after-trade label that sits above and right of it.
-            ax.annotate(f"{who} alone", xy=(a["apples"], a["wheat"]), xytext=(-13, -12),
+            ax.annotate(f"{who} alone", xy=(a["cheese"], a["bread"]), xytext=(-13, -12),
                         textcoords="offset points", ha="right", va="top",
-                        fontsize=FONT - 4, color=COLOR[who], zorder=8)
-        for who, (dx, dy) in zip(PEOPLE, ((14, 8), (14, 8))):
+                        fontsize=FONT, color=COLOR[who], zorder=8)
+        for who in PEOPLE:
             t = AFTER_TRADE[who]
-            ax.plot(t["apples"], t["wheat"], marker="D", ms=13, mfc="white",
+            ax.plot(t["cheese"], t["bread"], marker="D", ms=13, mfc="white",
                     mec=COLOR[who], mew=2.6, zorder=7)
-            ax.annotate(f"{who} after trade", xy=(t["apples"], t["wheat"]),
-                        xytext=(dx, dy), textcoords="offset points", ha="left",
-                        va="bottom", fontsize=FONT - 4, color=COLOR[who],
-                        fontweight="bold", zorder=8)
+            ax.annotate(f"{who} after trade", xy=(t["cheese"], t["bread"]),
+                        xytext=(14, 8), textcoords="offset points", ha="left",
+                        va="bottom", fontsize=FONT, color=COLOR[who], zorder=8)
 
-    ax.set_xlabel("Apples", fontsize=FONT, labelpad=8)
-    ax.set_ylabel("Tons of wheat", fontsize=FONT, labelpad=8)
-    ax.set_xlim(0, 1330)
-    ax.set_ylim(0, 56)
-    ax.set_xticks(range(0, 1301, 250))
-    ax.set_yticks(range(0, 56, 10))
-    save(fig, out)
-
-
-def draw_price_range(out: Path) -> None:
-    """The prices of a ton of wheat, in apples, that leave both better off.
-
-    A number line: Greta will not sell a ton for fewer apples than it costs
-    her to grow (25), Carlos will not pay more than growing a ton costs him
-    (50). Between the two both gain; the deal on the slides, 40, sits inside.
-    Each region is labelled in words, so nothing rests on the shading alone.
-    """
-    lo = opportunity_cost("Greta", "wheat")     # 25 apples per ton
-    hi = opportunity_cost("Carlos", "wheat")    # 50 apples per ton
-    deal = APPLES_BOUGHT / WHEAT_SOLD           # 40 apples per ton
-
-    fig, ax = plt.subplots(figsize=(11.2, 3.4), dpi=100)
-    fig.subplots_adjust(left=0.03, right=0.97, top=0.98, bottom=0.26)
-    ax.axvspan(lo, hi, color="#FDF3EA", zorder=0)
-    ax.axhline(0, color=INK, lw=1.6, zorder=3)
-    for x, who, txt in ((lo, "Greta", f"Greta's cost of a ton:\n{lo:.0f} apples"),
-                        (hi, "Carlos", f"Carlos's cost of a ton:\n{hi:.0f} apples")):
-        ax.plot([x, x], [-0.18, 0.18], color=COLOR[who], lw=3, zorder=4)
-        ax.annotate(txt, xy=(x, 0.22), ha="center", va="bottom", fontsize=FONT - 4,
-                    color=COLOR[who], fontweight="bold", zorder=8)
-    ax.plot(deal, 0, marker="D", ms=14, mfc="white", mec=INK, mew=2.4, zorder=6)
-    ax.annotate(f"The deal: {deal:.0f} apples per ton", xy=(deal, -0.22), ha="center",
-                va="top", fontsize=FONT - 4, color=INK, zorder=8)
-    for x, txt in (((lo + 12) / 2, "Greta refuses:\nshe could grow it for less"),
-                   ((hi + 63) / 2, "Carlos refuses:\nhe could grow it for less"),
-                   ((lo + hi) / 2, "both gain")):
-        ax.annotate(txt, xy=(x, 0.78), ha="center", va="center", fontsize=FONT - 5,
-                    color="#595a5b", zorder=8)
-    ax.set_xlim(12, 63)
-    ax.set_ylim(-0.75, 1.0)
-    ax.set_xticks(range(15, 61, 5))
-    ax.set_yticks([])
-    for side in ("top", "right", "left"):
-        ax.spines[side].set_visible(False)
-    ax.spines["bottom"].set_position(("data", -0.55))
-    ax.tick_params(length=5, width=1, labelsize=FONT - 4)
-    ax.set_xlabel("Apples per ton of wheat", fontsize=FONT - 2, labelpad=6)
+    ax.set_xlabel("Pounds of cheese", fontsize=FONT, labelpad=8)
+    ax.set_ylabel("Loaves of bread", fontsize=FONT, labelpad=8)
+    ax.set_xlim(0, 6.5)
+    ax.set_ylim(0, 13)
+    ax.set_xticks(range(0, 7))
+    ax.set_yticks(range(0, 13, 2))
     save(fig, out)
 
 
 def draw_gains(out: Path) -> None:
-    """Before and after, side by side, for each good.
+    """Before and after, side by side, for each food.
 
-    Two panels because apples and wheat are not on the same scale. Every bar
+    Two panels because loaves and pounds are not on the same scale. Every bar
     is labelled, so the point (every number goes up) does not depend on
     comparing bar heights across a gap.
     """
-    fig, axes = plt.subplots(1, 2, figsize=(11.2, 6.0), dpi=100)
-    fig.subplots_adjust(left=0.075, right=0.985, top=0.82, bottom=0.115, wspace=0.22)
+    fig, axes = plt.subplots(1, 2, figsize=FULL, dpi=100)
+    fig.subplots_adjust(left=0.06, right=0.985, top=0.82, bottom=0.115, wspace=0.22)
 
     groups = [*PEOPLE, "Together"]
     x = range(len(groups))
     w = 0.36
 
-    for ax, good in zip(axes, GOODS):
+    for ax, good in zip(axes, ("bread", "cheese")):
         before = [alone(p)[good] for p in PEOPLE]
         after = [AFTER_TRADE[p][good] for p in PEOPLE]
         before.append(sum(before))
@@ -246,18 +225,18 @@ def draw_gains(out: Path) -> None:
         for i, (b, a) in enumerate(zip(before, after)):
             for off, val, colour in ((-w / 2 - 0.02, b, BEFORE), (w / 2 + 0.02, a, AFTER)):
                 ax.bar(i + off, val, width=w, color=colour, edgecolor=INK, lw=1.2, zorder=5)
-                ax.text(i + off, val, f"{val:,.0f}", ha="center", va="bottom",
+                ax.text(i + off, val, fmt(val), ha="center", va="bottom",
                         fontsize=FONT - 6, color=INK, zorder=8)
 
         top = max(after) * 1.22
         ax.set_ylim(0, top)
         ax.set_xticks(list(x), groups, fontsize=FONT - 3)
-        ax.set_title("Apples" if good == "apples" else "Tons of wheat",
+        ax.set_title("Loaves of bread" if good == "bread" else "Pounds of cheese",
                      fontsize=FONT, color=INK, pad=12)
         ax.grid(axis="y", color=GRID, lw=1, zorder=0)
         ax.set_axisbelow(True)
-        for side in ("top", "right", "left"):
-            ax.spines[side].set_visible(False)
+        for s in ("top", "right", "left"):
+            ax.spines[s].set_visible(False)
         ax.tick_params(axis="y", labelsize=FONT - 4, length=0)
         ax.tick_params(axis="x", length=0, pad=8)
 
@@ -278,27 +257,25 @@ def main() -> int:
     p.parse_args()
 
     draw_ppf(IMG / "ppf-side.svg", with_trade=False)
-    draw_ppf(IMG / "ppf-trade-side.svg", with_trade=True)
-    draw_gains(IMG / "gains-trade.svg")
-    draw_price_range(IMG / "price-range.svg")
+    draw_ppf(IMG / "ppf-trade.svg", with_trade=True, figsize=FULL)
 
     # Numbers quoted on the slides and in the tables, printed so they can be
     # checked against what is written in the deck.
     print("\nvalues used in slide text")
     for who in PEOPLE:
-        print(f"  {who}: {MAX[who]['apples']:,} apples or {MAX[who]['wheat']} t wheat; "
-              f"1 t wheat costs {opportunity_cost(who, 'wheat'):,.0f} apples, "
-              f"1 apple costs {opportunity_cost(who, 'apples'):.2f} t wheat")
-    lower = min(PEOPLE, key=lambda w: opportunity_cost(w, "apples"))
-    print(f"  comparative advantage in apples: {lower} "
-          f"(and so in wheat: {[p for p in PEOPLE if p != lower][0]})")
+        print(f"  {who}: {MAX[who]['bread']:g} loaves or {MAX[who]['cheese']:g} lb cheese; "
+              f"1 lb cheese costs {opportunity_cost(who, 'cheese'):g} loaves, "
+              f"1 loaf costs {opportunity_cost(who, 'bread'):g} lb")
+    lower = min(PEOPLE, key=lambda w: opportunity_cost(w, "cheese"))
+    print(f"  comparative advantage in cheese: {lower} "
+          f"(and so in bread: {[p for p in PEOPLE if p != lower][0]})")
     for good in GOODS:
         b = sum(alone(p)[good] for p in PEOPLE)
         a = sum(AFTER_TRADE[p][good] for p in PEOPLE)
-        print(f"  total {good}: {b:,.0f} alone -> {a:,.0f} with trade (+{a - b:,.0f})")
+        print(f"  total {good}: {b:g} alone -> {a:g} with trade (+{a - b:g})")
     for who in PEOPLE:
         d = {g: AFTER_TRADE[who][g] - alone(who)[g] for g in GOODS}
-        print(f"  {who} gains {d['apples']:,.0f} apples and {d['wheat']:,.0f} t wheat")
+        print(f"  {who} gains {d['bread']:g} loaves and {d['cheese']:g} lb cheese")
     return 0
 
 

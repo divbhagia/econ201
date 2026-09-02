@@ -21,5 +21,6 @@ Materials are posted as we go. See the [Schedule](../schedule.qmd) for dates and
 <h2>Lecture 4: Why do markets matter? Specialization and comparative advantage</h2>
 
 <p><strong>Reading:</strong> 2.3</p>
-<p class="lecture-links dim">Materials posted closer to the date.</p>
+<p class="lecture-links"><a class="btn btn-outline-primary" href="../slides/lecture4.html" target="_blank" rel="noopener" role="button" aria-label="Lecture 4 slides (opens in a new tab)">Slides</a>
+<a class="btn btn-outline-primary" href="../slides/lecture4.pdf" target="_blank" rel="noopener" role="button" aria-label="Lecture 4 slides as a tagged PDF (opens in a new tab)">Slides (PDF)</a></p>
 :::
