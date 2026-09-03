@@ -58,13 +58,13 @@ Lin receives 1.5 × 2 = 3 loaves.
 
 ## 2. Two food trucks
 
-Luis and Kim each run a food truck. If each spent a whole workday on just one product, they could make:
+Luis and Rosa each run a food truck. If each spent a whole workday on just one product, they could make:
 
 ::: {.freetable .table-scroll tabindex="0"}
 |  | Tacos | Burritos |
 |:--|:--:|:--:|
 | Luis | 40 | 8 |
-| Kim | 12 | 6 |
+| Rosa | 12 | 6 |
 
 : {tbl-colwidths="[40,30,30]"}
 
@@ -81,7 +81,7 @@ Each can also split the day, with output in proportion to time.
 | Opportunity cost of... | 1 burrito | 1 taco |
 |:--|--:|--:|
 | Luis | 40 / 8 = 5 tacos | 8 / 40 = 0.2 burritos |
-| Kim | 12 / 6 = 2 tacos | 6 / 12 = 0.5 burritos |
+| Rosa | 12 / 6 = 2 tacos | 6 / 12 = 0.5 burritos |
 
 : {tbl-colwidths="[40,32,28]"}
 
@@ -94,11 +94,11 @@ Each can also split the day, with output in proportion to time.
 <details class="solution">
 <summary>Solution</summary>
 
-**Luis has the absolute advantage in both** (40 tacos against 12, and 8 burritos against 6). But a burrito costs Kim only 2 tacos against Luis's 5, so **Kim has the comparative advantage in burritos**, and a taco costs Luis 0.2 burritos against Kim's 0.5, so **Luis has the comparative advantage in tacos**.
+**Luis has the absolute advantage in both** (40 tacos against 12, and 8 burritos against 6). But a burrito costs Rosa only 2 tacos against Luis's 5, so **Rosa has the comparative advantage in burritos**, and a taco costs Luis 0.2 burritos against Rosa's 0.5, so **Luis has the comparative advantage in tacos**.
 
 </details>
 
-**(c)** On their own, Luis spends three quarters of the day on tacos and Kim spends two thirds of the day on tacos. How much does each produce, and what are the totals?
+**(c)** On their own, Luis spends three quarters of the day on tacos and Rosa spends two thirds of the day on tacos. How much does each produce, and what are the totals?
 
 <details class="solution">
 <summary>Solution</summary>
@@ -107,7 +107,7 @@ Each can also split the day, with output in proportion to time.
 |  | Tacos | Burritos |
 |:--|--:|--:|
 | Luis | 0.75 × 40 = 30 | 0.25 × 8 = 2 |
-| Kim | 0.67 × 12 = 8 | 0.33 × 6 = 2 |
+| Rosa | 0.67 × 12 = 8 | 0.33 × 6 = 2 |
 | **Total** | **38** | **4** |
 
 : {tbl-colwidths="[40,32,28]"}
@@ -121,11 +121,11 @@ Each can also split the day, with output in proportion to time.
 <details class="solution">
 <summary>Solution</summary>
 
-Luis makes only tacos, 40 of them, and Kim makes only burritos, 6 of them. Compared with 38 tacos and 4 burritos under self-sufficiency, specialization yields **2 more tacos and 2 more burritos** from the same two people and the same hours.
+Luis makes only tacos, 40 of them, and Rosa makes only burritos, 6 of them. Compared with 38 tacos and 4 burritos under self-sufficiency, specialization yields **2 more tacos and 2 more burritos** from the same two people and the same hours.
 
 </details>
 
-**(e)** They agree on a deal: Kim sells Luis 3 burritos for 9 tacos. What does each of them end up with, and is each better off than in part (c)?
+**(e)** They agree on a deal: Rosa sells Luis 3 burritos for 9 tacos. What does each of them end up with, and is each better off than in part (c)?
 
 <details class="solution">
 <summary>Solution</summary>
@@ -133,7 +133,7 @@ Luis makes only tacos, 40 of them, and Kim makes only burritos, 6 of them. Compa
 The price is 9 / 3 = 3 tacos per burrito.
 
 - Luis: 40 − 9 = **31 tacos** and the **3 burritos** he bought, against 30 and 2 on his own. Better off.
-- Kim: the **9 tacos** she received and 6 − 3 = **3 burritos**, against 8 and 2 on her own. Better off.
+- Rosa: the **9 tacos** she received and 6 − 3 = **3 burritos**, against 8 and 2 on her own. Better off.
 
 Everyone ends up with more of both products.
 
@@ -144,7 +144,7 @@ Everyone ends up with more of both products.
 <details class="solution">
 <summary>Solution</summary>
 
-Kim sells only above her own cost of a burrito, 2 tacos; Luis buys only below his, 5 tacos. Any price **between 2 and 5 tacos per burrito** leaves both better off, which is why the deal at 3 worked.
+Rosa sells only above her own cost of a burrito, 2 tacos; Luis buys only below his, 5 tacos. Any price **between 2 and 5 tacos per burrito** leaves both better off, which is why the deal at 3 worked.
 
 </details>
 
