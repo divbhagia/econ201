@@ -37,7 +37,16 @@ Lin receives 1.5 × 2 = 3 loaves.
 
 </details>
 
-**(b)** Now suppose the price falls to a quarter of a loaf per pound. What happens?
+**(b)** In the lecture, the deal was 2 pounds for 2 loaves, a price of 1 loaf per pound. Compare that with the 1.5-loaf price in part (a). Whose share of the gains from trade grew?
+
+<details class="solution">
+<summary>Solution</summary>
+
+**Lin's.** Both prices sit inside the mutually beneficial range, between 0.5 and 2 loaves per pound, but 1.5 is closer to Pablo's opportunity cost of 2. The nearer the price is to the buyer's own cost of producing the good, the more of the gain goes to the seller, and Lin is the seller here.
+
+</details>
+
+**(c)** Now suppose the price falls to a quarter of a loaf per pound. What happens?
 
 <details class="solution">
 <summary>Solution</summary>
@@ -46,14 +55,6 @@ Lin receives 1.5 × 2 = 3 loaves.
 
 </details>
 
-**(c)** In the lecture, the deal was 2 pounds for 2 loaves, a price of 1 loaf per pound. Compare that with the 1.5-loaf price in part (a). Whose share of the gains from trade grew?
-
-<details class="solution">
-<summary>Solution</summary>
-
-**Lin's.** Both prices sit inside the mutually beneficial range, between 0.5 and 2 loaves per pound, but 1.5 is closer to Pablo's opportunity cost of 2. The nearer the price is to the buyer's own cost of producing the good, the more of the gain goes to the seller, and Lin is the seller here.
-
-</details>
 
 ## 2. Two food trucks
 
