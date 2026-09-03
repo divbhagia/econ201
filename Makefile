@@ -25,6 +25,8 @@ PUBLISHED_DECKS := $(foreach n,$(LECTURES),--include=slides/lecture$(n).qmd --in
 # Keep in step with MATERIALS in syllabus/create_schedule.py.
 PRACTICE := 02 03 04
 PUBLISHED_PRACTICE := $(foreach n,$(PRACTICE),--include=practice/practice$(n).qmd)
+# Consolidated module practice PDFs ride along with the published pages.
+PUBLISHED_PRACTICE += --include=practice/practice-*.pdf
 TMP := $(TMPDIR)econ201-build
 AUX := aux,log,out,fls,fdb_latexmk,xdv,toc,synctex.gz
 
