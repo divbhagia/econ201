@@ -105,3 +105,19 @@ audit:
 # once between an audit and a git add. Cheap to run, so run it every time.
 verify:
 	@diff -rq -x .DS_Store $(TMP)/docs docs && echo "docs/ matches the last render"
+
+# Consolidated module practice PDFs (441-style), generated from the practice
+# pages by scripts/build_module_practice.py; rerun after editing any
+# practice/practiceNN.qmd in a listed module.
+module-practice:
+	@echo "==> module practice PDFs (lualatex, tagged)"
+	@python3 scripts/build_module_practice.py economists-toolkit 03 04
+	@cd practice && for f in practice-economists-toolkit practice-economists-toolkit_solutions; do \
+	  lualatex -interaction=nonstopmode $$f.tex >/dev/null 2>&1; \
+	  lualatex -interaction=nonstopmode $$f.tex >/dev/null 2>&1; \
+	  verapdf --flavour ua2 --format text $$f.pdf 2>/dev/null | grep -q "^PASS" \
+	    && echo "    $$f.pdf: PASS (PDF/UA-2)" \
+	    || { echo "    $$f.pdf: FAIL (PDF/UA-2)"; exit 1; }; \
+	  rm -f $$f.aux $$f.log $$f.out; done
+
+.PHONY: module-practice

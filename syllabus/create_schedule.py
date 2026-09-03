@@ -116,6 +116,13 @@ MODULES = {
 }
 SESSION_MODULE = {n: label for label, ns in MODULES.items() for n in ns}
 
+# Consolidated module practice sets (441-style): module label -> file stem
+# under practice/. Only listed modules get Problems/Solutions buttons on
+# their content page; build the PDFs with `make module-practice`.
+MODULE_PRACTICE = {
+    "The Economist's Toolkit": "practice/practice-economists-toolkit",
+}
+
 # \multirow cannot span a page break: a merge that would straddle one is
 # split before these sessions (or date labels, for closures) and continues
 # unlabeled on the next page. Re-tune when pagination shifts.
@@ -523,10 +530,25 @@ for idx, (label, sessions) in enumerate(MODULES.items()):
         )
     # The module pages carry the Modules sidebar from _quarto.yml, so a
     # student can move between modules without going back to the navbar.
+    mp = MODULE_PRACTICE.get(label)
+    mp_html = ""
+    if mp:
+        mp_html = (
+            '<p class="lecture-links">\n'
+            f'<a class="btn btn-outline-primary" href="../{mp}.pdf" '
+            f'target="_blank" rel="noopener" role="button" '
+            f'aria-label="All practice problems for this module, PDF '
+            f'(opens in a new tab)">Problems (PDF)</a>\n'
+            f'<a class="btn btn-outline-primary" href="../{mp}_solutions.pdf" '
+            f'target="_blank" rel="noopener" role="button" '
+            f'aria-label="Solutions for the module practice problems, PDF '
+            f'(opens in a new tab)">Solutions (PDF)</a>\n'
+            '</p>\n\n')
     page = (f'---\ntitle: "{label}"\nsubtitle: "Module {ROMAN[idx]}"\n'
             f'toc: false\nformat: html\n---\n\n'
             f'Materials are posted as we go. See the [Schedule](../schedule.qmd) '
             f'for dates and assessments.\n\n'
+            + mp_html
             + "\n".join(blocks))
     (content_dir / f"{slug}.qmd").write_text(page)
 

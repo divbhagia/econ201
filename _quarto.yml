@@ -12,6 +12,8 @@ project:
     - "slides/*.pdf"
     # Tagged worksheet PDFs built by `make worksheets`
     - "worksheets/*.pdf"
+    # Consolidated module practice PDFs (make module-practice)
+    - "practice/*.pdf"
     # Tagged lecture notes
     - "notes/*.pdf"
 

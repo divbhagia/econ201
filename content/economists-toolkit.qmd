@@ -7,6 +7,11 @@ format: html
 
 Materials are posted as we go. See the [Schedule](../schedule.qmd) for dates and assessments.
 
+<p class="lecture-links">
+<a class="btn btn-outline-primary" href="../practice/practice-economists-toolkit.pdf" target="_blank" rel="noopener" role="button" aria-label="All practice problems for this module, PDF (opens in a new tab)">Problems (PDF)</a>
+<a class="btn btn-outline-primary" href="../practice/practice-economists-toolkit_solutions.pdf" target="_blank" rel="noopener" role="button" aria-label="Solutions for the module practice problems, PDF (opens in a new tab)">Solutions (PDF)</a>
+</p>
+
 ::: {.lecture}
 <h2>Lecture 3: Making economic decisions: Opportunity cost, rents, and incentives</h2>
 
