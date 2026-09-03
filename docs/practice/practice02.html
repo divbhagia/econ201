@@ -202,7 +202,7 @@ ul.task-list li input[type="checkbox"] {
 <summary>
 Solution
 </summary>
-<p><strong>(c).</strong> Today’s gaps are not an old feature of the world: in 1600 the five countries on the chart are nearly indistinguishable. The divergence was produced by countries starting sustained growth at different times.</p>
+<p>Today’s gaps are not an old feature of the world: in 1600 the five countries on the chart are nearly indistinguishable. The divergence was produced by countries starting sustained growth at different times.</p>
 </details>
 </div>
 <div class="mcq" data-answer="b">
@@ -217,7 +217,7 @@ Solution
 <summary>
 Solution
 </summary>
-<p><strong>(b).</strong> The <em>invisible hand</em> is Smith’s metaphor for the way markets coordinate the self-interested actions of individuals into outcomes that serve society. Smith’s famous illustration: we expect our dinner not from the benevolence of the butcher, the brewer, or the baker, but from their regard to their own interest. Each of them serves us because doing so serves themselves, and yet the result is that society gets fed, without anyone planning or intending it.</p>
+<p>The <em>invisible hand</em> is Smith’s metaphor for the way markets coordinate the self-interested actions of individuals into outcomes that serve society. Smith’s famous illustration: we expect our dinner not from the benevolence of the butcher, the brewer, or the baker, but from their regard to their own interest. Each of them serves us because doing so serves themselves, and yet the result is that society gets fed, without anyone planning or intending it.</p>
 </details>
 </div>
 <div class="mcq" data-answer="b">
@@ -232,7 +232,7 @@ Solution
 <summary>
 Solution
 </summary>
-<strong>(b).</strong> Smith’s pin factory shows that specialisation makes workers more productive: divided into separate tasks, ten workers could produce tens of thousands of pins a day, compared with a single worker on his own making just a few pins. But all those extra pins have to be sold to someone, so specialising is only worthwhile when the market is large enough to absorb the extra output. Smith mentions canals and foreign trade (option c) as ways of widening the market, not as preconditions for specialising.
+Smith’s pin factory shows that specialisation makes workers more productive: divided into separate tasks, ten workers could produce tens of thousands of pins a day, compared with a single worker on his own making just a few pins. But all those extra pins have to be sold to someone, so specialising is only worthwhile when the market is large enough to absorb the extra output. Smith mentions canals and foreign trade (option c) as ways of widening the market, not as preconditions for specialising.
 </details>
 </div>
 <div class="mcq" data-answer="c">
@@ -247,7 +247,7 @@ Solution
 <summary>
 Solution
 </summary>
-<p><strong>(c).</strong> Hold each option against the definition. In (c) the output is the same cakes, and the resources needed have fallen: less labour and less time. Note that no new equipment was involved, which the definition allows, because it is about the process rather than the hardware. In (a) output rises, but so do the inputs used to get it, so no resource has been economised per cake. In (b) the resources used are unchanged; only their price has fallen, and a price is not part of the definition. In (d) the bakery sells more of what it was already making, and the process is untouched.</p>
+<p>Hold each option against the definition. In (c) the output is the same cakes, and the resources needed have fallen: less labour and less time. Note that no new equipment was involved, which the definition allows, because it is about the process rather than the hardware. In (a) output rises, but so do the inputs used to get it, so no resource has been economised per cake. In (b) the resources used are unchanged; only their price has fallen, and a price is not part of the definition. In (d) the bakery sells more of what it was already making, and the process is untouched.</p>
 </details>
 </div>
 <div class="mcq" data-answer="b">
@@ -262,7 +262,7 @@ Solution
 <summary>
 Solution
 </summary>
-<p><strong>(b).</strong> Correlation is not causation. Richer countries can afford more doctors, and they can also afford clean water, better housing, and safer workplaces, all of which also lead to higher life expectancy. So the two numbers would rise together even if doctors made no difference at all. The story can also run the other way round: a healthier, wealthier population is one that can afford to train doctors in the first place.</p>
+<p>Correlation is not causation. Richer countries can afford more doctors, and they can also afford clean water, better housing, and safer workplaces, all of which also lead to higher life expectancy. So the two numbers would rise together even if doctors made no difference at all. The story can also run the other way round: a healthier, wealthier population is one that can afford to train doctors in the first place.</p>
 </details>
 </div>
 </section>
@@ -456,7 +456,7 @@ Solution
                    return picked.indexOf(a) !== -1;
                  })) {
         correct = true;
-        msg = sol ? 'Correct! The solution is below.' : 'Correct!';
+        msg = 'Correct!';
       } else if (multi) {
         var missing = answers.some(function (a) {
           return picked.indexOf(a) === -1;
@@ -466,6 +466,36 @@ Solution
           : 'At least one of your selections is incorrect. Try again.';
       } else {
         msg = 'Not quite. Try again.';
+      }
+      // On a correct answer the visible "Correct!" is folded into the first
+      // line of the solution so the explanation reads as one sentence flow;
+      // the status line still gets the text, visually hidden, so screen
+      // readers hear the announcement.
+      if (correct && sol) {
+        var first = sol.querySelector('p');
+        if (first && !sol.hasAttribute('data-prefixed')) {
+          var lead = document.createElement('em');
+          lead.textContent = 'Correct! ';
+          first.insertBefore(lead, first.firstChild);
+          sol.setAttribute('data-prefixed', '');
+        }
+        fb.classList.add('mcq-visually-hidden');
+        // Inline styles too, so a stale cached stylesheet cannot show the
+        // status line alongside the inline "Correct!".
+        fb.style.position = 'absolute';
+        fb.style.width = '1px';
+        fb.style.height = '1px';
+        fb.style.overflow = 'hidden';
+        fb.style.clipPath = 'inset(50%)';
+        fb.style.whiteSpace = 'nowrap';
+      } else {
+        fb.classList.remove('mcq-visually-hidden');
+        fb.style.position = '';
+        fb.style.width = '';
+        fb.style.height = '';
+        fb.style.overflow = '';
+        fb.style.clipPath = '';
+        fb.style.whiteSpace = '';
       }
       fb.textContent = msg;
       if (sol) {

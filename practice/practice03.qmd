@@ -139,3 +139,41 @@ The books count the presses' costs and not Lena's time. Economics counts both: h
 **Yes, if being her own boss is worth more than $10,000 a year to her.** The comparison so far counts only money, and running your own shop can be worth something in itself: independence, pride, doing work you chose. The lecture's first move applies here too: put a number on it, the most Lena would pay to be her own boss rather than an employee. If that number is more than the $10,000 gap, keeping the shop passes the decision rule after all.
 
 </details>
+
+## 3. Multiple choice
+
+::: {.mcq answer="c"}
+
+**1.** An airline sells a last-minute seat on an otherwise empty plane for \$25. The opportunity cost to the airline of filling that seat is:
+
+  a. The average cost per seat for the flight.
+  b. The full-fare ticket price.
+  c. Close to zero, since the plane flies either way and the seat would otherwise be empty.
+  d. Negative, since the passenger may buy a drink on board.
+
+<details class="solution">
+<summary>Solution</summary>
+
+The plane, crew, and fuel are paid for whether or not the seat is filled, so almost nothing is given up by letting one more passenger on.
+
+</details>
+
+:::
+
+::: {.mcq answer="b"}
+
+**2.** You win a free ticket to see Band A tonight, and it cannot be resold. Band B plays at the same time; a Band B ticket costs \$40, and an evening with Band B is worth \$50 to you. Apart from the tickets, neither concert has any other cost. What is the opportunity cost of using your free ticket to see Band A?
+
+  a. \$0
+  b. \$10
+  c. \$40
+  d. \$50
+
+<details class="solution">
+<summary>Solution</summary>
+
+Going to Band A means giving up the evening with Band B, and the net benefit of that alternative is $50 − $40 = **$10**.
+
+</details>
+
+:::

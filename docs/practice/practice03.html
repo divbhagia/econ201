@@ -129,6 +129,7 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#adopting-a-new-technology" id="toc-adopting-a-new-technology" class="nav-link active" data-scroll-target="#adopting-a-new-technology">1. Adopting a new technology</a></li>
   <li><a href="#is-the-shop-really-profitable" id="toc-is-the-shop-really-profitable" class="nav-link" data-scroll-target="#is-the-shop-really-profitable">2. Is the shop really profitable?</a></li>
+  <li><a href="#multiple-choice" id="toc-multiple-choice" class="nav-link" data-scroll-target="#multiple-choice">3. Multiple choice</a></li>
   </ul>
 </nav>
     </div>
@@ -293,6 +294,39 @@ Solution
 </summary>
 <p><strong>Yes, if being her own boss is worth more than $10,000 a year to her.</strong> The comparison so far counts only money, and running your own shop can be worth something in itself: independence, pride, doing work you chose. The lecture’s first move applies here too: put a number on it, the most Lena would pay to be her own boss rather than an employee. If that number is more than the $10,000 gap, keeping the shop passes the decision rule after all.</p>
 </details>
+</section>
+<section id="multiple-choice" class="level2">
+<h2 class="anchored" data-anchor-id="multiple-choice">3. Multiple choice</h2>
+<div class="mcq" data-answer="c">
+<p><strong>1.</strong> An airline sells a last-minute seat on an otherwise empty plane for $25. The opportunity cost to the airline of filling that seat is:</p>
+<ol type="a">
+<li>The average cost per seat for the flight.</li>
+<li>The full-fare ticket price.</li>
+<li>Close to zero, since the plane flies either way and the seat would otherwise be empty.</li>
+<li>Negative, since the passenger may buy a drink on board.</li>
+</ol>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>The plane, crew, and fuel are paid for whether or not the seat is filled, so almost nothing is given up by letting one more passenger on.</p>
+</details>
+</div>
+<div class="mcq" data-answer="b">
+<p><strong>2.</strong> You win a free ticket to see Band A tonight, and it cannot be resold. Band B plays at the same time; a Band B ticket costs $40, and an evening with Band B is worth $50 to you. Apart from the tickets, neither concert has any other cost. What is the opportunity cost of using your free ticket to see Band A?</p>
+<ol type="a">
+<li>$0</li>
+<li>$10</li>
+<li>$40</li>
+<li>$50</li>
+</ol>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>Going to Band A means giving up the evening with Band B, and the net benefit of that alternative is $50 − $40 = <strong>$10</strong>.</p>
+</details>
+</div>
 
 
 </section>
@@ -437,7 +471,7 @@ Solution
                    return picked.indexOf(a) !== -1;
                  })) {
         correct = true;
-        msg = sol ? 'Correct! The solution is below.' : 'Correct!';
+        msg = 'Correct!';
       } else if (multi) {
         var missing = answers.some(function (a) {
           return picked.indexOf(a) === -1;
@@ -447,6 +481,36 @@ Solution
           : 'At least one of your selections is incorrect. Try again.';
       } else {
         msg = 'Not quite. Try again.';
+      }
+      // On a correct answer the visible "Correct!" is folded into the first
+      // line of the solution so the explanation reads as one sentence flow;
+      // the status line still gets the text, visually hidden, so screen
+      // readers hear the announcement.
+      if (correct && sol) {
+        var first = sol.querySelector('p');
+        if (first && !sol.hasAttribute('data-prefixed')) {
+          var lead = document.createElement('em');
+          lead.textContent = 'Correct! ';
+          first.insertBefore(lead, first.firstChild);
+          sol.setAttribute('data-prefixed', '');
+        }
+        fb.classList.add('mcq-visually-hidden');
+        // Inline styles too, so a stale cached stylesheet cannot show the
+        // status line alongside the inline "Correct!".
+        fb.style.position = 'absolute';
+        fb.style.width = '1px';
+        fb.style.height = '1px';
+        fb.style.overflow = 'hidden';
+        fb.style.clipPath = 'inset(50%)';
+        fb.style.whiteSpace = 'nowrap';
+      } else {
+        fb.classList.remove('mcq-visually-hidden');
+        fb.style.position = '';
+        fb.style.width = '';
+        fb.style.height = '';
+        fb.style.overflow = '';
+        fb.style.clipPath = '';
+        fb.style.whiteSpace = '';
       }
       fb.textContent = msg;
       if (sol) {

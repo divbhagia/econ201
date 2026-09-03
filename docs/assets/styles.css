@@ -429,3 +429,23 @@ button.mcq-check:focus-visible {
   padding: 0.8em 1em;
 }
 .mcq-controls > .mcq-solution > :last-child { margin-bottom: 0; }
+
+/* Status line hidden visually on a correct answer (the "Correct!" text is
+   shown inline at the start of the solution instead) but kept in the
+   accessibility tree so role="status" still announces it. */
+.mcq-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* Space between multiple-choice questions, with a light rule, so an open
+   solution reads with its own question rather than the next one. */
+div.mcq { margin-bottom: 2rem; }
+div.mcq + div.mcq {
+  border-top: 1px solid #d9d9d9;
+  padding-top: 1.75rem;
+}

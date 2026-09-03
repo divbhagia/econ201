@@ -362,7 +362,7 @@ Lecture 2: The capitalist takeoff: Prosperity and its shadows
                    return picked.indexOf(a) !== -1;
                  })) {
         correct = true;
-        msg = sol ? 'Correct! The solution is below.' : 'Correct!';
+        msg = 'Correct!';
       } else if (multi) {
         var missing = answers.some(function (a) {
           return picked.indexOf(a) === -1;
@@ -372,6 +372,36 @@ Lecture 2: The capitalist takeoff: Prosperity and its shadows
           : 'At least one of your selections is incorrect. Try again.';
       } else {
         msg = 'Not quite. Try again.';
+      }
+      // On a correct answer the visible "Correct!" is folded into the first
+      // line of the solution so the explanation reads as one sentence flow;
+      // the status line still gets the text, visually hidden, so screen
+      // readers hear the announcement.
+      if (correct && sol) {
+        var first = sol.querySelector('p');
+        if (first && !sol.hasAttribute('data-prefixed')) {
+          var lead = document.createElement('em');
+          lead.textContent = 'Correct! ';
+          first.insertBefore(lead, first.firstChild);
+          sol.setAttribute('data-prefixed', '');
+        }
+        fb.classList.add('mcq-visually-hidden');
+        // Inline styles too, so a stale cached stylesheet cannot show the
+        // status line alongside the inline "Correct!".
+        fb.style.position = 'absolute';
+        fb.style.width = '1px';
+        fb.style.height = '1px';
+        fb.style.overflow = 'hidden';
+        fb.style.clipPath = 'inset(50%)';
+        fb.style.whiteSpace = 'nowrap';
+      } else {
+        fb.classList.remove('mcq-visually-hidden');
+        fb.style.position = '';
+        fb.style.width = '';
+        fb.style.height = '';
+        fb.style.overflow = '';
+        fb.style.clipPath = '';
+        fb.style.whiteSpace = '';
       }
       fb.textContent = msg;
       if (sol) {

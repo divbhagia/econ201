@@ -1,0 +1,353 @@
+---
+title: "Lecture 4: Practice"
+subtitle: "Why do markets matter? Specialization and comparative advantage"
+sidebar: false
+toc: true
+toc-title: "On this page"
+format: html
+---
+
+Work through each problem on paper before you open its **Solution**.
+
+## 1. Pablo and Lin strike different deals
+
+From the lecture: if Pablo and Lin each spent their whole Sunday on just one food, they could produce:
+
+::: {.freetable .table-scroll tabindex="0"}
+|  | Loaves of bread | Pounds of cheese |
+|:--|:--:|:--:|
+| Pablo | 12 | 6 |
+| Lin | 2 | 4 |
+
+: {tbl-colwidths="[40,30,30]"}
+
+:::
+
+On their own, each spends 75% of the day on bread, so Pablo produces 9 loaves and 1.5 pounds of cheese, and Lin produces 1.5 loaves and 1 pound. When they specialize, Pablo bakes 12 loaves and Lin makes 4 pounds of cheese.
+
+**(a)** Suppose the price of cheese is 1.5 loaves per pound, and Lin sells Pablo 2 pounds. What does each consume, and is each better off than on their own?
+
+<details class="solution">
+<summary>Solution</summary>
+
+Lin receives 1.5 × 2 = 3 loaves.
+
+- Lin: **3 loaves and 2 pounds**, against 1.5 loaves and 1 pound on her own. Better off in both goods.
+- Pablo: 12 − 3 = **9 loaves and 2 pounds**, against 9 loaves and 1.5 pounds on his own. The same bread and half a pound more cheese, so better off.
+
+</details>
+
+**(b)** Now suppose the price falls to a quarter of a loaf per pound. What happens?
+
+<details class="solution">
+<summary>Solution</summary>
+
+**No trade happens.** Making a pound of cheese costs Lin half a loaf of bread, so selling it for a quarter of a loaf leaves her worse off than baking her own bread. A price below the seller's opportunity cost kills the deal.
+
+</details>
+
+**(c)** In the lecture, the deal was 2 pounds for 2 loaves, a price of 1 loaf per pound. Compare that with the 1.5-loaf price in part (a). Whose share of the gains from trade grew?
+
+<details class="solution">
+<summary>Solution</summary>
+
+**Lin's.** Both prices sit inside the mutually beneficial range, between 0.5 and 2 loaves per pound, but 1.5 is closer to Pablo's opportunity cost of 2. The nearer the price is to the buyer's own cost of producing the good, the more of the gain goes to the seller, and Lin is the seller here.
+
+</details>
+
+## 2. Two food trucks
+
+Luis and Kim each run a food truck. If each spent a whole workday on just one product, they could make:
+
+::: {.freetable .table-scroll tabindex="0"}
+|  | Tacos | Burritos |
+|:--|:--:|:--:|
+| Luis | 40 | 8 |
+| Kim | 12 | 6 |
+
+: {tbl-colwidths="[40,30,30]"}
+
+:::
+
+Each can also split the day, with output in proportion to time.
+
+**(a)** Find each person's opportunity cost of a burrito and of a taco.
+
+<details class="solution">
+<summary>Solution</summary>
+
+::: {.freetable .table-scroll tabindex="0"}
+| Opportunity cost of... | 1 burrito | 1 taco |
+|:--|--:|--:|
+| Luis | 40 / 8 = 5 tacos | 8 / 40 = 0.2 burritos |
+| Kim | 12 / 6 = 2 tacos | 6 / 12 = 0.5 burritos |
+
+: {tbl-colwidths="[40,32,28]"}
+
+:::
+
+</details>
+
+**(b)** Who has the absolute advantage in each product? Who has the comparative advantage in each product?
+
+<details class="solution">
+<summary>Solution</summary>
+
+**Luis has the absolute advantage in both** (40 tacos against 12, and 8 burritos against 6). But a burrito costs Kim only 2 tacos against Luis's 5, so **Kim has the comparative advantage in burritos**, and a taco costs Luis 0.2 burritos against Kim's 0.5, so **Luis has the comparative advantage in tacos**.
+
+</details>
+
+**(c)** On their own, Luis spends three quarters of the day on tacos and Kim spends two thirds of the day on tacos. How much does each produce, and what are the totals?
+
+<details class="solution">
+<summary>Solution</summary>
+
+::: {.freetable .table-scroll tabindex="0"}
+|  | Tacos | Burritos |
+|:--|--:|--:|
+| Luis | 0.75 × 40 = 30 | 0.25 × 8 = 2 |
+| Kim | 0.67 × 12 = 8 | 0.33 × 6 = 2 |
+| **Total** | **38** | **4** |
+
+: {tbl-colwidths="[40,32,28]"}
+
+:::
+
+</details>
+
+**(d)** Now each specializes completely in the product in which they have the comparative advantage. What is produced in total, and how does it compare with part (c)?
+
+<details class="solution">
+<summary>Solution</summary>
+
+Luis makes only tacos, 40 of them, and Kim makes only burritos, 6 of them. Compared with 38 tacos and 4 burritos under self-sufficiency, specialization yields **2 more tacos and 2 more burritos** from the same two people and the same hours.
+
+</details>
+
+**(e)** They agree on a deal: Kim sells Luis 3 burritos for 9 tacos. What does each of them end up with, and is each better off than in part (c)?
+
+<details class="solution">
+<summary>Solution</summary>
+
+The price is 9 / 3 = 3 tacos per burrito.
+
+- Luis: 40 − 9 = **31 tacos** and the **3 burritos** he bought, against 30 and 2 on his own. Better off.
+- Kim: the **9 tacos** she received and 6 − 3 = **3 burritos**, against 8 and 2 on her own. Better off.
+
+Everyone ends up with more of both products.
+
+</details>
+
+**(f)** Over what range of prices, in tacos per burrito, would both gain from trade?
+
+<details class="solution">
+<summary>Solution</summary>
+
+Kim sells only above her own cost of a burrito, 2 tacos; Luis buys only below his, 5 tacos. Any price **between 2 and 5 tacos per burrito** leaves both better off, which is why the deal at 3 worked.
+
+</details>
+
+## 3. Ana and Ben at the campus bakery
+
+Ana and Ben work at a campus bakery. If each spent a whole hour on just one task, they could produce:
+
+::: {.freetable .table-scroll tabindex="0"}
+|  | Frosted cupcakes | Pots of coffee |
+|:--|:--:|:--:|
+| Ana | 12 | 3 |
+| Ben | 4 | 4 |
+
+: {tbl-colwidths="[40,30,30]"}
+
+:::
+
+**(a)** Who has the absolute advantage in each task?
+
+<details class="solution">
+<summary>Solution</summary>
+
+**Ana in frosting** (12 cupcakes against 4) and **Ben in coffee** (4 pots against 3).
+
+</details>
+
+**(b)** Who has the comparative advantage in each task?
+
+<details class="solution">
+<summary>Solution</summary>
+
+Work out each person's opportunity cost, what they give up. The hour Ana spends brewing 3 pots could have frosted 12 cupcakes instead, so each pot costs her 12 / 3 = 4 cupcakes. The same hour costs Ben only 4 / 4 = 1 cupcake per pot, so **Ben has the comparative advantage in coffee**. Flipping it around, a cupcake costs Ana 3 / 12 = 0.25 pots and Ben 1 pot, so **Ana has the comparative advantage in frosting**. Here comparative advantage lines up with absolute advantage, which happens whenever each person is better at one task.
+
+</details>
+
+**(c)** Suppose Ben sells coffee to Ana at a price measured in cupcakes per pot. Over what range of prices would both of them gain from the trade?
+
+<details class="solution">
+<summary>Solution</summary>
+
+Ben only gains at a price above his own cost of making a pot, 1 cupcake. Ana only gains at a price below what a pot costs her to brew herself, 4 cupcakes. So both gain at any price **between 1 and 4 cupcakes per pot**. Where the price lands inside that range decides who captures more of the gains: near 1 favors Ana, near 4 favors Ben.
+
+</details>
+
+## 4. Multiple choice
+
+::: {.mcq answer="b"}
+
+**1.** Maya paid \$45 for a concert ticket that is non-refundable and cannot be resold. On the day of the show she is exhausted and would much rather stay home. Which reasoning is economically sound?
+
+  a. She should go: otherwise the \$45 is wasted.
+  b. The \$45 is gone whether she goes or not; she should simply compare how much she would enjoy the concert against how much she values a night of rest.
+  c. She should go only if the ticket cost more than the value she places on a night at home.
+  d. Since the ticket is already paid for, going tonight costs her nothing, so she should go.
+
+<details class="solution">
+<summary>Solution</summary>
+
+The \$45 is a sunk cost: it has been incurred and cannot be recovered, so it is the same under both choices and should not sway the decision. Options (c) and (d) are incorrect because they ignore the opportunity cost of her evening, the night of rest she values.
+
+</details>
+
+:::
+
+::: {.mcq answer="b"}
+
+**2.** In an hour, Priya can string 20 bracelets or 5 necklaces. Her opportunity cost of one necklace, in terms of bracelets, is:
+
+  a. A quarter of a bracelet.
+  b. 4 bracelets.
+  c. 5 bracelets.
+  d. 20 bracelets.
+
+<details class="solution">
+<summary>Solution</summary>
+
+The time that makes 5 necklaces could instead make 20 bracelets, so each necklace costs 20 / 5 = **4 bracelets**.
+
+</details>
+
+:::
+
+::: {.mcq answer="a,d"}
+
+**3.** Alex and Jose live on separate islands. If each spends all of their time on one good, Alex can produce 10,000 melons or 15,000 oranges, and Jose can produce 15,000 melons or 30,000 oranges. Select all the correct statements.
+
+  a. Jose has an absolute advantage in both goods.
+  b. Jose has an absolute advantage in oranges, and Alex has an absolute advantage in melons.
+  c. Jose's opportunity cost of producing an orange is higher than Alex's.
+  d. Alex has a comparative advantage in melons.
+
+<details class="solution">
+<summary>Solution</summary>
+
+Jose produces more of both goods, so (a) is true and (b) is false. For comparative advantage, look at where each person's edge is biggest: Jose is twice as good as Alex at oranges, but only 1.5 times as good at melons, so Jose's comparative advantage is in oranges and Alex's is in melons, which makes (d) true. And an orange costs Jose half a melon, while it costs Alex two thirds of one, so Jose's opportunity cost of an orange is lower, not higher: (c) is false.
+
+</details>
+
+:::
+
+::: {.mcq answer="b"}
+
+**4.** Suppose Alex and Jose both specialize in the good in which they have the comparative advantage, and they trade at a price measured in melons per orange. Which statement is correct?
+
+  a. Alex specializes in oranges, and a higher price favors Alex.
+  b. Jose specializes in oranges, and a higher price favors Jose.
+  c. Jose specializes in oranges, and a higher price favors Alex.
+  d. The price does not affect how the gains from trade are shared.
+
+<details class="solution">
+<summary>Solution</summary>
+
+Jose has the comparative advantage in oranges, so he is the orange seller. A higher price in melons per orange means every orange he sells brings home more melons, so higher prices shift the gains toward Jose.
+
+</details>
+
+:::
+
+::: {.mcq answer="c"}
+
+**5.** A country has an absolute advantage in every good it produces. It follows that:
+
+  a. It cannot gain from trading with anyone.
+  b. It has a comparative advantage in every good as well.
+  c. It still has a comparative advantage in some goods and not others, and can gain by trading.
+  d. Its trading partners would lose from trading with it.
+
+<details class="solution">
+<summary>Solution</summary>
+
+Comparative advantage is about relative costs, and relative costs cannot be lower across the board: being relatively cheaper at one good means being relatively more expensive at another. So it still pays to concentrate where the advantage is largest and trade for the rest.
+
+</details>
+
+:::
+
+::: {.mcq answer="c"}
+
+**6.** Ravi's opportunity cost of a kilo of coffee is 2 kilos of rice. Sofia's is 5 kilos of rice. At which price for a kilo of coffee could both of them gain from trading?
+
+  a. 1 kilo of rice.
+  b. 2 kilos of rice.
+  c. 3 kilos of rice.
+  d. 6 kilos of rice.
+
+<details class="solution">
+<summary>Solution</summary>
+
+Since Ravi's opportunity cost of coffee is lower, he is the one selling coffee and Sofia is buying. Ravi only gains at a price above his own cost of 2 kilos of rice, and Sofia only gains below her cost of 5, so both gain at any price strictly between 2 and 5.
+
+</details>
+
+:::
+
+::: {.mcq answer="c"}
+
+**7.** From the lecture: suppose Taylor Swift types faster than any assistant she could hire. Should she answer her own fan mail?
+
+  a. Yes, she has an absolute advantage in typing.
+  b. Yes, paying an assistant is a direct cost, while typing it herself is free.
+  c. No, because the time she would spend typing is worth more than what an assistant would cost her.
+  d. It does not matter, since either way the mail gets answered.
+
+<details class="solution">
+<summary>Solution</summary>
+
+Typing it herself is not free: those hours have an opportunity cost, and for her they are worth far more in the studio or on tour than an assistant's wage.
+
+</details>
+
+:::
+
+::: {.mcq answer="b"}
+
+**8.** The United States could produce clothing using fewer worker-hours per shirt than many of the countries it imports clothing from. Why might importing still make sense?
+
+  a. The exporting countries must secretly have an absolute advantage.
+  b. American labor and capital have a high opportunity cost: hours spent sewing shirts would give up more valuable output in industries like aircraft and software.
+  c. Imported goods are always cheaper than domestically produced ones.
+  d. The United States lacks the technology to produce clothing.
+
+<details class="solution">
+<summary>Solution</summary>
+
+Trade patterns follow comparative advantage, not absolute advantage. Even if an American factory could sew a shirt in fewer hours, those hours earn far more in the industries where the US advantage is greatest, so shirts are cheaper to buy from abroad than to make at the cost of that forgone output.
+
+</details>
+
+:::
+
+::: {.mcq answer="b,c"}
+
+**9.** Which of the following are downsides of specialization? Select all that apply.
+
+  a. Total output falls when people specialize.
+  b. Specializing makes you dependent on others, so a disruption to trade can leave you badly exposed.
+  c. A specialized producer is vulnerable to a fall in demand or price for the one thing they make.
+  d. Specialization benefits only the more productive party.
+
+<details class="solution">
+<summary>Solution</summary>
+
+Specializing means depending on others, so a disruption to trade can leave you exposed, and a producer of one thing is vulnerable if demand for it falls. Specialization raises total output and both parties can gain, so (a) and (d) are false.
+
+</details>
+
+:::

@@ -52,7 +52,7 @@ Write your answer down before you open a **Solution**.
 <details class="solution">
 <summary>Solution</summary>
 
-**(c).** Today's gaps are not an old feature of the world: in 1600 the five countries on the chart are nearly indistinguishable. The divergence was produced by countries starting sustained growth at different times.
+Today's gaps are not an old feature of the world: in 1600 the five countries on the chart are nearly indistinguishable. The divergence was produced by countries starting sustained growth at different times.
 
 </details>
 
@@ -70,7 +70,7 @@ Write your answer down before you open a **Solution**.
 <details class="solution">
 <summary>Solution</summary>
 
-**(b).** The *invisible hand* is Smith's metaphor for the way markets coordinate the self-interested actions of individuals into outcomes that serve society. Smith's famous illustration: we expect our dinner not from the benevolence of the butcher, the brewer, or the baker, but from their regard to their own interest. Each of them serves us because doing so serves themselves, and yet the result is that society gets fed, without anyone planning or intending it.
+The *invisible hand* is Smith's metaphor for the way markets coordinate the self-interested actions of individuals into outcomes that serve society. Smith's famous illustration: we expect our dinner not from the benevolence of the butcher, the brewer, or the baker, but from their regard to their own interest. Each of them serves us because doing so serves themselves, and yet the result is that society gets fed, without anyone planning or intending it.
 
 
 </details>
@@ -89,7 +89,7 @@ Write your answer down before you open a **Solution**.
 <details class="solution">
 <summary>Solution</summary>
 
-**(b).** Smith's pin factory shows that specialisation makes workers more productive: divided into separate tasks, ten workers could produce tens of thousands of pins a day, compared with a single worker on his own making just a few pins. But all those extra pins have to be sold to someone, so specialising is only worthwhile when the market is large enough to absorb the extra output. Smith mentions canals and foreign trade (option c) as ways of widening the market, not as preconditions for specialising.
+Smith's pin factory shows that specialisation makes workers more productive: divided into separate tasks, ten workers could produce tens of thousands of pins a day, compared with a single worker on his own making just a few pins. But all those extra pins have to be sold to someone, so specialising is only worthwhile when the market is large enough to absorb the extra output. Smith mentions canals and foreign trade (option c) as ways of widening the market, not as preconditions for specialising.
 </details>
 
 :::
@@ -106,7 +106,7 @@ Write your answer down before you open a **Solution**.
 <details class="solution">
 <summary>Solution</summary>
 
-**(c).** Hold each option against the definition. In (c) the output is the same cakes, and the resources needed have fallen: less labour and less time. Note that no new equipment was involved, which the definition allows, because it is about the process rather than the hardware. In (a) output rises, but so do the inputs used to get it, so no resource has been economised per cake. In (b) the resources used are unchanged; only their price has fallen, and a price is not part of the definition. In (d) the bakery sells more of what it was already making, and the process is untouched.
+Hold each option against the definition. In (c) the output is the same cakes, and the resources needed have fallen: less labour and less time. Note that no new equipment was involved, which the definition allows, because it is about the process rather than the hardware. In (a) output rises, but so do the inputs used to get it, so no resource has been economised per cake. In (b) the resources used are unchanged; only their price has fallen, and a price is not part of the definition. In (d) the bakery sells more of what it was already making, and the process is untouched.
 
 </details>
 
@@ -124,7 +124,7 @@ Write your answer down before you open a **Solution**.
 <details class="solution">
 <summary>Solution</summary>
 
-**(b).** Correlation is not causation. Richer countries can afford more doctors, and they can also afford clean water, better housing, and safer workplaces, all of which also lead to higher life expectancy. So the two numbers would rise together even if doctors made no difference at all. The story can also run the other way round: a healthier, wealthier population is one that can afford to train doctors in the first place. 
+Correlation is not causation. Richer countries can afford more doctors, and they can also afford clean water, better housing, and safer workplaces, all of which also lead to higher life expectancy. So the two numbers would rise together even if doctors made no difference at all. The story can also run the other way round: a healthier, wealthier population is one that can afford to train doctors in the first place. 
 
 </details>
 
