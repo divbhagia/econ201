@@ -11,7 +11,9 @@ Materials are posted as we go. See the [Schedule](../schedule.qmd) for dates and
 <h2>Lecture 5: Winning brands and the price of Cheerios</h2>
 
 <p><strong>Reading:</strong> 7.1&ndash;7.2</p>
-<p class="lecture-links dim">Materials posted closer to the date.</p>
+<p class="lecture-links"><a class="btn btn-outline-primary" href="../slides/lecture5.html" target="_blank" rel="noopener" role="button" aria-label="Lecture 5 slides (opens in a new tab)">Slides</a>
+<a class="btn btn-outline-primary" href="../slides/lecture5.pdf" target="_blank" rel="noopener" role="button" aria-label="Lecture 5 slides as a tagged PDF (opens in a new tab)">Slides (PDF)</a>
+<a class="btn btn-outline-primary" href="../worksheets/worksheet05.pdf" target="_blank" rel="noopener" role="button" aria-label="Lecture 5 worksheet (opens in a new tab)">Worksheet</a></p>
 :::
 
 ::: {.lecture}

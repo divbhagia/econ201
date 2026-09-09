@@ -1,15 +1,34 @@
 # ECON 201 course site
 
 Quarto website (output in `docs/`, served via GitHub Pages), a LaTeX syllabus,
-reveal.js slide decks, and an offline quiz-grading pipeline in `quizzes/`.
-Run every command from this folder. `make site` renders in a temp copy outside
-Dropbox and replaces `docs/`; never render into `docs/` directly.
+reveal.js slide decks, and quizzes graded offline by the external `autograder`
+CLI. Run every command from this folder. `make site` renders in a temp copy
+outside Dropbox and replaces `docs/`; never render into `docs/` directly.
+
+## Quizzes
+
+Everything quiz-related lives under `quizzes/`, an autograder course folder
+(`quizzes/course.toml`) with one subfolder per quiz: the spec in
+`quizzes/quizNN/quizNN.toml`, print master and key in `quizzes/quizNN/build/`,
+the scanned stack saved as `quizzes/quizNN/quizNN_scan.pdf`, and the review
+workbook and scores CSV written beside the scan. Author a spec, then from
+the econ201 root: `autograder --dir quizzes build quizNN` / `read` /
+`score`. The tool lives in its own repo (`../../auto-grader`); nothing is
+copied here, and Div posts grades with his own script, so the scores CSV is
+the last step it owns. `quizzes/` is gitignored and excluded from the
+`make site` rsync; keep it that way, since the repo and site are public and
+the specs contain answer keys. Quiz format: five multiple-choice questions
+worth 1 point each, three verbatim from the practice pages and two
+practice-based with a twist.
 
 ## Student data
 
-`grades/` holds everything with a student's name or CWID in it, plus the
-Canvas token. Do not read it. Develop the grading code against the synthetic
-data `quizzes/test_grader.py` generates. See `quizzes/README.md`.
+`quizzes/roster.csv` and, inside each `quizzes/quizNN/` folder, the scan
+(`quizNN_scan.pdf`), review workbook, and scores CSV carry student names
+and CWIDs (`grades/`, now retired, did before). Do not read those; the
+specs and `build/` are fine.
+Test grading against synthetic sheets via
+`autograder --dir quizzes simulate quizNN`, never real scans.
 
 ## Accessibility is a hard requirement
 
