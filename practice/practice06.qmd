@@ -1,0 +1,209 @@
+---
+title: "Lecture 6: Practice"
+subtitle: "What does it cost to make a car? Scale and the cost of production"
+sidebar: false
+toc: true
+toc-title: "On this page"
+format: html
+---
+
+Work through each problem on paper before you open its **Solution**.
+
+## 1. Denise's bakery
+
+Denise runs a small bakery. Rent and the ovens cost \$300 a day whether the bakery bakes anything or not, and each loaf costs \$2 in flour and labor.
+
+**(a)** Write down the bakery's cost function, $C(Q)$, where $Q$ is loaves per day.
+
+<details class="solution">
+<summary>Solution</summary>
+
+The fixed cost is \$300 and the variable cost is \$2 per loaf, so $C(Q) = 300 + 2Q$.
+
+</details>
+
+**(b)** Find the total cost, average cost, and marginal cost at 50, 100, and 300 loaves a day.
+
+<details class="solution">
+<summary>Solution</summary>
+
+::: {.freetable .table-scroll tabindex="0"}
+| Loaves per day, $Q$ | 50 | 100 | 300 |
+|:--|--:|--:|--:|
+| Total cost, $C(Q)$ | 300 + 100 = 400 | 300 + 200 = 500 | 300 + 600 = 900 |
+| Average cost, $C(Q)/Q$ | 400 / 50 = 8 | 500 / 100 = 5 | 900 / 300 = 3 |
+| Marginal cost | 2 | 2 | 2 |
+
+: {tbl-colwidths="[34,22,22,22]"}
+
+:::
+
+Marginal cost is the cost of one more loaf, \$2, at every output. Average cost is $2 + 300 / Q$: each loaf carries its own \$2 plus a share of the \$300, and that share shrinks as more loaves are baked.
+
+</details>
+
+**(c)** At what output does average cost fall to \$3 a loaf?
+
+<details class="solution">
+<summary>Solution</summary>
+
+Average cost is $2 + 300 / Q$. Setting $2 + 300 / Q = 3$ gives $300 / Q = 1$, so **$Q = 300$ loaves a day**. The table in part (b) confirms it.
+
+</details>
+
+**(d)** The landlord doubles the rent, so fixed costs rise to \$600 a day. Which of the three cost measures change, and how?
+
+<details class="solution">
+<summary>Solution</summary>
+
+- **Total cost** rises by \$300 at every output: $C(Q) = 600 + 2Q$.
+- **Average cost** rises, by $300 / Q$: at 100 loaves it goes from \$5 to \$8.
+- **Marginal cost does not change.** One more loaf still costs \$2 in flour and labor. The rent is paid whether that loaf is baked or not.
+
+</details>
+
+## 2. Fixed or variable, and for how long
+
+**(a)** Denise's daily expenses are listed below. Which vary with the number of loaves baked, and which do not?
+
+- Rent for the shop.
+- Flour, yeast, and butter.
+- Staff paid by the hour, with more hours scheduled on busy days.
+- The yearly fee for the bakery's website.
+- Electricity for the ovens.
+
+<details class="solution">
+<summary>Solution</summary>
+
+**Fixed:** the rent and the website fee. Both are the same whether the bakery bakes one loaf or a thousand.
+
+**Variable:** flour, yeast, and butter; hourly staff; and electricity for the ovens. Each of these rises with the number of loaves baked.
+
+</details>
+
+**(b)** Denise's ovens can bake at most 300 loaves a day on normal shifts. To bake more, Denise has to pay staff overtime at a higher hourly wage. What happens to the marginal cost of a loaf beyond 300, and why does the book describe this as a short-run cost?
+
+<details class="solution">
+<summary>Solution</summary>
+
+Beyond 300 loaves each extra loaf needs overtime labor, so **marginal cost rises above \$2**. It is a short-run cost because it comes from holding the ovens fixed: in the short run the stock of equipment cannot be changed. In the long run Denise can buy another oven, and the extra loaves would again cost \$2 each.
+
+</details>
+
+## 3. Returns to scale
+
+**(a)** Each firm below doubles all of its inputs. Classify its technology as increasing, constant, or decreasing returns to scale.
+
+- A brewery's output rises from 100 barrels to 250.
+- A print shop's output rises from 100 posters to 200.
+- A consulting firm's output rises from 100 reports to 150.
+
+<details class="solution">
+<summary>Solution</summary>
+
+- The brewery more than doubles its output: **increasing returns to scale**, also called economies of scale.
+- The print shop exactly doubles it: **constant returns to scale**.
+- The consulting firm less than doubles it: **decreasing returns to scale**, also called diseconomies of scale.
+
+</details>
+
+**(b)** The print shop has constant returns to scale in production. Can its average cost still fall as it prints more posters? Explain.
+
+<details class="solution">
+<summary>Solution</summary>
+
+**Yes, if it has fixed costs.** Constant returns mean the variable cost per poster stays the same, but a fixed cost such as the lease on the press is spread over more posters as output rises. With $C(Q) = F + cQ$, average cost is $c + F / Q$, which falls as $Q$ rises even though $c$ does not change.
+
+</details>
+
+## 4. Multiple choice
+
+::: {.mcq answer="b"}
+
+**1.** A firm's cost function is $C(Q) = 300 + 2Q$. Its marginal cost is:
+
+  a. \$300.
+  b. \$2.
+  c. $300 / Q + 2$.
+  d. \$302.
+
+<details class="solution">
+<summary>Solution</summary>
+
+Marginal cost is the increase in total cost from one more unit, which is the slope of the cost function: **\$2**. Option (c) is the average cost.
+
+</details>
+
+:::
+
+::: {.mcq answer="a,b,d"}
+
+**2.** A cereal producer's cost function is $C(Q) = 2Q$, where $Q$ is pounds of cereal. Select all the statements that are correct.
+
+  a. There are no fixed costs of production.
+  b. The marginal cost of production is 2.
+  c. The producer's average cost falls with output.
+  d. For any quantity $Q$, average cost and marginal cost are the same.
+
+<details class="solution">
+<summary>Solution</summary>
+
+At $Q = 0$ total cost is 0, so there are no fixed costs. The slope of the cost function is 2, so marginal cost is 2. Average cost is $2Q / Q = 2$ at every output, so it does not fall, and it equals marginal cost everywhere. **(a), (b), and (d)** are correct.
+
+</details>
+
+:::
+
+::: {.mcq answer="a,c,d"}
+
+**3.** Select all the statements that are correct.
+
+  a. With constant returns to scale, doubling all inputs doubles output.
+  b. With decreasing returns to scale, doubling all inputs more than doubles output.
+  c. With economies of scale, cost per unit falls as the firm expands its production.
+  d. With increasing returns to scale, tripling all inputs more than triples output.
+
+<details class="solution">
+<summary>Solution</summary>
+
+Decreasing returns mean doubling inputs *less than* doubles output, so (b) is wrong. The other three follow from the definitions: with increasing returns the firm needs a less than proportional increase in inputs to raise output, so its cost per unit falls. **(a), (c), and (d)** are correct.
+
+</details>
+
+:::
+
+::: {.mcq answer="b"}
+
+**4.** Which of the following is an example of network economies of scale?
+
+  a. A bakery buys flour in bulk at a discount.
+  b. A messaging app becomes more useful to each user as more of their friends join.
+  c. A carmaker spreads the cost of designing a model over more cars.
+  d. Doubling the material in a brewery's pipe more than doubles the liquid it can carry.
+
+<details class="solution">
+<summary>Solution</summary>
+
+Network economies of scale are on the demand side: the product is worth more to each user because other users are connected to it. That is **(b)**. Option (a) is bargaining power, (c) is a fixed cost spread over more units, and (d) is an economy of scale in production.
+
+</details>
+
+:::
+
+::: {.mcq answer="c"}
+
+**5.** A carmaker has fixed costs and a constant cost per car. Which statement about its average cost (AC) and marginal cost (MC) is correct?
+
+  a. AC is below MC at every output.
+  b. AC equals MC at every output.
+  c. AC is above MC at every output, and gets closer to MC as output rises.
+  d. AC rises with output while MC stays constant.
+
+<details class="solution">
+<summary>Solution</summary>
+
+Average cost is the constant cost per car plus a share of the fixed cost, so it is always above marginal cost. The share shrinks as more cars are produced, so average cost falls toward marginal cost without reaching it. **(c)** is correct.
+
+</details>
+
+:::

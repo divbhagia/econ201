@@ -18,12 +18,12 @@ SHELL := /bin/bash
 # Published lectures; keep in step with MATERIALS in syllabus/create_schedule.py.
 # A deck not listed here is neither built as PDF nor rendered into the site, so
 # a lecture can be drafted in slides/ without appearing anywhere public.
-LECTURES := 1 2 3 4 5
+LECTURES := 1 2 3 4 5 6
 PUBLISHED_DECKS := $(foreach n,$(LECTURES),--include=slides/lecture$(n).qmd --include=slides/lecture$(n).pdf)
 # Published practice pages, same idea: a page absent from this list is not
 # rendered, so it is in the repo but nowhere on the site, not even site search.
 # Keep in step with MATERIALS in syllabus/create_schedule.py.
-PRACTICE := 02 03 04
+PRACTICE := 02 03 04 06
 PUBLISHED_PRACTICE := $(foreach n,$(PRACTICE),--include=practice/practice$(n).qmd)
 # Consolidated module practice PDFs ride along with the published pages.
 PUBLISHED_PRACTICE += --include=practice/practice-*.pdf

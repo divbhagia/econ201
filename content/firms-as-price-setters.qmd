@@ -20,7 +20,10 @@ Materials are posted as we go. See the [Schedule](../schedule.qmd) for dates and
 <h2>Lecture 6: What does it cost to make a car? Scale and the cost of production</h2>
 
 <p><strong>Reading:</strong> 7.3&ndash;7.4</p>
-<p class="lecture-links dim">Materials posted closer to the date.</p>
+<p class="lecture-links"><a class="btn btn-outline-primary" href="../slides/lecture6.html" target="_blank" rel="noopener" role="button" aria-label="Lecture 6 slides (opens in a new tab)">Slides</a>
+<a class="btn btn-outline-primary" href="../slides/lecture6.pdf" target="_blank" rel="noopener" role="button" aria-label="Lecture 6 slides as a tagged PDF (opens in a new tab)">Slides (PDF)</a>
+<a class="btn btn-outline-primary" href="../practice/practice06.html" target="_blank" rel="noopener" role="button" aria-label="Lecture 6 practice problems (opens in a new tab)">Practice problems</a>
+<a class="btn btn-outline-primary" href="../worksheets/worksheet06.pdf" target="_blank" rel="noopener" role="button" aria-label="Lecture 6 worksheet (opens in a new tab)">Worksheet</a></p>
 :::
 
 ::: {.lecture}

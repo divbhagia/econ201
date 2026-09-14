@@ -73,6 +73,10 @@ verapdf via Homebrew).
 
 ## Slide decks
 
+Before drafting or revising any deck, worksheet, or practice page, read
+`slides/DECK-SPEC.md` in full and check the draft against it; it is the
+standing spec distilled from Div's corrections on earlier lectures.
+
 Sources are `slides/lectureN.qmd`, rendered by Quarto as part of the site. No
 speaker notes and no presenter copies. Only decks listed in `LECTURES` in the
 Makefile are rendered or built as PDF, so a lecture can be drafted in

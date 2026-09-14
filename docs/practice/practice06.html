@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Firms as Price Setters – Principles of Microeconomics</title>
+<title>Lecture 6: Practice – Principles of Microeconomics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -69,11 +69,40 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../assets/styles.css">
 </head>
 
-<body class="nav-sidebar docked nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -103,7 +132,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Schedule</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../content/the-big-picture.html" aria-current="page"> 
+    <a class="nav-link" href="../content/the-big-picture.html"> 
 <span class="menu-text">Content</span></a>
   </li>  
   <li class="nav-item compact">
@@ -117,72 +146,30 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../content/firms-as-price-setters.html">III. Firms as Price Setters</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../content/the-big-picture.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">I. The Big Picture</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../content/economists-toolkit.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">II. The Economist’s Toolkit</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../content/firms-as-price-setters.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">III. Firms as Price Setters</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../content/markets-with-many-buyers-and-sellers.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">IV. Markets with Many Buyers and Sellers</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../content/market-successes-and-failures.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">V. Market Successes and Failures</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../content/review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">VI. Review</span></a>
-  </div>
-</li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#denises-bakery" id="toc-denises-bakery" class="nav-link active" data-scroll-target="#denises-bakery">1. Denise’s bakery</a></li>
+  <li><a href="#fixed-or-variable-and-for-how-long" id="toc-fixed-or-variable-and-for-how-long" class="nav-link" data-scroll-target="#fixed-or-variable-and-for-how-long">2. Fixed or variable, and for how long</a></li>
+  <li><a href="#returns-to-scale" id="toc-returns-to-scale" class="nav-link" data-scroll-target="#returns-to-scale">3. Returns to scale</a></li>
+  <li><a href="#multiple-choice" id="toc-multiple-choice" class="nav-link" data-scroll-target="#multiple-choice">4. Multiple choice</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Firms as Price Setters</h1>
-<p class="subtitle lead">Module III</p>
+<h1 class="title">Lecture 6: Practice</h1>
+<p class="subtitle lead">What does it cost to make a car? Scale and the cost of production</p>
 </div>
 
 
@@ -199,105 +186,212 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Materials are posted as we go. See the <a href="../schedule.html">Schedule</a> for dates and assessments.</p>
-<div class="lecture">
-<h2 class="anchored">
-Lecture 5: Winning brands and the price of Cheerios
-</h2>
-<p>
-<strong>Reading:</strong> 7.1–7.2
-</p>
-<p class="lecture-links">
-<a class="btn btn-outline-primary" href="../slides/lecture5.html" target="_blank" rel="noopener" role="button" aria-label="Lecture 5 slides (opens in a new tab)">Slides</a> <a class="btn btn-outline-primary" href="../slides/lecture5.pdf" target="_blank" rel="noopener" role="button" aria-label="Lecture 5 slides as a tagged PDF (opens in a new tab)">Slides (PDF)</a> <a class="btn btn-outline-primary" href="../worksheets/worksheet05.pdf" target="_blank" rel="noopener" role="button" aria-label="Lecture 5 worksheet (opens in a new tab)">Worksheet</a>
-</p>
+<p>Work through each problem on paper before you open its <strong>Solution</strong>.</p>
+<section id="denises-bakery" class="level2">
+<h2 class="anchored" data-anchor-id="denises-bakery">1. Denise’s bakery</h2>
+<p>Denise runs a small bakery. Rent and the ovens cost $300 a day whether the bakery bakes anything or not, and each loaf costs $2 in flour and labor.</p>
+<p><strong>(a)</strong> Write down the bakery’s cost function, <span class="math inline">\(C(Q)\)</span>, where <span class="math inline">\(Q\)</span> is loaves per day.</p>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>The fixed cost is $300 and the variable cost is $2 per loaf, so <span class="math inline">\(C(Q) = 300 + 2Q\)</span>.</p>
+</details>
+<p><strong>(b)</strong> Find the total cost, average cost, and marginal cost at 50, 100, and 300 loaves a day.</p>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<div class="freetable table-scroll" tabindex="0">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 22%">
+<col style="width: 22%">
+<col style="width: 22%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Loaves per day, <span class="math inline">\(Q\)</span></th>
+<th style="text-align: right;">50</th>
+<th style="text-align: right;">100</th>
+<th style="text-align: right;">300</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Total cost, <span class="math inline">\(C(Q)\)</span></td>
+<td style="text-align: right;">300 + 100 = 400</td>
+<td style="text-align: right;">300 + 200 = 500</td>
+<td style="text-align: right;">300 + 600 = 900</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Average cost, <span class="math inline">\(C(Q)/Q\)</span></td>
+<td style="text-align: right;">400 / 50 = 8</td>
+<td style="text-align: right;">500 / 100 = 5</td>
+<td style="text-align: right;">900 / 300 = 3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Marginal cost</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+</tr>
+</tbody>
+</table>
 </div>
-<div class="lecture">
-<h2 class="anchored">
-Lecture 6: What does it cost to make a car? Scale and the cost of production
-</h2>
-<p>
-<strong>Reading:</strong> 7.3–7.4
-</p>
-<p class="lecture-links">
-<a class="btn btn-outline-primary" href="../slides/lecture6.html" target="_blank" rel="noopener" role="button" aria-label="Lecture 6 slides (opens in a new tab)">Slides</a> <a class="btn btn-outline-primary" href="../slides/lecture6.pdf" target="_blank" rel="noopener" role="button" aria-label="Lecture 6 slides as a tagged PDF (opens in a new tab)">Slides (PDF)</a> <a class="btn btn-outline-primary" href="../practice/practice06.html" target="_blank" rel="noopener" role="button" aria-label="Lecture 6 practice problems (opens in a new tab)">Practice problems</a> <a class="btn btn-outline-primary" href="../worksheets/worksheet06.pdf" target="_blank" rel="noopener" role="button" aria-label="Lecture 6 worksheet (opens in a new tab)">Worksheet</a>
-</p>
+<p>Marginal cost is the cost of one more loaf, $2, at every output. Average cost is <span class="math inline">\(2 + 300 / Q\)</span>: each loaf carries its own $2 plus a share of the $300, and that share shrinks as more loaves are baked.</p>
+</details>
+<p><strong>(c)</strong> At what output does average cost fall to $3 a loaf?</p>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>Average cost is <span class="math inline">\(2 + 300 / Q\)</span>. Setting <span class="math inline">\(2 + 300 / Q = 3\)</span> gives <span class="math inline">\(300 / Q = 1\)</span>, so <strong><span class="math inline">\(Q = 300\)</span> loaves a day</strong>. The table in part (b) confirms it.</p>
+</details>
+<p><strong>(d)</strong> The landlord doubles the rent, so fixed costs rise to $600 a day. Which of the three cost measures change, and how?</p>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<ul>
+<li><strong>Total cost</strong> rises by $300 at every output: <span class="math inline">\(C(Q) = 600 + 2Q\)</span>.</li>
+<li><strong>Average cost</strong> rises, by <span class="math inline">\(300 / Q\)</span>: at 100 loaves it goes from $5 to $8.</li>
+<li><strong>Marginal cost does not change.</strong> One more loaf still costs $2 in flour and labor. The rent is paid whether that loaf is baked or not.</li>
+</ul>
+</details>
+</section>
+<section id="fixed-or-variable-and-for-how-long" class="level2">
+<h2 class="anchored" data-anchor-id="fixed-or-variable-and-for-how-long">2. Fixed or variable, and for how long</h2>
+<p><strong>(a)</strong> Denise’s daily expenses are listed below. Which vary with the number of loaves baked, and which do not?</p>
+<ul>
+<li>Rent for the shop.</li>
+<li>Flour, yeast, and butter.</li>
+<li>Staff paid by the hour, with more hours scheduled on busy days.</li>
+<li>The yearly fee for the bakery’s website.</li>
+<li>Electricity for the ovens.</li>
+</ul>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p><strong>Fixed:</strong> the rent and the website fee. Both are the same whether the bakery bakes one loaf or a thousand.</p>
+<p><strong>Variable:</strong> flour, yeast, and butter; hourly staff; and electricity for the ovens. Each of these rises with the number of loaves baked.</p>
+</details>
+<p><strong>(b)</strong> Denise’s ovens can bake at most 300 loaves a day on normal shifts. To bake more, Denise has to pay staff overtime at a higher hourly wage. What happens to the marginal cost of a loaf beyond 300, and why does the book describe this as a short-run cost?</p>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>Beyond 300 loaves each extra loaf needs overtime labor, so <strong>marginal cost rises above $2</strong>. It is a short-run cost because it comes from holding the ovens fixed: in the short run the stock of equipment cannot be changed. In the long run Denise can buy another oven, and the extra loaves would again cost $2 each.</p>
+</details>
+</section>
+<section id="returns-to-scale" class="level2">
+<h2 class="anchored" data-anchor-id="returns-to-scale">3. Returns to scale</h2>
+<p><strong>(a)</strong> Each firm below doubles all of its inputs. Classify its technology as increasing, constant, or decreasing returns to scale.</p>
+<ul>
+<li>A brewery’s output rises from 100 barrels to 250.</li>
+<li>A print shop’s output rises from 100 posters to 200.</li>
+<li>A consulting firm’s output rises from 100 reports to 150.</li>
+</ul>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<ul>
+<li>The brewery more than doubles its output: <strong>increasing returns to scale</strong>, also called economies of scale.</li>
+<li>The print shop exactly doubles it: <strong>constant returns to scale</strong>.</li>
+<li>The consulting firm less than doubles it: <strong>decreasing returns to scale</strong>, also called diseconomies of scale.</li>
+</ul>
+</details>
+<p><strong>(b)</strong> The print shop has constant returns to scale in production. Can its average cost still fall as it prints more posters? Explain.</p>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p><strong>Yes, if it has fixed costs.</strong> Constant returns mean the variable cost per poster stays the same, but a fixed cost such as the lease on the press is spread over more posters as output rises. With <span class="math inline">\(C(Q) = F + cQ\)</span>, average cost is <span class="math inline">\(c + F / Q\)</span>, which falls as <span class="math inline">\(Q\)</span> rises even though <span class="math inline">\(c\)</span> does not change.</p>
+</details>
+</section>
+<section id="multiple-choice" class="level2">
+<h2 class="anchored" data-anchor-id="multiple-choice">4. Multiple choice</h2>
+<div class="mcq" data-answer="b">
+<p><strong>1.</strong> A firm’s cost function is <span class="math inline">\(C(Q) = 300 + 2Q\)</span>. Its marginal cost is:</p>
+<ol type="a">
+<li>$300.</li>
+<li>$2.</li>
+<li><span class="math inline">\(300 / Q + 2\)</span>.</li>
+<li>$302.</li>
+</ol>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>Marginal cost is the increase in total cost from one more unit, which is the slope of the cost function: <strong>$2</strong>. Option (c) is the average cost.</p>
+</details>
 </div>
-<div class="lecture">
-<h2 class="anchored">
-Lecture 7: Who can get away with raising prices? Demand and elasticity
-</h2>
-<p>
-<strong>Reading:</strong> 7.5
-</p>
-<p class="lecture-links dim">
-Materials posted closer to the date.
-</p>
+<div class="mcq" data-answer="a,b,d">
+<p><strong>2.</strong> A cereal producer’s cost function is <span class="math inline">\(C(Q) = 2Q\)</span>, where <span class="math inline">\(Q\)</span> is pounds of cereal. Select all the statements that are correct.</p>
+<ol type="a">
+<li>There are no fixed costs of production.</li>
+<li>The marginal cost of production is 2.</li>
+<li>The producer’s average cost falls with output.</li>
+<li>For any quantity <span class="math inline">\(Q\)</span>, average cost and marginal cost are the same.</li>
+</ol>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>At <span class="math inline">\(Q = 0\)</span> total cost is 0, so there are no fixed costs. The slope of the cost function is 2, so marginal cost is 2. Average cost is <span class="math inline">\(2Q / Q = 2\)</span> at every output, so it does not fall, and it equals marginal cost everywhere. <strong>(a), (b), and (d)</strong> are correct.</p>
+</details>
 </div>
-<div class="lecture">
-<h2 class="anchored">
-Lecture 8: Steak, ramen, and recessions: Other elasticities
-</h2>
-<p class="lecture-links dim">
-Materials posted closer to the date.
-</p>
+<div class="mcq" data-answer="a,c,d">
+<p><strong>3.</strong> Select all the statements that are correct.</p>
+<ol type="a">
+<li>With constant returns to scale, doubling all inputs doubles output.</li>
+<li>With decreasing returns to scale, doubling all inputs more than doubles output.</li>
+<li>With economies of scale, cost per unit falls as the firm expands its production.</li>
+<li>With increasing returns to scale, tripling all inputs more than triples output.</li>
+</ol>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>Decreasing returns mean doubling inputs <em>less than</em> doubles output, so (b) is wrong. The other three follow from the definitions: with increasing returns the firm needs a less than proportional increase in inputs to raise output, so its cost per unit falls. <strong>(a), (c), and (d)</strong> are correct.</p>
+</details>
 </div>
-<div class="lecture">
-<h2 class="anchored">
-Lecture 9: Sweet spot: Choosing the price and quantity that maximize profit
-</h2>
-<p>
-<strong>Reading:</strong> 7.6
-</p>
-<p class="lecture-links dim">
-Materials posted closer to the date.
-</p>
+<div class="mcq" data-answer="b">
+<p><strong>4.</strong> Which of the following is an example of network economies of scale?</p>
+<ol type="a">
+<li>A bakery buys flour in bulk at a discount.</li>
+<li>A messaging app becomes more useful to each user as more of their friends join.</li>
+<li>A carmaker spreads the cost of designing a model over more cars.</li>
+<li>Doubling the material in a brewery’s pipe more than doubles the liquid it can carry.</li>
+</ol>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>Network economies of scale are on the demand side: the product is worth more to each user because other users are connected to it. That is <strong>(b)</strong>. Option (a) is bargaining power, (c) is a fixed cost spread over more units, and (d) is an economy of scale in production.</p>
+</details>
 </div>
-<div class="lecture">
-<h2 class="anchored">
-Lecture 10: The surplus from a sale and who captures it
-</h2>
-<p>
-<strong>Reading:</strong> 7.7
-</p>
-<p class="lecture-links dim">
-Materials posted closer to the date.
-</p>
-</div>
-<div class="lecture">
-<h2 class="anchored">
-Lecture 11: Standing out from the crowd: Product differentiation and competition
-</h2>
-<p>
-<strong>Reading:</strong> 7.8–7.9
-</p>
-<p class="lecture-links dim">
-Materials posted closer to the date.
-</p>
-</div>
-<div class="lecture">
-<h2 class="anchored">
-Lecture 12: Price wars: Strategic price setting and Nash equilibrium
-</h2>
-<p>
-<strong>Reading:</strong> 7.10; 4.2–4.3
-</p>
-<p class="lecture-links dim">
-Materials posted closer to the date.
-</p>
-</div>
-<div class="lecture">
-<h2 class="anchored">
-Lecture 13: Winner takes the market: Natural monopolies and competition policy
-</h2>
-<p>
-<strong>Reading:</strong> 7.11–7.12
-</p>
-<p class="lecture-links dim">
-Materials posted closer to the date.
-</p>
+<div class="mcq" data-answer="c">
+<p><strong>5.</strong> A carmaker has fixed costs and a constant cost per car. Which statement about its average cost (AC) and marginal cost (MC) is correct?</p>
+<ol type="a">
+<li>AC is below MC at every output.</li>
+<li>AC equals MC at every output.</li>
+<li>AC is above MC at every output, and gets closer to MC as output rises.</li>
+<li>AC rises with output while MC stays constant.</li>
+</ol>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>Average cost is the constant cost per car plus a share of the fixed cost, so it is always above marginal cost. The share shrinks as more cars are produced, so average cost falls toward marginal cost without reaching it. <strong>(c)</strong> is correct.</p>
+</details>
 </div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script>

@@ -1,0 +1,135 @@
+% !TEX program = lualatex
+% ECON 201, Worksheet 6: The Cost of Making a Car. Compile with LuaLaTeX so
+% the PDF is tagged (see syllabus/Econ201-Syllabus.tex for the same setup).
+% Build from the course root:
+%   latexmk -lualatex -cd worksheets/worksheet06.tex && latexmk -c -cd worksheets/worksheet06.tex
+% Every number here is computed and printed by slides/figures/make_lecture6.py
+% so the worksheet and the deck quote the same figures.
+\DocumentMetadata{
+  pdfstandard=UA-2,
+  pdfversion=2.0,
+  lang=en-US,
+  tagging=on
+}
+\documentclass[11pt]{article}
+
+\usepackage[letterpaper, margin=0.8in, top=0.6in, bottom=0.55in]{geometry}
+\usepackage{fontspec}
+\setmainfont{Fira Sans}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+% Questions are labelled by hand: under tagging=on, enumitem's enumerate
+% did not step its counter, so every item printed the same label.
+\newcounter{q}
+\newcommand{\Q}[1]{\stepcounter{q}\par\needspace{5\baselineskip}\vspace{3pt}\noindent\hangindent=1.7em\hangafter=1
+  \makebox[1.7em][l]{(\alph{q})}#1\par}
+\usepackage{xcolor}
+\usepackage{needspace}
+\usepackage[most]{tcolorbox}
+\definecolor{cream}{HTML}{FDF3EA}
+\definecolor{accent}{HTML}{BF5700}
+\usepackage{titlesec}
+\titleformat{\section}{\large\bfseries\color{accent}}{}{0pt}{}
+\titlespacing*{\section}{0pt}{6pt}{2pt}
+\usepackage{hyperref}
+\hypersetup{pdftitle={ECON 201 Worksheet: The Cost of Making a Car}, pdfauthor={Div Bhagia}, hidelinks}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3pt}
+
+% Ruled answer space: n lines. Plain TeX loop; pgffor's \foreach breaks the
+% enumerate counter when used inside an item.
+\newcount\answerlinecount
+\newcommand{\answerlines}[1]{%
+  \par\vspace{1pt}\answerlinecount=#1
+  \loop\ifnum\answerlinecount>0
+    \rule{\linewidth}{0.3pt}\par\vspace{5pt}%
+    \advance\answerlinecount by -1
+  \repeat
+  \vspace{-5pt}}
+
+\begin{document}
+
+{\LARGE\bfseries\color{accent} Worksheet: The Cost of Making a Car}\hfill{\large ECON 201}
+
+% Terms sit on the cream panel, where the brand orange falls below 4.5:1;
+% the darker orange keeps WCAG AA contrast (see CLAUDE.md).
+\definecolor{accentdark}{HTML}{8F4100}
+\newcommand{\term}[1]{\textcolor{accentdark}{\textbf{#1}}}
+
+\begin{tcolorbox}[colback=cream, colframe=accent, boxrule=0.6pt, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt, title=Definitions,
+  fonttitle=\bfseries, coltitle=white]
+\term{Cost function}, $C(Q)$: the total cost of producing $Q$ units of
+output. Suppose a firm has fixed costs $F$, and its variable costs are
+directly proportional to the quantity it produces. Then the total cost of
+producing $Q$ units is
+\[
+  C(Q) = F + cQ
+\]
+where $F$ is the \term{fixed cost}, paid regardless of what $Q$ is, and
+$cQ$ is the \term{variable cost}: $c$ per unit, times $Q$ units.
+
+\term{Average cost}, AC: the cost per unit,
+\[
+  \text{AC} = \frac{C(Q)}{Q}
+\]
+\term{Marginal cost}, MC: the increase in total cost from producing one more
+unit,
+\[
+  \text{MC} = \frac{\Delta C}{\Delta Q}
+\]
+where $\Delta$ means ``the change in'': $\Delta C$ is the change in total
+cost when output changes by $\Delta Q$.
+\end{tcolorbox}
+
+\needspace{10\baselineskip}\section{1. Fixed or variable?}\setcounter{q}{0}
+
+Beautiful Cars is a small firm that manufactures specialty cars. It has to
+pay for the following inputs to make its cars. Select all the costs that
+change with the number of cars the firm makes each day.
+
+\newcommand{\tick}[1]{\par\noindent\hangindent=1.7em\hangafter=1\makebox[1.7em][l]{$\square$}#1\par}
+\tick{A factory equipped with machinery to assemble the cars.}
+\tick{Raw materials and components.}
+\tick{Production workers to operate the equipment.}
+\tick{Other workers to manage the production process, and to market and sell the finished cars.}
+\tick{Research and development to develop future models.}
+\vspace{4pt}
+
+\needspace{12\baselineskip}\section{2. The cost function of Beautiful Cars}\setcounter{q}{0}
+
+Beautiful Cars has fixed costs of \$60,000 per day, and each extra car costs
+\$10,000, so its cost function is
+\[
+  C(Q) = 60{,}000 + 10{,}000\,Q
+\]
+Fill in total cost, average cost, and marginal cost at each output. For
+marginal cost, use the cost of one more car.
+
+% A ruled grid rather than a booktabs table: students write in the cells,
+% so every cell gets visible borders and the blank rows get extra height.
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\newcolumntype{C}{>{\centering\arraybackslash}p{3.0cm}}
+\begin{tabular}{|>{\raggedright\arraybackslash}p{4.2cm}|C|C|C|}
+\hline
+Cars per day, $Q$ & 10 & 20 & 50 \\
+\hline
+Total cost, $C(Q)$ & \rule{0pt}{2.4em} & & \\
+\hline
+Average cost, $\text{AC}$ & \rule{0pt}{2.4em} & & \\
+\hline
+Marginal cost, $\text{MC}$ & \rule{0pt}{2.4em} & & \\
+\hline
+\end{tabular}
+\end{center}
+
+Average cost falls as $Q$ rises, while marginal cost does not change.
+Explain why in a sentence or two.
+\answerlines{3}
+
+\end{document}
