@@ -90,7 +90,38 @@ Beyond 300 loaves each extra loaf needs overtime labor, so **marginal cost rises
 
 </details>
 
-## 3. Returns to scale
+## 3. Lena's screen-printing shop
+
+Lena prints T-shirts. Her cost function, in dollars per day, is
+$$C(Q) = 90 + \frac{Q^2}{10}$$
+where $Q$ is shirts per day.
+
+**(a)** What is the marginal cost per shirt when Lena goes from 10 to 15 shirts a day? From 15 to 20?
+
+<details class="solution">
+<summary>Solution</summary>
+
+First the total costs:
+$$C(10) = 90 + \frac{10^2}{10} = 100, \qquad C(15) = 90 + \frac{15^2}{10} = 112.5, \qquad C(20) = 90 + \frac{20^2}{10} = 130$$
+
+From 10 to 15 shirts:
+$$\text{MC} = \frac{\Delta C}{\Delta Q} = \frac{C(15) - C(10)}{15 - 10} = \frac{112.5 - 100}{5} = \$2.50 \text{ per shirt}$$
+
+From 15 to 20 shirts:
+$$\text{MC} = \frac{C(20) - C(15)}{20 - 15} = \frac{130 - 112.5}{5} = \$3.50 \text{ per shirt}$$
+
+</details>
+
+**(b)** Is Lena's marginal cost constant, like Beautiful Cars' was? What might make each extra shirt cost more than the last?
+
+<details class="solution">
+<summary>Solution</summary>
+
+**No.** Marginal cost rises with output, from \$2.50 a shirt to \$3.50. With a fixed press and a fixed number of hours in the day, printing more means squeezing more out of the same equipment: overtime pay, a tired crew, more misprints. That is the short-run case from the lecture, where marginal cost rises while the equipment is fixed.
+
+</details>
+
+## 4. Returns to scale
 
 **(a)** Each firm below doubles all of its inputs. Classify its technology as increasing, constant, or decreasing returns to scale.
 
@@ -116,7 +147,7 @@ Beyond 300 loaves each extra loaf needs overtime labor, so **marginal cost rises
 
 </details>
 
-## 4. Multiple choice
+## 5. Multiple choice
 
 ::: {.mcq answer="b"}
 
