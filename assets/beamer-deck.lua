@@ -224,9 +224,14 @@ end
 -- widths at 95% of the line (the PDF type is larger relative to the frame
 -- than on the web), so it keeps one size as its rows fill in.
 local function fixedtable(div)
-  -- Taller rows than the default, so fractions in a cell clear the rules.
-  -- \arraystretch had no effect under ltx-talk; array's \extrarowheight does.
-  local out = pandoc.List({pandoc.RawBlock('latex', '\\begingroup\\setlength{\\extrarowheight}{0.9em}')})
+  -- A table of formulas ({.formulas}) gets taller rows, so fractions in a cell
+  -- clear the rules. \arraystretch had no effect under ltx-talk; array's
+  -- \extrarowheight does.
+  local tall = div.classes:includes('formulas')
+  local out = pandoc.List({})
+  if tall then
+    out:insert(pandoc.RawBlock('latex', '\\begingroup\\setlength{\\extrarowheight}{0.9em}'))
+  end
   out:extend(div.content:walk({
     Table = function(tbl)
       local spec = tbl.attr.attributes['colwidths']
@@ -239,7 +244,7 @@ local function fixedtable(div)
       return tbl
     end
   }))
-  out:insert(pandoc.RawBlock('latex', '\\endgroup'))
+  if tall then out:insert(pandoc.RawBlock('latex', '\\endgroup')) end
   return out
 end
 
@@ -281,6 +286,15 @@ function Div(el)
     out:extend(el.content)
     out:insert(pandoc.RawBlock('latex', '\\vspace{0.3em}'))
     return out
+  end
+end
+
+-- The web deck colours a term inside an equation with \color{#BF5700}, which
+-- MathJax reads as a CSS colour; xcolor does not, so point it at accent.
+function Math(el)
+  if el.text:find('\\color{#BF5700}', 1, true) then
+    el.text = el.text:gsub('\\color{#BF5700}', '\\color{accent}')
+    return el
   end
 end
 

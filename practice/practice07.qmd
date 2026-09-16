@@ -9,25 +9,18 @@ format: html
 
 Work through each problem on paper before you open its **Solution**.
 
-You can find the elasticity from percentage changes, or with the equivalent formula
-$$\varepsilon = -\frac{P}{Q} \times \frac{\Delta Q}{\Delta P}$$
-
 ## 1. Nadia's kayak rentals
 
 Nadia rents kayaks by the day at a lake. Her demand curve is
 $$Q = 60 - 2P$$
 where $Q$ is kayaks rented per day and $P$ is the price of a rental in dollars.
 
-**(a)** How many kayaks does Nadia rent at a price of \$20? What is her revenue?
+**(a)** How many kayaks does Nadia rent at a price of \$20?
 
 <details class="solution">
 <summary>Solution</summary>
 
-At \$20:
 $$Q = 60 - 2 \times 20 = 20$$
-
-Revenue is price times quantity:
-$$R = P \times Q = 20 \times 20 = \$400$$
 
 </details>
 
@@ -39,9 +32,11 @@ $$R = P \times Q = 20 \times 20 = \$400$$
 At \$21:
 $$Q = 60 - 2 \times 21 = 18$$
 
-The percentage changes, starting from \$20 and 20 kayaks:
-$$\%\text{ change in price} = \frac{100 \times 1}{20} = 5\%$$
-$$\%\text{ change in demand} = \frac{100 \times (-2)}{20} = -10\%$$
+The percentage changes:
+$$\begin{aligned}
+\%\text{ change in price} &= \frac{21 - 20}{20} \times 100 = 5\% \\[0.3em]
+\%\text{ change in demand} &= \frac{18 - 20}{20} \times 100 = -10\%
+\end{aligned}$$
 
 The elasticity:
 $$\varepsilon = -\frac{-10}{5} = 2$$
@@ -50,137 +45,148 @@ $$\varepsilon = -\frac{-10}{5} = 2$$
 
 </details>
 
-**(c)** Use $\varepsilon = -\dfrac{P}{Q} \times \dfrac{\Delta Q}{\Delta P}$ to find the elasticity at \$25 and at \$10. Where is demand elastic, and where is it inelastic?
+**(c)** Find the elasticity for a \$1 price rise starting from \$25, and for a \$1 price rise starting from \$10. Use whichever formula you like. Where is demand elastic, and where is it inelastic?
 
 <details class="solution">
 <summary>Solution</summary>
 
-Every \$1 rise in price costs Nadia 2 kayaks, so $\dfrac{\Delta Q}{\Delta P} = -2$.
+From \$25 to \$26, demand falls from $60 - 2 \times 25 = 10$ to $60 - 2 \times 26 = 8$ kayaks:
+$$\begin{aligned}
+\%\text{ change in price} &= \frac{26 - 25}{25} \times 100 = 4\% \\[0.3em]
+\%\text{ change in demand} &= \frac{8 - 10}{10} \times 100 = -20\%
+\end{aligned}$$
+$$\varepsilon = -\frac{-20}{4} = 5$$
 
-At \$25:
-$$Q = 60 - 2 \times 25 = 10, \qquad \varepsilon = -\frac{25}{10} \times (-2) = 5$$
+From \$10 to \$11, demand falls from $60 - 2 \times 10 = 40$ to $60 - 2 \times 11 = 38$ kayaks:
+$$\begin{aligned}
+\%\text{ change in price} &= \frac{11 - 10}{10} \times 100 = 10\% \\[0.3em]
+\%\text{ change in demand} &= \frac{38 - 40}{40} \times 100 = -5\%
+\end{aligned}$$
+$$\varepsilon = -\frac{-5}{10} = 0.5$$
 
-At \$10:
-$$Q = 60 - 2 \times 10 = 40, \qquad \varepsilon = -\frac{10}{40} \times (-2) = 0.5$$
+The formula $\varepsilon = -\dfrac{P}{Q} \times \dfrac{\Delta Q}{\Delta P}$, with $\Delta Q / \Delta P = -2$, gives the same answers: $-\tfrac{25}{10} \times (-2) = 5$ and $-\tfrac{10}{40} \times (-2) = 0.5$.
 
-**Demand is elastic at \$25 and inelastic at \$10.** The same formula at \$20 gives $-\tfrac{20}{20} \times (-2) = 2$, matching part (b).
+**Demand is elastic at \$25 and inelastic at \$10.**
 
 </details>
 
-## 2. Should Nadia raise her price?
-
-Elasticity tells a firm whether a price rise will bring in more revenue or less. Use Nadia's demand curve from Problem 1.
-
-**(a)** Nadia charges \$10 and rents 40 kayaks. She raises her price to \$15. How many kayaks does she rent now, and what happens to her revenue?
+**(d)** Nadia starts quoting her prices in cents, so her demand curve becomes $Q = 60 - 0.02P$, with $P$ in cents. Her price rises from 2,000 cents to 2,100 cents. Find the elasticity. Is it different from your answer to part (b)? Why or why not?
 
 <details class="solution">
 <summary>Solution</summary>
 
-At \$15:
-$$Q = 60 - 2 \times 15 = 30$$
+Demand falls from $60 - 0.02 \times 2{,}000 = 20$ to $60 - 0.02 \times 2{,}100 = 18$ kayaks:
+$$\begin{aligned}
+\%\text{ change in price} &= \frac{2{,}100 - 2{,}000}{2{,}000} \times 100 = 5\% \\[0.3em]
+\%\text{ change in demand} &= \frac{18 - 20}{20} \times 100 = -10\%
+\end{aligned}$$
+$$\varepsilon = -\frac{-10}{5} = 2$$
 
-Revenue before and after:
-$$R = 10 \times 40 = \$400 \qquad\to\qquad R = 15 \times 30 = \$450$$
-
-**Revenue rises by \$50**, even though she rents 10 fewer kayaks.
+**The elasticity is still 2**, the same as in part (b). This is the same price rise, from \$20 to \$21, counted in cents. A 5% rise is a 5% rise whether we count in dollars or in cents, so the elasticity does not depend on the units.
 
 </details>
 
-**(b)** Instead, Nadia charges \$20 and rents 20 kayaks. She raises her price to \$25. What happens to her revenue?
+## 2. Two coffee shops
+
+One coffee shop sits on a street with five other coffee shops. Another is the only place to buy coffee inside a large library. Which shop is likely to face the more elastic demand? Which one can raise its price without losing many customers?
 
 <details class="solution">
 <summary>Solution</summary>
 
-At \$25:
-$$Q = 60 - 2 \times 25 = 10$$
+**The shop on the street faces the more elastic demand.** If it raises its price, its customers can walk next door, so many of them may buy elsewhere. Competition from similar products limits its ability to raise its price.
 
-Revenue before and after:
-$$R = 20 \times 20 = \$400 \qquad\to\qquad R = 25 \times 10 = \$250$$
-
-**Revenue falls by \$150.**
+**The library shop can raise its price without losing many customers.** Its customers have no close substitute nearby, so its demand is less elastic.
 
 </details>
 
-**(c)** Use the elasticity to explain why the same kind of price rise raises revenue in part (a) but lowers it in part (b).
+## 3. Flat and steep demand curves
+
+True or false: a steeper demand curve always has a lower elasticity than a flatter one. Explain.
 
 <details class="solution">
 <summary>Solution</summary>
 
-A higher price means more revenue on each kayak still rented, but fewer kayaks rented. Which effect wins depends on the elasticity.
-
-- **In part (a) demand is inelastic** ($\varepsilon = 0.5$ at \$10). The price rises by $100 \times 5 / 10 = 50\%$ and rentals fall by only $100 \times 10 / 40 = 25\%$, so revenue rises.
-- **In part (b) demand is elastic** ($\varepsilon = 2$ at \$20). The price rises by $100 \times 5 / 20 = 25\%$ and rentals fall by $100 \times 10 / 20 = 50\%$, so revenue falls.
-
-When demand is inelastic, quantity falls by a smaller percentage than the price rises, so a price rise brings in more revenue. When demand is elastic, it brings in less.
+**False.** When two demand curves pass through the same price and quantity, the steeper one is less elastic there. But slope and elasticity are not the same thing. The Dodgers demand curve from the lecture, $Q = 90 - 0.3P$, has the same slope everywhere, yet its elasticity is 0.2 at \$50 and 2 at \$200. At a high price, a \$10 rise is a small percentage of the price but loses a large percentage of the few buyers.
 
 </details>
 
-## 3. Competition and elasticity
+## 4. Which demand is more elastic?
 
-**(a)** One café sits on a street with five other cafés. Another is the only place to buy coffee inside a large library. Which café is likely to face the more elastic demand? Which one can raise its price without losing many sales?
+Suppose the price of each good below rises by 10%. In each pair, which good's demand is more elastic? Explain using one of the reasons from the lecture: close substitutes, a luxury or a necessity, how narrowly the market is defined, time to adjust, or share of spending.
+
+- Movie tickets, or visits to the doctor.
+- A new laptop, or a tube of toothpaste.
+- A burger at a food court with ten other restaurants, or a ride on the only ferry to an island.
+- Coca-Cola, or all soft drinks.
+- Gasoline in the week after its price rises, or gasoline over the next five years.
 
 <details class="solution">
 <summary>Solution</summary>
 
-**The street café faces the more elastic demand.** If it raises its price, its customers can walk next door, so many of them may buy elsewhere. Competition from similar products limits its ability to raise its price.
-
-**The library café can raise its price without losing many sales.** Its customers have no alternative nearby, so its demand is less elastic.
+- **Movie tickets.** A movie is a luxury that people can skip. A doctor's visit is closer to a necessity.
+- **A new laptop.** It takes a big share of a student's spending, so a 10% rise is a lot of money. A 10% rise on toothpaste is a few cents.
+- **A burger at the food court.** Ten other restaurants a few steps away are close substitutes. The ferry has no substitute.
+- **Coca-Cola.** It is a narrowly defined market: if Coke's price rises, people can switch to Pepsi or another soft drink. If the price of all soft drinks rises, there is much less to switch to.
+- **Gasoline over the next five years.** In the first week, people still have to drive to work and school. Over five years, they have time to adjust: they can buy a car that uses less gas, carpool, or move closer to work.
 
 </details>
 
-**(b)** True or false: a steep demand curve always has a lower elasticity than a flat one. Explain using Nadia's demand curve.
+## 5. Beach parking
+
+A county raises the price of its beach parking lot from \$20 to \$25 a day. The number of cars in the lot falls from 400 to 240 a day. Many drivers park on nearby streets instead, so the number of people visiting the beach falls by only 5%.
+
+**(a)** Find the elasticity of demand for spaces in the parking lot.
 
 <details class="solution">
 <summary>Solution</summary>
 
-**False.** The elasticity depends on the slope and also on where you are on the curve, through $P/Q$. Nadia's demand curve has the same slope everywhere, yet its elasticity is 5 at \$25 and 0.5 at \$10. A steeper curve corresponds to a lower elasticity when two curves are compared at the same price and quantity, but slope and elasticity are not the same thing.
+$$\begin{aligned}
+\%\text{ change in price} &= \frac{25 - 20}{20} \times 100 = 25\% \\[0.3em]
+\%\text{ change in cars} &= \frac{240 - 400}{400} \times 100 = -40\%
+\end{aligned}$$
+$$\varepsilon = -\frac{-40}{25} = 1.6$$
+
+**Demand for the lot is elastic.**
 
 </details>
 
-**(c)** The price of each item below goes up by 10%. In each pair, which one has the more elastic demand? Explain in a sentence.
-
-- Sneakers, or one brand's running shoe.
-- Electricity for your apartment, or a streaming subscription.
+**(b)** Find the elasticity of demand for visits to the beach, using the same 25% price rise.
 
 <details class="solution">
 <summary>Solution</summary>
 
-- **One brand's running shoe.** Its buyers have close alternatives in the other brands, so many of them switch. Buyers of sneakers in general have nowhere else to go.
-- **A streaming subscription.** Its buyers can switch to another service or cancel and do without it. Electricity has no close alternative, and it is hard to do without.
+$$\varepsilon = -\frac{-5}{25} = 0.2$$
+
+**Demand for beach visits is inelastic.**
 
 </details>
 
-**(d)** Nadia starts quoting her prices in cents, so her demand curve becomes $Q = 60 - 0.02P$, with $P$ in cents. What happens to $\Delta Q / \Delta P$? What is the elasticity at a price of 2,000 cents?
+**(c)** Why is demand for the lot so much more elastic than demand for visiting the beach?
 
 <details class="solution">
 <summary>Solution</summary>
 
-A \$1 rise is now a rise of 100 cents, and it still costs 2 kayaks, so $\Delta Q / \Delta P$ goes from $-2$ to $-0.02$: **100 times smaller.**
-
-At 2,000 cents, $Q = 60 - 0.02 \times 2{,}000 = 20$, so
-$$\varepsilon = -\frac{2{,}000}{20} \times (-0.02) = 2$$
-
-**The elasticity is still 2**, the same as at \$20 in Problem 1. The price is 100 times larger and $\Delta Q / \Delta P$ is 100 times smaller, so they cancel. A 1% change in price is a 1% change whether we count in dollars or in cents, so the elasticity does not depend on the units.
+**Street parking is a close substitute for the lot**, so when the lot's price rises, many drivers switch. There is no close substitute for the beach itself, so most people still come. The same pattern showed up with Philadelphia's soda tax: stores just outside the city were close substitutes for stores inside it.
 
 </details>
 
-## 4. Multiple choice
+## 6. Multiple choice
 
 ::: {.mcq answer="b,c"}
 
 **1.** The diagram shows two alternative demand curves, D and D′, for a product. Select all the statements that are correct.
 
-![](../slides/img/core-q7-6.svg){width="480" fig-alt="Two parallel downward-sloping straight lines, price on the vertical axis from 0 to 12,000 dollars and quantity on the horizontal axis from 0 to 100. The lower line, D, runs from 6,000 dollars at zero quantity to zero price at 60 units. The upper line, D prime, runs from 10,000 dollars at zero quantity to zero price at 100 units."}
+![](../slides/img/core-q7-6.svg){width="480" fig-alt="Two parallel downward-sloping straight lines, price on the vertical axis from 0 to 12,000 dollars in steps of 2,000 and quantity on the horizontal axis from 0 to 100 in steps of 20. The lower line, D, runs from 6,000 dollars at zero quantity to zero price at 60 units. The upper line, D prime, runs from 10,000 dollars at zero quantity to zero price at 100 units."}
 
-  a. On demand curve D, when the price is \$5,000, the firm can sell 15 units of the product.
-  b. On demand curve D′, the firm can sell 70 units at a price of \$3,000.
-  c. At a price of \$1,000, the firm can sell 40 more units of the product on D′ than on D.
-  d. With an output of 30 units, the firm can charge \$2,000 more on D′ than on D.
+  a. On demand curve D, when the price is \$4,000, the firm can sell 30 units of the product.
+  b. On demand curve D′, the firm can sell 60 units at a price of \$4,000.
+  c. At a price of \$2,000, the firm can sell 40 more units of the product on D′ than on D.
+  d. With an output of 20 units, the firm can charge \$2,000 more on D′ than on D.
 
 <details class="solution">
 <summary>Solution</summary>
 
-On D, at \$5,000 the firm can sell 10 units, not 15. On D′, a price of \$3,000 corresponds to 70 units. D′ is D shifted right by 40 units, so at any price the firm can sell 40 more units on D′. At 30 units the price is \$3,000 on D and \$7,000 on D′, a difference of \$4,000, not \$2,000. **(b) and (c)** are correct.
+On D, at \$4,000 the firm can sell 20 units, not 30. On D′, a price of \$4,000 corresponds to 60 units. At \$2,000 the firm sells 40 units on D and 80 units on D′, so 40 more. At 20 units the price is \$4,000 on D and \$8,000 on D′, a difference of \$4,000, not \$2,000. **(b) and (c)** are correct.
 
 </details>
 
@@ -198,7 +204,12 @@ On D, at \$5,000 the firm can sell 10 units, not 15. On D′, a price of \$3,000
 <details class="solution">
 <summary>Solution</summary>
 
-The price rises by $100 \times 2 / 10 = 20\%$ and demand falls by $100 \times 5 / 20 = 25\%$. The elasticity is $25 / 20 = 1.25$, which is greater than 1, so demand is elastic, not inelastic. **(a), (b), and (d)** are correct.
+$$\begin{aligned}
+\%\text{ change in price} &= \frac{12 - 10}{10} \times 100 = 20\% \\[0.3em]
+\%\text{ change in demand} &= \frac{15 - 20}{20} \times 100 = -25\%
+\end{aligned}$$
+
+So $\varepsilon = -\dfrac{-25}{20} = 1.25$, which is greater than 1: demand is elastic, not inelastic. **(a), (b), and (d)** are correct.
 
 </details>
 
@@ -206,19 +217,19 @@ The price rises by $100 \times 2 / 10 = 20\%$ and demand falls by $100 \times 5 
 
 ::: {.mcq answer="a,d"}
 
-**3.** The figure shows two demand curves, D₁ and D₂. Select all the statements that are correct.
+**3.** The figure shows two straight-line demand curves, D₁ and D₂, which cross at point E. Select all the statements that are correct.
 
 ![](../slides/img/core-q7-8.svg){width="480" fig-alt="Two downward-sloping straight lines with no numbers on the axes, price on the vertical axis and quantity on the horizontal axis. D1 is steep and D2 is flatter, and they cross at point E. Point A is on D1 above and to the left of E. Point C is on D1 below and to the right of E. Point B is on D2 below and to the right of E, at a higher quantity and a higher price than C."}
 
-  a. At E, demand curve D₁ is less elastic than D₂.
-  b. The elasticity is the same at A and C.
-  c. The firm with demand curve D₁ likely faces more competition than the firm with demand curve D₂.
-  d. The elasticity is higher at E than at B.
+  a. At point E, demand on D₁ is less elastic than demand on D₂.
+  b. Points A and C are on the same straight line, so demand is equally elastic at A and at C.
+  c. The firm facing D₁ probably has more close competitors than the firm facing D₂.
+  d. On D₂, demand is more elastic at E than at B.
 
 <details class="solution">
 <summary>Solution</summary>
 
-At E the price and quantity are the same on both curves, but D₁ is steeper, so it is less elastic there. The slope is the same at A and C, but at A the price is higher and the quantity lower, so the elasticity is higher at A. D₁ is less elastic, so its firm likely faces less competition, not more. The slope is the same at E and B on D₂, but at E the price is higher and the quantity lower, so the elasticity is higher at E. **(a) and (d)** are correct.
+At E both curves have the same price and quantity, and D₁ is steeper, so the same price rise loses fewer buyers on D₁: demand is less elastic there. Along one straight line the slope stays the same but the elasticity does not: at A the price is higher and the quantity lower than at C, so demand is more elastic at A. For the same reason, demand on D₂ is more elastic at E than at B. D₁ is less elastic, so its firm probably faces less competition, not more. **(a) and (d)** are correct.
 
 </details>
 
@@ -254,7 +265,12 @@ $\varepsilon = -\dfrac{-8}{4} = 2$. The minus sign in the formula makes the elas
 <details class="solution">
 <summary>Solution</summary>
 
-The price rises by $100 \times 5 / 20 = 25\%$ and sales fall by $100 \times 80 / 400 = 20\%$, so $\varepsilon = -\dfrac{-20}{25} = 0.8$. That is less than 1, so demand is inelastic. Option (b) divides the wrong way round, and (d) divides the change in tickets by the change in price instead of using percentages. **(a)** is correct.
+$$\begin{aligned}
+\%\text{ change in price} &= \frac{25 - 20}{20} \times 100 = 25\% \\[0.3em]
+\%\text{ change in demand} &= \frac{320 - 400}{400} \times 100 = -20\%
+\end{aligned}$$
+
+So $\varepsilon = -\dfrac{-20}{25} = 0.8$, which is less than 1: demand is inelastic. Option (b) divides the wrong way round, and (d) divides the change in tickets by the change in price instead of using percentages. **(a)** is correct.
 
 </details>
 

@@ -17,7 +17,7 @@ $$\text{Profit} = \underbrace{P \times Q}_{\text{revenue}} - \underbrace{C(Q)}_{
 
 -   Last class we focused on the cost side, $C(Q)$.
 -   Today we focus on revenue, $P \times Q$, which depends on the *demand curve*.
--   Remember the *trade-off*: if firm set's higher price, it will loose some consumers. How many? That depends on the shape of the demand curve.
+-   Remember the *trade-off*: if firm set's higher price, it will loose some consumers. How many? That depends on the demand curve.
 
 ## How Much Would You Pay?
 
@@ -31,7 +31,7 @@ In Lecture 3, I asked for the most you would pay for a day at a *Dodgers* game. 
 
 -   *Willingness to pay (WTP)* is an indicator of how much a person values a good, measured by the maximum amount they would pay to acquire a unit of the good.
 -   You will go to the game if the price for the day is less than or equal to your WTP.
--   Line up your answers in order of WTP, with the highest first. At any price, demand is the number of you whose WTP is greater than or equal to that price.
+-   At any price, demand is the number of students whose willingness to pay is at least that price.
 -   At \$200, 18 of you have a WTP of \$200 or more, so demand is 18. At \$100, demand is 62.
 
 ## The Demand Curve for a Dodgers Game
@@ -71,8 +71,8 @@ When the price rises from \$100 to \$110, demand falls from 60 to 57 students.
 :::
 
 $$\begin{aligned}
-\%\text{ change in price} &= \frac{100 \times 10}{100} = 10\% \\[0.3em]
-\%\text{ change in demand} &= \frac{100 \times (-3)}{60} = -5\%
+\%\text{ change in price} &= \frac{110-100}{100} \times 100 = 10\% \\[0.3em]
+\%\text{ change in demand} &= \frac{57-60}{60} \times 100 = -5\%
 \end{aligned}$$
 
 $$\varepsilon = -\frac{-5}{10} = 0.5$$
@@ -85,13 +85,13 @@ $$\varepsilon = -\frac{-5}{10} = 0.5$$
 The demand curve is given by $Q = 90 - 0.3\,P$. Find the elasticity of demand for each \$10 price rise below. At which prices is demand elastic?
 :::
 
-$$\%\text{ change} = \frac{100 \times \text{change}}{\text{starting value}} \qquad\qquad \varepsilon = -\frac{\%\text{ change in } Q}{\%\text{ change in } P}$$
+$$\%\text{ change} = \frac{\text{new} - \text{old}}{\text{old}} \times 100 \qquad\qquad \varepsilon = -\frac{\%\text{ change in } Q}{\%\text{ change in } P}$$
 
 ::: gap
 :::
 
 ::: {.fixedtable .wide}
-| Price rises from | Demand, $Q$ | % change in $P$ | % change in $Q$ | Elasticity, $\varepsilon$ |
+| $P$ rises from |  $Q$ falls from| % change in $P$ | % change in $Q$ | Elasticity, $\varepsilon$ |
 |:-----------------|---------:|---------:|---------:|---------:|
 | \$50 to \$60     |          |          |          |          |
 | \$100 to \$110   |          |          |          |          |
@@ -123,7 +123,11 @@ When price changes by $\Delta P$ and demand by $\Delta Q$:
 Use formula 3 to find the elasticity at the same three prices. Do you get the same answers as in Activity 1?
 :::
 
-$$Q = 90 - 0.3\,P \qquad \varepsilon = -\frac{P}{Q} \times \frac{\Delta Q}{\Delta P}$$
+$$Q = 90 {\color{#BF5700}{\,-\,0.3}}\,P \qquad\qquad \varepsilon = -\frac{P}{Q} \times \frac{\Delta Q}{\Delta P}$$
+
+::: plain
+Here, $\Delta Q / \Delta P = -0.3$: every \$1 rise in price changes demand by $-0.3$.
+:::
 
 ::: gap
 :::
@@ -132,99 +136,146 @@ $$Q = 90 - 0.3\,P \qquad \varepsilon = -\frac{P}{Q} \times \frac{\Delta Q}{\Delt
 |                                  |        |        |        |
 |:---------------------------------|-------:|-------:|-------:|
 | Price, $P$                       | \$50   | \$100  | \$200  |
-| Demand, $Q$                      |        |        |        |
-| $\Delta Q / \Delta P$            |        |        |        |
+| Demand, $Q$                      | 75     | 60     | 30     |
 | Elasticity, $\varepsilon$        |        |        |        |
 
 : {tbl-colwidths="[40,20,20,20]"}
 :::
 
-## Elasticity and the Slope
+## Elasticity Along the Demand Curve
 
-::: plain
-Every \$10 rise in price costs 3 students, wherever you start, so the slope is the same everywhere. Is the elasticity?
+:::::: columns
+:::: {.column width="46%"}
+-   As we move down a straight demand curve, the price falls and the quantity rises, so the elasticity falls.
+-   At a high price, few people still buy. Losing a few more is a large share of the buyers, so demand is elastic.
+-   At a low price, many people buy. Losing the same few is a small share of them, so demand is inelastic.
+::::
+
+::: {.column width="54%"}
+![](img/class-elasticity.svg){fig-alt="The straight orange demand line for a day at a Dodgers game, price for the day on the vertical axis from 0 to 300 dollars and number of students on the horizontal axis from 0 to 90. Three labelled points: at 200 dollars, with 30 students, the elasticity is 2; at 100 dollars, with 60 students, it is 0.5; at 50 dollars, with 75 students, it is 0.2."}
 :::
+::::::
 
-![](img/class-elasticity.svg){.fragment .nostretch height="450" fig-alt="The straight orange demand line for a day at a Dodgers game, price for the day on the vertical axis from 0 to 300 dollars and number of students on the horizontal axis from 0 to 90. It runs from 300 dollars at zero students to zero dollars at 90 students. Two labelled points: at 250 dollars, with 15 students, the elasticity is 5; at 100 dollars, with 60 students, the elasticity is 0.5."}
+## Flat and Steep Demand Curves
 
-## Why the Elasticity Changes
+:::::: columns
+:::: {.column width="46%"}
+-   Both curves pass through the same point: 60 buyers at \$100.
+-   Raise the price to \$150. On your curve, buyers fall to 45. On the flatter curve, they fall to 15.
+-   So at \$100, demand is more elastic on the flatter curve: $\varepsilon = 1.5$, against 0.5 on yours.
+::::
 
--   At \$250, a \$10 rise is only 4% of the price, but 3 students are 20% of the 15 who would go. So $\varepsilon = 5$.
--   At \$100, a \$10 rise is 10% of the price, and 3 students are only 5% of the 60 who would go. So $\varepsilon = 0.5$.
--   When the price is high and few people buy, a price rise loses a large share of the buyers, so demand is more elastic.
--   When the price is low and many people buy, the same rise loses only a small share of them, so demand is less elastic.
+::: {.column width="54%"}
+![](img/flat-steep.svg){fig-alt="Two downward-sloping straight demand lines crossing at one marked point, 60 units at a price of 100 dollars, with price on the vertical axis from 0 to 200 dollars and quantity demanded on the horizontal axis from 0 to 160. The flatter line, labelled Flatter, elasticity 1.5, runs from 160 dollars at 6 units to zero at 150 units. The steeper line, labelled Steeper, elasticity 0.25, runs from above 200 dollars at about 40 units to zero at 75 units."}
+:::
+::::::
 
 ## Why Measure How Buyers Respond?
 
 ::: plain
-How strongly the quantity bought responds to a change in price is the *price elasticity of demand*.
+Anyone who sets a price needs to know how buyers will respond to it.
 :::
 
--   A firm wants to know whether raising its price will bring in more revenue or less.
--   A city setting bus fares wants to know whether a higher fare raises more money or empties the buses.
--   Why not just use the slope of the demand curve? The slope depends on the units: gallons or liters, dollars or euros.
--   The elasticity uses percentage changes, so it does not depend on the units, and we can compare gasoline with cars.
-
-## Raise the Price by 1%
+-   A firm wants to know whether a higher price brings in more revenue or less.
+-   A city wants to know whether a higher bus fare raises money or empties the buses.
+-   A government wants to know how much less people will buy of a good it taxes.
 
 ::: plain
-The price of each item goes up by 1%. In each row, which one loses more buyers?
+But why measure how buyers respond in *percentage changes*?
 :::
 
-| A                                          | B                                                  |
-|:-------------------------------------------|:---------------------------------------------------|
-| Gas at the only station for miles          | Gas at one of four stations on the same corner     |
-| Concert tickets                            | Toilet paper                                       |
-| Breakfast cereal                           | Apple Cinnamon Cheerios                            |
-| Gasoline over the next five years          | Gasoline this week                                 |
-| Salt                                       | A new car                                          |
+::: fragment
+::: plain
+So we can compare goods with very different prices and units, like cars and gasoline.
+:::
+:::
+
+## Why Percentage Changes?
+
+::: plain
+Suppose we want to know who responds more to price changes: people buying cars or people buying gasoline.
+:::
+
+-   A car costs tens of thousands of dollars, and gasoline costs a few dollars a gallon. A \$1 price rise is nothing for a car and a big jump for gasoline.
+-   Car sales are counted in cars and gasoline in gallons, so "units lost for each \$1 rise" cannot be compared either.
+-   Percentage changes remove both problems: a 10% price rise is the same size of change for a car and for a gallon of gas.
+-   So we compare the percentage fall in quantity for a 1% rise in price. That is the elasticity.
 
 ## Why Elasticity Differs Between Goods
 
 ::: plain
-Buyers respond more when it is easy to buy less or switch.
+Demand is more elastic when buyers can easily switch or buy less:
 :::
 
 ::: {.fixedtable .wide}
-| Demand is more elastic when                    | Example from the last slide                             |
-|:-----------------------------------------------|:--------------------------------------------------------|
-| the good has close substitutes                 | Gas at one of four stations, not the only one  |
-| the good is a luxury, not a necessity          | Concert tickets, not toilet paper                       |
-| the market is narrowly defined                 | Apple Cinnamon Cheerios, not all cereal        |
-| buyers have more time to adjust                | Gasoline over five years, not this week                 |
-| the good is a big share of the budget          | A new car, not salt                                     |
+| Reason                      | More elastic          | Less elastic          |
+|:----------------------------|:----------------------|:----------------------|
+| Close substitutes           | Coffee at Starbucks   | Electricity           |
+| Luxury, not necessity       | Concert tickets       | A doctor's visit      |
+| Narrowly defined market     | Vanilla ice cream     | Food                  |
+| More time to adjust         | Gas over five years   | Gas this week         |
+| Big share of spending       | A new car             | Salt                  |
 
-: {tbl-colwidths="[47,53]"}
+: {tbl-colwidths="[38,31,31]"}
 :::
 
-## Who Can Get Away with Raising Prices?
+## Real-World Elasticities: Uber
 
 ::: plain
-A firm's price elasticity of demand depends on how much competition it faces from other firms. Which firm can raise its price without losing many sales?
+Uber raises prices at busy times, and the app rounds the surge multiplier to one decimal.
 :::
+
+-   A surge of 1.249 shows as 1.2x, and 1.251 shows as 1.3x. Riders on each side face the same conditions, but one group pays 8.3% more.
+-   At that cutoff, ride requests are about 3% lower. What is the elasticity?
 
 ::: fragment
--   If lots of firms sell similar products that customers would consider as alternatives, demand will be more elastic. If the firm raises its price, many consumers may decide to buy elsewhere.
--   Competition from rival products with similar characteristics limits the firm's ability to raise its price.
--   If the firm's product has unique qualities that appeal to consumers and are not available elsewhere, demand will be less elastic. It can set a high price, and sales will remain high.
-:::
-
-## Your Turn
+$$\varepsilon = -\frac{-3}{8.3} \approx 0.36$$
 
 ::: plain
-A shop sells 20 hats per week at \$10 each. When it increases the price to \$12, the number of hats sold falls to 15 per week. Which of these statements are true?
+Across almost 50 million sessions, most estimates are between 0.4 and 0.6 (Cohen et al., 2016).
+:::
 :::
 
--   When the price increases from \$10 to \$12, demand decreases by 25%.
--   A 20% increase in the price causes a 25% fall in demand.
--   The demand for hats is inelastic.
--   Using these figures, we can estimate the elasticity of demand to be 1.25.
+## Real-World Elasticities: Philadelphia's Soda Tax
 
 ::: plain
-(Mentimeter)
+In 2017, Philadelphia taxed sweetened drinks 1.5 cents per ounce, and prices at stores in the city rose by 34%.
+:::
+
+-   Sales at stores in the city fell by 46%, so demand there was elastic: $\varepsilon = 46 / 34 \approx 1.35$.
+-   Many shoppers drove to stores just outside the city. Counting those stores, purchases fell by only 22%, so $\varepsilon = 22 / 34 \approx 0.65$.
+-   Stores just outside the city are close substitutes, so demand at city stores is more elastic than demand for soda overall.
+-   Both numbers matter for policy: the city's tax revenue depends on the 1.35, and how much less soda people drink depends on the 0.65 (Seiler, Tuchman, and Yao, 2021).
+
+## Real-World Elasticities: Everyday Foods
+
+::: plain
+Average elasticities from 160 US studies (Andreyeva, Long, and Brownell, 2010):
+:::
+
+::: fixedtable
+| Food or drink                 | Elasticity |
+|:------------------------------|-----------:|
+| Meals away from home          | 0.81       |
+| Soft drinks                   | 0.79       |
+| Fruit                         | 0.70       |
+| Milk                          | 0.59       |
+| Eggs                          | 0.27       |
+
+: {tbl-colwidths="[60,40]"}
+:::
+
+::: plain
+Every food here is inelastic. Meals out respond most, because cooking at home is a close substitute. Eggs respond least: there is no good substitute at breakfast.
 :::
 
 ## Quiz 3
 
 -   *Quiz 3 is Monday, September 21*, and covers Lectures 5 to 7.
 -   Go through all the slides and work through worksheets and the practice problems before the quiz.
+
+## Sources {.smaller}
+
+-   Cohen, Hahn, Hall, Levitt, and Metcalfe (2016), "Using Big Data to Estimate Consumer Surplus: The Case of Uber," NBER Working Paper 22627.
+-   Seiler, Tuchman, and Yao (2021), "The Impact of Soda Taxes: Pass-Through, Tax Avoidance, and Nutritional Effects," Journal of Marketing Research 58(1).
+-   Andreyeva, Long, and Brownell (2010), "The Impact of Food Prices on Consumption: A Systematic Review of Research on the Price Elasticity of Demand for Food," American Journal of Public Health 100(2).

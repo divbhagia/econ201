@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Schedule – Principles of Microeconomics</title>
+<title>Lecture 7: Practice – Principles of Microeconomics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,24 +23,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-6633c62d358394232bc599d39e38c5c9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-6f405e4b410aa56d01bce714dcfb5a6d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-6633c62d358394232bc599d39e38c5c9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-6f405e4b410aa56d01bce714dcfb5a6d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -69,18 +69,47 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="assets/styles.css">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../assets/styles.css">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Principles of Microeconomics</span>
     </a>
   </div>
@@ -91,19 +120,19 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./syllabus.html"> 
+    <a class="nav-link" href="../syllabus.html"> 
 <span class="menu-text">Syllabus</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./schedule.html" aria-current="page"> 
+    <a class="nav-link" href="../schedule.html"> 
 <span class="menu-text">Schedule</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./content/the-big-picture.html"> 
+    <a class="nav-link" href="../content/the-big-picture.html"> 
 <span class="menu-text">Content</span></a>
   </li>  
   <li class="nav-item compact">
@@ -122,13 +151,27 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#nadias-kayak-rentals" id="toc-nadias-kayak-rentals" class="nav-link active" data-scroll-target="#nadias-kayak-rentals">1. Nadia’s kayak rentals</a></li>
+  <li><a href="#two-coffee-shops" id="toc-two-coffee-shops" class="nav-link" data-scroll-target="#two-coffee-shops">2. Two coffee shops</a></li>
+  <li><a href="#flat-and-steep-demand-curves" id="toc-flat-and-steep-demand-curves" class="nav-link" data-scroll-target="#flat-and-steep-demand-curves">3. Flat and steep demand curves</a></li>
+  <li><a href="#which-demand-is-more-elastic" id="toc-which-demand-is-more-elastic" class="nav-link" data-scroll-target="#which-demand-is-more-elastic">4. Which demand is more elastic?</a></li>
+  <li><a href="#beach-parking" id="toc-beach-parking" class="nav-link" data-scroll-target="#beach-parking">5. Beach parking</a></li>
+  <li><a href="#multiple-choice" id="toc-multiple-choice" class="nav-link" data-scroll-target="#multiple-choice">6. Multiple choice</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Schedule</h1>
+<h1 class="title">Lecture 7: Practice</h1>
+<p class="subtitle lead">Who can get away with raising prices? Demand and elasticity</p>
 </div>
 
 
@@ -145,224 +188,222 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Materials appear here as we reach each lecture. For materials grouped by module, see the <a href="./content/the-big-picture.html">Content</a> pages. Readings refer to sections of <a href="https://books.core-econ.org/the-economy/microeconomics"><em>The Economy 2.0: Microeconomics</em></a>. Quizzes are given at the start of class on the dates marked below.</p>
-<p class="materials-legend">
-<span aria-hidden="true">🖥️</span> Slides &nbsp; <span aria-hidden="true">🗒️</span> Worksheet (PDF) &nbsp; <span aria-hidden="true">📄</span> Notes (PDF) &nbsp; <span aria-hidden="true">✍️</span> Practice
-</p>
-<div class="table-scroll" tabindex="0" role="region" aria-label="Semester schedule table">
-
-<table class="schedule-table caption-top table">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th" scope="col" style="width: 7.4em">Module</th>
-<th data-quarto-table-cell-role="th" scope="col" style="width: 5.6em">Date</th>
-<th data-quarto-table-cell-role="th" scope="col">Topic</th>
-<th data-quarto-table-cell-role="th" scope="col" style="width: 5.2em">Reading</th>
-<th data-quarto-table-cell-role="th" scope="col" style="width: 5.4em">Materials</th>
-</tr>
-</thead>
-<tbody>
-<tr class="module-start odd">
-<th rowspan="2" data-quarto-table-cell-role="th" scope="rowgroup"><a href="content/the-big-picture.html">The Big Picture</a></th>
-<th data-quarto-table-cell-role="th" scope="row">Mon 8/24</th>
-<td class="topics">Introduction to the course</td>
-<td class="refs"></td>
-<td class="mat"><a href="slides/lecture1.html" target="_blank" rel="noopener" aria-label="Lecture 1 slides (opens in a new tab)"><span aria-hidden="true">🖥️</span></a></td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th" scope="row">Wed 8/26</th>
-<td class="topics">The capitalist takeoff: Prosperity and its shadows</td>
-<td class="refs">1.1–1.5; 1.8–1.10</td>
-<td class="mat"><a href="slides/lecture2.html" target="_blank" rel="noopener" aria-label="Lecture 2 slides (opens in a new tab)"><span aria-hidden="true">🖥️</span></a> <a href="worksheets/worksheet02.pdf" target="_blank" rel="noopener" aria-label="Lecture 2 worksheet, PDF (opens in a new tab)"><span aria-hidden="true">🗒️</span></a> <a href="notes/notes02.pdf" target="_blank" rel="noopener" aria-label="Lecture 2 notes, PDF (opens in a new tab)"><span aria-hidden="true">📄</span></a> <a href="practice/practice02.html" target="_blank" rel="noopener" aria-label="Lecture 2 guided reading questions and practice problems (opens in a new tab)"><span aria-hidden="true">✍️</span></a></td>
-</tr>
-<tr class="module-start odd">
-<th rowspan="2" data-quarto-table-cell-role="th" scope="rowgroup"><a href="content/economists-toolkit.html">The Economist's Toolkit</a></th>
-<th data-quarto-table-cell-role="th" scope="row">Mon 8/31</th>
-<td class="topics"><strong>Quiz 1</strong>; Making economic decisions: Opportunity cost, rents, and incentives</td>
-<td class="refs">2.2</td>
-<td class="mat"><a href="slides/lecture3.html" target="_blank" rel="noopener" aria-label="Lecture 3 slides (opens in a new tab)"><span aria-hidden="true">🖥️</span></a> <a href="worksheets/worksheet03.pdf" target="_blank" rel="noopener" aria-label="Lecture 3 worksheet, PDF (opens in a new tab)"><span aria-hidden="true">🗒️</span></a> <a href="practice/practice03.html" target="_blank" rel="noopener" aria-label="Lecture 3 practice problems (opens in a new tab)"><span aria-hidden="true">✍️</span></a></td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th" scope="row">Wed 9/2</th>
-<td class="topics">Why do markets matter? Specialization and comparative advantage</td>
-<td class="refs">2.3</td>
-<td class="mat"><a href="slides/lecture4.html" target="_blank" rel="noopener" aria-label="Lecture 4 slides (opens in a new tab)"><span aria-hidden="true">🖥️</span></a> <a href="worksheets/worksheet04.pdf" target="_blank" rel="noopener" aria-label="Lecture 4 worksheet, PDF (opens in a new tab)"><span aria-hidden="true">🗒️</span></a> <a href="practice/practice04.html" target="_blank" rel="noopener" aria-label="Lecture 4 practice problems (opens in a new tab)"><span aria-hidden="true">✍️</span></a></td>
-</tr>
-<tr class="recess module-start odd">
-<td></td>
-<th data-quarto-table-cell-role="th" scope="row">Mon 9/7</th>
-<td colspan="3">Labor Day (campus closed)</td>
-</tr>
-<tr class="module-start even">
-<th rowspan="9" data-quarto-table-cell-role="th" scope="rowgroup"><a href="content/firms-as-price-setters.html">Firms as Price Setters</a></th>
-<th data-quarto-table-cell-role="th" scope="row">Wed 9/9</th>
-<td class="topics"><strong>Quiz 2</strong>; Winning brands and the price of Cheerios</td>
-<td class="refs">7.1–7.2</td>
-<td class="mat"><a href="slides/lecture5.html" target="_blank" rel="noopener" aria-label="Lecture 5 slides (opens in a new tab)"><span aria-hidden="true">🖥️</span></a> <a href="worksheets/worksheet05.pdf" target="_blank" rel="noopener" aria-label="Lecture 5 worksheet, PDF (opens in a new tab)"><span aria-hidden="true">🗒️</span></a></td>
-</tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th" scope="row">Mon 9/14</th>
-<td class="topics">What does it cost to make a car? Scale and the cost of production</td>
-<td class="refs">7.3–7.4</td>
-<td class="mat"><a href="slides/lecture6.html" target="_blank" rel="noopener" aria-label="Lecture 6 slides (opens in a new tab)"><span aria-hidden="true">🖥️</span></a> <a href="worksheets/worksheet06.pdf" target="_blank" rel="noopener" aria-label="Lecture 6 worksheet, PDF (opens in a new tab)"><span aria-hidden="true">🗒️</span></a> <a href="practice/practice06.html" target="_blank" rel="noopener" aria-label="Lecture 6 practice problems (opens in a new tab)"><span aria-hidden="true">✍️</span></a></td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th" scope="row">Wed 9/16</th>
-<td class="topics">Who can get away with raising prices? Demand and elasticity</td>
-<td class="refs">7.5</td>
-<td class="mat"><a href="slides/lecture7.html" target="_blank" rel="noopener" aria-label="Lecture 7 slides (opens in a new tab)"><span aria-hidden="true">🖥️</span></a> <a href="worksheets/worksheet07.pdf" target="_blank" rel="noopener" aria-label="Lecture 7 worksheet, PDF (opens in a new tab)"><span aria-hidden="true">🗒️</span></a> <a href="practice/practice07.html" target="_blank" rel="noopener" aria-label="Lecture 7 practice problems (opens in a new tab)"><span aria-hidden="true">✍️</span></a></td>
-</tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th" scope="row">Mon 9/21</th>
-<td class="topics"><strong>Quiz 3</strong>; Steak, ramen, and recessions: Other elasticities</td>
-<td class="refs"></td>
-<td class="mat"></td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th" scope="row">Wed 9/23</th>
-<td class="topics">Sweet spot: Choosing the price and quantity that maximize profit</td>
-<td class="refs">7.6</td>
-<td class="mat"></td>
-</tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th" scope="row">Mon 9/28</th>
-<td class="topics"><strong>Quiz 4</strong>; The surplus from a sale and who captures it</td>
-<td class="refs">7.7</td>
-<td class="mat"></td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th" scope="row">Wed 9/30</th>
-<td class="topics">Standing out from the crowd: Product differentiation and competition</td>
-<td class="refs">7.8–7.9</td>
-<td class="mat"></td>
-</tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th" scope="row">Mon 10/5</th>
-<td class="topics"><strong>Quiz 5</strong>; Price wars: Strategic price setting and Nash equilibrium</td>
-<td class="refs">7.10; 4.2–4.3</td>
-<td class="mat"></td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th" scope="row">Wed 10/7</th>
-<td class="topics">Winner takes the market: Natural monopolies and competition policy</td>
-<td class="refs">7.11–7.12</td>
-<td class="mat"></td>
-</tr>
-<tr class="assessment module-start odd">
-<td></td>
-<th data-quarto-table-cell-role="th" scope="row">Mon 10/12</th>
-<td colspan="3"><strong>Midterm 1</strong></td>
-</tr>
-<tr class="module-start even">
-<th rowspan="7" data-quarto-table-cell-role="th" scope="rowgroup"><a href="content/markets-with-many-buyers-and-sellers.html">Markets with Many Buyers and Sellers</a></th>
-<th data-quarto-table-cell-role="th" scope="row">Wed 10/14</th>
-<td class="topics">Classroom market experiment</td>
-<td class="refs"></td>
-<td class="mat"></td>
-</tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th" scope="row">Mon 10/19</th>
-<td class="topics">Cotton, war, and world markets: Supply and demand</td>
-<td class="refs">8.1–8.2</td>
-<td class="mat"></td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th" scope="row">Wed 10/21</th>
-<td class="topics">Taking prices as given: Firms and consumers in competitive markets</td>
-<td class="refs">8.3–8.4</td>
-<td class="mat"></td>
-</tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th" scope="row">Mon 10/26</th>
-<td class="topics"><strong>Quiz 6</strong>; Who gets what: Allocation, distribution, and the gains from trade</td>
-<td class="refs">8.5</td>
-<td class="mat"></td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th" scope="row">Wed 10/28</th>
-<td class="topics">The quinoa boom: Shifts in supply and demand</td>
-<td class="refs">8.6</td>
-<td class="mat"></td>
-</tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th" scope="row">Mon 11/2</th>
-<td class="topics"><strong>Quiz 7</strong>; Oil booms and busts: Market dynamics in the short run and long run</td>
-<td class="refs">8.7–8.10</td>
-<td class="mat"></td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th" scope="row">Wed 11/4</th>
-<td class="topics">Salt taxes and rent control: Governments in the market</td>
-<td class="refs">8.12–8.13</td>
-<td class="mat"></td>
-</tr>
-<tr class="assessment module-start odd">
-<td></td>
-<th data-quarto-table-cell-role="th" scope="row">Mon 11/9</th>
-<td colspan="3"><strong>Midterm 2</strong></td>
-</tr>
-<tr class="recess even">
-<td></td>
-<th data-quarto-table-cell-role="th" scope="row">Wed 11/11</th>
-<td colspan="3">Veterans Day (campus closed)</td>
-</tr>
-<tr class="module-start odd">
-<th rowspan="6" data-quarto-table-cell-role="th" scope="rowgroup"><a href="content/market-successes-and-failures.html">Market Successes and Failures</a></th>
-<th data-quarto-table-cell-role="th" scope="row">Mon 11/16</th>
-<td class="topics"><strong>Writing 1</strong>; Bananas, fish, and cancer: Private vs. social value wedge</td>
-<td class="refs">10.1–10.2</td>
-<td class="mat"></td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th" scope="row">Wed 11/18</th>
-<td class="topics">Closing the wedge: Property rights, bargaining, and regulation</td>
-<td class="refs">10.3–10.5</td>
-<td class="mat"></td>
-</tr>
-<tr class="recess odd">
-<th data-quarto-table-cell-role="th" scope="row">Mon 11/23</th>
-<td colspan="3">Fall Recess (no classes)</td>
-</tr>
-<tr class="recess even">
-<th data-quarto-table-cell-role="th" scope="row">Wed 11/25</th>
-<td colspan="3">Fall Recess (no classes)</td>
-</tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th" scope="row">Mon 11/30</th>
-<td class="topics"><strong>Quiz 8</strong>; Free riders and empty oceans: Public goods and common resources</td>
-<td class="refs">10.6–10.7</td>
-<td class="mat"></td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th" scope="row">Wed 12/2</th>
-<td class="topics">The limits of markets</td>
-<td class="refs">10.8–10.11</td>
-<td class="mat"></td>
-</tr>
-<tr class="module-start odd">
-<th rowspan="2" data-quarto-table-cell-role="th" scope="rowgroup"><a href="content/review.html">Review</a></th>
-<th data-quarto-table-cell-role="th" scope="row">Mon 12/7</th>
-<td class="topics"><strong>Writing 2</strong>; Review and Synthesis I</td>
-<td class="refs"></td>
-<td class="mat"></td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th" scope="row">Wed 12/9</th>
-<td class="topics">Review and Synthesis II</td>
-<td class="refs"></td>
-<td class="mat"></td>
-</tr>
-<tr class="assessment module-start odd">
-<td></td>
-<th data-quarto-table-cell-role="th" scope="row">Mon 12/14</th>
-<td colspan="3"><strong>Final exam (1:00–2:50 PM)</strong></td>
-</tr>
-</tbody>
-</table>
-
+<p>Work through each problem on paper before you open its <strong>Solution</strong>.</p>
+<section id="nadias-kayak-rentals" class="level2">
+<h2 class="anchored" data-anchor-id="nadias-kayak-rentals">1. Nadia’s kayak rentals</h2>
+<p>Nadia rents kayaks by the day at a lake. Her demand curve is <span class="math display">\[Q = 60 - 2P\]</span> where <span class="math inline">\(Q\)</span> is kayaks rented per day and <span class="math inline">\(P\)</span> is the price of a rental in dollars.</p>
+<p><strong>(a)</strong> How many kayaks does Nadia rent at a price of $20?</p>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p><span class="math display">\[Q = 60 - 2 \times 20 = 20\]</span></p>
+</details>
+<p><strong>(b)</strong> Nadia raises her price from $20 to $21. How many kayaks does she rent now? Find the percentage change in price and in demand, and the price elasticity of demand.</p>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>At $21: <span class="math display">\[Q = 60 - 2 \times 21 = 18\]</span></p>
+<p>The percentage changes: <span class="math display">\[\begin{aligned}
+\%\text{ change in price} &amp;= \frac{21 - 20}{20} \times 100 = 5\% \\[0.3em]
+\%\text{ change in demand} &amp;= \frac{18 - 20}{20} \times 100 = -10\%
+\end{aligned}\]</span></p>
+<p>The elasticity: <span class="math display">\[\varepsilon = -\frac{-10}{5} = 2\]</span></p>
+<p><strong>Demand is elastic at $20</strong>, because 2 is greater than 1.</p>
+</details>
+<p><strong>(c)</strong> Find the elasticity for a $1 price rise starting from $25, and for a $1 price rise starting from $10. Use whichever formula you like. Where is demand elastic, and where is it inelastic?</p>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>From $25 to $26, demand falls from <span class="math inline">\(60 - 2 \times 25 = 10\)</span> to <span class="math inline">\(60 - 2 \times 26 = 8\)</span> kayaks: <span class="math display">\[\begin{aligned}
+\%\text{ change in price} &amp;= \frac{26 - 25}{25} \times 100 = 4\% \\[0.3em]
+\%\text{ change in demand} &amp;= \frac{8 - 10}{10} \times 100 = -20\%
+\end{aligned}\]</span> <span class="math display">\[\varepsilon = -\frac{-20}{4} = 5\]</span></p>
+<p>From $10 to $11, demand falls from <span class="math inline">\(60 - 2 \times 10 = 40\)</span> to <span class="math inline">\(60 - 2 \times 11 = 38\)</span> kayaks: <span class="math display">\[\begin{aligned}
+\%\text{ change in price} &amp;= \frac{11 - 10}{10} \times 100 = 10\% \\[0.3em]
+\%\text{ change in demand} &amp;= \frac{38 - 40}{40} \times 100 = -5\%
+\end{aligned}\]</span> <span class="math display">\[\varepsilon = -\frac{-5}{10} = 0.5\]</span></p>
+<p>The formula <span class="math inline">\(\varepsilon = -\dfrac{P}{Q} \times \dfrac{\Delta Q}{\Delta P}\)</span>, with <span class="math inline">\(\Delta Q / \Delta P = -2\)</span>, gives the same answers: <span class="math inline">\(-\tfrac{25}{10} \times (-2) = 5\)</span> and <span class="math inline">\(-\tfrac{10}{40} \times (-2) = 0.5\)</span>.</p>
+<p><strong>Demand is elastic at $25 and inelastic at $10.</strong></p>
+</details>
+<p><strong>(d)</strong> Nadia starts quoting her prices in cents, so her demand curve becomes <span class="math inline">\(Q = 60 - 0.02P\)</span>, with <span class="math inline">\(P\)</span> in cents. Her price rises from 2,000 cents to 2,100 cents. Find the elasticity. Is it different from your answer to part (b)? Why or why not?</p>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>Demand falls from <span class="math inline">\(60 - 0.02 \times 2{,}000 = 20\)</span> to <span class="math inline">\(60 - 0.02 \times 2{,}100 = 18\)</span> kayaks: <span class="math display">\[\begin{aligned}
+\%\text{ change in price} &amp;= \frac{2{,}100 - 2{,}000}{2{,}000} \times 100 = 5\% \\[0.3em]
+\%\text{ change in demand} &amp;= \frac{18 - 20}{20} \times 100 = -10\%
+\end{aligned}\]</span> <span class="math display">\[\varepsilon = -\frac{-10}{5} = 2\]</span></p>
+<p><strong>The elasticity is still 2</strong>, the same as in part (b). This is the same price rise, from $20 to $21, counted in cents. A 5% rise is a 5% rise whether we count in dollars or in cents, so the elasticity does not depend on the units.</p>
+</details>
+</section>
+<section id="two-coffee-shops" class="level2">
+<h2 class="anchored" data-anchor-id="two-coffee-shops">2. Two coffee shops</h2>
+<p>One coffee shop sits on a street with five other coffee shops. Another is the only place to buy coffee inside a large library. Which shop is likely to face the more elastic demand? Which one can raise its price without losing many customers?</p>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p><strong>The shop on the street faces the more elastic demand.</strong> If it raises its price, its customers can walk next door, so many of them may buy elsewhere. Competition from similar products limits its ability to raise its price.</p>
+<p><strong>The library shop can raise its price without losing many customers.</strong> Its customers have no close substitute nearby, so its demand is less elastic.</p>
+</details>
+</section>
+<section id="flat-and-steep-demand-curves" class="level2">
+<h2 class="anchored" data-anchor-id="flat-and-steep-demand-curves">3. Flat and steep demand curves</h2>
+<p>True or false: a steeper demand curve always has a lower elasticity than a flatter one. Explain.</p>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p><strong>False.</strong> When two demand curves pass through the same price and quantity, the steeper one is less elastic there. But slope and elasticity are not the same thing. The Dodgers demand curve from the lecture, <span class="math inline">\(Q = 90 - 0.3P\)</span>, has the same slope everywhere, yet its elasticity is 0.2 at $50 and 2 at $200. At a high price, a $10 rise is a small percentage of the price but loses a large percentage of the few buyers.</p>
+</details>
+</section>
+<section id="which-demand-is-more-elastic" class="level2">
+<h2 class="anchored" data-anchor-id="which-demand-is-more-elastic">4. Which demand is more elastic?</h2>
+<p>Suppose the price of each good below rises by 10%. In each pair, which good’s demand is more elastic? Explain using one of the reasons from the lecture: close substitutes, a luxury or a necessity, how narrowly the market is defined, time to adjust, or share of spending.</p>
+<ul>
+<li>Movie tickets, or visits to the doctor.</li>
+<li>A new laptop, or a tube of toothpaste.</li>
+<li>A burger at a food court with ten other restaurants, or a ride on the only ferry to an island.</li>
+<li>Coca-Cola, or all soft drinks.</li>
+<li>Gasoline in the week after its price rises, or gasoline over the next five years.</li>
+</ul>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<ul>
+<li><strong>Movie tickets.</strong> A movie is a luxury that people can skip. A doctor’s visit is closer to a necessity.</li>
+<li><strong>A new laptop.</strong> It takes a big share of a student’s spending, so a 10% rise is a lot of money. A 10% rise on toothpaste is a few cents.</li>
+<li><strong>A burger at the food court.</strong> Ten other restaurants a few steps away are close substitutes. The ferry has no substitute.</li>
+<li><strong>Coca-Cola.</strong> It is a narrowly defined market: if Coke’s price rises, people can switch to Pepsi or another soft drink. If the price of all soft drinks rises, there is much less to switch to.</li>
+<li><strong>Gasoline over the next five years.</strong> In the first week, people still have to drive to work and school. Over five years, they have time to adjust: they can buy a car that uses less gas, carpool, or move closer to work.</li>
+</ul>
+</details>
+</section>
+<section id="beach-parking" class="level2">
+<h2 class="anchored" data-anchor-id="beach-parking">5. Beach parking</h2>
+<p>A county raises the price of its beach parking lot from $20 to $25 a day. The number of cars in the lot falls from 400 to 240 a day. Many drivers park on nearby streets instead, so the number of people visiting the beach falls by only 5%.</p>
+<p><strong>(a)</strong> Find the elasticity of demand for spaces in the parking lot.</p>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p><span class="math display">\[\begin{aligned}
+\%\text{ change in price} &amp;= \frac{25 - 20}{20} \times 100 = 25\% \\[0.3em]
+\%\text{ change in cars} &amp;= \frac{240 - 400}{400} \times 100 = -40\%
+\end{aligned}\]</span> <span class="math display">\[\varepsilon = -\frac{-40}{25} = 1.6\]</span></p>
+<p><strong>Demand for the lot is elastic.</strong></p>
+</details>
+<p><strong>(b)</strong> Find the elasticity of demand for visits to the beach, using the same 25% price rise.</p>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p><span class="math display">\[\varepsilon = -\frac{-5}{25} = 0.2\]</span></p>
+<p><strong>Demand for beach visits is inelastic.</strong></p>
+</details>
+<p><strong>(c)</strong> Why is demand for the lot so much more elastic than demand for visiting the beach?</p>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p><strong>Street parking is a close substitute for the lot</strong>, so when the lot’s price rises, many drivers switch. There is no close substitute for the beach itself, so most people still come. The same pattern showed up with Philadelphia’s soda tax: stores just outside the city were close substitutes for stores inside it.</p>
+</details>
+</section>
+<section id="multiple-choice" class="level2">
+<h2 class="anchored" data-anchor-id="multiple-choice">6. Multiple choice</h2>
+<div class="mcq" data-answer="b,c">
+<p><strong>1.</strong> The diagram shows two alternative demand curves, D and D′, for a product. Select all the statements that are correct.</p>
+<p><img src="../slides/img/core-q7-6.svg" class="img-fluid" alt="Two parallel downward-sloping straight lines, price on the vertical axis from 0 to 12,000 dollars in steps of 2,000 and quantity on the horizontal axis from 0 to 100 in steps of 20. The lower line, D, runs from 6,000 dollars at zero quantity to zero price at 60 units. The upper line, D prime, runs from 10,000 dollars at zero quantity to zero price at 100 units." width="480"></p>
+<ol type="a">
+<li>On demand curve D, when the price is $4,000, the firm can sell 30 units of the product.</li>
+<li>On demand curve D′, the firm can sell 60 units at a price of $4,000.</li>
+<li>At a price of $2,000, the firm can sell 40 more units of the product on D′ than on D.</li>
+<li>With an output of 20 units, the firm can charge $2,000 more on D′ than on D.</li>
+</ol>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>On D, at $4,000 the firm can sell 20 units, not 30. On D′, a price of $4,000 corresponds to 60 units. At $2,000 the firm sells 40 units on D and 80 units on D′, so 40 more. At 20 units the price is $4,000 on D and $8,000 on D′, a difference of $4,000, not $2,000. <strong>(b) and (c)</strong> are correct.</p>
+</details>
+</div>
+<div class="mcq" data-answer="a,b,d">
+<p><strong>2.</strong> A shop sells 20 hats per week at $10 each. When it increases the price to $12, the number of hats sold falls to 15 per week. Select all the statements that are correct.</p>
+<ol type="a">
+<li>When the price increases from $10 to $12, demand decreases by 25%.</li>
+<li>A 20% increase in the price causes a 25% fall in demand.</li>
+<li>The demand for hats is inelastic.</li>
+<li>Using these figures, we can estimate the elasticity of demand to be 1.25.</li>
+</ol>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p><span class="math display">\[\begin{aligned}
+\%\text{ change in price} &amp;= \frac{12 - 10}{10} \times 100 = 20\% \\[0.3em]
+\%\text{ change in demand} &amp;= \frac{15 - 20}{20} \times 100 = -25\%
+\end{aligned}\]</span></p>
+<p>So <span class="math inline">\(\varepsilon = -\dfrac{-25}{20} = 1.25\)</span>, which is greater than 1: demand is elastic, not inelastic. <strong>(a), (b), and (d)</strong> are correct.</p>
+</details>
+</div>
+<div class="mcq" data-answer="a,d">
+<p><strong>3.</strong> The figure shows two straight-line demand curves, D₁ and D₂, which cross at point E. Select all the statements that are correct.</p>
+<p><img src="../slides/img/core-q7-8.svg" class="img-fluid" alt="Two downward-sloping straight lines with no numbers on the axes, price on the vertical axis and quantity on the horizontal axis. D1 is steep and D2 is flatter, and they cross at point E. Point A is on D1 above and to the left of E. Point C is on D1 below and to the right of E. Point B is on D2 below and to the right of E, at a higher quantity and a higher price than C." width="480"></p>
+<ol type="a">
+<li>At point E, demand on D₁ is less elastic than demand on D₂.</li>
+<li>Points A and C are on the same straight line, so demand is equally elastic at A and at C.</li>
+<li>The firm facing D₁ probably has more close competitors than the firm facing D₂.</li>
+<li>On D₂, demand is more elastic at E than at B.</li>
+</ol>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>At E both curves have the same price and quantity, and D₁ is steeper, so the same price rise loses fewer buyers on D₁: demand is less elastic there. Along one straight line the slope stays the same but the elasticity does not: at A the price is higher and the quantity lower than at C, so demand is more elastic at A. For the same reason, demand on D₂ is more elastic at E than at B. D₁ is less elastic, so its firm probably faces less competition, not more. <strong>(a) and (d)</strong> are correct.</p>
+</details>
+</div>
+<div class="mcq" data-answer="b">
+<p><strong>4.</strong> A firm raises its price by 4%, and the quantity it sells falls by 8%. The price elasticity of demand is:</p>
+<ol type="a">
+<li>0.5, so demand is inelastic.</li>
+<li>2, so demand is elastic.</li>
+<li><span class="math inline">\(-2\)</span>, so demand is inelastic.</li>
+<li>2, so demand is inelastic.</li>
+</ol>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p><span class="math inline">\(\varepsilon = -\dfrac{-8}{4} = 2\)</span>. The minus sign in the formula makes the elasticity positive, and 2 is greater than 1, so demand is elastic. <strong>(b)</strong> is correct.</p>
+</details>
+</div>
+<div class="mcq" data-answer="a">
+<p><strong>5.</strong> A campus concert raises its ticket price from $20 to $25, and ticket sales fall from 400 to 320. The price elasticity of demand is:</p>
+<ol type="a">
+<li>0.8, so demand is inelastic.</li>
+<li>1.25, so demand is elastic.</li>
+<li>0.8, so demand is elastic.</li>
+<li>16, so demand is elastic.</li>
+</ol>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p><span class="math display">\[\begin{aligned}
+\%\text{ change in price} &amp;= \frac{25 - 20}{20} \times 100 = 25\% \\[0.3em]
+\%\text{ change in demand} &amp;= \frac{320 - 400}{400} \times 100 = -20\%
+\end{aligned}\]</span></p>
+<p>So <span class="math inline">\(\varepsilon = -\dfrac{-20}{25} = 0.8\)</span>, which is less than 1: demand is inelastic. Option (b) divides the wrong way round, and (d) divides the change in tickets by the change in price instead of using percentages. <strong>(a)</strong> is correct.</p>
+</details>
 </div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script>
@@ -976,7 +1017,7 @@ ul.task-list li input[type="checkbox"] {
       &nbsp;
     </div>   
     <div class="nav-footer-center">
-<p>2026 Div Bhagia | <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0 License</a> | <a href="./accessibility.html">Accessibility</a> | Made with <a href="https://quarto.org/">Quarto</a></p>
+<p>2026 Div Bhagia | <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0 License</a> | <a href="../accessibility.html">Accessibility</a> | Made with <a href="https://quarto.org/">Quarto</a></p>
 </div>
     <div class="nav-footer-right">
       &nbsp;

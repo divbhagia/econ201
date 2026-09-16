@@ -17,15 +17,17 @@ squares on the 88 answers gives Q = 79 - 0.25 P, pulled around by the few
 $400 answers, while Q = 90 - 0.3 P (P = 300 - (10/3) Q) stays within 3
 students of the actual counts at $50, $100, $150, and $250. Every $10 rise
 in price costs 3 students, and the elasticity -(P/Q)(dQ/dP) = 0.3 P / Q is
-0.2 at $50, 0.5 at $100, 2 at $200, and 5 at $250.
+0.2 at $50, 0.5 at $100, and 2 at $200.
 
 Output, in slides/img/:
   class-demand.svg   the class's answers lined up highest first, as a
                      demand curve, $100 and $200 marked
   class-linear.svg   the same answers in grey with the straight line drawn
                      through them, labelled in its P = form, $100 marked
-  class-elasticity.svg  the straight line alone, $100 and $250 marked with
-                     their elasticities, column size
+  class-elasticity.svg  the straight line alone, the three Activity prices
+                     ($50, $100, $200) marked with their elasticities
+  flat-steep.svg     a flatter and a steeper demand curve through the same
+                     point, $100 and 60 students, with their elasticities
   core-q7-6.svg      CORE Question 7.6, demand curves D and D'
   core-q7-8.svg      CORE Question 7.8, demand curves D1 and D2
 
@@ -68,7 +70,9 @@ LIN_STEP = 10                # the $10 price rises in Activity 1
 LIN_EXAMPLE = 100            # worked on the slides
 LIN_ACTIVITY = (50, 200)     # Activity 1: percentage changes
 POINT_ACTIVITY = (50, 100, 200)  # Activity 2: -(P/Q)(dQ/dP), same prices as Activity 1
-SLOPE_EXAMPLE = 250          # the "Elasticity and the Slope" slide
+# Flat versus steep: two lines through ($100, 60 students), Q = 60 + b (100 - P),
+# so the elasticity at $100 is b * 100 / 60.
+FLAT_B, STEEP_B = 0.9, 0.15
 SCRATCH = Path(os.environ["FIG_PREVIEW_DIR"]) if os.environ.get("FIG_PREVIEW_DIR") else None
 
 INK = "#1a1a1a"
@@ -193,19 +197,74 @@ def draw_class_linear(out: Path) -> None:
 
 
 def draw_class_elasticity(out: Path) -> None:
-    """The straight line with two points labelled by their elasticity."""
-    fig, ax = plain_axes(SIDE, 95, 330)
+    """The straight line with the Activity prices marked by their elasticity.
+
+    Prices sit on $50 gridlines with a dotted guide from the price axis, and
+    every label is to the right of the line.
+    """
+    fig, ax = plain_axes(SIDE, 95, 320)
     fig.subplots_adjust(left=0.16, right=0.965, top=0.96, bottom=0.15)
     ax.set_xticks(range(0, 91, 15))
-    ax.set_yticks(range(0, 301, 100))
+    ax.set_yticks(range(0, 301, 50))
     ax.yaxis.set_major_formatter(FuncFormatter(lambda y, _: f"${y:,.0f}"))
     pr = np.array([0, LIN_A / LIN_B])
     ax.plot(class_linear(pr), pr, color=CLASS, lw=3.2, solid_capstyle="round", zorder=5)
-    for p0 in (LIN_EXAMPLE, SLOPE_EXAMPLE):
-        eps = LIN_B * p0 / class_linear(p0)
-        mark_xy(ax, class_linear(p0), p0, f"${p0}: ε = {eps:g}", color=CLASS)
+    for p0 in POINT_ACTIVITY:
+        q0 = class_linear(p0)
+        eps = LIN_B * p0 / q0
+        ax.plot([0, q0], [p0, p0], color=CLASS, lw=2.6, ls=(0, (5, 3)), zorder=4)
+        ax.plot(q0, p0, marker="o", ms=13, color=CLASS, zorder=7)
+        ax.annotate(f"ε = {eps:g}", xy=(q0, p0), xytext=(16, 6), textcoords="offset points",
+                    ha="left", va="bottom", fontsize=FONT + 6, color=CLASS,
+                    fontweight="bold", zorder=8)
     ax.set_xlabel("Number of students", fontsize=FONT, labelpad=8)
     ax.set_ylabel("Price for the day", fontsize=FONT, labelpad=8)
+    save(fig, out)
+
+
+def draw_flat_steep(out: Path) -> None:
+    """Your demand curve and a flatter one through the same point.
+
+    Both pass through 60 buyers at $100. The same rise to $150 cuts quantity
+    to 45 on your curve and to 15 on the flatter one, so at $100 demand is
+    more elastic on the flatter curve (1.5 against 0.5).
+    """
+    fig, ax = plain_axes(SIDE, 160, 320)
+    fig.subplots_adjust(left=0.16, right=0.965, top=0.96, bottom=0.15)
+    ax.set_xticks(range(0, 151, 15))
+    ax.set_xticklabels([str(t) if t % 30 == 0 or t in (15, 45) else "" for t in range(0, 151, 15)])
+    ax.set_yticks(range(0, 301, 50))
+    ax.yaxis.set_major_formatter(FuncFormatter(lambda y, _: f"${y:,.0f}"))
+    q0, p0, p1 = 60, 100, 150
+    curves = ((LIN_B, CLASS, "Your demand"), (FLAT_B, DEMAND, "Flatter demand"))
+    for b, colour, name in curves:
+        top = p0 + q0 / b
+        prices = np.array([0, min(top, 320)])
+        ax.plot(q0 + b * (p0 - prices), prices, color=colour, lw=3, zorder=5)
+    # the price rise, with dotted guides to both axes
+    ax.plot([0, q0], [p0, p0], color=GUIDE, lw=1.6, ls=(0, (4, 3)), zorder=4)
+    ax.plot([q0, q0], [0, p0], color=GUIDE, lw=1.6, ls=(0, (4, 3)), zorder=4)
+    ax.plot([0, q0 + LIN_B * (p0 - p1)], [p1, p1], color=GUIDE, lw=1.6, ls=(0, (4, 3)), zorder=4)
+    ax.plot(q0, p0, marker="o", ms=13, color=INK, zorder=7)
+    for b, colour, name in curves:
+        q1 = q0 + b * (p0 - p1)
+        ax.plot([q1, q1], [0, p1], color=colour, lw=1.4, ls=(0, (4, 3)), zorder=4)
+        ax.plot(q1, p1, marker="o", ms=12, color=colour, zorder=7)
+    # Curve names in open space; the elasticities belong to the $100 point.
+    ax.text(8, 290, "Your demand", ha="left", va="center", fontsize=FONT,
+            color=CLASS, fontweight="bold", zorder=8)
+    ax.text(96, 72, "Flatter demand", ha="left", va="center", fontsize=FONT,
+            color=DEMAND, fontweight="bold", zorder=8)
+    ax.annotate(f"At $100:", xy=(q0, p0), xytext=(18, 58), textcoords="offset points",
+                ha="left", va="bottom", fontsize=FONT - 2, color=INK, zorder=8)
+    ax.annotate(f"ε = {LIN_B * p0 / q0:g} on yours", xy=(q0, p0), xytext=(18, 32),
+                textcoords="offset points", ha="left", va="bottom", fontsize=FONT - 2,
+                color=CLASS, fontweight="bold", zorder=8)
+    ax.annotate(f"ε = {FLAT_B * p0 / q0:g} on the flatter one", xy=(q0, p0), xytext=(18, 6),
+                textcoords="offset points", ha="left", va="bottom", fontsize=FONT - 2,
+                color=DEMAND, fontweight="bold", zorder=8)
+    ax.set_xlabel("Number of buyers", fontsize=FONT, labelpad=8)
+    ax.set_ylabel("Price", fontsize=FONT, labelpad=8)
     save(fig, out)
 
 
@@ -278,6 +337,7 @@ def main() -> int:
     draw_class_demand(IMG / "class-demand.svg")
     draw_class_linear(IMG / "class-linear.svg")
     draw_class_elasticity(IMG / "class-elasticity.svg")
+    draw_flat_steep(IMG / "flat-steep.svg")
     draw_q76(IMG / "core-q7-6.svg")
     draw_q78(IMG / "core-q7-8.svg")
 
@@ -288,7 +348,7 @@ def main() -> int:
     print(f"  class poll: {len(wtp)} answers, from ${wtp[-1]:.0f} to ${wtp[0]:.0f};"
           + "".join(f" {buyers(wtp, p)} at ${p}," for p in CLASS_PRICES))
     print(f"  straight line Q = {LIN_A} - {LIN_B:g} P; each ${LIN_STEP} rise:")
-    for p0 in (LIN_EXAMPLE,) + LIN_ACTIVITY + (SLOPE_EXAMPLE,):
+    for p0 in (LIN_EXAMPLE,) + LIN_ACTIVITY:
         p1 = p0 + LIN_STEP
         q0, q1 = class_linear(p0), class_linear(p1)
         dp, dq = 100 * (p1 - p0) / p0, 100 * (q1 - q0) / q0

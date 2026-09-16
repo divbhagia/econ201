@@ -50,7 +50,7 @@
 % every cell gets visible borders and the blank rows get extra height. One
 % column layout for all three activities, so the tables line up.
 \newcolumntype{C}{>{\centering\arraybackslash}p{3.0cm}}
-\newcommand{\blankrow}{\rule{0pt}{2.0em}}
+\newcommand{\blankrow}{\rule{0pt}{1.8em}}
 
 \begin{document}
 
@@ -66,7 +66,7 @@
   fonttitle=\bfseries, coltitle=white]
 \term{Percentage change}:
 \[
-  \%\text{ change} = \frac{100 \times \text{change}}{\text{starting value}}
+  \%\text{ change} = \frac{\text{new} - \text{old}}{\text{old}} \times 100
 \]
 \term{Price elasticity of demand}, $\varepsilon$: the percentage change in
 demand that would occur in response to a 1\% increase in price,
@@ -102,13 +102,13 @@ rise below.
 \newcolumntype{D}{>{\centering\arraybackslash}p{2.7cm}}
 \begin{tabular}{|>{\raggedright\arraybackslash}p{2.9cm}|D|D|D|D|}
 \hline
-Price rises from & Demand, $Q$ & \% change in $P$ & \% change in $Q$ & Elasticity, $\varepsilon$ \\
+$P$ rises from & $Q$ falls from & \% change in $P$ & \% change in $Q$ & Elasticity, $\varepsilon$ \\
 \hline
-\$50 to \$60 & \rule{0pt}{2.0em} & & & \\
+\$50 to \$60 & \rule{0pt}{1.8em} & & & \\
 \hline
-\$100 to \$110 & \rule{0pt}{2.0em} & & & \\
+\$100 to \$110 & \rule{0pt}{1.8em} & & & \\
 \hline
-\$200 to \$210 & \rule{0pt}{2.0em} & & & \\
+\$200 to \$210 & \rule{0pt}{1.8em} & & & \\
 \hline
 \end{tabular}
 \end{center}
@@ -119,7 +119,8 @@ At which prices is demand elastic?
 \needspace{10\baselineskip}\section{2. Elasticity from the formula}
 
 Use $\varepsilon = -\dfrac{P}{Q} \times \dfrac{\Delta Q}{\Delta P}$ to find the
-elasticity at the same three prices.
+elasticity at the same three prices. With $Q = 90 {\color{accent}\,-\,0.3}\,P$,
+$\Delta Q / \Delta P = -0.3$.
 
 \begin{center}
 \renewcommand{\arraystretch}{1.5}
@@ -127,11 +128,9 @@ elasticity at the same three prices.
 \hline
 Price, $P$ & \$50 & \$100 & \$200 \\
 \hline
-Demand, $Q$ & \rule{0pt}{2.0em} & & \\
+Demand, $Q$ & 75 & 60 & 30 \\
 \hline
-$\Delta Q / \Delta P$ & \rule{0pt}{2.0em} & & \\
-\hline
-Elasticity, $\varepsilon$ & \rule{0pt}{2.0em} & & \\
+Elasticity, $\varepsilon$ & \rule{0pt}{1.8em} & & \\
 \hline
 \end{tabular}
 \end{center}
