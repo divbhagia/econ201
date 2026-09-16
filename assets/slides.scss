@@ -245,6 +245,13 @@ $presentation-font-size-root: 37px;
   border-bottom: 2.5px solid #1a1a1a;
 }
 .reveal table td, .reveal table th { padding: 0.1em 0.4em; }
+// A worksheet table shown in steps: wrap it in ::: {.fixedtable} so it keeps
+// one width as its rows fill in, instead of growing to fit the numbers.
+.reveal .fixedtable table { width: 70%; table-layout: fixed; }
+// Wider variant for a table with many columns: ::: {.fixedtable .wide}.
+.reveal .fixedtable.wide table { width: 100%; }
+// A table of formulas: ::: {.fixedtable .wide .formulas}, room for stacked fractions.
+.reveal .formulas table td { padding-top: 0.35em; padding-bottom: 0.35em; }
 // A total row (::: {.sumrow}, see assets/sum-table.lua) gets a rule above it.
 .reveal table tfoot td { border-top: 1px solid #1a1a1a; }
 // Quarto's reveal columns are not flex by default, which left this

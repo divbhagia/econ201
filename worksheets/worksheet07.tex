@@ -1,0 +1,142 @@
+% !TEX program = lualatex
+% ECON 201, Worksheet 7: Demand and Elasticity. Compile with LuaLaTeX so the
+% PDF is tagged (see syllabus/Econ201-Syllabus.tex for the same setup).
+% Build from the course root:
+%   latexmk -lualatex -cd worksheets/worksheet07.tex && latexmk -c -cd worksheets/worksheet07.tex
+% Every number here is computed and printed by slides/figures/make_lecture7.py
+% so the worksheet and the deck quote the same figures (the class Dodgers demand).
+\DocumentMetadata{
+  pdfstandard=UA-2,
+  pdfversion=2.0,
+  lang=en-US,
+  tagging=on
+}
+\documentclass[11pt]{article}
+
+\usepackage[letterpaper, margin=0.8in, top=0.6in, bottom=0.55in]{geometry}
+\usepackage{fontspec}
+\setmainfont{Fira Sans}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{needspace}
+\usepackage[most]{tcolorbox}
+\definecolor{cream}{HTML}{FDF3EA}
+\definecolor{accent}{HTML}{BF5700}
+\usepackage{titlesec}
+\titleformat{\section}{\large\bfseries\color{accent}}{}{0pt}{}
+\titlespacing*{\section}{0pt}{6pt}{2pt}
+\usepackage{hyperref}
+\hypersetup{pdftitle={ECON 201 Worksheet: Demand and Elasticity}, pdfauthor={Div Bhagia}, hidelinks}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3pt}
+
+% Ruled answer space: n lines. Plain TeX loop; pgffor's \foreach breaks the
+% enumerate counter when used inside an item.
+\newcount\answerlinecount
+\newcommand{\answerlines}[1]{%
+  \par\vspace{1pt}\answerlinecount=#1
+  \loop\ifnum\answerlinecount>0
+    \rule{\linewidth}{0.3pt}\par\vspace{5pt}%
+    \advance\answerlinecount by -1
+  \repeat
+  \vspace{-5pt}}
+
+% Ruled grids rather than booktabs tables: students write in the cells, so
+% every cell gets visible borders and the blank rows get extra height. One
+% column layout for all three activities, so the tables line up.
+\newcolumntype{C}{>{\centering\arraybackslash}p{3.0cm}}
+\newcommand{\blankrow}{\rule{0pt}{2.0em}}
+
+\begin{document}
+
+{\LARGE\bfseries\color{accent} Worksheet: Demand and Elasticity}\hfill{\large ECON 201}
+
+% Terms sit on the cream panel, where the brand orange falls below 4.5:1;
+% the darker orange keeps WCAG AA contrast (see CLAUDE.md).
+\definecolor{accentdark}{HTML}{8F4100}
+\newcommand{\term}[1]{\textcolor{accentdark}{\textbf{#1}}}
+
+\begin{tcolorbox}[colback=cream, colframe=accent, boxrule=0.6pt, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt, title=Definitions,
+  fonttitle=\bfseries, coltitle=white]
+\term{Percentage change}:
+\[
+  \%\text{ change} = \frac{100 \times \text{change}}{\text{starting value}}
+\]
+\term{Price elasticity of demand}, $\varepsilon$: the percentage change in
+demand that would occur in response to a 1\% increase in price,
+\[
+  \varepsilon = -\frac{\%\text{ change in } Q}{\%\text{ change in } P}
+\]
+If price changes by $\Delta P$ and demand changes by $\Delta Q$, three other
+equivalent ways to write it are
+\[
+  \varepsilon = -\frac{\Delta Q / Q}{\Delta P / P}
+  = -\frac{P}{Q} \times \frac{\Delta Q}{\Delta P}
+  = -\frac{P}{Q} \times \frac{1}{\text{slope}}
+\]
+where the slope of the demand curve is $\Delta P / \Delta Q$.
+
+Demand is \term{elastic} if $\varepsilon$ is greater than 1, and
+\term{inelastic} if $\varepsilon$ is less than 1.
+\end{tcolorbox}
+
+In Lecture 3, you told us the most you would pay for a day at a Dodgers game.
+Linearizing your answers gives this demand curve:
+\[
+  Q = 90 - 0.3\,P
+\]
+
+\needspace{14\baselineskip}\section{1. Elasticity from percentage changes}
+
+Use percentage changes to find the elasticity of demand for each \$10 price
+rise below.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\newcolumntype{D}{>{\centering\arraybackslash}p{2.7cm}}
+\begin{tabular}{|>{\raggedright\arraybackslash}p{2.9cm}|D|D|D|D|}
+\hline
+Price rises from & Demand, $Q$ & \% change in $P$ & \% change in $Q$ & Elasticity, $\varepsilon$ \\
+\hline
+\$50 to \$60 & \rule{0pt}{2.0em} & & & \\
+\hline
+\$100 to \$110 & \rule{0pt}{2.0em} & & & \\
+\hline
+\$200 to \$210 & \rule{0pt}{2.0em} & & & \\
+\hline
+\end{tabular}
+\end{center}
+
+At which prices is demand elastic?
+\answerlines{1}
+
+\needspace{10\baselineskip}\section{2. Elasticity from the formula}
+
+Use $\varepsilon = -\dfrac{P}{Q} \times \dfrac{\Delta Q}{\Delta P}$ to find the
+elasticity at the same three prices.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|>{\raggedright\arraybackslash}p{4.2cm}|C|C|C|}
+\hline
+Price, $P$ & \$50 & \$100 & \$200 \\
+\hline
+Demand, $Q$ & \rule{0pt}{2.0em} & & \\
+\hline
+$\Delta Q / \Delta P$ & \rule{0pt}{2.0em} & & \\
+\hline
+Elasticity, $\varepsilon$ & \rule{0pt}{2.0em} & & \\
+\hline
+\end{tabular}
+\end{center}
+
+Do you get the same answers as in Activity 1?
+\answerlines{1}
+
+\end{document}

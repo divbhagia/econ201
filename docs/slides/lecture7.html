@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.8.27">
 
   <meta name="author" content="Div Bhagia">
-  <title>Principles of Microeconomics – Why Do Markets Matter? Specialization and Comparative Advantage</title>
+  <title>Principles of Microeconomics – Who Can Get Away with Raising Prices? Demand and Elasticity</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -127,8 +127,8 @@
     <div class="slides">
 
 <section class="quarto-title-block center">
-  <h1 class="title">Why Do Markets Matter?<br>Specialization and Comparative Advantage</h1>
-  <p class="subtitle">ECON 201: Principles of Microeconomics<br>Lecture 4</p>
+  <h1 class="title">Who Can Get Away with Raising Prices?<br>Demand and Elasticity</h1>
+  <p class="subtitle">ECON 201: Principles of Microeconomics<br>Lecture 7</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -140,445 +140,362 @@ Div Bhagia
 
 </section>
 <section class="slide level2">
-<h2>What Does a Free Seat Cost?</h2>
+<h2>Last Class: The Cost Side</h2>
+<p><span class="math display">\[\text{Profit} = \underbrace{P \times Q}_{\text{revenue}} - \underbrace{C(Q)}_{\text{cost}}\]</span></p>
+<ul>
+<li>Last class we focused on the cost side, <span class="math inline">\(C(Q)\)</span>.</li>
+<li>Today we focus on revenue, <span class="math inline">\(P \times Q\)</span>, which depends on the <em>demand curve</em>.</li>
+<li>Remember the <em>trade-off</em>: if firm set’s higher price, it will loose some consumers. How many? That depends on the shape of the demand curve.</li>
+</ul>
+</section>
+<section class="slide level2">
+<h2>How Much Would You Pay?</h2>
 <div class="plain">
-<p><strong>A concert hall has unsold seats an hour before the show and lets students in free. The opportunity cost to the hall of admitting a student is:</strong></p>
+<p>In Lecture 3, I asked for the most you would pay for a day at a <em>Dodgers</em> game. What you gave me was your <em>willingness to pay (WTP)</em>, and we can use it to construct a demand curve.</p>
+</div>
+<p><img data-src="img/class-demand.svg" class="fragment" alt="A downward-sloping staircase labelled Demand, price for the day on the vertical axis from 0 to 400 dollars and number of students on the horizontal axis from 0 to 90. Each step is one of the 88 answers, lined up from the highest to the lowest: 4 students would pay 400 dollars, and 9 would pay nothing. Two labelled points: 18 students at 200 dollars and 62 students at 100 dollars." height="430"></p>
+</section>
+<section class="slide level2">
+<h2>Willingness to Pay</h2>
+<ul>
+<li><em>Willingness to pay (WTP)</em> is an indicator of how much a person values a good, measured by the maximum amount they would pay to acquire a unit of the good.</li>
+<li>You will go to the game if the price for the day is less than or equal to your WTP.</li>
+<li>Line up your answers in order of WTP, with the highest first. At any price, demand is the number of you whose WTP is greater than or equal to that price.</li>
+<li>At $200, 18 of you have a WTP of $200 or more, so demand is 18. At $100, demand is 62.</li>
+</ul>
+</section>
+<section class="slide level2">
+<h2>The Demand Curve for a Dodgers Game</h2>
+<div class="plain">
+<p>Linearizing your answers gives this demand curve:</p>
+</div>
+<p><span class="math display">\[P = 300 - \frac{10}{3}\,Q \quad\Rightarrow\quad Q = 90 - 0.3\,P\]</span></p>
+<p><img data-src="img/class-linear.svg" class="" alt="The class's 88 answers drawn as a grey downward-sloping staircase labelled Your answers, price for the day on the vertical axis from 0 to 400 dollars and number of students on the horizontal axis from 0 to 90. A straight orange line labelled P = 300 minus ten thirds Q runs from 300 dollars at zero students to zero dollars at 90 students and follows the staircase closely. One labelled point on the line, with dashed guides to both axes: 60 students at 100 dollars." height="395"></p>
+</section>
+<section class="slide level2">
+<h2>How Much Does Demand Respond?</h2>
+<ul>
+<li>Sellers setting ticket prices, and economists and policymakers setting policy, often want to know how a change in price will change the quantity people buy.</li>
+<li>Your demand curve is <span class="math inline">\(Q = 90 - 0.3\,P\)</span>. If the price rises by $10, from $100 to $110, demand falls by 3 students.
+<ul>
+<li>When <span class="math inline">\(P = 100\)</span>, <span class="math inline">\(Q = 90 - 0.3 \times 100 = 60\)</span>.</li>
+<li>When <span class="math inline">\(P = 110\)</span>, <span class="math inline">\(Q = 90 - 0.3 \times 110 = 57\)</span>.</li>
+</ul></li>
+<li>Often it is more useful to measure the change in percentage terms: if the price rises by 1%, by what percentage does the quantity fall?</li>
+<li>This standard measure is called the <em>price elasticity of demand</em>.</li>
+</ul>
+</section>
+<section class="slide level2">
+<h2>Price Elasticity of Demand</h2>
+<div class="plain">
+<p>The <em>price elasticity of demand</em> is the percentage change in demand that would occur in response to a 1% increase in price:</p>
+</div>
+<p><span class="math display">\[\varepsilon = -\frac{\%\text{ change in demand}}{\%\text{ change in price}}\]</span></p>
+<ul>
+<li>Quantity falls when price increases, so the minus sign ensures that we get a positive number.</li>
+<li>Demand is <em>elastic</em> if <span class="math inline">\(\varepsilon\)</span> is greater than 1, and <em>inelastic</em> if less than 1.</li>
+</ul>
+</section>
+<section class="slide level2">
+<h2>Elasticity of Demand for a Dodgers Game</h2>
+<div class="plain">
+<p>When the price rises from $100 to $110, demand falls from 60 to 57 students.</p>
+</div>
+<p><span class="math display">\[\begin{aligned}
+\%\text{ change in price} &amp;= \frac{100 \times 10}{100} = 10\% \\[0.3em]
+\%\text{ change in demand} &amp;= \frac{100 \times (-3)}{60} = -5\%
+\end{aligned}\]</span></p>
+<p><span class="math display">\[\varepsilon = -\frac{-5}{10} = 0.5\]</span></p>
+<ul>
+<li>At $100, a 1% increase in the price reduces the number of you who would go by 0.5%, so demand is inelastic.</li>
+</ul>
+</section>
+<section class="slide level2">
+<h2>Worksheet, Activity 1</h2>
+<div class="plain">
+<p>The demand curve is given by <span class="math inline">\(Q = 90 - 0.3\,P\)</span>. Find the elasticity of demand for each $10 price rise below. At which prices is demand elastic?</p>
+</div>
+<p><span class="math display">\[\%\text{ change} = \frac{100 \times \text{change}}{\text{starting value}} \qquad\qquad \varepsilon = -\frac{\%\text{ change in } Q}{\%\text{ change in } P}\]</span></p>
 <div class="gap">
 
 </div>
-<p>a) The regular ticket price.</p>
-<p>b) The hall’s cost per seat for the evening.</p>
-<p>c) Close to zero, since the seat would otherwise be empty.</p>
-<p>d) Negative, since the student will buy snacks.</p>
-</div>
-</section>
-<section class="slide level2">
-<h2>The Sunk Cost Fallacy</h2>
-<div class="plain">
-<p>The hall is paid for and the seat would otherwise sit empty. What does letting one more student in really cost?</p>
-</div>
-<ul>
-<li>It is tempting to count the hall’s spending on the evening, but that money is spent whether the student comes in or not.</li>
-<li>A <em>sunk cost</em> is a cost that has already been incurred and cannot be recovered.</li>
-<li>Letting sunk costs sway what you decide next is such a common mistake that it has its own name: the <em>sunk cost fallacy</em>.
-<ul>
-<li>For example, sitting through a movie you are not enjoying because you paid for the ticket.</li>
-</ul></li>
-</ul>
-</section>
-<section class="slide level2">
-<h2>Where We Left Off</h2>
-<ul>
-<li>Individuals make <em>choices</em> by weighing <em>costs</em> and <em>benefits</em>.</li>
-<li>The <em>economic cost</em> of an action is more than its direct cost: <span class="math display">\[\text{economic cost} = \text{direct cost} + \text{opportunity cost}\]</span></li>
-<li><em>Opportunity cost</em>: the value of the next-best alternative you give up.</li>
-<li>So far, we have said that capitalism expanded our opportunities to specialize, by enlarging the role of both <em>firms</em> and <em>markets</em>.</li>
-</ul>
-<div class="takeaway">
-<p><em>Today</em>: why specialization and trading make us better off.</p>
-</div>
-</section>
-<section class="slide level2">
-<h2>I, Pencil (Leonard Read, 1958)</h2>
-<div class="columns">
-<div class="column" style="width:70%;">
-<div class="plain">
-<p>A pencil tells the story of how it was made:</p>
-</div>
-<ul>
-<li>Wood from Oregon, graphite from Sri Lanka, brass from mined zinc and copper, an eraser from rapeseed oil.</li>
-<li>Thousands of workers involved, loggers, miners, sailors, none of whom set out to make a pencil.</li>
-<li>No single person knows how to make one from scratch.</li>
-<li>No one is in charge: markets coordinate all of them, Smith’s <em>invisible hand</em> at work.</li>
-</ul>
-</div><div class="column" style="width:30%;">
-<p><img data-src="img/pencil.png" alt="A plain wooden pencil, sharpened, with a metal ferrule and a pink eraser, standing upright." height="480"></p>
-</div></div>
-</section>
-<section class="slide level2">
-<h2>The £4 Toaster</h2>
-<div class="columns">
-<div class="column" style="width:55%;">
-<ul>
-<li>In 2009, the designer Thomas Thwaites set out to build a toaster from scratch.</li>
-<li>He mined his own iron ore, smelted it, made plastic from potato starch, and drew his own copper wire.</li>
-<li>Nine months and about £1,187 later, his toaster worked for about five seconds before it began to melt.</li>
-<li>The store sold the same toaster for £3.94, about $5.</li>
-</ul>
-</div><div class="column" style="width:45%;">
-<p><img data-src="img/toaster.jpg" alt="Thomas Thwaites' homemade toaster: a lumpy appliance with a rough, cracked beige potato-starch shell, exposed metal parts, and a bare wire running to a crude plug."></p>
-</div></div>
-</section>
-<section class="slide level2">
-<h2>We All Specialize</h2>
-<div class="takeaway">
-<p><em>Specialization</em>: each person does just one or a few of the large number of tasks necessary to complete some project or reach some goal.</p>
-</div>
-<ul>
-<li><em>People</em> specialize: some weld, some teach, some design buildings.</li>
-<li><em>Firms</em> specialize: often in a single step of making a single good.</li>
-<li><em>Countries</em> specialize: gold and knitwear are Cambodia’s largest exports; Singapore’s are integrated circuits.</li>
-</ul>
-<div class="fragment">
-<p>This seems obvious, but just two centuries ago, most families grew their own food and made much of their own clothing.</p>
-</div>
-</section>
-<section class="slide level2">
-<h2>Why Specialize?</h2>
-<ul>
-<li><em>Learning by doing</em>: we acquire skills as we produce things.</li>
-<li><em>Differences in ability</em>: from skill, or from the soil, climate, and resources around us.</li>
-<li><em>Economies of scale</em>: producing many units of a good often costs less per unit than producing a few.</li>
-</ul>
-</section>
-<section class="slide level2">
-<h2>Meal Prep</h2>
-<div class="plain">
-<p>Pablo and Lin are neighbors. Each spends about 8 hours on Sunday baking bread and making cheese for the week’s meals. If they spent the whole day on just one food:</p>
-</div>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th style="text-align: left;"></th>
-<th style="text-align: center;">Loaves of bread</th>
-<th style="text-align: center;">Pounds of cheese</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Pablo</td>
-<td style="text-align: center;">12</td>
-<td style="text-align: center;">6</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Lin</td>
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">4</td>
-</tr>
-</tbody>
-</table>
-<div class="plain">
-<p>They can also split the day: with half his time on each food, Pablo would make 6 loaves and 3 pounds of cheese.</p>
-</div>
-<div class="fragment">
-<div class="takeaway">
-<p><em>Think, pair, share</em>: Pablo can make more of <em>both</em> goods. Is there still a gain from trading with Lin? Think for a minute, then see what your neighbor thinks.</p>
-</div>
-</div>
-</section>
-<section class="slide level2">
-<h2>Absolute Advantage</h2>
-<div class="takeaway">
-<p>A person or a country has an <em>absolute advantage</em> in the production of a particular good if, given a set of available inputs, they can produce more of it than another person or country.</p>
-</div>
-<ul>
-<li>Pablo has an absolute advantage in both goods: 12 loaves versus 2, and 6 pounds of cheese versus 4.</li>
-<li>So it may seem that Pablo has nothing to gain from trading with Lin.</li>
-<li>But that turns out not to be right. To see why, we need to look at each person’s <em>opportunity cost</em> of producing each good, not at who makes more.</li>
-</ul>
-</section>
-<section class="slide level2">
-<h2>Opportunity Costs</h2>
-<div class="plain">
-<p>So what does each of them give up? Pablo’s Sunday can produce 12 loaves or 6 pounds of cheese, so for Pablo each pound of cheese costs 12 / 6 = 2 loaves of bread.</p>
-</div>
+<div class="fixedtable wide">
 <table class="caption-top">
 <colgroup>
-<col style="width: 34%">
-<col style="width: 31%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Opportunity cost of…</th>
-<th style="text-align: right;">1 pound of cheese</th>
-<th style="text-align: right;">1 loaf of bread</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Pablo</td>
-<td style="text-align: right;">12 / 6 = 2 loaves</td>
-<td style="text-align: right;">6 / 12 = 0.5 pounds</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Lin</td>
-<td style="text-align: right;">2 / 4 = 0.5 loaves</td>
-<td style="text-align: right;">4 / 2 = 2 pounds</td>
-</tr>
-</tbody>
-</table>
-<div class="fragment">
-<p>A pound of cheese costs Pablo four times as much bread as it costs Lin. The other way around, a loaf costs Lin four times as much cheese as it costs Pablo.</p>
-</div>
-</section>
-<section class="slide level2">
-<h2>Comparative Advantage</h2>
-<div class="takeaway">
-<p>A person or a country has a <em>comparative advantage</em> in the production of a particular good if the cost to them of producing it, relative to the cost of another good, is lower than for another person or a country.</p>
-</div>
-<ul>
-<li>Cost of a pound of cheese: 0.5 loaves for Lin, 2 loaves for Pablo.<br>
-<span class="math inline">\(\Rightarrow\)</span> Lin has the comparative advantage in <em>cheese</em>.</li>
-<li>Cost of a loaf of bread: 0.5 pounds for Pablo, 2 pounds for Lin.<br>
-<span class="math inline">\(\Rightarrow\)</span> Pablo has the comparative advantage in <em>bread</em>.</li>
-<li>Nobody can have a comparative advantage in everything: relatively cheaper at one food means relatively more expensive at the other.</li>
-</ul>
-</section>
-<section class="slide level2">
-<h2>The Example in a Picture</h2>
-<div class="columns">
-<div class="column" style="width:46%;">
-<ul>
-<li>Each line shows every mix of bread and cheese one person can make.</li>
-<li>This is called their production possibilities frontier, or <em>PPF</em>.</li>
-<li>Pablo’s line is <em>higher</em>; Lin’s is <em>flatter</em>: cheese costs Lin less bread.</li>
-</ul>
-<div class="takeaway">
-<p>Height shows absolute advantage; slope shows comparative advantage.</p>
-</div>
-</div><div class="column" style="width:54%;">
-<p><img data-src="img/ppf-side.svg" alt="Pounds of cheese on the horizontal axis, loaves of bread on the vertical. Two straight lines: Pablo's runs from 12 loaves down to 6 pounds of cheese, Lin's from 2 loaves down to 4 pounds. Pablo's line lies above Lin's everywhere, but Lin's is the flatter of the two."></p>
-</div></div>
-</section>
-<section class="slide level2">
-<h2>Self-Sufficiency</h2>
-<div class="plain">
-<p>If they cannot trade, each eats exactly what they make. Suppose each of them spends <em>75% of their time on bread and 25% on cheese</em>.</p>
-</div>
-<div class="totalrule">
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th style="text-align: left;"></th>
-<th style="text-align: right;">Loaves of bread</th>
-<th style="text-align: right;">Pounds of cheese</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Pablo</td>
-<td style="text-align: right;">0.75 × 12 = 9</td>
-<td style="text-align: right;">0.25 × 6 = 1.5</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Lin</td>
-<td style="text-align: right;">0.75 × 2 = 1.5</td>
-<td style="text-align: right;">0.25 × 4 = 1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>Total</strong></td>
-<td style="text-align: right;"><strong>10.5</strong></td>
-<td style="text-align: right;"><strong>2.5</strong></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="fragment">
-<p>Under <em>self-sufficiency</em>, each person consumes exactly what they produce.</p>
-</div>
-</section>
-<section class="slide level2">
-<h2>Specializing by Comparative Advantage</h2>
-<div class="plain">
-<p>Now suppose <em>each of them makes only the food in which they have the comparative advantage</em>: so Pablo makes bread, and Lin makes cheese.</p>
-</div>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th style="text-align: left;"></th>
-<th style="text-align: center;">Loaves of bread</th>
-<th style="text-align: center;">Pounds of cheese</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">On their own (total)</td>
-<td style="text-align: center;">10.5</td>
-<td style="text-align: center;">2.5</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Specialized</td>
-<td style="text-align: center;"><strong>12</strong></td>
-<td style="text-align: center;"><strong>4</strong></td>
-</tr>
-</tbody>
-</table>
-<div class="fragment">
-<p>The two of them now produce <em>1.5 more loaves and 1.5 more pounds of cheese</em> than before, with the same skills and the same hours. Total output went up just from rearranging who does what.</p>
-</div>
-</section>
-<section class="slide level2">
-<h2>Specialization Without Trade</h2>
-<div class="plain">
-<p>Total output is higher, but look at what each of them ends up with.</p>
-</div>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th style="text-align: left;"></th>
-<th style="text-align: left;"></th>
-<th style="text-align: center;">On their own</th>
-<th style="text-align: center;"><strong>Specialized</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Pablo</td>
-<td style="text-align: left;">Bread</td>
-<td style="text-align: center;">9</td>
-<td style="text-align: center;"><strong>12</strong></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Cheese</td>
-<td style="text-align: center;">1.5</td>
-<td style="text-align: center;"><strong>0</strong></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Lin</td>
-<td style="text-align: left;">Bread</td>
-<td style="text-align: center;">1.5</td>
-<td style="text-align: center;"><strong>0</strong></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Cheese</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;"><strong>4</strong></td>
-</tr>
-</tbody>
-</table>
-<div class="fragment">
-<p>Pablo has 12 loaves and no cheese. Lin has 4 pounds of cheese and no bread. Specializing is only worthwhile if they can <em>trade</em>.</p>
-</div>
-</section>
-<section class="slide level2">
-<h2>Specialization and Trade</h2>
-<div class="plain">
-<p>Now suppose they agree on a deal: <em>Lin sells Pablo 2 pounds of cheese for 2 loaves of bread</em>.</p>
-</div>
-<div class="totalrule2">
-<table class="caption-top">
-<colgroup>
-<col style="width: 14%">
-<col style="width: 11%">
 <col style="width: 20%">
-<col style="width: 14%">
 <col style="width: 18%">
-<col style="width: 20%">
+<col style="width: 21%">
+<col style="width: 23%">
+<col style="width: 18%">
 </colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;"></th>
-<th style="text-align: left;"></th>
-<th style="text-align: center;">On their own</th>
-<th style="text-align: center;">Specialized</th>
-<th style="text-align: center;"><strong>Trades</strong></th>
-<th style="text-align: center;"><strong>Consumes</strong></th>
+<th style="text-align: left;">Price rises from</th>
+<th style="text-align: right;">Demand, <span class="math inline">\(Q\)</span></th>
+<th style="text-align: right;">% change in <span class="math inline">\(P\)</span></th>
+<th style="text-align: right;">% change in <span class="math inline">\(Q\)</span></th>
+<th style="text-align: right;">Elasticity, <span class="math inline">\(\varepsilon\)</span></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Pablo</td>
-<td style="text-align: left;">Bread</td>
-<td style="text-align: center;">9</td>
-<td style="text-align: center;">12</td>
-<td style="text-align: center;"><strong>sells 2</strong></td>
-<td style="text-align: center;"><strong>10</strong></td>
+<td style="text-align: left;">$50 to $60</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Cheese</td>
-<td style="text-align: center;">1.5</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;"><strong>buys 2</strong></td>
-<td style="text-align: center;"><strong>2</strong></td>
+<td style="text-align: left;">$100 to $110</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Lin</td>
-<td style="text-align: left;">Bread</td>
-<td style="text-align: center;">1.5</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;"><strong>buys 2</strong></td>
-<td style="text-align: center;"><strong>2</strong></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Cheese</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">4</td>
-<td style="text-align: center;"><strong>sells 2</strong></td>
-<td style="text-align: center;"><strong>2</strong></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>Total</strong></td>
-<td style="text-align: left;">Bread</td>
-<td style="text-align: center;">10.5</td>
-<td style="text-align: center;">12</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"><strong>12</strong></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Cheese</td>
-<td style="text-align: center;">2.5</td>
-<td style="text-align: center;">4</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"><strong>4</strong></td>
+<td style="text-align: left;">$200 to $210</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
 </tr>
 </tbody>
 </table>
 </div>
-<div class="fragment">
-<p>Compare the first column with the last: both of them now consume more of both goods.</p>
-</div>
 </section>
 <section class="slide level2">
-<h2>Trade in the Picture</h2>
-
-<img data-src="img/ppf-trade.svg" alt="The two production possibility frontiers, Pablo's from 12 loaves of bread to 6 pounds of cheese and Lin's from 2 loaves to 4 pounds. Filled dots mark each person on their own: Pablo at 1.5 pounds and 9 loaves, Lin at 1 pound and 1.5 loaves, each on their own line. Open diamonds mark consumption after trade: Pablo at 2 pounds and 10 loaves, Lin at 2 pounds and 2 loaves. Both diamonds sit above that person's own line, at combinations neither could have made alone." class="r-stretch"></section>
-<section class="slide level2">
-<h2>Why Did That Work?</h2>
+<h2>Four Ways to Write the Elasticity</h2>
 <div class="plain">
-<p>Pablo bought 2 pounds of cheese from Lin, even though Pablo could have made them in less time. Why does that make sense?</p>
+<p>When price changes by <span class="math inline">\(\Delta P\)</span> and demand by <span class="math inline">\(\Delta Q\)</span>:</p>
+</div>
+<div class="fixedtable wide formulas">
+<table class="caption-top">
+<colgroup>
+<col style="width: 6%">
+<col style="width: 50%">
+<col style="width: 44%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: left;">Using</th>
+<th style="text-align: center;">Elasticity</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Percentage changes</td>
+<td style="text-align: center;"><span class="math inline">\(\varepsilon = -\dfrac{\%\text{ change in } Q}{\%\text{ change in } P}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Proportional changes</td>
+<td style="text-align: center;"><span class="math inline">\(\varepsilon = -\dfrac{\Delta Q / Q}{\Delta P / P}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">The fraction simplified</td>
+<td style="text-align: center;"><span class="math inline">\(\varepsilon = -\dfrac{P}{Q} \times \dfrac{\Delta Q}{\Delta P}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">The slope of the demand curve, <span class="math inline">\(\Delta P / \Delta Q\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\varepsilon = -\dfrac{P}{Q} \times \dfrac{1}{\text{slope}}\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="slide level2">
+<h2>Worksheet, Activity 2</h2>
+<div class="plain">
+<p>Use formula 3 to find the elasticity at the same three prices. Do you get the same answers as in Activity 1?</p>
+</div>
+<p><span class="math display">\[Q = 90 - 0.3\,P \qquad \varepsilon = -\frac{P}{Q} \times \frac{\Delta Q}{\Delta P}\]</span></p>
+<div class="gap">
+
+</div>
+<div class="fixedtable">
+<table class="caption-top">
+<colgroup>
+<col style="width: 40%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Price, <span class="math inline">\(P\)</span></td>
+<td style="text-align: right;">$50</td>
+<td style="text-align: right;">$100</td>
+<td style="text-align: right;">$200</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Demand, <span class="math inline">\(Q\)</span></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\Delta Q / \Delta P\)</span></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Elasticity, <span class="math inline">\(\varepsilon\)</span></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="slide level2">
+<h2>Elasticity and the Slope</h2>
+<div class="plain">
+<p>Every $10 rise in price costs 3 students, wherever you start, so the slope is the same everywhere. Is the elasticity?</p>
+</div>
+<p><img data-src="img/class-elasticity.svg" class="fragment" alt="The straight orange demand line for a day at a Dodgers game, price for the day on the vertical axis from 0 to 300 dollars and number of students on the horizontal axis from 0 to 90. It runs from 300 dollars at zero students to zero dollars at 90 students. Two labelled points: at 250 dollars, with 15 students, the elasticity is 5; at 100 dollars, with 60 students, the elasticity is 0.5." height="450"></p>
+</section>
+<section class="slide level2">
+<h2>Why the Elasticity Changes</h2>
+<ul>
+<li>At $250, a $10 rise is only 4% of the price, but 3 students are 20% of the 15 who would go. So <span class="math inline">\(\varepsilon = 5\)</span>.</li>
+<li>At $100, a $10 rise is 10% of the price, and 3 students are only 5% of the 60 who would go. So <span class="math inline">\(\varepsilon = 0.5\)</span>.</li>
+<li>When the price is high and few people buy, a price rise loses a large share of the buyers, so demand is more elastic.</li>
+<li>When the price is low and many people buy, the same rise loses only a small share of them, so demand is less elastic.</li>
+</ul>
+</section>
+<section class="slide level2">
+<h2>Why Measure How Buyers Respond?</h2>
+<div class="plain">
+<p>How strongly the quantity bought responds to a change in price is the <em>price elasticity of demand</em>.</p>
 </div>
 <ul>
-<li>Every hour Pablo spends on cheese costs a lot of bread. An hour of Lin’s costs only a little.</li>
-<li>What matters is not who is better at making cheese, but whose cheese costs less <em>in bread</em>. That is Lin.</li>
+<li>A firm wants to know whether raising its price will bring in more revenue or less.</li>
+<li>A city setting bus fares wants to know whether a higher fare raises more money or empties the buses.</li>
+<li>Why not just use the slope of the demand curve? The slope depends on the units: gallons or liters, dollars or euros.</li>
+<li>The elasticity uses percentage changes, so it does not depend on the units, and we can compare gasoline with cars.</li>
 </ul>
-<div class="takeaway">
-<p>Someone can be worse at producing everything and still have a comparative advantage in something.</p>
+</section>
+<section class="slide level2">
+<h2>Raise the Price by 1%</h2>
+<div class="plain">
+<p>The price of each item goes up by 1%. In each row, which one loses more buyers?</p>
+</div>
+<table class="caption-top">
+<colgroup>
+<col style="width: 45%">
+<col style="width: 54%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">A</th>
+<th style="text-align: left;">B</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Gas at the only station for miles</td>
+<td style="text-align: left;">Gas at one of four stations on the same corner</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Concert tickets</td>
+<td style="text-align: left;">Toilet paper</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Breakfast cereal</td>
+<td style="text-align: left;">Apple Cinnamon Cheerios</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Gasoline over the next five years</td>
+<td style="text-align: left;">Gasoline this week</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Salt</td>
+<td style="text-align: left;">A new car</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="slide level2">
+<h2>Why Elasticity Differs Between Goods</h2>
+<div class="plain">
+<p>Buyers respond more when it is easy to buy less or switch.</p>
+</div>
+<div class="fixedtable wide">
+<table class="caption-top">
+<colgroup>
+<col style="width: 47%">
+<col style="width: 53%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Demand is more elastic when</th>
+<th style="text-align: left;">Example from the last slide</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">the good has close substitutes</td>
+<td style="text-align: left;">Gas at one of four stations, not the only one</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">the good is a luxury, not a necessity</td>
+<td style="text-align: left;">Concert tickets, not toilet paper</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">the market is narrowly defined</td>
+<td style="text-align: left;">Apple Cinnamon Cheerios, not all cereal</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">buyers have more time to adjust</td>
+<td style="text-align: left;">Gasoline over five years, not this week</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">the good is a big share of the budget</td>
+<td style="text-align: left;">A new car, not salt</td>
+</tr>
+</tbody>
+</table>
 </div>
 </section>
 <section class="slide level2">
-<h2>Sharing the Gains from Trade</h2>
+<h2>Who Can Get Away with Raising Prices?</h2>
+<div class="plain">
+<p>A firm’s price elasticity of demand depends on how much competition it faces from other firms. Which firm can raise its price without losing many sales?</p>
+</div>
+<div class="fragment">
 <ul>
-<li>Their deal, 2 pounds of cheese for 2 loaves, comes down to a <em>price</em>: 1 loaf per pound of cheese.</li>
-<li>Neither will trade at a price worse than making the food on their own:
-<ul>
-<li>Lin sells only if the price is above 0.5 loaves per pound, the cost of making cheese.</li>
-<li>Pablo buys only if the price is below 2 loaves per pound, the cost of making cheese at home.</li>
-</ul></li>
-<li>Any price between 0.5 and 2 loaves per pound makes both of them better off. Prices near 0.5 favor Pablo, and prices near 2 favor Lin.</li>
+<li>If lots of firms sell similar products that customers would consider as alternatives, demand will be more elastic. If the firm raises its price, many consumers may decide to buy elsewhere.</li>
+<li>Competition from rival products with similar characteristics limits the firm’s ability to raise its price.</li>
+<li>If the firm’s product has unique qualities that appeal to consumers and are not available elsewhere, demand will be less elastic. It can set a high price, and sales will remain high.</li>
 </ul>
+</div>
 </section>
 <section class="slide level2">
-<h2>Questions</h2>
+<h2>Your Turn</h2>
+<div class="plain">
+<p>A shop sells 20 hats per week at $10 each. When it increases the price to $12, the number of hats sold falls to 15 per week. Which of these statements are true?</p>
+</div>
 <ul>
-<li class="fragment">Suppose Taylor Swift types faster than any assistant. Should she answer her own fan mail?</li>
-<li class="fragment">You are better than your roommate at both cooking and cleaning. Should you do both?</li>
-<li class="fragment">Should the United States import goods that it could produce more cheaply at home?</li>
-<li class="fragment">Are there any downsides to specializing?</li>
+<li>When the price increases from $10 to $12, demand decreases by 25%.</li>
+<li>A 20% increase in the price causes a 25% fall in demand.</li>
+<li>The demand for hats is inelastic.</li>
+<li>Using these figures, we can estimate the elasticity of demand to be 1.25.</li>
 </ul>
+<div class="plain">
+<p>(Mentimeter)</p>
+</div>
 </section>
 <section class="slide level2">
-<h2>What to Do Next</h2>
+<h2>Quiz 3</h2>
 <ul>
-<li>Before next class: read section <em>2.3</em>, go over the <em>slides</em> and the <em>worksheet</em>, and work the <em>practice problems</em>.</li>
-<li>While driving or at the gym, <a href="https://freakonomics.com/podcast/an-economics-lesson-from-a-talking-pencil-update/">listen to <em>An Economics Lesson from a Talking Pencil</em>, from Freakonomics Radio</a>.</li>
-<li>No class Monday (Labor Day). <em>Quiz 2 is Wednesday, September 9</em> (Lectures 3 and 4).</li>
-<li>Next week we go inside the firm: what it costs to make things, and how a firm chooses its price.</li>
+<li><em>Quiz 3 is Monday, September 21</em>, and covers Lectures 5 to 7.</li>
+<li>Go through all the slides, work through worksheets and the practice problems before the quiz.</li>
 </ul>
 
 
@@ -586,7 +503,7 @@ Div Bhagia
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
-<p>ECON 201 · Lecture 4</p>
+<p>ECON 201 · Lecture 7</p>
 </div>
 </div></div>
 

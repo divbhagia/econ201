@@ -1,0 +1,230 @@
+---
+title: "Who Can Get Away with Raising Prices?<br>Demand and Elasticity"
+subtitle: "ECON 201: Principles of Microeconomics<br>Lecture 7"
+author: "Div Bhagia"
+format:
+  revealjs:
+    theme: [default, ../assets/slides.scss]
+    slide-number: true
+    footer: "ECON 201 · Lecture 7"
+    filters:
+      - ../assets/strip-notes.lua
+---
+
+## Last Class: The Cost Side
+
+$$\text{Profit} = \underbrace{P \times Q}_{\text{revenue}} - \underbrace{C(Q)}_{\text{cost}}$$
+
+-   Last class we focused on the cost side, $C(Q)$.
+-   Today we focus on revenue, $P \times Q$, which depends on the *demand curve*.
+-   Remember the *trade-off*: if firm set's higher price, it will loose some consumers. How many? That depends on the shape of the demand curve.
+
+## How Much Would You Pay?
+
+::: plain
+In Lecture 3, I asked for the most you would pay for a day at a *Dodgers* game. What you gave me was your *willingness to pay (WTP)*, and we can use it to construct a demand curve.
+:::
+
+![](img/class-demand.svg){.fragment .nostretch height="430" fig-alt="A downward-sloping staircase labelled Demand, price for the day on the vertical axis from 0 to 400 dollars and number of students on the horizontal axis from 0 to 90. Each step is one of the 88 answers, lined up from the highest to the lowest: 4 students would pay 400 dollars, and 9 would pay nothing. Two labelled points: 18 students at 200 dollars and 62 students at 100 dollars."}
+
+## Willingness to Pay
+
+-   *Willingness to pay (WTP)* is an indicator of how much a person values a good, measured by the maximum amount they would pay to acquire a unit of the good.
+-   You will go to the game if the price for the day is less than or equal to your WTP.
+-   Line up your answers in order of WTP, with the highest first. At any price, demand is the number of you whose WTP is greater than or equal to that price.
+-   At \$200, 18 of you have a WTP of \$200 or more, so demand is 18. At \$100, demand is 62.
+
+## The Demand Curve for a Dodgers Game
+
+::: plain
+Linearizing your answers gives this demand curve:
+:::
+
+$$P = 300 - \frac{10}{3}\,Q \quad\Rightarrow\quad Q = 90 - 0.3\,P$$
+
+![](img/class-linear.svg){.nostretch height="395" fig-alt="The class's 88 answers drawn as a grey downward-sloping staircase labelled Your answers, price for the day on the vertical axis from 0 to 400 dollars and number of students on the horizontal axis from 0 to 90. A straight orange line labelled P = 300 minus ten thirds Q runs from 300 dollars at zero students to zero dollars at 90 students and follows the staircase closely. One labelled point on the line, with dashed guides to both axes: 60 students at 100 dollars."}
+
+## How Much Does Demand Respond?
+
+-   Sellers setting ticket prices, and economists and policymakers setting policy, often want to know how a change in price will change the quantity people buy.
+-   Your demand curve is $Q = 90 - 0.3\,P$. If the price rises by \$10, from \$100 to \$110, demand falls by 3 students.
+    -   When $P = 100$, $Q = 90 - 0.3 \times 100 = 60$.
+    -   When $P = 110$, $Q = 90 - 0.3 \times 110 = 57$.
+-   Often it is more useful to measure the change in percentage terms: if the price rises by 1%, by what percentage does the quantity fall?
+-   This standard measure is called the *price elasticity of demand*.
+
+## Price Elasticity of Demand
+
+::: plain
+The *price elasticity of demand* is the percentage change in demand that would occur in response to a 1% increase in price:
+:::
+
+$$\varepsilon = -\frac{\%\text{ change in demand}}{\%\text{ change in price}}$$
+
+-   Quantity falls when price increases, so the minus sign ensures that we get a positive number.
+-   Demand is *elastic* if $\varepsilon$ is greater than 1, and *inelastic* if less than 1.
+
+## Elasticity of Demand for a Dodgers Game
+
+::: plain
+When the price rises from \$100 to \$110, demand falls from 60 to 57 students.
+:::
+
+$$\begin{aligned}
+\%\text{ change in price} &= \frac{100 \times 10}{100} = 10\% \\[0.3em]
+\%\text{ change in demand} &= \frac{100 \times (-3)}{60} = -5\%
+\end{aligned}$$
+
+$$\varepsilon = -\frac{-5}{10} = 0.5$$
+
+-   At \$100, a 1% increase in the price reduces the number of you who would go by 0.5%, so demand is inelastic.
+
+## Worksheet, Activity 1
+
+::: plain
+The demand curve is given by $Q = 90 - 0.3\,P$. Find the elasticity of demand for each \$10 price rise below. At which prices is demand elastic?
+:::
+
+$$\%\text{ change} = \frac{100 \times \text{change}}{\text{starting value}} \qquad\qquad \varepsilon = -\frac{\%\text{ change in } Q}{\%\text{ change in } P}$$
+
+::: gap
+:::
+
+::: {.fixedtable .wide}
+| Price rises from | Demand, $Q$ | % change in $P$ | % change in $Q$ | Elasticity, $\varepsilon$ |
+|:-----------------|---------:|---------:|---------:|---------:|
+| \$50 to \$60     |          |          |          |          |
+| \$100 to \$110   |          |          |          |          |
+| \$200 to \$210   |          |          |          |          |
+
+: {tbl-colwidths="[20,18,21,23,18]"}
+:::
+
+## Four Ways to Write the Elasticity
+
+::: plain
+When price changes by $\Delta P$ and demand by $\Delta Q$:
+:::
+
+::: {.fixedtable .wide .formulas}
+|     | Using                                        | Elasticity                                                         |
+|:----|:---------------------------------------------|:------------------------------------------------------------------:|
+| 1   | Percentage changes                           | $\varepsilon = -\dfrac{\%\text{ change in } Q}{\%\text{ change in } P}$ |
+| 2   | Proportional changes                         | $\varepsilon = -\dfrac{\Delta Q / Q}{\Delta P / P}$                |
+| 3   | The fraction simplified                      | $\varepsilon = -\dfrac{P}{Q} \times \dfrac{\Delta Q}{\Delta P}$    |
+| 4   | The slope of the demand curve, $\Delta P / \Delta Q$ | $\varepsilon = -\dfrac{P}{Q} \times \dfrac{1}{\text{slope}}$ |
+
+: {tbl-colwidths="[6,50,44]"}
+:::
+
+## Worksheet, Activity 2
+
+::: plain
+Use formula 3 to find the elasticity at the same three prices. Do you get the same answers as in Activity 1?
+:::
+
+$$Q = 90 - 0.3\,P \qquad \varepsilon = -\frac{P}{Q} \times \frac{\Delta Q}{\Delta P}$$
+
+::: gap
+:::
+
+::: fixedtable
+|                                  |        |        |        |
+|:---------------------------------|-------:|-------:|-------:|
+| Price, $P$                       | \$50   | \$100  | \$200  |
+| Demand, $Q$                      |        |        |        |
+| $\Delta Q / \Delta P$            |        |        |        |
+| Elasticity, $\varepsilon$        |        |        |        |
+
+: {tbl-colwidths="[40,20,20,20]"}
+:::
+
+## Elasticity and the Slope
+
+::: plain
+Every \$10 rise in price costs 3 students, wherever you start, so the slope is the same everywhere. Is the elasticity?
+:::
+
+![](img/class-elasticity.svg){.fragment .nostretch height="450" fig-alt="The straight orange demand line for a day at a Dodgers game, price for the day on the vertical axis from 0 to 300 dollars and number of students on the horizontal axis from 0 to 90. It runs from 300 dollars at zero students to zero dollars at 90 students. Two labelled points: at 250 dollars, with 15 students, the elasticity is 5; at 100 dollars, with 60 students, the elasticity is 0.5."}
+
+## Why the Elasticity Changes
+
+-   At \$250, a \$10 rise is only 4% of the price, but 3 students are 20% of the 15 who would go. So $\varepsilon = 5$.
+-   At \$100, a \$10 rise is 10% of the price, and 3 students are only 5% of the 60 who would go. So $\varepsilon = 0.5$.
+-   When the price is high and few people buy, a price rise loses a large share of the buyers, so demand is more elastic.
+-   When the price is low and many people buy, the same rise loses only a small share of them, so demand is less elastic.
+
+## Why Measure How Buyers Respond?
+
+::: plain
+How strongly the quantity bought responds to a change in price is the *price elasticity of demand*.
+:::
+
+-   A firm wants to know whether raising its price will bring in more revenue or less.
+-   A city setting bus fares wants to know whether a higher fare raises more money or empties the buses.
+-   Why not just use the slope of the demand curve? The slope depends on the units: gallons or liters, dollars or euros.
+-   The elasticity uses percentage changes, so it does not depend on the units, and we can compare gasoline with cars.
+
+## Raise the Price by 1%
+
+::: plain
+The price of each item goes up by 1%. In each row, which one loses more buyers?
+:::
+
+| A                                          | B                                                  |
+|:-------------------------------------------|:---------------------------------------------------|
+| Gas at the only station for miles          | Gas at one of four stations on the same corner     |
+| Concert tickets                            | Toilet paper                                       |
+| Breakfast cereal                           | Apple Cinnamon Cheerios                            |
+| Gasoline over the next five years          | Gasoline this week                                 |
+| Salt                                       | A new car                                          |
+
+## Why Elasticity Differs Between Goods
+
+::: plain
+Buyers respond more when it is easy to buy less or switch.
+:::
+
+::: {.fixedtable .wide}
+| Demand is more elastic when                    | Example from the last slide                             |
+|:-----------------------------------------------|:--------------------------------------------------------|
+| the good has close substitutes                 | Gas at one of four stations, not the only one  |
+| the good is a luxury, not a necessity          | Concert tickets, not toilet paper                       |
+| the market is narrowly defined                 | Apple Cinnamon Cheerios, not all cereal        |
+| buyers have more time to adjust                | Gasoline over five years, not this week                 |
+| the good is a big share of the budget          | A new car, not salt                                     |
+
+: {tbl-colwidths="[47,53]"}
+:::
+
+## Who Can Get Away with Raising Prices?
+
+::: plain
+A firm's price elasticity of demand depends on how much competition it faces from other firms. Which firm can raise its price without losing many sales?
+:::
+
+::: fragment
+-   If lots of firms sell similar products that customers would consider as alternatives, demand will be more elastic. If the firm raises its price, many consumers may decide to buy elsewhere.
+-   Competition from rival products with similar characteristics limits the firm's ability to raise its price.
+-   If the firm's product has unique qualities that appeal to consumers and are not available elsewhere, demand will be less elastic. It can set a high price, and sales will remain high.
+:::
+
+## Your Turn
+
+::: plain
+A shop sells 20 hats per week at \$10 each. When it increases the price to \$12, the number of hats sold falls to 15 per week. Which of these statements are true?
+:::
+
+-   When the price increases from \$10 to \$12, demand decreases by 25%.
+-   A 20% increase in the price causes a 25% fall in demand.
+-   The demand for hats is inelastic.
+-   Using these figures, we can estimate the elasticity of demand to be 1.25.
+
+::: plain
+(Mentimeter)
+:::
+
+## Quiz 3
+
+-   *Quiz 3 is Monday, September 21*, and covers Lectures 5 to 7.
+-   Go through all the slides and work through worksheets and the practice problems before the quiz.

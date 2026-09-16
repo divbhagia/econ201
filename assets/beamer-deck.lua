@@ -207,6 +207,42 @@ local function column(div)
   return div
 end
 
+-- Quarto reads `: {tbl-colwidths="[40,20,20,20]"}` under a pipe table as
+-- column widths; plain pandoc, which this build runs, reads it as a caption
+-- and printed "Table 1: {tbl-colwidths=...}" under the table. Drop the
+-- caption, keeping the widths on the table for a .fixedtable div to use.
+function Table(tbl)
+  local text = pandoc.utils.stringify(tbl.caption.long)
+  local spec = text:match('^{tbl%-colwidths=.-%[([%d,%s]+)%].-}$')
+  if not spec then return nil end
+  tbl.caption.long = pandoc.Blocks({})
+  tbl.attr.attributes['colwidths'] = spec
+  return tbl
+end
+
+-- ::: {.fixedtable}, as in assets/slides.scss: the table takes its column
+-- widths at 95% of the line (the PDF type is larger relative to the frame
+-- than on the web), so it keeps one size as its rows fill in.
+local function fixedtable(div)
+  -- Taller rows than the default, so fractions in a cell clear the rules.
+  -- \arraystretch had no effect under ltx-talk; array's \extrarowheight does.
+  local out = pandoc.List({pandoc.RawBlock('latex', '\\begingroup\\setlength{\\extrarowheight}{0.9em}')})
+  out:extend(div.content:walk({
+    Table = function(tbl)
+      local spec = tbl.attr.attributes['colwidths']
+      if not spec then return nil end
+      local i = 0
+      for w in spec:gmatch('%d+') do
+        i = i + 1
+        if tbl.colspecs[i] then tbl.colspecs[i][2] = 0.95 * tonumber(w) / 100 end
+      end
+      return tbl
+    end
+  }))
+  out:insert(pandoc.RawBlock('latex', '\\endgroup'))
+  return out
+end
+
 -- The boxed takeaway on the web deck: set off with air above and below.
 -- Kept as a plain paragraph on purpose; a box here is a paragraph inside a
 -- paragraph, which the tagging code cannot represent.
@@ -239,6 +275,7 @@ function Div(el)
     return out
   end
   if el.classes:includes('column') then return column(el) end
+  if el.classes:includes('fixedtable') then return fixedtable(el) end
   if el.classes:includes('takeaway') then
     local out = pandoc.List({pandoc.RawBlock('latex', '\\vspace{0.6em}')})
     out:extend(el.content)
