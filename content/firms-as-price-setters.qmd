@@ -40,7 +40,10 @@ Materials are posted as we go. See the [Schedule](../schedule.qmd) for dates and
 <h2>Lecture 8: Steak, ramen, and recessions: Other elasticities</h2>
 
 
-<p class="lecture-links dim">Materials posted closer to the date.</p>
+<p class="lecture-links"><a class="btn btn-outline-primary" href="../slides/lecture8.html" target="_blank" rel="noopener" role="button" aria-label="Lecture 8 slides (opens in a new tab)">Slides</a>
+<a class="btn btn-outline-primary" href="../slides/lecture8.pdf" target="_blank" rel="noopener" role="button" aria-label="Lecture 8 slides as a tagged PDF (opens in a new tab)">Slides (PDF)</a>
+<a class="btn btn-outline-primary" href="../practice/practice08.html" target="_blank" rel="noopener" role="button" aria-label="Lecture 8 practice problems (opens in a new tab)">Practice problems</a>
+<a class="btn btn-outline-primary" href="../worksheets/worksheet08.pdf" target="_blank" rel="noopener" role="button" aria-label="Lecture 8 worksheet (opens in a new tab)">Worksheet</a></p>
 :::
 
 ::: {.lecture}

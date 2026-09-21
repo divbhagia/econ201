@@ -219,35 +219,35 @@ Demand is more elastic when buyers can easily switch or buy less:
 : {tbl-colwidths="[38,31,31]"}
 :::
 
-## Real-World Elasticities: Uber
+## Elasticity in the Data: Uber
 
 ::: plain
-Uber raises prices at busy times, and the app rounds the surge multiplier to one decimal.
+Cohen, Hahn, Hall, Levitt, and Metcalfe (2016) used Uber's data. The app rounds the surge multiplier to one decimal.
 :::
 
--   A surge of 1.249 shows as 1.2x, and 1.251 shows as 1.3x. Riders on each side face the same conditions, but one group pays 8.3% more.
+-   A surge of 1.249 shows as 1.2x, and 1.251 shows as 1.3x. Riders on each side face the same conditions, but pay 8.3% more.
 -   At that cutoff, ride requests are about 3% lower. What is the elasticity?
 
 ::: fragment
 $$\varepsilon = -\frac{-3}{8.3} \approx 0.36$$
 
 ::: plain
-Across almost 50 million sessions, most estimates are between 0.4 and 0.6 (Cohen et al., 2016).
+Across almost 50 million sessions, most of their estimates are between 0.4 and 0.6.
 :::
 :::
 
-## Real-World Elasticities: Philadelphia's Soda Tax
+## Elasticity in the Data: A Soda Tax
 
 ::: plain
-In 2017, Philadelphia taxed sweetened drinks 1.5 cents per ounce, and prices at stores in the city rose by 34%.
+Seiler, Tuchman, and Yao (2021) studied Philadelphia's 2017 tax on sweetened drinks. Prices at city stores rose by 34%.
 :::
 
--   Sales at stores in the city fell by 46%, so demand there was elastic: $\varepsilon = 46 / 34 \approx 1.35$.
--   Many shoppers drove to stores just outside the city. Counting those stores, purchases fell by only 22%, so $\varepsilon = 22 / 34 \approx 0.65$.
--   Stores just outside the city are close substitutes, so demand at city stores is more elastic than demand for soda overall.
--   Both numbers matter for policy: the city's tax revenue depends on the 1.35, and how much less soda people drink depends on the 0.65 (Seiler, Tuchman, and Yao, 2021).
+-   Sales of the taxed drinks at city stores fell by 46%, so demand there was elastic: $\varepsilon = 46 / 34 \approx 1.35$.
+-   Many shoppers drove to stores outside the city. Counting those, purchases fell by only 22%, so $\varepsilon = 22 / 34 \approx 0.65$.
+-   Stores outside the city are close substitutes, so demand at city stores is the more elastic of the two.
+-   Both numbers matter for policy: the city's tax revenue depends on the 1.35, and how much less soda people drink depends on the 0.65.
 
-## Real-World Elasticities: Everyday Foods
+## Elasticity in the Data: Everyday Foods
 
 ::: plain
 Average elasticities from 160 US studies (Andreyeva, Long, and Brownell, 2010):

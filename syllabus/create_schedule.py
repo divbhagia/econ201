@@ -355,6 +355,9 @@ MATERIALS = {
     7: {"slides": "slides/lecture7.html", "slides_pdf": "slides/lecture7.pdf",
         "practice": "practice/practice07.html",
         "worksheet": "worksheets/worksheet07.pdf"},
+    8: {"slides": "slides/lecture8.html", "slides_pdf": "slides/lecture8.pdf",
+        "practice": "practice/practice08.html",
+        "worksheet": "worksheets/worksheet08.pdf"},
 }
 
 # Lecture 2's practice page bundles guided reading; from lecture 3 on the

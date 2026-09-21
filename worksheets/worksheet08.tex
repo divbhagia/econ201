@@ -1,0 +1,163 @@
+% !TEX program = lualatex
+% ECON 201, Worksheet 8: Other Elasticities. Compile with LuaLaTeX so the
+% PDF is tagged (see syllabus/Econ201-Syllabus.tex for the same setup).
+% Build from the course root:
+%   latexmk -lualatex -cd worksheets/worksheet08.tex && latexmk -c -cd worksheets/worksheet08.tex
+% Every number here is computed and printed by slides/figures/make_lecture8.py
+% so the worksheet and the deck quote the same figures (Maya's month).
+% Lecture 8 is a quiz day, so this worksheet is two short activities with no
+% back-side problem.
+\DocumentMetadata{
+  pdfstandard=UA-2,
+  pdfversion=2.0,
+  lang=en-US,
+  tagging=on
+}
+\documentclass[11pt]{article}
+
+\usepackage[letterpaper, margin=0.75in, top=0.5in, bottom=0.45in]{geometry}
+\usepackage{fontspec}
+\setmainfont{Fira Sans}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{needspace}
+\usepackage[most]{tcolorbox}
+\definecolor{cream}{HTML}{FDF3EA}
+\definecolor{accent}{HTML}{BF5700}
+\usepackage{titlesec}
+\titleformat{\section}{\large\bfseries\color{accent}}{}{0pt}{}
+\titlespacing*{\section}{0pt}{4pt}{2pt}
+\usepackage{hyperref}
+\hypersetup{pdftitle={ECON 201 Worksheet: Other Elasticities}, pdfauthor={Div Bhagia}, hidelinks}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2pt}
+
+% Ruled answer space: n lines. Plain TeX loop; pgffor's \foreach breaks the
+% enumerate counter when used inside an item.
+\newcount\answerlinecount
+\newcommand{\answerlines}[1]{%
+  \par\vspace{1pt}\answerlinecount=#1
+  \loop\ifnum\answerlinecount>0
+    \rule{\linewidth}{0.3pt}\par\vspace{5pt}%
+    \advance\answerlinecount by -1
+  \repeat
+  \vspace{-5pt}}
+
+% Ruled grids rather than booktabs tables: students write in the cells, so
+% every cell gets visible borders and the blank rows get extra height. One
+% column layout for both activities, so the two tables line up.
+\newcolumntype{C}{>{\centering\arraybackslash}p{2.6cm}}
+\newcommand{\blankrow}{\rule{0pt}{1.8em}}
+
+\begin{document}
+
+{\LARGE\bfseries\color{accent} Worksheet: Other Elasticities}\hfill{\large ECON 201}
+
+% Terms sit on the cream panel, where the brand orange falls below 4.5:1;
+% the darker orange keeps WCAG AA contrast (see CLAUDE.md).
+\definecolor{accentdark}{HTML}{8F4100}
+\newcommand{\term}[1]{\textcolor{accentdark}{\textbf{#1}}}
+
+% Definitions panel list: flush left, compact. Built on the generic list
+% environment so the bullet sits at the panel's left edge; enumitem is avoided
+% for the tagging reason noted in worksheet06.
+\newenvironment{deflist}
+  {\begin{list}{\textbullet}{%
+     \setlength{\leftmargin}{1.1em}\setlength{\labelwidth}{0.7em}%
+     \setlength{\labelsep}{0.4em}\setlength{\itemindent}{0pt}%
+     \setlength{\listparindent}{0pt}\setlength{\topsep}{2pt}%
+     \setlength{\partopsep}{0pt}\setlength{\parsep}{0pt}%
+     \setlength{\itemsep}{2pt}}}
+  {\end{list}}
+
+
+\begin{tcolorbox}[colback=cream, colframe=accent, boxrule=0.6pt, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt, title=Definitions,
+  fonttitle=\bfseries, coltitle=white]
+\begin{deflist}
+\item \term{Income elasticity of demand}: the percentage change in demand that
+  would occur in response to a 1\% increase in income,
+  \[
+    \varepsilon_{\text{income}}
+    = \frac{\%\text{ change in demand}}{\%\text{ change in income}}
+  \]
+  \begin{deflist}
+  \item \term{Normal good}: $\varepsilon_{\text{income}} > 0$. People buy more
+    of it as their income rises. There are two types:
+    \begin{deflist}
+    \item \term{Necessity}: $0 < \varepsilon_{\text{income}} < 1$. Demand grows
+      more slowly than income.
+    \item \term{Luxury}: $\varepsilon_{\text{income}} > 1$. Demand grows faster
+      than income.
+    \end{deflist}
+  \item \term{Inferior good}: $\varepsilon_{\text{income}} < 0$. People buy less
+    of it as their income rises.
+  \end{deflist}
+\item \term{Cross-price elasticity of demand} for good A: the percentage change
+  in demand for A that would occur in response to a 1\% increase in the price
+  of good B,
+  \[
+    \varepsilon_{\text{cross}}
+    = \frac{\%\text{ change in demand for A}}{\%\text{ change in the price of B}}
+  \]
+  \begin{deflist}
+  \item \term{Substitutes}: $\varepsilon_{\text{cross}} > 0$. A rise in the
+    price of B raises demand for A.
+  \item \term{Complements}: $\varepsilon_{\text{cross}} < 0$. A rise in the
+    price of B lowers demand for A.
+  \end{deflist}
+\end{deflist}
+\end{tcolorbox}
+
+\needspace{12\baselineskip}\section{1. Income elasticity}
+
+Maya works part time, and her monthly income rises from \$1,000 to \$1,200.
+Her purchases for the month change as below.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|>{\raggedright\arraybackslash}p{3.1cm}|C|C|C|C|C|}
+\hline
+ & At \$1,000 & At \$1,200 & \% change in demand & Income elasticity & Normal or inferior? \\
+\hline
+Packs of ramen & 40 & 32 & \rule{0pt}{1.8em} & & \\
+\hline
+Gallons of gas & 20 & 22 & \rule{0pt}{1.8em} & & \\
+\hline
+Steak dinners & 2 & 3 & \rule{0pt}{1.8em} & & \\
+\hline
+\end{tabular}
+\end{center}
+
+Which of the normal goods is a necessity, and which is a luxury?
+\answerlines{1}
+
+\needspace{12\baselineskip}\section{2. Cross-price elasticity}
+
+The campus cafe raises the price of a coffee from \$2.50 to \$3.00, and Maya's
+purchases for the month change as below.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|>{\raggedright\arraybackslash}p{3.1cm}|C|C|C|C|C|}
+\hline
+ & At \$2.50 & At \$3.00 & \% change in demand & Cross-price elasticity & Substitutes or complements? \\
+\hline
+Coffee across the street & 6 & 9 & \rule{0pt}{1.8em} & & \\
+\hline
+Donuts at the campus cafe & 8 & 6 & \rule{0pt}{1.8em} & & \\
+\hline
+Packs of ramen & 32 & 32 & \rule{0pt}{1.8em} & & \\
+\hline
+\end{tabular}
+\end{center}
+
+What does ramen's cross-price elasticity tell you?
+\answerlines{1}
+
+\end{document}

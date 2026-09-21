@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Firms as Price Setters – Principles of Microeconomics</title>
+<title>Lecture 8: Practice – Principles of Microeconomics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -69,11 +69,40 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../assets/styles.css">
 </head>
 
-<body class="nav-sidebar docked nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -103,7 +132,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Schedule</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../content/the-big-picture.html" aria-current="page"> 
+    <a class="nav-link" href="../content/the-big-picture.html"> 
 <span class="menu-text">Content</span></a>
   </li>  
   <li class="nav-item compact">
@@ -117,72 +146,32 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../content/firms-as-price-setters.html">III. Firms as Price Setters</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../content/the-big-picture.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">I. The Big Picture</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../content/economists-toolkit.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">II. The Economist’s Toolkit</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../content/firms-as-price-setters.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">III. Firms as Price Setters</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../content/markets-with-many-buyers-and-sellers.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">IV. Markets with Many Buyers and Sellers</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../content/market-successes-and-failures.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">V. Market Successes and Failures</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../content/review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">VI. Review</span></a>
-  </div>
-</li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#devons-month" id="toc-devons-month" class="nav-link active" data-scroll-target="#devons-month">1. Devon’s month</a></li>
+  <li><a href="#carlas-grocery-bill" id="toc-carlas-grocery-bill" class="nav-link" data-scroll-target="#carlas-grocery-bill">2. Carla’s grocery bill</a></li>
+  <li><a href="#reading-the-elasticities" id="toc-reading-the-elasticities" class="nav-link" data-scroll-target="#reading-the-elasticities">3. Reading the elasticities</a></li>
+  <li><a href="#omars-taco-truck" id="toc-omars-taco-truck" class="nav-link" data-scroll-target="#omars-taco-truck">4. Omar’s taco truck</a></li>
+  <li><a href="#sorting-goods" id="toc-sorting-goods" class="nav-link" data-scroll-target="#sorting-goods">5. Sorting goods</a></li>
+  <li><a href="#multiple-choice" id="toc-multiple-choice" class="nav-link" data-scroll-target="#multiple-choice">6. Multiple choice</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Firms as Price Setters</h1>
-<p class="subtitle lead">Module III</p>
+<h1 class="title">Lecture 8: Practice</h1>
+<p class="subtitle lead">Steak, ramen, and recessions: Other elasticities</p>
 </div>
 
 
@@ -199,105 +188,402 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Materials are posted as we go. See the <a href="../schedule.html">Schedule</a> for dates and assessments.</p>
-<div class="lecture">
-<h2 class="anchored">
-Lecture 5: Winning brands and the price of Cheerios
-</h2>
-<p>
-<strong>Reading:</strong> 7.1–7.2
-</p>
-<p class="lecture-links">
-<a class="btn btn-outline-primary" href="../slides/lecture5.html" target="_blank" rel="noopener" role="button" aria-label="Lecture 5 slides (opens in a new tab)">Slides</a> <a class="btn btn-outline-primary" href="../slides/lecture5.pdf" target="_blank" rel="noopener" role="button" aria-label="Lecture 5 slides as a tagged PDF (opens in a new tab)">Slides (PDF)</a> <a class="btn btn-outline-primary" href="../worksheets/worksheet05.pdf" target="_blank" rel="noopener" role="button" aria-label="Lecture 5 worksheet (opens in a new tab)">Worksheet</a>
-</p>
+<p>Work through each problem on paper before you open its <strong>Solution</strong>.</p>
+<section id="devons-month" class="level2">
+<h2 class="anchored" data-anchor-id="devons-month">1. Devon’s month</h2>
+<p>Devon works at a warehouse. His hours go up, and his monthly income rises from $2,000 to $2,500. His purchases for the month change as below.</p>
+<div class="freetable table-scroll" tabindex="0">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 44%">
+<col style="width: 28%">
+<col style="width: 28%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">At $2,000</th>
+<th style="text-align: right;">At $2,500</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Rides on the city bus</td>
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">30</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Gallons of milk</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">9</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Rideshare trips</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">3</td>
+</tr>
+</tbody>
+</table>
 </div>
-<div class="lecture">
-<h2 class="anchored">
-Lecture 6: What does it cost to make a car? Scale and the cost of production
-</h2>
-<p>
-<strong>Reading:</strong> 7.3–7.4
-</p>
-<p class="lecture-links">
-<a class="btn btn-outline-primary" href="../slides/lecture6.html" target="_blank" rel="noopener" role="button" aria-label="Lecture 6 slides (opens in a new tab)">Slides</a> <a class="btn btn-outline-primary" href="../slides/lecture6.pdf" target="_blank" rel="noopener" role="button" aria-label="Lecture 6 slides as a tagged PDF (opens in a new tab)">Slides (PDF)</a> <a class="btn btn-outline-primary" href="../practice/practice06.html" target="_blank" rel="noopener" role="button" aria-label="Lecture 6 practice problems (opens in a new tab)">Practice problems</a> <a class="btn btn-outline-primary" href="../worksheets/worksheet06.pdf" target="_blank" rel="noopener" role="button" aria-label="Lecture 6 worksheet (opens in a new tab)">Worksheet</a>
-</p>
+<p><strong>(a)</strong> Find the percentage change in demand and the income elasticity of demand for each good.</p>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>Devon’s income rises by <span class="math display">\[\frac{2{,}500 - 2{,}000}{2{,}000} \times 100 = 25\%\]</span></p>
+<div class="freetable table-scroll" tabindex="0">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 28%">
+<col style="width: 22%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">At $2,000</th>
+<th style="text-align: right;">At $2,500</th>
+<th style="text-align: right;">% change in demand</th>
+<th style="text-align: right;">Income elasticity</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Rides on the city bus</td>
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">30</td>
+<td style="text-align: right;">(30 − 40) / 40 × 100 = −25%</td>
+<td style="text-align: right;">−25 / 25 = −1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Gallons of milk</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">(9 − 8) / 8 × 100 = 12.5%</td>
+<td style="text-align: right;">12.5 / 25 = 0.5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Rideshare trips</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">(3 − 2) / 2 × 100 = 50%</td>
+<td style="text-align: right;">50 / 25 = 2</td>
+</tr>
+</tbody>
+</table>
 </div>
-<div class="lecture">
-<h2 class="anchored">
-Lecture 7: Who can get away with raising prices? Demand and elasticity
-</h2>
-<p>
-<strong>Reading:</strong> 7.5
-</p>
-<p class="lecture-links">
-<a class="btn btn-outline-primary" href="../slides/lecture7.html" target="_blank" rel="noopener" role="button" aria-label="Lecture 7 slides (opens in a new tab)">Slides</a> <a class="btn btn-outline-primary" href="../slides/lecture7.pdf" target="_blank" rel="noopener" role="button" aria-label="Lecture 7 slides as a tagged PDF (opens in a new tab)">Slides (PDF)</a> <a class="btn btn-outline-primary" href="../practice/practice07.html" target="_blank" rel="noopener" role="button" aria-label="Lecture 7 practice problems (opens in a new tab)">Practice problems</a> <a class="btn btn-outline-primary" href="../worksheets/worksheet07.pdf" target="_blank" rel="noopener" role="button" aria-label="Lecture 7 worksheet (opens in a new tab)">Worksheet</a>
-</p>
+<p>There is no minus sign in the formula this time, so the sign of each answer is part of the answer.</p>
+</details>
+<p><strong>(b)</strong> Which of the three goods are normal, and which are inferior? Which of the normal goods is a necessity, and which is a luxury?</p>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<ul>
+<li><strong>Bus rides are inferior for Devon.</strong> The income elasticity is negative: he buys fewer of them as he gets richer.</li>
+<li><strong>Milk and rideshare trips are normal.</strong> Both elasticities are positive.</li>
+<li><strong>Milk is a necessity</strong>, at 0.5, which is between 0 and 1: Devon buys more milk as his income rises, but demand grows more slowly than income.</li>
+<li><strong>Rideshare trips are a luxury</strong>, at 2, which is greater than 1: demand grows faster than income.</li>
+</ul>
+</details>
+<p><strong>(c)</strong> The next year Devon’s hours are cut and his income falls by 10%. Using the elasticities from part (a), what happens to each of the three goods?</p>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>The percentage change in demand is the elasticity times the percentage change in income.</p>
+<ul>
+<li>Bus rides: <span class="math inline">\(-1 \times (-10) = +10\%\)</span>, so he takes <strong>about 10% more</strong> bus rides.</li>
+<li>Milk: <span class="math inline">\(0.5 \times (-10) = -5\%\)</span>, so he buys <strong>about 5% less</strong> milk.</li>
+<li>Rideshare trips: <span class="math inline">\(2 \times (-10) = -20\%\)</span>, so he takes <strong>about 20% fewer</strong> rideshare trips.</li>
+</ul>
+<p>The luxury loses the most demand and the necessity the least. <strong>Demand for the inferior good moves the other way and rises</strong>, which is why some goods sell better in a recession.</p>
+</details>
+</section>
+<section id="carlas-grocery-bill" class="level2">
+<h2 class="anchored" data-anchor-id="carlas-grocery-bill">2. Carla’s grocery bill</h2>
+<p>Ground beef at Carla’s grocery store goes up from $4.00 to $5.00 a pound. Her purchases for the month change as below.</p>
+<div class="freetable table-scroll" tabindex="0">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 44%">
+<col style="width: 28%">
+<col style="width: 28%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">At $4.00</th>
+<th style="text-align: right;">At $5.00</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Pounds of chicken</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">15</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Packs of hamburger buns</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">6</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Bottles of laundry detergent</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+</tr>
+</tbody>
+</table>
 </div>
-<div class="lecture">
-<h2 class="anchored">
-Lecture 8: Steak, ramen, and recessions: Other elasticities
-</h2>
-<p class="lecture-links">
-<a class="btn btn-outline-primary" href="../slides/lecture8.html" target="_blank" rel="noopener" role="button" aria-label="Lecture 8 slides (opens in a new tab)">Slides</a> <a class="btn btn-outline-primary" href="../slides/lecture8.pdf" target="_blank" rel="noopener" role="button" aria-label="Lecture 8 slides as a tagged PDF (opens in a new tab)">Slides (PDF)</a> <a class="btn btn-outline-primary" href="../practice/practice08.html" target="_blank" rel="noopener" role="button" aria-label="Lecture 8 practice problems (opens in a new tab)">Practice problems</a> <a class="btn btn-outline-primary" href="../worksheets/worksheet08.pdf" target="_blank" rel="noopener" role="button" aria-label="Lecture 8 worksheet (opens in a new tab)">Worksheet</a>
-</p>
+<p><strong>(a)</strong> Find the percentage change in demand and the cross-price elasticity of demand for each good, with respect to the price of ground beef.</p>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>The price of ground beef rises by <span class="math display">\[\frac{5.00 - 4.00}{4.00} \times 100 = 25\%\]</span></p>
+<div class="freetable table-scroll" tabindex="0">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 28%">
+<col style="width: 22%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">At $4.00</th>
+<th style="text-align: right;">At $5.00</th>
+<th style="text-align: right;">% change in demand</th>
+<th style="text-align: right;">Cross-price elasticity</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Pounds of chicken</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">(15 − 10) / 10 × 100 = 50%</td>
+<td style="text-align: right;">50 / 25 = 2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Packs of hamburger buns</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">(6 − 8) / 8 × 100 = −25%</td>
+<td style="text-align: right;">−25 / 25 = −1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Bottles of laundry detergent</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0%</td>
+<td style="text-align: right;">0 / 25 = 0</td>
+</tr>
+</tbody>
+</table>
 </div>
-<div class="lecture">
-<h2 class="anchored">
-Lecture 9: Sweet spot: Choosing the price and quantity that maximize profit
-</h2>
-<p>
-<strong>Reading:</strong> 7.6
-</p>
-<p class="lecture-links dim">
-Materials posted closer to the date.
-</p>
+</details>
+<p><strong>(b)</strong> Which of these goods are substitutes for ground beef, which are complements, and which is neither?</p>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<ul>
+<li><strong>Chicken and ground beef are substitutes.</strong> The cross-price elasticity is positive: when beef gets more expensive, Carla buys chicken instead.</li>
+<li><strong>Hamburger buns and ground beef are complements.</strong> The cross-price elasticity is negative: she buys the two together, so buying less beef means buying fewer buns.</li>
+<li><strong>Laundry detergent is neither.</strong> Its cross-price elasticity is 0, so the price of beef tells us nothing about how much detergent she buys.</li>
+</ul>
+</details>
+</section>
+<section id="reading-the-elasticities" class="level2">
+<h2 class="anchored" data-anchor-id="reading-the-elasticities">3. Reading the elasticities</h2>
+<p>Suppose a survey of US households gives the five estimates below.</p>
+<ul>
+<li>The income elasticity of demand for visits to a laundromat is <span class="math inline">\(-0.4\)</span>.</li>
+<li>The income elasticity of demand for bottled water is 0.3.</li>
+<li>The income elasticity of demand for cruise vacations is 2.2.</li>
+<li>The cross-price elasticity of demand for tea with respect to the price of coffee is 0.7.</li>
+<li>The cross-price elasticity of demand for bagels with respect to the price of cream cheese is <span class="math inline">\(-0.8\)</span>.</li>
+</ul>
+<p><strong>(a)</strong> What does each number tell you about the good, or about the pair of goods?</p>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<ul>
+<li><strong>Laundromat visits are an inferior good.</strong> The income elasticity is negative, so households use the laundromat less as their income rises, presumably because they buy a washing machine.</li>
+<li><strong>Bottled water is a normal good and a necessity.</strong> The elasticity is positive but between 0 and 1.</li>
+<li><strong>Cruise vacations are a normal good and a luxury.</strong> The elasticity is greater than 1, so demand grows faster than income.</li>
+<li><strong>Tea and coffee are substitutes.</strong> The cross-price elasticity is positive, so a rise in the price of coffee sends some buyers to tea.</li>
+<li><strong>Bagels and cream cheese are complements.</strong> The cross-price elasticity is negative, so a rise in the price of cream cheese lowers demand for bagels.</li>
+</ul>
+</details>
+<p><strong>(b)</strong> Incomes fall in a recession. Which of the three goods in the list sells better, and which loses the most demand?</p>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p><strong>Laundromat visits sell better.</strong> Demand for an inferior good rises when income falls, so a 10% fall in income raises laundromat visits by about 4%.</p>
+<p><strong>Cruise vacations lose the most.</strong> They have the highest income elasticity, so the same 10% fall in income cuts demand by about 22%. Demand for bottled water falls by only about 3%.</p>
+</details>
+</section>
+<section id="omars-taco-truck" class="level2">
+<h2 class="anchored" data-anchor-id="omars-taco-truck">4. Omar’s taco truck</h2>
+<p>Omar runs a taco truck downtown and sells 500 tacos a week.</p>
+<p><strong>(a)</strong> The burrito place across the street raises its prices by 10%, and Omar’s sales rise from 500 to 520 tacos a week. Find the cross-price elasticity of demand for his tacos with respect to the price of a burrito, and say what it tells you.</p>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p><span class="math display">\[\%\text{ change in demand} = \frac{520 - 500}{500} \times 100 = 4\%\]</span> <span class="math display">\[\varepsilon_{\text{cross}} = \frac{4}{10} = 0.4\]</span></p>
+<p><strong>Tacos and burritos are substitutes</strong>, because the elasticity is positive. They are not especially close substitutes: a 10% price rise across the street moves only 4% more tacos, so most of the burrito place’s customers stay put.</p>
+</details>
+<p><strong>(b)</strong> Later that year a warehouse nearby closes, and average income downtown falls by 8%. Omar’s sales rise from 500 to 520 tacos a week again. Find the income elasticity of demand for his tacos, and say what it tells you.</p>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p><span class="math display">\[\varepsilon_{\text{income}} = \frac{4}{-8} = -0.5\]</span></p>
+<p><strong>Omar’s tacos are an inferior good for these customers.</strong> The elasticity is negative: they buy more of his tacos when their incomes fall, probably because they are eating at cheaper places than before.</p>
+</details>
+</section>
+<section id="sorting-goods" class="level2">
+<h2 class="anchored" data-anchor-id="sorting-goods">5. Sorting goods</h2>
+<p><strong>(a)</strong> In each pair below, which good has the higher income elasticity of demand? Explain in a sentence.</p>
+<ul>
+<li>A monthly bus pass, or a plane ticket for a spring break trip.</li>
+<li>Store-brand pasta, or dinner delivered from a restaurant.</li>
+<li>Rent on a shared apartment, or a weekend at a hotel.</li>
+</ul>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<ul>
+<li><strong>The plane ticket.</strong> A vacation is a luxury people take when they can afford it, while the bus pass is what gets you to work at any income.</li>
+<li><strong>Dinner delivered from a restaurant.</strong> People who come into money eat out more and cook cheap pasta less, so the pasta may even be inferior.</li>
+<li><strong>The weekend at a hotel.</strong> Everyone needs somewhere to live, so rent grows more slowly than income, while hotel weekends grow faster.</li>
+</ul>
+</details>
+<p><strong>(b)</strong> For each pair below, say whether the cross-price elasticity of demand is positive, negative, or about zero, and whether the goods are substitutes, complements, or neither.</p>
+<ul>
+<li>Butter and margarine.</li>
+<li>Printers and ink cartridges.</li>
+<li>Gasoline and rides on the city bus.</li>
+<li>Notebooks and lawn mowers.</li>
+</ul>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<ul>
+<li><strong>Butter and margarine: positive, substitutes.</strong> A rise in the price of butter sends buyers to margarine.</li>
+<li><strong>Printers and ink cartridges: negative, complements.</strong> They are used together, so a rise in the price of printers lowers demand for cartridges.</li>
+<li><strong>Gasoline and bus rides: positive, substitutes.</strong> When gas gets expensive, some drivers take the bus instead.</li>
+<li><strong>Notebooks and lawn mowers: about zero, neither.</strong> The price of one has no bearing on demand for the other.</li>
+</ul>
+</details>
+</section>
+<section id="multiple-choice" class="level2">
+<h2 class="anchored" data-anchor-id="multiple-choice">6. Multiple choice</h2>
+<div class="mcq" data-answer="b">
+<p><strong>1.</strong> A household’s income rises by 10%, and the number of cans of soup it buys falls by 4%. The income elasticity of demand for soup is:</p>
+<ol type="a">
+<li>0.4, so soup is a normal good.</li>
+<li><span class="math inline">\(-0.4\)</span>, so soup is an inferior good.</li>
+<li><span class="math inline">\(-2.5\)</span>, so soup is an inferior good.</li>
+<li><span class="math inline">\(-0.4\)</span>, so soup is a luxury.</li>
+</ol>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>The income elasticity is <span class="math inline">\(\dfrac{-4}{10} = -0.4\)</span>. It is negative, so soup is an inferior good. Option (c) divides the wrong way round, and a luxury has an income elasticity greater than 1. <strong>(b)</strong> is correct.</p>
+</details>
 </div>
-<div class="lecture">
-<h2 class="anchored">
-Lecture 10: The surplus from a sale and who captures it
-</h2>
-<p>
-<strong>Reading:</strong> 7.7
-</p>
-<p class="lecture-links dim">
-Materials posted closer to the date.
-</p>
+<div class="mcq" data-answer="b">
+<p><strong>2.</strong> A family’s monthly income rises from $4,000 to $5,000, and the number of restaurant meals it buys rises from 4 to 6 a month. The income elasticity of demand for restaurant meals is:</p>
+<ol type="a">
+<li>0.5, so restaurant meals are a necessity.</li>
+<li>2, so restaurant meals are a luxury.</li>
+<li>2, so restaurant meals are a necessity.</li>
+<li>0.5, so restaurant meals are a luxury.</li>
+</ol>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>Income rises by <span class="math inline">\(\frac{5{,}000 - 4{,}000}{4{,}000} \times 100 = 25\%\)</span> and meals rise by <span class="math inline">\(\frac{6 - 4}{4} \times 100 = 50\%\)</span>, so the income elasticity is <span class="math inline">\(\dfrac{50}{25} = 2\)</span>. It is greater than 1, so restaurant meals are a luxury. <strong>(b)</strong> is correct.</p>
+</details>
 </div>
-<div class="lecture">
-<h2 class="anchored">
-Lecture 11: Standing out from the crowd: Product differentiation and competition
-</h2>
-<p>
-<strong>Reading:</strong> 7.8–7.9
-</p>
-<p class="lecture-links dim">
-Materials posted closer to the date.
-</p>
+<div class="mcq" data-answer="a,b,d">
+<p><strong>3.</strong> Select all the statements that are correct.</p>
+<ol type="a">
+<li>An inferior good has a negative income elasticity of demand.</li>
+<li>A good with an income elasticity of demand of 0.4 is a normal good and a necessity.</li>
+<li>A luxury has an income elasticity of demand between 0 and 1.</li>
+<li>Demand for an inferior good rises when income falls.</li>
+</ol>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>A luxury has an income elasticity greater than 1, not between 0 and 1, so (c) is wrong. The rest follow from the definitions: a negative income elasticity means demand falls as income rises, and so rises as income falls, and 0.4 is positive and below 1. <strong>(a), (b), and (d)</strong> are correct.</p>
+</details>
 </div>
-<div class="lecture">
-<h2 class="anchored">
-Lecture 12: Price wars: Strategic price setting and Nash equilibrium
-</h2>
-<p>
-<strong>Reading:</strong> 7.10; 4.2–4.3
-</p>
-<p class="lecture-links dim">
-Materials posted closer to the date.
-</p>
+<div class="mcq" data-answer="b">
+<p><strong>4.</strong> The price of good B rises by 8%, and demand for good A falls by 16%. The cross-price elasticity of demand for A with respect to the price of B is:</p>
+<ol type="a">
+<li>2, so A and B are substitutes.</li>
+<li><span class="math inline">\(-2\)</span>, so A and B are complements.</li>
+<li><span class="math inline">\(-0.5\)</span>, so A and B are complements.</li>
+<li><span class="math inline">\(-2\)</span>, so A and B are substitutes.</li>
+</ol>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>The cross-price elasticity is <span class="math inline">\(\dfrac{-16}{8} = -2\)</span>. It is negative, so the two goods are complements: the more expensive B gets, the less of A people buy. Option (c) divides the wrong way round. <strong>(b)</strong> is correct.</p>
+</details>
 </div>
-<div class="lecture">
-<h2 class="anchored">
-Lecture 13: Winner takes the market: Natural monopolies and competition policy
-</h2>
-<p>
-<strong>Reading:</strong> 7.11–7.12
-</p>
-<p class="lecture-links dim">
-Materials posted closer to the date.
-</p>
+<div class="mcq" data-answer="c">
+<p><strong>5.</strong> For which pair of goods would you expect the cross-price elasticity of demand to be negative?</p>
+<ol type="a">
+<li>Coffee and tea.</li>
+<li>Butter and margarine.</li>
+<li>Hot dogs and hot dog buns.</li>
+<li>Bus rides and rideshare trips.</li>
+</ol>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>A negative cross-price elasticity means the goods are complements, bought together, so a rise in the price of one lowers demand for the other. Hot dogs and hot dog buns are the pair that go together. The other three pairs are substitutes, with positive cross-price elasticities. <strong>(c)</strong> is correct.</p>
+</details>
+</div>
+<div class="mcq" data-answer="a,b,d">
+<p><strong>6.</strong> From the lecture: the income elasticity of demand in the United States is about 1.25 for recreation and about 0.35 for food, beverages, and tobacco. A recession cuts incomes by 10%. Select all the statements that are correct.</p>
+<ol type="a">
+<li>Demand for recreation falls by about 12.5%.</li>
+<li>Demand for food, beverages, and tobacco falls by about 3.5%.</li>
+<li>Recreation is a necessity and food is a luxury.</li>
+<li>Demand for an inferior good rises during the recession.</li>
+</ol>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>The percentage change in demand is the elasticity times the percentage change in income, so recreation falls by about <span class="math inline">\(1.25 \times 10 = 12.5\%\)</span> and food by about <span class="math inline">\(0.35 \times 10 = 3.5\%\)</span>. Recreation is above 1, which makes it a luxury, and food is below 1, which makes it a necessity, so (c) has them backwards. An inferior good has a negative income elasticity, so its demand rises when income falls. <strong>(a), (b), and (d)</strong> are correct.</p>
+</details>
 </div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script>

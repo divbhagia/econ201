@@ -1,0 +1,148 @@
+---
+title: "Steak, Ramen, and Recessions:<br>Other Elasticities"
+subtitle: "ECON 201: Principles of Microeconomics<br>Lecture 8"
+author: "Div Bhagia"
+format:
+  revealjs:
+    theme: [default, ../assets/slides.scss]
+    slide-number: true
+    footer: "ECON 201 · Lecture 8"
+    filters:
+      - ../assets/strip-notes.lua
+---
+
+## Last Class: Price Elasticity of Demand
+
+$$\varepsilon = -\frac{\%\text{ change in demand}}{\%\text{ change in price}}$$
+
+-   Last class we measured how much demand responds to a change in *price*.
+-   But price is not the only thing that moves demand. *Income* changes, and so do the prices of *other goods*.
+
+::: plain
+*Today's terms*: the [income elasticity of demand]{.book}, [normal]{.book} and [inferior goods]{.book}, [necessities]{.book} and [luxuries]{.book}, the [cross-price elasticity of demand]{.book}, [substitutes]{.book} and [complements]{.book}.
+:::
+
+## Income Elasticity of Demand
+
+::: plain
+The *income elasticity of demand* is the percentage change in demand that would occur in response to a 1% increase in income:
+:::
+
+$$\varepsilon_{\text{income}} = \frac{\%\text{ change in demand}}{\%\text{ change in income}}$$
+
+-   There is no minus sign this time, because the sign is part of the answer.
+-   A positive elasticity means demand rises with income. A negative one means demand falls with income.
+
+## Worksheet, Activity 1
+
+::: plain
+Maya works part time, and her monthly income rises from \$1,000 to \$1,200. Find the income elasticity for each good below.
+:::
+
+$$\varepsilon_{\text{income}} = \frac{\%\text{ change in demand}}{\%\text{ change in income}}$$
+
+::: {.fixedtable .wide}
+|                  | At \$1,000 | At \$1,200 | % change in demand | Income elasticity |
+|:-----------------|-----------:|-----------:|-------------------:|------------------:|
+| Packs of ramen   | 40         | 32         |                    |                   |
+| Gallons of gas   | 20         | 22         |                    |                   |
+| Steak dinners    | 2          | 3          |                    |                   |
+
+: {tbl-colwidths="[26,16,16,22,20]"}
+:::
+
+## Normal and Inferior Goods
+
+-   A *normal good* is one people buy more of as their income rises, so its income elasticity is positive.
+-   An *inferior good* is one people buy less of as their income rises, so its income elasticity is negative.
+-   Maya's income rose 20% and her ramen fell 20%, so $\varepsilon_{\text{income}} = -1$. Ramen is inferior for her.
+-   Her gas rose 10% and her steak dinners 50%, so both are normal, at 0.5 and 2.5.
+-   In US spending data, breads and cereals are inferior, with an income elasticity of $-0.09$.
+
+## Necessities and Luxuries
+
+-   Normal goods split in two, depending on whether the income elasticity is below or above 1.
+-   A *necessity* has an income elasticity between 0 and 1. People buy more of it as they get richer, but demand grows more slowly than income.
+-   A *luxury* has an income elasticity greater than 1. Demand for it grows faster than income.
+-   Gas is a necessity for Maya, at 0.5. Steak dinners are a luxury, at 2.5.
+
+## Income Elasticities in the United States
+
+::: plain
+Estimates for the United States (Muhammad et al., 2011):
+:::
+
+::: {.fixedtable .wide}
+| Category                     | Income elasticity |
+|:-----------------------------|------------------:|
+| Food, beverages, and tobacco | 0.35              |
+| Education                    | 0.91              |
+| Housing                      | 1.06              |
+| Transport and communications | 1.13              |
+| Recreation                   | 1.25              |
+
+: {tbl-colwidths="[65,35]"}
+:::
+
+::: plain
+Below 1 is a necessity and above 1 a luxury. Housing counts as a luxury here, so the word is technical rather than everyday.
+:::
+
+## What Happens in a Recession
+
+-   In a recession, incomes fall. The goods with the highest income elasticities lose the most demand.
+-   Take a 10% fall in income. Spending on recreation falls by about 12.5%, and spending on food by about 3.5%.
+-   Demand for an inferior good moves the other way. It *rises* when incomes fall.
+-   As the 2008 recession set in, Nielsen recorded Spam sales up 10.6% over the twelve weeks to May 3, against the same weeks a year earlier.
+
+## Cross-Price Elasticity of Demand
+
+::: plain
+The *cross-price elasticity of demand* for good A is the percentage change in demand for A that would occur in response to a 1% increase in the price of good B:
+:::
+
+$$\varepsilon_{\text{cross}} = \frac{\%\text{ change in demand for A}}{\%\text{ change in the price of B}}$$
+
+-   Again there is no minus sign, because the sign is what tells us how the two goods are related.
+-   A rise in the price of one good sends some buyers toward another good, and away from a third.
+
+## Worksheet, Activity 2
+
+::: plain
+The campus cafe raises the price of a coffee from \$2.50 to \$3.00. Find the cross-price elasticity for each good below.
+:::
+
+$$\varepsilon_{\text{cross}} = \frac{\%\text{ change in demand for A}}{\%\text{ change in the price of B}}$$
+
+::: {.fixedtable .wide}
+|                           | At \$2.50 | At \$3.00 | % change in demand | Cross-price elasticity |
+|:--------------------------|----------:|----------:|-------------------:|-----------------------:|
+| Coffee across the street  | 6         | 9         |                    |                        |
+| Donuts at the campus cafe | 8         | 6         |                    |                        |
+| Packs of ramen            | 32        | 32        |                    |                        |
+
+: {tbl-colwidths="[38,11,11,20,20]"}
+:::
+
+## Substitutes and Complements
+
+-   Two goods are *substitutes* if a rise in the price of one raises demand for the other, so $\varepsilon_{\text{cross}}$ is positive.
+-   Two goods are *complements* if a rise in the price of one lowers demand for the other, so $\varepsilon_{\text{cross}}$ is negative.
+-   The campus price rose 20% and coffee across the street rose 50%, so $\varepsilon_{\text{cross}} = 2.5$. The cafes are substitutes.
+-   Donuts fell 25%, so $\varepsilon_{\text{cross}} = -1.25$: coffee and donuts are complements. Ramen did not move, so at 0 it is neither.
+
+## Soda Just Outside Philadelphia
+
+::: plain
+Philadelphia's tax raised the price of a sweetened drink inside the city by 34%. What happened at the stores just outside it?
+:::
+
+-   Sales at the average store inside the city fell by about 56,000 ounces a week.
+-   Sales at the average store within two miles outside the city rose by about 64,000 ounces a week.
+-   Soda inside the city and soda just outside it are close substitutes, so the cross-price elasticity between them is large and positive (Seiler, Tuchman, and Yao, 2021).
+
+## Sources {.smaller}
+
+-   Muhammad, Seale, Meade, and Regmi (2011), "International Evidence on Food Consumption Patterns: An Update Using 2005 International Comparison Program Data," USDA Economic Research Service Technical Bulletin 1929, appendix tables 1 and 5.
+-   Associated Press (2008), "Sales of Spam rise as consumers trim spending," NBC News, May 28, reporting Nielsen Company data.
+-   Seiler, Tuchman, and Yao (2021), "The Impact of Soda Taxes: Pass-Through, Tax Avoidance, and Nutritional Effects," Journal of Marketing Research 58(1), table 5.
