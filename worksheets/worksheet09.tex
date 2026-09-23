@@ -1,0 +1,135 @@
+% !TEX program = lualatex
+% ECON 201, Worksheet 9: Choosing the Price and Quantity That Maximize Profit.
+% Compile with LuaLaTeX so the PDF is tagged (see syllabus/Econ201-Syllabus.tex
+% for the same setup). Build from the course root:
+%   latexmk -lualatex -cd worksheets/worksheet09.tex && latexmk -c -cd worksheets/worksheet09.tex
+% Every number here is computed and printed by slides/figures/make_lecture9.py
+% so the worksheet and the deck quote the same figures (Boba Break).
+% A short sheet for the end of class: marginal cost and marginal revenue at
+% one point each, worked as intuition rather than a table.
+\DocumentMetadata{
+  pdfstandard=UA-2,
+  pdfversion=2.0,
+  lang=en-US,
+  tagging=on
+}
+\documentclass[11pt]{article}
+
+\usepackage[letterpaper, margin=0.75in, top=0.5in, bottom=0.45in]{geometry}
+\usepackage{fontspec}
+\setmainfont{Fira Sans}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{needspace}
+\usepackage[most]{tcolorbox}
+\definecolor{cream}{HTML}{FDF3EA}
+\definecolor{accent}{HTML}{BF5700}
+\usepackage{titlesec}
+\titleformat{\section}{\large\bfseries\color{accent}}{}{0pt}{}
+\titlespacing*{\section}{0pt}{4pt}{2pt}
+\usepackage{hyperref}
+\hypersetup{pdftitle={ECON 201 Worksheet: Choosing the Price and Quantity That Maximize Profit}, pdfauthor={Div Bhagia}, hidelinks}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2pt}
+
+% Ruled answer space: n lines. Plain TeX loop; pgffor's \foreach breaks the
+% enumerate counter when used inside an item.
+\newcount\answerlinecount
+\newcommand{\answerlines}[1]{%
+  \par\vspace{1pt}\answerlinecount=#1
+  \loop\ifnum\answerlinecount>0
+    \rule{\linewidth}{0.3pt}\par\vspace{5pt}%
+    \advance\answerlinecount by -1
+  \repeat
+  \vspace{-5pt}}
+
+% Ruled grids rather than booktabs tables: students write in the cells, so
+% every cell gets visible borders and the blank rows get extra height.
+\newcolumntype{C}{>{\centering\arraybackslash}p{2.3cm}}
+\newcommand{\blankrow}{\rule{0pt}{1.8em}}
+
+\begin{document}
+
+{\LARGE\bfseries\color{accent} Worksheet: Choosing Price and Quantity}\hfill{\large ECON 201}
+
+% Terms sit on the cream panel, where the brand orange falls below 4.5:1;
+% the darker orange keeps WCAG AA contrast (see CLAUDE.md).
+\definecolor{accentdark}{HTML}{8F4100}
+\newcommand{\term}[1]{\textcolor{accentdark}{\textbf{#1}}}
+
+% Definitions panel list: flush left, compact. Built on the generic list
+% environment so the bullet sits at the panel's left edge; enumitem is avoided
+% for the tagging reason noted in worksheet06.
+\newenvironment{deflist}
+  {\begin{list}{\textbullet}{%
+     \setlength{\leftmargin}{1.1em}\setlength{\labelwidth}{0.7em}%
+     \setlength{\labelsep}{0.4em}\setlength{\itemindent}{0pt}%
+     \setlength{\listparindent}{0pt}\setlength{\topsep}{2pt}%
+     \setlength{\partopsep}{0pt}\setlength{\parsep}{0pt}%
+     \setlength{\itemsep}{2pt}}}
+  {\end{list}}
+
+\begin{tcolorbox}[colback=cream, colframe=accent, boxrule=0.6pt, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt, title=Definitions,
+  fonttitle=\bfseries, coltitle=white]
+\begin{deflist}
+\item \term{Profit}: $\text{Profit} = R - C(Q)$, where revenue is $R = P \times Q$.
+\item \term{Marginal cost}: the increase in total cost when one additional unit
+  is produced.
+\item \term{Marginal revenue}: the increase in revenue when one additional unit
+  is sold. To sell one more, the firm lowers its price on every unit, so
+  \begin{deflist}
+  \item $\text{MR} = $ price of the extra unit $-$ the loss on the units it
+    was already selling.
+  \end{deflist}
+\item \term{Profit-maximizing quantity}: where $\text{MR} = \text{MC}$.
+  \begin{deflist}
+  \item While $\text{MR} > \text{MC}$, one more unit adds to profit. Once
+    $\text{MR} < \text{MC}$, one more unit lowers it.
+  \end{deflist}
+\end{deflist}
+\end{tcolorbox}
+
+\needspace{6\baselineskip}\section{Boba Break}
+
+Boba Break is a stall at the Tuesday farmers market on campus. It pays \$100 a
+day for the stall and \$4 to make each cup, so $C(Q) = 100 + 4Q$. Its demand
+curve is $P = 12 - Q/10$: the more cups Boba Break wants to sell, the lower the
+price it has to charge.
+
+\needspace{5\baselineskip}\section{1. Marginal cost}
+
+How much does one more cup add to Boba Break's cost? Does it matter how many
+cups it is already selling?
+\answerlines{2}
+
+\needspace{9\baselineskip}\section{2. Marginal revenue at 30 cups}
+
+(a) What price does Boba Break have to charge to sell 30 cups? What about 31
+cups?
+\answerlines{1}
+
+(b) What is its revenue at 30 cups, and at 31 cups?
+\answerlines{1}
+
+(c) What is the marginal revenue? Should Boba Break sell the 31st cup?
+\answerlines{1}
+
+\needspace{7\baselineskip}\section{3. Marginal revenue at 50 cups}
+
+Now Boba Break sells 50 cups at \$7, and a 51st cup would sell for \$6.90. What
+is the marginal revenue? Should it sell the 51st cup?
+\answerlines{2}
+
+\needspace{6\baselineskip}\section{4. The best quantity}
+
+Somewhere between 30 and 50 cups, marginal revenue falls below \$4. Where
+should Boba Break stop, and what price does it charge?
+\answerlines{2}
+
+\end{document}

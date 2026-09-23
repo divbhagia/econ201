@@ -250,6 +250,8 @@ $presentation-font-size-root: 37px;
 .reveal .fixedtable table { width: 70%; table-layout: fixed; }
 // Wider variant for a table with many columns: ::: {.fixedtable .wide}.
 .reveal .fixedtable.wide table { width: 100%; }
+// Narrow variant for a two-column table alone on a slide: ::: {.fixedtable .narrow}.
+.reveal .fixedtable.narrow table { width: 40%; }
 // A table of formulas: ::: {.fixedtable .wide .formulas}, room for stacked fractions.
 .reveal .formulas table td { padding-top: 0.35em; padding-bottom: 0.35em; }
 // A total row (::: {.sumrow}, see assets/sum-table.lua) gets a rule above it.

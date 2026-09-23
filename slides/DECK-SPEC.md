@@ -113,21 +113,33 @@ nothing here is a suggestion.
 32. Practice problem 1 reuses the worksheet problem; long-form problems
     first, MCQs last; MCQ feedback is one "Correct! ..." sentence.
 
+33. The definitions panel on a worksheet is an itemized list, bullets flush
+    with the panel's left edge, one item per definition. Nest each
+    classification under the definition it belongs to (normal and inferior
+    goods under the income elasticity, substitutes and complements under the
+    cross-price elasticity) rather than collecting them under a heading of
+    their own. Do not restate a definition students met in an earlier lecture.
+34. A worksheet fits on one page. When it overruns, cut or tighten the prose,
+    never the rows students write in, and restore full-height rows once it
+    fits.
+35. Every part of a practice problem should be liftable onto a quiz. Cut
+    conceptual "why is it written this way" parts.
+
 ## Process
 
-33. Before writing a deck, agree the slide-by-slide plan in chat if Div has
+36. Before writing a deck, agree the slide-by-slide plan in chat if Div has
     not already sketched one. When asked to improve a sentence, offer two or
     three options in chat and implement only the one he picks.
-34. The qmd is co-edited. Re-read the file before every edit, apply changes
+37. The qmd is co-edited. Re-read the file before every edit, apply changes
     on top of his, and never touch a slide he has just fixed. If a slide was
     already right, restore it rather than re-edit it.
-35. Change only what was asked. A layout fix never alters content. If a fix
+38. Change only what was asked. A layout fix never alters content. If a fix
     is not possible, say so and leave the original.
-36. Build for review (HTML in a scratch copy, tagged PDF via
+39. Build for review (HTML in a scratch copy, tagged PDF via
     `scripts/build_slides_pdf.py N`, screenshots) but do not render into
     `docs/`, run the audit, commit, or push until Div says so. Ask about
     committing once.
-37. After every edit: sweep bullet periods, check for bleeding slides in the
+40. After every edit: sweep bullet periods, check for bleeding slides in the
     PDF, stray blank lines in the qmd, table rules, figure alignment, and
     em dashes; rebuild HTML and PDF; report anything not from CORE and
     anything not verified.
