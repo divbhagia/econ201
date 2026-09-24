@@ -359,6 +359,7 @@ MATERIALS = {
         "practice": "practice/practice08.html",
         "worksheet": "worksheets/worksheet08.pdf"},
     9: {"slides": "slides/lecture9.html", "slides_pdf": "slides/lecture9.pdf",
+        "practice": "practice/practice09.html",
         "worksheet": "worksheets/worksheet09.pdf"},
 }
 

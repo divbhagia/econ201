@@ -52,6 +52,7 @@ Materials are posted as we go. See the [Schedule](../schedule.qmd) for dates and
 <p><strong>Reading:</strong> 7.6</p>
 <p class="lecture-links"><a class="btn btn-outline-primary" href="../slides/lecture9.html" target="_blank" rel="noopener" role="button" aria-label="Lecture 9 slides (opens in a new tab)">Slides</a>
 <a class="btn btn-outline-primary" href="../slides/lecture9.pdf" target="_blank" rel="noopener" role="button" aria-label="Lecture 9 slides as a tagged PDF (opens in a new tab)">Slides (PDF)</a>
+<a class="btn btn-outline-primary" href="../practice/practice09.html" target="_blank" rel="noopener" role="button" aria-label="Lecture 9 practice problems (opens in a new tab)">Practice problems</a>
 <a class="btn btn-outline-primary" href="../worksheets/worksheet09.pdf" target="_blank" rel="noopener" role="button" aria-label="Lecture 9 worksheet (opens in a new tab)">Worksheet</a></p>
 :::
 

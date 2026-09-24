@@ -13,10 +13,7 @@ Tuesday farmers market on campus. The numbers are picked so every step is mental
     cost             C(Q) = 100 + 4 Q: a $100 stall fee and $4 a cup for tea, milk, and tapioca, MC = 4
     MR = MC          at Q* = 40, the middle column of the worksheet table
     P*               = 12 - 40 / 10 = 8
-    AC at Q*         = 260 / 40 = 6.50
-    profit at Q*     = 40 x (8 - 6.50) = 60
-    markup           = (8 - 4) / 8 = 1/2
-    elasticity at E  = (P / Q) x 10 = 2, and 1 / 2 = 1/2
+    profit at Q*     = 8 x 40 - (100 + 4 x 40) = 320 - 260 = 60
 
 Marginal revenue is taught one cup at a time, as CORE does in Figure 7.17:
 the change in revenue from selling one more cup. Each extra cup needs the
@@ -33,8 +30,8 @@ Output, in slides/img/:
   boba-mr-mc.svg      demand, marginal revenue, and marginal cost, with E
                        and E-prime labelled, at column size
 
-  core-q7-11.svg       CORE Question 7.11, a redraw of Figure 7.17 with the
-                       book's numbers, for the practice page
+  core-q7-11.svg       CORE Question 7.11 (Figure 7.17) redrawn with the
+                       course's Beautiful Cars numbers, for the practice page
 
 Accessibility: Okabe-Ito derived colours, every marked point and every curve
 labelled with its value on the figure itself, so nothing rests on reading
@@ -134,15 +131,6 @@ def profit(q):
 def marginal_revenue(q):
     """Height of the MR curve. Equals the step average at the step midpoint."""
     return INTERCEPT - 2 * q / CUPS_PER_DOLLAR
-
-
-def markup(p):
-    return (p - PER_CUP) / p
-
-
-def elasticity(p):
-    """-(P/Q) x (change in Q per unit change in P) = (P/Q) x CUPS_PER_DOLLAR."""
-    return (p / quantity(p)) * CUPS_PER_DOLLAR
 
 
 def money(x):
@@ -262,10 +250,11 @@ def draw_mr_mc(out: Path) -> None:
 
 
 def draw_core_q711(out: Path) -> None:
-    """CORE Question 7.11 (Figure 7.17): Beautiful Cars' demand, MR, and MC.
+    """CORE Question 7.11 (Figure 7.17), redrawn with the course's Beautiful Cars.
 
-    The book's numbers: P = 40,000 - 400 Q, so MR = 40,000 - 800 Q, and
-    MC = 14,400 at every Q. MR = MC at Q* = 32, where P* = 27,200.
+    Lecture 6's costs, C(Q) = 60,000 + 10,000 Q, so MC = 10,000, with demand
+    P = 50,000 - 1,000 Q, so MR = 50,000 - 2,000 Q. MR = MC at Q* = 20, where
+    P* = 30,000. Ticks sit at every number the question and its solution use.
     """
     fig, ax = plt.subplots(figsize=SIDE, dpi=100)
     ax.grid(color=GRID, lw=1, zorder=0)
@@ -273,37 +262,38 @@ def draw_core_q711(out: Path) -> None:
     for s in ("top", "right"):
         ax.spines[s].set_visible(False)
     ax.tick_params(length=5, width=1)
-    fig.subplots_adjust(left=0.235, right=0.965, top=0.96, bottom=0.15)
-    ax.set_xlim(0, 60)
-    ax.set_ylim(0, 40_000)
-    ax.set_xticks(range(0, 61, 10))
-    ax.set_yticks(range(0, 40_001, 10_000))
-    ax.yaxis.set_major_formatter(FuncFormatter(lambda y, _: f"${y:,.0f}"))
+    fig.subplots_adjust(left=0.24, right=0.965, top=0.96, bottom=0.15)
+    ax.set_xlim(0, 40)
+    ax.set_ylim(-10_000, 50_000)
+    ax.set_xticks([0, 10, 20, 25, 30, 40])
+    ax.set_yticks([-10_000, 0, 10_000, 30_000, 50_000])
+    ax.yaxis.set_major_formatter(FuncFormatter(
+        lambda y, _: f"\u2212${abs(y):,.0f}" if y < 0 else f"${y:,.0f}"))
     ax.set_xlabel("Cars per day, Q", fontsize=FONT, labelpad=8)
     ax.set_ylabel("Price and cost", fontsize=FONT, labelpad=8)
-    q = np.array([0, 60])
-    ax.plot(q, 40_000 - 400 * q, color=DEMAND, lw=3, zorder=5)
-    ax.annotate("Demand", xy=(45, 40_000 - 400 * 45), xytext=(8, 14),
+    ax.axhline(0, color=INK, lw=1.4, zorder=3)
+    q = np.array([0, 40])
+    ax.plot(q, 50_000 - 1_000 * q, color=DEMAND, lw=3, zorder=5)
+    ax.annotate("Demand", xy=(10, 50_000 - 1_000 * 10), xytext=(10, 8),
                 textcoords="offset points", ha="left", va="bottom",
                 fontsize=FONT, color=DEMAND, fontweight="bold", zorder=8)
-    qm = np.array([0, 50])
-    ax.plot(qm, 40_000 - 800 * qm, color=ACCENT, lw=3, zorder=5)
-    ax.annotate("MR", xy=(45, 40_000 - 800 * 45), xytext=(10, 4),
-                textcoords="offset points", ha="left", va="bottom",
+    qm = np.array([0, 30])
+    ax.plot(qm, 50_000 - 2_000 * qm, color=ACCENT, lw=3, zorder=5)
+    ax.annotate("MR", xy=(28, 50_000 - 2_000 * 28), xytext=(10, 0),
+                textcoords="offset points", ha="left", va="center",
                 fontsize=FONT, color=ACCENT, fontweight="bold", zorder=8)
-    ax.axhline(14_400, color=MARGINAL, lw=2.4, ls=(0, (5, 3)), zorder=4)
-    ax.annotate("MC", xy=(58, 14_400), xytext=(0, 8), textcoords="offset points",
-                ha="right", va="bottom", fontsize=FONT, color=MARGINAL,
+    ax.axhline(10_000, color=MARGINAL, lw=2.4, ls=(0, (5, 3)), zorder=4)
+    ax.annotate("MC = $10,000", xy=(0.5, 10_000), xytext=(0, 8), textcoords="offset points",
+                ha="left", va="bottom", fontsize=FONT, color=MARGINAL,
                 fontweight="bold", zorder=8)
-    ax.plot([32, 32], [14_400, 27_200], color=GUIDE, lw=1.6, ls=(0, (4, 3)), zorder=4)
-    ax.plot(32, 27_200, marker="o", ms=13, color=INK, zorder=7)
-    ax.annotate("E", xy=(32, 27_200), xytext=(10, 6), textcoords="offset points",
+    ax.plot([20, 20], [10_000, 30_000], color=GUIDE, lw=1.6, ls=(0, (4, 3)), zorder=4)
+    ax.plot(20, 30_000, marker="o", ms=13, color=INK, zorder=7)
+    ax.annotate("E", xy=(20, 30_000), xytext=(10, 6), textcoords="offset points",
                 ha="left", va="bottom", fontsize=FONT, color=INK, fontweight="bold", zorder=8)
-    ax.plot(32, 14_400, marker="o", ms=13, color=INK, zorder=7)
-    ax.annotate("E′", xy=(32, 14_400), xytext=(-10, -8), textcoords="offset points",
+    ax.plot(20, 10_000, marker="o", ms=13, color=INK, zorder=7)
+    ax.annotate("E\u2032", xy=(20, 10_000), xytext=(-10, -8), textcoords="offset points",
                 ha="right", va="top", fontsize=FONT, color=INK, fontweight="bold", zorder=8)
     save(fig, out)
-
 
 # -------------------------------------------------------------- main ------
 
@@ -333,31 +323,28 @@ def main() -> int:
     print(f"  the 40th cup adds {money(revenue(40) - revenue(39))},"
           f" the 41st adds {money(revenue(41) - revenue(40))}, MC = {money(PER_CUP)}")
     print(f"  profit-maximizing point E: Q* = {Q_STAR}, P* = {money(price(Q_STAR))}")
-    print(f"    AC at Q* = {money(total_cost(Q_STAR))} / {Q_STAR}"
-          f" = {money(average_cost(Q_STAR))}")
-    per = price(Q_STAR) - average_cost(Q_STAR)
-    print(f"    profit per cup = {money(per)}, total = {Q_STAR} x {money(per)}"
+    print(f"    profit at Q* = {money(revenue(Q_STAR))} - {money(total_cost(Q_STAR))}"
           f" = {money(profit(Q_STAR))}")
-    print(f"    markup = {markup(price(Q_STAR)):g},"
-          f" elasticity at E = {elasticity(price(Q_STAR)):g},"
-          f" 1 / elasticity = {1 / elasticity(price(Q_STAR)):g}")
 
     # The practice page's own numbers, checked the same way.
-    print("\npractice page, Sierra Bikes: C(Q) = 2,000 + 100 Q, P = 900 - 10 Q")
-    sb_p = lambda q: 900 - 10 * q
+    print("\npractice page, Sierra Bikes: C(Q) = 2,000 + 200 Q, P = 1,200 - 10 Q")
+    sb_p = lambda q: 1_200 - 10 * q
     sb_r = lambda q: sb_p(q) * q
     for qq in (20, 30, 40, 50, 60):
-        cc = 2_000 + 100 * qq
-        print(f"    Q = {qq:2d}   P = ${sb_p(qq):3d}   R = ${sb_r(qq):6,d}"
-              f"   C = ${cc:5,d}   profit = ${sb_r(qq) - cc:6,d}")
+        cc = 2_000 + 200 * qq
+        print(f"    Q = {qq:2d}   P = ${sb_p(qq):5,d}   R = ${sb_r(qq):6,d}"
+              f"   C = ${cc:6,d}   profit = ${sb_r(qq) - cc:6,d}")
     for qq in (20, 30, 40, 50):
         print(f"    Q = {qq}: one more bike, MR = ${sb_r(qq + 1) - sb_r(qq):,d}")
-    print(f"    40th bike adds ${sb_r(40) - sb_r(39)}, 41st adds ${sb_r(41) - sb_r(40)}")
-    print("practice page, Marisol's bakery: C(Q) = 400 + 2 Q, P = 10 - 0.02 Q")
-    mb_r = lambda q: round((10 - 0.02 * q) * q, 2)
-    for qq in (100, 150, 200, 250):
-        print(f"    Q = {qq}: one more loaf, MR = ${mb_r(qq + 1) - mb_r(qq):.2f}")
-    print("    200th loaf adds $2.02, 201st adds $1.98; P* = 6; profit = 400")
+    print(f"    50th bike adds ${sb_r(50) - sb_r(49)}, 51st adds ${sb_r(51) - sb_r(50)}, MC = $200")
+    print("practice page, Marisol's cakes: C(Q) = 30 + 20 Q, one cake per row")
+    cakes = {1: 55, 2: 50, 3: 45, 4: 40, 5: 35, 6: 30}
+    prev = 0
+    for qq, pp in cakes.items():
+        rr, cc = pp * qq, 30 + 20 * qq
+        print(f"    Q = {qq}   P = ${pp}   R = ${rr}   MR of this cake = ${rr - prev}"
+              f"   C = ${cc}   profit = ${rr - cc}")
+        prev = rr
     return 0
 
 

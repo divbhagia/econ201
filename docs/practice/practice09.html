@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Firms as Price Setters – Principles of Microeconomics</title>
+<title>Lecture 9: Practice – Principles of Microeconomics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -69,11 +69,40 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../assets/styles.css">
 </head>
 
-<body class="nav-sidebar docked nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -103,7 +132,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Schedule</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../content/the-big-picture.html" aria-current="page"> 
+    <a class="nav-link" href="../content/the-big-picture.html"> 
 <span class="menu-text">Content</span></a>
   </li>  
   <li class="nav-item compact">
@@ -117,72 +146,30 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../content/firms-as-price-setters.html">III. Firms as Price Setters</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../content/the-big-picture.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">I. The Big Picture</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../content/economists-toolkit.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">II. The Economist’s Toolkit</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../content/firms-as-price-setters.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">III. Firms as Price Setters</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../content/markets-with-many-buyers-and-sellers.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">IV. Markets with Many Buyers and Sellers</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../content/market-successes-and-failures.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">V. Market Successes and Failures</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../content/review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">VI. Review</span></a>
-  </div>
-</li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#sierra-bikes" id="toc-sierra-bikes" class="nav-link active" data-scroll-target="#sierra-bikes">1. Sierra Bikes</a></li>
+  <li><a href="#marisols-cakes" id="toc-marisols-cakes" class="nav-link" data-scroll-target="#marisols-cakes">2. Marisol’s cakes</a></li>
+  <li><a href="#sorting" id="toc-sorting" class="nav-link" data-scroll-target="#sorting">3. Sorting</a></li>
+  <li><a href="#multiple-choice" id="toc-multiple-choice" class="nav-link" data-scroll-target="#multiple-choice">4. Multiple choice</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Firms as Price Setters</h1>
-<p class="subtitle lead">Module III</p>
+<h1 class="title">Lecture 9: Practice</h1>
+<p class="subtitle lead">Sweet spot: Choosing the price and quantity that maximize profit</p>
 </div>
 
 
@@ -199,105 +186,433 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Materials are posted as we go. See the <a href="../schedule.html">Schedule</a> for dates and assessments.</p>
-<div class="lecture">
-<h2 class="anchored">
-Lecture 5: Winning brands and the price of Cheerios
-</h2>
-<p>
-<strong>Reading:</strong> 7.1–7.2
-</p>
-<p class="lecture-links">
-<a class="btn btn-outline-primary" href="../slides/lecture5.html" target="_blank" rel="noopener" role="button" aria-label="Lecture 5 slides (opens in a new tab)">Slides</a> <a class="btn btn-outline-primary" href="../slides/lecture5.pdf" target="_blank" rel="noopener" role="button" aria-label="Lecture 5 slides as a tagged PDF (opens in a new tab)">Slides (PDF)</a> <a class="btn btn-outline-primary" href="../worksheets/worksheet05.pdf" target="_blank" rel="noopener" role="button" aria-label="Lecture 5 worksheet (opens in a new tab)">Worksheet</a>
-</p>
+<p>Work through each problem on paper before you open its <strong>Solution</strong>.</p>
+<section id="sierra-bikes" class="level2">
+<h2 class="anchored" data-anchor-id="sierra-bikes">1. Sierra Bikes</h2>
+<p>Sierra Bikes assembles electric bikes. Its demand curve is <span class="math display">\[P = 1{,}200 - 10Q\]</span> where <span class="math inline">\(Q\)</span> is bikes per day and <span class="math inline">\(P\)</span> is the price in dollars, and its cost function is <span class="math display">\[C(Q) = 2{,}000 + 200Q\]</span></p>
+<p><strong>(a)</strong> Calculate Sierra’s revenue, cost, and profit if it sells 20, 30, 40, 50, and 60 bikes a day.</p>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>To sell 20 bikes, the demand curve says the price has to be <span class="math inline">\(P = 1{,}200 - 10 \times 20 = 1{,}000\)</span>. Revenue is <span class="math inline">\(R = P \times Q = 1{,}000 \times 20 = 20{,}000\)</span>. Cost is <span class="math inline">\(C(Q) = 2{,}000 + 200 \times 20 = 6{,}000\)</span>. So profit is <span class="math inline">\(20{,}000 - 6{,}000 = 14{,}000\)</span>.</p>
+<p>Doing the same for the other quantities:</p>
+<div class="freetable table-scroll" tabindex="0">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 21%">
+<col style="width: 21%">
+<col style="width: 21%">
+<col style="width: 21%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(Q\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(P\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(R\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(C(Q)\)</span></th>
+<th style="text-align: center;">Profit</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">20</td>
+<td style="text-align: center;">1,000</td>
+<td style="text-align: center;">20,000</td>
+<td style="text-align: center;">6,000</td>
+<td style="text-align: center;">14,000</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">30</td>
+<td style="text-align: center;">900</td>
+<td style="text-align: center;">27,000</td>
+<td style="text-align: center;">8,000</td>
+<td style="text-align: center;">19,000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">40</td>
+<td style="text-align: center;">800</td>
+<td style="text-align: center;">32,000</td>
+<td style="text-align: center;">10,000</td>
+<td style="text-align: center;">22,000</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">50</td>
+<td style="text-align: center;">700</td>
+<td style="text-align: center;">35,000</td>
+<td style="text-align: center;">12,000</td>
+<td style="text-align: center;">23,000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">60</td>
+<td style="text-align: center;">600</td>
+<td style="text-align: center;">36,000</td>
+<td style="text-align: center;">14,000</td>
+<td style="text-align: center;">22,000</td>
+</tr>
+</tbody>
+</table>
 </div>
-<div class="lecture">
-<h2 class="anchored">
-Lecture 6: What does it cost to make a car? Scale and the cost of production
-</h2>
-<p>
-<strong>Reading:</strong> 7.3–7.4
-</p>
-<p class="lecture-links">
-<a class="btn btn-outline-primary" href="../slides/lecture6.html" target="_blank" rel="noopener" role="button" aria-label="Lecture 6 slides (opens in a new tab)">Slides</a> <a class="btn btn-outline-primary" href="../slides/lecture6.pdf" target="_blank" rel="noopener" role="button" aria-label="Lecture 6 slides as a tagged PDF (opens in a new tab)">Slides (PDF)</a> <a class="btn btn-outline-primary" href="../practice/practice06.html" target="_blank" rel="noopener" role="button" aria-label="Lecture 6 practice problems (opens in a new tab)">Practice problems</a> <a class="btn btn-outline-primary" href="../worksheets/worksheet06.pdf" target="_blank" rel="noopener" role="button" aria-label="Lecture 6 worksheet (opens in a new tab)">Worksheet</a>
-</p>
+</details>
+<p><strong>(b)</strong> Which quantity gives the most profit, and what price does Sierra charge there?</p>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>Profit is highest at <strong>50 bikes a day</strong>, where the price is <strong>$700</strong> and profit is <strong>$23,000 a day</strong>.</p>
+<p>Revenue is higher still at 60 bikes, $36,000 against $35,000, but the extra 10 bikes add $2,000 to cost and only $1,000 to revenue, so profit falls.</p>
+</details>
+<p><strong>(c)</strong> Now zoom in around 50 bikes. To sell one more bike, Sierra has to lower its price by $10. Find its revenue at 49, 50, and 51 bikes. How much do the 50th and the 51st bikes each add to revenue? Marginal cost is $200 a bike. Is each of those bikes worth selling?</p>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>To sell 49 bikes, the price has to be <span class="math inline">\(1{,}200 - 10 \times 49 = 710\)</span>, so revenue is <span class="math inline">\(710 \times 49 = 34{,}790\)</span>. For 50 bikes it has to be $700, so revenue is <span class="math inline">\(700 \times 50 = 35{,}000\)</span>. For 51 bikes it has to be $690, so revenue is <span class="math inline">\(690 \times 51 = 35{,}190\)</span>.</p>
+<p>The 50th bike adds <span class="math inline">\(35{,}000 - 34{,}790 = 210\)</span> to revenue, more than its $200 cost, so <strong>it is worth selling</strong>. The 51st adds only <span class="math inline">\(35{,}190 - 35{,}000 = 190\)</span>, less than it costs, so <strong>it is not</strong>. Sierra stops at 50 bikes, where marginal revenue drops below marginal cost, which matches part (b).</p>
+</details>
+<p><strong>(d)</strong> Sierra’s landlord raises the rent, so its fixed cost rises from $2,000 to $3,000 a day. Marginal cost is still $200 a bike. Does the profit-maximizing quantity or price change? What is Sierra’s profit now?</p>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p><strong>Neither changes.</strong> The rent is paid whatever Sierra sells, so it does not change what one more bike adds to revenue or to cost: the 50th bike still adds $210 against a cost of $200, and the 51st only $190. Profit falls by $1,000 at every quantity, so it still peaks at <strong>50 bikes at $700</strong>, and profit there is now $23{,}000 - 1{,}000 = $ <strong>$22,000 a day</strong>.</p>
+<p>The rent does matter for a different decision: whether to operate at all. If Sierra could avoid the rent by closing, it compares what it earns from the bikes with the rent. At 50 bikes, revenue minus the cost of the bikes is <span class="math inline">\(35{,}000 - 200 \times 50 = 25{,}000\)</span>, so Sierra stays open as long as the rent is below $25,000 a day.</p>
+</details>
+</section>
+<section id="marisols-cakes" class="level2">
+<h2 class="anchored" data-anchor-id="marisols-cakes">2. Marisol’s cakes</h2>
+<p>Marisol bakes custom birthday cakes. From past orders she knows how many cakes she sells in a day at each price. Her cost function is <span class="math display">\[C(Q) = 30 + 20Q\]</span> a $30 daily fee for a shared kitchen and $20 of ingredients for each cake.</p>
+<div class="freetable table-scroll" tabindex="0">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Price, <span class="math inline">\(P\)</span></th>
+<th style="text-align: center;">Cakes sold, <span class="math inline">\(Q\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">$55</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">$50</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">$45</td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">$40</td>
+<td style="text-align: center;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">$35</td>
+<td style="text-align: center;">5</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">$30</td>
+<td style="text-align: center;">6</td>
+</tr>
+</tbody>
+</table>
 </div>
-<div class="lecture">
-<h2 class="anchored">
-Lecture 7: Who can get away with raising prices? Demand and elasticity
-</h2>
-<p>
-<strong>Reading:</strong> 7.5
-</p>
-<p class="lecture-links">
-<a class="btn btn-outline-primary" href="../slides/lecture7.html" target="_blank" rel="noopener" role="button" aria-label="Lecture 7 slides (opens in a new tab)">Slides</a> <a class="btn btn-outline-primary" href="../slides/lecture7.pdf" target="_blank" rel="noopener" role="button" aria-label="Lecture 7 slides as a tagged PDF (opens in a new tab)">Slides (PDF)</a> <a class="btn btn-outline-primary" href="../practice/practice07.html" target="_blank" rel="noopener" role="button" aria-label="Lecture 7 practice problems (opens in a new tab)">Practice problems</a> <a class="btn btn-outline-primary" href="../worksheets/worksheet07.pdf" target="_blank" rel="noopener" role="button" aria-label="Lecture 7 worksheet (opens in a new tab)">Worksheet</a>
-</p>
+<p><strong>(a)</strong> Find her revenue, cost, and profit at each price. Which price gives the most profit?</p>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>Revenue is <span class="math inline">\(P \times Q\)</span>, and cost is <span class="math inline">\(30 + 20Q\)</span>.</p>
+<div class="freetable table-scroll" tabindex="0">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(P\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(Q\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(R\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(C(Q)\)</span></th>
+<th style="text-align: center;">Profit</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">55</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">55</td>
+<td style="text-align: center;">50</td>
+<td style="text-align: center;">5</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">50</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">70</td>
+<td style="text-align: center;">30</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">45</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">135</td>
+<td style="text-align: center;">90</td>
+<td style="text-align: center;">45</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">40</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">160</td>
+<td style="text-align: center;">110</td>
+<td style="text-align: center;">50</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">35</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">175</td>
+<td style="text-align: center;">130</td>
+<td style="text-align: center;">45</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">30</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">180</td>
+<td style="text-align: center;">150</td>
+<td style="text-align: center;">30</td>
+</tr>
+</tbody>
+</table>
 </div>
-<div class="lecture">
-<h2 class="anchored">
-Lecture 8: Steak, ramen, and recessions: Other elasticities
-</h2>
-<p class="lecture-links">
-<a class="btn btn-outline-primary" href="../slides/lecture8.html" target="_blank" rel="noopener" role="button" aria-label="Lecture 8 slides (opens in a new tab)">Slides</a> <a class="btn btn-outline-primary" href="../slides/lecture8.pdf" target="_blank" rel="noopener" role="button" aria-label="Lecture 8 slides as a tagged PDF (opens in a new tab)">Slides (PDF)</a> <a class="btn btn-outline-primary" href="../practice/practice08.html" target="_blank" rel="noopener" role="button" aria-label="Lecture 8 practice problems (opens in a new tab)">Practice problems</a> <a class="btn btn-outline-primary" href="../worksheets/worksheet08.pdf" target="_blank" rel="noopener" role="button" aria-label="Lecture 8 worksheet (opens in a new tab)">Worksheet</a>
-</p>
+<p>Profit is highest at <strong>$40 a cake</strong>, where she sells <strong>4 cakes</strong> and makes <strong>$50 a day</strong>.</p>
+</details>
+<p><strong>(b)</strong> Each row of the table adds one cake, so the change in revenue from one row to the next is the marginal revenue of that cake. Find the marginal revenue of each cake. Her marginal cost is $20 a cake. Which cakes are worth baking?</p>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<div class="freetable table-scroll" tabindex="0">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 24%">
+<col style="width: 16%">
+<col style="width: 22%">
+<col style="width: 22%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Cake</th>
+<th style="text-align: center;">Revenue goes from</th>
+<th style="text-align: center;">to</th>
+<th style="text-align: center;"><span class="math inline">\(\text{MR}\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\text{MC}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1st</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">55</td>
+<td style="text-align: center;">55</td>
+<td style="text-align: center;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2nd</td>
+<td style="text-align: center;">55</td>
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">45</td>
+<td style="text-align: center;">20</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3rd</td>
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">135</td>
+<td style="text-align: center;">35</td>
+<td style="text-align: center;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4th</td>
+<td style="text-align: center;">135</td>
+<td style="text-align: center;">160</td>
+<td style="text-align: center;">25</td>
+<td style="text-align: center;">20</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">5th</td>
+<td style="text-align: center;">160</td>
+<td style="text-align: center;">175</td>
+<td style="text-align: center;">15</td>
+<td style="text-align: center;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">6th</td>
+<td style="text-align: center;">175</td>
+<td style="text-align: center;">180</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">20</td>
+</tr>
+</tbody>
+</table>
 </div>
-<div class="lecture">
-<h2 class="anchored">
-Lecture 9: Sweet spot: Choosing the price and quantity that maximize profit
-</h2>
-<p>
-<strong>Reading:</strong> 7.6
-</p>
-<p class="lecture-links">
-<a class="btn btn-outline-primary" href="../slides/lecture9.html" target="_blank" rel="noopener" role="button" aria-label="Lecture 9 slides (opens in a new tab)">Slides</a> <a class="btn btn-outline-primary" href="../slides/lecture9.pdf" target="_blank" rel="noopener" role="button" aria-label="Lecture 9 slides as a tagged PDF (opens in a new tab)">Slides (PDF)</a> <a class="btn btn-outline-primary" href="../practice/practice09.html" target="_blank" rel="noopener" role="button" aria-label="Lecture 9 practice problems (opens in a new tab)">Practice problems</a> <a class="btn btn-outline-primary" href="../worksheets/worksheet09.pdf" target="_blank" rel="noopener" role="button" aria-label="Lecture 9 worksheet (opens in a new tab)">Worksheet</a>
-</p>
+<p>The first four cakes each add more to revenue than the $20 they cost, so <strong>the first four are worth baking</strong>. The 5th cake adds only $15, less than its cost. So Marisol stops at 4 cakes, the same answer as part (a).</p>
+<p>Notice that marginal revenue is below the price: to sell the 4th cake she cuts the price from $45 to $40, so the 4th cake brings in $40 but the other 3 cakes each sell for $5 less, and <span class="math inline">\(40 - 15 = 25\)</span>.</p>
+</details>
+</section>
+<section id="sorting" class="level2">
+<h2 class="anchored" data-anchor-id="sorting">3. Sorting</h2>
+<p>For each firm below, say whether it should sell more, sell less, or stay where it is.</p>
+<ol type="i">
+<li>A firm with <span class="math inline">\(\text{MR} = 40\)</span> and <span class="math inline">\(\text{MC} = 25\)</span> at its current quantity.</li>
+<li>A firm with <span class="math inline">\(\text{MR} = 12\)</span> and <span class="math inline">\(\text{MC} = 30\)</span> at its current quantity.</li>
+<li>A firm with <span class="math inline">\(\text{MR} = 18\)</span> and <span class="math inline">\(\text{MC} = 18\)</span> at its current quantity.</li>
+</ol>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<ul>
+<li><strong>(i) Sell more.</strong> Each extra unit brings in $40 and costs $25, so it adds $15 to profit.</li>
+<li><strong>(ii) Sell less.</strong> Each unit at the margin brings in $12 but costs $30, so cutting back raises profit.</li>
+<li><strong>(iii) Stay.</strong> Marginal revenue equals marginal cost, so profit is already as high as it goes.</li>
+</ul>
+</details>
+</section>
+<section id="multiple-choice" class="level2">
+<h2 class="anchored" data-anchor-id="multiple-choice">4. Multiple choice</h2>
+<div class="mcq" data-answer="a,b,d">
+<p><strong>1.</strong> A smoothie stand’s demand curve is <span class="math inline">\(P = 10 - Q/20\)</span>, where <span class="math inline">\(Q\)</span> is smoothies sold per day. Select all the statements that are correct.</p>
+<ol type="a">
+<li>To sell 100 smoothies a day, the highest price the stand can charge is $5.</li>
+<li>If the stand sets a price of $6, it sells 80 smoothies a day.</li>
+<li>The stand could sell 120 smoothies a day at a price of $6.</li>
+<li>Choosing how many smoothies to sell and choosing the price are the same decision.</li>
+</ol>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>The demand curve ties price and quantity together. To sell 100 smoothies the price has to be <span class="math inline">\(10 - 100/20 = 5\)</span>, and at $6 buyers take <span class="math inline">\(20 \times (10 - 6) = 80\)</span>, not 120. So once the stand picks a quantity, the demand curve fixes the price, and the other way round. <strong>(a), (b), and (d)</strong> are correct.</p>
+</details>
 </div>
-<div class="lecture">
-<h2 class="anchored">
-Lecture 10: The surplus from a sale and who captures it
-</h2>
-<p>
-<strong>Reading:</strong> 7.7
-</p>
-<p class="lecture-links dim">
-Materials posted closer to the date.
-</p>
+<div class="mcq" data-answer="b">
+<p><strong>2.</strong> <em>(Adapted from CORE Question 7.9)</em> Beautiful Cars has the cost function <span class="math inline">\(C(Q) = 60{,}000 + 10{,}000Q\)</span>. It maximizes its profit by producing <span class="math inline">\(Q^* = 20\)</span> cars and setting the price at <span class="math inline">\(P^* = \$30{,}000\)</span>, for a profit of $340,000. Suppose that the firm chooses instead to produce <span class="math inline">\(Q = 20\)</span> cars and sets the price at <span class="math inline">\(P = \$29{,}800\)</span>. Which statement is correct?</p>
+<ol type="a">
+<li>The profit remains the same at $340,000.</li>
+<li>The profit is reduced to $336,000.</li>
+<li>The average cost of production is $17,000.</li>
+<li>The firm is unable to sell all the cars.</li>
+</ol>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>Since <span class="math inline">\(Q\)</span> is still 20, production costs remain the same, but revenue falls by $200 on each car, or $4,000 in total, so profit is $340,000 − $4,000 = $336,000. Average cost is <span class="math inline">\(260{,}000 / 20 = \$13{,}000\)</span>; $17,000 is the profit per car, $340,000 / 20. At the lower price more than 20 buyers want a car, so the firm has no problem selling all 20. <strong>(b)</strong> is correct.</p>
+</details>
 </div>
-<div class="lecture">
-<h2 class="anchored">
-Lecture 11: Standing out from the crowd: Product differentiation and competition
-</h2>
-<p>
-<strong>Reading:</strong> 7.8–7.9
-</p>
-<p class="lecture-links dim">
-Materials posted closer to the date.
-</p>
+<div class="mcq" data-answer="a">
+<p><strong>3.</strong> <em>(Adapted from CORE Question 7.10)</em> Beautiful Cars maximizes its profit at <span class="math inline">\(P^* = \$30{,}000\)</span> and <span class="math inline">\(Q^* = 20\)</span>, and its marginal cost is $10,000 for every car. Suppose that the firm decides to switch to a higher price. Which statement is correct?</p>
+<ol type="a">
+<li>The firm reduces the quantity of cars produced.</li>
+<li>The marginal cost of producing an extra car is higher.</li>
+<li>The total cost of production is higher.</li>
+<li>The profit increases due to the new higher price.</li>
+</ol>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>At a price above $30,000 the firm can sell fewer than 20 cars, and it will not produce more cars than it can sell. Marginal cost is $10,000 for every car, so it does not rise, and producing fewer cars lowers total cost. Profit falls, because 20 cars at $30,000 was already the profit-maximizing choice. <strong>(a)</strong> is correct.</p>
+</details>
 </div>
-<div class="lecture">
-<h2 class="anchored">
-Lecture 12: Price wars: Strategic price setting and Nash equilibrium
-</h2>
-<p>
-<strong>Reading:</strong> 7.10; 4.2–4.3
-</p>
-<p class="lecture-links dim">
-Materials posted closer to the date.
-</p>
+<div class="mcq" data-answer="a,c">
+<p><strong>4.</strong> <em>(Adapted from CORE Question 7.11)</em> The figure shows marginal cost, demand, and marginal revenue for Beautiful Cars. Select all the statements that are correct.</p>
+<p><img src="../slides/img/core-q7-11.svg" class="img-fluid" alt="Three lines, price and cost on the vertical axis with marks at minus 10,000, 0, 10,000, 30,000, and 50,000 dollars, and cars per day on the horizontal axis with marks at 0, 10, 20, 25, 30, and 40. The demand curve falls from 50,000 dollars at zero cars. The marginal revenue line starts at the same point, falls twice as steeply, passes 30,000 dollars at 10 cars, crosses zero at 25 cars, and reaches minus 10,000 dollars at 30 cars. Marginal cost is a flat dashed line at 10,000 dollars. Marginal revenue crosses marginal cost at 20 cars, at the point labelled E prime, directly below the point E on the demand curve at 30,000 dollars." width="600"></p>
+<ol type="a">
+<li>At 10 cars, marginal revenue is above marginal cost, so selling one more car raises profit.</li>
+<li>At 30 cars, marginal revenue is negative, so the firm’s total profit must be negative.</li>
+<li>The firm maximizes profit at 20 cars, where marginal revenue equals marginal cost, and charges $30,000.</li>
+<li>The firm should produce 25 cars, where marginal revenue is zero.</li>
+</ol>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>At 10 cars marginal revenue is $30,000 and marginal cost is $10,000, so one more car adds to profit. At 30 cars the extra car loses money, but the firm still makes a profit on the cars before it: profit at 30 cars is $240,000, so it is not negative. Marginal revenue equals marginal cost at 20 cars, and the demand curve above that point gives the price, $30,000. At 25 cars marginal revenue is zero, which is where revenue is highest, but every car past the 20th adds less to revenue than its $10,000 cost, so profit is lower there. <strong>(a) and (c)</strong> are correct.</p>
+</details>
 </div>
-<div class="lecture">
-<h2 class="anchored">
-Lecture 13: Winner takes the market: Natural monopolies and competition policy
-</h2>
-<p>
-<strong>Reading:</strong> 7.11–7.12
-</p>
-<p class="lecture-links dim">
-Materials posted closer to the date.
-</p>
+<div class="mcq" data-answer="c">
+<p><strong>5.</strong> A firm’s marginal cost is $4 at every quantity. The marginal revenue from one more unit is $8 at 10 units, $6 at 20, $4 at 30, and $2 at 40, falling steadily in between. Which quantity maximizes its profit?</p>
+<ol type="a">
+<li>10</li>
+<li>20</li>
+<li>30</li>
+<li>40</li>
+</ol>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>Up to 30 units, each extra unit adds more to revenue than the $4 it costs, so profit rises. Past 30, marginal revenue is below $4 and each extra unit lowers profit. Profit is highest where marginal revenue equals marginal cost, at 30 units. <strong>(c)</strong> is correct.</p>
+</details>
+</div>
+<div class="mcq" data-answer="b">
+<p><strong>6.</strong> A firm sells 30 units at $600 each. To sell a 31st unit it has to lower its price to $590. What is its marginal revenue from the 31st unit?</p>
+<ol type="a">
+<li>$10</li>
+<li>$290</li>
+<li>$590</li>
+<li>$600</li>
+</ol>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>Revenue rises from <span class="math inline">\(30 \times 600 = 18{,}000\)</span> to <span class="math inline">\(31 \times 590 = 18{,}290\)</span>, so marginal revenue is $290. Put another way, the 31st unit brings in $590, but the other 30 units each sell for $10 less, a loss of $300. <strong>(b)</strong> is correct.</p>
+</details>
+</div>
+<div class="mcq" data-answer="a">
+<p><strong>7.</strong> At its current quantity a firm has marginal revenue of $200 and marginal cost of $100. What should it do?</p>
+<ol type="a">
+<li>Sell more, because the next unit adds more to revenue than to cost.</li>
+<li>Sell less, because marginal revenue is falling.</li>
+<li>Stay where it is, because profit is already highest.</li>
+<li>Raise the price and sell the same quantity.</li>
+</ol>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>While marginal revenue is above marginal cost, each extra unit adds to profit, so the firm expands until the two are equal. It cannot raise the price and hold quantity, because the demand curve ties the two together. <strong>(a)</strong> is correct.</p>
+</details>
+</div>
+<div class="mcq" data-answer="c,d">
+<p><strong>8.</strong> A firm’s fixed cost rises by $500 a day, and nothing else changes. Select all the statements that are correct.</p>
+<ol type="a">
+<li>Its profit-maximizing quantity falls.</li>
+<li>Its marginal cost rises by $500.</li>
+<li>Its profit at every quantity falls by $500.</li>
+<li>It charges the same price as before.</li>
+</ol>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>The fixed cost is paid whatever the firm produces, so it does not change what one more unit adds to cost: marginal cost stays the same. Profit at every quantity falls by the same $500, so the quantity with the highest profit, and the price that sells it, do not change. <strong>(c) and (d)</strong> are correct.</p>
+</details>
 </div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script>
