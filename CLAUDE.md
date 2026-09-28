@@ -9,10 +9,10 @@ outside Dropbox and replaces `docs/`; never render into `docs/` directly.
 
 Everything quiz-related lives under `quizzes/`, an autograder course folder
 (`quizzes/course.toml`) with one subfolder per quiz: the spec in
-`quizzes/quizNN/quizNN.toml`, print master and key in `quizzes/quizNN/build/`,
-the scanned stack saved as `quizzes/quizNN/quizNN_scan.pdf`, and the review
+`quizzes/quizN/quizN.toml`, print master and key in `quizzes/quizN/build/`,
+the scanned stack saved as `quizzes/quizN/quizN_scan.pdf`, and the review
 workbook and scores CSV written beside the scan. Author a spec, then from
-the econ201 root: `autograder --dir quizzes build quizNN` / `read` /
+the econ201 root: `autograder --dir quizzes build quizN` / `read` /
 `score`. The tool lives in its own repo (`../../auto-grader`); nothing is
 copied here, and Div posts grades with his own script, so the scores CSV is
 the last step it owns. `quizzes/` is gitignored and excluded from the
@@ -23,12 +23,12 @@ practice-based with a twist.
 
 ## Student data
 
-`quizzes/roster.csv` and, inside each `quizzes/quizNN/` folder, the scan
-(`quizNN_scan.pdf`), review workbook, and scores CSV carry student names
+`quizzes/roster.csv` and, inside each `quizzes/quizN/` folder, the scan
+(`quizN_scan.pdf`), review workbook, and scores CSV carry student names
 and CWIDs (`grades/`, now retired, did before). Do not read those; the
 specs and `build/` are fine.
 Test grading against synthetic sheets via
-`autograder --dir quizzes simulate quizNN`, never real scans.
+`autograder --dir quizzes simulate quizN`, never real scans.
 
 ## Accessibility is a hard requirement
 

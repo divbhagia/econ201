@@ -191,6 +191,20 @@ $presentation-font-size-root: 37px;
 // highlight that *emphasis* gets. Use [Title]{.book}.
 .reveal .book { font-style: italic; color: inherit; }
 
+// A sentence and the display equation that answers it, as one unit: the
+// equation sits close under its sentence, with a clear gap before the next
+// unit, so it does not read as part of the sentence that follows. Use
+// `::: eqgroup` around the sentence and the $$...$$ line.
+.reveal .eqgroup { margin-bottom: 0.9em; }
+.reveal .eqgroup + ul { margin-top: 0; }
+.reveal .eqgroup p { margin: 0; }
+.reveal .eqgroup .MathJax_Display { margin: 0.3em 0 0 0 !important; }
+
+// Display math inside a bullet (a list item ending in a worked calculation):
+// keep it close under the bullet that introduces it. Put .tighteq on the
+// column or div that holds the list.
+.reveal .tighteq .MathJax_Display { margin: 0.2em 0 0 0 !important; }
+
 // An empty `::: {.gap}` div: a small vertical space where a slide wants one,
 // which plain markdown cannot express. Keep in step with the .gap case in
 // assets/beamer-deck.lua, so both formats space the same slide alike.

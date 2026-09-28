@@ -257,6 +257,26 @@ function Div(el)
   if el.classes:includes('gap') then
     return pandoc.RawBlock('latex', '\\vspace{0.8em}')
   end
+  -- ::: eqgroup, the counterpart of .eqgroup in assets/slides.scss: a
+  -- sentence and its display equation held close, with space after.
+  -- The equation is its own paragraph in the source, which LaTeX would set
+  -- after a paragraph break; appending it to the sentence's paragraph keeps
+  -- only the display skip between them.
+  if el.classes:includes('eqgroup') then
+    local out = pandoc.List()
+    for _, b in ipairs(el.content) do
+      local prev = out[#out]
+      local lone_math = b.t == 'Para' and #b.content == 1
+        and b.content[1].t == 'Math' and b.content[1].mathtype == 'DisplayMath'
+      if lone_math and prev and prev.t == 'Para' then
+        prev.content:insert(b.content[1])
+      else
+        out:insert(b)
+      end
+    end
+    out:insert(pandoc.RawBlock('latex', '\\vspace{0.4em}'))
+    return out
+  end
   -- {.big}: enlarged text, as .big does on the web deck (1.3em there).
   if el.classes:includes('big') then
     local out = pandoc.List({pandoc.RawBlock('latex', '\\begingroup\\Large')})
@@ -279,6 +299,31 @@ function Div(el)
     out:insert(pandoc.RawBlock('latex', '\\par\\endgroup'))
     return out
   end
+  -- .tighteq, the counterpart of .tighteq in assets/slides.scss: a display
+  -- equation that closes a bullet joins the bullet's own paragraph, so
+  -- LaTeX sets only the display skip above it, not a paragraph break too.
+  if el.classes:includes('tighteq') then
+    el = el:walk({
+      BulletList = function(list)
+        for i, item in ipairs(list.content) do
+          local out = pandoc.List()
+          for _, b in ipairs(item) do
+            local prev = out[#out]
+            local lone_math = b.t == 'Para' and #b.content == 1
+              and b.content[1].t == 'Math'
+              and b.content[1].mathtype == 'DisplayMath'
+            if lone_math and prev and (prev.t == 'Para' or prev.t == 'Plain') then
+              prev.content:insert(b.content[1])
+            else
+              out:insert(b)
+            end
+          end
+          list.content[i] = out
+        end
+        return list
+      end,
+    })
+  end
   if el.classes:includes('column') then return column(el) end
   if el.classes:includes('fixedtable') then return fixedtable(el) end
   if el.classes:includes('takeaway') then
@@ -290,10 +335,18 @@ function Div(el)
 end
 
 -- The web deck colours a term inside an equation with \color{#BF5700}, which
--- MathJax reads as a CSS colour; xcolor does not, so point it at accent.
+-- MathJax reads as a CSS colour; xcolor does not, so point it at accent, and
+-- any other #RRGGBB at xcolor's HTML model.
+-- A label under a brace set as \style{font-size:90%}{\text{...}} (or 80%;
+-- MathJax has no \footnotesize) becomes \text{\small ...} (or \footnotesize).
 function Math(el)
-  if el.text:find('\\color{#BF5700}', 1, true) then
-    el.text = el.text:gsub('\\color{#BF5700}', '\\color{accent}')
+  local t = el.text
+  t = t:gsub('\\color{#BF5700}', '\\color{accent}')
+  t = t:gsub('\\color{#(%x%x%x%x%x%x)}', '\\color[HTML]{%1}')
+  t = t:gsub('\\style{font%-size:%s*80%%}{\\text{([^}]*)}}', '\\text{\\footnotesize %1}')
+  t = t:gsub('\\style{font%-size:%s*90%%}{\\text{([^}]*)}}', '\\text{\\small %1}')
+  if t ~= el.text then
+    el.text = t
     return el
   end
 end
