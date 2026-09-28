@@ -74,8 +74,10 @@ verapdf via Homebrew).
 ## Slide decks
 
 Before drafting or revising any deck, worksheet, or practice page, read
-`slides/DECK-SPEC.md` in full and check the draft against it; it is the
-standing spec distilled from Div's corrections on earlier lectures.
+`.claude/skills/build-lecture/DECK-SPEC.md` (local only, gitignored) in
+full and check the draft against it; it is the standing spec distilled from
+Div's corrections on earlier lectures. The `build-lecture` skill beside it
+carries the workflow.
 
 Sources are `slides/lectureN.qmd`, rendered by Quarto as part of the site. No
 speaker notes and no presenter copies. Only decks listed in `LECTURES` in the
