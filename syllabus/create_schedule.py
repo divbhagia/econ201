@@ -44,17 +44,14 @@ PLAN = {
         "7.6",
     ),
     10: ("The surplus from a sale and who captures it", "7.7"),
-    11: (
-        "Standing out from the crowd: Product differentiation and competition",
-        "7.8--7.9",
-    ),
+    11: ("Leaving gains on the table: Pareto efficiency and deadweight loss", "7.7"),
     12: (
-        "Price wars: Strategic price setting and Nash equilibrium",
-        "7.10; 4.2--4.3",
+        "Standing out from the crowd: Market power, differentiation, and natural monopoly",
+        "7.8--7.9; 7.11",
     ),
     13: (
-        "Winner takes the market: Natural monopolies and competition policy",
-        "7.11--7.12",
+        "Price wars: Strategic price setting and competition policy",
+        "7.10; 4.2--4.3; 7.12",
     ),
     14: (r"\textbf{Midterm 1}", ""),
     15: ("Classroom market experiment", ""),
@@ -362,6 +359,7 @@ MATERIALS = {
         "practice": "practice/practice09.html",
         "worksheet": "worksheets/worksheet09.pdf"},
     10: {"slides": "slides/lecture10.html", "slides_pdf": "slides/lecture10.pdf",
+         "practice": "practice/practice10.html",
          "worksheet": "worksheets/worksheet10.pdf"},
 }
 

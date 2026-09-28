@@ -51,6 +51,11 @@ Output, in slides/img/:
                        63 cents on the dollar (Waldfogel's grandparent yield,
                        62.9%), so the deadweight loss is $18.50
 
+  sierra-surplus.svg   practice page solution: Sierra Bikes' demand and MC, with
+                       consumer and producer surplus shaded at E (50 bikes, $700)
+  escape-room.svg      practice page: Escape Hour's demand and MC, with E at
+                       30 tickets and $50, ticks at every number the problem uses
+
 and in worksheets/figures/:
   scooters.pdf         the worksheet's own example: a scooter maker's demand,
                        MC, and E on a grid fine enough to read every number
@@ -290,6 +295,11 @@ def draw_strips(out: Path, kind: str) -> None:
     MC are both drawn, and the price line runs out to Q*.
     """
     fig, ax = axes()
+    if kind == "cs":
+        # Even ticks and gridlines every 5 cars and $5,000, so each marked
+        # buyer's gain (5, 10, 15 cars) can be read off the axes.
+        ax.set_xticks(range(0, Q_MAX + 1, 5))
+        ax.set_yticks(range(0, 50_001, 5_000))
     light, dark = (CS_FILL, DEMAND) if kind == "cs" else (PS_FILL, ACCENT)
     for x in np.arange(0.5, Q_STAR + 0.01, 0.5):
         lo, hi = (P_STAR, price(x)) if kind == "cs" else (PER_CAR, P_STAR)
@@ -390,6 +400,82 @@ def draw_gift_receipt(out: Path) -> None:
     print(f"  gift receipt: price {money(price_paid)}, value {value:.2f}, loss {loss:.2f}")
 
 
+def draw_sierra(out: Path, shaded: bool) -> None:
+    """Practice page: Sierra Bikes, P = 1,200 - 10 Q, MC = 200, E at 50 and 700."""
+    sp = lambda q: 1_200 - 10 * q
+    q_star, p_star, mc = 50, 700, 200
+    fig, ax = plt.subplots(figsize=SIDE, dpi=100)
+    ax.grid(color=GRID, lw=1, zorder=0)
+    ax.set_axisbelow(True)
+    for s in ("top", "right"):
+        ax.spines[s].set_visible(False)
+    ax.tick_params(length=5, width=1)
+    ax.set_xlim(0, 120)
+    ax.set_ylim(0, 1_260)
+    ax.set_xticks(range(0, 101, 25))
+    ax.set_yticks(range(0, 1_201, 200))
+    ax.yaxis.set_major_formatter(FuncFormatter(lambda y, _: money(y)))
+    ax.set_xlabel("Bikes per day, Q", fontsize=FONT, labelpad=8)
+    ax.set_ylabel("Price and cost", fontsize=FONT, labelpad=8)
+    fig.subplots_adjust(left=0.2, right=0.965, top=0.96, bottom=0.15)
+    if shaded:
+        ax.fill([0, 0, q_star], [1_200, p_star, p_star], color=CS_AREA, lw=0, zorder=2)
+        ax.fill([0, 0, q_star, q_star], [p_star, mc, mc, p_star], color=PS_AREA, lw=0, zorder=2)
+        ax.text(15, 870, f"CS\n{money(q_star * (1_200 - p_star) // 2)}", ha="center",
+                va="center", fontsize=FONT - 4, color=INK, fontweight="bold",
+                zorder=8, linespacing=1.05)
+        ax.text(25, 450, f"PS\n{money((p_star - mc) * q_star)}", ha="center",
+                va="center", fontsize=FONT - 4, color=INK, fontweight="bold",
+                zorder=8, linespacing=1.05)
+    ax.plot([0, q_star], [p_star, p_star], color=INK if shaded else GUIDE, lw=1.6,
+            ls="-" if shaded else (0, (4, 3)), zorder=4)
+    ax.plot([q_star, q_star], [0, p_star], color=GUIDE, lw=1.6, ls=(0, (4, 3)), zorder=4)
+    q = np.array([0, 120])
+    ax.plot(q, sp(q), color=DEMAND, lw=3, solid_capstyle="round", zorder=5)
+    ax.annotate("Demand", xy=(78, sp(78)), xytext=(10, 8), textcoords="offset points",
+                ha="left", va="bottom", fontsize=FONT, color=DEMAND,
+                fontweight="bold", zorder=8)
+    ax.axhline(mc, color=MARGINAL, lw=2.4, ls=(0, (5, 3)), zorder=4)
+    ax.annotate(f"MC = {money(mc)}", xy=(1.5, mc), xytext=(0, -10),
+                textcoords="offset points", ha="left", va="top", fontsize=FONT,
+                color=MARGINAL, fontweight="bold", zorder=8)
+    point(ax, q_star, p_star, f"E: {money(p_star)}", 12, 6, "left", "bottom")
+    save(fig, out)
+
+
+def draw_escape_room(out: Path) -> None:
+    """Practice page: Escape Hour, P = 80 - Q, MC = 20, E at 30 and 50."""
+    kp = lambda q: 80 - q
+    q_star, p_star, mc = 30, 50, 20
+    fig, ax = plt.subplots(figsize=SIDE, dpi=100)
+    ax.grid(color=GRID, lw=1, zorder=0)
+    ax.set_axisbelow(True)
+    for s in ("top", "right"):
+        ax.spines[s].set_visible(False)
+    ax.tick_params(length=5, width=1)
+    ax.set_xlim(0, 80)
+    ax.set_ylim(0, 84)
+    ax.set_xticks(range(0, 81, 10))
+    ax.set_yticks(range(0, 81, 10))
+    ax.yaxis.set_major_formatter(FuncFormatter(lambda y, _: money(y)))
+    ax.set_xlabel("Tickets sold per day, Q", fontsize=FONT, labelpad=8)
+    ax.set_ylabel("Price and cost", fontsize=FONT, labelpad=8)
+    fig.subplots_adjust(left=0.17, right=0.965, top=0.96, bottom=0.15)
+    ax.plot([0, q_star], [p_star, p_star], color=GUIDE, lw=1.6, ls=(0, (4, 3)), zorder=4)
+    ax.plot([q_star, q_star], [0, p_star], color=GUIDE, lw=1.6, ls=(0, (4, 3)), zorder=4)
+    q = np.array([0, 80])
+    ax.plot(q, kp(q), color=DEMAND, lw=3, solid_capstyle="round", zorder=5)
+    ax.annotate("Demand", xy=(52, kp(52)), xytext=(10, 8), textcoords="offset points",
+                ha="left", va="bottom", fontsize=FONT, color=DEMAND,
+                fontweight="bold", zorder=8)
+    ax.axhline(mc, color=MARGINAL, lw=2.4, ls=(0, (5, 3)), zorder=4)
+    ax.annotate(f"MC = {money(mc)}", xy=(1, mc), xytext=(0, -10),
+                textcoords="offset points", ha="left", va="top", fontsize=FONT,
+                color=MARGINAL, fontweight="bold", zorder=8)
+    point(ax, q_star, p_star, "E", 12, 6, "left", "bottom")
+    save(fig, out)
+
+
 def draw_surplus(out: Path, with_dwl: bool) -> None:
     """CS triangle and PS rectangle at E, and the DWL triangle if asked."""
     fig, ax = axes()
@@ -439,15 +525,12 @@ def draw_worksheet_scooters(out: Path) -> None:
         ax.spines[s].set_visible(False)
     ax.set_xlim(0, 50)
     ax.set_ylim(0, 1_240)
-    ax.set_xticks(range(0, 51, 10))
-    ax.set_xticks(range(0, 51, 5), minor=True)
-    ax.set_yticks(range(0, 1_201, 200))
-    ax.set_yticks(range(0, 1_201, 100), minor=True)
-    ax.grid(which="major", color=GRID, lw=1, zorder=0)
-    ax.grid(which="minor", color="#ececec", lw=0.7, zorder=0)
+    # One uniform grid, every 5 scooters and $100, each line labelled.
+    ax.set_xticks(range(0, 51, 5))
+    ax.set_yticks(range(0, 1_201, 100))
+    ax.grid(color=GRID, lw=0.9, zorder=0)
     ax.set_axisbelow(True)
-    ax.tick_params(length=5, width=1, labelsize=fs)
-    ax.tick_params(which="minor", length=0)
+    ax.tick_params(length=4, width=1, labelsize=fs - 2)
     ax.yaxis.set_major_formatter(FuncFormatter(lambda y, _: money(y)))
     ax.set_xlabel("Scooters per day, Q", fontsize=fs, labelpad=6)
     ax.set_ylabel("Price and cost", fontsize=fs, labelpad=6)
@@ -484,6 +567,8 @@ def main() -> int:
     draw_left_out(IMG / "cars-leftout.svg")
     draw_surplus(IMG / "cars-dwl.svg", with_dwl=True)
     draw_gift_receipt(IMG / "gift-receipt.svg")
+    draw_sierra(IMG / "sierra-surplus.svg", shaded=True)
+    draw_escape_room(IMG / "escape-room.svg")
     draw_worksheet_scooters(WS / "scooters.pdf")
 
     print("\nvalues used in slide and worksheet text")
@@ -531,6 +616,13 @@ def main() -> int:
           f" PS = {ps_ - SC_MC} x {SC_Q} = {money((ps_ - SC_MC) * SC_Q)},"
           f" DWL = 1/2 x {SC_QEFF - SC_Q} x {ps_ - SC_MC} = {money((SC_QEFF - SC_Q) * (ps_ - SC_MC) // 2)}")
 
+    # Worksheet 11: same scooters, the part lecture 11 covers.
+    k30, deal = 30, 500
+    cs_, psc = SC_Q * (SC_INTERCEPT - ps_) // 2, (ps_ - SC_MC) * SC_Q
+    print(f"  worksheet 11: demand above MC up to {SC_QEFF}; buyer {k30}: WTP {money(sp(k30))},"
+          f" at {money(deal)} buyer gains {money(sp(k30) - deal)}, firm {money(deal - SC_MC)};"
+          f" total at E {money(cs_ + psc)}, firm share {money(psc)}")
+
     # Practice page, problem 1: Sierra Bikes, continued from practice 9.
     sp = lambda q: 1_200 - 10 * q
     s_mc, s_f, sq, seff = 200, 2_000, 50, 100
@@ -563,6 +655,27 @@ def main() -> int:
     print(f"  P = 100 - Q, MC = 20: Q* = {dqs}, P* = {dps}, CS = {dqs * (100 - dps) // 2},"
           f" PS = {(dps - dmc) * dqs}, efficient Q = {100 - dmc},"
           f" DWL = {(100 - dmc - dqs) * (dps - dmc) // 2}")
+
+    # Practice 10, problem 2: Escape Hour, P = 80 - Q, MC = 20, rent 300.
+    kp = lambda q: 80 - q
+    kq = (80 - 20) // 2                       # MR = 80 - 2Q = 20
+    assert 80 - 2 * kq == 20
+    kcs, kps = kq * (80 - kp(kq)) // 2, (kp(kq) - 20) * kq
+    print(f"\npractice 10, escape room: Q* = {kq}, P* = {kp(kq)}; player 5 WTP {kp(5)},"
+          f" player gains {kp(5) - kp(kq)}, firm {kp(kq) - 20}, joint {kp(5) - 20};"
+          f" CS {kcs}, PS {kps}, profit {kps - 300}")
+    for pr in (50, 40):
+        qq = 80 - pr
+        print(f"  escape room at P {pr}: sells {qq}, CS {qq * (80 - pr) // 2},"
+              f" PS {(pr - 20) * qq}, total {qq * (80 - pr) // 2 + (pr - 20) * qq}")
+    # Practice 11: Escape Hour's deadweight loss and the 40th player.
+    q_eff = 80 - 20
+    print(f"  practice 11, escape room: demand meets MC at {q_eff}, DWL"
+          f" {(q_eff - kq) * (kp(kq) - 20) // 2}; player 40 WTP {kp(40)},"
+          f" at $30 player {kp(40) - 30}, firm {30 - 20}")
+    # Practice 10 MCQs: P = 60 - Q, MC = 20, sells 20 at 40, fixed 150; P = 90 - 2Q.
+    print(f"  MCQ: P = 60 - Q at Q = 20: P {60 - 20}, CS {20 * (60 - 40) // 2}, PS {(40 - 20) * 20},"
+          f" profit {(40 - 20) * 20 - 150}; P = 90 - 2Q, 15th buyer WTP {90 - 2 * 15}")
 
     # Practice page, problem 2: Nadia's mugs, one shopper per row.
     wtps, mc = (30, 26, 22, 18, 14, 10), 12
