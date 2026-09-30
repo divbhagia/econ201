@@ -70,7 +70,10 @@ Materials are posted as we go. See the [Schedule](../schedule.qmd) for dates and
 <h2>Lecture 11: Leaving gains on the table: Pareto efficiency and deadweight loss</h2>
 
 <p><strong>Reading:</strong> 7.7</p>
-<p class="lecture-links dim">Materials posted closer to the date.</p>
+<p class="lecture-links"><a class="btn btn-outline-primary" href="../slides/lecture11.html" target="_blank" rel="noopener" role="button" aria-label="Lecture 11 slides (opens in a new tab)">Slides</a>
+<a class="btn btn-outline-primary" href="../slides/lecture11.pdf" target="_blank" rel="noopener" role="button" aria-label="Lecture 11 slides as a tagged PDF (opens in a new tab)">Slides (PDF)</a>
+<a class="btn btn-outline-primary" href="../practice/practice11.html" target="_blank" rel="noopener" role="button" aria-label="Lecture 11 practice problems (opens in a new tab)">Practice problems</a>
+<a class="btn btn-outline-primary" href="../worksheets/worksheet11.pdf" target="_blank" rel="noopener" role="button" aria-label="Lecture 11 worksheet (opens in a new tab)">Worksheet</a></p>
 :::
 
 ::: {.lecture}
