@@ -7,6 +7,10 @@ toc-title: "On this page"
 format: html
 ---
 
+::: {.practice-links}
+[Lecture 6 slides](../slides/lecture6.html) · [Worksheet 6 (PDF)](../worksheets/worksheet06.pdf) · [Module III: Firms as Price Setters](../content/firms-as-price-setters.qmd)
+:::
+
 Work through each problem on paper before you open its **Solution**.
 
 ## 1. Denise's bakery
@@ -92,9 +96,7 @@ Beyond 300 loaves each extra loaf needs overtime labor, so **marginal cost rises
 
 ## 3. Lena's screen-printing shop
 
-Lena prints T-shirts. Her cost function, in dollars per day, is
-$$C(Q) = 90 + \frac{Q^2}{10}$$
-where $Q$ is shirts per day.
+Lena prints T-shirts. Her cost function, in dollars per day, is $C(Q) = 90 + Q^2/10$, where $Q$ is shirts per day.
 
 **(a)** What is the marginal cost per shirt when Lena goes from 10 to 15 shirts a day? From 15 to 20?
 
@@ -151,7 +153,7 @@ $$\text{MC} = \frac{C(20) - C(15)}{20 - 15} = \frac{130 - 112.5}{5} = \$3.50 \te
 
 ::: {.mcq answer="b"}
 
-**1.** A firm's cost function is $C(Q) = 300 + 2Q$. Its marginal cost is:
+**Q1.** A firm's cost function is $C(Q) = 300 + 2Q$. Its marginal cost is:
 
   a. \$300.
   b. \$2.
@@ -169,7 +171,7 @@ Marginal cost is the increase in total cost from one more unit, which is the slo
 
 ::: {.mcq answer="a,b,d"}
 
-**2.** A cereal producer's cost function is $C(Q) = 2Q$, where $Q$ is pounds of cereal. Select all the statements that are correct.
+**Q2.** A cereal producer's cost function is $C(Q) = 2Q$, where $Q$ is pounds of cereal. Select all the statements that are correct.
 
   a. There are no fixed costs of production.
   b. The marginal cost of production is 2.
@@ -187,7 +189,7 @@ At $Q = 0$ total cost is 0, so there are no fixed costs. The slope of the cost f
 
 ::: {.mcq answer="a,c,d"}
 
-**3.** Select all the statements that are correct.
+**Q3.** Select all the statements that are correct.
 
   a. With constant returns to scale, doubling all inputs doubles output.
   b. With decreasing returns to scale, doubling all inputs more than doubles output.
@@ -205,7 +207,7 @@ Decreasing returns mean doubling inputs *less than* doubles output, so (b) is wr
 
 ::: {.mcq answer="b"}
 
-**4.** Which of the following is an example of network economies of scale?
+**Q4.** Which of the following is an example of network economies of scale?
 
   a. A bakery buys flour in bulk at a discount.
   b. A messaging app becomes more useful to each user as more of their friends join.
@@ -223,7 +225,7 @@ Network economies of scale are on the demand side: the product is worth more to 
 
 ::: {.mcq answer="c"}
 
-**5.** A carmaker has fixed costs and a constant cost per car. Which statement about its average cost (AC) and marginal cost (MC) is correct?
+**Q5.** A carmaker has fixed costs and a constant cost per car. Which statement about its average cost (AC) and marginal cost (MC) is correct?
 
   a. AC is below MC at every output.
   b. AC equals MC at every output.

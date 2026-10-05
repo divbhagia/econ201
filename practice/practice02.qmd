@@ -7,7 +7,11 @@ toc-title: "On this page"
 format: html
 ---
 
-Below you will find guided reading questions for the three sections you were asked to read closely, and some practice problems. Do the reading with the guided reading questions in hand, then attempt the practice problems. A recap of the lecture is in the [lecture notes](../notes/notes02.pdf), and the slides are [here](../slides/lecture2.html).
+::: {.practice-links}
+[Lecture 2 slides](../slides/lecture2.html) · [Lecture notes (PDF)](../notes/notes02.pdf) · [Worksheet 2 (PDF)](../worksheets/worksheet02.pdf) · [Module I: The Big Picture](../content/the-big-picture.qmd)
+:::
+
+Below you will find guided reading questions for the three sections you were asked to read closely, and some practice problems. Do the reading with the guided reading questions in hand, then attempt the practice problems.
 
 ## Guided reading
 
@@ -42,7 +46,7 @@ Write your answer down before you open a **Solution**.
 
 ::: {.mcq answer="c"}
 
-**1.** Which statement best describes what the hockey stick chart shows?
+**Q1.** Which statement best describes what the hockey stick chart shows?
 
   a. Rich countries have been far ahead of poor ones for many centuries.
   b. All countries began to grow at about the same time, but at different speeds.
@@ -60,7 +64,7 @@ Today's gaps are not an old feature of the world: in 1600 the five countries on 
 
 ::: {.mcq answer="b"}
 
-**2.** What does Adam Smith's *invisible hand* describe?
+**Q2.** What does Adam Smith's *invisible hand* describe?
 
   a. Governments steering the economy through regulation of prices and wages.
   b. Self-interested individuals promoting the interest of society, though that was no part of their intention.
@@ -79,7 +83,7 @@ The *invisible hand* is Smith's metaphor for the way markets coordinate the self
 
 ::: {.mcq answer="b"}
 
-**3.** Adam Smith said the division of labour/specialisation is limited by the *extent of the market*. What does that mean?
+**Q3.** Adam Smith said the division of labour/specialisation is limited by the *extent of the market*. What does that mean?
 
   a. Only large firms are able to specialise.
   b. Specialising is only worth doing if there are enough buyers for the extra output.
@@ -96,7 +100,7 @@ Smith's pin factory shows that specialisation makes workers more productive: div
 
 ::: {.mcq answer="c"}
 
-**4.** *Technological progress* is defined as a change in technology that reduces the amount of resources (labour, machines, land, energy, time) needed to produce a given amount of output. A bakery makes one of the following changes. Which one is technological progress?
+**Q4.** *Technological progress* is defined as a change in technology that reduces the amount of resources (labour, machines, land, energy, time) needed to produce a given amount of output. A bakery makes one of the following changes. Which one is technological progress?
 
   a. It buys a second oven and bakes twice as many cakes.
   b. It finds a supplier whose flour is cheaper, and its costs fall.
@@ -114,7 +118,7 @@ Hold each option against the definition. In (c) the output is the same cakes, an
 
 ::: {.mcq answer="b"}
 
-**5.** Countries with more doctors per person have longer life expectancy. Does this mean training more doctors would lead to people living longer?
+**Q5.** Countries with more doctors per person have longer life expectancy. Does this mean training more doctors would lead to people living longer?
 
   a. The correlation is too weak to mean anything.
   b. Richer countries can afford both more doctors and better food, housing, and sanitation.
@@ -132,7 +136,7 @@ Correlation is not causation. Richer countries can afford more doctors, and they
 
 ### Short answer
 
-**6.** According to the reading, what explains the early take-off of the western economies shown on the hockey stick chart?
+**Q6.** According to the reading, what explains the early take-off of the western economies shown on the hockey stick chart?
 
 <details class="solution">
 <summary>Solution</summary>
@@ -145,7 +149,7 @@ An important part of the answer is two changes that happened around then, both o
 
 </details>
 
-**7.** Most countries today are capitalist by the definition we used: they have private property, markets, and firms. So why do living standards still differ so enormously between them?
+**Q7.** Most countries today are capitalist by the definition we used: they have private property, markets, and firms. So why do living standards still differ so enormously between them?
 
 <details class="solution">
 <summary>Solution</summary>
@@ -158,7 +162,7 @@ Two broad reasons:
 
 </details>
 
-**8.** Why do carbon emissions have the same hockey-stick shape as income? What connects the two?
+**Q8.** Why do carbon emissions have the same hockey-stick shape as income? What connects the two?
 
 <details class="solution">
 <summary>Solution</summary>
@@ -167,7 +171,7 @@ The link is the Industrial Revolution, and the technological progress that follo
 
 </details>
 
-**9.** In class we looked at a chart of West and East Germany from 1950 to 1989. What point was that chart making?
+**Q9.** In class we looked at a chart of West and East Germany from 1950 to 1989. What point was that chart making?
 
 <details class="solution">
 <summary>Solution</summary>
@@ -178,7 +182,7 @@ To do better than a correlation you want an experiment, but you cannot run one o
 
 </details>
 
-**10.** Capitalism's three institutions are not independent of one another. Could a market work if nothing were private property? Could a firm exist without markets?
+**Q10.** Capitalism's three institutions are not independent of one another. Could a market work if nothing were private property? Could a firm exist without markets?
 
 <details class="solution">
 <summary>Solution</summary>

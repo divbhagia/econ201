@@ -331,32 +331,32 @@ mjx-container.mjx-scroll {
 /* ---------- Collapsible solutions on practice pages ---------- */
 
 /* Native <details>/<summary>: keyboard-operable and announced as a disclosure
-   widget by screen readers, with no JavaScript. Summary text is #8f4100
-   (7.7:1 on white, and still AA on the cream panel, where #BF5700 is not). */
+   widget by screen readers, with no JavaScript. Closed, it is a single
+   "Solution" line so a page of parts does not read as a stack of boxes; the
+   cream panel appears only once it is open. Summary text is #8f4100 (7.7:1
+   on white, and still AA on the cream panel, where #BF5700 is not). */
 details.solution {
-  margin: 0.6em 0 1.4em 0;
-  border-left: 3px solid #BF5700;
-  background-color: #FDF3EA;
-  border-radius: 4px;
-  padding: 0 1em;
+  margin: 0.3em 0 1.3em 0;
 }
 details.solution > summary {
   cursor: pointer;
-  padding: 0.55em 0;
+  padding: 0.3em 0;
   font-weight: 700;
   color: #8f4100;
-  list-style-position: outside;
+  list-style-position: inside;
 }
 details.solution > summary:hover { text-decoration: underline; }
 details.solution > summary:focus-visible {
   outline: 3px solid #8f4100;
   outline-offset: 2px;
 }
-details.solution[open] > summary {
-  border-bottom: 1px solid #efdcc9;
-  margin-bottom: 0.6em;
+details.solution[open] {
+  border-left: 3px solid #BF5700;
+  background-color: #FDF3EA;
+  padding: 0.25em 1em 0 1em;
 }
-details.solution > :last-child { padding-bottom: 0.8em; }
+details.solution[open] > summary { margin-bottom: 0.4em; }
+details.solution > :last-child { padding-bottom: 0.9em; }
 
 /* ---------- Interactive multiple choice on practice pages ---------- */
 
@@ -396,20 +396,22 @@ div.mcq fieldset.mcq-options input:focus-visible {
   outline-offset: 2px;
 }
 .mcq-controls { margin: 0.8em 0 0.4em 0; }
-/* Same look as the Solution disclosure: cream panel, brand-orange rule,
-   dark brown text (#8f4100 is AA on the cream, where #BF5700 is not). */
+/* Outlined button in the site's link-button style (the content pages use
+   the same outline), dark brown text for contrast on white and on hover. */
 button.mcq-check {
-  background-color: #FDF3EA;
+  background-color: #fff;
   color: #8f4100;
-  border: none;
-  border-left: 3px solid #BF5700;
+  border: 1.5px solid #BF5700;
   border-radius: 4px;
-  padding: 0.55em 1.1em;
+  padding: 0.4em 1em;
   font-weight: 700;
   font-size: 0.95em;
   cursor: pointer;
 }
-button.mcq-check:hover { text-decoration: underline; }
+button.mcq-check:hover {
+  background-color: #BF5700;
+  color: #fff;
+}
 button.mcq-check:focus-visible {
   outline: 3px solid #8f4100;
   outline-offset: 2px;
@@ -419,13 +421,11 @@ button.mcq-check:focus-visible {
   font-weight: 600;
   color: #393A3B;
 }
-.mcq-arrow { color: #BF5700; }
 /* Solution body revealed on a correct answer; same panel as details.solution. */
 .mcq-controls > .mcq-solution {
   margin-top: 0.7em;
   border-left: 3px solid #BF5700;
   background-color: #FDF3EA;
-  border-radius: 4px;
   padding: 0.8em 1em;
 }
 .mcq-controls > .mcq-solution > :last-child { margin-bottom: 0; }
@@ -449,3 +449,56 @@ div.mcq + div.mcq {
   border-top: 1px solid #d9d9d9;
   padding-top: 1.75rem;
 }
+
+/* ---------- Practice pages ---------- */
+
+/* body.practice-page comes from practice/_metadata.yml. Part labels "(a)"
+   and "Q1." are wrapped by assets/practice-parts.lua; the label hangs in
+   the margin and the question, its options, and its Solution line up on
+   one indent, so the scenario reads as a block and the parts as a list. */
+.practice-page .practice-links {
+  font-size: 0.95rem;
+  color: #595a5b;
+  margin: -0.4rem 0 1.6rem 0;
+}
+.practice-page .practice-links p { margin: 0; }
+
+.practice-page .part > p {
+  position: relative;
+  padding-left: 2.6em;
+}
+.practice-page .part-label {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.practice-page details.solution,
+.practice-page .mcq-controls { margin-left: 2.6em; }
+.practice-page div.mcq fieldset.mcq-options ol { padding-left: 2.6em; }
+/* No-JavaScript fallback keeps the native letter markers */
+.practice-page div.mcq > ol { padding-left: 4em; }
+
+/* Booktabs tables: rules above and below and under the header only, no
+   grid, sized to their content. Overrides the schedule-oriented rules at
+   the top of this file. */
+.practice-page main table {
+  width: auto;
+  max-width: 100%;
+  border: none;
+  border-top: 2px solid #393A3B;
+  border-bottom: 2px solid #393A3B;
+  border-radius: 0;
+  margin: 0.6em 0 1.2em 0;
+}
+.practice-page main th,
+.practice-page main td {
+  border: none;
+  background-color: transparent !important;
+  padding: 0.45em 1.1em;
+  text-align: center;
+  width: auto;
+  min-width: 0 !important;
+}
+.practice-page main thead th { border-bottom: 1px solid #393A3B; }
+.practice-page main th:first-child,
+.practice-page main td:first-child { text-align: left; }

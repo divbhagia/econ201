@@ -1,0 +1,7 @@
+# Shared by every practice page. body.practice-page scopes the practice-page
+# rules in assets/styles.css (hanging part labels, booktabs tables); the
+# filter wraps "(a)" and "Q1." paragraphs so those rules have a hook.
+# make site copies this file along with the published pages.
+body-classes: practice-page
+filters:
+  - ../assets/practice-parts.lua

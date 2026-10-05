@@ -7,13 +7,15 @@ toc-title: "On this page"
 format: html
 ---
 
+::: {.practice-links}
+[Lecture 7 slides](../slides/lecture7.html) · [Worksheet 7 (PDF)](../worksheets/worksheet07.pdf) · [Module III: Firms as Price Setters](../content/firms-as-price-setters.qmd)
+:::
+
 Work through each problem on paper before you open its **Solution**.
 
 ## 1. Nadia's kayak rentals
 
-Nadia rents kayaks by the day at a lake. Her demand curve is
-$$Q = 60 - 2P$$
-where $Q$ is kayaks rented per day and $P$ is the price of a rental in dollars.
+Nadia rents kayaks by the day at a lake. Her demand curve is $Q = 60 - 2P$, where $Q$ is kayaks rented per day and $P$ is the price of a rental in dollars.
 
 **(a)** How many kayaks does Nadia rent at a price of \$20?
 
@@ -174,7 +176,7 @@ $$\varepsilon = -\frac{-5}{25} = 0.2$$
 
 ::: {.mcq answer="b,c"}
 
-**1.** The diagram shows two alternative demand curves, D and D′, for a product. Select all the statements that are correct.
+**Q1.** The diagram shows two alternative demand curves, D and D′, for a product. Select all the statements that are correct.
 
 ![](../slides/img/core-q7-6.svg){width="480" fig-alt="Two parallel downward-sloping straight lines, price on the vertical axis from 0 to 12,000 dollars in steps of 2,000 and quantity on the horizontal axis from 0 to 100 in steps of 20. The lower line, D, runs from 6,000 dollars at zero quantity to zero price at 60 units. The upper line, D prime, runs from 10,000 dollars at zero quantity to zero price at 100 units."}
 
@@ -194,7 +196,7 @@ On D, at \$4,000 the firm can sell 20 units, not 30. On D′, a price of \$4,000
 
 ::: {.mcq answer="a,b,d"}
 
-**2.** A shop sells 20 hats per week at \$10 each. When it increases the price to \$12, the number of hats sold falls to 15 per week. Select all the statements that are correct.
+**Q2.** A shop sells 20 hats per week at \$10 each. When it increases the price to \$12, the number of hats sold falls to 15 per week. Select all the statements that are correct.
 
   a. When the price increases from \$10 to \$12, demand decreases by 25%.
   b. A 20% increase in the price causes a 25% fall in demand.
@@ -217,7 +219,7 @@ So $\varepsilon = -\dfrac{-25}{20} = 1.25$, which is greater than 1: demand is e
 
 ::: {.mcq answer="a,d"}
 
-**3.** The figure shows two straight-line demand curves, D₁ and D₂, which cross at point E. Select all the statements that are correct.
+**Q3.** The figure shows two straight-line demand curves, D₁ and D₂, which cross at point E. Select all the statements that are correct.
 
 ![](../slides/img/core-q7-8.svg){width="480" fig-alt="Two downward-sloping straight lines with no numbers on the axes, price on the vertical axis and quantity on the horizontal axis. D1 is steep and D2 is flatter, and they cross at point E. Point A is on D1 above and to the left of E. Point C is on D1 below and to the right of E. Point B is on D2 below and to the right of E, at a higher quantity and a higher price than C."}
 
@@ -237,7 +239,7 @@ At E both curves have the same price and quantity, and D₁ is steeper, so the s
 
 ::: {.mcq answer="b"}
 
-**4.** A firm raises its price by 4%, and the quantity it sells falls by 8%. The price elasticity of demand is:
+**Q4.** A firm raises its price by 4%, and the quantity it sells falls by 8%. The price elasticity of demand is:
 
   a. 0.5, so demand is inelastic.
   b. 2, so demand is elastic.
@@ -255,7 +257,7 @@ $\varepsilon = -\dfrac{-8}{4} = 2$. The minus sign in the formula makes the elas
 
 ::: {.mcq answer="a"}
 
-**5.** A campus concert raises its ticket price from \$20 to \$25, and ticket sales fall from 400 to 320. The price elasticity of demand is:
+**Q5.** A campus concert raises its ticket price from \$20 to \$25, and ticket sales fall from 400 to 320. The price elasticity of demand is:
 
   a. 0.8, so demand is inelastic.
   b. 1.25, so demand is elastic.

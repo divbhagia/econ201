@@ -263,10 +263,9 @@ Lecture 4: Why do markets matter? Specialization and comparative advantage
 // enhancement: without JavaScript the page shows the plain option list and
 // the collapsible solution, unchanged. With it, each div.mcq (authored as
 // ::: {.mcq answer="c"} in the .qmd) gets real radio or checkbox inputs and
-// a single check button that replaces the Solution disclosure: the button
-// carries the same triangle marker, and a correct answer reveals the
-// solution text beneath the role="status" feedback line, flipping the
-// triangle down. Native form controls keep this keyboard-operable.
+// a single check button that replaces the Solution disclosure; a correct
+// answer reveals the solution text beneath the role="status" feedback
+// line. Native form controls keep this keyboard-operable.
 (function () {
   'use strict';
 
@@ -339,13 +338,7 @@ Lecture 4: Why do markets matter? Specialization and comparative advantage
     var btn = document.createElement('button');
     btn.type = 'button';
     btn.className = 'mcq-check';
-    var arrow = document.createElement('span');
-    arrow.className = 'mcq-arrow';
-    arrow.setAttribute('aria-hidden', 'true');
-    arrow.textContent = '▸';
-    btn.appendChild(arrow);
-    btn.appendChild(document.createTextNode(
-      ' ' + (multi ? 'Check my answers' : 'Check my answer')));
+    btn.textContent = multi ? 'Check my answers' : 'Check my answer';
     var fb = document.createElement('p');
     fb.className = 'mcq-feedback';
     fb.setAttribute('role', 'status');
@@ -410,10 +403,7 @@ Lecture 4: Why do markets matter? Specialization and comparative advantage
         fb.style.whiteSpace = '';
       }
       fb.textContent = msg;
-      if (sol) {
-        sol.hidden = !correct;
-        arrow.textContent = correct ? '▾' : '▸';
-      }
+      if (sol) { sol.hidden = !correct; }
     });
   }
 

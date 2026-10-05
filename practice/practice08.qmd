@@ -7,6 +7,10 @@ toc-title: "On this page"
 format: html
 ---
 
+::: {.practice-links}
+[Lecture 8 slides](../slides/lecture8.html) · [Worksheet 8 (PDF)](../worksheets/worksheet08.pdf) · [Module III: Firms as Price Setters](../content/firms-as-price-setters.qmd)
+:::
+
 Work through each problem on paper before you open its **Solution**.
 
 ## 1. Devon's month
@@ -220,7 +224,7 @@ $$\varepsilon_{\text{income}} = \frac{4}{-8} = -0.5$$
 
 ::: {.mcq answer="b"}
 
-**1.** A household's income rises by 10%, and the number of cans of soup it buys falls by 4%. The income elasticity of demand for soup is:
+**Q1.** A household's income rises by 10%, and the number of cans of soup it buys falls by 4%. The income elasticity of demand for soup is:
 
   a. 0.4, so soup is a normal good.
   b. $-0.4$, so soup is an inferior good.
@@ -238,7 +242,7 @@ The income elasticity is $\dfrac{-4}{10} = -0.4$. It is negative, so soup is an 
 
 ::: {.mcq answer="b"}
 
-**2.** A family's monthly income rises from \$4,000 to \$5,000, and the number of restaurant meals it buys rises from 4 to 6 a month. The income elasticity of demand for restaurant meals is:
+**Q2.** A family's monthly income rises from \$4,000 to \$5,000, and the number of restaurant meals it buys rises from 4 to 6 a month. The income elasticity of demand for restaurant meals is:
 
   a. 0.5, so restaurant meals are a necessity.
   b. 2, so restaurant meals are a luxury.
@@ -256,7 +260,7 @@ Income rises by $\frac{5{,}000 - 4{,}000}{4{,}000} \times 100 = 25\%$ and meals 
 
 ::: {.mcq answer="a,b,d"}
 
-**3.** Select all the statements that are correct.
+**Q3.** Select all the statements that are correct.
 
   a. An inferior good has a negative income elasticity of demand.
   b. A good with an income elasticity of demand of 0.4 is a normal good and a necessity.
@@ -274,7 +278,7 @@ A luxury has an income elasticity greater than 1, not between 0 and 1, so (c) is
 
 ::: {.mcq answer="b"}
 
-**4.** The price of good B rises by 8%, and demand for good A falls by 16%. The cross-price elasticity of demand for A with respect to the price of B is:
+**Q4.** The price of good B rises by 8%, and demand for good A falls by 16%. The cross-price elasticity of demand for A with respect to the price of B is:
 
   a. 2, so A and B are substitutes.
   b. $-2$, so A and B are complements.
@@ -292,7 +296,7 @@ The cross-price elasticity is $\dfrac{-16}{8} = -2$. It is negative, so the two 
 
 ::: {.mcq answer="c"}
 
-**5.** For which pair of goods would you expect the cross-price elasticity of demand to be negative?
+**Q5.** For which pair of goods would you expect the cross-price elasticity of demand to be negative?
 
   a. Coffee and tea.
   b. Butter and margarine.
@@ -310,7 +314,7 @@ A negative cross-price elasticity means the goods are complements, bought togeth
 
 ::: {.mcq answer="a,b,d"}
 
-**6.** From the lecture: the income elasticity of demand in the United States is about 1.25 for recreation and about 0.35 for food, beverages, and tobacco. A recession cuts incomes by 10%. Select all the statements that are correct.
+**Q6.** From the lecture: the income elasticity of demand in the United States is about 1.25 for recreation and about 0.35 for food, beverages, and tobacco. A recession cuts incomes by 10%. Select all the statements that are correct.
 
   a. Demand for recreation falls by about 12.5%.
   b. Demand for food, beverages, and tobacco falls by about 3.5%.

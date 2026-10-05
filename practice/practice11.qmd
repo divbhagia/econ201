@@ -7,15 +7,15 @@ toc-title: "On this page"
 format: html
 ---
 
+::: {.practice-links}
+[Lecture 11 slides](../slides/lecture11.html) · [Worksheet 11 (PDF)](../worksheets/worksheet11.pdf) · [Module III: Firms as Price Setters](../content/firms-as-price-setters.qmd)
+:::
+
 Work through each problem on paper before you open its **Solution**.
 
 ## 1. Sierra Bikes
 
-Sierra Bikes assembles electric bikes. Its demand curve is
-$$P = 1{,}200 - 10Q$$
-where $Q$ is bikes per day and $P$ is the price in dollars, and its cost function is
-$$C(Q) = 2{,}000 + 200Q$$
-Sierra maximizes its profit by selling 50 bikes a day at \$700 each.
+Sierra Bikes assembles electric bikes. Its demand curve is $P = 1{,}200 - 10Q$, where $Q$ is bikes per day and $P$ is the price in dollars, and its cost function is $C(Q) = 2{,}000 + 200Q$. Sierra maximizes its profit by selling 50 bikes a day at \$700 each.
 
 **(a)** How many buyers value a bike at more than its \$200 cost? Find the deadweight loss at Sierra's profit-maximizing point.
 
@@ -73,7 +73,7 @@ $$\text{DWL} = \tfrac{1}{2} \times (60 - 30) \times (50 - 20) = 450$$
 
 ::: {.mcq answer="a,c"}
 
-**1.** Select all the statements that are correct.
+**Q1.** Select all the statements that are correct.
 
   a. If a Pareto improvement is possible, the outcome is not Pareto efficient.
   b. A Pareto efficient outcome is always fair.
@@ -91,7 +91,7 @@ An outcome is Pareto efficient when no change could make someone better off with
 
 ::: {.mcq answer="a"}
 
-**2.** A firm sets one price for all its buyers. Which change is a Pareto improvement?
+**Q2.** A firm sets one price for all its buyers. Which change is a Pareto improvement?
 
   a. The firm sells one extra unit, at a price between its marginal cost and the buyer's willingness to pay, to a buyer who was not buying, and keeps the price the same for everyone else.
   b. The firm raises its price by \$1 on every unit.
@@ -109,7 +109,7 @@ In (a) the new buyer gains, the firm earns more than the unit costs, and nobody 
 
 ::: {.mcq answer="c"}
 
-**3.** A firm that sets a single price produces less than the quantity where demand meets marginal cost. Why?
+**Q3.** A firm that sets a single price produces less than the quantity where demand meets marginal cost. Why?
 
   a. Its marginal cost rises as it produces more.
   b. Its fixed cost is too high to produce more.
@@ -127,7 +127,7 @@ Past the profit-maximizing quantity, the extra revenue from one more unit is les
 
 ::: {.mcq answer="a,b,d"}
 
-**4.** A firm's demand curve is $P = 100 - Q$ and its marginal cost is \$20 at every quantity. It maximizes profit by selling 40 units at \$60. Select all the statements that are correct.
+**Q4.** A firm's demand curve is $P = 100 - Q$ and its marginal cost is \$20 at every quantity. It maximizes profit by selling 40 units at \$60. Select all the statements that are correct.
 
   a. Consumer surplus is \$800.
   b. Producer surplus is \$1,600.
@@ -145,7 +145,7 @@ Consumer surplus is $\tfrac{1}{2} \times 40 \times (100 - 60) = 800$, and produc
 
 ::: {.mcq answer="a"}
 
-**5.** *(Adapted from CORE Question 7.12)* Beautiful Cars maximizes its profit by selling 20 cars a day at \$30,000 each. Which statement is correct?
+**Q5.** *(Adapted from CORE Question 7.12)* Beautiful Cars maximizes its profit by selling 20 cars a day at \$30,000 each. Which statement is correct?
 
   a. Consumer surplus is the sum, over all buyers, of the difference between each buyer's willingness to pay and the price.
   b. Producer surplus equals the firm's profit.
@@ -163,7 +163,7 @@ Producer surplus is revenue minus marginal costs, so it leaves out the fixed cos
 
 ::: {.mcq answer="a,d"}
 
-**6.** Which of these are examples of price discrimination? Select all the statements that are correct.
+**Q6.** Which of these are examples of price discrimination? Select all the statements that are correct.
 
   a. A museum charges students less than other visitors for the same ticket.
   b. A pizza place charges more for a large pizza than a small one.

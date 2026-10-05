@@ -7,15 +7,15 @@ toc-title: "On this page"
 format: html
 ---
 
+::: {.practice-links}
+[Lecture 10 slides](../slides/lecture10.html) · [Worksheet 10 (PDF)](../worksheets/worksheet10.pdf) · [Module III: Firms as Price Setters](../content/firms-as-price-setters.qmd)
+:::
+
 Work through each problem on paper before you open its **Solution**.
 
 ## 1. Sierra Bikes
 
-Sierra Bikes assembles electric bikes. Its demand curve is
-$$P = 1{,}200 - 10Q$$
-where $Q$ is bikes per day and $P$ is the price in dollars, and its cost function is
-$$C(Q) = 2{,}000 + 200Q$$
-Sierra maximizes its profit by selling 50 bikes a day at \$700 each.
+Sierra Bikes assembles electric bikes. Its demand curve is $P = 1{,}200 - 10Q$, where $Q$ is bikes per day and $P$ is the price in dollars, and its cost function is $C(Q) = 2{,}000 + 200Q$. Sierra maximizes its profit by selling 50 bikes a day at \$700 each.
 
 **(a)** How much is the 10th buyer willing to pay? What is the joint surplus from selling this buyer a bike, and how much of it goes to the buyer and how much to Sierra?
 
@@ -90,7 +90,7 @@ Consumer surplus **rises from \$450 to \$800**, and producer surplus **falls fro
 
 ::: {.mcq answer="b"}
 
-**1.** A demand curve is $P = 90 - 2Q$. How much is the 15th buyer willing to pay?
+**Q1.** A demand curve is $P = 90 - 2Q$. How much is the 15th buyer willing to pay?
 
   a. \$15
   b. \$60
@@ -108,7 +108,7 @@ A buyer's willingness to pay is the height of the demand curve at their place in
 
 ::: {.mcq answer="b"}
 
-**2.** A buyer is willing to pay \$120 for a jacket. The store's marginal cost is \$50, and the price is \$80. How much surplus does the buyer get from the sale?
+**Q2.** A buyer is willing to pay \$120 for a jacket. The store's marginal cost is \$50, and the price is \$80. How much surplus does the buyer get from the sale?
 
   a. \$30
   b. \$40
@@ -126,7 +126,7 @@ The buyer gets $\text{WTP} - P = 120 - 80 = 40$. The store gets $P - \text{MC} =
 
 ::: {.mcq answer="a,b,c"}
 
-**3.** A firm's demand curve is $P = 60 - Q$ and its marginal cost is \$20 at every quantity. It sells 20 units at \$40, and its fixed cost is \$150. Select all the statements that are correct.
+**Q3.** A firm's demand curve is $P = 60 - Q$ and its marginal cost is \$20 at every quantity. It sells 20 units at \$40, and its fixed cost is \$150. Select all the statements that are correct.
 
   a. Consumer surplus is \$200.
   b. Producer surplus is \$400.
@@ -144,7 +144,7 @@ Consumer surplus is the triangle $\tfrac{1}{2} \times 20 \times (60 - 40) = 200$
 
 ::: {.mcq answer="c"}
 
-**4.** A firm's producer surplus is \$5,000 a day, and its fixed cost is \$1,500 a day. What is its profit?
+**Q4.** A firm's producer surplus is \$5,000 a day, and its fixed cost is \$1,500 a day. What is its profit?
 
   a. \$1,500
   b. \$5,000
@@ -162,7 +162,7 @@ Producer surplus does not count the fixed cost, so profit is $5{,}000 - 1{,}500 
 
 ::: {.mcq answer="a,b,d"}
 
-**5.** A buyer is willing to pay \$1,100 for a bike that costs Sierra \$200 to make. Sierra cuts the price from \$700 to \$650. Select all the statements that are correct.
+**Q5.** A buyer is willing to pay \$1,100 for a bike that costs Sierra \$200 to make. Sierra cuts the price from \$700 to \$650. Select all the statements that are correct.
 
   a. The joint surplus from the sale stays at \$900.
   b. The buyer's gain rises from \$400 to \$450.
@@ -180,7 +180,7 @@ The joint surplus is $\text{WTP} - \text{MC} = 1{,}100 - 200 = 900$, whatever th
 
 ::: {.mcq answer="a"}
 
-**6.** Which firm is most likely to capture a large share of the surplus from its sales?
+**Q6.** Which firm is most likely to capture a large share of the surplus from its sales?
 
   a. The only ferry company serving an island.
   b. One of many identical food trucks parked on the same street.

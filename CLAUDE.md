@@ -115,6 +115,15 @@ a slide deck and the build fails on the rename.
 without appearing on the site or in its search index. Publishing one means
 adding it to `PRACTICE` and to `MATERIALS` together.
 
+Page conventions: a `::: {.practice-links}` row right under the front matter
+(slides, worksheet PDF, module page), problem parts as `**(a)**` paragraphs,
+standalone questions as `**Q1.**` (never bare `**1.**`, which collides with
+the numbered section headings), and short setup equations inline rather than
+display. `practice/_metadata.yml` gives every page the `practice-page` body
+class and runs `assets/practice-parts.lua`, which wraps those labeled
+paragraphs so `assets/styles.css` can hang the label and indent the part;
+`scripts/build_module_practice.py` parses the same patterns.
+
 ## Schedule and content pages
 
 `schedule.qmd` and `content/*.qmd` are generated. Edit

@@ -7,14 +7,15 @@ toc-title: "On this page"
 format: html
 ---
 
+::: {.practice-links}
+[Lecture 9 slides](../slides/lecture9.html) · [Worksheet 9 (PDF)](../worksheets/worksheet09.pdf) · [Module III: Firms as Price Setters](../content/firms-as-price-setters.qmd)
+:::
+
 Work through each problem on paper before you open its **Solution**.
 
 ## 1. Sierra Bikes
 
-Sierra Bikes assembles electric bikes. Its demand curve is
-$$P = 1{,}200 - 10Q$$
-where $Q$ is bikes per day and $P$ is the price in dollars, and its cost function is
-$$C(Q) = 2{,}000 + 200Q$$
+Sierra Bikes assembles electric bikes. Its demand curve is $P = 1{,}200 - 10Q$, where $Q$ is bikes per day and $P$ is the price in dollars, and its cost function is $C(Q) = 2{,}000 + 200Q$.
 
 **(a)** Calculate Sierra's revenue, cost, and profit if it sells 20, 30, 40, 50, and 60 bikes a day.
 
@@ -74,9 +75,7 @@ The rent does matter for a different decision: whether to operate at all. If Sie
 
 ## 2. Marisol's cakes
 
-Marisol bakes custom birthday cakes. From past orders she knows how many cakes she sells in a day at each price. Her cost function is
-$$C(Q) = 30 + 20Q$$
-a \$30 daily fee for a shared kitchen and \$20 of ingredients for each cake.
+Marisol bakes custom birthday cakes. From past orders she knows how many cakes she sells in a day at each price. Her cost function is $C(Q) = 30 + 20Q$, a \$30 daily fee for a shared kitchen and \$20 of ingredients for each cake.
 
 ::: {.freetable .table-scroll tabindex="0"}
 | Price, $P$ | Cakes sold, $Q$ |
@@ -160,7 +159,7 @@ For each firm below, say whether it should sell more, sell less, or stay where i
 
 ::: {.mcq answer="a,b,d"}
 
-**1.** A smoothie stand's demand curve is $P = 10 - Q/20$, where $Q$ is smoothies sold per day. Select all the statements that are correct.
+**Q1.** A smoothie stand's demand curve is $P = 10 - Q/20$, where $Q$ is smoothies sold per day. Select all the statements that are correct.
 
   a. To sell 100 smoothies a day, the highest price the stand can charge is \$5.
   b. If the stand sets a price of \$6, it sells 80 smoothies a day.
@@ -178,7 +177,7 @@ The demand curve ties price and quantity together. To sell 100 smoothies the pri
 
 ::: {.mcq answer="b"}
 
-**2.** *(Adapted from CORE Question 7.9)* Beautiful Cars has the cost function $C(Q) = 60{,}000 + 10{,}000Q$. It maximizes its profit by producing $Q^* = 20$ cars and setting the price at $P^* = \$30{,}000$, for a profit of \$340,000. Suppose that the firm chooses instead to produce $Q = 20$ cars and sets the price at $P = \$29{,}800$. Which statement is correct?
+**Q2.** *(Adapted from CORE Question 7.9)* Beautiful Cars has the cost function $C(Q) = 60{,}000 + 10{,}000Q$. It maximizes its profit by producing $Q^* = 20$ cars and setting the price at $P^* = \$30{,}000$, for a profit of \$340,000. Suppose that the firm chooses instead to produce $Q = 20$ cars and sets the price at $P = \$29{,}800$. Which statement is correct?
 
   a. The profit remains the same at \$340,000.
   b. The profit is reduced to \$336,000.
@@ -196,7 +195,7 @@ Since $Q$ is still 20, production costs remain the same, but revenue falls by \$
 
 ::: {.mcq answer="a"}
 
-**3.** *(Adapted from CORE Question 7.10)* Beautiful Cars maximizes its profit at $P^* = \$30{,}000$ and $Q^* = 20$, and its marginal cost is \$10,000 for every car. Suppose that the firm decides to switch to a higher price. Which statement is correct?
+**Q3.** *(Adapted from CORE Question 7.10)* Beautiful Cars maximizes its profit at $P^* = \$30{,}000$ and $Q^* = 20$, and its marginal cost is \$10,000 for every car. Suppose that the firm decides to switch to a higher price. Which statement is correct?
 
   a. The firm reduces the quantity of cars produced.
   b. The marginal cost of producing an extra car is higher.
@@ -214,7 +213,7 @@ At a price above \$30,000 the firm can sell fewer than 20 cars, and it will not 
 
 ::: {.mcq answer="a,c"}
 
-**4.** *(Adapted from CORE Question 7.11)* The figure shows marginal cost, demand, and marginal revenue for Beautiful Cars. Select all the statements that are correct.
+**Q4.** *(Adapted from CORE Question 7.11)* The figure shows marginal cost, demand, and marginal revenue for Beautiful Cars. Select all the statements that are correct.
 
 ![](../slides/img/core-q7-11.svg){width="600" fig-alt="Three lines, price and cost on the vertical axis with marks at minus 10,000, 0, 10,000, 30,000, and 50,000 dollars, and cars per day on the horizontal axis with marks at 0, 10, 20, 25, 30, and 40. The demand curve falls from 50,000 dollars at zero cars. The marginal revenue line starts at the same point, falls twice as steeply, passes 30,000 dollars at 10 cars, crosses zero at 25 cars, and reaches minus 10,000 dollars at 30 cars. Marginal cost is a flat dashed line at 10,000 dollars. Marginal revenue crosses marginal cost at 20 cars, at the point labelled E prime, directly below the point E on the demand curve at 30,000 dollars."}
 
@@ -234,7 +233,7 @@ At 10 cars marginal revenue is \$30,000 and marginal cost is \$10,000, so one mo
 
 ::: {.mcq answer="c"}
 
-**5.** A firm's marginal cost is \$4 at every quantity. The marginal revenue from one more unit is \$8 at 10 units, \$6 at 20, \$4 at 30, and \$2 at 40, falling steadily in between. Which quantity maximizes its profit?
+**Q5.** A firm's marginal cost is \$4 at every quantity. The marginal revenue from one more unit is \$8 at 10 units, \$6 at 20, \$4 at 30, and \$2 at 40, falling steadily in between. Which quantity maximizes its profit?
 
   a. 10
   b. 20
@@ -252,7 +251,7 @@ Up to 30 units, each extra unit adds more to revenue than the \$4 it costs, so p
 
 ::: {.mcq answer="b"}
 
-**6.** A firm sells 30 units at \$600 each. To sell a 31st unit it has to lower its price to \$590. What is its marginal revenue from the 31st unit?
+**Q6.** A firm sells 30 units at \$600 each. To sell a 31st unit it has to lower its price to \$590. What is its marginal revenue from the 31st unit?
 
   a. \$10
   b. \$290
@@ -270,7 +269,7 @@ Revenue rises from $30 \times 600 = 18{,}000$ to $31 \times 590 = 18{,}290$, so 
 
 ::: {.mcq answer="a"}
 
-**7.** At its current quantity a firm has marginal revenue of \$200 and marginal cost of \$100. What should it do?
+**Q7.** At its current quantity a firm has marginal revenue of \$200 and marginal cost of \$100. What should it do?
 
   a. Sell more, because the next unit adds more to revenue than to cost.
   b. Sell less, because marginal revenue is falling.
@@ -288,7 +287,7 @@ While marginal revenue is above marginal cost, each extra unit adds to profit, s
 
 ::: {.mcq answer="c,d"}
 
-**8.** A firm's fixed cost rises by \$500 a day, and nothing else changes. Select all the statements that are correct.
+**Q8.** A firm's fixed cost rises by \$500 a day, and nothing else changes. Select all the statements that are correct.
 
   a. Its profit-maximizing quantity falls.
   b. Its marginal cost rises by \$500.

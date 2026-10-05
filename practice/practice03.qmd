@@ -7,6 +7,10 @@ toc-title: "On this page"
 format: html
 ---
 
+::: {.practice-links}
+[Lecture 3 slides](../slides/lecture3.html) · [Worksheet 3 (PDF)](../worksheets/worksheet03.pdf) · [Module II: The Economist's Toolkit](../content/economists-toolkit.qmd)
+:::
+
 Work through each problem on paper before you open its **Solution**.
 
 ## 1. Adopting a new technology
@@ -144,7 +148,7 @@ The books count the presses' costs and not Lena's time. Economics counts both: h
 
 ::: {.mcq answer="c"}
 
-**1.** An airline sells a last-minute seat on an otherwise empty plane for \$25. The opportunity cost to the airline of filling that seat is:
+**Q1.** An airline sells a last-minute seat on an otherwise empty plane for \$25. The opportunity cost to the airline of filling that seat is:
 
   a. The average cost per seat for the flight.
   b. The full-fare ticket price.
@@ -162,7 +166,7 @@ The plane, crew, and fuel are paid for whether or not the seat is filled, so alm
 
 ::: {.mcq answer="b"}
 
-**2.** You win a free ticket to see Band A tonight, and it cannot be resold. Band B plays at the same time; a Band B ticket costs \$40, and an evening with Band B is worth \$50 to you. Apart from the tickets, neither concert has any other cost. What is the opportunity cost of using your free ticket to see Band A?
+**Q2.** You win a free ticket to see Band A tonight, and it cannot be resold. Band B plays at the same time; a Band B ticket costs \$40, and an evening with Band B is worth \$50 to you. Apart from the tickets, neither concert has any other cost. What is the opportunity cost of using your free ticket to see Band A?
 
   a. \$0
   b. \$10

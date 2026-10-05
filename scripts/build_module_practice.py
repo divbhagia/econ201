@@ -64,6 +64,7 @@ DETAILS = re.compile(
     re.DOTALL)
 MCQ_BLOCK = re.compile(
     r'::: \{\.mcq answer="([a-d,]+)"\}\n(.*?)\n:::\n', re.DOTALL)
+LINK_ROW = re.compile(r"::: \{\.practice-links\}\n.*?\n:::\n+", re.DOTALL)
 
 
 def pandoc(md: str) -> str:
@@ -109,6 +110,8 @@ def convert_page(num: str, with_solutions: bool) -> str:
     body = src[src.index("---\n", 4) + 4:]
     body = body.replace(
         "Work through each problem on paper before you open its **Solution**.", "")
+    # The link row under the page title is site navigation, not content.
+    body = LINK_ROW.sub("", body)
 
     if not with_solutions:
         # Questions only: drop solutions, keep everything else, and give the
@@ -125,10 +128,10 @@ def convert_page(num: str, with_solutions: bool) -> str:
         mcq_store = []
         def mcq_repl(m):
             ans, inner = m.group(1), m.group(2)
-            n = re.search(r"\*\*(\d+)\.\*\*", inner).group(1)
+            n = re.search(r"\*\*Q(\d+)\.\*\*", inner).group(1)
             sol = DETAILS.search(inner)
             text = strip_divs(sol.group(1)).strip() if sol else ""
-            mcq_store.append(f"**{n}.** **{answer_label(ans)}.** {text}")
+            mcq_store.append(f"**Q{n}.** **{answer_label(ans)}.** {text}")
             return f"\n@@MCQ{len(mcq_store) - 1}@@\n"
         body = MCQ_BLOCK.sub(mcq_repl, body)
 
