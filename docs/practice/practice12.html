@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Firms as Price Setters – Principles of Microeconomics</title>
+<title>Lecture 12: Practice – Principles of Microeconomics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -69,11 +69,40 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../assets/styles.css">
 </head>
 
-<body class="nav-sidebar docked nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -103,7 +132,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Schedule</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../content/the-big-picture.html" aria-current="page"> 
+    <a class="nav-link" href="../content/the-big-picture.html"> 
 <span class="menu-text">Content</span></a>
   </li>  
   <li class="nav-item compact">
@@ -117,72 +146,30 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../content/firms-as-price-setters.html">III. Firms as Price Setters</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../content/the-big-picture.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">I. The Big Picture</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../content/economists-toolkit.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">II. The Economist’s Toolkit</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../content/firms-as-price-setters.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">III. Firms as Price Setters</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../content/markets-with-many-buyers-and-sellers.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">IV. Markets with Many Buyers and Sellers</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../content/market-successes-and-failures.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">V. Market Successes and Failures</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../content/review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">VI. Review</span></a>
-  </div>
-</li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#canyon-kayaks" id="toc-canyon-kayaks" class="nav-link active" data-scroll-target="#canyon-kayaks">1. Canyon Kayaks</a></li>
+  <li><a href="#phone-cases" id="toc-phone-cases" class="nav-link" data-scroll-target="#phone-cases">2. Phone cases</a></li>
+  <li><a href="#pixel-forge" id="toc-pixel-forge" class="nav-link" data-scroll-target="#pixel-forge">3. Pixel Forge</a></li>
+  <li><a href="#multiple-choice" id="toc-multiple-choice" class="nav-link" data-scroll-target="#multiple-choice">4. Multiple choice</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Firms as Price Setters</h1>
-<p class="subtitle lead">Module III</p>
+<h1 class="title">Lecture 12: Practice</h1>
+<p class="subtitle lead">The markup rule and market power</p>
 </div>
 
 
@@ -199,105 +186,245 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Materials are posted as we go. See the <a href="../schedule.html">Schedule</a> for dates and assessments.</p>
-<div class="lecture">
-<h2 class="anchored">
-Lecture 5: Winning brands and the price of Cheerios
-</h2>
-<p>
-<strong>Reading:</strong> 7.1–7.2
-</p>
-<p class="lecture-links">
-<a class="btn btn-outline-primary" href="../slides/lecture5.html" target="_blank" rel="noopener" role="button" aria-label="Lecture 5 slides (opens in a new tab)">Slides</a> <a class="btn btn-outline-primary" href="../slides/lecture5.pdf" target="_blank" rel="noopener" role="button" aria-label="Lecture 5 slides as a tagged PDF (opens in a new tab)">Slides (PDF)</a> <a class="btn btn-outline-primary" href="../worksheets/worksheet05.pdf" target="_blank" rel="noopener" role="button" aria-label="Lecture 5 worksheet (opens in a new tab)">Worksheet</a>
-</p>
+<div class="practice-links">
+<p><a href="../slides/lecture12.html">Lecture 12 slides</a> · <a href="../notes/notes12.pdf">Lecture notes (PDF)</a> · <a href="../content/firms-as-price-setters.html">Module III: Firms as Price Setters</a></p>
 </div>
-<div class="lecture">
-<h2 class="anchored">
-Lecture 6: What does it cost to make a car? Scale and the cost of production
-</h2>
-<p>
-<strong>Reading:</strong> 7.3–7.4
-</p>
-<p class="lecture-links">
-<a class="btn btn-outline-primary" href="../slides/lecture6.html" target="_blank" rel="noopener" role="button" aria-label="Lecture 6 slides (opens in a new tab)">Slides</a> <a class="btn btn-outline-primary" href="../slides/lecture6.pdf" target="_blank" rel="noopener" role="button" aria-label="Lecture 6 slides as a tagged PDF (opens in a new tab)">Slides (PDF)</a> <a class="btn btn-outline-primary" href="../practice/practice06.html" target="_blank" rel="noopener" role="button" aria-label="Lecture 6 practice problems (opens in a new tab)">Practice problems</a> <a class="btn btn-outline-primary" href="../worksheets/worksheet06.pdf" target="_blank" rel="noopener" role="button" aria-label="Lecture 6 worksheet (opens in a new tab)">Worksheet</a>
-</p>
+<p>Work through each problem on paper before you open its <strong>Solution</strong>.</p>
+<section id="canyon-kayaks" class="level2">
+<h2 class="anchored" data-anchor-id="canyon-kayaks">1. Canyon Kayaks</h2>
+<p>Canyon Kayaks rents kayaks at a lake. Its demand curve is <span class="math inline">\(P = 80 - 2Q\)</span>, where <span class="math inline">\(Q\)</span> is kayaks rented per day and <span class="math inline">\(P\)</span> is the price in dollars. Each rental costs it $20, so <span class="math inline">\(\text{MC} = 20\)</span>. Canyon Kayaks maximizes its profit by renting 15 kayaks a day at $50 each.</p>
+<p><strong>(a)</strong> Find Canyon Kayaks’ profit margin and its price markup.</p>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>The profit margin is $P - = 50 - 20 = $ <strong>$30</strong> on each rental.</p>
+<p>The markup is the profit margin as a share of the price: <span class="math display">\[\text{markup} = \frac{P - \text{MC}}{P} = \frac{30}{50} = 0.6\]</span> or <strong>60%</strong> of the price.</p>
+</details>
+<p><strong>(b)</strong> The slope of the demand curve is <span class="math inline">\(-2\)</span>. Find the price elasticity of demand at 15 kayaks and $50.</p>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p><span class="math display">\[\varepsilon = -\frac{P}{Q} \times \frac{1}{\text{slope}} = \frac{50}{15} \times \frac{1}{2} = \frac{5}{3} \approx 1.67\]</span></p>
+</details>
+<p><strong>(c)</strong> Check that Canyon Kayaks follows the markup rule.</p>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>The markup rule says the markup equals <span class="math inline">\(1/\varepsilon\)</span>: <span class="math display">\[\frac{1}{\varepsilon} = \frac{3}{5} = 0.6\]</span> which is the <strong>60%</strong> markup from part (a).</p>
+</details>
+<p><strong>(d)</strong> A second kayak rental opens at the lake. What happens to the elasticity of Canyon Kayaks’ demand, and to its markup?</p>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>Renters now have a close substitute, so more of them switch when Canyon Kayaks raises its price. Its demand becomes <strong>more elastic</strong>, and by the markup rule its <strong>markup falls</strong>.</p>
+</details>
+</section>
+<section id="phone-cases" class="level2">
+<h2 class="anchored" data-anchor-id="phone-cases">2. Phone cases</h2>
+<p>A company sells phone cases. Each case costs it $15 to make, so <span class="math inline">\(\text{MC} = 15\)</span>. At the price it chooses, the price elasticity of demand for its cases is 4.</p>
+<p><strong>(a)</strong> Use the markup rule to find its markup and its price.</p>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>The markup is <span class="math inline">\(1/\varepsilon = 1/4\)</span>, or <strong>25%</strong>. Then <span class="math display">\[\frac{P - 15}{P} = \frac{1}{4}\]</span> so <span class="math inline">\(P - 15 = P/4\)</span>, which gives <span class="math inline">\(\tfrac{3}{4}P = 15\)</span> and <strong><span class="math inline">\(P = 20\)</span></strong>.</p>
+<p>Check: <span class="math inline">\((20 - 15)/20 = 5/20 = 1/4\)</span>.</p>
+</details>
+<p><strong>(b)</strong> A rival brand starts selling very similar cases, and the elasticity rises to 6. Find the new price.</p>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>The markup falls to <span class="math inline">\(1/6\)</span>: <span class="math display">\[\frac{P - 15}{P} = \frac{1}{6}\]</span> so <span class="math inline">\(P - 15 = P/6\)</span>, which gives <span class="math inline">\(\tfrac{5}{6}P = 15\)</span> and <strong><span class="math inline">\(P = 18\)</span></strong>. With a close substitute on the market, the company sets a lower price.</p>
+</details>
+</section>
+<section id="pixel-forge" class="level2">
+<h2 class="anchored" data-anchor-id="pixel-forge">3. Pixel Forge</h2>
+<p>Pixel Forge makes a video game. Writing and testing the game costs $60 million, whatever the number of players. Each extra download then costs $2 in server fees, so <span class="math inline">\(\text{MC} = 2\)</span>.</p>
+<p><strong>(a)</strong> Find the average cost per download at 2 million, 6 million, and 30 million downloads. Why does it fall?</p>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>Average cost is total cost divided by downloads, so each download carries its $2 plus a share of the $60 million: <span class="math display">\[\text{AC} = \frac{60{,}000{,}000}{Q} + 2\]</span></p>
+<p>At 2 million downloads, $ = 30 + 2 = $ <strong>$32</strong>. At 6 million, $ = 10 + 2 = $ <strong>$12</strong>. At 30 million, $ = 2 + 2 = $ <strong>$4</strong>.</p>
+<p>It falls because the $60 million is spread over more downloads. It stays above the $2 marginal cost at every quantity.</p>
+</details>
+<p><strong>(b)</strong> Pixel Forge expects 6 million downloads. What is the lowest price at which it breaks even? What would happen at a price of $2, equal to marginal cost?</p>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>Profit is <span class="math inline">\((P - \text{AC}) \times Q\)</span>, so the firm breaks even where <span class="math inline">\(P = \text{AC}\)</span>. At 6 million downloads that is <strong>$12</strong>.</p>
+<p>At $2, each download just covers its own server fee and nothing goes toward the $60 million, so Pixel Forge <strong>loses $60 million</strong>. A firm with large fixed costs must price above marginal cost to survive.</p>
+</details>
+<p><strong>(c)</strong> A rival studio, Lumen Games, has a game that costs the same to make and sells for $4 a download, with 30 million downloads. Can Pixel Forge, at 6 million downloads, match the $4 price?</p>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>Lumen’s average cost at 30 million downloads is $4, so it breaks even at that price. Pixel Forge’s average cost at 6 million downloads is $12, so at $4 it loses <span class="math inline">\(12 - 4 = 8\)</span> dollars on every download, <strong>$48 million</strong> in total. <strong>It cannot match the price.</strong> When average cost falls with output, a large firm can survive on a price that a small one cannot.</p>
+</details>
+</section>
+<section id="multiple-choice" class="level2">
+<h2 class="anchored" data-anchor-id="multiple-choice">4. Multiple choice</h2>
+<div class="mcq" data-answer="a,c,d">
+<p><strong>Q1.</strong> <em>(Adapted from CORE Question 7.13)</em> Select all the statements that are correct. A firm’s market power would increase if:</p>
+<ol type="a">
+<li>Another firm that sold a close substitute goes out of business.</li>
+<li>Buyers in its market start to care more about price than about the features of each product.</li>
+<li>The firm gets a patent on its product.</li>
+<li>Buyers become more loyal to the firm’s brand.</li>
+</ol>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>Fewer substitutes, a patent, and stronger brand loyalty all make the firm’s demand less elastic, so it can set a higher price without losing its buyers. Buyers who care mainly about price switch easily to rivals, which makes demand more elastic and lowers market power. <strong>(a), (c), and (d)</strong> are correct.</p>
+</details>
 </div>
-<div class="lecture">
-<h2 class="anchored">
-Lecture 7: Who can get away with raising prices? Demand and elasticity
-</h2>
-<p>
-<strong>Reading:</strong> 7.5
-</p>
-<p class="lecture-links">
-<a class="btn btn-outline-primary" href="../slides/lecture7.html" target="_blank" rel="noopener" role="button" aria-label="Lecture 7 slides (opens in a new tab)">Slides</a> <a class="btn btn-outline-primary" href="../slides/lecture7.pdf" target="_blank" rel="noopener" role="button" aria-label="Lecture 7 slides as a tagged PDF (opens in a new tab)">Slides (PDF)</a> <a class="btn btn-outline-primary" href="../practice/practice07.html" target="_blank" rel="noopener" role="button" aria-label="Lecture 7 practice problems (opens in a new tab)">Practice problems</a> <a class="btn btn-outline-primary" href="../worksheets/worksheet07.pdf" target="_blank" rel="noopener" role="button" aria-label="Lecture 7 worksheet (opens in a new tab)">Worksheet</a>
-</p>
+<div class="mcq" data-answer="b">
+<p><strong>Q2.</strong> A firm maximizes its profit by charging $50. At that price, the price elasticity of demand for its product is 5. What is its marginal cost?</p>
+<ol type="a">
+<li>$10</li>
+<li>$40</li>
+<li>$45</li>
+<li>$50</li>
+</ol>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>By the markup rule, the markup is <span class="math inline">\(1/\varepsilon = 1/5\)</span>, so <span class="math inline">\((50 - \text{MC})/50 = 1/5\)</span>. Then <span class="math inline">\(50 - \text{MC} = 10\)</span>, and <span class="math inline">\(\text{MC} = 40\)</span>. <strong>(b)</strong> is correct.</p>
+</details>
 </div>
-<div class="lecture">
-<h2 class="anchored">
-Lecture 8: Steak, ramen, and recessions: Other elasticities
-</h2>
-<p class="lecture-links">
-<a class="btn btn-outline-primary" href="../slides/lecture8.html" target="_blank" rel="noopener" role="button" aria-label="Lecture 8 slides (opens in a new tab)">Slides</a> <a class="btn btn-outline-primary" href="../slides/lecture8.pdf" target="_blank" rel="noopener" role="button" aria-label="Lecture 8 slides as a tagged PDF (opens in a new tab)">Slides (PDF)</a> <a class="btn btn-outline-primary" href="../practice/practice08.html" target="_blank" rel="noopener" role="button" aria-label="Lecture 8 practice problems (opens in a new tab)">Practice problems</a> <a class="btn btn-outline-primary" href="../worksheets/worksheet08.pdf" target="_blank" rel="noopener" role="button" aria-label="Lecture 8 worksheet (opens in a new tab)">Worksheet</a>
-</p>
+<div class="mcq" data-answer="c">
+<p><strong>Q3.</strong> Which statement describes a natural monopoly?</p>
+<ol type="a">
+<li>A firm that holds a patent on its product.</li>
+<li>A firm whose product has no close substitutes because of its brand.</li>
+<li>A market where one firm can supply all buyers at a lower average cost than two firms could.</li>
+<li>A market where firms agree with each other to charge the same price.</li>
+</ol>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>A natural monopoly comes from the cost structure: with large fixed costs, average cost keeps falling, so one firm serving the whole market has the lowest average cost. A patent and a strong brand are other sources of market power, and firms agreeing on prices form a cartel. <strong>(c)</strong> is correct.</p>
+</details>
 </div>
-<div class="lecture">
-<h2 class="anchored">
-Lecture 9: Sweet spot: Choosing the price and quantity that maximize profit
-</h2>
-<p>
-<strong>Reading:</strong> 7.6
-</p>
-<p class="lecture-links">
-<a class="btn btn-outline-primary" href="../slides/lecture9.html" target="_blank" rel="noopener" role="button" aria-label="Lecture 9 slides (opens in a new tab)">Slides</a> <a class="btn btn-outline-primary" href="../slides/lecture9.pdf" target="_blank" rel="noopener" role="button" aria-label="Lecture 9 slides as a tagged PDF (opens in a new tab)">Slides (PDF)</a> <a class="btn btn-outline-primary" href="../practice/practice09.html" target="_blank" rel="noopener" role="button" aria-label="Lecture 9 practice problems (opens in a new tab)">Practice problems</a> <a class="btn btn-outline-primary" href="../worksheets/worksheet09.pdf" target="_blank" rel="noopener" role="button" aria-label="Lecture 9 worksheet (opens in a new tab)">Worksheet</a>
-</p>
+<div class="mcq" data-answer="b">
+<p><strong>Q4.</strong> A city has hundreds of hair salons. Each one offers a slightly different style and service, and a new salon can open easily. What is the market structure?</p>
+<ol type="a">
+<li>Perfect competition</li>
+<li>Monopolistic competition</li>
+<li>Oligopoly</li>
+<li>Monopoly</li>
+</ol>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>There are many firms, entry is easy, and the products are differentiated, so each salon has some control over its price. <strong>(b)</strong> is correct. In perfect competition the products would be identical.</p>
+</details>
 </div>
-<div class="lecture">
-<h2 class="anchored">
-Lecture 10: The surplus from a sale and who captures it
-</h2>
-<p>
-<strong>Reading:</strong> 7.7
-</p>
-<p class="lecture-links">
-<a class="btn btn-outline-primary" href="../slides/lecture10.html" target="_blank" rel="noopener" role="button" aria-label="Lecture 10 slides (opens in a new tab)">Slides</a> <a class="btn btn-outline-primary" href="../slides/lecture10.pdf" target="_blank" rel="noopener" role="button" aria-label="Lecture 10 slides as a tagged PDF (opens in a new tab)">Slides (PDF)</a> <a class="btn btn-outline-primary" href="../practice/practice10.html" target="_blank" rel="noopener" role="button" aria-label="Lecture 10 practice problems (opens in a new tab)">Practice problems</a> <a class="btn btn-outline-primary" href="../worksheets/worksheet10.pdf" target="_blank" rel="noopener" role="button" aria-label="Lecture 10 worksheet (opens in a new tab)">Worksheet</a>
-</p>
+<div class="mcq" data-answer="b,c">
+<p><strong>Q5.</strong> <em>(Adapted from CORE Question 7.15)</em> A large retail chain plans to open a superstore in a small town. Select all the statements that are correct.</p>
+<ol type="a">
+<li>Local shops argue that many of the chain’s goods are close substitutes for theirs, so the chain faces inelastic demand for those goods.</li>
+<li>The chain argues that many of its goods are close substitutes for those in local shops, so demand is elastic and competition will keep prices low.</li>
+<li>Local shops argue that once they are driven out, the chain will face less competition and can raise its prices.</li>
+<li>The chain argues that local shops sell goods so different from its own that their demand is highly elastic.</li>
+</ol>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>Close substitutes make demand more elastic, not less, so (a) is wrong and (b) is right. If the local shops close, the chain loses its rivals, its demand becomes less elastic, and it can raise prices, so (c) is right. Goods that are very different from the chain’s have few close substitutes, so their demand is less elastic, not more. <strong>(b) and (c)</strong> are correct.</p>
+</details>
 </div>
-<div class="lecture">
-<h2 class="anchored">
-Lecture 11: Leaving gains on the table: Pareto efficiency and deadweight loss
-</h2>
-<p>
-<strong>Reading:</strong> 7.7
-</p>
-<p class="lecture-links">
-<a class="btn btn-outline-primary" href="../slides/lecture11.html" target="_blank" rel="noopener" role="button" aria-label="Lecture 11 slides (opens in a new tab)">Slides</a> <a class="btn btn-outline-primary" href="../slides/lecture11.pdf" target="_blank" rel="noopener" role="button" aria-label="Lecture 11 slides as a tagged PDF (opens in a new tab)">Slides (PDF)</a> <a class="btn btn-outline-primary" href="../practice/practice11.html" target="_blank" rel="noopener" role="button" aria-label="Lecture 11 practice problems (opens in a new tab)">Practice problems</a> <a class="btn btn-outline-primary" href="../worksheets/worksheet11.pdf" target="_blank" rel="noopener" role="button" aria-label="Lecture 11 worksheet (opens in a new tab)">Worksheet</a>
-</p>
+<div class="mcq" data-answer="b">
+<p><strong>Q6.</strong> A coffee shop starts an advertising campaign that builds loyalty among its customers. According to the markup rule, what happens?</p>
+<ol type="a">
+<li>Its demand becomes more elastic, so it lowers its markup.</li>
+<li>Its demand becomes less elastic, so it raises its markup.</li>
+<li>Its marginal cost falls, so it lowers its price.</li>
+<li>Its demand curve is unchanged, because advertising does not affect buyers.</li>
+</ol>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>Loyal customers switch less readily when the price rises, so demand is less elastic. The markup rule, <span class="math inline">\((P - \text{MC})/P = 1/\varepsilon\)</span>, says a lower elasticity means a higher markup. <strong>(b)</strong> is correct.</p>
+</details>
 </div>
-<div class="lecture">
-<h2 class="anchored">
-Lecture 12: Standing out from the crowd: Market power, differentiation, and natural monopoly
-</h2>
-<p>
-<strong>Reading:</strong> 7.6; 7.8–7.9; 7.11–7.12
-</p>
-<p class="lecture-links">
-<a class="btn btn-outline-primary" href="../slides/lecture12.html" target="_blank" rel="noopener" role="button" aria-label="Lecture 12 slides (opens in a new tab)">Slides</a> <a class="btn btn-outline-primary" href="../slides/lecture12.pdf" target="_blank" rel="noopener" role="button" aria-label="Lecture 12 slides as a tagged PDF (opens in a new tab)">Slides (PDF)</a> <a class="btn btn-outline-primary" href="../notes/notes12.pdf" target="_blank" rel="noopener" role="button" aria-label="Lecture 12 notes as a PDF (opens in a new tab)">Notes</a> <a class="btn btn-outline-primary" href="../practice/practice12.html" target="_blank" rel="noopener" role="button" aria-label="Lecture 12 practice problems (opens in a new tab)">Practice problems</a>
-</p>
+<div class="mcq" data-answer="c">
+<p><strong>Q7.</strong> Four companies serve almost all US wireless customers, each sells a somewhat different plan, building a network costs billions, and each company watches what the others charge. What is the market structure?</p>
+<ol type="a">
+<li>Perfect competition</li>
+<li>Monopolistic competition</li>
+<li>Oligopoly</li>
+<li>Monopoly</li>
+</ol>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>A few firms, hard entry, and prices that depend on what rivals do are the marks of an oligopoly. Monopolistic competition has many firms and easy entry, and a monopoly has one seller. <strong>(c)</strong> is correct.</p>
+</details>
 </div>
-<div class="lecture">
-<h2 class="anchored">
-Lecture 13: Price wars: Strategic price setting and competition policy
-</h2>
-<p>
-<strong>Reading:</strong> 4.2–4.4; 7.10
-</p>
-<p class="lecture-links dim">
-Materials posted closer to the date.
-</p>
+<div class="mcq" data-answer="b">
+<p><strong>Q8.</strong> A city’s water utility is a natural monopoly. Which response is most likely to keep water affordable?</p>
+<ol type="a">
+<li>Split the utility into four companies, each with its own pipes.</li>
+<li>Leave one utility in place and regulate the price it can charge.</li>
+<li>Let the utility set whatever price it chooses.</li>
+<li>Require every home to pay the marginal cost of its water and nothing more.</li>
+</ol>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>In a natural monopoly one firm supplies the market at a lower average cost than several could, so splitting it up would raise costs. Left alone, a monopoly sets a high markup. A price equal to marginal cost would not cover the fixed cost of the pipes, so the utility could not survive. Regulating the price of a single utility, or public ownership, is the usual answer. <strong>(b)</strong> is correct.</p>
+</details>
+</div>
+<div class="mcq" data-answer="a,b,d">
+<p><strong>Q9.</strong> Training an AI chatbot costs a company billions of dollars before anyone uses it. Answering one more question then costs a few cents in computing. Select all the statements that are correct.</p>
+<ol type="a">
+<li>The company’s average cost per question falls as more people use the chatbot.</li>
+<li>Its average cost is above its marginal cost at every number of questions.</li>
+<li>If it charged each user only the computing cost of their questions, it would break even.</li>
+<li>A new company with few users would have a higher average cost than an established one with many, so it would struggle to match the established company’s price.</li>
+</ol>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>The training cost is a fixed cost, spread over every question answered, so average cost falls with use and stays above the few cents of marginal cost. Charging only marginal cost would leave nothing to pay for the training, so the company would lose the billions it spent. A newcomer with few users spreads its own training cost over fewer questions, so its average cost is higher and it cannot survive at a price the established company can. This is why markets like this tend to end up with a few large firms. <strong>(a), (b), and (d)</strong> are correct.</p>
+</details>
+</div>
+<div class="mcq" data-answer="a,b,c">
+<p><strong>Q10.</strong> Which of these are ways a firm can reduce the competition it faces? Select all the statements that are correct.</p>
+<ol type="a">
+<li>Buying one of its rivals.</li>
+<li>Agreeing with its rivals to raise prices.</li>
+<li>Keeping rivals’ products off a platform it controls.</li>
+<li>Cutting its price because its marginal cost fell.</li>
+</ol>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>Buying a rival, forming a cartel, and blocking rivals’ access to buyers all reduce competition, and competition policy watches for each of them. Passing a cost saving on to buyers in a lower price does not reduce competition. <strong>(a), (b), and (c)</strong> are correct.</p>
+</details>
 </div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script>

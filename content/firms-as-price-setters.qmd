@@ -79,13 +79,16 @@ Materials are posted as we go. See the [Schedule](../schedule.qmd) for dates and
 ::: {.lecture}
 <h2>Lecture 12: Standing out from the crowd: Market power, differentiation, and natural monopoly</h2>
 
-<p><strong>Reading:</strong> 7.8&ndash;7.9; 7.11</p>
-<p class="lecture-links dim">Materials posted closer to the date.</p>
+<p><strong>Reading:</strong> 7.6; 7.8&ndash;7.9; 7.11&ndash;7.12</p>
+<p class="lecture-links"><a class="btn btn-outline-primary" href="../slides/lecture12.html" target="_blank" rel="noopener" role="button" aria-label="Lecture 12 slides (opens in a new tab)">Slides</a>
+<a class="btn btn-outline-primary" href="../slides/lecture12.pdf" target="_blank" rel="noopener" role="button" aria-label="Lecture 12 slides as a tagged PDF (opens in a new tab)">Slides (PDF)</a>
+<a class="btn btn-outline-primary" href="../notes/notes12.pdf" target="_blank" rel="noopener" role="button" aria-label="Lecture 12 notes as a PDF (opens in a new tab)">Notes</a>
+<a class="btn btn-outline-primary" href="../practice/practice12.html" target="_blank" rel="noopener" role="button" aria-label="Lecture 12 practice problems (opens in a new tab)">Practice problems</a></p>
 :::
 
 ::: {.lecture}
 <h2>Lecture 13: Price wars: Strategic price setting and competition policy</h2>
 
-<p><strong>Reading:</strong> 7.10; 4.2&ndash;4.3; 7.12</p>
+<p><strong>Reading:</strong> 4.2&ndash;4.4; 7.10</p>
 <p class="lecture-links dim">Materials posted closer to the date.</p>
 :::

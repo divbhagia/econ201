@@ -200,6 +200,12 @@ $presentation-font-size-root: 37px;
 .reveal .eqgroup p { margin: 0; }
 .reveal .eqgroup .MathJax_Display { margin: 0.3em 0 0 0 !important; }
 
+// A display equation with equal space above and below it, between a
+// sentence and the list that follows: wrap the $$...$$ line in ::: eqmid.
+.reveal .eqmid .MathJax_Display { margin: 0.4em 0 !important; }
+// More room below, when a plain line follows rather than a list.
+.reveal .eqmid.eqbelow .MathJax_Display { margin: 0.4em 0 1.1em 0 !important; }
+
 // Display math inside a bullet (a list item ending in a worked calculation):
 // keep it close under the bullet that introduces it. Put .tighteq on the
 // column or div that holds the list.
@@ -259,6 +265,14 @@ $presentation-font-size-root: 37px;
   border-bottom: 2.5px solid #1a1a1a;
 }
 .reveal table td, .reveal table th { padding: 0.1em 0.4em; }
+// A table read across and down, like a comparison grid: rules between
+// every row and column. ::: {.gridtable}; assets/beamer-deck.lua matches it.
+.reveal .gridtable table td, .reveal .gridtable table th {
+  border: 1px solid #595a5b;
+  padding: 0.25em 0.4em;
+}
+// Header row bold (the default), first column bold in the accent (Div's call).
+.reveal .gridtable table td:first-child { color: #BF5700; font-weight: 700; }
 // A worksheet table shown in steps: wrap it in ::: {.fixedtable} so it keeps
 // one width as its rows fill in, instead of growing to fit the numbers.
 .reveal .fixedtable table { width: 70%; table-layout: fixed; }

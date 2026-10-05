@@ -227,11 +227,14 @@ local function fixedtable(div)
   -- A table of formulas ({.formulas}) gets taller rows, so fractions in a cell
   -- clear the rules. \arraystretch had no effect under ltx-talk; array's
   -- \extrarowheight does.
-  local tall = div.classes:includes('formulas')
+  local tall = div.classes:includes('formulas') or div.classes:includes('gridtable')
+  local lift = div.classes:includes('formulas') and '0.9em' or '0.3em'
   local out = pandoc.List({})
   if tall then
-    out:insert(pandoc.RawBlock('latex', '\\begingroup\\setlength{\\extrarowheight}{0.9em}'))
+    local size = div.classes:includes('gridtable') and '\\small' or ''
+    out:insert(pandoc.RawBlock('latex', '\\begingroup' .. size .. '\\setlength{\\extrarowheight}{' .. lift .. '}'))
   end
+  local grid = div.classes:includes('gridtable')
   out:extend(div.content:walk({
     Table = function(tbl)
       local spec = tbl.attr.attributes['colwidths']
@@ -241,7 +244,31 @@ local function fixedtable(div)
         i = i + 1
         if tbl.colspecs[i] then tbl.colspecs[i][2] = 0.95 * tonumber(w) / 100 end
       end
-      return tbl
+      if not grid then return tbl end
+      -- {.gridtable}: rules between every row and column, as on the web
+      -- deck. Write the table to LaTeX and swap booktabs rules for \\hline
+      -- (booktabs leaves gaps where vertical rules cross), add a rule after
+      -- each body row, and a | between the column specs.
+      local tex = pandoc.write(pandoc.Pandoc({tbl}), 'latex')
+      tex = tex:gsub('\\toprule%b()', '\\hline'):gsub('\\toprule', '\\hline')
+      tex = tex:gsub('\\midrule%b()', '\\hline'):gsub('\\midrule', '\\hline')
+      tex = tex:gsub('\\bottomrule%b()', ''):gsub('\\bottomrule', '')
+      tex = tex:gsub('@{}\n', '|', 1):gsub('@{}}', '|}', 1)
+      tex = tex:gsub('(\n)(  >{)', '%1|%2'):gsub('{|\n|', '{|\n', 1)
+      local head, body = tex:match('^(.-\\endlastfoot)(.*)$')
+      if body then tex = head .. body:gsub('\\\\\n', '\\\\ \\hline\n') end
+      tex = tex:gsub('\\begin{minipage}%[b%]', '\\begin{minipage}[t]')
+      -- Header row bold and first column in the accent, as on the web deck.
+      tex = tex:gsub('(\\begin{minipage}%[t%]{\\linewidth}\\%a+)\n', '%1\\bfseries\n')
+      local h, b = tex:match('^(.-\\endlastfoot\n)(.*)$')
+      if b then
+        b = b:gsub('([^\n]-) &', function(cell)
+          return '{\\leavevmode\\bfseries\\color{accent}' .. cell .. '} &'
+        end, 1)
+        b = b:gsub('(\\hline\n)([^\n&]-) &', '%1{\\leavevmode\\bfseries\\color{accent}%2} &')
+        tex = h .. b
+      end
+      return pandoc.RawBlock('latex', tex)
     end
   }))
   if tall then out:insert(pandoc.RawBlock('latex', '\\endgroup')) end
@@ -256,6 +283,20 @@ function Div(el)
   -- An empty ::: {.gap} div, the counterpart of .gap in assets/slides.scss.
   if el.classes:includes('gap') then
     return pandoc.RawBlock('latex', '\\vspace{0.8em}')
+  end
+  -- ::: {.eqmid .eqbelow}, the counterpart of .eqbelow in assets/slides.scss:
+  -- a display equation with extra space after it, before a plain line.
+  if el.classes:includes('eqbelow') then
+    local out = pandoc.List(el.content)
+    out:insert(pandoc.RawBlock('latex', '\\vspace{0.6em}'))
+    return out
+  end
+  -- ::: eqmid alone: the equation sits after a paragraph break, which adds
+  -- a parskip on top of the display skip, so pull it up to even the gaps.
+  if el.classes:includes('eqmid') then
+    local out = pandoc.List({pandoc.RawBlock('latex', '\\vspace{-0.7em}')})
+    out:extend(el.content)
+    return out
   end
   -- ::: eqgroup, the counterpart of .eqgroup in assets/slides.scss: a
   -- sentence and its display equation held close, with space after.

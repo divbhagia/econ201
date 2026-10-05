@@ -47,11 +47,11 @@ PLAN = {
     11: ("Leaving gains on the table: Pareto efficiency and deadweight loss", "7.7"),
     12: (
         "Standing out from the crowd: Market power, differentiation, and natural monopoly",
-        "7.8--7.9; 7.11",
+        "7.6; 7.8--7.9; 7.11--7.12",
     ),
     13: (
         "Price wars: Strategic price setting and competition policy",
-        "7.10; 4.2--4.3; 7.12",
+        "4.2--4.4; 7.10",
     ),
     14: (r"\textbf{Midterm 1}", ""),
     15: ("Classroom market experiment", ""),
@@ -364,6 +364,9 @@ MATERIALS = {
     11: {"slides": "slides/lecture11.html", "slides_pdf": "slides/lecture11.pdf",
          "practice": "practice/practice11.html",
          "worksheet": "worksheets/worksheet11.pdf"},
+    12: {"slides": "slides/lecture12.html", "slides_pdf": "slides/lecture12.pdf",
+         "notes": "notes/notes12.pdf",
+         "practice": "practice/practice12.html"},
 }
 
 # Lecture 2's practice page bundles guided reading; from lecture 3 on the

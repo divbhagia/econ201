@@ -1,0 +1,308 @@
+---
+title: "Lecture 12: Practice"
+subtitle: "The markup rule and market power"
+sidebar: false
+toc: true
+toc-title: "On this page"
+format: html
+---
+
+::: {.practice-links}
+[Lecture 12 slides](../slides/lecture12.html) · [Lecture notes (PDF)](../notes/notes12.pdf) · [Module III: Firms as Price Setters](../content/firms-as-price-setters.qmd)
+:::
+
+Work through each problem on paper before you open its **Solution**.
+
+## 1. Canyon Kayaks
+
+Canyon Kayaks rents kayaks at a lake. Its demand curve is $P = 80 - 2Q$, where $Q$ is kayaks rented per day and $P$ is the price in dollars. Each rental costs it \$20, so $\text{MC} = 20$. Canyon Kayaks maximizes its profit by renting 15 kayaks a day at \$50 each.
+
+**(a)** Find Canyon Kayaks' profit margin and its price markup.
+
+<details class="solution">
+<summary>Solution</summary>
+
+The profit margin is $P - \text{MC} = 50 - 20 = $ **\$30** on each rental.
+
+The markup is the profit margin as a share of the price:
+$$\text{markup} = \frac{P - \text{MC}}{P} = \frac{30}{50} = 0.6$$
+or **60%** of the price.
+
+</details>
+
+**(b)** The slope of the demand curve is $-2$. Find the price elasticity of demand at 15 kayaks and \$50.
+
+<details class="solution">
+<summary>Solution</summary>
+
+$$\varepsilon = -\frac{P}{Q} \times \frac{1}{\text{slope}} = \frac{50}{15} \times \frac{1}{2} = \frac{5}{3} \approx 1.67$$
+
+</details>
+
+**(c)** Check that Canyon Kayaks follows the markup rule.
+
+<details class="solution">
+<summary>Solution</summary>
+
+The markup rule says the markup equals $1/\varepsilon$:
+$$\frac{1}{\varepsilon} = \frac{3}{5} = 0.6$$
+which is the **60%** markup from part (a).
+
+</details>
+
+**(d)** A second kayak rental opens at the lake. What happens to the elasticity of Canyon Kayaks' demand, and to its markup?
+
+<details class="solution">
+<summary>Solution</summary>
+
+Renters now have a close substitute, so more of them switch when Canyon Kayaks raises its price. Its demand becomes **more elastic**, and by the markup rule its **markup falls**.
+
+</details>
+
+## 2. Phone cases
+
+A company sells phone cases. Each case costs it \$15 to make, so $\text{MC} = 15$. At the price it chooses, the price elasticity of demand for its cases is 4.
+
+**(a)** Use the markup rule to find its markup and its price.
+
+<details class="solution">
+<summary>Solution</summary>
+
+The markup is $1/\varepsilon = 1/4$, or **25%**. Then
+$$\frac{P - 15}{P} = \frac{1}{4}$$
+so $P - 15 = P/4$, which gives $\tfrac{3}{4}P = 15$ and **$P = 20$**.
+
+Check: $(20 - 15)/20 = 5/20 = 1/4$.
+
+</details>
+
+**(b)** A rival brand starts selling very similar cases, and the elasticity rises to 6. Find the new price.
+
+<details class="solution">
+<summary>Solution</summary>
+
+The markup falls to $1/6$:
+$$\frac{P - 15}{P} = \frac{1}{6}$$
+so $P - 15 = P/6$, which gives $\tfrac{5}{6}P = 15$ and **$P = 18$**. With a close substitute on the market, the company sets a lower price.
+
+</details>
+
+## 3. Pixel Forge
+
+Pixel Forge makes a video game. Writing and testing the game costs \$60 million, whatever the number of players. Each extra download then costs \$2 in server fees, so $\text{MC} = 2$.
+
+**(a)** Find the average cost per download at 2 million, 6 million, and 30 million downloads. Why does it fall?
+
+<details class="solution">
+<summary>Solution</summary>
+
+Average cost is total cost divided by downloads, so each download carries its \$2 plus a share of the \$60 million:
+$$\text{AC} = \frac{60{,}000{,}000}{Q} + 2$$
+
+At 2 million downloads, $\text{AC} = 30 + 2 = $ **\$32**. At 6 million, $\text{AC} = 10 + 2 = $ **\$12**. At 30 million, $\text{AC} = 2 + 2 = $ **\$4**.
+
+It falls because the \$60 million is spread over more downloads. It stays above the \$2 marginal cost at every quantity.
+
+</details>
+
+**(b)** Pixel Forge expects 6 million downloads. What is the lowest price at which it breaks even? What would happen at a price of \$2, equal to marginal cost?
+
+<details class="solution">
+<summary>Solution</summary>
+
+Profit is $(P - \text{AC}) \times Q$, so the firm breaks even where $P = \text{AC}$. At 6 million downloads that is **\$12**.
+
+At \$2, each download just covers its own server fee and nothing goes toward the \$60 million, so Pixel Forge **loses \$60 million**. A firm with large fixed costs must price above marginal cost to survive.
+
+</details>
+
+**(c)** A rival studio, Lumen Games, has a game that costs the same to make and sells for \$4 a download, with 30 million downloads. Can Pixel Forge, at 6 million downloads, match the \$4 price?
+
+<details class="solution">
+<summary>Solution</summary>
+
+Lumen's average cost at 30 million downloads is \$4, so it breaks even at that price. Pixel Forge's average cost at 6 million downloads is \$12, so at \$4 it loses $12 - 4 = 8$ dollars on every download, **\$48 million** in total. **It cannot match the price.** When average cost falls with output, a large firm can survive on a price that a small one cannot.
+
+</details>
+
+## 4. Multiple choice
+
+::: {.mcq answer="a,c,d"}
+
+**Q1.** *(Adapted from CORE Question 7.13)* Select all the statements that are correct. A firm's market power would increase if:
+
+  a. Another firm that sold a close substitute goes out of business.
+  b. Buyers in its market start to care more about price than about the features of each product.
+  c. The firm gets a patent on its product.
+  d. Buyers become more loyal to the firm's brand.
+
+<details class="solution">
+<summary>Solution</summary>
+
+Fewer substitutes, a patent, and stronger brand loyalty all make the firm's demand less elastic, so it can set a higher price without losing its buyers. Buyers who care mainly about price switch easily to rivals, which makes demand more elastic and lowers market power. **(a), (c), and (d)** are correct.
+
+</details>
+
+:::
+
+::: {.mcq answer="b"}
+
+**Q2.** A firm maximizes its profit by charging \$50. At that price, the price elasticity of demand for its product is 5. What is its marginal cost?
+
+  a. \$10
+  b. \$40
+  c. \$45
+  d. \$50
+
+<details class="solution">
+<summary>Solution</summary>
+
+By the markup rule, the markup is $1/\varepsilon = 1/5$, so $(50 - \text{MC})/50 = 1/5$. Then $50 - \text{MC} = 10$, and $\text{MC} = 40$. **(b)** is correct.
+
+</details>
+
+:::
+
+::: {.mcq answer="c"}
+
+**Q3.** Which statement describes a natural monopoly?
+
+  a. A firm that holds a patent on its product.
+  b. A firm whose product has no close substitutes because of its brand.
+  c. A market where one firm can supply all buyers at a lower average cost than two firms could.
+  d. A market where firms agree with each other to charge the same price.
+
+<details class="solution">
+<summary>Solution</summary>
+
+A natural monopoly comes from the cost structure: with large fixed costs, average cost keeps falling, so one firm serving the whole market has the lowest average cost. A patent and a strong brand are other sources of market power, and firms agreeing on prices form a cartel. **(c)** is correct.
+
+</details>
+
+:::
+
+::: {.mcq answer="b"}
+
+**Q4.** A city has hundreds of hair salons. Each one offers a slightly different style and service, and a new salon can open easily. What is the market structure?
+
+  a. Perfect competition
+  b. Monopolistic competition
+  c. Oligopoly
+  d. Monopoly
+
+<details class="solution">
+<summary>Solution</summary>
+
+There are many firms, entry is easy, and the products are differentiated, so each salon has some control over its price. **(b)** is correct. In perfect competition the products would be identical.
+
+</details>
+
+:::
+
+::: {.mcq answer="b,c"}
+
+**Q5.** *(Adapted from CORE Question 7.15)* A large retail chain plans to open a superstore in a small town. Select all the statements that are correct.
+
+  a. Local shops argue that many of the chain's goods are close substitutes for theirs, so the chain faces inelastic demand for those goods.
+  b. The chain argues that many of its goods are close substitutes for those in local shops, so demand is elastic and competition will keep prices low.
+  c. Local shops argue that once they are driven out, the chain will face less competition and can raise its prices.
+  d. The chain argues that local shops sell goods so different from its own that their demand is highly elastic.
+
+<details class="solution">
+<summary>Solution</summary>
+
+Close substitutes make demand more elastic, not less, so (a) is wrong and (b) is right. If the local shops close, the chain loses its rivals, its demand becomes less elastic, and it can raise prices, so (c) is right. Goods that are very different from the chain's have few close substitutes, so their demand is less elastic, not more. **(b) and (c)** are correct.
+
+</details>
+
+:::
+
+::: {.mcq answer="b"}
+
+**Q6.** A coffee shop starts an advertising campaign that builds loyalty among its customers. According to the markup rule, what happens?
+
+  a. Its demand becomes more elastic, so it lowers its markup.
+  b. Its demand becomes less elastic, so it raises its markup.
+  c. Its marginal cost falls, so it lowers its price.
+  d. Its demand curve is unchanged, because advertising does not affect buyers.
+
+<details class="solution">
+<summary>Solution</summary>
+
+Loyal customers switch less readily when the price rises, so demand is less elastic. The markup rule, $(P - \text{MC})/P = 1/\varepsilon$, says a lower elasticity means a higher markup. **(b)** is correct.
+
+</details>
+
+:::
+
+::: {.mcq answer="c"}
+
+**Q7.** Four companies serve almost all US wireless customers, each sells a somewhat different plan, building a network costs billions, and each company watches what the others charge. What is the market structure?
+
+  a. Perfect competition
+  b. Monopolistic competition
+  c. Oligopoly
+  d. Monopoly
+
+<details class="solution">
+<summary>Solution</summary>
+
+A few firms, hard entry, and prices that depend on what rivals do are the marks of an oligopoly. Monopolistic competition has many firms and easy entry, and a monopoly has one seller. **(c)** is correct.
+
+</details>
+
+:::
+
+::: {.mcq answer="b"}
+
+**Q8.** A city's water utility is a natural monopoly. Which response is most likely to keep water affordable?
+
+  a. Split the utility into four companies, each with its own pipes.
+  b. Leave one utility in place and regulate the price it can charge.
+  c. Let the utility set whatever price it chooses.
+  d. Require every home to pay the marginal cost of its water and nothing more.
+
+<details class="solution">
+<summary>Solution</summary>
+
+In a natural monopoly one firm supplies the market at a lower average cost than several could, so splitting it up would raise costs. Left alone, a monopoly sets a high markup. A price equal to marginal cost would not cover the fixed cost of the pipes, so the utility could not survive. Regulating the price of a single utility, or public ownership, is the usual answer. **(b)** is correct.
+
+</details>
+
+:::
+
+::: {.mcq answer="a,b,d"}
+
+**Q9.** Training an AI chatbot costs a company billions of dollars before anyone uses it. Answering one more question then costs a few cents in computing. Select all the statements that are correct.
+
+  a. The company's average cost per question falls as more people use the chatbot.
+  b. Its average cost is above its marginal cost at every number of questions.
+  c. If it charged each user only the computing cost of their questions, it would break even.
+  d. A new company with few users would have a higher average cost than an established one with many, so it would struggle to match the established company's price.
+
+<details class="solution">
+<summary>Solution</summary>
+
+The training cost is a fixed cost, spread over every question answered, so average cost falls with use and stays above the few cents of marginal cost. Charging only marginal cost would leave nothing to pay for the training, so the company would lose the billions it spent. A newcomer with few users spreads its own training cost over fewer questions, so its average cost is higher and it cannot survive at a price the established company can. This is why markets like this tend to end up with a few large firms. **(a), (b), and (d)** are correct.
+
+</details>
+
+:::
+
+::: {.mcq answer="a,b,c"}
+
+**Q10.** Which of these are ways a firm can reduce the competition it faces? Select all the statements that are correct.
+
+  a. Buying one of its rivals.
+  b. Agreeing with its rivals to raise prices.
+  c. Keeping rivals' products off a platform it controls.
+  d. Cutting its price because its marginal cost fell.
+
+<details class="solution">
+<summary>Solution</summary>
+
+Buying a rival, forming a cartel, and blocking rivals' access to buyers all reduce competition, and competition policy watches for each of them. Passing a cost saving on to buyers in a lower price does not reduce competition. **(a), (b), and (c)** are correct.
+
+</details>
+
+:::

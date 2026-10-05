@@ -1,0 +1,94 @@
+% !TEX program = lualatex
+% ECON 201, Lecture 12 notes: market power and market structures. Compile
+% with LuaLaTeX so the PDF is tagged. Build from the course root:
+%   latexmk -lualatex -cd notes/notes12.tex && latexmk -c -cd notes/notes12.tex
+%
+% Sections 1, 2, and 4 follow CORE, The Economy 2.0: Microeconomics, 7.6,
+% 7.8, 7.9, 7.11, and 7.12, with the lecture's own film example. Section 3
+% gives the standard four-way classification of market structures, which
+% CORE does not use (it names monopolistic competition and oligopoly only in
+% its Robinson and Cournot biographies). Those definitions and examples are
+% the standard principles-textbook ones, not CORE's, and are what students
+% will meet again in ECON 310 and 315.
+\DocumentMetadata{
+  pdfstandard=UA-2,
+  pdfversion=2.0,
+  lang=en-US,
+  tagging=on
+}
+\documentclass[11pt]{article}
+\usepackage{notes}
+\hypersetup{pdftitle={ECON 201 Lecture 12 notes: Market power and market structures},
+            pdfauthor={Div Bhagia}}
+
+\begin{document}
+
+\notestitle{Lecture 12}{Market Power and Market Structures}{A recap of what we did in class, plus the standard way economists classify markets, which the textbook does not spell out. Slide numbers refer to the Lecture 12 deck. Reading: CORE sections 7.8, 7.9, 7.11, 7.12, and the markup rule in 7.6.}
+
+\section{Market Power and the Markup Rule}
+
+A firm has \key{market power} if it can set its price above marginal cost without losing all of its buyers to rivals. Every firm we have studied since Cheerios has had some: it faced a downward-sloping demand curve, chose the quantity where $\text{MR} = \text{MC}$, and charged the price the demand curve allowed at that quantity, which is above MC.
+
+How far above? The \key{profit margin} is $P - \text{MC}$, and the \key{price markup} is the margin as a share of the price, $(P - \text{MC})/P$. When a firm maximizes profit, its markup equals one over the price elasticity of demand at the point it chooses.
+
+\begin{keypanel}[The markup rule]
+\[
+  \frac{P - \text{MC}}{P} = \frac{1}{\varepsilon}
+\]
+The less elastic a firm's demand, the higher the markup it sets.
+\end{keypanel}
+
+For the scooter company from the quiz, $P = 800$ and $\text{MC} = 400$, so the markup is $400/800 = 1/2$; and at that point the elasticity of its demand is $\varepsilon = (800/20) \times (1/20) = 2$, so $1/\varepsilon = 1/2$ as the rule says. The rule tells us what market power depends on: \emph{the less elastic a firm's demand, the higher the markup it sets}. Demand is less elastic when buyers have few close \key{substitutes} to switch to. In the car data on slide 6, small cars with many close rivals had elasticities around 6 and markups of 16\%, while luxury cars with few rivals had elasticities around 3 and markups near 30\%. When a drug's patent expires and generic makers enter, each one is a perfect substitute for the others, and the FDA data on slide 7 show the price falling to 61\% of the brand's with one generic maker and to 6\% with six.
+
+\section{Two Sources of Market Power}
+
+Two things make a firm's demand inelastic.
+
+\key{Product differentiation.} The firm sells something at least a little different from its rivals, so its buyers do not all leave when it charges a little more. Firms differentiate in three ways: through location and service (a shop is distinctive for where it is, what it stocks, and the extras it offers); through innovation (the Toyota Prius, the first mass-produced hybrid, had few close rivals for about fifteen years); and through advertising, which informs buyers, draws them from rivals, and builds brand loyalty. A study of cereal purchases found that advertising raised a brand's demand more than price cuts did, mainly by building loyalty.
+
+\key{Cost advantages of size.} In some industries, average cost falls as the firm produces more, because a large fixed cost is spread over more units. Take a movie that costs \$100 million to make and \$1 to stream to one more viewer. Average cost is the \$1 plus each viewer's share of the \$100 million, so it is \$21 a viewer at 5 million viewers, \$11 at 10 million, \$5 at 25 million, and \$3 at 50 million (slide 10). Since profit is $(P - \text{AC}) \times Q$, a firm \key{breaks even} where the price equals average cost and loses money wherever average cost is above the price. If viewers will pay \$5 a stream, a studio needs 25 million viewers to break even; with fewer it loses money on every stream, and the larger its audience beyond that, the larger its profit.
+
+This is why falling average costs limit competition. If two studios split the 50 million viewers, each has 25 million and just breaks even; three studios would all lose money. Only a few large firms can survive, and a small newcomer, with a higher average cost, cannot break even at their price. So buyers have few sellers to choose from, which is the second source of market power. In the extreme case a single firm can supply the whole market at a lower average cost than two firms could, because two would each pay the fixed cost while sharing the customers. Such a market is a \key{natural monopoly}. Water, electricity, and gas networks are the standard examples, since the pipes and wires are a huge fixed cost and the cost of serving one more home is small. When average cost falls steeply enough, competition becomes winner-takes-all, as in internet search.
+
+\section{The Four Market Structures}
+
+CORE describes a spectrum. At one end are \key{price-takers}, firms so small relative to their market that they must accept the going price; at the other are \key{price-setters} with considerable power over their price. Most textbooks, and the courses you take after this one, divide that spectrum into four named \key{market structures}, according to how many firms sell in the market, whether their products are identical or differentiated, and how hard it is for a new firm to enter.
+
+\begin{keypanel}[The four market structures]
+\small\renewcommand{\arraystretch}{1.25}\setlength{\tabcolsep}{5pt}
+\begin{tabular}{@{}l c l l l l@{}}
+\toprule
+\textbf{Structure} & \textbf{Firms} & \textbf{Products} & \textbf{Entry} & \textbf{Control over price} & \textbf{Example} \\
+\midrule
+Perfect competition      & Many & Identical       & Easy    & None               & Wheat farms \\
+Monopolistic competition & Many & Differentiated  & Easy    & Some               & Restaurants \\
+Oligopoly                & Few  & Either          & Hard    & Some, rivals react & Wireless carriers \\
+Monopoly                 & One  & No substitutes  & Blocked & The most           & Water utility \\
+\bottomrule
+\end{tabular}
+\end{keypanel}
+
+\key{Perfect competition.} Many sellers offer an identical product, buyers know every seller's price, and new firms can enter freely. No single seller can charge more than the going price, because buyers would simply switch to one of the many others selling the same thing. Each firm is a price-taker with perfectly elastic demand, so its markup is zero and price equals marginal cost. Farmers selling wheat or corn into a world market are the usual example. This is the case CORE develops in Unit 8, which we reach after the midterm.
+
+\key{Monopolistic competition.} Many sellers and easy entry, as in perfect competition, but each seller's product is a little different, through its location, its style, or its brand. Restaurants, hair salons, coffee shops, and clothing stores fit here. Each firm faces its own downward-sloping demand curve, since some buyers prefer its product and will pay a little more for it, so each has some market power and prices above marginal cost. But that power is limited, because the many close substitutes keep demand fairly elastic, and because any profit attracts new entrants who draw customers away. Most of the firms in Unit 7, from Cheerios to Beautiful Cars, are of this kind.
+
+\key{Oligopoly.} A few large firms serve the market, and entering it is hard, usually because of the cost advantages of size described above. Products may be identical, as with airline seats on the same route, or differentiated, as with wireless plans or smartphones. What is distinctive is that each firm's best price depends on what its rivals charge, and each knows it: if one carrier cuts its price, it takes customers from the others, who must decide whether to follow. Pricing becomes a strategic interaction, which is why the next lecture models it as a game.
+
+\key{Monopoly.} A single seller of a product with no close substitutes, protected from entry. The barrier may be the cost structure, as in a natural monopoly; a patent or copyright; control of a key resource; or a legal grant from the government. With no rivals, the monopolist faces the whole market's demand, the least elastic a firm can face, so its markup is the largest. In practice very few firms face no competition at all; how much market power a seller has depends on how widely the market is drawn.
+
+\section{Competition Policy}
+
+In every structure but perfect competition the price is above marginal cost. From Lecture 11, that means there are buyers who value the good at more than it costs to make but do not get it: the outcome is not Pareto efficient and there is a deadweight loss. Estimates for US firms put the average price 21\% above marginal cost in 1980 and 61\% above in 2016 (slide 14).
+
+\key{Competition policy}, also called \key{antitrust policy}, is government policy and law that limits market power, prevents cartels, and regulates how firms compete. Authorities investigate when one or a few dominant firms are limiting their rivals, and step in only when a firm has both the ability and the incentive to abuse its power. The behaviour they watch for follows the markup rule: anything that makes a firm's demand less elastic. Firms can keep rivals out, from land (UK supermarkets bought sites and left them empty), from inputs (Ferrero bought a hazelnut supplier), or from buyers (Microsoft kept rival browsers off Windows). They can merge with rivals, as Meta did in buying Instagram and WhatsApp, or collude with them in a \key{cartel}, a group of firms that agree to act like one monopoly, which is illegal in most countries but hard to prove. And they can make buyers less sensitive to price through brands, shelf placement, and products that work best together. A \key{patent} is the one case where the law grants a monopoly on purpose, for a limited time, as a reward for research; when it expires, generic rivals enter.
+
+Authorities weigh the harms and the benefits of each case on its own. For a natural monopoly, breaking the firm up would raise everyone's costs, so the usual answer is a single regulated firm or public ownership. Platforms are a dilemma, since scale and network effects make them look like natural monopolies even as many sellers and advertisers compete on them. And competition keeps moving: the browser market that the Microsoft case opened up is now dominated by Chrome.
+
+\begin{takeaways}
+\item A firm has market power when buyers do not switch easily to rivals. Its markup is $1/\varepsilon$: the less elastic its demand, the more it charges above marginal cost.
+\item Market power comes from a product that differs from rivals', or from cost advantages of size that leave room for only a few large firms.
+\item Markets range from perfect competition, through monopolistic competition and oligopoly, to monopoly, as firms get fewer, products more distinct, and entry harder.
+\item A price above marginal cost means a deadweight loss. Competition policy limits market power, except where a natural monopoly is cheaper to regulate than to break up.
+\end{takeaways}
+
+\end{document}
