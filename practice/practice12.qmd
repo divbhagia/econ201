@@ -22,7 +22,7 @@ Canyon Kayaks rents kayaks at a lake. Its demand curve is $P = 80 - 2Q$, where $
 <details class="solution">
 <summary>Solution</summary>
 
-The profit margin is $P - \text{MC} = 50 - 20 = $ **\$30** on each rental.
+The profit margin is $P - \text{MC} = 50 - 20 =$ **\$30** on each rental.
 
 The markup is the profit margin as a share of the price:
 $$\text{markup} = \frac{P - \text{MC}}{P} = \frac{30}{50} = 0.6$$
@@ -89,9 +89,9 @@ so $P - 15 = P/6$, which gives $\tfrac{5}{6}P = 15$ and **$P = 18$**. With a clo
 
 ## 3. Pixel Forge
 
-Pixel Forge makes a video game. Writing and testing the game costs \$60 million, whatever the number of players. Each extra download then costs \$2 in server fees, so $\text{MC} = 2$.
+Pixel Forge makes a video game. Writing and testing the game costs \$60 million, whatever the number of players. Each extra download then costs \$2 in server fees, so $\text{MC} = 2$. Games of this kind sell for \$5 a download.
 
-**(a)** Find the average cost per download at 2 million, 6 million, and 30 million downloads. Why does it fall?
+**(a)** Find the average cost per download at 10 million, 20 million, and 60 million downloads. Why does it fall?
 
 <details class="solution">
 <summary>Solution</summary>
@@ -99,29 +99,31 @@ Pixel Forge makes a video game. Writing and testing the game costs \$60 million,
 Average cost is total cost divided by downloads, so each download carries its \$2 plus a share of the \$60 million:
 $$\text{AC} = \frac{60{,}000{,}000}{Q} + 2$$
 
-At 2 million downloads, $\text{AC} = 30 + 2 = $ **\$32**. At 6 million, $\text{AC} = 10 + 2 = $ **\$12**. At 30 million, $\text{AC} = 2 + 2 = $ **\$4**.
+At 10 million downloads, $\text{AC} = 6 + 2 =$ **\$8**. At 20 million, $\text{AC} = 3 + 2 =$ **\$5**. At 60 million, $\text{AC} = 1 + 2 =$ **\$3**.
 
-It falls because the \$60 million is spread over more downloads. It stays above the \$2 marginal cost at every quantity.
+It falls because the \$60 million is spread over more and more downloads.
 
 </details>
 
-**(b)** Pixel Forge expects 6 million downloads. What is the lowest price at which it breaks even? What would happen at a price of \$2, equal to marginal cost?
+**(b)** How many downloads does Pixel Forge need to break even at \$5? What happens to its profit if it sells fewer, or more?
 
 <details class="solution">
 <summary>Solution</summary>
 
-Profit is $(P - \text{AC}) \times Q$, so the firm breaks even where $P = \text{AC}$. At 6 million downloads that is **\$12**.
-
-At \$2, each download just covers its own server fee and nothing goes toward the \$60 million, so Pixel Forge **loses \$60 million**. A firm with large fixed costs must price above marginal cost to survive.
+Profit is $(P - \text{AC}) \times Q$, so the firm breaks even where $\text{AC} = P = 5$. From part (a), that is **20 million downloads**. With fewer, average cost is above \$5 and Pixel Forge loses money on every sale. With more, average cost is below \$5 and it makes a profit that grows with every extra download.
 
 </details>
 
-**(c)** A rival studio, Lumen Games, has a game that costs the same to make and sells for \$4 a download, with 30 million downloads. Can Pixel Forge, at 6 million downloads, match the \$4 price?
+**(c)** At \$5, 60 million people buy a game of this kind. Suppose several studios make similar games and split those buyers equally. What is each studio's profit if there is one studio? Three? Six? How many studios can this market support?
 
 <details class="solution">
 <summary>Solution</summary>
 
-Lumen's average cost at 30 million downloads is \$4, so it breaks even at that price. Pixel Forge's average cost at 6 million downloads is \$12, so at \$4 it loses $12 - 4 = 8$ dollars on every download, **\$48 million** in total. **It cannot match the price.** When average cost falls with output, a large firm can survive on a price that a small one cannot.
+- **One studio** sells 60 million downloads at an average cost of \$3, so its profit is $(5 - 3) \times 60 = $ **\$120 million**.
+- **Three studios** sell 20 million each, at an average cost of \$5, so each **just breaks even**.
+- **Six studios** sell 10 million each, at an average cost of \$8, so each **loses** $(5 - 8) \times 10 = -\$30$ **million**.
+
+The market can support **at most three studios**. Each one has to pay the whole \$60 million but gets only a share of the buyers, so the more studios there are, the higher each one's average cost. When average cost falls with output, a market ends up with a few large firms.
 
 </details>
 

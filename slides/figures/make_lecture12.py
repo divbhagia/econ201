@@ -354,11 +354,14 @@ def main() -> int:
               f" (P - MC)/P = {(mu - 1) / mu:.1%}")
 
     # Practice 12, problem 3: Pixel Forge, a game studio, 60 million fixed,
-    # 2 dollars a download.
-    gf, gmc = 60, 2
-    print("\npractice 12, Pixel Forge: AC at 2, 6, 30 million downloads =",
-          [f"{gf / q + gmc:.0f}" for q in (2, 6, 30)],
-          f"; break even at 6 million: P = {gf / 6 + gmc:.0f}; at 2 million: {gf / 2 + gmc:.0f}")
+    # 2 dollars a download, 5 dollar price, 60 million buyers at that price.
+    gf, gmc, gp, gmkt = 60, 2, 5, 60
+    print("\npractice 12, Pixel Forge: AC at 10, 20, 60 million =",
+          [f"{gf / q + gmc:.0f}" for q in (10, 20, 60)],
+          f"; break even at P = {gp}: {gf / (gp - gmc):.0f} million")
+    for n in (1, 3, 6):
+        q = gmkt / n
+        print(f"  {n} studio(s), {q:.0f} million each: profit {(gp - (gf / q + gmc)) * q:.0f} million each")
 
     # Practice 12, problem 1: Canyon Kayaks, P = 80 - 2Q, MC = 20.
     ki, ks, kmc = 80, 2, 20

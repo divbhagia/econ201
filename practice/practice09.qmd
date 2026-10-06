@@ -67,7 +67,7 @@ The 50th bike adds $35{,}000 - 34{,}790 = 210$ to revenue, more than its \$200 c
 <details class="solution">
 <summary>Solution</summary>
 
-**Neither changes.** The rent is paid whatever Sierra sells, so it does not change what one more bike adds to revenue or to cost: the 50th bike still adds \$210 against a cost of \$200, and the 51st only \$190. Profit falls by \$1,000 at every quantity, so it still peaks at **50 bikes at \$700**, and profit there is now $23{,}000 - 1{,}000 = $ **\$22,000 a day**.
+**Neither changes.** The rent is paid whatever Sierra sells, so it does not change what one more bike adds to revenue or to cost: the 50th bike still adds \$210 against a cost of \$200, and the 51st only \$190. Profit falls by \$1,000 at every quantity, so it still peaks at **50 bikes at \$700**, and profit there is now $23{,}000 - 1{,}000 =$ **\$22,000 a day**.
 
 The rent does matter for a different decision: whether to operate at all. If Sierra could avoid the rent by closing, it compares what it earns from the bikes with the rent. At 50 bikes, revenue minus the cost of the bikes is $35{,}000 - 200 \times 50 = 25{,}000$, so Sierra stays open as long as the rent is below \$25,000 a day.
 

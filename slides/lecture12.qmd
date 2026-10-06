@@ -138,7 +138,7 @@ How do firms make their products different?
 :::::: columns
 :::: {.column width="48%"}
 -   A movie costs \$100 million to make and \$1 per extra stream, so AC falls as more people watch.
--   At a \$5 price, a studio *breaks even* with 25 million viewers, and loses money with fewer.
+-   A studio *breaks even*, with zero profit, where AC equals the price. At a \$5 price that takes 25 million viewers; with fewer, it loses money.
 -   Two studios splitting 50 million viewers just break even. Three all lose. Only a few large firms survive.
 ::::
 

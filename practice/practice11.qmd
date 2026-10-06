@@ -38,7 +38,7 @@ The market could create $\tfrac{1}{2} \times 100 \times (1{,}200 - 200) = 50{,}0
 
 The 70th buyer's willingness to pay is the height of the demand curve at 70 bikes: $1{,}200 - 10 \times 70 = 500$, less than \$700, so **this buyer does not buy**.
 
-At \$350, the buyer gains $500 - 350 = $ **\$150**, and Sierra gains $350 - 200 = $ **\$150** on a bike it would not otherwise have sold. Everyone else still pays \$700, so nobody is worse off. **It is a Pareto improvement.**
+At \$350, the buyer gains $500 - 350 =$ **\$150**, and Sierra gains $350 - 200 =$ **\$150** on a bike it would not otherwise have sold. Everyone else still pays \$700, so nobody is worse off. **It is a Pareto improvement.**
 
 </details>
 
@@ -55,7 +55,7 @@ Escape Hour is the only escape room in town. The figure shows its demand curve a
 
 The 40th player's willingness to pay is the height of the demand curve at 40 tickets: **\$40**, less than \$50, so **this player does not buy**.
 
-At \$30, the player gains $40 - 30 = $ **\$10**, and Escape Hour gains $30 - 20 = $ **\$10** on a ticket it would not otherwise have sold. Everyone else still pays \$50, so nobody is worse off. **It is a Pareto improvement.**
+At \$30, the player gains $40 - 30 =$ **\$10**, and Escape Hour gains $30 - 20 =$ **\$10** on a ticket it would not otherwise have sold. Everyone else still pays \$50, so nobody is worse off. **It is a Pareto improvement.**
 
 </details>
 

@@ -24,7 +24,7 @@ Sierra Bikes assembles electric bikes. Its demand curve is $P = 1{,}200 - 10Q$, 
 
 The 10th buyer's willingness to pay is the height of the demand curve at 10 bikes: $\text{WTP} = 1{,}200 - 10 \times 10 = 1{,}100$. Each bike costs Sierra \$200 to make, so the joint surplus is $\text{WTP} - \text{MC} = 1{,}100 - 200 = 900$.
 
-At a price of \$700, the buyer gets $\text{WTP} - P = 1{,}100 - 700 = $ **\$400**, and Sierra gets $P - \text{MC} = 700 - 200 = $ **\$500**. Together they add up to the joint surplus of **\$900**.
+At a price of \$700, the buyer gets $\text{WTP} - P = 1{,}100 - 700 =$ **\$400**, and Sierra gets $P - \text{MC} = 700 - 200 =$ **\$500**. Together they add up to the joint surplus of **\$900**.
 
 </details>
 
@@ -41,7 +41,7 @@ $$\text{CS} = \tfrac{1}{2} \times 50 \times (1{,}200 - 700) = 12{,}500$$
 Producer surplus is the rectangle between the price and marginal cost:
 $$\text{PS} = (700 - 200) \times 50 = 25{,}000$$
 
-Profit is producer surplus minus the fixed cost: $25{,}000 - 2{,}000 = $ **\$23,000 a day**.
+Profit is producer surplus minus the fixed cost: $25{,}000 - 2{,}000 =$ **\$23,000 a day**.
 
 </details>
 
