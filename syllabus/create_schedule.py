@@ -412,12 +412,7 @@ def _icons(lec):
             f'aria-label="Lecture {lec} {_practice_label(lec)[1]} (opens in a new tab)">'
             f'<span aria-hidden="true">\u270D\uFE0F</span></a>'
         )
-    if m.get("interactive"):
-        out.append(
-            f'<a href="{m["interactive"]}" target="_blank" rel="noopener" '
-            f'aria-label="Lecture {lec} interactive example (opens in a new tab)">'
-            f'<span aria-hidden="true">\U0001F579\uFE0F</span></a>'
-        )
+    # An "interactive" entry is linked from the module page only, not here.
     return " ".join(out)
 
 
