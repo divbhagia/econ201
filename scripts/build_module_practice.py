@@ -1,14 +1,18 @@
 """
 Build the module-level practice PDFs from the practice pages, as in ECON 441.
 
-    python3 scripts/build_module_practice.py economists-toolkit 03 04
+    python3 scripts/build_module_practice.py                 # every module
+    python3 scripts/build_module_practice.py economists-toolkit
 
 Parses practice/practiceNN.qmd (problems, MCQs, solutions), converts the
 markdown with pandoc, and writes practice/practice-<slug>.tex (problems
-only) plus practice/practice-<slug>_solutions.tex (problems with solutions),
-then compiles both with LuaLaTeX as tagged PDF/UA-2 and veraPDF-gates them.
-The qmd pages stay the single source: nothing is retyped here, and the MCQ
-answer letters are read back from the answer="" attributes.
+only) plus practice/practice-<slug>_solutions.tex (problems with solutions);
+the Makefile target `module-practice` then compiles both with LuaLaTeX as
+tagged PDF/UA-2 and veraPDF-gates them. The qmd pages stay the single
+source: nothing is retyped here, and the MCQ answer letters are read back
+from the answer="" attributes. Figures (SVGs under slides/img) are converted
+to PDF under practice/img/ with rsvg-convert, as in the deck build, and keep
+their fig-alt as the PDF alt text.
 """
 import re
 import shutil
@@ -19,7 +23,14 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 PRACTICE = ROOT / "practice"
 
-TITLES = {"economists-toolkit": "The Economist's Toolkit"}
+# Module slug -> (title, practice page numbers). A module is listed once
+# every page in it is published; add the matching entry to MODULE_PRACTICE
+# in syllabus/create_schedule.py so the module page links the PDFs.
+MODULES = {
+    "economists-toolkit": ("The Economist's Toolkit", ["03", "04"]),
+    "firms-as-price-setters": ("Firms as Price Setters",
+                               ["06", "07", "08", "09", "10", "11", "12", "13"]),
+}
 
 PANDOC = [shutil.which("pandoc")] if shutil.which("pandoc") else ["quarto", "pandoc"]
 
@@ -37,13 +48,19 @@ PREAMBLE = r"""% !TEX program = lualatex
 \setmainfont{Fira Sans}
 \usepackage{amsmath}
 \usepackage{amssymb}
+% Fira Sans has no U+2032; an unmapped glyph fails PDF/UA-2 (.notdef)
+\usepackage{newunicodechar}
+\newunicodechar{′}{\ensuremath{'}}
 \usepackage{booktabs}
 \usepackage{longtable}
 \usepackage{array}
 \usepackage{calc}
 \usepackage{etoolbox}
 \usepackage{xcolor}
+\usepackage{graphicx}
 \definecolor{accent}{HTML}{BF5700}
+% pandoc emits \tightlist on compact lists
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \usepackage{titlesec}
 \titleformat{\section}{\large\bfseries\color{accent}}{}{0pt}{}
 \titlespacing*{\section}{0pt}{14pt}{4pt}
@@ -65,6 +82,36 @@ DETAILS = re.compile(
 MCQ_BLOCK = re.compile(
     r'::: \{\.mcq answer="([a-d,]+)"\}\n(.*?)\n:::\n', re.DOTALL)
 LINK_ROW = re.compile(r"::: \{\.practice-links\}\n.*?\n:::\n+", re.DOTALL)
+FIGURE = re.compile(
+    r'^!\[\]\((\.\./slides/img/[\w-]+)\.svg\)\{width="(\d+)" fig-alt="([^"]*)"\}$',
+    re.MULTILINE)
+IMG_OUT = PRACTICE / "img"
+MAX_WIDTH_IN = 5.0  # a wider chart runs tall enough to push itself onto a fresh page
+
+
+def tex_escape(text: str) -> str:
+    return re.sub(r"([&%#_$])", r"\\\1", text)
+
+
+def figure_repl(m) -> str:
+    r"""Markdown figure -> raw LaTeX includegraphics of an rsvg-made PDF.
+
+    pandoc would emit \includesvg (needs Inkscape) and drop the fig-alt;
+    this keeps the alt text in the tagged PDF and sizes the figure as on
+    the page (CSS pixels at 96 dpi, capped at the text width).
+    """
+    stem, width, alt = m.group(1), int(m.group(2)), m.group(3)
+    src = (PRACTICE / f"{stem}.svg").resolve()
+    IMG_OUT.mkdir(exist_ok=True)
+    out = IMG_OUT / f"{src.stem}.pdf"
+    if not out.exists() or out.stat().st_mtime < src.stat().st_mtime:
+        subprocess.run(["rsvg-convert", "-f", "pdf", "-o", str(out), str(src)],
+                       check=True)
+    w = min(width / 96, MAX_WIDTH_IN)
+    return ("\n```{=latex}\n\\begin{center}\n"
+            f"\\includegraphics[width={w:.2f}in,alt={{{tex_escape(alt)}}}]"
+            f"{{img/{src.stem}.pdf}}\n"
+            "\\end{center}\n```\n")
 
 
 def pandoc(md: str) -> str:
@@ -112,6 +159,7 @@ def convert_page(num: str, with_solutions: bool) -> str:
         "Work through each problem on paper before you open its **Solution**.", "")
     # The link row under the page title is site navigation, not content.
     body = LINK_ROW.sub("", body)
+    body = FIGURE.sub(figure_repl, body)
 
     if not with_solutions:
         # Questions only: drop solutions, keep everything else, and give the
@@ -159,8 +207,8 @@ def convert_page(num: str, with_solutions: bool) -> str:
     return tex.replace("MEDSKIP", r"\medskip")
 
 
-def build(slug: str, nums):
-    title = TITLES[slug]
+def build(slug: str):
+    title, nums = MODULES[slug]
     for kind, suffix in (("Practice Problems", ""), ("Solutions", "_solutions")):
         header = f"{kind}: {title}"
         parts = [PREAMBLE.replace("TITLE_HERE", f"ECON 201 {header}")
@@ -174,4 +222,8 @@ def build(slug: str, nums):
 
 
 if __name__ == "__main__":
-    build(sys.argv[1], sys.argv[2:])
+    slugs = sys.argv[1:] or list(MODULES)
+    for slug in slugs:
+        if slug not in MODULES:
+            sys.exit(f"unknown module {slug}; known: {', '.join(MODULES)}")
+        build(slug)

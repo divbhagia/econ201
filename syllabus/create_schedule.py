@@ -118,6 +118,7 @@ SESSION_MODULE = {n: label for label, ns in MODULES.items() for n in ns}
 # their content page; build the PDFs with `make module-practice`.
 MODULE_PRACTICE = {
     "The Economist's Toolkit": "practice/practice-economists-toolkit",
+    "Firms as Price Setters": "practice/practice-firms-as-price-setters",
 }
 
 # \multirow cannot span a page break: a merge that would straddle one is
@@ -367,6 +368,8 @@ MATERIALS = {
     12: {"slides": "slides/lecture12.html", "slides_pdf": "slides/lecture12.pdf",
          "notes": "notes/notes12.pdf",
          "practice": "practice/practice12.html"},
+    13: {"slides": "slides/lecture13.html", "slides_pdf": "slides/lecture13.pdf",
+         "practice": "practice/practice13.html"},
 }
 
 # Lecture 2's practice page bundles guided reading; from lecture 3 on the
@@ -448,19 +451,23 @@ for r in rows:
     edge = " module-start" if starts else ""
     date_cell = f'<th scope="row">{date}</th>'
 
+    # Closure and exam rows span the Lecture, Topic, Reading, and Materials
+    # columns; lecture rows carry the same number as the syllabus PDF, so
+    # "Lecture 12" means the same thing on the site, in the decks, and in class.
     if r["kind"] == "closure":
         html_rows.append(f'<tr class="recess{edge}">{mod_cell}{date_cell}'
-                         f'<td colspan="3">{_web(r["Topics"])}</td></tr>')
+                         f'<td colspan="4">{_web(r["Topics"])}</td></tr>')
     elif r["kind"] == "span":
         due = f' &mdash; {r["Due"]}' if r.get("Due") else ""
         html_rows.append(f'<tr class="assessment{edge}">{mod_cell}{date_cell}'
-                         f'<td colspan="3"><strong>{_web(r["Topics"])}</strong>'
+                         f'<td colspan="4"><strong>{_web(r["Topics"])}</strong>'
                          f'{due}</td></tr>')
     else:
         lec = r["Lecture"]
         due = (f'<strong>{r["Due"]}</strong>; ' if r.get("Due") else "")
         html_rows.append(
             f'<tr class="{edge.strip()}">{mod_cell}{date_cell}'
+            f'<td class="lec">{lec}</td>'
             f'<td class="topics">{due}{_web(r["Topics"])}</td>'
             f'<td class="refs">{_web(r["Reading"])}</td>'
             f'<td class="mat">{_icons(lec)}</td></tr>'
@@ -473,6 +480,7 @@ table = (
     '<thead>\n<tr>\n'
     '  <th scope="col" style="width:7.4em">Module</th>\n'
     '  <th scope="col" style="width:5.6em">Date</th>\n'
+    '  <th scope="col" style="width:3.2em"><abbr title="Lecture">Lec.</abbr></th>\n'
     '  <th scope="col">Topic</th>\n'
     '  <th scope="col" style="width:5.2em">Reading</th>\n'
     '  <th scope="col" style="width:5.4em">Materials</th>\n'

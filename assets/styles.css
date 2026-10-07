@@ -132,7 +132,8 @@ table.schedule-table th[scope="row"] {
 table.schedule-table th[scope="rowgroup"] {
   width: 7.4em; background-color: #fff; font-weight: 700; text-align: left;
 }
-table.schedule-table td.lec { width: 2.8em; text-align: center !important; }
+table.schedule-table td.lec { width: 3.2em; text-align: center !important; }
+table.schedule-table thead th abbr[title] { text-decoration: none; }
 table.schedule-table td.topics { width: auto; text-align: left !important; }
 table.schedule-table td.refs { width: 5.2em; text-align: left !important; font-size: 0.95em; }
 table.schedule-table td.mat {
@@ -157,9 +158,11 @@ table.schedule-table tbody tr:last-child > * { border-bottom: none; }
   table.schedule-table th[scope="rowgroup"] { width: 6.4em !important; }
   table.schedule-table thead th:nth-child(2),
   table.schedule-table th[scope="row"] { width: 5.6em !important; }
-  table.schedule-table thead th:nth-child(4),
-  table.schedule-table td.refs { width: 4.6em !important; }
+  table.schedule-table thead th:nth-child(3),
+  table.schedule-table td.lec { width: 2.8em !important; }
   table.schedule-table thead th:nth-child(5),
+  table.schedule-table td.refs { width: 4.6em !important; }
+  table.schedule-table thead th:nth-child(6),
   table.schedule-table td.mat { width: 5.1em !important; }
 }
 
@@ -239,10 +242,19 @@ table.schedule-table tbody tr:last-child > * { border-bottom: none; }
   }
   table.schedule-table th[scope="rowgroup"] a { color: inherit; }
 
-  table.schedule-table th[scope="row"] {
+  /* Date and lecture number share one line at the top of the card */
+  table.schedule-table th[scope="row"],
+  table.schedule-table td.lec {
+    display: inline-block;
     font-weight: 700;
     color: #393A3B;
     margin-bottom: 0.1em;
+  }
+  table.schedule-table td.lec::before {
+    content: "\00B7  Lecture ";
+    white-space: pre;
+    font-weight: 400;
+    color: #747576;
   }
 
   table.schedule-table td.topics { margin-bottom: 0.35em; }

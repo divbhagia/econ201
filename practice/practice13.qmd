@@ -1,0 +1,124 @@
+---
+title: "Lecture 13: Practice"
+subtitle: "Setting prices with few rivals"
+sidebar: false
+toc: true
+toc-title: "On this page"
+format: html
+---
+
+::: {.practice-links}
+[Lecture 13 slides](../slides/lecture13.html) · [Module III: Firms as Price Setters](../content/firms-as-price-setters.qmd)
+:::
+
+Answer each question before you open its **Solution**.
+
+## Multiple choice
+
+::: {.mcq answer="b"}
+
+**Q1.** In which market is a firm's price most likely to change what its rivals charge?
+
+  a. A big city with hundreds of clothing shops.
+  b. A shopping mall with three fast food places.
+  c. Thousands of farmers selling wheat into a world market.
+  d. A town whose only water supplier is a single utility.
+
+<details class="solution">
+<summary>Solution</summary>
+
+With only three sellers, a price cut by one takes customers from the other two, who then have to decide whether to follow. With hundreds or thousands of sellers, any one firm is too small for its price to matter to the others, and a single utility has no rivals at all. **(b)** is correct.
+
+</details>
+
+:::
+
+::: {.mcq answer="c"}
+
+**Q2.** In Lectures 9 to 12, a firm chose its price from its demand curve. What is different when it has only one or two rivals?
+
+  a. Its marginal cost now depends on its rivals' output.
+  b. It no longer faces a demand curve.
+  c. Its demand curve shifts when a rival changes price, so its best price depends on what it expects the rival to do.
+  d. It must charge the same price as its rivals by law.
+
+<details class="solution">
+<summary>Solution</summary>
+
+A firm with many small rivals can treat its demand curve as fixed, because its own price barely affects anyone else. With one or two rivals, a rival's price cut pulls customers away and shifts the firm's demand curve, so the firm has to think about what the rival will do before setting its own price. **(c)** is correct.
+
+</details>
+
+:::
+
+::: {.mcq answer="a,b,c"}
+
+**Q3.** *(Adapted from CORE Question 7.14)* Two rental shops on the same beach each choose a high or a low price. Select all the statements that are correct.
+
+  a. The more loyal their customers are, the more likely both shops are to set high prices.
+  b. When customers care mostly about price, competition pushes both shops' prices down.
+  c. Each shop's best price depends on what it expects the other shop to charge.
+  d. Each shop's best price is the same whatever the other shop charges.
+
+<details class="solution">
+<summary>Solution</summary>
+
+Loyal customers make each shop's demand less elastic, so a high price loses few of them, and both shops can charge more. Price-sensitive customers move to whichever shop is cheaper, which pushes both prices down. And because a price cut by one shop takes customers from the other, each shop's best price depends on what it expects its rival to do. **(a), (b), and (c)** are correct.
+
+</details>
+
+:::
+
+::: {.mcq answer="a"}
+
+**Q4.** Two coffee shops on the same street start offering very different drinks and atmospheres, so each builds its own group of regulars. What happens?
+
+  a. Each shop's demand becomes less elastic, so both can charge higher prices.
+  b. Each shop's demand becomes more elastic, so both must charge lower prices.
+  c. Their marginal costs fall, so both lower their prices.
+  d. Nothing changes, because the shops still sell coffee.
+
+<details class="solution">
+<summary>Solution</summary>
+
+When the shops differ more, fewer customers switch when one raises its price, so each shop's demand is less elastic. Less competition between them means both can charge more. **(a)** is correct.
+
+</details>
+
+:::
+
+::: {.mcq answer="c"}
+
+**Q5.** Two airlines fly the same route and compete their fares down. Who gains?
+
+  a. Both airlines.
+  b. Only the larger airline.
+  c. Their passengers.
+  d. Nobody.
+
+<details class="solution">
+<summary>Solution</summary>
+
+Both airlines earn less than they would at high fares, while passengers pay less. Competition between the two works in the passengers' favor. **(c)** is correct.
+
+</details>
+
+:::
+
+::: {.mcq answer="a,b,c"}
+
+**Q6.** Two airlines flying the same route secretly agree to keep their fares high. Select all the statements that are correct.
+
+  a. This is a cartel.
+  b. Together, the two airlines act like a single monopoly.
+  c. Agreements like this are illegal in most countries.
+  d. Passengers benefit, because both airlines earn more.
+
+<details class="solution">
+<summary>Solution</summary>
+
+A cartel is a group of firms that agree to act like one monopoly, setting a high price together instead of competing. That is why cartels are illegal in most countries: the higher fares come out of passengers' pockets. **(a), (b), and (c)** are correct.
+
+</details>
+
+:::

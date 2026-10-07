@@ -1,7 +1,7 @@
 
 # Ignore certain directories and files
 grades/
-quizzes/
+assessments/
 references/
 canvas/
 

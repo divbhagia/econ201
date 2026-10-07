@@ -6,6 +6,7 @@ project:
     - "content/*.qmd"
     - "practice/*.qmd"
     - "slides/*.qmd"
+    - "interactive/*.qmd"
   resources:
     - syllabus/Econ201-Syllabus.pdf
     # Tagged-PDF slide decks built by `make slides-pdf`
@@ -40,10 +41,10 @@ website:
         file: syllabus.qmd
       - text: "Schedule"
         file: schedule.qmd
-      - text: "Exams"
-        file: exams.qmd
       - text: "Content"
         file: content/the-big-picture.qmd
+      - text: "Exams"
+        file: exams.qmd
       - icon: github
         href: https://divbhagia.github.io/econ201/
         aria-label: GitHub repository for this course

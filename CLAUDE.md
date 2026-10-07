@@ -1,21 +1,21 @@
 # ECON 201 course site
 
 Quarto website (output in `docs/`, served via GitHub Pages), a LaTeX syllabus,
-reveal.js slide decks, and quizzes graded offline by the external `autograder`
+reveal.js slide decks, and assessments graded offline by the external `autograder`
 CLI. Run every command from this folder. `make site` renders in a temp copy
 outside Dropbox and replaces `docs/`; never render into `docs/` directly.
 
 ## Quizzes
 
-Everything quiz-related lives under `quizzes/`, an autograder course folder
-(`quizzes/course.toml`) with one subfolder per quiz: the spec in
-`quizzes/quizN/quizN.toml`, print master and key in `quizzes/quizN/build/`,
-the scanned stack saved as `quizzes/quizN/quizN_scan.pdf`, and the review
+Quizzes and exams live under `assessments/`, an autograder course folder
+(`assessments/course.toml`) with one subfolder per quiz: the spec in
+`assessments/quizN/quizN.toml`, print master and key in `assessments/quizN/build/`,
+the scanned stack saved as `assessments/quizN/quizN_scan.pdf`, and the review
 workbook and scores CSV written beside the scan. Author a spec, then from
-the econ201 root: `autograder --dir quizzes build quizN` / `read` /
+the econ201 root: `autograder --dir assessments build quizN` / `read` /
 `score`. The tool lives in its own repo (`../../auto-grader`); nothing is
 copied here, and Div posts grades with his own script, so the scores CSV is
-the last step it owns. `quizzes/` is gitignored and excluded from the
+the last step it owns. `assessments/` is gitignored and excluded from the
 `make site` rsync; keep it that way, since the repo and site are public and
 the specs contain answer keys. Quiz format: five multiple-choice questions
 worth 1 point each, three verbatim from the practice pages and two
@@ -23,12 +23,12 @@ practice-based with a twist.
 
 ## Student data
 
-`quizzes/roster.csv` and, inside each `quizzes/quizN/` folder, the scan
+`assessments/roster.csv` and, inside each `assessments/quizN/` folder, the scan
 (`quizN_scan.pdf`), review workbook, and scores CSV carry student names
 and CWIDs (`grades/`, now retired, did before). Do not read those; the
 specs and `build/` are fine.
 Test grading against synthetic sheets via
-`autograder --dir quizzes simulate quizN`, never real scans.
+`autograder --dir assessments simulate quizN`, never real scans.
 
 ## Accessibility is a hard requirement
 

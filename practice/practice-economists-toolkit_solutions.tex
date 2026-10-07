@@ -12,13 +12,19 @@
 \setmainfont{Fira Sans}
 \usepackage{amsmath}
 \usepackage{amssymb}
+% Fira Sans has no U+2032; an unmapped glyph fails PDF/UA-2 (.notdef)
+\usepackage{newunicodechar}
+\newunicodechar{′}{\ensuremath{'}}
 \usepackage{booktabs}
 \usepackage{longtable}
 \usepackage{array}
 \usepackage{calc}
 \usepackage{etoolbox}
 \usepackage{xcolor}
+\usepackage{graphicx}
 \definecolor{accent}{HTML}{BF5700}
+% pandoc emits \tightlist on compact lists
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \usepackage{titlesec}
 \titleformat{\section}{\large\bfseries\color{accent}}{}{0pt}{}
 \titlespacing*{\section}{0pt}{14pt}{4pt}

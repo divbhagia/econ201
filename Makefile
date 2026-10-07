@@ -18,12 +18,12 @@ SHELL := /bin/bash
 # Published lectures; keep in step with MATERIALS in syllabus/create_schedule.py.
 # A deck not listed here is neither built as PDF nor rendered into the site, so
 # a lecture can be drafted in slides/ without appearing anywhere public.
-LECTURES := 1 2 3 4 5 6 7 8 9 10 11 12
+LECTURES := 1 2 3 4 5 6 7 8 9 10 11 12 13
 PUBLISHED_DECKS := $(foreach n,$(LECTURES),--include=slides/lecture$(n).qmd --include=slides/lecture$(n).pdf)
 # Published practice pages, same idea: a page absent from this list is not
 # rendered, so it is in the repo but nowhere on the site, not even site search.
 # Keep in step with MATERIALS in syllabus/create_schedule.py.
-PRACTICE := 02 03 04 06 07 08 09 10 11 12
+PRACTICE := 02 03 04 06 07 08 09 10 11 12 13
 PUBLISHED_PRACTICE := $(foreach n,$(PRACTICE),--include=practice/practice$(n).qmd)
 # Consolidated module practice PDFs ride along with the published pages.
 PUBLISHED_PRACTICE += --include=practice/practice-*.pdf
@@ -73,7 +73,7 @@ slides-pdf:
 site: schedule
 	@echo "==> website"
 	@rm -rf $(TMP)
-	@rsync -a --exclude .git --exclude grades --exclude quizzes --exclude references \
+	@rsync -a --exclude .git --exclude grades --exclude assessments --exclude references \
 	          --exclude canvas --exclude docs --exclude .quarto --exclude _freeze \
 	          $(PUBLISHED_DECKS) --exclude 'slides/lecture*.qmd' --exclude 'slides/lecture*.pdf' \
 	          --exclude 'slides/*_files' --exclude 'slides/figures' \
@@ -113,15 +113,19 @@ verify:
 # Consolidated module practice PDFs (441-style), generated from the practice
 # pages by scripts/build_module_practice.py; rerun after editing any
 # practice/practiceNN.qmd in a listed module.
+# Modules with a finished practice set; keep in step with MODULES in the
+# script and MODULE_PRACTICE in syllabus/create_schedule.py.
+MODULE_PRACTICE := economists-toolkit firms-as-price-setters
+
 module-practice:
 	@echo "==> module practice PDFs (lualatex, tagged)"
-	@python3 scripts/build_module_practice.py economists-toolkit 03 04
-	@cd practice && for f in practice-economists-toolkit practice-economists-toolkit_solutions; do \
+	@python3 scripts/build_module_practice.py $(MODULE_PRACTICE)
+	@cd practice && for f in $(foreach m,$(MODULE_PRACTICE),practice-$(m) practice-$(m)_solutions); do \
 	  lualatex -interaction=nonstopmode $$f.tex >/dev/null 2>&1; \
 	  lualatex -interaction=nonstopmode $$f.tex >/dev/null 2>&1; \
 	  verapdf --flavour ua2 --format text $$f.pdf 2>/dev/null | grep -q "^PASS" \
 	    && echo "    $$f.pdf: PASS (PDF/UA-2)" \
 	    || { echo "    $$f.pdf: FAIL (PDF/UA-2)"; exit 1; }; \
-	  rm -f $$f.aux $$f.log $$f.out; done
+	  rm -f $$f.aux $$f.log $$f.out; done; rm -rf img
 
 .PHONY: module-practice
