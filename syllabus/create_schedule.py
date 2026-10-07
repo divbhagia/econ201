@@ -369,7 +369,8 @@ MATERIALS = {
          "notes": "notes/notes12.pdf",
          "practice": "practice/practice12.html"},
     13: {"slides": "slides/lecture13.html", "slides_pdf": "slides/lecture13.pdf",
-         "practice": "practice/practice13.html"},
+         "practice": "practice/practice13.html",
+         "interactive": "interactive/wanda-kit.html"},
 }
 
 # Lecture 2's practice page bundles guided reading; from lecture 3 on the
@@ -410,6 +411,12 @@ def _icons(lec):
             f'<a href="{m["practice"]}" target="_blank" rel="noopener" '
             f'aria-label="Lecture {lec} {_practice_label(lec)[1]} (opens in a new tab)">'
             f'<span aria-hidden="true">\u270D\uFE0F</span></a>'
+        )
+    if m.get("interactive"):
+        out.append(
+            f'<a href="{m["interactive"]}" target="_blank" rel="noopener" '
+            f'aria-label="Lecture {lec} interactive example (opens in a new tab)">'
+            f'<span aria-hidden="true">\U0001F579\uFE0F</span></a>'
         )
     return " ".join(out)
 
@@ -536,7 +543,8 @@ for idx, (label, sessions) in enumerate(MODULES.items()):
                 ("slides_pdf", "Slides (PDF)", "slides as a tagged PDF"),
                 ("notes", "Notes", "notes as a PDF"),
                 ("practice", *_practice_label(lec)),
-                ("worksheet", "Worksheet", "worksheet")):
+                ("worksheet", "Worksheet", "worksheet"),
+                ("interactive", "Interactive", "interactive example")):
             if m.get(key):
                 links.append(
                     f'<a class="btn btn-outline-primary" href="../{m[key]}" '

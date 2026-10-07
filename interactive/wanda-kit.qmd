@@ -14,137 +14,39 @@ groups differ by fill (solid, open, shaded) and label, not colour alone. -->
 
 ```{=html}
 <style>
-.wk-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem 2rem; margin: 0.5rem 0 0.75rem; }
-.wk-controls form[class*="oi-"] { --label-width: auto; margin: 0; }
-.wk-controls form[class*="oi-"] > label { margin-right: 0.6rem; font-weight: 600; }
-.wk-presets { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; margin-bottom: 1rem; }
-.wk-presets button { font-size: 0.9rem; }
-.wk-grid { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
-  grid-template-areas: "stands matrix"; gap: 1rem 2.5rem; align-items: start; }
-.wk-stands { grid-area: stands; }
-.wk-matrix { grid-area: matrix; }
-@media (max-width: 991px) {
-  .wk-grid { grid-template-columns: minmax(0, 1fr); grid-template-areas: "matrix" "stands"; }
-}
 .wk-table { overflow-x: auto; max-width: 100%; }
 .wk-table td, .wk-table th { text-align: center !important; min-width: 0 !important; width: auto; }
+.wk-table table { width: auto; margin: 0.25rem 0 0.5rem; }
+.wk-table td { font-size: 1.2rem; font-weight: 700; white-space: nowrap; }
+.wk-table caption { caption-side: top; text-align: left; color: #1a1a1a; }
 @media (max-width: 600px) {
   .wk-table td, .wk-table th { padding: 6px 4px !important; font-size: 0.9rem; }
   .wk-table td { font-size: 1rem; }
   .wk-k { margin-left: 0.3rem; }
 }
-.wk-table table { width: 100%; margin: 0.25rem 0 0.5rem; }
-.wk-table td { font-size: 1.3rem; font-weight: 700; white-space: nowrap; }
-.wk-table caption { caption-side: top; text-align: left; color: #1a1a1a; }
 .wk-w { color: #005f94; }
 .wk-k { color: #8f4100; margin-left: 0.7rem; }
 .wk-ring { border: 2.5px solid currentColor; border-radius: 999px; padding: 0 0.4rem; }
 .wk-now { outline: 4px solid #1a1a1a; outline-offset: -4px; }
-.wk-verdict { font-weight: 700; font-size: 1.1rem; }
-.wk-note { font-size: 0.95rem; color: #393a3b; }
-.wk-live { font-weight: 600; margin-top: 0.5rem; }
+.wk-live { font-weight: 600; }
+.wk-stage svg text { font-family: inherit; }
+form[class*="oi-"] { --label-width: 210px; }
 </style>
 ```
 
-Wanda rents windsurf boards and Kit rents kiteboards on the same beach. Each rental costs its owner \$10, and each charges $H = \$36$ or $L = \$20$. Each firm has 30 customers who prefer its sport: **loyal** ones rent from it at any price, **price-sensitive** ones pay $H$ but switch if the other firm is cheaper, and 10 **price-driven** ones rent only at $L$.
+Wanda rents windsurf boards and Kit rents kiteboards on the same beach. Each rental costs its owner \$10, and each picks a high price, $H = \$36$, or a low price, $L = \$20$. Each firm has 30 customers who prefer its sport: *loyal* customers rent from it at any price, *price-sensitive* ones pay $H$ but switch if the other firm is cheaper, and 10 *price-driven* ones pay $L$ but not $H$.
 
-::: {.wk-controls .column-page}
+Move the slider to change how many of each firm's customers are loyal, and pick each firm's price. The customers walk to the stand they rent from, and the pay-off matrix below updates.
+
 ```{ojs}
 viewof loyal = Inputs.range([0, 20], {step: 1, value: 11, label: "Loyal customers per firm"})
 viewof wanda = Inputs.radio(new Map([["H ($36)", "H"], ["L ($20)", "L"]]), {label: "Wanda's price", value: "L"})
 viewof kit = Inputs.radio(new Map([["H ($36)", "H"], ["L ($20)", "L"]]), {label: "Kit's price", value: "L"})
 ```
-:::
-
-::: {.column-page}
-```{ojs}
-html`<div class="wk-presets" role="group" aria-label="Jump to a case from the lecture">
-  <span>Cases from the lecture:</span>
-  ${[[7, "fewer loyal"], [11, "first case"], [13, "more loyal"]].map(([v, name]) => {
-    const b = html`<button type="button" class="btn btn-sm btn-outline-dark">${v} loyal (${name})</button>`;
-    b.onclick = () => {
-      const s = viewof loyal;
-      s.value = v;
-      s.dispatchEvent(new Event("input", {bubbles: true}));
-    };
-    return b;
-  })}</div>`
-```
-:::
-
-::: {.wk-grid .column-page}
-::: {.wk-matrix}
-```{ojs}
-{
-  const P = {};
-  for (const w of ["H", "L"]) for (const k of ["H", "L"]) P[w + k] = model.pay(loyal, w, k);
-  const flip = x => x === "H" ? "L" : "H";
-  const brW = (w, k) => P[w + k][0] >= P[flip(w) + k][0];
-  const brK = (w, k) => P[w + k][1] >= P[w + flip(k)][1];
-  const nash = ["HH", "HL", "LH", "LL"].filter(c => brW(c[0], c[1]) && brK(c[0], c[1]));
-  const sr = s => html`<span class="visually-hidden">${s}</span>`;
-  const cell = (w, k) => {
-    const now = w === wanda && k === kit;
-    return html`<td class="${now ? "wk-now" : ""}">
-      <span class="wk-w${brW(w, k) ? " wk-ring" : ""}">${P[w + k][0]}</span>${brW(w, k) ? sr(" (Wanda's best response)") : ""}
-      <span class="wk-k${brK(w, k) ? " wk-ring" : ""}">${P[w + k][1]}</span>${brK(w, k) ? sr(" (Kit's best response)") : ""}
-      ${now ? sr(" (the prices chosen above)") : ""}</td>`;
-  };
-  const pair = c => `(${c[0]}, ${c[1]})`;
-  const verdict = nash.length === 2
-    ? `Two Nash equilibria, ${pair(nash[0])} and ${pair(nash[1])}. Which one happens depends on what each firm expects the other to do.`
-    : nash[0] === "HH"
-      ? "One Nash equilibrium, (H, H): H is a dominant strategy for both, so both price high."
-      : "One Nash equilibrium, (L, L): L is a dominant strategy for both, yet both would earn more at (H, H). A prisoners' dilemma, so both price low.";
-  return html`<div class="wk-table freetable table-scroll" role="region" aria-label="Pay-off matrix" tabindex="0">
-  <table>
-    <caption>Pay-offs with ${loyal} loyal customers per firm: Wanda's profit first (blue), Kit's second (orange).</caption>
-    <thead><tr><th scope="col">Wanda's price</th><th scope="col">Kit: H ($36)</th><th scope="col">Kit: L ($20)</th></tr></thead>
-    <tbody>
-      <tr><th scope="row">Wanda: H ($36)</th>${cell("H", "H")}${cell("H", "L")}</tr>
-      <tr><th scope="row">Wanda: L ($20)</th>${cell("L", "H")}${cell("L", "L")}</tr>
-    </tbody>
-  </table></div>
-  <p class="wk-verdict" aria-live="polite">${verdict}</p>
-  <p class="wk-note">Rings mark each firm's best response to the other's price; a cell with both rings is a Nash equilibrium. The outlined cell is the pair of prices chosen above.</p>`;
-}
-```
-:::
-
-::: {.wk-stands}
-```{ojs}
-stage = {
-  const svg = d3.create("svg").attr("viewBox", [0, 0, 800, 440])
-    .attr("width", "100%").style("height", "auto")
-    .attr("role", "img").attr("class", "wk-stage");
-  for (const [firm, x, c, sport] of [["Wanda", 10, "#005f94", "windsurf boards"],
-                                     ["Kit", 410, "#8f4100", "kiteboards"]]) {
-    svg.append("text").attr("x", x + 10).attr("y", 30).attr("fill", c)
-      .attr("font-size", 24).attr("font-weight", 700).text(firm);
-    svg.append("text").attr("x", x + 10).attr("y", 54).attr("fill", "#393a3b")
-      .attr("font-size", 16).text(sport);
-    svg.append("text").attr("id", `wk-price-${firm}`).attr("x", x + 370).attr("y", 30)
-      .attr("text-anchor", "end").attr("font-size", 20).attr("font-weight", 700).attr("fill", "#1a1a1a");
-    svg.append("rect").attr("x", x).attr("y", 66).attr("width", 380).attr("height", 236)
-      .attr("rx", 8).attr("fill", "#fafafa").attr("stroke", "#595a5b").attr("stroke-width", 2);
-    svg.append("text").attr("id", `wk-total-${firm}`).attr("x", x + 10).attr("y", 330)
-      .attr("font-size", 20).attr("font-weight", 700).attr("fill", "#1a1a1a");
-    svg.append("text").attr("id", `wk-profit-${firm}`).attr("x", x + 10).attr("y", 357)
-      .attr("font-size", 19).attr("fill", "#1a1a1a");
-  }
-  svg.append("text").attr("id", "wk-out-label").attr("x", 20).attr("y", 413)
-    .attr("font-size", 18).attr("fill", "#595a5b").text("Do not rent:");
-  svg.append("g").attr("id", "wk-blocks");
-  svg.append("g").attr("id", "wk-labels");
-  return svg.node();
-}
-```
 
 ```{ojs}
-live = html`<p class="wk-live" aria-live="polite"></p>`
+md`Each firm: **${loyal} loyal**, **${20 - loyal} price-sensitive**, and **10 price-driven** customers.`
 ```
-:::
-:::
 
 ```{ojs}
 //| output: false
@@ -178,18 +80,48 @@ model = {
 ```
 
 ```{ojs}
+stage = {
+  const svg = d3.create("svg").attr("viewBox", [0, 0, 900, 440])
+    .attr("width", "100%").style("max-width", "900px").style("height", "auto")
+    .attr("role", "img").attr("class", "wk-stage");
+  for (const [firm, x, c, sport] of [["Wanda", 10, "#005f94", "windsurf boards"],
+                                     ["Kit", 460, "#8f4100", "kiteboards"]]) {
+    svg.append("text").attr("x", x + 10).attr("y", 30).attr("fill", c)
+      .attr("font-size", 22).attr("font-weight", 700).text(`${firm} (${sport})`);
+    svg.append("text").attr("id", `wk-price-${firm}`).attr("x", x + 10).attr("y", 57)
+      .attr("font-size", 18).attr("fill", "#1a1a1a");
+    svg.append("rect").attr("x", x).attr("y", 70).attr("width", 430).attr("height", 232)
+      .attr("rx", 8).attr("fill", "none").attr("stroke", "#595a5b").attr("stroke-width", 2);
+    svg.append("text").attr("id", `wk-total-${firm}`).attr("x", x + 10).attr("y", 330)
+      .attr("font-size", 19).attr("font-weight", 700).attr("fill", "#1a1a1a");
+    svg.append("text").attr("id", `wk-profit-${firm}`).attr("x", x + 10).attr("y", 356)
+      .attr("font-size", 18).attr("fill", "#1a1a1a");
+  }
+  svg.append("text").attr("id", "wk-out-label").attr("x", 20).attr("y", 415)
+    .attr("font-size", 18).attr("fill", "#595a5b").text("Do not rent:");
+  svg.append("g").attr("id", "wk-blocks");
+  svg.append("g").attr("id", "wk-labels");
+  return svg.node();
+}
+```
+
+```{ojs}
+live = html`<p class="wk-live" aria-live="polite"></p>`
+```
+
+```{ojs}
 //| output: false
 {
   const p = {Wanda: wanda, Kit: kit};
   const bs = model.blocks(loyal, p);
-  const X = {Wanda: 20, Kit: 420}, unit = 18, bh = 36, gap = 8, y0 = 78;
+  const X = {Wanda: 20, Kit: 470}, unit = 20, bh = 34, gap = 8, y0 = 82;
   for (const firm of ["Wanda", "Kit"]) {
     // Own customers first, then any who walked over from the other stand.
     const here = bs.filter(b => b.at === firm && b.n > 0)
       .sort((a, b) => (a.owner === firm ? 0 : 1) - (b.owner === firm ? 0 : 1));
     here.forEach((b, i) => { b.x = X[firm]; b.y = y0 + i * (bh + gap); });
   }
-  bs.filter(b => b.at === null && b.n > 0).forEach((b, i) => { b.x = 150 + i * 200; b.y = 391; });
+  bs.filter(b => b.at === null && b.n > 0).forEach((b, i) => { b.x = 140 + i * 230; b.y = 392; });
   bs.filter(b => b.n === 0).forEach(b => { b.x = X[b.owner]; b.y = y0; });
 
   const solid = o => o === "Wanda" ? "#0072B2" : "#8f4100";
@@ -214,7 +146,7 @@ model = {
   svg.select("#wk-labels").selectAll("text").data(bs, b => b.id)
     .join(enter => enter.append("text").attr("x", b => b.x).attr("y", b => b.y + bh / 2))
     .text(text)
-    .attr("font-size", 17).attr("font-weight", 700).attr("dominant-baseline", "central")
+    .attr("font-size", 16).attr("font-weight", 700).attr("dominant-baseline", "central")
     .attr("text-anchor", b => inside(b) ? "middle" : "start")
     .attr("fill", b => inside(b) && b.grp === "loyal" ? "white" : ink(b.owner))
     .transition(t)
@@ -240,5 +172,41 @@ model = {
   const summary = `With ${loyal} loyal customers per firm: ` + parts.join(" ");
   svg.attr("aria-label", "Customers at the two stands. " + summary);
   live.textContent = summary;
+}
+```
+
+```{ojs}
+{
+  const P = {};
+  for (const w of ["H", "L"]) for (const k of ["H", "L"]) P[w + k] = model.pay(loyal, w, k);
+  const flip = x => x === "H" ? "L" : "H";
+  const brW = (w, k) => P[w + k][0] >= P[flip(w) + k][0];
+  const brK = (w, k) => P[w + k][1] >= P[w + flip(k)][1];
+  const nash = ["HH", "HL", "LH", "LL"].filter(c => brW(c[0], c[1]) && brK(c[0], c[1]));
+  const sr = s => html`<span class="visually-hidden">${s}</span>`;
+  const cell = (w, k) => {
+    const now = w === wanda && k === kit;
+    return html`<td class="${now ? "wk-now" : ""}">
+      <span class="wk-w${brW(w, k) ? " wk-ring" : ""}">${P[w + k][0]}</span>${brW(w, k) ? sr(" (Wanda's best response)") : ""}
+      <span class="wk-k${brK(w, k) ? " wk-ring" : ""}">${P[w + k][1]}</span>${brK(w, k) ? sr(" (Kit's best response)") : ""}
+      ${now ? sr(" (the prices chosen above)") : ""}</td>`;
+  };
+  const pair = c => `(${c[0]}, ${c[1]})`;
+  const verdict = nash.length === 2
+    ? `Two Nash equilibria, ${pair(nash[0])} and ${pair(nash[1])}. Which one happens depends on what each firm expects the other to do.`
+    : nash[0] === "HH"
+      ? "One Nash equilibrium, (H, H): H is a dominant strategy for both, so both price high."
+      : "One Nash equilibrium, (L, L): L is a dominant strategy for both, yet both would earn more at (H, H). A prisoners' dilemma, so both price low.";
+  return html`<div class="wk-table freetable table-scroll" role="region" aria-label="Pay-off matrix" tabindex="0">
+  <table>
+    <caption>Pay-offs with ${loyal} loyal customers per firm. In each cell, Wanda's profit comes first, in blue, and Kit's second, in orange.</caption>
+    <thead><tr><th scope="col">Wanda's price</th><th scope="col">Kit charges H ($36)</th><th scope="col">Kit charges L ($20)</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">Wanda charges H ($36)</th>${cell("H", "H")}${cell("H", "L")}</tr>
+      <tr><th scope="row">Wanda charges L ($20)</th>${cell("L", "H")}${cell("L", "L")}</tr>
+    </tbody>
+  </table></div>
+  <p>Rings mark each firm's best response to the other's price; a cell with both rings is a Nash equilibrium. The outlined cell is the pair of prices chosen above.</p>
+  <p><strong>${verdict}</strong></p>`;
 }
 ```
