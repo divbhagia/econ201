@@ -16,6 +16,12 @@ project:
     - "practice/*.pdf"
     # Tagged lecture notes
     - "notes/*.pdf"
+    # Midterm 1 materials, built from exams/midterm1/*.tex (tagged, veraPDF
+    # checked). Listed one by one so the figures beside them stay out.
+    - exams/midterm1/midterm1-study-guide.pdf
+    - exams/midterm1/midterm1-help-sheet.pdf
+    - exams/midterm1/midterm1-practice.pdf
+    - exams/midterm1/midterm1-practice-solutions.pdf
 
 # Speaker notes are stripped from everything published to docs/.
 # Build a presenter copy with: -M strip-notes:false
@@ -34,6 +40,8 @@ website:
         file: syllabus.qmd
       - text: "Schedule"
         file: schedule.qmd
+      - text: "Exams"
+        file: exams.qmd
       - text: "Content"
         file: content/the-big-picture.qmd
       - icon: github

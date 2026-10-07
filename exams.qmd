@@ -1,0 +1,17 @@
+---
+title: "Exams"
+toc: false
+number-sections: false
+sidebar: false
+format: html
+---
+
+## Midterm 1
+
+Monday, October 12, in class, 65 minutes. The exam covers Lectures 3 to 13.
+
+The exam has three parts, weighted equally: multiple-choice questions, short-answer problems, and one long-form question. Each part is its own sheet, printed front and back. **Write your name and your CWID, one digit per box, at the top of every sheet.** Closed book and closed notes; bring a basic calculator.
+
+-   [Study guide (PDF)](exams/midterm1/midterm1-study-guide.pdf): work through it topic by topic. You can use it on screen or print it.
+-   [Practice exam (PDF)](exams/midterm1/midterm1-practice.pdf), with [solutions (PDF)](exams/midterm1/midterm1-practice-solutions.pdf): the same format as the real exam. Take it timed, with only the help sheet, then check your answers.
+-   [Help sheet (PDF)](exams/midterm1/midterm1-help-sheet.pdf): the sheet you will be given with the exam, so you know what to expect. You do not need to print it.

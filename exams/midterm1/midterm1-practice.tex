@@ -1,0 +1,21 @@
+% !TEX program = lualatex
+% ECON 201, Midterm 1 practice exam (one sample, Div 2026-10-06). The content is in
+% practice-content.tex, shared with its solutions wrapper.
+% Build from the course root:
+%   latexmk -lualatex -cd exams/midterm1/midterm1-practice.tex && latexmk -c -cd exams/midterm1/midterm1-practice.tex
+\DocumentMetadata{
+  pdfstandard=UA-2,
+  pdfversion=2.0,
+  lang=en-US,
+  tagging=on
+}
+\documentclass[11pt]{article}
+\input{exam-style}
+\hypersetup{pdftitle={ECON 201 Midterm 1 Practice Exam}, pdfauthor={Div Bhagia}}
+\pagestyle{plain}
+\newcolumntype{R}{>{\raggedleft\arraybackslash}p{2cm}}
+\newcolumntype{Z}{>{\centering\arraybackslash}p{1.6cm}}
+\solutionsfalse
+\begin{document}
+\input{practice-content}
+\end{document}

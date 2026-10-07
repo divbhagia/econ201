@@ -1,0 +1,140 @@
+% Shared preamble for the Midterm 1 materials (help sheet, study guide,
+% practice exams, solutions). \input after \documentclass. Every document
+% that uses it starts with \DocumentMetadata and compiles under LuaLaTeX.
+\usepackage[letterpaper, margin=0.75in, top=0.55in, bottom=0.6in]{geometry}
+\usepackage{fontspec}
+\setmainfont{Fira Sans}
+\usepackage{amsmath}
+% Math in the same family as the text; without this the formulas are set
+% in Computer Modern and look pasted in from another document.
+\usepackage{unicode-math}
+\setmathfont{Fira Math}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{multicol}
+\usepackage{needspace}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\definecolor{accent}{HTML}{BF5700}
+\definecolor{accentdark}{HTML}{8F4100}
+\definecolor{cream}{HTML}{FDF3EA}
+\definecolor{muted}{HTML}{595A5B}
+\definecolor{rule}{HTML}{D9D9D9}
+\usepackage{titlesec}
+\titleformat{\section}{\Large\bfseries\color{accent}}{}{0pt}{}
+\titlespacing*{\section}{0pt}{0pt}{4pt}
+\titleformat{\subsection}{\normalsize\bfseries\color{accentdark}}{}{0pt}{}
+\titlespacing*{\subsection}{0pt}{9pt}{2pt}
+% Running header for the help sheet, as on the 340 and 441 sheets.
+\usepackage{fancyhdr}
+\fancypagestyle{sheet}{%
+  \fancyhf{}\renewcommand{\headrulewidth}{0.4pt}%
+  \fancyhead[L]{\small ECON 201: Principles of Microeconomics}%
+  \fancyhead[R]{\small Midterm 1 Help Sheet}%
+  \fancyfoot[C]{\small\thepage}}
+\usepackage{hyperref}
+\hypersetup{hidelinks}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3pt}
+\setlength{\abovedisplayskip}{4pt}
+\setlength{\belowdisplayskip}{4pt}
+\setlength{\abovedisplayshortskip}{2pt}
+\setlength{\belowdisplayshortskip}{4pt}
+\setlength{\columnsep}{22pt}
+
+% Compact lists.
+\makeatletter
+\def\@listi{\leftmargin\leftmargini \topsep 2pt \partopsep 0pt \parsep 0pt \itemsep 1pt}
+\let\@listI\@listi
+\def\@listii{\leftmargin\leftmarginii \labelwidth\leftmarginii
+  \advance\labelwidth-\labelsep \topsep 1pt \parsep 0pt \itemsep 0pt}
+\makeatother
+
+% Document header: title at left, course at right, with a rule beneath.
+\newcommand{\docheader}[2]{%
+  {\LARGE\bfseries\color{accent}#1}\hfill{\large #2}\par
+  \vspace{2pt}{\color{accent}\rule{\linewidth}{0.8pt}}\par\vspace{6pt}}
+
+% Panels. Cream for examples and reference material, white with an orange
+% frame for things the student fills in. Text on cream uses accentdark
+% (7.7:1), since the brand orange falls below 4.5:1 there.
+\newtcolorbox{panel}[1]{colback=cream, colframe=accent, boxrule=0.6pt, arc=2pt,
+  left=7pt, right=7pt, top=4pt, bottom=5pt, title=#1, fonttitle=\bfseries,
+  coltitle=white, colbacktitle=accent, toptitle=2pt, bottomtitle=2pt,
+  before skip=6pt, after skip=6pt}
+\newtcolorbox{workpanel}[1]{colback=white, colframe=accent, boxrule=0.6pt, arc=2pt,
+  left=7pt, right=7pt, top=4pt, bottom=5pt, title=#1, fonttitle=\bfseries,
+  coltitle=white, colbacktitle=accent, toptitle=2pt, bottomtitle=2pt,
+  before skip=6pt, after skip=6pt}
+\newtcolorbox{notepanel}[1]{colback=white, colframe=muted, boxrule=0.5pt, arc=2pt,
+  left=7pt, right=7pt, top=3pt, bottom=4pt, title=#1, fonttitle=\bfseries,
+  coltitle=white, colbacktitle=muted, toptitle=1pt, bottomtitle=1pt,
+  before skip=6pt, after skip=6pt}
+
+% Pointers back to the course materials.
+\newcommand{\where}[1]{{\color{muted}\small #1}}
+% An empty box to tick by hand.
+\newcommand{\tick}{{\large$\mdlgwhtsquare$}}
+% Step label inside a worked example.
+% Help sheet rows: the formula, then what its symbols mean. The argument
+% is the width of the formula column; both cells are vertically centred so
+% a note sits level with a tall fraction.
+\newenvironment{formulas}[1]
+  {\begin{tabular}{@{}>{\raggedright\arraybackslash$\displaystyle}m{#1}<{$}@{\hspace{10pt}}>{\small\color{muted}\raggedright\arraybackslash}m{\dimexpr\linewidth-#1-10pt\relax}@{}}}
+  {\end{tabular}\par\vspace{3pt}}
+\newcommand{\frow}{\\[5pt]}
+% One formula on its own line, left-aligned, for the help sheet.
+\newlength{\flskip}\setlength{\flskip}{5pt}
+\newcommand{\fl}[1]{\par\noindent\hspace*{1em}$\displaystyle #1$\par\vspace{\flskip}}
+% Exam pieces. \pts marks a part's points; \work leaves ruled space on an
+% exam and nothing in its solutions; \sol prints only in the solutions.
+\newif\ifsolutions
+\def\ptsone{1}
+\DeclareRobustCommand{\pts}[1]{{\def\ptsarg{#1}\color{muted}\small[#1~\ifx\ptsarg\ptsone pt\else pts\fi]}}
+\pdfstringdefDisableCommands{\def\pts#1{}}
+% A part of a problem: label and points, with air above it.
+% A hint or aside under a part, in the muted colour.
+\newcommand{\fnote}[1]{\par\vspace{2pt}{\small\color{muted}#1}\par}
+% A physical sheet of the exam: starts on an odd page (a blank page is
+% inserted if needed, so sheets can be separated and graded by different
+% people) and carries a name and CWID line on its front.
+% The CWID is nine boxes, one digit each, as on the scanned exam.
+\newcommand{\cwidbox}{\fbox{\rule{0pt}{7mm}\hspace{5.5mm}}\hspace{0.6mm}}
+\newcommand{\cwidboxes}{{\setlength{\fboxsep}{0pt}\setlength{\fboxrule}{0.5pt}%
+  \cwidbox\cwidbox\cwidbox\cwidbox\cwidbox\cwidbox\cwidbox\cwidbox\cwidbox}}
+\newcommand{\sheet}[1]{\clearpage\ifodd\value{page}\else\mbox{}\thispagestyle{empty}\clearpage\fi
+  \noindent Name: \rule{7.5cm}{0.4pt}\par\vspace{8pt}
+  \noindent CWID:\enspace\raisebox{-2.4mm}{\cwidboxes}\enspace{\small\color{muted}One digit per box.}\par\vspace{5pt}
+  \noindent{\small\color{muted}#1}\par\vspace{6pt}}
+% Multiple choice laid out like the scanned exam: the question and its
+% options at left, a row of answer bubbles at right (exam copy only). The
+% bubble is Fira Math's large circle; Fira Sans has none.
+\newfontfamily\bubblefont{Fira Math}
+\newcommand{\bubble}[1]{\shortstack{{\bubblefont\large ◯}\\[-1pt]{\scriptsize\color{muted}#1}}}
+\newcommand{\mcopt}[2]{\par\noindent\hangindent=1.8em\hangafter=1\makebox[1.8em][l]{(#1)}#2}
+\newcommand{\mcq}[5]{\item\ifsolutions\begin{minipage}[t]{\linewidth}\else\begin{minipage}[t]{0.74\linewidth}\fi
+  #1\par\vspace{3pt}\mcopt{A}{#2}\mcopt{B}{#3}\mcopt{C}{#4}\mcopt{D}{#5}\end{minipage}%
+  \ifsolutions\else\hfill\begin{minipage}[t]{0.22\linewidth}\raggedleft
+  \bubble{A}\hspace{5pt}\bubble{B}\hspace{5pt}\bubble{C}\hspace{5pt}\bubble{D}\end{minipage}\fi\par}
+\newcommand{\qpart}[2]{\par\vspace{10pt}\noindent(#1) \pts{#2} }
+% A numbered short-answer question: number and points, with more air above
+% it than a part.
+\newcommand{\sa}[2]{\par\vspace{14pt}\noindent\textbf{#1.} \pts{#2} }
+\newcount\answerlinecount
+\newcommand{\answerlines}[1]{%
+  \par\vspace{1pt}\answerlinecount=#1
+  \loop\ifnum\answerlinecount>0
+    \rule{\linewidth}{0.3pt}\par\vspace{6pt}%
+    \advance\answerlinecount by -1
+  \repeat
+  \vspace{-6pt}}
+% Blank working space on an exam, about #1 lines of handwriting; nothing in
+% the solutions. Ruled lines get in the way of fractions and arithmetic.
+\newlength{\workline}\setlength{\workline}{18pt}
+\newcommand{\work}[1]{\ifsolutions\else\par\vspace{#1\workline}\fi}
+\newcommand{\sol}[1]{\ifsolutions\par\vspace{1pt}{\color{accentdark}\textbf{Solution.} #1}\par\fi}
+\newcommand{\blankrow}{\rule{0pt}{1.9em}}
+% Percentage change, as in the slides.
+\newcommand{\pc}{\%\,\Delta}
+\newcommand{\step}[1]{\textbf{\color{accentdark}#1}\enspace}

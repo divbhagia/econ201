@@ -1,0 +1,123 @@
+% !TEX program = lualatex
+% ECON 201, Midterm 1 help sheet, printed and handed out separately from
+% the exam and posted on the course website so students study with the exact
+% sheet they will have. Formulas only, one page: a symbol key, then six
+% sections in two columns, each row a name and its formula. Div cut the
+% "how to use it" column, the rule rows (sunk cost, comparative advantage,
+% trade price, whether to operate), and the labelled surplus graph on
+% 2026-10-06: they stated conclusions the exam tests. MR = MC and the markup
+% rule stay as bare formulas because the exam asks students to apply them.
+% Layout reworked on 2026-10-06 (Div: "it doesn't look good at all"): two
+% fixed columns, every row the same height with hairlines between rows,
+% names short enough for one line (the surplus rows are grouped under "On
+% one sale" and "In the market" instead of repeating it), and the page
+% filled rather than a quarter left blank.
+% Build from the course root:
+%   latexmk -lualatex -cd exams/midterm1/midterm1-help-sheet.tex && latexmk -c -cd exams/midterm1/midterm1-help-sheet.tex
+\DocumentMetadata{
+  pdfstandard=UA-2,
+  pdfversion=2.0,
+  lang=en-US,
+  tagging=on
+}
+\documentclass[10pt]{article}
+\input{exam-style}
+\hypersetup{pdftitle={ECON 201 Midterm 1 Help Sheet}, pdfauthor={Div Bhagia}}
+\geometry{margin=0.6in, top=0.55in, bottom=0.45in}
+\pagestyle{empty}
+\usepackage{colortbl}
+
+% Section heading: accent title over a thin accent rule, as in the study guide.
+\newcommand{\hs}[1]{\par\vspace{14pt}\noindent{\large\bfseries\color{accent}#1}\par\vspace{-1pt}\noindent{\color{accent}\rule{\linewidth}{0.6pt}}\par\vspace{-1pt}}
+% One table shape for every section: name, formula. Every row is built by
+% \R (one line) or \F (a stacked fraction), which put the same strut in both
+% cells, so the name sits on the formula's baseline, level with a fraction
+% bar, and every row of a kind has the same height. (m columns would centre
+% the cells, but under tagging=on they come out top-aligned.)
+\newlength{\namecol}\setlength{\namecol}{3.5cm}
+\newenvironment{sheettable}
+  {\par\noindent\arrayrulecolor{rule}%
+   \begin{tabular}{@{}>{\raggedright\arraybackslash}p{\namecol}@{\hspace{8pt}}>{\raggedright\arraybackslash}p{\dimexpr\linewidth-\namecol-8pt\relax}@{}}}
+  {\end{tabular}\arrayrulecolor{black}\par}
+% The height strut opens a cell and the depth strut closes it, so a cell
+% that wraps keeps its normal line spacing.
+\newcommand{\up}[1]{\rule{0pt}{#1}}
+\newcommand{\dn}[1]{\rule[-#1]{0pt}{#1}}
+\newcommand{\R}[2]{\up{15pt}#1\dn{8pt} & \up{15pt}#2\dn{8pt}}
+\newcommand{\F}[2]{\up{22pt}#1\dn{14pt} & \up{22pt}#2\dn{14pt}}
+% A fraction row whose name takes two lines: the two lines straddle the bar.
+\newcommand{\W}[2]{\up{16pt}#1 & \up{22pt}#2\dn{14pt}}
+\newcommand{\rs}{\\\hline}
+% A label grouping the rows below it, spanning both cells.
+\newcommand{\grp}[1]{\multicolumn{2}{@{}l@{}}{\rule{0pt}{16pt}\small\bfseries\color{muted}#1}\\}
+
+\begin{document}
+\docheader{Midterm 1 Help Sheet}{ECON 201}
+
+% Symbol key in three columns.
+{\small
+\renewcommand{\arraystretch}{1.3}
+\noindent\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.9cm}>{\raggedright\arraybackslash}p{2.1cm}@{\hspace{14pt}}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{3.9cm}@{\hspace{14pt}}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{6.6cm}@{}}
+$P$ & price & $C(Q)$ & total cost & $Q^*$, $P^*$ & profit-maximizing quantity and price \\
+$Q$ & quantity & $F$ & fixed cost & $P_0$ & price at which nobody buys \\
+$R$ & revenue & $c$ & cost of one more unit & $Q_F$ & quantity where demand meets MC \\
+$\Delta$ & change in & WTP & willingness to pay & slope & $\Delta P / \Delta Q$, slope of the demand curve \\
+\end{tabular}\par}
+\vspace{2pt}{\color{rule}\rule{\linewidth}{0.5pt}}\par
+
+\noindent
+\begin{minipage}[t]{0.475\linewidth}
+\hs{Decisions and Trade}
+\begin{sheettable}
+\R{Net benefit}{$\text{benefit} - \text{direct cost}$} \rs
+\R{Opportunity cost}{net benefit of the next best alternative} \rs
+\R{Economic cost}{$\text{direct cost} + \text{opportunity cost}$} \rs
+\R{Economic rent}{$\text{net benefit} - \text{opportunity cost}$} \rs
+\W{Opportunity cost of one unit}{$\dfrac{\text{other good given up}}{\text{this good gained}}$} \\
+\end{sheettable}
+
+\hs{Costs}
+\begin{sheettable}
+\F{Average cost}{$\text{AC} = \dfrac{C(Q)}{Q}$} \rs
+\F{Marginal cost}{$\text{MC} = \dfrac{\Delta C}{\Delta Q} = C(Q+1) - C(Q)$} \\
+\end{sheettable}
+
+\hs{Elasticity}
+\begin{sheettable}
+\F{Percentage change}{$\%\,\Delta = \dfrac{\text{new} - \text{old}}{\text{old}} \times 100$} \rs
+\F{Price elasticity}{$\varepsilon = -\dfrac{\%\,\Delta\text{ demand}}{\%\,\Delta\text{ price}} = -\dfrac{P}{Q} \times \dfrac{\Delta Q}{\Delta P}$} \\
+\F{}{$\phantom{\varepsilon} = -\dfrac{P}{Q} \times \dfrac{1}{\text{slope}}$} \rs
+\F{Income elasticity}{$\varepsilon_{\text{income}} = \dfrac{\%\,\Delta\text{ demand}}{\%\,\Delta\text{ income}}$} \rs
+\F{Cross-price elasticity}{$\varepsilon_{\text{cross}} = \dfrac{\%\,\Delta\text{ demand for A}}{\%\,\Delta\text{ price of B}}$} \rs
+\F{Markup rule}{$\dfrac{P - \text{MC}}{P} = \dfrac{1}{\varepsilon}$} \\
+\end{sheettable}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.475\linewidth}
+
+
+\hs{Revenue and Profit}
+\begin{sheettable}
+\R{Revenue}{$R = P \times Q$} \rs
+\R{Profit}{$R - C(Q)$} \rs
+\F{Marginal revenue}{$\text{MR} = \dfrac{\Delta R}{\Delta Q} = R(Q+1) - R(Q)$} \rs
+\R{Profit maximum}{$\text{MR} = \text{MC}$} \\
+\end{sheettable}
+
+\hs{Surplus}
+\begin{sheettable}
+\grp{On one sale}
+\R{Buyer's gain}{$\text{WTP} - P$} \rs
+\R{Firm's gain}{$P - \text{MC}$} \rs
+\R{Joint surplus}{$\text{WTP} - \text{MC}$} \\
+\grp{In the market}
+\R{Consumer surplus}{$\text{CS} = \tfrac{1}{2} \times Q^* \times (P_0 - P^*)$} \rs
+\R{Producer surplus}{$\text{PS} = (P^* - \text{MC}) \times Q^*$} \rs
+\R{Deadweight loss}{$\text{DWL} = \tfrac{1}{2} \times (Q_F - Q^*) \times (P^* - \text{MC})$} \\
+\grp{Areas}
+\R{Triangle}{$\tfrac{1}{2} \times \text{base} \times \text{height}$} \rs
+\R{Rectangle}{$\text{base} \times \text{height}$} \\
+\end{sheettable}
+\par\vspace{6pt}
+{\centering\includegraphics[width=0.85\linewidth, alt={A graph of price against quantity. Price is marked, from bottom to top, MC, P star, and P zero; quantity is marked Q star and Q F. A straight demand curve falls from P zero. A dashed marginal revenue line falls twice as steeply from the same point, and marginal cost is a flat dashed line. Marginal revenue meets marginal cost at Q star, where the demand curve is at P star. Consumer surplus is the shaded triangle between P star and the demand curve, out to Q star. Producer surplus is the shaded rectangle between MC and P star, out to Q star. Deadweight loss is the shaded triangle between the demand curve and MC, from Q star to Q F, where demand meets MC.}]{figures/reference.pdf}\par}
+\end{minipage}
+\end{document}
