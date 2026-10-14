@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>ECON 201 Market Experiment: Buyer Cards</title><!-- Written by slides/figures/make_lecture14.py. Do not edit. --><style>
+@page { size: letter; margin: 0.5in; }
+@font-face { font-family: "Fira Sans"; src: local("Fira Sans"), local("FiraSans-Regular"); }
+@font-face { font-family: "Fira Sans"; font-weight: 700; src: local("Fira Sans Bold"), local("FiraSans-Bold"); }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; font-family: "Fira Sans", "Helvetica Neue", Arial, sans-serif; color: #000; }
+/* Six cards per page in a 2 by 3 grid. Every cell draws all four of its
+   borders, pulled together by a negative gap, so the cut lines are single
+   and the outer lines sit inside the printable area. */
+.page { width: 7.5in; height: 10in; display: grid; grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr); grid-auto-flow: column; gap: 0; break-after: page; }
+.page:last-child { break-after: auto; }
+.card { border: 0.7pt solid #000; margin: 0 -0.35pt -0.35pt 0; padding: 0.22in 0.32in 0.24in;
+        display: flex; flex-direction: column; justify-content: flex-end; }
+.mid { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+.side { font-size: 22pt; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.value { font-size: 46pt; font-weight: 700; line-height: 1.05; margin-top: 2pt; }
+.note { font-size: 11pt; line-height: 1.35; margin: 0; padding: 8pt 0 0 1.1em; border-top: 0.6pt solid #000; }
+.note li { margin: 0 0 3pt; }
+.back .side { font-size: 36pt; letter-spacing: 0.22em; }
+.blank { border: none; }
+</style></head><body>
+<div class="page"><div class="card"><div class="mid"><div class="side">Buyer</div><div class="value">$10</div></div><ul class="note"><li>The number above is your value for the good. Keep it private.</li><li>Find a seller who will take less than your value. Your gain is value minus price.</li></ul></div><div class="card"><div class="mid"><div class="side">Buyer</div><div class="value">$9</div></div><ul class="note"><li>The number above is your value for the good. Keep it private.</li><li>Find a seller who will take less than your value. Your gain is value minus price.</li></ul></div><div class="card"><div class="mid"><div class="side">Buyer</div><div class="value">$8</div></div><ul class="note"><li>The number above is your value for the good. Keep it private.</li><li>Find a seller who will take less than your value. Your gain is value minus price.</li></ul></div><div class="card"><div class="mid"><div class="side">Buyer</div><div class="value">$7</div></div><ul class="note"><li>The number above is your value for the good. Keep it private.</li><li>Find a seller who will take less than your value. Your gain is value minus price.</li></ul></div><div class="card"><div class="mid"><div class="side">Buyer</div><div class="value">$4</div></div><ul class="note"><li>The number above is your value for the good. Keep it private.</li><li>Find a seller who will take less than your value. Your gain is value minus price.</li></ul></div><div class="card"><div class="mid"><div class="side">Buyer</div><div class="value">$3</div></div><ul class="note"><li>The number above is your value for the good. Keep it private.</li><li>Find a seller who will take less than your value. Your gain is value minus price.</li></ul></div></div>
+<div class="page"><div class="card back"><div class="mid"><div class="side">Buyer</div></div></div><div class="card back"><div class="mid"><div class="side">Buyer</div></div></div><div class="card back"><div class="mid"><div class="side">Buyer</div></div></div><div class="card back"><div class="mid"><div class="side">Buyer</div></div></div><div class="card back"><div class="mid"><div class="side">Buyer</div></div></div><div class="card back"><div class="mid"><div class="side">Buyer</div></div></div></div>
+</body></html>

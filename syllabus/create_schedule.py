@@ -371,6 +371,8 @@ MATERIALS = {
     13: {"slides": "slides/lecture13.html", "slides_pdf": "slides/lecture13.pdf",
          "practice": "practice/practice13.html",
          "interactive": "interactive/wanda-kit.html"},
+    14: {"slides": "slides/lecture14.html", "slides_pdf": "slides/lecture14.pdf",
+         "interactive": "experiment/market-board.html"},
 }
 
 # Lecture 2's practice page bundles guided reading; from lecture 3 on the

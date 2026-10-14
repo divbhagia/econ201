@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Market experiment: run sheet</title>
+<!-- Instructor's one-page checklist for the classroom market experiment
+     (Lecture 14). Print with experiment/print_cards.py. Card values must
+     match BUNDLE in slides/figures/make_lecture14.py. -->
+<style>
+@page { size: letter; margin: 0.45in; }
+@font-face { font-family: "Fira Sans"; src: local("Fira Sans"), local("FiraSans-Regular"); }
+@font-face { font-family: "Fira Sans"; font-weight: 700; src: local("Fira Sans Bold"), local("FiraSans-Bold"); }
+body { font-family: "Fira Sans", "Helvetica Neue", Arial, sans-serif; color: #000; font-size: 9.8pt; line-height: 1.28; margin: 0; }
+h1 { font-size: 18pt; margin: 0 0 2pt; color: #8f4100; }
+.sub { margin: 0 0 10pt; color: #333; }
+h2 { font-size: 11.5pt; margin: 7pt 0 2pt; color: #8f4100; border-bottom: 0.7pt solid #BF5700; padding-bottom: 1pt; }
+ol, ul { margin: 0; padding-left: 1.2em; }
+li { margin: 0 0 1.5pt; }
+.cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0 18pt; }
+table { border-collapse: collapse; margin: 4pt 0 2pt; }
+th, td { border: 0.6pt solid #000; padding: 1.5pt 7pt; text-align: center; font-size: 9.8pt; }
+th { font-weight: 700; }
+.b { color: #005f94; } .s { color: #8f4100; }
+.box { border: 0.8pt solid #BF5700; background: #FDF3EA; padding: 5pt 8pt; margin: 6pt 0; }
+</style></head><body>
+<h1>Classroom market: run sheet</h1>
+<p class="sub">Board: <b>dbhagia.com/econ201/experiment/market-board.html</b>. Cards clear at <b>$5 to $7</b> for any headcount; four of every six pairs should trade.</p>
+
+<div class="cols">
+<div>
+<h2>Before class</h2>
+<ul>
+  <li>Print <b>cards-buyers.pdf</b> on green and <b>cards-sellers.pdf</b> on white, double-sided, flip on the long edge. One copy of each covers 12 students; five copies of each cover 60.</li>
+  <li>Cut each sheet and rubber-band it as one bundle in printed order: down the left column, then down the right.</li>
+  <li>Open the board, Round 1, "Clear everything". Keep the Outcome section folded.</li>
+</ul>
+<table>
+  <tr><th></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th></tr>
+  <tr><th class="b">Buyer bundle</th><td>10</td><td>9</td><td>8</td><td>7</td><td>4</td><td>3</td></tr>
+  <tr><th class="s">Seller bundle</th><td>2</td><td>3</td><td>4</td><td>5</td><td>8</td><td>9</td></tr>
+</table>
+
+<h2>Dealing (Round 1 only)</h2>
+<ol>
+  <li>Count the room. Half buyers, half sellers (say, by side of the room).</li>
+  <li>Hand out whole bundles first: one buyer bundle and one seller bundle per 12 students.</li>
+  <li>For the remainder, deal from the <b>top</b> of one more buyer bundle and the <b>top</b> of one more seller bundle, the same number from each. An odd student means one extra card on one side; that is fine.</li>
+  <li>Set the unused cards aside. Do not mix them back in.</li>
+  <li>Late arrival: next card from the set-aside buyer bundle, and its partner from the seller bundle if there is one.</li>
+</ol>
+
+<h2>Rules to say aloud</h2>
+<ul>
+  <li>Keep your number private. Buyers: the number is the most it is worth to you. Sellers: the number is your cost.</li>
+  <li>Find someone on the other side and agree on a price. Then both come to the front with your cards.</li>
+  <li>One trade each per round. Never at a loss. Not trading earns zero.</li>
+  <li>Five minutes. Go.</li>
+</ul>
+</div>
+
+<div>
+<h2>During a round</h2>
+<ul>
+  <li>Pair comes up: read both cards, pick the buyer's value and seller's cost from the dropdowns, type the price, Enter.</li>
+  <li>Read the board aloud each time: "Sold at $6." That announcement is what makes prices converge.</li>
+  <li>If the price is above the buyer's value or below the seller's cost, the board refuses it; send them back.</li>
+  <li>Keep both cards. Untraded students sit down at the bell with their cards.</li>
+</ul>
+
+<h2>Between rounds</h2>
+<ol>
+  <li>Collect the untraded cards. Type their numbers into the two boxes under the price chart (buyers in one, sellers in the other).</li>
+  <li>Say only what the top of the board shows: how many trades, the average, the spread. Do not open Outcome yet.</li>
+  <li>Shuffle all the cards in play (traded and untraded together) and redeal, buyers to buyers, sellers to sellers. Order no longer matters.</li>
+  <li>Switch the board to the next round. Go again.</li>
+</ol>
+
+<h2>After the last round: Outcome</h2>
+<ol>
+  <li>Price chart first: Round 1 scattered, later rounds bunched. "Who told you $6?"</li>
+  <li>Open Outcome. "At $8, how many of you would buy? Would sell?" Count on the curves. Excess supply at $8, excess demand at $4, only $5 to $7 balances.</li>
+  <li>Who was left out: the 4s and 3s, the 8s and 9s. Should they have traded? No.</li>
+  <li>Gains captured of the most possible. Where did the missing dollars go?</li>
+  <li>Slides: from cards to a demand curve, to a supply curve, why the price ends up where they cross, who trades, price-takers.</li>
+  <li>Download the CSV before closing the page.</li>
+</ol>
+<div class="box"><b>If the laptop dies:</b> write prices on the whiteboard as they come; keep the cards from each trade in a pile; reconstruct on the board afterwards from the piles.</div>
+</div>
+</div>
+</body></html>

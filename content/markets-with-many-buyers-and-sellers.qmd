@@ -11,7 +11,9 @@ Materials are posted as we go. See the [Schedule](../schedule.qmd) for dates and
 <h2>Lecture 14: Classroom market experiment</h2>
 
 
-<p class="lecture-links dim">Materials posted closer to the date.</p>
+<p class="lecture-links"><a class="btn btn-outline-primary" href="../slides/lecture14.html" target="_blank" rel="noopener" role="button" aria-label="Lecture 14 slides (opens in a new tab)">Slides</a>
+<a class="btn btn-outline-primary" href="../slides/lecture14.pdf" target="_blank" rel="noopener" role="button" aria-label="Lecture 14 slides as a tagged PDF (opens in a new tab)">Slides (PDF)</a>
+<a class="btn btn-outline-primary" href="../experiment/market-board.html" target="_blank" rel="noopener" role="button" aria-label="Lecture 14 interactive example (opens in a new tab)">Interactive</a></p>
 :::
 
 ::: {.lecture}

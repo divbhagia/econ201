@@ -64,3 +64,8 @@ slides/figures/data/
 
 # Claude Code project settings and skills (local only)
 .claude/
+
+# Reference papers for the market experiment: not ours to republish
+experiment/holt-1996-pit-market.pdf
+experiment/markwardt-2016-pit-market-2.pdf
+experiment/core-market-experiment.pdf

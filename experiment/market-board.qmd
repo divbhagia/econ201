@@ -1,0 +1,358 @@
+---
+title: "Market Board"
+subtitle: "Interactive for Lecture 14: the classroom market experiment"
+format:
+  html:
+    page-layout: full
+---
+
+<!-- Runs in the browser, no server. The card schedule is
+market-data.json beside this file, written by slides/figures/make_lecture14.py,
+so the board, the cards, and the deck agree. The top of the page is used
+live while a round runs: the instructor enters each trade as the buyer's
+value, the seller's cost, and the price, and the page shows the trade
+count, the average price, and every price in order. The outcome section
+at the bottom, folded shut until opened, takes the numbers on the cards
+that did not trade; the cards in play are those plus the traded ones, and
+it draws supply and demand from them with the round's trades on top, and shows the
+clearing band and each trade's earnings. Rounds repeat with the same
+cards reshuffled, as many as the class has time for. Trades are kept in
+localStorage so a reload during class loses nothing; every read and write
+is wrapped, so the page also works with storage blocked. Colours: demand
+#0072B2 (text #005f94), supply #8f4100, each 4.5:1 or better on white;
+rounds differ by marker shape and label, not colour alone. -->
+
+```{=html}
+<style>
+.mb-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr)); gap: 0.6rem 1rem; align-items: end; margin: 0.5rem 0 1rem; max-width: 60rem; }
+.mb-grid label { display: block; font-weight: 600; font-size: 1.05rem; }
+.mb-grid input[type=number], .mb-grid input[type=text], .mb-grid select { width: 100%; height: 2.8rem; font-size: 1.25rem; padding: 0.3rem 0.4rem; border: 1px solid #747576; border-radius: 4px; background: #fff; box-sizing: border-box; }
+.mb-buyer { color: #005f94; }
+.mb-seller { color: #8f4100; }
+.mb-grid select.mb-buyer { border-color: #0072B2; border-width: 2px; }
+.mb-grid select.mb-seller { border-color: #BF5700; border-width: 2px; }
+.mb-actions { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0.4rem 0 0.4rem; }
+.mb-actions button { font-size: 1.1rem; padding: 0.5rem 1rem; border-radius: 4px; border: 1px solid #8f4100; background: #8f4100; color: #fff; cursor: pointer; }
+.mb-actions button.mb-quiet { background: #fff; color: #8f4100; }
+.mb-actions button:focus-visible { outline: 3px solid #1a1a1a; outline-offset: 2px; }
+.mb-msg { min-height: 2.6rem; font-size: 2.2rem; font-weight: 700; color: #8f4100; margin: 0.2rem 0 0.4rem; }
+.mb-summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: 0.75rem 1.25rem; margin: 0.2rem 0 0.8rem; max-width: 60rem; }
+.mb-summary div { background: #FDF3EA; border-left: 5px solid #BF5700; padding: 0.45rem 0.9rem; }
+.mb-summary b { display: inline; font-size: 1.9rem; line-height: 1.1; color: #1a1a1a; margin-right: 0.5rem; }
+.mb-summary span { color: #1a1a1a; font-size: 1.2rem; }
+.mb-summary-outcome { display: block; margin-bottom: 1rem; }
+.mb-stats { width: 100%; max-width: 44rem; table-layout: fixed; margin: 0.25rem auto 0.5rem; }
+details.mb-cards { max-width: 60rem; margin: 0.5rem 0 1rem; }
+details.mb-cards summary { font-size: 1.1rem; font-weight: 600; color: #8f4100; cursor: pointer; padding: 0.3rem 0; text-align: center; }
+details.mb-cards summary:focus-visible { outline: 3px solid #1a1a1a; outline-offset: 2px; }
+.mb-stats th, .mb-stats td { text-align: center !important; padding: 4px 14px; font-size: 1.15rem; min-width: 8rem; }
+.mb-stats th[scope=row] { text-align: left !important; font-weight: 600; }
+.mb-table tr.mb-out td { color: #595a5b; }
+.mb-table caption { caption-side: bottom; font-size: 0.95rem; color: #393A3B; }
+.mb-chart { width: 100%; max-width: 60rem; margin: 0.5rem 0; }
+
+.mb-untraded { margin-top: 2rem; }
+.mb-chart svg { width: 100%; height: auto; display: block; font-family: inherit; }
+.mb-table { overflow-x: auto; max-width: 100%; }
+.mb-table table { width: 100%; max-width: 28rem; table-layout: fixed; margin: 0.25rem auto 0.5rem; }
+.mb-table p { text-align: center; }
+.mb-table td, .mb-table th { text-align: center !important; padding: 4px 6px; font-weight: 700; font-size: 1.1rem; }
+.mb-table th:first-child, .mb-table td:first-child { width: 2.5rem; }
+details.mb-debrief { margin-top: 1.5rem; border-top: 2px solid #BF5700; padding-top: 0.5rem; }
+details.mb-debrief summary { font-size: 1.3rem; font-weight: 700; color: #8f4100; cursor: pointer; padding: 0.4rem 0; }
+details.mb-debrief summary:focus-visible { outline: 3px solid #1a1a1a; outline-offset: 2px; }
+#mb-dealt-note { color: #393A3B; }
+@media (max-width: 600px) { .mb-summary b { font-size: 1.2rem; } }
+</style>
+
+<div class="mb-grid" role="group" aria-label="Report a trade">
+  <div><label for="mb-round">Round</label><select id="mb-round"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option></select></div>
+  <div><label for="mb-b" class="mb-buyer">Buyer's value</label><select id="mb-b" class="mb-buyer"><option value="">–</option></select></div>
+  <div><label for="mb-s" class="mb-seller">Seller's cost</label><select id="mb-s" class="mb-seller"><option value="">–</option></select></div>
+  <div><label for="mb-p">Price</label><input id="mb-p" type="number" min="0" step="0.01" inputmode="decimal"></div>
+</div>
+<div class="mb-actions">
+  <button id="mb-add" type="button">Add trade</button>
+  <button id="mb-undo" type="button" class="mb-quiet">Undo last</button>
+  <button id="mb-clear-round" type="button" class="mb-quiet">Clear this round</button>
+  <button id="mb-clear" type="button" class="mb-quiet">Clear everything</button>
+</div>
+<p id="mb-msg" class="mb-msg" role="status" aria-live="polite"></p>
+
+<div id="mb-summary" class="mb-summary" aria-live="polite"></div>
+
+<figure class="mb-chart">
+  <div id="mb-svg"></div>
+  <figcaption id="mb-cap"></figcaption>
+</figure>
+
+<div class="mb-grid mb-untraded" role="group" aria-label="Cards that did not trade">
+  <div><label for="mb-ub" class="mb-buyer">Buyer values that did not trade</label><input id="mb-ub" type="text" inputmode="numeric" autocomplete="off" placeholder="e.g. 7, 4, 4"></div>
+  <div><label for="mb-us" class="mb-seller">Seller costs that did not trade</label><input id="mb-us" type="text" inputmode="numeric" autocomplete="off" placeholder="e.g. 4, 8, 8"></div>
+</div>
+<small id="mb-dealt-note"></small>
+<div class="mb-actions">
+  <button id="mb-csv" type="button" class="mb-quiet">Download all trades (CSV)</button>
+</div>
+
+<details class="mb-debrief" id="mb-debrief">
+  <summary>Outcome</summary>
+  <div id="mb-summary2" class="mb-summary mb-summary-outcome"></div>
+  <figure class="mb-chart">
+    <div id="mb-svg2"></div>
+    <figcaption id="mb-cap2"></figcaption>
+  </figure>
+  <details class="mb-cards">
+    <summary>The cards behind the curves</summary>
+    <div class="mb-table" tabindex="0" id="mb-table"></div>
+  </details>
+</details>
+
+<script>
+(function () {
+  "use strict";
+  const DATA_URL = "market-data.json";
+  const KEY = "econ201-market-board-v2";   // bumped when the saved shape changes
+  const $ = (id) => document.getElementById(id);
+  let data = null;
+  let trades = []; // {round, v, c, p}: buyer's value, seller's cost, price
+
+  const count = (arr, x) => arr.filter((y) => y === x).length;
+  const round = () => +$("mb-round").value;
+  const cur = () => trades.filter((t) => t.round === round());
+  // Cards that did not trade, typed in at the end of each round: {round: {b, s}}.
+  let untraded = {};
+  const parse = (s) => s.split(/[\s,;]+/).filter((x) => x !== "").map(Number).filter((x) => Number.isFinite(x) && x >= 0);
+  const untradedB = () => parse((untraded[round()] || {}).b || "");
+  const untradedS = () => parse((untraded[round()] || {}).s || "");
+  // Cards in play this round: the traded ones plus the untraded ones.
+  const dealtB = () => cur().map((t) => t.v).concat(untradedB());
+  const dealtS = () => cur().map((t) => t.c).concat(untradedS());
+
+  function showUntraded() {
+    const u = untraded[round()] || {};
+    $("mb-ub").value = u.b || ""; $("mb-us").value = u.s || "";
+  }
+  function load() {
+    let t = null;
+    try { t = JSON.parse(localStorage.getItem(KEY) || "null"); } catch (e) {}
+    if (t && Array.isArray(t.trades)) {
+      // Keep only well-formed trades, so state saved by an older version cannot break the page.
+      trades = t.trades.filter((x) => x && [x.round, x.v, x.c, x.p].every((n) => Number.isFinite(n)));
+      $("mb-round").value = t.round || "1";
+      if (t.untraded && typeof t.untraded === "object") untraded = t.untraded;
+    }
+    showUntraded();
+  }
+  function store() {
+    try { localStorage.setItem(KEY, JSON.stringify({ trades, untraded, round: $("mb-round").value })); } catch (e) {}
+  }
+  function msg(t) { $("mb-msg").textContent = t; }
+
+  // The deck's values, so a typo is caught even before the lists are filled in.
+  const knownB = () => new Set(data.buyers), knownS = () => new Set(data.sellers);
+
+  function add() {
+    const r = round(), v = +$("mb-b").value, c = +$("mb-s").value, p = +$("mb-p").value;
+    if ($("mb-b").value === "" || !knownB().has(v)) return msg(`No buyer card has the value $${v}.`);
+    if ($("mb-s").value === "" || !knownS().has(c)) return msg(`No seller card has the cost $${c}.`);
+    if ($("mb-p").value === "" || p < 0) return msg("Enter the price.");
+    if (p > v) return msg(`Not allowed: the buyer's value is $${v}, below $${p}.`);
+    if (p < c) return msg(`Not allowed: the seller's cost is $${c}, above $${p}.`);
+    const now = cur();
+    trades.push({ round: r, v, c, p });
+    const money = (n) => "$" + (Math.round(n * 100) / 100).toString();
+    msg(`Sold at ${money(p)}. Buyer's gain ${money(v - p)}, seller's gain ${money(p - c)}.`);
+    $("mb-b").value = ""; $("mb-s").value = ""; $("mb-p").value = ""; $("mb-b").focus();
+    store(); render();
+  }
+
+  function schedule() {
+    const d = dealtB().slice().sort((a, b) => b - a);
+    const s = dealtS().slice().sort((a, b) => a - b);
+    // Q: matches of the k-th highest buyer with the k-th lowest seller while
+    // the buyer's value exceeds the seller's cost. The clearing range runs
+    // from the higher of (last trading seller's cost, first left-out buyer's
+    // value) to the lower of (last trading buyer's value, first left-out
+    // seller's cost): any price there makes exactly Q trades worthwhile.
+    let q = 0, surplus = 0;
+    for (let k = 0; k < Math.min(d.length, s.length); k++) if (d[k] > s[k]) { q++; surplus += d[k] - s[k]; }
+    let prices = [];
+    if (q > 0) {
+      const lo = Math.max(s[q - 1], q < d.length ? d[q] : 0);
+      const hi = Math.min(d[q - 1], q < s.length ? s[q] : data.top);
+      prices = lo <= hi ? [lo, hi] : [lo];
+    }
+    return { d, s, prices, q, surplus };
+  }
+
+  const SHAPES = ["circle", "square", "triangle", "diamond", "circle", "square"];
+  // Outcome chart: supply and demand for the cards in play, the selected
+  // round's trades as numbered dots in order, and each round's average
+  // price as a dashed line.
+  function chart(target, capId, sch, now, r, band) {
+    const n = Math.max(sch ? Math.max(sch.d.length, sch.s.length) : 0, now.length, 10);
+    const top = data.top, W = 960, H = 560, ml = 90, mr = 150, mt = 30, mb = 80;
+    const x = (k) => ml + (k / (n + 0.5)) * (W - ml - mr);
+    const y = (p) => mt + (1 - p / top) * (H - mt - mb);
+    const curve = (h, color) => `<polyline fill="none" stroke="${color}" stroke-width="4" stroke-linejoin="round" points="${h.map((v, k) => `${x(k + 1)},${y(v)}`).join(" ")}"/>` +
+      h.map((v, k) => `<circle cx="${x(k + 1)}" cy="${y(v)}" r="4.5" fill="#fff" stroke="${color}" stroke-width="2.5"/>`).join("");
+    let g = "";
+    for (let p = 0; p <= top; p += 1) {
+      const major = p % data.tick === 0;
+      g += `<line x1="${ml}" y1="${y(p)}" x2="${W - mr}" y2="${y(p)}" stroke="${major ? "#c8c8c8" : "#e2e2e2"}"/>`;
+      g += `<text x="${ml - 12}" y="${y(p) + 6}" text-anchor="end" font-size="17">$${p}</text>`;
+    }
+    for (let k = 0; k <= n; k += 1) {
+      g += `<line x1="${x(k)}" y1="${mt}" x2="${x(k)}" y2="${H - mb}" stroke="#e2e2e2"/>`;
+      g += `<text x="${x(k)}" y="${H - mb + 28}" text-anchor="middle" font-size="17">${k}</text>`;
+    }
+    g += `<line x1="${ml}" y1="${H - mb}" x2="${W - mr}" y2="${H - mb}" stroke="#595a5b" stroke-width="2"/>`;
+    g += `<line x1="${ml}" y1="${mt}" x2="${ml}" y2="${H - mb}" stroke="#595a5b" stroke-width="2"/>`;
+    g += `<text x="${(ml + W - mr) / 2}" y="${H - 14}" text-anchor="middle" font-size="20">${data.plural}</text>`;
+    g += `<text transform="translate(26 ${(mt + H - mb) / 2}) rotate(-90)" text-anchor="middle" font-size="20">Price</text>`;
+    if (sch && sch.d.length && sch.s.length) {
+      if (sch.prices.length) {
+        const yb = y(sch.prices[sch.prices.length - 1]), hb = Math.max(2, y(sch.prices[0]) - yb);
+        g += `<rect x="${ml}" y="${yb}" width="${W - ml - mr}" height="${hb}" fill="#BF5700" opacity="0.12"/>`;
+        g += `<text x="${ml + 10}" y="${yb + 16}" text-anchor="start" font-size="16" font-weight="700" fill="#8f4100">market-clearing price: ${band}</text>`;
+      }
+      g += `<line x1="${x(sch.q)}" y1="${y(0)}" x2="${x(sch.q)}" y2="${y(sch.prices[0] || 0)}" stroke="#1a1a1a" stroke-width="2" stroke-dasharray="6 6"/>`;
+      g += curve(sch.d, "#0072B2") + curve(sch.s, "#8f4100");
+      g += `<text x="${x(sch.d.length) + 4}" y="${y(sch.d[sch.d.length - 1]) + 32}" text-anchor="end" font-size="20" font-weight="700" fill="#005f94">Demand</text>`;
+      g += `<text x="${x(sch.s.length) + 4}" y="${y(sch.s[sch.s.length - 1]) - 18}" text-anchor="end" font-size="20" font-weight="700" fill="#8f4100">Supply</text>`;
+    }
+    // Each round's average price, as a dashed line with a label in the right margin.
+    const rounds = [...new Set(trades.map((t) => t.round))].sort((a, b) => a - b);
+    const avgs = rounds.map((rr) => { const l = trades.filter((t) => t.round === rr); return [rr, l.reduce((a, t) => a + t.p, 0) / l.length]; });
+    let lastLabelY = -99;
+    avgs.forEach(([rr, a]) => {
+      g += `<line x1="${ml}" y1="${y(a)}" x2="${W - mr}" y2="${y(a)}" stroke="#595a5b" stroke-width="1.5" stroke-dasharray="3 5"/>`;
+      let ly = y(a); if (lastLabelY > 0 && ly - lastLabelY < 20) ly = lastLabelY + 20; lastLabelY = ly;
+      g += `<line x1="${W - mr}" y1="${y(a)}" x2="${W - mr + 8}" y2="${ly}" stroke="#595a5b" stroke-width="1"/>`;
+      g += `<text x="${W - mr + 12}" y="${ly + 5}" text-anchor="start" font-size="15" fill="#393A3B">Round ${rr} avg $${(Math.round(a * 100) / 100)}</text>`;
+    });
+    $(target).innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Supply and demand for the cards in play, clearing at ${band}, Q = ${sch ? sch.q : 0}, with each round's average price as a dashed line">${g}</svg>`;
+    $(capId).textContent = "";
+  }
+
+  // Live view: each round's trade prices in order, one column per round,
+  // numbered dots joined by a thin line, on a shared price axis.
+  function pricepath(r) {
+    // Dots only, on a price axis trimmed to the cards' range.
+    const list = trades.filter((t) => t.round === r);
+    const lo = Math.max(0, Math.min(...data.sellers) - 1), hi = Math.max(...data.buyers) + 1;
+    const W = 960, H = 330, ml = 70, mr = 30, mt = 20, mb = 60;
+    const y = (p) => mt + (1 - (p - lo) / (hi - lo)) * (H - mt - mb);
+    let g = "";
+    for (let p = lo; p <= hi; p += 1) {
+      g += `<line x1="${ml}" y1="${y(p)}" x2="${W - mr}" y2="${y(p)}" stroke="#e2e2e2"/>`;
+      g += `<text x="${ml - 12}" y="${y(p) + 6}" text-anchor="end" font-size="18">$${p}</text>`;
+    }
+    g += `<line x1="${ml}" y1="${mt}" x2="${ml}" y2="${H - mb}" stroke="#595a5b" stroke-width="2"/>`;
+    g += `<line x1="${ml}" y1="${H - mb}" x2="${W - mr}" y2="${H - mb}" stroke="#595a5b" stroke-width="2"/>`;
+    g += `<text transform="translate(22 ${(mt + H - mb) / 2}) rotate(-90)" text-anchor="middle" font-size="19">Price</text>`;
+    g += `<text x="${(ml + W - mr) / 2}" y="${H - 14}" text-anchor="middle" font-size="19">Round ${r} trades, in order</text>`;
+    const most = Math.max(8, list.length);
+    const px = (k) => ml + ((k + 1) / (most + 1)) * (W - ml - mr);
+    if (list.length) {
+      const avg = list.reduce((a, t) => a + t.p, 0) / list.length;
+      g += `<line x1="${ml}" y1="${y(avg)}" x2="${W - mr}" y2="${y(avg)}" stroke="#BF5700" stroke-width="2.5" stroke-dasharray="8 6"/>`;
+      g += `<text x="${W - mr - 6}" y="${y(avg) - 8}" text-anchor="end" font-size="16" fill="#8f4100">average $${Math.round(avg * 100) / 100}</text>`;
+    }
+    list.forEach((t, k) => { g += `<circle cx="${px(k)}" cy="${y(t.p)}" r="8" fill="#1a1a1a"/>`; });
+    $("mb-svg").innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Round ${r} trade prices in order: ${list.map((t) => "$" + t.p).join(", ") || "none yet"}">${g}</svg>`;
+    $("mb-cap").textContent = "";
+  }
+
+  function render() {
+    const r = round(), now = cur();
+    const avg = now.length ? (now.reduce((a, t) => a + t.p, 0) / now.length).toFixed(2).replace(/\.?0+$/, "") : "–";
+    const tile = ([b, s]) => `<div><b>${b}</b><span>${s}</span></div>`;
+    // Live: average price and trade count, and a dot plot of the prices.
+    $("mb-summary").innerHTML = [[`${now.length}`, now.length === 1 ? "trade" : "trades"],
+      [now.length ? `$${avg}` : "–", "average price"]].map(tile).join("");
+    pricepath(r);
+    // Debrief: supply and demand from the cards handed out.
+    const sch = schedule();
+    $("mb-dealt-note").textContent = `Round ${r}: ${now.length} trades, ${untradedB().length} buyers and ${untradedS().length} sellers untraded, so ${sch.d.length} buyer cards and ${sch.s.length} seller cards in play.`;
+    const band = sch.prices.length ? (sch.prices[0] === sch.prices[sch.prices.length - 1] ? `$${sch.prices[0]}` : `$${sch.prices[0]} to $${sch.prices[sch.prices.length - 1]}`) : "–";
+    const gains = now.reduce((a, t) => a + (t.v - t.c), 0);
+    // Per-round statistics: trades, average price, gains captured of the most possible.
+    const played = [...new Set(trades.map((t) => t.round))].sort((a, b) => a - b);
+    const stat = (rr) => {
+      const l = trades.filter((t) => t.round === rr);
+      const d = l.map((t) => t.v).concat(parse((untraded[rr] || {}).b || "")).sort((p, q) => q - p);
+      const s = l.map((t) => t.c).concat(parse((untraded[rr] || {}).s || "")).sort((p, q) => p - q);
+      let m = 0; for (let k = 0; k < Math.min(d.length, s.length); k++) if (d[k] > s[k]) m += d[k] - s[k];
+      return { n: l.length, avg: l.length ? (l.reduce((a, t) => a + t.p, 0) / l.length) : null, g: l.reduce((a, t) => a + (t.v - t.c), 0), m };
+    };
+    const money = (n) => "$" + (Math.round(n * 100) / 100);
+    const head = played.map((rr) => `<th scope="col">Round ${rr}</th>`).join("");
+    const row = (label, f) => `<tr><th scope="row">${label}</th>${played.map((rr) => `<td>${f(stat(rr))}</td>`).join("")}</tr>`;
+    $("mb-summary2").innerHTML = played.length ? `<table class="mb-stats"><thead><tr><th scope="col"></th>${head}</tr></thead><tbody>` +
+      row("Trades", (s) => s.n) + row("Average price", (s) => s.avg === null ? "–" : money(s.avg)) +
+      row("Gains captured", (s) => `$${s.g} of $${s.m}`) + "</tbody></table>" : "";
+    chart("mb-svg2", "mb-cap2", sch, now, r, band);
+    // The cards in play, ranked: row k is the k-th point on each curve.
+    if (!sch.d.length && !sch.s.length) { $("mb-table").innerHTML = ""; return; }
+    const K = Math.max(sch.d.length, sch.s.length);
+    const rows = [];
+    for (let k = 0; k < K; k++) {
+      const v = sch.d[k], c = sch.s[k];
+      const both = v !== undefined && c !== undefined;
+      const ok = both && v > c;
+      rows.push(`<tr${k < sch.q ? "" : ' class="mb-out"'}><td>${k + 1}</td><td class="mb-buyer">${v === undefined ? "" : "$" + v}</td><td class="mb-seller">${c === undefined ? "" : "$" + c}</td><td>${both ? (ok ? "$" + (v - c) : "none") : ""}</td></tr>`);
+    }
+    $("mb-table").innerHTML = `<table><caption>Cards in play, ranked: buyers from the highest value, sellers from the lowest cost. Row ${sch.q} is the last pair that can both gain.</caption><thead><tr><th scope="col">#</th><th scope="col" class="mb-buyer">Buyer's value</th><th scope="col" class="mb-seller">Seller's cost</th><th scope="col">Gain if they trade</th></tr></thead><tbody>${rows.join("")}</tbody></table>`;
+  }
+
+  function csv() {
+    const lines = ["round,trade,price,buyer_value,seller_cost,buyer_earns,seller_earns"];
+    const per = {};
+    trades.forEach((t) => { per[t.round] = (per[t.round] || 0) + 1; lines.push([t.round, per[t.round], t.p, t.v, t.c, t.v - t.p, t.p - t.c].join(",")); });
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(new Blob([lines.join("\n") + "\n"], { type: "text/csv" }));
+    a.download = "market-trades.csv"; a.click(); URL.revokeObjectURL(a.href);
+  }
+
+  // Opening the page with #demo loads three sample rounds, for rehearsing the debrief.
+  function demo() {
+    // 40 students: three full bundles plus the top two cards of a fourth on each side.
+    const R = {
+      1: [[10, 2, 4], [9, 3, 8], [10, 4, 7], [8, 2, 5], [7, 5, 6], [9, 3, 5], [8, 5, 7], [10, 8, 9], [9, 2, 6], [7, 4, 6], [10, 3, 5], [8, 4, 6]],
+      2: [[10, 2, 6], [9, 3, 7], [10, 2, 5], [8, 4, 6], [9, 3, 6], [7, 5, 6], [8, 4, 7], [7, 5, 5], [10, 2, 6], [9, 3, 6], [10, 3, 6], [8, 4, 6], [9, 2, 7]],
+      3: [[10, 2, 6], [9, 3, 6], [10, 2, 6], [8, 4, 6], [9, 3, 7], [8, 4, 6], [7, 5, 6], [7, 5, 6], [10, 2, 6], [9, 3, 6], [10, 2, 6], [9, 3, 6], [8, 4, 6], [7, 5, 6]],
+    };
+    trades = [];
+    Object.keys(R).forEach((rr) => R[rr].forEach(([v, c, p]) => trades.push({ round: +rr, v, c, p })));
+    untraded = { 1: { b: "9, 7, 4, 4, 4, 3, 3, 3", s: "2, 3, 5, 8, 8, 9, 9, 9" },
+                 2: { b: "7, 4, 4, 4, 3, 3, 3", s: "5, 8, 8, 8, 9, 9, 9" },
+                 3: { b: "4, 4, 4, 3, 3, 3", s: "8, 8, 8, 9, 9, 9" } };
+    $("mb-round").value = "3";
+    showUntraded(); store();
+    history.replaceState(null, "", location.pathname);
+  }
+
+  fetch(DATA_URL).then((res) => res.json()).then((d) => {
+    data = d;
+    // Dropdowns hold each side's distinct card values, highest first for buyers, lowest first for sellers.
+    const opts = (vals) => vals.map((v) => `<option value="${v}">$${v}</option>`).join("");
+    $("mb-b").innerHTML = '<option value="">–</option>' + opts([...new Set(d.buyers)].sort((a, b) => b - a));
+    $("mb-s").innerHTML = '<option value="">–</option>' + opts([...new Set(d.sellers)].sort((a, b) => a - b));
+    load();
+    if (location.hash === "#demo") demo();
+    $("mb-add").addEventListener("click", add);
+    $("mb-p").addEventListener("keydown", (e) => { if (e.key === "Enter") add(); });
+    $("mb-csv").addEventListener("click", csv);
+    $("mb-undo").addEventListener("click", () => { const r = round(); for (let i = trades.length - 1; i >= 0; i--) if (trades[i].round === r) { trades.splice(i, 1); break; } msg("Removed the last trade."); store(); render(); });
+    $("mb-clear-round").addEventListener("click", () => { if (confirm(`Clear all round ${round()} trades?`)) { trades = trades.filter((t) => t.round !== round()); store(); render(); msg(""); } });
+    $("mb-clear").addEventListener("click", () => { if (confirm("Clear every trade in every round?")) { trades = []; untraded = {}; showUntraded(); store(); render(); msg(""); } });
+    ["mb-ub", "mb-us"].forEach((id) => $(id).addEventListener("input", () => {
+      untraded[round()] = { b: $("mb-ub").value, s: $("mb-us").value }; store(); render(); }));
+    $("mb-round").addEventListener("change", () => { showUntraded(); store(); render(); msg(""); });
+    render();
+  }).catch(() => msg("Could not load the card schedule (market-data.json)."));
+})();
+</script>
+```
