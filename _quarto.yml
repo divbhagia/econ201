@@ -27,6 +27,8 @@ project:
     - exams/midterm1/midterm1-practice-solutions.pdf
     # Card schedule read by experiment/market-board.qmd at runtime
     - experiment/market-data.json
+    # Last class's results, exported from the board; optional
+    - experiment/market-results.json
 
 # Speaker notes are stripped from everything published to docs/.
 # Build a presenter copy with: -M strip-notes:false

@@ -154,7 +154,10 @@ ul.task-list li input[type="checkbox"] {
 
 <!-- Runs in the browser, no server. The card schedule is
 market-data.json beside this file, written by slides/figures/make_lecture14.py,
-so the board, the cards, and the deck agree. The top of the page is used
+so the board, the cards, and the deck agree. If market-results.json sits
+beside the page (exported from the board after class), a visitor with no
+saved state sees that class's results with a note; "Clear everything" gives
+a blank board. The top of the page is used
 live while a round runs: the instructor enters each trade as the buyer's
 value, the seller's cost, and the price, and the page shows the trade
 count, the average price, and every price in order. The outcome section
@@ -179,6 +182,7 @@ rounds differ by marker shape and label, not colour alone. -->
 .mb-actions button { font-size: 1.1rem; padding: 0.5rem 1rem; border-radius: 4px; border: 1px solid #8f4100; background: #8f4100; color: #fff; cursor: pointer; }
 .mb-actions button.mb-quiet { background: #fff; color: #8f4100; }
 .mb-actions button:focus-visible { outline: 3px solid #1a1a1a; outline-offset: 2px; }
+.mb-note { background: #FDF3EA; border-left: 5px solid #BF5700; padding: 0.5rem 0.9rem; font-size: 1.05rem; max-width: 60rem; }
 .mb-msg { min-height: 2.6rem; font-size: 2.2rem; font-weight: 700; color: #8f4100; margin: 0.2rem 0 0.4rem; }
 .mb-summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: 0.75rem 1.25rem; margin: 0.2rem 0 0.8rem; max-width: 60rem; }
 .mb-summary div { background: #FDF3EA; border-left: 5px solid #BF5700; padding: 0.45rem 0.9rem; }
@@ -209,6 +213,8 @@ details.mb-debrief summary:focus-visible { outline: 3px solid #1a1a1a; outline-o
 @media (max-width: 600px) { .mb-summary b { font-size: 1.2rem; } }
 </style>
 
+<p id="mb-note" class="mb-note" hidden=""></p>
+
 <div class="mb-grid" role="group" aria-label="Report a trade">
   <div><label for="mb-round">Round</label><select id="mb-round"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option></select></div>
   <div><label for="mb-b" class="mb-buyer">Buyer's value</label><select id="mb-b" class="mb-buyer"><option value="">–</option></select></div>
@@ -237,6 +243,7 @@ details.mb-debrief summary:focus-visible { outline: 3px solid #1a1a1a; outline-o
 <small id="mb-dealt-note"></small>
 <div class="mb-actions">
   <button id="mb-csv" type="button" class="mb-quiet">Download all trades (CSV)</button>
+  <button id="mb-json" type="button" class="mb-quiet">Export results (JSON)</button>
 </div>
 
 <details class="mb-debrief" id="mb-debrief">
@@ -277,14 +284,21 @@ details.mb-debrief summary:focus-visible { outline: 3px solid #1a1a1a; outline-o
     const u = untraded[round()] || {};
     $("mb-ub").value = u.b || ""; $("mb-us").value = u.s || "";
   }
-  function load() {
+  function applyState(t) {
+    // Keep only well-formed trades, so state saved by an older version cannot break the page.
+    trades = (t.trades || []).filter((x) => x && [x.round, x.v, x.c, x.p].every((n) => Number.isFinite(n)));
+    $("mb-round").value = t.round || "1";
+    untraded = (t.untraded && typeof t.untraded === "object") ? t.untraded : {};
+  }
+  function load(results) {
     let t = null;
     try { t = JSON.parse(localStorage.getItem(KEY) || "null"); } catch (e) {}
     if (t && Array.isArray(t.trades)) {
-      // Keep only well-formed trades, so state saved by an older version cannot break the page.
-      trades = t.trades.filter((x) => x && [x.round, x.v, x.c, x.p].every((n) => Number.isFinite(n)));
-      $("mb-round").value = t.round || "1";
-      if (t.untraded && typeof t.untraded === "object") untraded = t.untraded;
+      applyState(t);
+    } else if (results && Array.isArray(results.trades)) {
+      // Nothing saved in this browser: show the published results from class.
+      applyState(results);
+      if (results.label) { $("mb-note").textContent = results.label; $("mb-note").hidden = false; }
     }
     showUntraded();
   }
@@ -451,6 +465,14 @@ details.mb-debrief summary:focus-visible { outline: 3px solid #1a1a1a; outline-o
     $("mb-table").innerHTML = `<table><caption>Cards in play, ranked: buyers from the highest value, sellers from the lowest cost. Row ${sch.q} is the last pair that can both gain.</caption><thead><tr><th scope="col">#</th><th scope="col" class="mb-buyer">Buyer's value</th><th scope="col" class="mb-seller">Seller's cost</th><th scope="col">Gain if they trade</th></tr></thead><tbody>${rows.join("")}</tbody></table>`;
   }
 
+  function exportJSON() {
+    const out = { label: "Results from class on " + new Date().toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" }) + ".",
+                  round: $("mb-round").value, trades, untraded };
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(new Blob([JSON.stringify(out, null, 1) + "\n"], { type: "application/json" }));
+    a.download = "market-results.json"; a.click(); URL.revokeObjectURL(a.href);
+  }
+
   function csv() {
     const lines = ["round,trade,price,buyer_value,seller_cost,buyer_earns,seller_earns"];
     const per = {};
@@ -478,20 +500,23 @@ details.mb-debrief summary:focus-visible { outline: 3px solid #1a1a1a; outline-o
     history.replaceState(null, "", location.pathname);
   }
 
-  fetch(DATA_URL).then((res) => res.json()).then((d) => {
+  const RESULTS_URL = "market-results.json";   // optional: last class's results, published beside this page
+  Promise.all([fetch(DATA_URL).then((res) => res.json()),
+               fetch(RESULTS_URL).then((res) => (res.ok ? res.json() : null)).catch(() => null)]).then(([d, results]) => {
     data = d;
     // Dropdowns hold each side's distinct card values, highest first for buyers, lowest first for sellers.
     const opts = (vals) => vals.map((v) => `<option value="${v}">$${v}</option>`).join("");
     $("mb-b").innerHTML = '<option value="">–</option>' + opts([...new Set(d.buyers)].sort((a, b) => b - a));
     $("mb-s").innerHTML = '<option value="">–</option>' + opts([...new Set(d.sellers)].sort((a, b) => a - b));
-    load();
+    load(results);
     if (location.hash === "#demo") demo();
+    $("mb-json").addEventListener("click", exportJSON);
     $("mb-add").addEventListener("click", add);
     $("mb-p").addEventListener("keydown", (e) => { if (e.key === "Enter") add(); });
     $("mb-csv").addEventListener("click", csv);
     $("mb-undo").addEventListener("click", () => { const r = round(); for (let i = trades.length - 1; i >= 0; i--) if (trades[i].round === r) { trades.splice(i, 1); break; } msg("Removed the last trade."); store(); render(); });
     $("mb-clear-round").addEventListener("click", () => { if (confirm(`Clear all round ${round()} trades?`)) { trades = trades.filter((t) => t.round !== round()); store(); render(); msg(""); } });
-    $("mb-clear").addEventListener("click", () => { if (confirm("Clear every trade in every round?")) { trades = []; untraded = {}; showUntraded(); store(); render(); msg(""); } });
+    $("mb-clear").addEventListener("click", () => { if (confirm("Clear every trade in every round?")) { trades = []; untraded = {}; showUntraded(); store(); render(); msg(""); $("mb-note").hidden = true; } });
     ["mb-ub", "mb-us"].forEach((id) => $(id).addEventListener("input", () => {
       untraded[round()] = { b: $("mb-ub").value, s: $("mb-us").value }; store(); render(); }));
     $("mb-round").addEventListener("change", () => { showUntraded(); store(); render(); msg(""); });
