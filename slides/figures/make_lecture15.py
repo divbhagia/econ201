@@ -326,6 +326,12 @@ def main() -> int:
     assert (demand(P_HIGH), supply(P_HIGH)) == (40, 100)
     assert (demand(P_LOW), supply(P_LOW)) == (80, 20)
     assert wtp(BUYER_MARK) == 8 and wta(SELLER_MARK) == 2
+    # Lecture 16 solves for the equilibrium: 10 - Q/10 = 1 + Q/20.
+    from fractions import Fraction as F
+    q_alg = F(10 - 1) / (F(1, 10) + F(1, 20))
+    print(f"  algebra: 10 - Q/10 = 1 + Q/20 -> 9 = 3Q/20 -> Q* = {q_alg:g},"
+          f" P* = 10 - {q_alg:g}/10 = {wtp(q_alg):g}, supply 1 + {q_alg:g}/20 = {wta(q_alg):g}")
+    assert q_alg == Q_STAR and 10 - q_alg / 10 == 1 + q_alg / 20 == P_STAR
 
     print("\nTicket market (worksheet and practice)")
     for p in (T_P_HIGH, T_P_STAR, T_P_LOW):
