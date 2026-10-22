@@ -382,20 +382,21 @@ def fig_lemonade(out: Path, solved: bool) -> None:
         save(fig, out, fmt="pdf")
 
 
-def fig_strawberries(out: Path) -> None:
-    fig, ax = axes(200, 20, list(range(0, 201, 20)), 2, "Baskets a day, Q")
-    ax.set_xlim(0, 210)
-    ax.set_ylim(0, 21)
-    ax.plot([0, 200], [straw_wtp(0), straw_wtp(200)], color=DEMAND, lw=4, solid_capstyle="round", zorder=5)
-    ax.plot([0, 200], [straw_wta(0), straw_wta(200)], color=SUPPLY, lw=4, solid_capstyle="round", zorder=5)
-    label(ax, 160, straw_wtp(160), "Demand", DEMAND, 10, 8)
-    label(ax, 180, straw_wta(180), "Supply", SUPPLY, -10, 10, ha="right")
-    guides(ax, STRAW_Q, STRAW_P, INK)
-    point(ax, STRAW_Q, STRAW_P)
-    label(ax, 0, STRAW_P, f"P* = {money(STRAW_P)}", INK, 8, 8)
-    label(ax, STRAW_Q, 0, f"Q* = {STRAW_Q}", INK, 8, 6)
+def fig_firewood(out: Path) -> None:
+    """Practice 16 multiple choice: firewood bundles near a campground,
+    demand P = 10 - Q/20, supply P = 1 + Q/40, with the price line at $7.
+    The crossing ($4, 120) is left unmarked."""
+    fig, ax = axes(300, 10, list(range(0, 301, 60)), 1, "Bundles a day, Q",
+                   xgrid=list(range(0, 301, 20)))
+    ax.set_xlim(0, 315)
+    ax.set_ylim(0, 10.5)
+    ax.plot([0, 200], [10, 0], color=DEMAND, lw=4, solid_capstyle="round", zorder=5)
+    ax.plot([0, 300], [1, 8.5], color=SUPPLY, lw=4, solid_capstyle="round", zorder=5)
+    ax.plot([0, 300], [7, 7], color=GUIDE, lw=1.8, ls=(0, (4, 3)), zorder=4)
+    label(ax, 300, 7, "P = $7", INK, -4, -6, ha="right", va="top")
+    label(ax, 150, 10 - 150 / 20, "Demand", DEMAND, 10, 6)
+    label(ax, 270, 1 + 270 / 40, "Supply", SUPPLY, -10, 10, ha="right")
     save(fig, out)
-
 
 
 def fig_pumpkins(out: Path) -> None:
@@ -417,6 +418,20 @@ def fig_pumpkins(out: Path) -> None:
     point(ax, 500, 3)
     label(ax, 0, 3, "P* = $3", INK, 8, 8)
     label(ax, 500, 0, "Q* = 500", INK, -8, 6, ha="right")
+    save(fig, out)
+
+
+def fig_pumpkin_supply(out: Path) -> None:
+    """Practice 16, problem 4(c): the pumpkin market supply curve alone."""
+    fig, ax = axes(1200, 8, list(range(0, 1201, 200)), 1, "Pumpkins, Q",
+                   xgrid=list(range(0, 1201, 100)))
+    ax.set_xlim(0, 1260)
+    ax.set_ylim(0, 8.4)
+    steps = [(2, B_N * 100), (4, B_N * 100 + A_N * 40), (5, B_N * 100 + A_N * 60)]
+    step_curve(ax, steps, 1200, SUPPLY)
+    label(ax, 250, 2, "Large farms", SUPPLY, 0, 8, ha="center", fs=FONT - 6)
+    label(ax, 700, 4, "Small farms", SUPPLY, 0, 8, ha="center", fs=FONT - 6)
+    label(ax, 1100, 7.4, "Supply", SUPPLY, -10, 0, ha="right", va="center")
     save(fig, out)
 
 # ------------------------------------------------------- main -------------
@@ -468,10 +483,14 @@ def main() -> int:
     print(f"  20 - Q/10 = 2 + Q/20 -> 18 = 3Q/20 -> Q* = {q}, P* = 20 - {q}/10 = {20 - q / 10},"
           f" supply 2 + {q}/20 = {2 + q / 20}")
     assert q == STRAW_Q and 20 - q / 10 == 2 + q / 20 == STRAW_P
-    for p in (11, 5):
+    for p in (10, 6):
         print(f"  P = ${p}: demand {straw_demand(p)}, supply {straw_supply(p)}")
-    assert (straw_demand(11), straw_supply(11)) == (90, 180)
-    assert (straw_demand(5), straw_supply(5)) == (150, 60)
+    assert (straw_demand(10), straw_supply(10)) == (100, 160)
+    assert (straw_demand(6), straw_supply(6)) == (140, 80)
+    fw_d = lambda p: 20 * (10 - p)           # firewood: P = 10 - Q/20
+    fw_s = lambda p: 40 * (p - 1)            # P = 1 + Q/40
+    print(f"  firewood: at $4 {fw_d(4)} and {fw_s(4)}; at $7 demand {fw_d(7)}, supply {fw_s(7)}")
+    assert fw_d(4) == fw_s(4) == 120 and (fw_d(7), fw_s(7)) == (60, 240)
     print(f"  multiple choice: at $14, demand {straw_demand(14)}, supply {straw_supply(14)},"
           f" excess supply {straw_supply(14) - straw_demand(14)}")
     assert straw_supply(14) - straw_demand(14) == 180
@@ -495,8 +514,9 @@ def main() -> int:
     fig_smooth(IMG / "bread-smooth.svg")
     fig_lemonade(WS / "lemonade.pdf", solved=False)
     fig_lemonade(IMG / "lemonade-solution.svg", solved=True)
-    fig_strawberries(IMG / "strawberries-equilibrium.svg")
+    fig_firewood(IMG / "firewood-market.svg")
     fig_pumpkins(IMG / "pumpkins-equilibrium.svg")
+    fig_pumpkin_supply(IMG / "pumpkins-supply.svg")
     return 0
 
 
