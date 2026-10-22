@@ -30,8 +30,10 @@ tickets to the homecoming game:
     at $40    10 buyers, 30 sellers, excess supply of 20
     at $20    30 buyers, 10 sellers, excess demand of 20
 
-Practice 15 problem 2 is a six-buyer, six-seller market (values 12, 10, 9,
-7, 5, 3; costs 2, 4, 5, 6, 9, 11) that clears at $6 to $7 with 4 trades.
+Practice 16 problem 2 is CORE's used-textbook market with six buyers and
+six sellers (willingness to pay 40, 35, 30, 25, 20, 15; willingness to
+accept 10, 15, 20, 25, 30, 35). Checked to the cent, it clears only at $25,
+with 4 books sold; excess supply of 2 at $30, excess demand of 2 at $20.
 
 main() prints every number quoted in the deck, worksheet, and practice
 page and checks them.
@@ -150,13 +152,13 @@ T_P_STAR, T_Q_STAR = 30, 20
 T_P_HIGH, T_P_LOW = 40, 20
 
 # ------------------------------------------------------- practice problem 2
-SMALL_VALUES = [12, 10, 9, 7, 5, 3]
-SMALL_COSTS = [2, 4, 5, 6, 9, 11]
+SMALL_VALUES = [40, 35, 30, 25, 20, 15]
+SMALL_COSTS = [10, 15, 20, 25, 30, 35]
 
 
 def small_clearing():
-    prices = [p for p in range(1, 13)
-              if sum(v >= p for v in SMALL_VALUES) == sum(c <= p for c in SMALL_COSTS)]
+    prices = [c / 100 for c in range(100, 4501)
+              if sum(v >= c / 100 for v in SMALL_VALUES) == sum(w <= c / 100 for w in SMALL_COSTS)]
     return prices, sum(v >= prices[0] for v in SMALL_VALUES)
 
 
@@ -312,6 +314,7 @@ def fig_tickets(out: Path, solved: bool) -> None:
         save(fig, out, fmt="pdf")
 
 
+
 # ------------------------------------------------------- main -------------
 def main() -> int:
     print("Taco market (deck)")
@@ -340,14 +343,20 @@ def main() -> int:
     assert (t_demand(T_P_HIGH), t_supply(T_P_HIGH)) == (10, 30)
     assert (t_demand(T_P_LOW), t_supply(T_P_LOW)) == (30, 10)
     print(f"  10th buyer WTP = {t_wtp(10)}, 10th seller WTA = {t_wta(10)}")
+    # Practice 16 problem 2: solved with Q on the left (part a) and P on the left (part b).
+    p_q_form = (50 + 10) / 2          # 50 - P = P - 10
+    q_p_form = (50 - 10) / 2          # 50 - Q = 10 + Q
+    print(f"  P form: 50 - Q = 10 + Q -> Q* = {q_p_form:g}, P* = {50 - q_p_form:g};"
+          f" Q form: 50 - P = P - 10 -> P* = {p_q_form:g}, Q* = {50 - p_q_form:g}")
+    assert (q_p_form, 50 - q_p_form) == (T_Q_STAR, T_P_STAR) == (50 - p_q_form, p_q_form)
 
     prices, q = small_clearing()
-    print(f"\nSix-trader market: clears at ${prices[0]}" +
-          (f" to ${prices[-1]}" if len(prices) > 1 else "") + f", Q = {q}")
-    for p in (5, 6, 7):
+    print(f"\nUsed textbooks: clears at ${prices[0]:g}" +
+          (f" to ${prices[-1]:g}" if len(prices) > 1 else "") + f", Q = {q}")
+    for p in (20, 25, 30):
         print(f"  at ${p}: {sum(v >= p for v in SMALL_VALUES)} buyers,"
               f" {sum(c <= p for c in SMALL_COSTS)} sellers")
-    assert prices == [6, 7] and q == 4
+    assert prices == [25] and q == 4
 
     fig_demand(IMG / "taco-demand.svg")
     fig_supply(IMG / "taco-supply.svg")

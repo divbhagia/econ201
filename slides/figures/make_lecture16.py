@@ -175,10 +175,11 @@ def lemonade_demand(p):
     return 2400 - 400 * p
 
 # ------------------------------------------------------- practice ---------
-# Problem 2: pumpkin farms. Type A: 10 farms, $2 up to 40 each, then $5 up
-# to 60. Type B: 5 farms, $4 up to 100 each. Demand P = 7 - Q/100.
-A_N, A_STEPS = 10, ((2, 40), (5, 60))
-B_N, B_STEPS = 5, ((4, 100),)
+# Practice 16 problem 5: pumpkin farms. Small (type A): 10 farms, $4 up to
+# 40 each, then $5 up to 60. Large (type B): 5 farms, $2 up to 100 each, the
+# lower cost. Demand P = 8 - Q/100.
+A_N, A_STEPS = 10, ((4, 40), (5, 60))
+B_N, B_STEPS = 5, ((2, 100),)
 
 
 def pumpkin_supply(p):
@@ -186,7 +187,7 @@ def pumpkin_supply(p):
 
 
 def pumpkin_demand(p):
-    return 700 - 100 * p
+    return 800 - 100 * p
 
 
 # Strawberries at the Saturday farmers market, baskets a day:
@@ -396,6 +397,28 @@ def fig_strawberries(out: Path) -> None:
     save(fig, out)
 
 
+
+def fig_pumpkins(out: Path) -> None:
+    """Practice 16, problem 5(c): the pumpkin market. Market supply steps up
+    by marginal cost (large farms 500 at $2, small farms 400 at $4 and 200
+    more at $5); demand P = 8 - Q/100 crosses the riser at 500, at $3."""
+    fig, ax = axes(1200, 8, list(range(0, 1201, 200)), 1, "Pumpkins, Q",
+                   xgrid=list(range(0, 1201, 100)))
+    ax.set_xlim(0, 1260)
+    ax.set_ylim(0, 8.4)
+    steps = [(2, B_N * 100), (4, B_N * 100 + A_N * 40), (5, B_N * 100 + A_N * 60)]
+    step_curve(ax, steps, 1200, SUPPLY)
+    ax.plot([0, 800], [8, 0], color=DEMAND, lw=4, solid_capstyle="round", zorder=5)
+    label(ax, 250, 2, "Large farms", SUPPLY, 0, -10, ha="center", va="top", fs=FONT - 6)
+    label(ax, 700, 4, "Small farms", SUPPLY, 0, 8, ha="center", fs=FONT - 6)
+    label(ax, 1100, 7.4, "Supply", SUPPLY, -10, 0, ha="right", va="center")
+    label(ax, 650, 8 - 650 / 100, "Demand", DEMAND, 10, 4)
+    guides(ax, 500, 3, INK)
+    point(ax, 500, 3)
+    label(ax, 0, 3, "P* = $3", INK, 8, 8)
+    label(ax, 500, 0, "Q* = 500", INK, -8, 6, ha="right")
+    save(fig, out)
+
 # ------------------------------------------------------- main -------------
 def main() -> int:
     print("Sunrise Bakery at the going price")
@@ -428,12 +451,16 @@ def main() -> int:
     assert firm_supply(2, L_STEPS) == 60 and firm_surplus(2, L_STEPS) == 60
     assert firm_supply(5, L_STEPS) == 90 and firm_surplus(5, L_STEPS) == 270
 
-    print("\nPumpkin farms (practice 2)")
+    print("\nPumpkin farms (practice 16, problem 5)")
     for p in (3, 4.5, 6):
         print(f"  P = ${p}: type A {firm_supply(p, A_STEPS)} each x {A_N}, type B {firm_supply(p, B_STEPS)} each x {B_N},"
               f" market {pumpkin_supply(p)}, demand {pumpkin_demand(p):.0f}")
-    assert pumpkin_supply(3) == 400 and pumpkin_demand(3) == 400
+    assert pumpkin_supply(3) == 500 and pumpkin_demand(3) == 500
     assert pumpkin_supply(4.5) == 900 and pumpkin_supply(6) == 1100
+    assert all(pumpkin_supply(p) == 500 for p in (2.01, 3, 3.99))
+    large_at = lambda p: firm_supply(p, B_STEPS) * p - 2 * firm_supply(p, B_STEPS)
+    print(f"  large farm surplus at $3: {large_at(3):g}, at $2.50: {large_at(2.5):g}")
+    assert large_at(3) - large_at(2.5) == 50
 
     print("\nStrawberries (practice, algebra)")
     from fractions import Fraction as F
@@ -445,6 +472,9 @@ def main() -> int:
         print(f"  P = ${p}: demand {straw_demand(p)}, supply {straw_supply(p)}")
     assert (straw_demand(11), straw_supply(11)) == (90, 180)
     assert (straw_demand(5), straw_supply(5)) == (150, 60)
+    print(f"  multiple choice: at $14, demand {straw_demand(14)}, supply {straw_supply(14)},"
+          f" excess supply {straw_supply(14) - straw_demand(14)}")
+    assert straw_supply(14) - straw_demand(14) == 180
 
     print("\nLena: 30th cup adds", L_PRICE - 1, "; 70th cup adds", L_PRICE - 4)
     print("\nWorksheet 16 table (price, Lena, twenty stands, fairgoers want):")
@@ -455,7 +485,7 @@ def main() -> int:
     assert all(20 * firm_supply(p, L_STEPS) != lemonade_demand(p) for p in (0.5, 2, 5))
     print("Multiple choice bakeries at $5:", MC_BAKERIES * firm_supply(5, MC_STEPS))
     assert MC_BAKERIES * firm_supply(5, MC_STEPS) == 500
-    print("Pumpkin demand P = 7 - Q/100: at $3,", round(100 * (7 - 3)))
+    print("Pumpkin demand P = 8 - Q/100: price for 500 pumpkins is", 8 - 500 / 100)
 
     fig_bakery(IMG / "bakery-demand.svg", shade=False)
     fig_bakery(IMG / "bakery-surplus.svg", shade=True)
@@ -466,6 +496,7 @@ def main() -> int:
     fig_lemonade(WS / "lemonade.pdf", solved=False)
     fig_lemonade(IMG / "lemonade-solution.svg", solved=True)
     fig_strawberries(IMG / "strawberries-equilibrium.svg")
+    fig_pumpkins(IMG / "pumpkins-equilibrium.svg")
     return 0
 
 

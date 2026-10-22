@@ -375,7 +375,8 @@ MATERIALS = {
          "interactive": "experiment/market-board.html"},
     15: {"slides": "slides/lecture15.html", "slides_pdf": "slides/lecture15.pdf",
          "worksheet": "worksheets/worksheet15.pdf"},
-    16: {"slides": "slides/lecture16.html", "slides_pdf": "slides/lecture16.pdf"},
+    16: {"slides": "slides/lecture16.html", "slides_pdf": "slides/lecture16.pdf",
+         "practice": "practice/practice16.html"},
 }
 
 # Lecture 2's practice page bundles guided reading; from lecture 3 on the

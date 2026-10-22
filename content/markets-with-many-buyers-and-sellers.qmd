@@ -30,7 +30,8 @@ Materials are posted as we go. See the [Schedule](../schedule.qmd) for dates and
 
 <p><strong>Reading:</strong> 8.3&ndash;8.4</p>
 <p class="lecture-links"><a class="btn btn-outline-primary" href="../slides/lecture16.html" target="_blank" rel="noopener" role="button" aria-label="Lecture 16 slides (opens in a new tab)">Slides</a>
-<a class="btn btn-outline-primary" href="../slides/lecture16.pdf" target="_blank" rel="noopener" role="button" aria-label="Lecture 16 slides as a tagged PDF (opens in a new tab)">Slides (PDF)</a></p>
+<a class="btn btn-outline-primary" href="../slides/lecture16.pdf" target="_blank" rel="noopener" role="button" aria-label="Lecture 16 slides as a tagged PDF (opens in a new tab)">Slides (PDF)</a>
+<a class="btn btn-outline-primary" href="../practice/practice16.html" target="_blank" rel="noopener" role="button" aria-label="Lecture 16 practice problems (opens in a new tab)">Practice problems</a></p>
 :::
 
 ::: {.lecture}
