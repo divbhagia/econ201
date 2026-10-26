@@ -1,0 +1,133 @@
+% !TEX program = lualatex
+% ECON 201, Worksheet 13: Strategic Price Setting.
+% Compile with LuaLaTeX so the PDF is tagged. Build from the course root:
+%   latexmk -lualatex -cd worksheets/worksheet13.tex && latexmk -c -cd worksheets/worksheet13.tex
+% Every number here is computed and printed by slides/figures/make_lecture13.py
+% (Wanda and Kit with 14 loyal customers).
+\DocumentMetadata{
+  pdfstandard=UA-2,
+  pdfversion=2.0,
+  lang=en-US,
+  tagging=on
+}
+\documentclass[11pt]{article}
+
+\usepackage[letterpaper, margin=0.75in, top=0.5in, bottom=0.45in]{geometry}
+\usepackage{fontspec}
+\setmainfont{Fira Sans}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{needspace}
+\usepackage[most]{tcolorbox}
+\definecolor{cream}{HTML}{FDF3EA}
+\definecolor{accent}{HTML}{BF5700}
+\usepackage{titlesec}
+\titleformat{\section}{\large\bfseries\color{accent}}{}{0pt}{}
+\titlespacing*{\section}{0pt}{4pt}{2pt}
+\usepackage{hyperref}
+\hypersetup{pdftitle={ECON 201 Worksheet: Strategic Price Setting}, pdfauthor={Div Bhagia}, hidelinks}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2pt}
+
+% Ruled answer space: n lines. Plain TeX loop; pgffor's \foreach breaks the
+% enumerate counter when used inside an item.
+\newcount\answerlinecount
+\newcommand{\answerlines}[1]{%
+  \par\vspace{1pt}\answerlinecount=#1
+  \loop\ifnum\answerlinecount>0
+    \rule{\linewidth}{0.3pt}\par\vspace{5pt}%
+    \advance\answerlinecount by -1
+  \repeat
+  \vspace{-5pt}}
+
+% Ruled grids rather than booktabs tables: students write in the cells, so
+% every cell gets visible borders and the blank cells get extra height.
+\newcolumntype{C}{>{\centering\arraybackslash}p{2.6cm}}
+\newcommand{\blankrow}{\rule{0pt}{1.5em}}
+
+\begin{document}
+
+{\LARGE\bfseries\color{accent} Worksheet: Strategic Price Setting}\hfill{\large ECON 201}
+
+% Terms sit on the cream panel, where the brand orange falls below 4.5:1;
+% the darker orange keeps WCAG AA contrast (see CLAUDE.md).
+\definecolor{accentdark}{HTML}{8F4100}
+\newcommand{\term}[1]{\textcolor{accentdark}{\textbf{#1}}}
+
+% Definitions panel list: flush left, compact (see worksheet09).
+\newenvironment{deflist}
+  {\begin{list}{\textbullet}{%
+     \setlength{\leftmargin}{1.1em}\setlength{\labelwidth}{0.7em}%
+     \setlength{\labelsep}{0.4em}\setlength{\itemindent}{0pt}%
+     \setlength{\listparindent}{0pt}\setlength{\topsep}{2pt}%
+     \setlength{\partopsep}{0pt}\setlength{\parsep}{0pt}%
+     \setlength{\itemsep}{2pt}}}
+  {\end{list}}
+
+\begin{tcolorbox}[colback=cream, colframe=accent, boxrule=0.6pt, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt, title=Definitions,
+  fonttitle=\bfseries, coltitle=white]
+\begin{deflist}
+\item \term{Best response}: the strategy that gives a player the highest
+  pay-off, given what the others choose.
+\item \term{Nash equilibrium}: a set of strategies, one for each player,
+  where each player's strategy is a best response to the others'.
+\item \term{Dominant strategy}: a strategy that is a player's best response
+  whatever the others choose.
+\item \term{Prisoners' dilemma}: a game where each player has a dominant
+  strategy, but another outcome gives every player a higher pay-off.
+\end{deflist}
+\end{tcolorbox}
+
+\needspace{5\baselineskip}\section{Wanda and Kit, with fewer loyal customers}
+
+Each rental costs \$10, and each firm picks $H = \$36$ or $L = \$20$. Now each firm has \textbf{7 loyal} customers, \textbf{13 switchers}, and \textbf{10 bargain hunters}. When one firm is cheaper, the other firm's switchers and bargain hunters come to it.
+
+\vspace{2pt}
+1. Fill in the last two columns of Wanda's customers and profit. The first two are done for you.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{|l|c|c|C|C|}
+\hline
+\textbf{Wanda's price, Kit's price} & $H, H$ & $L, L$ & $L, H$ & $H, L$ \\
+\hline
+Her loyal customers   & 7  & 7  & \blankrow & \blankrow \\ \hline
+Her switchers         & 13 & 13 & \blankrow & \blankrow \\ \hline
+Kit's switchers       & 0  & 0  & \blankrow & \blankrow \\ \hline
+Her bargain hunters   & 0  & 10 & \blankrow & \blankrow \\ \hline
+Kit's bargain hunters & 0  & 0  & \blankrow & \blankrow \\ \hline
+\textbf{Total customers} & 20 & 30 & \blankrow & \blankrow \\ \hline
+\textbf{Profit}, $(P - 10) \times$ total & 520 & 300 & \blankrow & \blankrow \\ \hline
+\end{tabular}
+\end{center}
+
+2. Kit's numbers mirror Wanda's. Fill in the pay-off matrix, with Wanda's profit first in each cell.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|c|C|C|}
+\hline
+ & \textbf{Kit picks $H$} & \textbf{Kit picks $L$} \\
+\hline
+\textbf{Wanda picks $H$} & 520, 520 & \blankrow \\
+\hline
+\textbf{Wanda picks $L$} & \blankrow & 300, 300 \\
+\hline
+\end{tabular}
+\end{center}
+
+3. If Kit picks $H$, Wanda earns \underline{\hspace{1.4cm}} at $H$ and \underline{\hspace{1.4cm}} at $L$, so her best response is \underline{\hspace{1cm}}. \\[4pt]
+If Kit picks $L$, Wanda earns \underline{\hspace{1.4cm}} at $H$ and \underline{\hspace{1.4cm}} at $L$, so her best response is \underline{\hspace{1cm}}.
+
+4. Does Wanda have a dominant strategy? \underline{\hspace{2cm}} \quad The Nash equilibrium is \underline{\hspace{2.2cm}}, with profits of \underline{\hspace{1.6cm}} each.
+
+5. Is there another outcome where \emph{both} firms would earn more? Which one? What kind of game is this?
+\answerlines{2}
+
+\end{document}

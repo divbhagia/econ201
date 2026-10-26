@@ -1,0 +1,112 @@
+% !TEX program = lualatex
+% ECON 201, Worksheet 16: A Firm That Takes the Price as Given.
+% Compile with LuaLaTeX so the PDF is tagged. Build from the course root:
+%   latexmk -lualatex -cd worksheets/worksheet16.tex && latexmk -c -cd worksheets/worksheet16.tex
+% Every number here is computed and printed by slides/figures/make_lecture16.py
+% (Lena's lemonade stand, its own numbers rather than the deck's; the
+% script also draws figures/lemonade.pdf).
+\DocumentMetadata{
+  pdfstandard=UA-2,
+  pdfversion=2.0,
+  lang=en-US,
+  tagging=on
+}
+\documentclass[11pt]{article}
+
+\usepackage[letterpaper, margin=0.75in, top=0.5in, bottom=0.45in]{geometry}
+\usepackage{fontspec}
+\setmainfont{Fira Sans}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{needspace}
+\usepackage[most]{tcolorbox}
+\definecolor{cream}{HTML}{FDF3EA}
+\definecolor{accent}{HTML}{BF5700}
+\usepackage{titlesec}
+\titleformat{\section}{\large\bfseries\color{accent}}{}{0pt}{}
+\titlespacing*{\section}{0pt}{4pt}{2pt}
+\usepackage{hyperref}
+\hypersetup{pdftitle={ECON 201 Worksheet: A Firm That Takes the Price as Given}, pdfauthor={Div Bhagia}, hidelinks}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2pt}
+
+% Ruled answer space: n lines. Plain TeX loop; pgffor's \foreach breaks the
+% enumerate counter when used inside an item.
+\newcount\answerlinecount
+\newcommand{\answerlines}[1]{%
+  \par\vspace{1pt}\answerlinecount=#1
+  \loop\ifnum\answerlinecount>0
+    \rule{\linewidth}{0.3pt}\par\vspace{5pt}%
+    \advance\answerlinecount by -1
+  \repeat
+  \vspace{-5pt}}
+
+% Ruled grid rather than booktabs: students write in the cells, so every
+% cell gets visible borders and the blank cells get extra height.
+\newcolumntype{C}{>{\centering\arraybackslash}p{3.1cm}}
+\newcommand{\blankrow}{\rule{0pt}{1.6em}}
+
+\begin{document}
+
+{\LARGE\bfseries\color{accent} Worksheet: Taking the Price as Given}\hfill{\large ECON 201}
+
+
+\needspace{5\baselineskip}\section{Lena's lemonade}
+
+Lena runs one of twenty lemonade stands at the county fair. All of them sell
+the same cup of lemonade and have the same costs, and the going price is \$3 a
+cup. The graph shows Lena's marginal cost: \$1 a cup for the first 60 cups, and
+\$4 a cup after that, when she has to buy ice at the fair, up to 90 cups.
+
+\begin{center}
+\includegraphics[width=0.6\textwidth, alt={A plotting grid, price and cost on
+the vertical axis from 0 to 6 dollars with gridlines every dollar, and cups of
+lemonade on the horizontal axis from 0 to 100 with gridlines every 10 cups.
+Marginal cost is a step: flat at 1 dollar from 0 to 60 cups, then a vertical
+jump at 60 cups to 4 dollars, and flat at 4 dollars from 60 to 90
+cups.}]{figures/lemonade.pdf}
+\end{center}
+
+\vspace{4pt}
+1. Draw the demand curve that Lena faces on the graph. What happens if she
+charges \$3.50?
+\answerlines{1}
+
+2. At \$3, how much does the 30th cup add to her profit? The 70th cup? How many
+cups does she sell?
+\answerlines{2}
+
+3. Fill in the second column: how many cups does Lena sell at each going price?
+
+\vspace{4pt}
+4. All twenty stands have Lena's costs. Fill in the next column: how many cups
+do the twenty stands sell in total at each price?
+
+\begin{center}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{|c|C|C|C|}
+\hline
+\textbf{Going price, $P$} & \textbf{Cups Lena sells} & \textbf{Cups all twenty stands sell} & \textbf{Cups fairgoers want to buy} \\
+\hline
+\$0.50 & \blankrow & & 2,200 \\ \hline
+\$2    & \blankrow & & 1,600 \\ \hline
+\$3    & \blankrow & & 1,200 \\ \hline
+\$5    & \blankrow & &   400 \\ \hline
+\end{tabular}
+\end{center}
+
+5. Which curve on the graph tells you how many cups Lena sells at any going
+price? What do we call it?
+\answerlines{1}
+
+6. The last column shows how many cups fairgoers want to buy at each price. At
+which price does the market clear? How does it compare with the price Lena
+takes as given?
+\answerlines{2}
+
+\end{document}

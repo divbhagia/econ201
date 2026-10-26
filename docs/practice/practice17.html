@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Lecture 17: Practice – Principles of Microeconomics</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-6633c62d358394232bc599d39e38c5c9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-6f405e4b410aa56d01bce714dcfb5a6d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+
+<body class="nav-fixed practice-page quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Principles of Microeconomics</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../syllabus.html"> 
+<span class="menu-text">Syllabus</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../schedule.html"> 
+<span class="menu-text">Schedule</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../content/the-big-picture.html"> 
+<span class="menu-text">Content</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../exams.html"> 
+<span class="menu-text">Exams</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://divbhagia.github.io/econ201/"> <i class="bi bi-github" role="img" aria-label="GitHub repository for this course">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#a-price-cap-on-bread" id="toc-a-price-cap-on-bread" class="nav-link active" data-scroll-target="#a-price-cap-on-bread">1. A price cap on bread</a></li>
+  <li><a href="#hot-cider-at-the-fall-festival" id="toc-hot-cider-at-the-fall-festival" class="nav-link" data-scroll-target="#hot-cider-at-the-fall-festival">2. Hot cider at the fall festival</a></li>
+  <li><a href="#multiple-choice" id="toc-multiple-choice" class="nav-link" data-scroll-target="#multiple-choice">3. Multiple choice</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Lecture 17: Practice</h1>
+<p class="subtitle lead">Gains from trade in competitive equilibrium</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="practice-links">
+<p><a href="../slides/lecture17.html">Lecture 17 slides</a> · <a href="../worksheets/worksheet17.pdf">Worksheet 17 (PDF)</a> · <a href="../content/markets-with-many-buyers-and-sellers.html">Module IV: Markets with Many Buyers and Sellers</a></p>
+</div>
+<p>Work through each problem on paper before you open its <strong>Solution</strong>.</p>
+<section id="a-price-cap-on-bread" class="level2">
+<h2 class="anchored" data-anchor-id="a-price-cap-on-bread">1. A price cap on bread</h2>
+<p>The bakeries in town all sell the same loaf. The graph shows the demand and supply curves for bread.</p>
+<p><img src="../slides/img/bread-cap-grid.svg" class="img-fluid" alt="A plotting grid, price and cost on the vertical axis from 0 to 8 dollars with gridlines every dollar, and loaves a day on the horizontal axis from 0 to 400 with gridlines every 50 loaves and labels every 100. The demand curve falls in a straight line from 8 dollars at zero loaves to zero at 400 loaves. The supply curve rises in a straight line from 2 dollars at zero loaves to 6 dollars at 400 loaves. They cross at 200 loaves and 4 dollars." width="480"></p>
+<div class="part">
+<p><span class="part-label">(a)</span> What are the equilibrium price and quantity? Compute the consumer surplus and the producer surplus at the equilibrium.</p>
+</div>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p><img src="../slides/img/bread-total.svg" class="img-fluid" alt="The bread market with dashed guides to the equilibrium at 200 loaves and 4 dollars. The triangle between the demand line and the price line, from zero to 200 loaves, is shaded light blue and labelled CS, 400 dollars; the triangle between the price line and the supply line is shaded light orange and labelled PS, 200 dollars." width="480"></p>
+<p>The equilibrium is the point where the quantity demanded equals the quantity supplied, which is where the two curves cross: a price of <strong>$4</strong> and a quantity of <strong>200 loaves</strong>.</p>
+<p>Any buyer’s surplus is their willingness to pay, read off the demand curve, minus the price. For all the buyers together, it is the sum of those gaps, which is the area between the demand curve and the price line, shaded blue above. Using the area of a triangle: <span class="math display">\[\text{CS} = \tfrac{1}{2} \times \text{base} \times \text{height} = \tfrac{1}{2} \times 200 \times (8 - 4) = \mathbf{400}\]</span></p>
+<p>Any loaf’s surplus for its bakery is the price minus its marginal cost, read off the supply curve. For all the loaves together, it is the area between the price line and the supply curve, shaded orange above. Using the area of a triangle: <span class="math display">\[\text{PS} = \tfrac{1}{2} \times 200 \times (4 - 2) = \mathbf{200}\]</span></p>
+</details>
+<div class="part">
+<p><span class="part-label">(b)</span> The city council decides bread is too expensive and caps its price at $3 a loaf. At $3, how many loaves do the bakeries bake? How many do buyers want? How many loaves sell? Mark the price and the quantity sold on the graph.</p>
+</div>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>Read across from $3 on the price axis. The supply curve is at 100 loaves, so the bakeries bake <strong>100</strong>: every loaf that costs less than $3 to bake. The demand curve is at 250 loaves, so buyers want <strong>250</strong>. Only the 100 loaves that get baked can sell, so <strong>100 loaves sell</strong>, at the point on the supply curve at $3, and 150 buyers who want a loaf at $3 go without.</p>
+</details>
+<div class="part">
+<p><span class="part-label">(c)</span> Shade the consumer surplus, the producer surplus, and the deadweight loss under the cap, and compute each.</p>
+</div>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p><img src="../slides/img/bread-cap-solution.svg" class="img-fluid" alt="The bread market, loaves a day from 0 to 400 and price and cost from 0 to 8 dollars, with a dashed line at 3 dollars labelled Price cap, 3 dollars. A dot marks where it meets the supply line at 100 loaves, labelled 100 loaves. The area between the demand line and the 3 dollar line up to 100 loaves is shaded light blue and labelled CS, 400 dollars; the triangle between the 3 dollar line and the supply line up to 100 loaves is shaded light orange and labelled PS, 50 dollars; the triangle between the demand and supply lines from 100 to 200 loaves is shaded grey and labelled DWL, 150 dollars. A dot marks the equilibrium at 200 loaves and 4 dollars." width="480"></p>
+<p>Consumer surplus is the blue area, the gain to the 100 buyers who get a loaf. We can find it by adding the rectangle, with base 100 and height <span class="math inline">\(6 - 3\)</span>, to the triangle on top of it, with base 100 and height <span class="math inline">\(8 - 6\)</span>: <span class="math display">\[\text{CS} = 3 \times 100 + \tfrac{1}{2} \times 100 \times (8 - 6) = 300 + 100 = \mathbf{400}\]</span> Producer surplus is the orange area, the bakeries’ gain on the 100 loaves sold: a triangle with base 100 and height <span class="math inline">\(3 - 2\)</span>: <span class="math display">\[\text{PS} = \tfrac{1}{2} \times 100 \times (3 - 2) = \mathbf{50}\]</span> The deadweight loss is the grey triangle: the surplus from the trades between 100 and 200 loaves that no longer happen, even though each of those buyers values a loaf above what it would cost to bake. Its base is 100 and its height is the gap between the curves at 100 loaves, <span class="math inline">\(6 - 3\)</span>: <span class="math display">\[\text{DWL} = \tfrac{1}{2} \times 100 \times (6 - 3) = \mathbf{150}\]</span> Check: total surplus falls from <span class="math inline">\(400 + 200 = 600\)</span> to <span class="math inline">\(400 + 50 = 450\)</span>, a loss of 150.</p>
+</details>
+<div class="part">
+<p><span class="part-label">(d)</span> Compared with the equilibrium, who gains from the cap and who loses? By how much?</p>
+</div>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>Producer surplus falls from $200 to $50, so the <strong>bakeries lose $150</strong>. Consumer surplus is $400 under the cap and $400 at the equilibrium, so <strong>buyers as a group come out even</strong>: the 100 who still get a loaf pay $1 less each and gain $100 between them, while the 100 buyers with a WTP between $4 and $6 who no longer get one lose the surplus they had, <span class="math inline">\(\tfrac{1}{2} \times 100 \times 2 = 100\)</span>.</p>
+<p>Adding up everyone’s gains and losses, <span class="math inline">\(0 - 150 = -150\)</span>, gives the change in total surplus, which is the deadweight loss from part (c).</p>
+</details>
+<div class="part">
+<p><span class="part-label">(e)</span> Is the outcome under the cap Pareto efficient? Explain in one sentence.</p>
+</div>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p><strong>No.</strong> A buyer who would pay $5 for a loaf and a bakery that could bake one for $3.50 would both be better off trading at any price in between, and nobody else would be worse off, so a Pareto improvement is still possible.</p>
+</details>
+</section>
+<section id="hot-cider-at-the-fall-festival" class="level2">
+<h2 class="anchored" data-anchor-id="hot-cider-at-the-fall-festival">2. Hot cider at the fall festival</h2>
+<p>Many stands at the fall festival sell the same cup of hot cider. Demand is <span class="math inline">\(P = 8 - Q/25\)</span> and supply is <span class="math inline">\(P = 2 + Q/50\)</span>, where <span class="math inline">\(Q\)</span> is cups a day and <span class="math inline">\(P\)</span> is the price in dollars.</p>
+<div class="part">
+<p><span class="part-label">(a)</span> Find the equilibrium price and quantity.</p>
+</div>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>Set demand equal to supply: <span class="math display">\[8 - \frac{Q}{25} = 2 + \frac{Q}{50}\]</span> Collect terms: <span class="math inline">\(6 = \frac{Q}{25} + \frac{Q}{50} = \frac{3Q}{50}\)</span>, so <span class="math inline">\(Q^* =\)</span> <strong>100 cups</strong>. Then <span class="math inline">\(P^* = 8 - 100/25 =\)</span> <strong>$4</strong>. Supply gives the same: <span class="math inline">\(2 + 100/50 = 4\)</span>.</p>
+</details>
+<div class="part">
+<p><span class="part-label">(b)</span> Draw the demand and supply curves, shade the consumer surplus and the producer surplus at the equilibrium, and compute each. What is the total surplus?</p>
+</div>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>Each curve is a straight line, so two points are enough to draw it. Demand meets the price axis at $8 (at <span class="math inline">\(Q = 0\)</span>, <span class="math inline">\(P = 8 - 0/25 = 8\)</span>) and passes through the equilibrium at 100 cups and $4; supply meets the price axis at $2 (at <span class="math inline">\(Q = 0\)</span>, <span class="math inline">\(P = 2 + 0/50 = 2\)</span>) and passes through the same point. Draw both, mark the equilibrium, and shade the triangle above the price line and the one below it.</p>
+<p><img src="../slides/img/cider-equilibrium-solution.svg" class="img-fluid" alt="The cider market, cups a day from 0 to 200 and price and cost from 0 to 8 dollars. The demand line falls from 8 dollars at zero cups and the supply line rises from 2 dollars; they cross at 100 cups and 4 dollars, marked with a dot and dashed guides labelled P star equals 4 dollars and Q star equals 100. The triangle between the demand line and the price line is shaded light blue and labelled CS, 200 dollars; the triangle between the price line and the supply line is shaded light orange and labelled PS, 100 dollars." width="480"></p>
+<p>Consumer surplus is the blue triangle, with base 100 (the cups sold) and height from the price up to the demand intercept, <span class="math inline">\(8 - 4\)</span>: <span class="math display">\[\text{CS} = \tfrac{1}{2} \times \text{base} \times \text{height} = \tfrac{1}{2} \times 100 \times (8 - 4) = \mathbf{200}\]</span></p>
+<p>Producer surplus is the orange triangle, with the same base of 100 and height from the supply intercept up to the price, <span class="math inline">\(4 - 2\)</span>: <span class="math display">\[\text{PS} = \tfrac{1}{2} \times 100 \times (4 - 2) = \mathbf{100}\]</span></p>
+<p>Total surplus is <span class="math inline">\(200 + 100 =\)</span> <strong>$300</strong>.</p>
+</details>
+<div class="part">
+<p><span class="part-label">(c)</span> The stands form a cartel: they agree to charge $6 a cup and to make only as many cups as buyers want at that price. How many cups sell? Compute the consumer surplus, the producer surplus, and the deadweight loss.</p>
+</div>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>At $6, demand gives <span class="math inline">\(6 = 8 - Q/25\)</span>, so <strong>50 cups</strong> sell. It helps to draw the two curves, mark the cartel price and the 50 cups, and shade each area before computing it:</p>
+<p><img src="../slides/img/cider-cartel-solution.svg" class="img-fluid" alt="The cider market, cups a day from 0 to 200 and price and cost from 0 to 8 dollars, with a dashed line at 6 dollars labelled Cartel price, 6 dollars. A dot marks where it meets the demand line at 50 cups, labelled 50 cups. The triangle between the demand line and the 6 dollar line up to 50 cups is shaded light blue and labelled CS, 50 dollars; the area between the 6 dollar line and the supply line up to 50 cups is shaded light orange and labelled PS, 175 dollars; the triangle between the demand and supply lines from 50 to 100 cups is shaded grey and labelled DWL, 75 dollars. A dot and dashed guides mark the equilibrium at Q star equals 100 and 4 dollars." width="480"></p>
+<p>Consumer surplus is the blue triangle, with base 50 and height from the cartel price up to the demand intercept, <span class="math inline">\(8 - 6\)</span>: <span class="math display">\[\text{CS} = \tfrac{1}{2} \times 50 \times (8 - 6) = \mathbf{50}\]</span> Producer surplus is the orange area. The 50th cup costs <span class="math inline">\(2 + 50/50 = 3\)</span> to make, so the area is a rectangle of height <span class="math inline">\(6 - 3\)</span> plus a triangle of height <span class="math inline">\(3 - 2\)</span>, both with base 50: <span class="math display">\[\text{PS} = (6 - 3) \times 50 + \tfrac{1}{2} \times 50 \times (3 - 2) = 150 + 25 = \mathbf{175}\]</span> The deadweight loss is the grey triangle, the surplus from the cups between 50 and 100 that are no longer made even though buyers value them above their cost. Its base is 50 and its height is the gap between the curves at 50 cups, <span class="math inline">\(6 - 3\)</span>: <span class="math display">\[\text{DWL} = \tfrac{1}{2} \times 50 \times (6 - 3) = \mathbf{75}\]</span> Check: total surplus falls from $300 to <span class="math inline">\(50 + 175 = 225\)</span>, a loss of 75.</p>
+</details>
+<div class="part">
+<p><span class="part-label">(d)</span> Who gains from the cartel and who loses? By how much?</p>
+</div>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>The <strong>stands gain</strong>: producer surplus rises from $100 to $175, up <strong>$75</strong>. <strong>Buyers lose</strong>: consumer surplus falls from $200 to $50, down <strong>$150</strong>. Adding up everyone’s gains and losses, <span class="math inline">\(75 - 150 = -75\)</span>, gives the change in total surplus, which is the deadweight loss from part (c): buyers lose twice what the stands gain, and the difference is the surplus from the 50 cups that are no longer made.</p>
+</details>
+</section>
+<section id="multiple-choice" class="level2">
+<h2 class="anchored" data-anchor-id="multiple-choice">3. Multiple choice</h2>
+<div class="mcq" data-answer="b">
+<div class="part">
+<p><span class="part-label">Q1.</span> In a competitive market the price is $5. A buyer with a willingness to pay of $9 buys a unit, and a seller whose marginal cost is $3 sells one. How much surplus does each of them get?</p>
+</div>
+<ol type="a">
+<li>The buyer $9 and the seller $3.</li>
+<li>The buyer $4 and the seller $2.</li>
+<li>The buyer $2 and the seller $4.</li>
+<li>The buyer $5 and the seller $5.</li>
+</ol>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>A buyer’s surplus is willingness to pay minus the price, <span class="math inline">\(9 - 5 = 4\)</span>. A seller’s surplus on a unit is the price minus its marginal cost, <span class="math inline">\(5 - 3 = 2\)</span>. Neither depends on who trades with whom, since everyone trades at $5. <strong>(b)</strong> is correct.</p>
+</details>
+</div>
+<div class="mcq" data-answer="b">
+<div class="part">
+<p><span class="part-label">Q2.</span> Demand for parking spots at a Saturday market is <span class="math inline">\(P = 20 - Q/5\)</span>. The going price is $10. What is the consumer surplus?</p>
+</div>
+<ol type="a">
+<li>$500</li>
+<li>$250</li>
+<li>$125</li>
+<li>$1,000</li>
+</ol>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>At $10, demand gives <span class="math inline">\(10 = 20 - Q/5\)</span>, so 50 spots are rented. The first buyer would pay $20, so consumer surplus is the triangle <span class="math inline">\(\tfrac{1}{2} \times 50 \times (20 - 10) = 250\)</span>. <strong>(b)</strong> is correct.</p>
+</details>
+</div>
+<div class="mcq" data-answer="a">
+<div class="part">
+<p><span class="part-label">Q3.</span> Beautiful Cars, the only seller of its model, sells 20 cars a day. The town’s bread market, with many bakeries, clears at 200 loaves a day. Which statement is correct?</p>
+</div>
+<ol type="a">
+<li>Beautiful Cars’ price is above the marginal cost of its 20th car, while the bread price equals the marginal cost of the 200th loaf.</li>
+<li>Beautiful Cars’ price equals the marginal cost of its 20th car, while the bread price is above the marginal cost of the 200th loaf.</li>
+<li>In both markets the price equals the marginal cost of the last unit sold.</li>
+<li>In both markets the price is above the marginal cost of the last unit sold.</li>
+</ol>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>A price setter chooses the quantity where marginal revenue equals marginal cost and then charges the most buyers will pay for that quantity. That price is above marginal cost, because marginal revenue is below the price. Buyers with a willingness to pay between the two go without a car, which is the deadweight loss. A price-taker produces every unit whose marginal cost is below the going price, so the last loaf’s marginal cost equals the price and no trade worth making is left. <strong>(a)</strong> is correct.</p>
+</details>
+</div>
+<div class="mcq" data-answer="b,d">
+<div class="part">
+<p><span class="part-label">Q4.</span> <em>(Adapted from CORE Question 8.6)</em> A competitive market for bread clears at 5,000 loaves and $2. The mayor decrees that bakeries must sell bread at $1.50. Select all the statements that are correct.</p>
+</div>
+<ol type="a">
+<li>Consumer surplus and producer surplus both increase.</li>
+<li>Producer surplus is lower than at the market equilibrium.</li>
+<li>There is no deadweight loss, because the price is lower.</li>
+<li>Total surplus is lower than at the market equilibrium.</li>
+</ol>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>At $1.50, the bakeries whose loaves cost between $1.50 and $2 to bake stop selling, so fewer loaves are baked and producer surplus falls. The loaves no longer baked were worth more to buyers than they cost, so their surplus is lost: a deadweight loss, and a lower total surplus. Consumer surplus may rise or fall, but it cannot rise together with producer surplus when total surplus falls. <strong>(b) and (d)</strong> are correct.</p>
+</details>
+</div>
+<div class="mcq" data-answer="c">
+<div class="part">
+<p><span class="part-label">Q5.</span> A competitive market clears at $4. In which case is there a deadweight loss?</p>
+</div>
+<ol type="a">
+<li>When the price is held above $4, but not when it is held below.</li>
+<li>When the price is held below $4, but not when it is held above.</li>
+<li>When the price is held either above or below $4.</li>
+<li>In neither case, as long as every unit sells at a single price.</li>
+</ol>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>At a price above $4, buyers want fewer units than at the equilibrium, so fewer trade. At a price below $4, sellers offer fewer units, so again fewer trade. Either way, the units between the quantity traded and the equilibrium quantity were worth more to buyers than they cost to make, and they no longer get made: the deadweight loss is the triangle between the two curves over those units. It is only at the equilibrium price that every unit worth making gets made. <strong>(c)</strong> is correct.</p>
+</details>
+</div>
+<div class="mcq" data-answer="b,d">
+<div class="part">
+<p><span class="part-label">Q6.</span> <em>(Adapted from CORE Question 8.7)</em> Select all the statements about a competitive equilibrium allocation that are correct.</p>
+</div>
+<ol type="a">
+<li>It is the best possible allocation for everyone in the market.</li>
+<li>No one’s surplus can be raised without lowering someone else’s.</li>
+<li>It is always Pareto efficient, whatever else is going on.</li>
+<li>The total surplus from trade in the market is maximized.</li>
+</ol>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>The competitive equilibrium maximizes total surplus, so no buyer’s or seller’s surplus can rise without another’s falling. That does not make it best for everyone: buyers would prefer a lower price and sellers a higher one, and the split may be unfair. And it is Pareto efficient only if no one outside the market is affected; with external effects, such as pollution from production, it may not be. <strong>(b) and (d)</strong> are correct.</p>
+</details>
+</div>
+<div class="mcq" data-answer="d">
+<div class="part">
+<p><span class="part-label">Q7.</span> Which of the following is <em>not</em> one of the conditions under which a competitive equilibrium is Pareto efficient?</p>
+</div>
+<ol type="a">
+<li>Trade in the market has no external effects.</li>
+<li>Each trade is covered by a complete contract.</li>
+<li>Many buyers and sellers trade identical goods.</li>
+<li>The price is set by a government regulator.</li>
+</ol>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>The result needs many price-taking buyers and sellers of identical goods, a market at its equilibrium, no external effects, and complete contracts. A regulated price is not one of them; a price held away from the equilibrium creates a deadweight loss. <strong>(d)</strong> is correct.</p>
+</details>
+</div>
+<div class="mcq" data-answer="a">
+<div class="part">
+<p><span class="part-label">Q8.</span> In two markets with the same demand curve and the same equilibrium price and quantity, the supply curve is steep in one and flat in the other. Which statement is correct?</p>
+</div>
+<ol type="a">
+<li>Sellers get a larger share of the surplus where supply is steep.</li>
+<li>Sellers get a larger share of the surplus where supply is flat.</li>
+<li>Sellers get the same share of the surplus in both markets.</li>
+<li>Buyers get a larger surplus where the supply curve is steep.</li>
+</ol>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>Producer surplus is the area between the price and the supply curve. A steep (inelastic) supply curve means many units cost far less than the price to produce, so that area is large; a flat (elastic) one hugs the price, so the area is small. Consumer surplus is the same in both markets, since demand and the price are the same. <strong>(a)</strong> is correct.</p>
+</details>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script>
+// Reflow (WCAG 1.4.10) + keyboard access (2.1.1) for equations.
+// A display equation gets overflow-x:auto in styles.css. Long *inline*
+// equations can also poke past a narrow viewport; those get the same
+// treatment here, but only the actual offenders -- overflow on an
+// inline-block shifts its baseline, so a blanket rule would misalign
+// every inline equation on the site. Scrollable equations get a tab stop
+// so keyboard users can reach and scroll them.
+(function () {
+  function fix() {
+    var vw = document.documentElement.clientWidth;
+    document.querySelectorAll('mjx-container').forEach(function (m) {
+      if (m.getBoundingClientRect().right > vw + 1) m.classList.add('mjx-scroll');
+      if (m.scrollWidth > m.clientWidth + 1) {
+        m.setAttribute('tabindex', '0');
+        m.setAttribute('role', 'group');
+        m.setAttribute('aria-label', 'Scrollable equation');
+      }
+    });
+  }
+  window.addEventListener('load', fix);
+  document.addEventListener('toggle', function (e) {
+    if (e.target.tagName === 'DETAILS') fix();
+  }, true);
+  var t; window.addEventListener('resize', function () {
+    clearTimeout(t); t = setTimeout(fix, 250);
+  });
+})();
+</script>
+<script>
+// Interactive multiple-choice questions on practice pages. Progressive
+// enhancement: without JavaScript the page shows the plain option list and
+// the collapsible solution, unchanged. With it, each div.mcq (authored as
+// ::: {.mcq answer="c"} in the .qmd) gets real radio or checkbox inputs and
+// a single check button that replaces the Solution disclosure; a correct
+// answer reveals the solution text beneath the role="status" feedback
+// line. Native form controls keep this keyboard-operable.
+(function () {
+  'use strict';
+
+  function enhance(box, idx) {
+    var answers = (box.getAttribute('data-answer') || '')
+      .toLowerCase().split(',')
+      .map(function (s) { return s.trim(); })
+      .filter(Boolean);
+    var list = box.querySelector('ol');
+    if (!answers.length || !list) return;
+
+    var multi = answers.length > 1;
+    var name = 'mcq-' + idx;
+
+    // Group the options in a fieldset named by the question paragraph.
+    var q = box.querySelector('p');
+    var fs = document.createElement('fieldset');
+    fs.className = 'mcq-options';
+    if (q) {
+      if (!q.id) { q.id = name + '-q'; }
+      fs.setAttribute('aria-labelledby', q.id);
+    }
+    list.parentNode.insertBefore(fs, list);
+    fs.appendChild(list);
+
+    // Each option becomes a label laid out as a three-column grid: letter,
+    // input, text. The grid keeps wrapped lines of long options aligned
+    // under the text column (the native ol marker misplaces itself on
+    // multi-line items, so the letter is ours and the marker is dropped by
+    // CSS). A label may not contain a <p>, so for loose lists move the
+    // paragraph's children instead.
+    Array.prototype.forEach.call(list.children, function (li, i) {
+      var src = (li.children.length === 1 &&
+                 li.firstElementChild.tagName === 'P')
+        ? li.firstElementChild : li;
+      var letter = document.createElement('span');
+      letter.className = 'mcq-letter';
+      letter.textContent = String.fromCharCode(97 + i) + '.';
+      var input = document.createElement('input');
+      input.type = multi ? 'checkbox' : 'radio';
+      input.name = name;
+      input.value = String.fromCharCode(97 + i);
+      var text = document.createElement('span');
+      text.className = 'mcq-text';
+      while (src.firstChild) { text.appendChild(src.firstChild); }
+      if (src !== li) { li.removeChild(src); }
+      var label = document.createElement('label');
+      label.appendChild(letter);
+      label.appendChild(input);
+      label.appendChild(text);
+      li.appendChild(label);
+    });
+
+    // The Solution disclosure is absorbed: its body becomes a hidden panel
+    // revealed on a correct answer, and the details element goes away.
+    var sol = null;
+    var det = box.querySelector('details.solution');
+    if (det) {
+      sol = document.createElement('div');
+      sol.className = 'mcq-solution';
+      sol.hidden = true;
+      var sum = det.querySelector('summary');
+      if (sum) { det.removeChild(sum); }
+      while (det.firstChild) { sol.appendChild(det.firstChild); }
+      det.parentNode.removeChild(det);
+    }
+
+    var controls = document.createElement('div');
+    controls.className = 'mcq-controls';
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'mcq-check';
+    btn.textContent = multi ? 'Check my answers' : 'Check my answer';
+    var fb = document.createElement('p');
+    fb.className = 'mcq-feedback';
+    fb.setAttribute('role', 'status');
+    controls.appendChild(btn);
+    controls.appendChild(fb);
+    if (sol) { controls.appendChild(sol); }
+    fs.parentNode.insertBefore(controls, fs.nextSibling);
+
+    btn.addEventListener('click', function () {
+      var picked = Array.prototype.map.call(
+        fs.querySelectorAll('input:checked'),
+        function (el) { return el.value; });
+      var msg;
+      var correct = false;
+      if (!picked.length) {
+        msg = multi ? 'Select one or more answers first.'
+                    : 'Select an answer first.';
+      } else if (picked.length === answers.length &&
+                 answers.every(function (a) {
+                   return picked.indexOf(a) !== -1;
+                 })) {
+        correct = true;
+        msg = 'Correct!';
+      } else if (multi) {
+        var missing = answers.some(function (a) {
+          return picked.indexOf(a) === -1;
+        });
+        msg = missing
+          ? "You haven't selected all the correct answers. Try again."
+          : 'At least one of your selections is incorrect. Try again.';
+      } else {
+        msg = 'Not quite. Try again.';
+      }
+      // On a correct answer the visible "Correct!" is folded into the first
+      // line of the solution so the explanation reads as one sentence flow;
+      // the status line still gets the text, visually hidden, so screen
+      // readers hear the announcement.
+      if (correct && sol) {
+        var first = sol.querySelector('p');
+        if (first && !sol.hasAttribute('data-prefixed')) {
+          var lead = document.createElement('em');
+          lead.textContent = 'Correct! ';
+          first.insertBefore(lead, first.firstChild);
+          sol.setAttribute('data-prefixed', '');
+        }
+        fb.classList.add('mcq-visually-hidden');
+        // Inline styles too, so a stale cached stylesheet cannot show the
+        // status line alongside the inline "Correct!".
+        fb.style.position = 'absolute';
+        fb.style.width = '1px';
+        fb.style.height = '1px';
+        fb.style.overflow = 'hidden';
+        fb.style.clipPath = 'inset(50%)';
+        fb.style.whiteSpace = 'nowrap';
+      } else {
+        fb.classList.remove('mcq-visually-hidden');
+        fb.style.position = '';
+        fb.style.width = '';
+        fb.style.height = '';
+        fb.style.overflow = '';
+        fb.style.clipPath = '';
+        fb.style.whiteSpace = '';
+      }
+      fb.textContent = msg;
+      if (sol) { sol.hidden = !correct; }
+    });
+  }
+
+  function init() {
+    Array.prototype.forEach.call(
+      document.querySelectorAll('div.mcq[data-answer]'), enhance);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>2026 Div Bhagia | <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0 License</a> | <a href="../accessibility.html">Accessibility</a> | Made with <a href="https://quarto.org/">Quarto</a></p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
