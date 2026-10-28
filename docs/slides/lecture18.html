@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-b754b9fd3853d7e56faef54c29c5d52b.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.27">
+
+  <meta name="author" content="Div Bhagia">
+  <title>Principles of Microeconomics – The Quinoa Boom: Shifts in Supply and Demand</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-be32be1e34b4232fbf87b47b70240b44.css">
+  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section class="quarto-title-block center">
+  <h1 class="title">The Quinoa Boom:<br>Shifts in Supply and Demand</h1>
+  <p class="subtitle">ECON 201: Principles of Microeconomics<br>Lecture 18</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Div Bhagia 
+</div>
+</div>
+</div>
+
+</section>
+<section class="slide level2">
+<h2>The Quinoa Boom</h2>
+<p><img data-src="img/quinoa-data.svg" class="" style="width:100.0%" alt="Two panels for quinoa in Peru and Bolivia from 2000 to 2022. Left, in blue, the price paid to farmers in dollars per pound, averaged across the two countries: near 20 cents until 2007, rising past 50 cents by 2009 and to about 1 dollar 30 in 2014, then falling back to about 50 cents by 2016 and staying there through 2022. Right, in orange, production in million pounds a year: about 115 in 2000, 170 in 2010, 250 in 2013, a jump to 400 in 2014, then between 320 and 375 through 2022."></p>
+<div class="source">
+<p>Source: FAOSTAT, producer prices and crop production for Peru and Bolivia.</p>
+</div>
+</section>
+<section class="slide level2">
+<h2>What Happened</h2>
+<ul>
+<li>Quinoa is a staple food grown on the Altiplano, high in the Andes of Peru and Bolivia.</li>
+<li>In the 2000s, as its nutritional properties became known, consumers in Europe and North America started buying it, leading to an increase in demand for quinoa.</li>
+<li>The price paid to farmers rose several times over and production more than doubled. After 2014 the price fell by more than half while output held up.</li>
+<li>Uneven gains at home: the staple food became expensive for poor consumers, while farmers, who are among the poorest, gained from the export sales.</li>
+</ul>
+<div class="plain">
+<p><em>Today</em>: apply the supply and demand framework to understand the dynamics of this market.</p>
+</div>
+</section>
+<section class="slide level2">
+<h2>Before the Boom</h2>
+<div class="plain">
+<p>A stylized quinoa market: dollars per pound, million pounds a year.</p>
+</div>
+<div class="columns">
+<div class="column" style="width:46%;">
+<ul>
+<li>Demand is the buyers in Peru and Bolivia, lined up by willingness to pay.</li>
+<li>Supply is the marginal cost of each pound grown, lowest first.</li>
+<li>The market clears at A: 150 million pounds a year at $3 a pound.</li>
+</ul>
+</div><div class="column" style="width:54%;">
+<p><img data-src="img/quinoa-before.svg" alt="A supply and demand graph, million pounds a year from 0 to 500 on the horizontal axis and dollars per pound from 0 to 12 on the vertical, with gridlines every 50 million pounds and every dollar. The demand line falls from 7 dollars 50 at zero to zero at 250; the supply line rises from zero at 50 million pounds to 12 dollars at 450. They cross at A, 150 million pounds and 3 dollars, with dashed dashed guides to both axes dollars and Q equals 150."></p>
+</div></div>
+</section>
+<section class="slide level2">
+<h2>Foreign Buyers Arrive</h2>
+<div class="columns">
+<div class="column" style="width:46%;">
+<ul>
+<li>In economics we think of such changes as <em>exogenous shocks</em> to the market: something changes outside the model, and we ask how the market responds.</li>
+<li>Here the shock is an increase in demand, which can be represented as a <em>shift of the demand curve</em> to the right.</li>
+<li>With foreign buyers, the total demand for quinoa is 250 million pounds more at each price.</li>
+</ul>
+</div><div class="column" style="width:54%;">
+<p><img data-src="img/quinoa-demand-shift.svg" alt="The quinoa market, million pounds a year from 0 to 500 and dollars per pound from 0 to 12. The demand line falls from 7 dollars 50 at zero to zero at 250, the supply line rises from zero at 50 million pounds, and they cross at A, 150 million pounds and 3 dollars, with dashed guides. A dashed line parallel to the demand line and 200 million pounds further right, entering the plot at 12 dollars and 50 million pounds and falling to zero at 450, is labelled New demand."></p>
+</div></div>
+</section>
+<section class="slide level2">
+<h2>Excess Demand at the Old Price</h2>
+<div class="columns">
+<div class="column" style="width:46%;">
+<ul>
+<li>At $3, buyers at home and abroad want 350 million pounds, but farmers grow 150.</li>
+<li>That is an <em>excess demand</em> of 200: buyers who cannot find quinoa at $3.</li>
+<li>Farmers and traders who see this can earn more by raising the price and growing more.</li>
+</ul>
+</div><div class="column" style="width:54%;">
+<p><img data-src="img/quinoa-excess-demand.svg" alt="The same graph with the dashed 3 dollar line run out from A at 150 million pounds to the new demand line at 350, marked D. A blue bracket between the two points is labelled Excess demand, 200."></p>
+</div></div>
+</section>
+<section class="slide level2">
+<h2>The New Equilibrium</h2>
+<div class="columns">
+<div class="column" style="width:46%;">
+<ul>
+<li>The market clears where the new demand curve meets supply, at C: 250 million pounds at $6.</li>
+<li>The extra pounds cost more to grow, so the price has to rise to bring them in.</li>
+<li>This explains the initial price rise and the increase in the quantity produced.</li>
+</ul>
+</div><div class="column" style="width:54%;">
+<p><img data-src="img/quinoa-new-equilibrium.svg" alt="The same graph with the new equilibrium C where the dashed new demand line meets the supply line, at 250 million pounds and 6 dollars, with dashed guides to both axes dollars and Q equals 250. The old equilibrium A at 150 and 3 dollars is still marked, with grey dashed guides to both axes dollars and Q equals 150."></p>
+</div></div>
+</section>
+<section class="slide level2">
+<h2>What an Increase in Demand Means</h2>
+<ul>
+<li>Demand is higher at each possible price: a <em>shift in the demand curve</em>.</li>
+<li>In response, the equilibrium price changes. At the old price, sellers find they can sell more quinoa than before.</li>
+<li>Sellers respond to this price message by increasing the quantity supplied: a <em>movement along the supply curve</em>.</li>
+<li>The supply curve itself has not shifted: farmers’ marginal costs have not changed. The quantity supplied rose because the price changed.</li>
+</ul>
+</section>
+<section class="slide level2">
+<h2>How Does This Adjustment Really Happen?</h2>
+<ul>
+<li>At $3 everyone was a price-taker, and no one knows the new equilibrium price is $6.</li>
+<li>A trader who sells out and turns buyers away realises some would pay more. She raises her price, becoming a <em>price-maker</em> for a while and earning a <em>disequilibrium rent</em>: profit above what keeps her in business.</li>
+<li>Others do the same, and farmers grow more, since quinoa now sells above marginal cost. The pushing stops at $6, where the market clears and everyone is a price-taker again.</li>
+<li>With excess supply it runs the other way: unsold stock piles up, a buyer offers less than the going price, a seller with full shelves takes it, and the price falls until the market clears.</li>
+</ul>
+</section>
+<section class="slide level2">
+<h2>Who Gained and Who Lost</h2>
+<div class="columns">
+<div class="column" style="width:46%;">
+<ul>
+<li>At $6, local buyers take 50 million pounds, read off the local demand curve, and the other 200 are exported.</li>
+<li>Farmers gain the orange strip: $3 more on every pound, and 100 million more pounds sold.</li>
+<li>Local buyers lose the hatched strip: $3 more on what they still buy, and most stop buying.</li>
+</ul>
+</div><div class="column" style="width:54%;">
+<p><img data-src="img/quinoa-who-gained.svg" alt="The same graph at the new equilibrium C, 250 million pounds at 6 dollars, with the solid line labelled Local demand and the dashed line Total demand. An orange strip between the 3 dollar and 6 dollar lines runs from the price axis out to the supply line, between A at 150 and C at 250: the farmers' gain. A blue hatched strip under the local demand line, between the same two prices, runs from the price axis out to 50 million pounds at 6 dollars and 150 at 3 dollars: the local buyers' loss."></p>
+</div></div>
+</section>
+<section class="slide level2">
+<h2>Gains and Losses at Home</h2>
+<div class="columns">
+<div class="column" style="width:46%;">
+<ul>
+<li>Farmers on the Altiplano are among the poorest people in Peru and Bolivia, and the boom raised their incomes.</li>
+<li>The urban poor who eat quinoa as a staple paid more, or went without.</li>
+<li>The diagram shows the gain is larger in dollars. It does not say whether that is fair: efficiency and fairness are different criteria.</li>
+</ul>
+</div><div class="column" style="width:54%;">
+<p><img data-src="img/quinoa-who-gained.svg" alt="The same figure: the farmers' orange strip and the local buyers' hatched strip between 3 and 6 dollars, with the orange strip the larger of the two."></p>
+</div></div>
+</section>
+<section class="slide level2">
+<h2>When Supply Is Steep</h2>
+<div class="plain">
+<p>The same surge in demand, with a steep and a flat supply curve through A.</p>
+</div>
+<p><img data-src="img/quinoa-flat-supply.svg" class="" style="width:84.0%" alt="Two panels with the same demand shift, from the line labelled D to the dashed line labelled D prime, and the old equilibrium A at 150 million pounds and 3 dollars. In the first, labelled Steep supply, the supply line rises from zero at 50 million pounds and the new equilibrium C is at 250 million pounds and 6 dollars. In the second, labelled Flat supply, the supply line rises from 1 dollar 50 and the new equilibrium C is at 300 million pounds and 4 dollars 50."></p>
+<div class="plain">
+<p>Growing more quinoa on the Altiplano is costly, so supply is steep: the boom showed up mostly in the price and less in output.</p>
+</div>
+</section>
+<section class="slide level2">
+<h2>More Land, More Farmers</h2>
+<div class="columns">
+<div class="column" style="width:46%;">
+<ul>
+<li>In the <em>long run</em>, high prices drew more land and more farmers into quinoa, so a <em>shift in the supply curve</em>.</li>
+<li>At $6, farmers would grow 350 million pounds, but buyers want 250: an <em>excess supply</em> of 100.</li>
+<li>Growers with unsold quinoa accept lower offers, and farmers whose costs exceed the lower price grow less, until the market clears.</li>
+</ul>
+</div><div class="column" style="width:54%;">
+<p><img data-src="img/quinoa-supply-shift.svg" alt="The same graph with both demand lines, the supply line, and a dashed line parallel to the supply line and 100 million pounds further right, labelled New supply. A dashed horizontal line at 6 dollars runs from C at 250 million pounds to the new supply line at 350, and an orange bracket between them is labelled Excess supply, 100."></p>
+</div></div>
+</section>
+<section class="slide level2">
+<h2>The Price Comes Back Down</h2>
+<div class="columns">
+<div class="column" style="width:46%;">
+<ul>
+<li>The market clears where the new demand curve meets the new supply curve, at B: 300 million pounds at $4.50.</li>
+<li>Price falls and quantity rises. Demand did not shift: the quantity demanded rose from 250 to 300 because the price fell, a movement along the demand curve.</li>
+<li>This explains why quinoa prices stabilized again.</li>
+</ul>
+</div><div class="column" style="width:54%;">
+<p><img data-src="img/quinoa-supply-new-eq.svg" alt="The same graph with the new equilibrium B where the dashed new demand line meets the dashed new supply line, at 300 million pounds and 4 dollars 50, with dashed guides to both axes. The previous equilibrium C at 250 and 6 dollars is still marked with dashed guides."></p>
+</div></div>
+</section>
+<section class="slide level2">
+<h2>What to Do Next</h2>
+<ul>
+<li><em>Quiz 7 is Monday, November 2</em>, and covers Lectures 17 and 18.</li>
+<li>To prepare, go over the <em>slides</em>, <em>worksheets</em>, textbook readings (sections <em>8.5</em> and <em>8.6</em>), and <em>practice problems</em> for both lectures.</li>
+</ul>
+
+
+</section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+<p>ECON 201 · Lecture 18</p>
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': false,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'fade',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'fast',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1280,
+
+        height: 720,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 8.0e-2,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script>
+    // Accessibility fixes for chrome that reveal.js and its menu plugin generate at
+    // runtime, so it cannot be fixed in the page source:
+    //  - the viewport meta ships user-scalable=no (fails WCAG 1.4.4: zoom blocked)
+    //  - the menu button is an icon-only link with no accessible name (2.4.4/4.1.2)
+    //  - menu panels scroll but are not keyboard-focusable (2.1.1)
+    (function () {
+      var meta = document.querySelector('meta[name="viewport"]');
+      if (meta) meta.setAttribute('content', 'width=device-width, initial-scale=1.0');
+      function fix() {
+        document.querySelectorAll('.slide-menu-button a').forEach(function (a) {
+          if (!a.getAttribute('aria-label')) a.setAttribute('aria-label', 'Slide menu');
+        });
+        document.querySelectorAll('.slide-menu-panel').forEach(function (p) {
+          if (!p.hasAttribute('tabindex')) p.setAttribute('tabindex', '0');
+        });
+      }
+      fix();
+      window.addEventListener('load', fix);
+      setTimeout(fix, 1500);
+    })();
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>

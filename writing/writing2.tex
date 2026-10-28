@@ -1,0 +1,165 @@
+% !TEX program = lualatex
+% ECON 201, Writing Assignment Part 2: the economic naturalist essay that
+% answers the question from the Part 1 proposal (writing1.tex). Compile with
+% LuaLaTeX so the PDF is tagged. Build from the course root:
+%   cd writing && lualatex writing2.tex && lualatex writing2.tex
+% then delete the aux files and the -luamml-mathml.html side file.
+% Draft: not linked from the site or the schedule yet.
+\DocumentMetadata{
+  pdfstandard=UA-2,
+  pdfversion=2.0,
+  lang=en-US,
+  tagging=on
+}
+\documentclass[11pt]{article}
+
+\usepackage[letterpaper, margin=0.9in, top=0.75in, bottom=0.9in]{geometry}
+\usepackage{fontspec}
+\setmainfont{Fira Sans}
+\usepackage{microtype}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\definecolor{accent}{HTML}{BF5700}
+\definecolor{accentdark}{HTML}{8F4100}
+\definecolor{ink}{HTML}{1A1A1A}
+\definecolor{muted}{HTML}{595A5B}
+\definecolor{cream}{HTML}{FDF3EA}
+\definecolor{rulegrey}{HTML}{D9D9D9}
+\usepackage[most]{tcolorbox}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, urlcolor=accentdark, linkcolor=ink,
+  pdftitle={ECON 201 Writing Assignment, Part 2: Essay},
+  pdfauthor={Div Bhagia}}
+
+\linespread{1.05}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\AtBeginDocument{\color{ink}}
+\setlist{itemsep=2pt, topsep=3pt, parsep=0pt}
+
+\titleformat{\section}{\large\bfseries\color{accent}}{}{0em}{}%
+  [{\color{rulegrey}\titlerule[0.6pt]}]
+\titlespacing*{\section}{0pt}{12pt plus 2pt}{5pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[L]{\small\color{muted}ECON 201 \textperiodcentered\ Writing Assignment, Part 2}
+\fancyfoot[R]{\small\color{muted}Page \thepage\ of \pageref{LastPage}}
+
+% Cream panel; text inside stays ink, the title sits on the brand orange in white.
+\newtcolorbox{panel}[1][]{
+  enhanced, colback=cream, colframe=accent, boxrule=0.6pt, arc=2pt,
+  left=8pt, right=8pt, top=6pt, bottom=6pt,
+  before skip=8pt, after skip=10pt,
+  title={#1}, fonttitle=\bfseries, coltitle=white,
+  attach boxed title to top left={yshift=-2mm, xshift=4mm},
+  boxed title style={colback=accentdark, colframe=accentdark, arc=2pt, boxrule=0pt,
+    left=5pt, right=5pt, top=2pt, bottom=2pt},
+  colupper=ink, before upper={\setlength{\parskip}{6pt}}}
+
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\renewcommand{\arraystretch}{1.3}
+
+\begin{document}
+
+{\LARGE\bfseries\color{accent}Writing Assignment, Part 2: Essay}\hfill{\large\color{muted}ECON 201}\par
+\vspace{4pt}{\color{accent}\hrule height 1.2pt}\par
+\vspace{6pt}{\color{muted}Due Monday, December 7, before class, on Canvas. Worth 10\% of your course grade.}\par
+\vspace{4pt}
+
+\section{Overview}
+
+In Part 1, you picked a puzzle from your own life and posed a question about it. In Part 2, you will answer it. The goal of this part is to explain your puzzle using an idea from this course, clearly enough that someone who has never taken economics can follow every step.
+
+Your essay will be \textbf{300 to 400 words}. That is short, so every sentence should do work. A good essay uses one idea and applies it carefully, rather than mentioning several ideas in passing.
+
+\section{Before You Start}
+
+Read my feedback on your proposal. It will say one of three things:
+
+\begin{itemize}
+  \item \textit{Your question is approved.} Write your essay on this question, using any suggestions in the feedback.
+  \item \textit{A different idea fits better.} Keep your question, but answer it using the idea I suggested. That idea may come from a lecture after your proposal was due.
+  \item \textit{Your question needs to change.} Pick a new question that passes the three tests from Part 1: it is about a pattern, a course idea can answer it, and the answer is not obvious. Add one sentence at the top of your essay saying that you changed your question.
+\end{itemize}
+
+If you did not submit Part 1, you may still write the essay. Your question must pass the same three tests, and you will not earn the point for using feedback.
+
+\section{Instructions}
+
+Use your question as the title of your essay. Then write it in four parts, in this order:
+
+\begin{enumerate}
+  \item \textbf{The puzzle} (one paragraph). Describe what you saw, where, and when, and explain why it is puzzling. You may reuse your proposal, improved using my feedback.
+  \item \textbf{The answer} (one or two paragraphs). Name the course idea and explain it in plain words. Then apply it to your puzzle step by step. Who is making the choice? What does it cost them, and what do they gain? Why does that lead to what you saw?
+  \item \textbf{Another explanation} (a few sentences). Give one other explanation someone might offer, and say why yours fits what you saw better.
+  \item \textbf{The conclusion} (one or two sentences). Say what the puzzle shows about how people or businesses make choices.
+\end{enumerate}
+
+\textbf{Write for someone who has never taken economics.} Imagine explaining your answer to a relative. Do not use graphs or equations. If you use an economics term such as \textit{marginal cost} or \textit{external effect}, explain what it means in plain words the first time.
+
+\textbf{You may look up facts}, such as a price, a law, or how a business works. If you do, name your source in a line at the end of your essay. Sources do not count toward the word limit.
+
+\section{Common Mistakes}
+
+\begin{itemize}
+  \item \textit{Retelling the puzzle instead of answering it.} The puzzle should take one paragraph. Most of your words belong in the answer.
+  \item \textit{Naming an idea without using it.} ``This is because of supply and demand'' is not an answer. Show how the idea explains the choice, step by step.
+  \item \textit{Using several ideas at once.} One idea, explained well, beats three mentioned in passing.
+  \item \textit{Explaining with greed or ``because they can.''} Every business wants more profit. Explain why this business makes more profit by doing what you saw.
+  \item \textit{Claiming to know what is inside a company.} You do not know a store's costs or what its managers think. Say what is likely, and why.
+\end{itemize}
+
+\section{Example Essay}
+
+Here is an essay that answers the example proposal from Part 1. It is 354 words.
+
+\begin{panel}[{Why Would a Car Wash Sell Unlimited Washes for the Price of Two?}]
+On my drive to campus, I pass four car washes, and every one advertises an unlimited monthly plan for about \$20, roughly the price of two single washes. That looks like a bad deal for the car wash. Every wash uses water, soap, and electricity, so a member who came every few days would seem to cost far more than \$20 a month. Yet these plans keep spreading.
+
+The answer starts with two kinds of costs. A fixed cost is one the owner pays no matter how many cars come through, such as the machines, the lot, and the rent. A marginal cost is the extra cost of washing one more car. For an automatic car wash, the fixed costs are large and the marginal cost is small: a little water, soap, and electricity. Once the machines are paid for, one more wash costs the owner very little, especially on a slow weekday when the machines would otherwise sit idle.
+
+That changes how the plan looks. The owner does not need \$20 to cover the full cost of every wash. The owner only needs each member's \$20 to be more than the small extra cost of the washes that member actually uses. Even a member who comes four times a month adds only a few dollars to the owner's costs, and most members come far less often than they planned when they signed up. The plan also brings in steady money every month to help pay the fixed costs, and members keep coming back to the same wash instead of trying a competitor.
+
+Someone might say the car washes are losing money on purpose to win new customers. If that were true, I would expect the plans to disappear once each wash had enough regulars. Instead, the washes near me that have offered plans for years still offer them, which fits the idea that the plans pay for themselves.
+
+So the unlimited plan is less generous than it looks. When one more wash costs the owner almost nothing, a flat monthly price is a good way to fill idle machines and keep customers loyal.
+\end{panel}
+
+\section{What Needs to Be Submitted}
+
+\begin{itemize}
+  \item Your essay, in Word or PDF format, with your name at the top and your question as the title.
+  \item The word count of your essay, on its own line at the end.
+  \item Below the essay, one or two sentences describing how you used AI tools, if at all. An honest description of substantial use is not penalized. An undisclosed one is a violation of academic integrity.
+\end{itemize}
+
+Submissions need to be made on Canvas. Work submitted after the due date loses 10\% per day, up to a maximum of 50\%.
+
+\section{Grading}
+
+\begin{center}
+\small
+\begin{tabular}{@{}L{12.4cm}r@{}}
+\toprule
+\textbf{Criterion} & \textbf{Points} \\
+\midrule
+\textbf{The answer.} The course idea is explained correctly and applied step by step to the puzzle. & 4 \\
+\textbf{Clear to a non-economist.} Plain words, no graphs or equations, and every economics term explained. & 2 \\
+\textbf{The puzzle.} What you saw and why it is puzzling are clear and specific. & 1 \\
+\textbf{Another explanation.} One alternative is considered, with a reason yours fits better. & 1 \\
+\textbf{Uses feedback.} The essay responds to my feedback on your proposal. & 1 \\
+\textbf{Well organized.} Four parts in order, 300 to 400 words, word count and AI note included. & 1 \\
+\midrule
+\textbf{Total} & 10 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\end{document}

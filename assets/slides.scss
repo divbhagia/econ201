@@ -153,6 +153,8 @@ $presentation-font-size-root: 37px;
 .reveal .big { font-size: 1.3em; line-height: 1.4; }
 .reveal .dim, .reveal .figcap { color: #6b6b6b; }
 .reveal .figcap { font-size: 0.6em; text-align: center; }
+// A data source under a chart, only where Div asks for one (lecture 18).
+.reveal .source p { color: #6b6b6b; font-size: 0.6em; margin: 0.3em 0 0 0; }
 
 // A lone image on a slide is auto-stretched by Quarto to the remaining
 // height. It is a block, so centre it; otherwise it hugs the left edge.
