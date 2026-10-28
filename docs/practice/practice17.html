@@ -162,8 +162,7 @@ window.Quarto = {
   <ul>
   <li><a href="#a-price-cap-on-bread" id="toc-a-price-cap-on-bread" class="nav-link active" data-scroll-target="#a-price-cap-on-bread">1. A price cap on bread</a></li>
   <li><a href="#hot-cider-at-the-fall-festival" id="toc-hot-cider-at-the-fall-festival" class="nav-link" data-scroll-target="#hot-cider-at-the-fall-festival">2. Hot cider at the fall festival</a></li>
-  <li><a href="#haircuts-in-two-towns" id="toc-haircuts-in-two-towns" class="nav-link" data-scroll-target="#haircuts-in-two-towns">3. Haircuts in two towns</a></li>
-  <li><a href="#multiple-choice" id="toc-multiple-choice" class="nav-link" data-scroll-target="#multiple-choice">4. Multiple choice</a></li>
+  <li><a href="#multiple-choice" id="toc-multiple-choice" class="nav-link" data-scroll-target="#multiple-choice">3. Multiple choice</a></li>
   </ul>
 </nav>
     </div>
@@ -196,44 +195,48 @@ window.Quarto = {
 <p>Work through each problem on paper before you open its <strong>Solution</strong>.</p>
 <section id="a-price-cap-on-bread" class="level2">
 <h2 class="anchored" data-anchor-id="a-price-cap-on-bread">1. A price cap on bread</h2>
-<p>The bakeries in town all sell the same loaf. Demand is <span class="math inline">\(P = 8 - Q/50\)</span> and supply is <span class="math inline">\(P = 2 + Q/100\)</span>, where <span class="math inline">\(Q\)</span> is loaves a day and <span class="math inline">\(P\)</span> is the price in dollars. In equilibrium, 200 loaves a day sell at $4 each, consumer surplus is $400, and producer surplus is $200. The city council decides bread is too expensive and caps its price at $3 a loaf.</p>
+<p>The bakeries in town all sell the same loaf. The graph shows the demand and supply curves for bread.</p>
+<p><img src="../slides/img/bread-cap-grid.svg" class="img-fluid" alt="A plotting grid, price and cost on the vertical axis from 0 to 8 dollars with gridlines every dollar, and loaves a day on the horizontal axis from 0 to 400 with gridlines every 50 loaves and labels every 100. The demand curve falls in a straight line from 8 dollars at zero loaves to zero at 400 loaves. The supply curve rises in a straight line from 2 dollars at zero loaves to 6 dollars at 400 loaves. They cross at 200 loaves and 4 dollars." width="480"></p>
 <div class="part">
-<p><span class="part-label">(a)</span> At $3, how many loaves do the bakeries bake? How many do buyers want? How many loaves sell?</p>
+<p><span class="part-label">(a)</span> What are the equilibrium price and quantity? Compute the consumer surplus and the producer surplus at the equilibrium.</p>
 </div>
 <details class="solution">
 <summary>
 Solution
 </summary>
-<p>Bakeries bake every loaf whose marginal cost is below the price. Supply gives <span class="math inline">\(3 = 2 + Q/100\)</span>, so they bake <strong>100 loaves</strong>. Demand gives <span class="math inline">\(3 = 8 - Q/50\)</span>, so buyers want <strong>250</strong>. Only the 100 loaves that get baked can sell, so <strong>100 loaves sell</strong> and 150 buyers who want one at $3 go without.</p>
+<p><img src="../slides/img/bread-total.svg" class="img-fluid" alt="The bread market with dashed guides to the equilibrium at 200 loaves and 4 dollars. The triangle between the demand line and the price line, from zero to 200 loaves, is shaded light blue and labelled CS, 400 dollars; the triangle between the price line and the supply line is shaded light orange and labelled PS, 200 dollars." width="480"></p>
+<p>The equilibrium is the point where the quantity demanded equals the quantity supplied, which is where the two curves cross: a price of <strong>$4</strong> and a quantity of <strong>200 loaves</strong>.</p>
+<p>Any buyer’s surplus is their willingness to pay, read off the demand curve, minus the price. For all the buyers together, it is the sum of those gaps, which is the area between the demand curve and the price line, shaded blue above. Using the area of a triangle: <span class="math display">\[\text{CS} = \tfrac{1}{2} \times \text{base} \times \text{height} = \tfrac{1}{2} \times 200 \times (8 - 4) = \mathbf{400}\]</span></p>
+<p>Any loaf’s surplus for its bakery is the price minus its marginal cost, read off the supply curve. For all the loaves together, it is the area between the price line and the supply curve, shaded orange above. Using the area of a triangle: <span class="math display">\[\text{PS} = \tfrac{1}{2} \times 200 \times (4 - 2) = \mathbf{200}\]</span></p>
 </details>
 <div class="part">
-<p><span class="part-label">(b)</span> Compute the consumer surplus and the producer surplus under the cap.</p>
+<p><span class="part-label">(b)</span> The city council decides bread is too expensive and caps its price at $3 a loaf. At $3, how many loaves do the bakeries bake? How many do buyers want? How many loaves sell? Mark the price and the quantity sold on the graph.</p>
 </div>
 <details class="solution">
 <summary>
 Solution
 </summary>
-<p>The 100th buyer has a willingness to pay of <span class="math inline">\(8 - 100/50 = 6\)</span>, so every buyer who gets a loaf has a WTP between $6 and $8 and pays $3. Consumer surplus is the area between the demand curve and the $3 line up to 100 loaves: a rectangle of height <span class="math inline">\(6 - 3 = 3\)</span> plus a triangle of height <span class="math inline">\(8 - 6 = 2\)</span>, <span class="math display">\[\text{CS} = 3 \times 100 + \tfrac{1}{2} \times 100 \times 2 = 300 + 100 = \mathbf{400}\]</span></p>
-<p>The 100th loaf costs <span class="math inline">\(2 + 100/100 = 3\)</span> to bake, so producer surplus is the triangle between the $3 line and the supply curve up to 100 loaves: <span class="math display">\[\text{PS} = \tfrac{1}{2} \times 100 \times (3 - 2) = \mathbf{50}\]</span></p>
-<p><img src="../slides/img/bread-cap-solution.svg" class="img-fluid" alt="The bread market, loaves a day from 0 to 400 and price and cost from 0 to 8 dollars, with a dashed line at 3 dollars labelled Price cap, 3 dollars. A dot marks where it meets the supply line at 100 loaves, labelled 100 loaves. The area between the demand line and the 3 dollar line up to 100 loaves is shaded light blue and labelled CS, 400 dollars; the triangle between the 3 dollar line and the supply line up to 100 loaves is shaded light orange and labelled PS, 50 dollars; the triangle between the demand and supply lines from 100 to 200 loaves is shaded grey and labelled DWL, 150 dollars. A dot marks the equilibrium at 200 loaves and 4 dollars." width="600"></p>
+<p>Read across from $3 on the price axis. The supply curve is at 100 loaves, so the bakeries bake <strong>100</strong>: every loaf that costs less than $3 to bake. The demand curve is at 250 loaves, so buyers want <strong>250</strong>. Only the 100 loaves that get baked can sell, so <strong>100 loaves sell</strong>, at the point on the supply curve at $3, and 150 buyers who want a loaf at $3 go without.</p>
 </details>
 <div class="part">
-<p><span class="part-label">(c)</span> Compared with the equilibrium, who gains from the cap and who loses? By how much?</p>
+<p><span class="part-label">(c)</span> Shade the consumer surplus, the producer surplus, and the deadweight loss under the cap, and compute each.</p>
+</div>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p><img src="../slides/img/bread-cap-solution.svg" class="img-fluid" alt="The bread market, loaves a day from 0 to 400 and price and cost from 0 to 8 dollars, with a dashed line at 3 dollars labelled Price cap, 3 dollars. A dot marks where it meets the supply line at 100 loaves, labelled 100 loaves. The area between the demand line and the 3 dollar line up to 100 loaves is shaded light blue and labelled CS, 400 dollars; the triangle between the 3 dollar line and the supply line up to 100 loaves is shaded light orange and labelled PS, 50 dollars; the triangle between the demand and supply lines from 100 to 200 loaves is shaded grey and labelled DWL, 150 dollars. A dot marks the equilibrium at 200 loaves and 4 dollars." width="480"></p>
+<p>Consumer surplus is the blue area, the gain to the 100 buyers who get a loaf. We can find it by adding the rectangle, with base 100 and height <span class="math inline">\(6 - 3\)</span>, to the triangle on top of it, with base 100 and height <span class="math inline">\(8 - 6\)</span>: <span class="math display">\[\text{CS} = 3 \times 100 + \tfrac{1}{2} \times 100 \times (8 - 6) = 300 + 100 = \mathbf{400}\]</span> Producer surplus is the orange area, the bakeries’ gain on the 100 loaves sold: a triangle with base 100 and height <span class="math inline">\(3 - 2\)</span>: <span class="math display">\[\text{PS} = \tfrac{1}{2} \times 100 \times (3 - 2) = \mathbf{50}\]</span> The deadweight loss is the grey triangle: the surplus from the trades between 100 and 200 loaves that no longer happen, even though each of those buyers values a loaf above what it would cost to bake. Its base is 100 and its height is the gap between the curves at 100 loaves, <span class="math inline">\(6 - 3\)</span>: <span class="math display">\[\text{DWL} = \tfrac{1}{2} \times 100 \times (6 - 3) = \mathbf{150}\]</span> Check: total surplus falls from <span class="math inline">\(400 + 200 = 600\)</span> to <span class="math inline">\(400 + 50 = 450\)</span>, a loss of 150.</p>
+</details>
+<div class="part">
+<p><span class="part-label">(d)</span> Compared with the equilibrium, who gains from the cap and who loses? By how much?</p>
 </div>
 <details class="solution">
 <summary>
 Solution
 </summary>
 <p>Producer surplus falls from $200 to $50, so the <strong>bakeries lose $150</strong>. Consumer surplus is $400 under the cap and $400 at the equilibrium, so <strong>buyers as a group come out even</strong>: the 100 who still get a loaf pay $1 less each and gain $100 between them, while the 100 buyers with a WTP between $4 and $6 who no longer get one lose the surplus they had, <span class="math inline">\(\tfrac{1}{2} \times 100 \times 2 = 100\)</span>.</p>
-</details>
-<div class="part">
-<p><span class="part-label">(d)</span> Compute the deadweight loss. Which trades does it come from?</p>
-</div>
-<details class="solution">
-<summary>
-Solution
-</summary>
-<p>Total surplus falls from <span class="math inline">\(400 + 200 = 600\)</span> to <span class="math inline">\(400 + 50 = 450\)</span>, a <strong>deadweight loss of $150</strong>. It is the grey triangle between the two curves from 100 to 200 loaves: <span class="math inline">\(\tfrac{1}{2} \times 100 \times (6 - 3) = 150\)</span>. It comes from the <strong>101st to the 200th loaf</strong>, each worth more to some buyer than it would cost to bake, but not baked because the bakeries cannot charge more than $3.</p>
+<p>Adding up everyone’s gains and losses, <span class="math inline">\(0 - 150 = -150\)</span>, gives the change in total surplus, which is the deadweight loss from part (c).</p>
 </details>
 <div class="part">
 <p><span class="part-label">(e)</span> Is the outcome under the cap Pareto efficient? Explain in one sentence.</p>
@@ -258,102 +261,56 @@ Solution
 <p>Set demand equal to supply: <span class="math display">\[8 - \frac{Q}{25} = 2 + \frac{Q}{50}\]</span> Collect terms: <span class="math inline">\(6 = \frac{Q}{25} + \frac{Q}{50} = \frac{3Q}{50}\)</span>, so <span class="math inline">\(Q^* =\)</span> <strong>100 cups</strong>. Then <span class="math inline">\(P^* = 8 - 100/25 =\)</span> <strong>$4</strong>. Supply gives the same: <span class="math inline">\(2 + 100/50 = 4\)</span>.</p>
 </details>
 <div class="part">
-<p><span class="part-label">(b)</span> The 50th buyer in line buys the 50th cup. How much does the buyer gain from the trade, and how much does the stand gain?</p>
+<p><span class="part-label">(b)</span> Draw the demand and supply curves, shade the consumer surplus and the producer surplus at the equilibrium, and compute each. What is the total surplus?</p>
 </div>
 <details class="solution">
 <summary>
 Solution
 </summary>
-<p>The 50th buyer’s willingness to pay is <span class="math inline">\(8 - 50/25 = 6\)</span> and the 50th cup’s marginal cost is <span class="math inline">\(2 + 50/50 = 3\)</span>. At the price of $4, the <strong>buyer gains</strong> <span class="math inline">\(6 - 4 =\)</span> <strong>$2</strong> and the <strong>stand gains</strong> <span class="math inline">\(4 - 3 =\)</span> <strong>$1</strong>. The surplus on the cup is <span class="math inline">\(\text{WTP} - \text{MC} = 6 - 3 = 3\)</span>.</p>
+<p>Each curve is a straight line, so two points are enough to draw it. Demand meets the price axis at $8 (at <span class="math inline">\(Q = 0\)</span>, <span class="math inline">\(P = 8 - 0/25 = 8\)</span>) and passes through the equilibrium at 100 cups and $4; supply meets the price axis at $2 (at <span class="math inline">\(Q = 0\)</span>, <span class="math inline">\(P = 2 + 0/50 = 2\)</span>) and passes through the same point. Draw both, mark the equilibrium, and shade the triangle above the price line and the one below it.</p>
+<p><img src="../slides/img/cider-equilibrium-solution.svg" class="img-fluid" alt="The cider market, cups a day from 0 to 200 and price and cost from 0 to 8 dollars. The demand line falls from 8 dollars at zero cups and the supply line rises from 2 dollars; they cross at 100 cups and 4 dollars, marked with a dot and dashed guides labelled P star equals 4 dollars and Q star equals 100. The triangle between the demand line and the price line is shaded light blue and labelled CS, 200 dollars; the triangle between the price line and the supply line is shaded light orange and labelled PS, 100 dollars." width="480"></p>
+<p>Consumer surplus is the blue triangle, with base 100 (the cups sold) and height from the price up to the demand intercept, <span class="math inline">\(8 - 4\)</span>: <span class="math display">\[\text{CS} = \tfrac{1}{2} \times \text{base} \times \text{height} = \tfrac{1}{2} \times 100 \times (8 - 4) = \mathbf{200}\]</span></p>
+<p>Producer surplus is the orange triangle, with the same base of 100 and height from the supply intercept up to the price, <span class="math inline">\(4 - 2\)</span>: <span class="math display">\[\text{PS} = \tfrac{1}{2} \times 100 \times (4 - 2) = \mathbf{100}\]</span></p>
+<p>Total surplus is <span class="math inline">\(200 + 100 =\)</span> <strong>$300</strong>.</p>
 </details>
 <div class="part">
-<p><span class="part-label">(c)</span> Compute the consumer surplus, the producer surplus, and the total surplus at the equilibrium.</p>
+<p><span class="part-label">(c)</span> The stands form a cartel: they agree to charge $6 a cup and to make only as many cups as buyers want at that price. How many cups sell? Compute the consumer surplus, the producer surplus, and the deadweight loss.</p>
 </div>
 <details class="solution">
 <summary>
 Solution
 </summary>
-<p>Consumer surplus is the triangle between the demand curve and the price: <span class="math display">\[\text{CS} = \tfrac{1}{2} \times 100 \times (8 - 4) = \mathbf{200}\]</span> Producer surplus is the triangle between the price and the supply curve: <span class="math display">\[\text{PS} = \tfrac{1}{2} \times 100 \times (4 - 2) = \mathbf{100}\]</span> Total surplus is <span class="math inline">\(200 + 100 =\)</span> <strong>$300</strong>.</p>
+<p>At $6, demand gives <span class="math inline">\(6 = 8 - Q/25\)</span>, so <strong>50 cups</strong> sell. It helps to draw the two curves, mark the cartel price and the 50 cups, and shade each area before computing it:</p>
+<p><img src="../slides/img/cider-cartel-solution.svg" class="img-fluid" alt="The cider market, cups a day from 0 to 200 and price and cost from 0 to 8 dollars, with a dashed line at 6 dollars labelled Cartel price, 6 dollars. A dot marks where it meets the demand line at 50 cups, labelled 50 cups. The triangle between the demand line and the 6 dollar line up to 50 cups is shaded light blue and labelled CS, 50 dollars; the area between the 6 dollar line and the supply line up to 50 cups is shaded light orange and labelled PS, 175 dollars; the triangle between the demand and supply lines from 50 to 100 cups is shaded grey and labelled DWL, 75 dollars. A dot and dashed guides mark the equilibrium at Q star equals 100 and 4 dollars." width="480"></p>
+<p>Consumer surplus is the blue triangle, with base 50 and height from the cartel price up to the demand intercept, <span class="math inline">\(8 - 6\)</span>: <span class="math display">\[\text{CS} = \tfrac{1}{2} \times 50 \times (8 - 6) = \mathbf{50}\]</span> Producer surplus is the orange area. The 50th cup costs <span class="math inline">\(2 + 50/50 = 3\)</span> to make, so the area is a rectangle of height <span class="math inline">\(6 - 3\)</span> plus a triangle of height <span class="math inline">\(3 - 2\)</span>, both with base 50: <span class="math display">\[\text{PS} = (6 - 3) \times 50 + \tfrac{1}{2} \times 50 \times (3 - 2) = 150 + 25 = \mathbf{175}\]</span> The deadweight loss is the grey triangle, the surplus from the cups between 50 and 100 that are no longer made even though buyers value them above their cost. Its base is 50 and its height is the gap between the curves at 50 cups, <span class="math inline">\(6 - 3\)</span>: <span class="math display">\[\text{DWL} = \tfrac{1}{2} \times 50 \times (6 - 3) = \mathbf{75}\]</span> Check: total surplus falls from $300 to <span class="math inline">\(50 + 175 = 225\)</span>, a loss of 75.</p>
 </details>
 <div class="part">
-<p><span class="part-label">(d)</span> The stands form a cartel: they agree to charge $6 a cup and to make only as many cups as buyers want at that price. How many cups sell? Compute the consumer surplus, the producer surplus, and the deadweight loss.</p>
+<p><span class="part-label">(d)</span> Who gains from the cartel and who loses? By how much?</p>
 </div>
 <details class="solution">
 <summary>
 Solution
 </summary>
-<p>At $6, demand gives <span class="math inline">\(6 = 8 - Q/25\)</span>, so <strong>50 cups</strong> sell. The 50th cup costs <span class="math inline">\(2 + 50/50 = 3\)</span> to make.</p>
-<p><span class="math display">\[\text{CS} = \tfrac{1}{2} \times 50 \times (8 - 6) = \mathbf{50}\]</span> <span class="math display">\[\text{PS} = (6 - 3) \times 50 + \tfrac{1}{2} \times 50 \times (3 - 2) = 150 + 25 = \mathbf{175}\]</span></p>
-<p>Total surplus is <span class="math inline">\(50 + 175 = 225\)</span>, down from $300, so the <strong>deadweight loss is $75</strong>: the triangle between the curves from 50 to 100 cups, <span class="math inline">\(\tfrac{1}{2} \times 50 \times (6 - 3) = 75\)</span>.</p>
-<p><img src="../slides/img/cider-cartel-solution.svg" class="img-fluid" alt="The cider market, cups a day from 0 to 200 with gridlines every 25 and price and cost from 0 to 8 dollars, with a dashed line at 6 dollars labelled Cartel price, 6 dollars. A dot marks where it meets the demand line at 50 cups, labelled 50 cups. The triangle between the demand line and the 6 dollar line up to 50 cups is shaded light blue and labelled CS, 50 dollars; the area between the 6 dollar line and the supply line up to 50 cups is shaded light orange and labelled PS, 175 dollars; the triangle between the demand and supply lines from 50 to 100 cups is shaded grey and labelled DWL, 75 dollars. A dot and dashed guides mark the equilibrium at Q star equals 100 and 4 dollars." width="600"></p>
-</details>
-<div class="part">
-<p><span class="part-label">(e)</span> Who gains from the cartel and who loses? By how much?</p>
-</div>
-<details class="solution">
-<summary>
-Solution
-</summary>
-<p>The <strong>stands gain</strong>: producer surplus rises from $100 to $175, up <strong>$75</strong>. <strong>Buyers lose</strong>: consumer surplus falls from $200 to $50, down <strong>$150</strong>. Buyers lose twice what the stands gain, and the difference is the $75 deadweight loss.</p>
-</details>
-</section>
-<section id="haircuts-in-two-towns" class="level2">
-<h2 class="anchored" data-anchor-id="haircuts-in-two-towns">3. Haircuts in two towns</h2>
-<p>Oakdale and Riverton each have many barbershops giving the same haircut, and demand is the same in both: <span class="math inline">\(P = 40 - Q/2\)</span>, where <span class="math inline">\(Q\)</span> is haircuts a day and <span class="math inline">\(P\)</span> is the price in dollars. Supply differs. In Oakdale it is <span class="math inline">\(P = Q/2\)</span>; in Riverton it is <span class="math inline">\(P = 15 + Q/8\)</span>.</p>
-<div class="part">
-<p><span class="part-label">(a)</span> Show that both towns have the same equilibrium, 40 haircuts a day at $20.</p>
-</div>
-<details class="solution">
-<summary>
-Solution
-</summary>
-<p>At <span class="math inline">\(Q = 40\)</span>, demand gives <span class="math inline">\(P = 40 - 40/2 = 20\)</span>. Oakdale’s supply gives <span class="math inline">\(40/2 = 20\)</span> and Riverton’s gives <span class="math inline">\(15 + 40/8 = 15 + 5 = 20\)</span>. Both supply curves pass through the same point on the demand curve, so both towns clear at <strong>40 haircuts and $20</strong>.</p>
-</details>
-<div class="part">
-<p><span class="part-label">(b)</span> Compute the consumer surplus in each town.</p>
-</div>
-<details class="solution">
-<summary>
-Solution
-</summary>
-<p>Demand and the price are the same in both towns, so consumer surplus is too: <span class="math display">\[\text{CS} = \tfrac{1}{2} \times 40 \times (40 - 20) = \mathbf{400}\]</span></p>
-</details>
-<div class="part">
-<p><span class="part-label">(c)</span> Compute the producer surplus in each town.</p>
-</div>
-<details class="solution">
-<summary>
-Solution
-</summary>
-<p>Producer surplus is the triangle between the price and the supply curve up to 40 haircuts. Oakdale’s supply curve starts at $0: <span class="math display">\[\text{PS}_{\text{Oakdale}} = \tfrac{1}{2} \times 40 \times (20 - 0) = \mathbf{400}\]</span> Riverton’s starts at $15: <span class="math display">\[\text{PS}_{\text{Riverton}} = \tfrac{1}{2} \times 40 \times (20 - 15) = \mathbf{100}\]</span></p>
-</details>
-<div class="part">
-<p><span class="part-label">(d)</span> In which town is supply more elastic? In which town do barbers get the larger share of the total surplus? Explain the connection in one or two sentences.</p>
-</div>
-<details class="solution">
-<summary>
-Solution
-</summary>
-<p>Supply is more elastic in <strong>Riverton</strong>: its supply curve is flatter, so the number of haircuts offered responds more to a change in price. Barbers get the larger share in <strong>Oakdale</strong>, $400 of $800, against $100 of $500 in Riverton. In Riverton most haircuts cost nearly $20 to provide, so barbers gain little on each one; in Oakdale many haircuts cost far less than $20, so barbers gain a lot. The less elastic side of the market keeps more of the surplus.</p>
+<p>The <strong>stands gain</strong>: producer surplus rises from $100 to $175, up <strong>$75</strong>. <strong>Buyers lose</strong>: consumer surplus falls from $200 to $50, down <strong>$150</strong>. Adding up everyone’s gains and losses, <span class="math inline">\(75 - 150 = -75\)</span>, gives the change in total surplus, which is the deadweight loss from part (c): buyers lose twice what the stands gain, and the difference is the surplus from the 50 cups that are no longer made.</p>
 </details>
 </section>
 <section id="multiple-choice" class="level2">
-<h2 class="anchored" data-anchor-id="multiple-choice">4. Multiple choice</h2>
-<div class="mcq" data-answer="c">
+<h2 class="anchored" data-anchor-id="multiple-choice">3. Multiple choice</h2>
+<div class="mcq" data-answer="b">
 <div class="part">
-<p><span class="part-label">Q1.</span> In a competitive market the price is $5. A buyer with a willingness to pay of $9 buys one unit from a seller whose marginal cost is $3. What is the total surplus on this trade?</p>
+<p><span class="part-label">Q1.</span> In a competitive market the price is $5. A buyer with a willingness to pay of $9 buys a unit, and a seller whose marginal cost is $3 sells one. How much surplus does each of them get?</p>
 </div>
 <ol type="a">
-<li>$4</li>
-<li>$2</li>
-<li>$6</li>
-<li>$9</li>
+<li>The buyer $9 and the seller $3.</li>
+<li>The buyer $4 and the seller $2.</li>
+<li>The buyer $2 and the seller $4.</li>
+<li>The buyer $5 and the seller $5.</li>
 </ol>
 <details class="solution">
 <summary>
 Solution
 </summary>
-<p>The buyer gains <span class="math inline">\(9 - 5 = 4\)</span> and the seller gains <span class="math inline">\(5 - 3 = 2\)</span>. The total surplus on the trade is <span class="math inline">\(4 + 2 = 6\)</span>, which is <span class="math inline">\(\text{WTP} - \text{MC} = 9 - 3\)</span>. <strong>(c)</strong> is correct.</p>
+<p>A buyer’s surplus is willingness to pay minus the price, <span class="math inline">\(9 - 5 = 4\)</span>. A seller’s surplus on a unit is the price minus its marginal cost, <span class="math inline">\(5 - 3 = 2\)</span>. Neither depends on who trades with whom, since everyone trades at $5. <strong>(b)</strong> is correct.</p>
 </details>
 </div>
 <div class="mcq" data-answer="b">
@@ -373,9 +330,26 @@ Solution
 <p>At $10, demand gives <span class="math inline">\(10 = 20 - Q/5\)</span>, so 50 spots are rented. The first buyer would pay $20, so consumer surplus is the triangle <span class="math inline">\(\tfrac{1}{2} \times 50 \times (20 - 10) = 250\)</span>. <strong>(b)</strong> is correct.</p>
 </details>
 </div>
+<div class="mcq" data-answer="a">
+<div class="part">
+<p><span class="part-label">Q3.</span> Beautiful Cars, the only seller of its model, sells 20 cars a day. The town’s bread market, with many bakeries, clears at 200 loaves a day. Which statement is correct?</p>
+</div>
+<ol type="a">
+<li>Beautiful Cars’ price is above the marginal cost of its 20th car, while the bread price equals the marginal cost of the 200th loaf.</li>
+<li>Beautiful Cars’ price equals the marginal cost of its 20th car, while the bread price is above the marginal cost of the 200th loaf.</li>
+<li>In both markets the price equals the marginal cost of the last unit sold.</li>
+<li>In both markets the price is above the marginal cost of the last unit sold.</li>
+</ol>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>A price setter chooses the quantity where marginal revenue equals marginal cost and then charges the most buyers will pay for that quantity. That price is above marginal cost, because marginal revenue is below the price. Buyers with a willingness to pay between the two go without a car, which is the deadweight loss. A price-taker produces every unit whose marginal cost is below the going price, so the last loaf’s marginal cost equals the price and no trade worth making is left. <strong>(a)</strong> is correct.</p>
+</details>
+</div>
 <div class="mcq" data-answer="b,d">
 <div class="part">
-<p><span class="part-label">Q3.</span> <em>(Adapted from CORE Question 8.6)</em> A competitive market for bread clears at 5,000 loaves and $2. The mayor decrees that bakeries must sell bread at $1.50. Select all the statements that are correct.</p>
+<p><span class="part-label">Q4.</span> <em>(Adapted from CORE Question 8.6)</em> A competitive market for bread clears at 5,000 loaves and $2. The mayor decrees that bakeries must sell bread at $1.50. Select all the statements that are correct.</p>
 </div>
 <ol type="a">
 <li>Consumer surplus and producer surplus both increase.</li>
@@ -390,9 +364,26 @@ Solution
 <p>At $1.50, the bakeries whose loaves cost between $1.50 and $2 to bake stop selling, so fewer loaves are baked and producer surplus falls. The loaves no longer baked were worth more to buyers than they cost, so their surplus is lost: a deadweight loss, and a lower total surplus. Consumer surplus may rise or fall, but it cannot rise together with producer surplus when total surplus falls. <strong>(b) and (d)</strong> are correct.</p>
 </details>
 </div>
+<div class="mcq" data-answer="c">
+<div class="part">
+<p><span class="part-label">Q5.</span> A competitive market clears at $4. In which case is there a deadweight loss?</p>
+</div>
+<ol type="a">
+<li>When the price is held above $4, but not when it is held below.</li>
+<li>When the price is held below $4, but not when it is held above.</li>
+<li>When the price is held either above or below $4.</li>
+<li>In neither case, as long as every unit sells at a single price.</li>
+</ol>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>At a price above $4, buyers want fewer units than at the equilibrium, so fewer trade. At a price below $4, sellers offer fewer units, so again fewer trade. Either way, the units between the quantity traded and the equilibrium quantity were worth more to buyers than they cost to make, and they no longer get made: the deadweight loss is the triangle between the two curves over those units. It is only at the equilibrium price that every unit worth making gets made. <strong>(c)</strong> is correct.</p>
+</details>
+</div>
 <div class="mcq" data-answer="b,d">
 <div class="part">
-<p><span class="part-label">Q4.</span> <em>(Adapted from CORE Question 8.7)</em> Select all the statements about a competitive equilibrium allocation that are correct.</p>
+<p><span class="part-label">Q6.</span> <em>(Adapted from CORE Question 8.7)</em> Select all the statements about a competitive equilibrium allocation that are correct.</p>
 </div>
 <ol type="a">
 <li>It is the best possible allocation for everyone in the market.</li>
@@ -409,7 +400,7 @@ Solution
 </div>
 <div class="mcq" data-answer="d">
 <div class="part">
-<p><span class="part-label">Q5.</span> Which of the following is <em>not</em> one of the conditions under which a competitive equilibrium is Pareto efficient?</p>
+<p><span class="part-label">Q7.</span> Which of the following is <em>not</em> one of the conditions under which a competitive equilibrium is Pareto efficient?</p>
 </div>
 <ol type="a">
 <li>Trade in the market has no external effects.</li>
@@ -426,7 +417,7 @@ Solution
 </div>
 <div class="mcq" data-answer="a">
 <div class="part">
-<p><span class="part-label">Q6.</span> In two markets with the same demand curve and the same equilibrium price and quantity, the supply curve is steep in one and flat in the other. Which statement is correct?</p>
+<p><span class="part-label">Q8.</span> In two markets with the same demand curve and the same equilibrium price and quantity, the supply curve is steep in one and flat in the other. Which statement is correct?</p>
 </div>
 <ol type="a">
 <li>Sellers get a larger share of the surplus where supply is steep.</li>
