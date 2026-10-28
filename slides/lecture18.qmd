@@ -123,20 +123,6 @@ A stylized quinoa market: dollars per pound, million pounds a year.
 :::
 ::::::
 
-## Gains and Losses at Home
-
-:::::: columns
-:::: {.column width="46%"}
--   Farmers on the Altiplano are among the poorest people in Peru and Bolivia, and the boom raised their incomes.
--   The urban poor who eat quinoa as a staple paid more, or went without.
--   The diagram shows the gain is larger in dollars. It does not say whether that is fair: efficiency and fairness are different criteria.
-::::
-
-::: {.column width="54%"}
-![](img/quinoa-who-gained.svg){fig-alt="The same figure: the farmers' orange strip and the local buyers' hatched strip between 3 and 6 dollars, with the orange strip the larger of the two."}
-:::
-::::::
-
 ## When Supply Is Steep
 
 ::: plain
@@ -148,34 +134,6 @@ The same surge in demand, with a steep and a flat supply curve through A.
 ::: plain
 Growing more quinoa on the Altiplano is costly, so supply is steep: the boom showed up mostly in the price and less in output.
 :::
-
-## More Land, More Farmers
-
-:::::: columns
-:::: {.column width="46%"}
--   In the *long run*, high prices drew more land and more farmers into quinoa, so a *shift in the supply curve*.
--   At \$6, farmers would grow 350 million pounds, but buyers want 250: an *excess supply* of 100.
--   Growers with unsold quinoa accept lower offers, and farmers whose costs exceed the lower price grow less, until the market clears.
-::::
-
-::: {.column width="54%"}
-![](img/quinoa-supply-shift.svg){fig-alt="The same graph with both demand lines, the supply line, and a dashed line parallel to the supply line and 100 million pounds further right, labelled New supply. A dashed horizontal line at 6 dollars runs from C at 250 million pounds to the new supply line at 350, and an orange bracket between them is labelled Excess supply, 100."}
-:::
-::::::
-
-## The Price Comes Back Down
-
-:::::: columns
-:::: {.column width="46%"}
--   The market clears where the new demand curve meets the new supply curve, at B: 300 million pounds at \$4.50.
--   Price falls and quantity rises. Demand did not shift: the quantity demanded rose from 250 to 300 because the price fell, a movement along the demand curve.
--   This explains why quinoa prices stabilized again. 
-::::
-
-::: {.column width="54%"}
-![](img/quinoa-supply-new-eq.svg){fig-alt="The same graph with the new equilibrium B where the dashed new demand line meets the dashed new supply line, at 300 million pounds and 4 dollars 50, with dashed guides to both axes. The previous equilibrium C at 250 and 6 dollars is still marked with dashed guides."}
-:::
-::::::
 
 ## What to Do Next
 
