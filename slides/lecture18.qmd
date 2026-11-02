@@ -135,6 +135,20 @@ The same surge in demand, with a steep and a flat supply curve through A.
 Growing more quinoa on the Altiplano is costly, so supply is steep: the boom showed up mostly in the price and less in output.
 :::
 
+## A Shock to Supply
+
+:::::: columns
+:::: {.column width="46%"}
+-   Shocks can hit supply too. In the *short run* the same farms are in the market, so supply shifts when their marginal costs change.
+-   Suppose a drought raises the cost of every pound by \$3: supply shifts up by \$3, the same as left by 100.
+-   At \$3, farmers grow 50 but buyers want 150: an *excess demand* of 100. The market clears at E, 100 million pounds at \$4.50.
+::::
+
+::: {.column width="54%"}
+![](img/quinoa-drought.svg){fig-alt="The quinoa market, million pounds a year from 0 to 500 and dollars per pound from 0 to 12. The demand line falls from 7 dollars 50 at zero to zero at 250. The supply line rises from zero at 50 million pounds, and a dashed line labelled New supply runs 3 dollars above it, from 1 dollar 50 at zero. The old equilibrium A is at 150 million pounds and 3 dollars; a blue bracket at 3 dollars from the new supply line at 50 to A is labelled Excess demand, 100. The new equilibrium E, where demand meets the new supply line, is at 100 million pounds and 4 dollars 50, with dashed guides to both axes."}
+:::
+::::::
+
 ## What to Do Next
 
 -   *Quiz 7 is Monday, November 2*, and covers Lectures 17 and 18.

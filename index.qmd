@@ -39,7 +39,7 @@ ECON 201 | Fall 2026 | College of Business and Economics | California State Univ
 :::
 
 ::: {.g-col-12 .g-col-md-6 .g-col-lg-4}
-<img src="/slides/img/core-cover.jpg" alt="Cover of The Economy 2.0: Microeconomics, the free CORE Econ textbook used in this course" width="315"/>
+<a href="https://books.core-econ.org/the-economy/microeconomics/"><img src="/slides/img/core-cover.jpg" alt="Read The Economy 2.0: Microeconomics, the free CORE Econ textbook used in this course, online" width="315"/></a>
 :::
 
 :::

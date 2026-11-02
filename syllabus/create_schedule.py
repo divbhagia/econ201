@@ -380,6 +380,9 @@ MATERIALS = {
     17: {"slides": "slides/lecture17.html", "slides_pdf": "slides/lecture17.pdf",
          "practice": "practice/practice17.html",
          "worksheet": "worksheets/worksheet17.pdf"},
+    18: {"slides": "slides/lecture18.html", "slides_pdf": "slides/lecture18.pdf",
+         "practice": "practice/practice18.html",
+         "worksheet": "worksheets/worksheet18.pdf"},
 }
 
 # Lecture 2's practice page bundles guided reading; from lecture 3 on the

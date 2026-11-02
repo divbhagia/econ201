@@ -41,6 +41,12 @@ wanted and 200 baked, excess demand 150; new equilibrium 300 at $5. A new
 oven cuts marginal cost by $1.50: supply P = 0.5 + Q/100; at $4, 350 baked
 and 200 wanted, excess supply 150; new equilibrium 250 at $3.
 
+Last slide (Div, 10/28): a short-run supply shift on the same quinoa
+market, back at A. A drought raises every farm's marginal cost by $3:
+supply P = 1.5 + 3Q/100, the same as 100 million pounds fewer at every
+price. At $3, 50 grown and 150 wanted: excess demand 100. New equilibrium
+E: 100 million pounds at $4.50.
+
 Worksheet 18 (its own market, Div): pumpkins at the fall market, pumpkins a
 day. Demand P = 10 - Q/10, supply P = 2 + Q/10, equilibrium 40 pumpkins at
 $6. Halloween week: 20 more wanted at every price, demand P = 12 - Q/10; at
@@ -63,9 +69,10 @@ Output, in slides/img/:
   quinoa-flat-supply.svg     two panels, the surge with steep and flat supply
   quinoa-supply-shift.svg    supply shifted right, excess supply 100 at $5
   quinoa-supply-new-eq.svg   C and B
-  bread-shifts-grid.svg      the worksheet grid, for Practice 18 problem 1
+  quinoa-drought.svg         the short-run supply shift, last slide
+  bread-shifts-grid.svg      the bread grid, for Practice 18 problem 1
   bread-demand-solution.svg, bread-supply-solution.svg
-                             the worksheet shocks solved, for Practice 18
+                             the two shifts solved, for Practice 18
 and in worksheets/figures/:
   pumpkins-shifts.pdf        the worksheet grid, both curves, unmarked
 
@@ -166,6 +173,8 @@ QA = cross(QD_LOCAL, QS)           # (150, 3)
 QC = cross(QD_TOTAL, QS)           # (250, 6)
 QC_FLAT = cross(QD_TOTAL, QS_FLAT) # (300, 4.5)
 QB = cross(QD_TOTAL, QS_NEW)       # (300, 4.5)
+QS_DROUGHT = (F(3, 2), F(3, 100))  # drought: MC up $3 = 100 fewer at every price
+QD_ = cross(QD_LOCAL, QS_DROUGHT)  # (100, 4.5)
 
 # Bread (the worksheet).
 BD0, BD1 = (8, -F(1, 50)), (11, -F(1, 50))
@@ -176,6 +185,7 @@ BA, BC, BB = cross(BD0, BS0), cross(BD1, BS0), cross(BD0, BS1)   # (200,4) (300,
 PD0, PD1 = (10, -F(1, 10)), (12, -F(1, 10))
 PS0, PS1 = (2, F(1, 10)), (0, F(1, 10))
 PA, PC, PB = cross(PD0, PS0), cross(PD1, PS0), cross(PD0, PS1)   # (40,6) (50,7) (50,5)
+
 
 
 
@@ -411,6 +421,29 @@ def fig_quinoa_supply_new_eq(out: Path) -> None:
     save(fig, out)
 
 
+def fig_quinoa_drought(out: Path) -> None:
+    """Back at A: a drought raises every farm's marginal cost by $3, so the
+    supply curve shifts up (left). Excess demand of 100 at $3; the market
+    clears at E, 100 million pounds at $4.50."""
+    fig, ax = quinoa_axes()
+    line(ax, QD_LOCAL, Q_X, DEMAND)
+    label(ax, 235, price_on(QD_LOCAL, 235), "Demand", DEMAND, 12, 4)
+    line(ax, QS, Q_X, SUPPLY)
+    label(ax, 400, price_on(QS, 400), "Supply", SUPPLY, 10, -6, va="top")
+    line(ax, QS_DROUGHT, Q_X, SUPPLY, ls=DASH)
+    label(ax, 300, price_on(QS_DROUGHT, 300), "New supply", SUPPLY, -10, 4, ha="right")
+    qs = q_on(QS_DROUGHT, QA[1])
+    hline_to(ax, QA[0], QA[1])
+    point(ax, qs, QA[1])
+    bracket(ax, qs, QA[0], QA[1], DEMAND, above=False)
+    label(ax, 185, QA[1], f"Excess demand,\n{float(QA[0] - qs):.0f}", DEMAND, 0, 0,
+          va="center", fs=FONT - 6)
+    guides(ax, *QD_)
+    point(ax, *QA, "A", dx=10, dy=0, va="center")
+    point(ax, *QD_, "E", dx=-10, dy=6, ha="right")
+    save(fig, out)
+
+
 # ------------------------------------------------------- quinoa data -----
 def quinoa():
     out = {}
@@ -489,8 +522,9 @@ def fig_quinoa_data(out: Path) -> None:
 B_X, B_Y = 500, 12
 
 
-def fig_bread(out: Path, shock: str) -> None:
-    """The worksheet grid (shock 'none', PDF) or a shock solved (SVG)."""
+def fig_bread(out: Path, shock: str, values=True) -> None:
+    """The worksheet grid (shock 'none', PDF) or a shock solved (SVG).
+    values=False drops the P and Q labels (deck figures, Div)."""
     fs = FONT - 6 if shock == "none" else FONT
     size = (8.2, 5.0) if shock == "none" else SIDE
     fig, ax = plt.subplots(figsize=size, dpi=100)
@@ -525,11 +559,14 @@ def fig_bread(out: Path, shock: str) -> None:
         guides(ax, *new, INK)
         point(ax, *BA, "A", dx=-8, dy=-10, ha="right", va="top")
         point(ax, *new, "B")
-        label(ax, 0, new[1], f"P = {money(new[1])}", INK, 8, 8)
+        if values:
+            label(ax, 0, new[1], f"P = {money(new[1])}", INK, 8, 8)
     else:
-        label(ax, 330, price_on(BD0, 330), "Demand", DEMAND, 12, 4, fs=fs)
+        label(ax, 60, price_on(BD0, 60), "Demand", DEMAND, 12, 4, fs=fs)
         line(ax, BS1, B_X, SUPPLY, ls=DASH)
-        label(ax, 60, price_on(BS1, 60), "New supply", SUPPLY, 10, 8, fs=fs)
+        ax.set_xlim(0, 575)                       # room for end labels; ticks stop at 500
+        ax.set_xticks(range(0, B_X + 1, 100))
+        label(ax, B_X, price_on(BS1, B_X), "New\nsupply", SUPPLY, 6, 0, va="center", fs=fs - 4)
         old_p, qs, new = BA[1], q_on(BS1, BA[1]), BB
         hline_to(ax, qs, old_p)
         point(ax, qs, old_p)
@@ -538,8 +575,10 @@ def fig_bread(out: Path, shock: str) -> None:
         guides(ax, *new, INK)
         point(ax, *BA, "A", dx=-8, dy=8, ha="right")
         point(ax, *new, "B", dx=10, dy=-8, va="top")
-        label(ax, 0, new[1], f"P = {money(new[1])}", INK, 8, -8, va="top")
-    label(ax, new[0], 0, f"Q = {float(new[0]):.0f}", INK, 8, 6)
+        if values:
+            label(ax, 0, new[1], f"P = {money(new[1])}", INK, 8, -8, va="top")
+    if values:
+        label(ax, new[0], 0, f"Q = {float(new[0]):.0f}", INK, 8, 6)
     save(fig, out)
 
 
@@ -591,6 +630,12 @@ def main() -> int:
     print(f"  B: Q = {QB[0]}, P = {money(QB[1])}")
     assert QB == (300, F(9, 2))
 
+    print("\nDrought (last slide): MC up $3")
+    for p_ in (3, 4.5):
+        assert q_on(QS, p_) - q_on(QS_DROUGHT, p_) == 100
+    print(f"  at $3: grown {q_on(QS_DROUGHT, 3)}, wanted {q_on(QD_LOCAL, 3)}; E: {QD_[0]} at {money(QD_[1])}")
+    assert q_on(QS_DROUGHT, 3) == 50 and QD_ == (100, F(9, 2))
+
     print("\nQuinoa (FAOSTAT), in the deck's units")
     data = quinoa()
     for c in ("Peru", "Bolivia"):
@@ -612,7 +657,7 @@ def main() -> int:
     print(f"  bumper harvest, +20: at $6 offered {qs}, wanted {q_on(PD0, PA[1])}, excess supply {qs - PA[0]}; B: {PB[0]} at {money(PB[1])}")
     assert qs == 60 and PB == (50, 5)
 
-    print("\nBread (practice 18 problem 1)")
+    print("\nBread (Practice 18 problem 1)")
     assert BA == (200, 4)
     qd = q_on(BD1, BA[1])
     print(f"  sourdough viral, +150: at $4 wanted {qd}, baked {q_on(BS0, BA[1])}, excess demand {qd - BA[0]}; C: {BC[0]} at {money(BC[1])}")
@@ -634,6 +679,7 @@ def main() -> int:
     fig_bread(IMG / "bread-shifts-grid.svg", "grid")
     fig_bread(IMG / "bread-demand-solution.svg", "demand")
     fig_bread(IMG / "bread-supply-solution.svg", "supply")
+    fig_quinoa_drought(IMG / "quinoa-drought.svg")
     return 0
 
 
