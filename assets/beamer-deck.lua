@@ -333,7 +333,7 @@ function Div(el)
     out:insert(pandoc.RawBlock('latex', '\\par\\endgroup'))
     return out
   end
-  if el.classes:includes('figcap') then
+  if el.classes:includes('figcap') or el.classes:includes('source') then
     local out = pandoc.List({pandoc.RawBlock('latex',
       '\\vspace{0.3em}\\begingroup\\footnotesize\\color{muted}\\centering')})
     out:extend(el.content)

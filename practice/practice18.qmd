@@ -8,7 +8,7 @@ format: html
 ---
 
 ::: {.practice-links}
-[Lecture 18 slides](../slides/lecture18.html) · [Worksheet 18 (PDF)](../worksheets/worksheet18.pdf) · [Module IV: Markets with Many Buyers and Sellers](../content/markets-with-many-buyers-and-sellers.qmd)
+[Lecture 18 slides](../slides/lecture18.html) · [Module IV: Markets with Many Buyers and Sellers](../content/markets-with-many-buyers-and-sellers.qmd)
 :::
 
 Work through each problem on paper before you open its **Solution**.

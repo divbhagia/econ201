@@ -1,6 +1,6 @@
 """
 Numbers and figures for Lecture 18: shifts in supply and demand (CORE 8.6),
-and for Worksheet 18 and Practice 18.
+and for Worksheet 19 (used with lecture 19) and Practice 18.
 
 Run from the course root:
 
@@ -47,7 +47,7 @@ supply P = 1.5 + 3Q/100, the same as 100 million pounds fewer at every
 price. At $3, 50 grown and 150 wanted: excess demand 100. New equilibrium
 E: 100 million pounds at $4.50.
 
-Worksheet 18 (its own market, Div): pumpkins at the fall market, pumpkins a
+Worksheet 19 (its own market, Div): pumpkins at the fall market, pumpkins a
 day. Demand P = 10 - Q/10, supply P = 2 + Q/10, equilibrium 40 pumpkins at
 $6. Halloween week: 20 more wanted at every price, demand P = 12 - Q/10; at
 $6, 60 wanted and 40 offered, excess demand 20; new equilibrium 50 at $7. A
