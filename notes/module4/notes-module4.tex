@@ -1,0 +1,329 @@
+% !TEX program = lualatex
+% ECON 201, Module IV notes: competitive markets. Organized by concept, not by
+% lecture, and built as one story around a stylized market for eggs (Div,
+% 2026-11-03). Numbers are asserted in figures/make_notes_module4.py. Listed by
+% name in _quarto.yml, since the notes/*.pdf glob does not reach this folder.
+% Build from the course root:
+%   TEXINPUTS=../: latexmk -lualatex -cd notes/module4/notes-module4.tex && latexmk -c -cd notes/module4/notes-module4.tex
+\DocumentMetadata{
+  pdfstandard=UA-2,
+  pdfversion=2.0,
+  lang=en-US,
+  tagging=on
+}
+\documentclass[11pt]{article}
+\usepackage{notes}
+\usepackage{graphicx}
+% Tighter lists than article's default.
+\makeatletter
+\def\@listi{\leftmargin\leftmargini \topsep 3pt \partopsep 0pt \parsep 0pt \itemsep 2pt}
+\let\@listI\@listi
+\makeatother
+\hypersetup{pdftitle={ECON 201 Module IV notes: Competitive Markets},
+            pdfauthor={Div Bhagia}}
+% A numbered figure: width, file, alt text, label, caption.
+\newcounter{nfig}
+\newcommand{\fig}[5]{\par\vspace{2pt}{\centering\includegraphics[width=#1\textwidth, alt={#3}]{figures/#2.pdf}\par}\refstepcounter{nfig}\label{fig:#4}{\centering\fontsize{10.5}{13}\selectfont\color{muted}Figure \thenfig: #5\par}\vspace{4pt}}
+% Same scale for every figure from section 3 on, so every panel prints the same size.
+\newcommand{\figs}[5]{\par\vspace{2pt}{\centering\includegraphics[scale=0.6, alt={#3}]{figures/#2.pdf}\par}\refstepcounter{nfig}\label{fig:#4}{\centering\fontsize{10.5}{13}\selectfont\color{muted}Figure \thenfig: #5\par}\vspace{4pt}}
+\setlength{\leftmargini}{1.6em}
+
+% Numbered subsections, in the darker accent.
+\titleformat{\subsection}{\normalsize\bfseries\color{accentdark}}{\thesubsection}{0.5em}{}
+\titlespacing*{\subsection}{0pt}{8pt plus 2pt}{3pt}
+
+% Under each heading: the lectures and textbook sections it draws on.
+\newcommand{\secinfo}[1]{{\small\color{muted}#1\par}\vspace{2pt}}
+% Content flows without forced page breaks (Div, 2026-11-03); this only stops a
+% heading from sitting alone at the foot of a page. Not \needspace, whose negative
+% penalty pulls page breaks to every heading.
+\newcommand{\headroom}[1]{\par\ifdim\dimexpr\pagegoal-\pagetotal\relax<#1\relax\newpage\fi}
+\AddToHook{cmd/section/before}{\headroom{7\baselineskip}}
+\AddToHook{cmd/subsection/before}{\headroom{4\baselineskip}}
+
+\begin{document}
+\fancyfoot[C]{\small\hyperlink{contents}{\textcolor{accent}{Back to contents}}}
+
+\notestitle{Module IV}{Competitive Markets}{The concepts of this module, with worked examples. Reading: CORE sections 8.1--8.10, 8.12, and 8.13. Click any title in the contents below to jump to it.}
+
+\setcounter{tocdepth}{2}
+\hypertarget{contents}{}
+\tableofcontents
+
+\newpage
+\section{Introduction to Competitive Markets}
+\secinfo{CORE 8.3 and 8.10. Lectures 15, 16, and 19.}
+
+Before the midterm, we studied firms that were the only seller of their product, which differed at least a little from what rivals sold. So each firm faced limited competition and had some control over its price: it was a \key{price-setter}. Now we turn to markets at the other end of the spectrum, where competition is as intense as it can be: a \key{perfectly competitive market}, defined by four features:
+\begin{itemize}
+\item[(i)] There are many buyers and many sellers, each acting independently, and each is small relative to the market as a whole.
+\item[(ii)] The goods sold are identical.
+\item[(iii)] Everyone is aware of the prices at which others are trading.
+\item[(iv)] Everyone seeks the best price available.
+\end{itemize}
+
+Some markets fit this description well, for example, farm goods like wheat: many farmers grow it, one farmer's wheat is much like another's, and the going price is widely known. In these markets, sellers and buyers are both \key{price-takers}: they simply sell or buy at the going market price, because that is the best they can do.
+
+\key{Why do sellers just sell at the going price?}
+\begin{itemize}
+\item If a seller charges more, buyers go to another seller offering the same good for less.
+\item If a seller charges less, it only cuts its profit: it is small, so it could already sell all it wants at the market price.
+\end{itemize}
+
+\key{Why do buyers just buy at the going price?}
+\begin{itemize}
+\item If a buyer offers less, sellers go to another buyer who will pay the going price.
+\item If a buyer offers more, they only pay more: they are small, so they could already buy all they want at the going price.
+\end{itemize}
+
+Since every trade happens at that one price, this is called the \key{Law of One Price}. But how does this price get determined? As we lay out in the rest of these notes, the market price is determined by the choices of buyers and sellers together, through supply and demand in the market.
+
+\key{Is the competitive market a good model?} Not exactly: many markets do not meet these conditions:
+\begin{itemize}
+\item Few or coordinated sellers (i): some markets have only a few firms, because of large fixed costs, like wireless carriers, or patents, like a new medicine. Even with many sellers, a group can form a cartel to limit output and raise the price, as OPEC has done in oil.
+\item Goods that are not identical (ii): many goods, like breakfast cereals and cars, are differentiated, so a seller can charge a little more without losing all its buyers.
+\item Buyers who do not compare prices (iii and iv): checking prices takes time, so two gas stations on the same road can charge different prices and still both sell.
+\end{itemize}
+But it is a useful benchmark: it shows what a market does when competition is as intense as it can be, so we can judge real markets against it.
+
+\section{Supply and Demand}
+\secinfo{CORE 8.2 and 8.4. Lectures 15 and 16.}
+
+\subsection{Demand}
+
+The demand curve shows how much buyers want to buy at any given price. Demand comes from buyers' willingness to pay (WTP), the most each would pay for the good. For example, say 25 shoppers each want a dozen eggs:
+\begin{itemize}
+\item 10 shoppers have a WTP of \$2.
+\item 10 shoppers have a WTP of \$4.
+\item 5 shoppers have a WTP of \$6.
+\end{itemize}
+A buyer only wants to buy if $\text{WTP} \geq P$, where $P$ is the price, so the demand at each price is:
+\begin{itemize}
+\item At \$2, demand is 25, since all 25 shoppers have $\text{WTP} \geq \$2$.
+\item At \$4, demand is 15, since only 15 shoppers have $\text{WTP} \geq \$4$.
+\item At \$6, demand is 5, since only 5 shoppers have $\text{WTP} \geq \$6$.
+\end{itemize}
+
+We plot this as a curve, with the price on the vertical axis and the corresponding demand on the horizontal axis. Panel (a) of Figure~\ref{fig:demand} shows the demand curve for this example. Panel (b) uses the same price scale for a market with many buyers with many different WTPs, so much more is demanded at each price and the steps smooth into a line.
+
+\fig{1.0}{eggs-demand}{Two panels, each with price P from 0 to 8 dollars on the vertical axis and quantity Q on the horizontal. Panel a, the example above: a step demand curve at 6 dollars for the first 5 dozen, 4 dollars to 15 dozen, and 2 dollars to 25 dozen. Panel b, many buyers: a straight demand curve falling from 8 dollars at zero to zero at 320 dozen, with dashed guides marking 160 dozen at 4 dollars.}{demand}{Demand curves: (a) the 25 shoppers, and (b) many buyers with many different WTPs.}
+
+There are two ways to read any point on a demand curve:
+\begin{itemize}
+\item For a given price, go across to the curve and drop down to the quantity: that is the quantity demanded at that price. For example, at \$4, the quantity demanded is 160.
+\item For a given quantity $Q$, the height of the curve is the WTP of the $Q$th buyer. For example, the height at 160 is \$4, so the 160th buyer's WTP is \$4. At any price above \$4, this buyer does not buy, so the quantity demanded is below 160. Once the price falls to \$4, the most they would pay, they buy and the quantity demanded reaches 160.
+\end{itemize}
+
+\subsection{Supply}
+
+The supply curve shows how much sellers want to sell at any given price. Supply comes from sellers' marginal cost (MC), the cost of producing one more unit. For example, say three farms sell eggs:
+\begin{itemize}
+\item Sunny Side can produce 10 dozen a week at an MC of \$3, and with extra hens 10 more at \$6.
+\item Red Barn can produce 10 dozen at an MC of \$4.
+\item Golden Yolk can produce 10 dozen at an MC of \$6.
+\end{itemize}
+A seller only wants to sell a unit if $\text{MC} \leq P$, so the supply at each price is:
+\begin{itemize}
+\item At \$3, supply is 10, since only Sunny Side's first 10 dozen have $\text{MC} \leq \$3$.
+\item At \$4, supply is 20, since Red Barn's 10 dozen also have $\text{MC} \leq \$4$.
+\item At \$6, supply is 40, since Golden Yolk's and Sunny Side's extra dozens also have $\text{MC} \leq \$6$.
+\end{itemize}
+
+We can plot the supply curve with the price on the vertical axis and the quantity on the horizontal axis, adding up sellers from the lowest MC up. Panel (a) of Figure~\ref{fig:supply} shows the supply curve for this example. Panel (b) uses the same price scale for a market with many sellers with many different MCs, so much more is supplied at each price and the steps smooth into a line.
+
+\fig{1.0}{eggs-supply}{Two panels, each with price P from 0 to 8 dollars on the vertical axis and quantity Q on the horizontal. Panel a, the example above: a step supply curve at 3 dollars to 10 dozen, labelled Sunny Side; 4 dollars to 20, labelled Red Barn; and 6 dollars to 40, labelled Golden Yolk and Sunny Side. Panel b, many sellers: a straight supply curve rising from 2 dollars at zero to 6 dollars at 320 dozen, with dashed guides marking 160 dozen at 4 dollars.}{supply}{Supply curves: (a) the three farms, and (b) many sellers with many different MCs.}
+
+There are two ways to read any point on a supply curve:
+\begin{itemize}
+\item For a given price, go across to the curve and drop down to the quantity: that is the quantity supplied at that price. For example, at \$4, the quantity supplied is 160.
+\item For a given quantity $Q$, the height of the curve is the MC of the $Q$th unit. For example, the height at 160 is \$4, so the 160th unit's MC is \$4. At any price below \$4, this unit is not produced, so the quantity supplied is below 160. Once the price rises to \$4, enough to cover its cost, it is produced and the quantity supplied reaches 160.
+\end{itemize}
+
+\section{Market-Clearing Price}
+\secinfo{CORE 8.2 and 8.3. Lectures 15 and 16.}
+
+In a competitive market, the \key{market-clearing price} is the price at which the quantity demanded equals the quantity supplied. We also call it the \key{equilibrium price}. In economics, an equilibrium is a situation that stays the same unless something from outside changes it, because no one has a reason to act differently. That describes this price: everyone who wants to buy at it can buy, everyone who wants to sell at it can sell, so no one has a reason to offer a different price. A market that clears with everyone a price-taker is in \key{competitive equilibrium}.
+
+For example, take the two curves from panel (b) of Figures~\ref{fig:demand} and~\ref{fig:supply}, for eggs at a large farmers market with many farms, with $P$ in dollars a dozen and $Q$ in dozens a week. Demand is $P = 8 - Q/40$ and supply is $P = 2 + Q/80$. Figure~\ref{fig:eq} plots both curves.
+
+\figs{}{eggs-equilibrium}{The egg market, with a labelled tick every 40 dozen and every dollar. Demand falls from 8 dollars at zero. Supply rises from 2 dollars at zero. They cross at E, 160 dozen and 4 dollars, with dashed guides to both axes. A light orange dashed line at 5 dollars from 120 to 240 dozen is labelled Excess supply, 120, with light dashed drops to both quantities on the horizontal axis. A light blue dashed line at 2 dollars from zero to 240 dozen is labelled Excess demand, 240.}{eq}{The egg market clears at E. There is excess supply at \$5 and excess demand at \$2.}
+
+The market-clearing price is at point E: \$4, with 160 dozen bought and sold. We can also find it directly from the equations, by setting demand and supply equal:
+\[
+  8 - \frac{Q}{40} = 2 + \frac{Q}{80}
+  \quad\Longrightarrow\quad
+  6 = \frac{3Q}{80}
+  \quad\Longrightarrow\quad
+  Q^* = 160, \qquad P^* = 8 - \frac{160}{40} = 4.
+\]
+If the curves are written with $Q$ on the left, as $Q = 320 - 40P$ and $Q = 80P - 160$, set the two quantities equal instead: $320 - 40P = 80P - 160$ gives $P^* = 4$, and then $Q^* = 320 - 40 \times 4 = 160$.
+
+\key{Why does the price settle at \$4?} Imagine the price were something else.
+\begin{itemize}
+\item Suppose the price is above market clearing, say \$5. Farms want to sell 240 dozen, but buyers want only 120. This \key{excess supply} of 120 leaves farms with unsold eggs. A farm stuck with unsold eggs would rather take a little less than sell nothing, so it cuts its price, and the price falls.
+\item Suppose the price is below market clearing, say \$2. Buyers want 240 dozen, but no farm will sell at that price. With this \key{excess demand} of 240, shoppers go home empty-handed. They would rather pay a little more than go without, and farms see they can charge more, so the price rises.
+\end{itemize}
+Only at \$4 do buyers want exactly what farms want to sell. No eggs go unsold and no one who would pay \$4 goes without, so the price stops moving.
+
+\section{Efficiency and Deadweight Loss}
+\secinfo{CORE 8.5. Lecture 17.}
+
+\subsection{Gains From Trade}\label{sec:gains}
+
+Buyers and sellers trade because both gain. A buyer gains $\text{WTP} - P$, the gap between what a dozen is worth to them and what they pay. A seller gains $P - \text{MC}$, the gap between the price and what the dozen cost to produce. At \$4, the 80th buyer would pay \$6, so gains \$2, and the 80th dozen costs \$3 to produce, so earns its farm \$1. Total surplus on the 80th dozen sold is \$3.
+
+\figs{}{eggs-surplus}{Two panels of the egg market, with E at 160 dozen and 4 dollars. Panel a, one buyer and one seller: at 80 dozen, the demand curve is at 6 dollars and the supply curve at 3 dollars. A blue bar from 4 to 6 dollars is labelled Buyer gains 2 dollars, and an orange bar from 3 to 4 dollars is labelled Seller gains 1 dollar. Panel b, all buyers and sellers: the triangle between the demand curve and the 4 dollar price line, out to 160 dozen, is shaded blue and labelled CS, and the triangle between the 4 dollar line and the supply curve is shaded orange and labelled PS.}{surplus}{Gains from trade: (a) on the 80th dozen, and (b) added up over all buyers and sellers.}
+
+\begin{itemize}
+\item \key{Consumer surplus (CS)}, the blue triangle in panel (b) of Figure~\ref{fig:surplus}, adds up the buyers' gains over all 160 dozen bought, from the 1st to the 160th. Each gain is the gap between the demand curve and the price, so the sum is the area between them: $\tfrac{1}{2} \times 160 \times (8 - 4) = 320$.
+\item \key{Producer surplus (PS)}, the orange triangle, adds up the sellers' gains over the same 160 dozen, as the area between the price and the supply curve: $\tfrac{1}{2} \times 160 \times (4 - 2) = 160$.
+\item \key{Total surplus}, the gains from all the trades in the market, is their sum, \$480.
+\end{itemize}
+
+\subsection{Pareto Efficiency and Deadweight Loss}\label{sec:pareto}
+
+At the competitive equilibrium, point E in Figure~\ref{fig:surplus}, total surplus is as large as it can be. One way to see this: in equilibrium 160 dozen are sold, and for the 160th dozen, the buyer's WTP of \$4 exactly equals the seller's MC of \$4. If fewer dozens were sold, some dozens with WTP above MC would go unsold, and their surplus would be lost. If more were sold, the extra dozens would have MC above WTP, and selling them would lower total surplus.
+
+Compare the price-setting firms from before the midterm. They chose the quantity where marginal revenue (MR) equals MC. Since MR is below the price, they charged a markup above MC, and some trades with WTP above MC were missed. The surplus lost on those trades is what we calculated as the \key{deadweight loss (DWL)}. In a competitive market there are no such lost trades, so there is no DWL.
+
+In fact, you can see that if the price is held above or below the competitive price of \$4, fewer dozens are traded and we get a DWL, in grey in Figure~\ref{fig:dwl}. Away from \$4, the quantity traded is set by the \key{short side} of the market, the side that wants to trade less, since no one can be made to buy or sell more than they want.
+
+\figs{}{eggs-dwl}{Two panels of the egg market with E at 160 dozen and 4 dollars. In the first, titled Price held at 6 dollars, a dashed line at 6 dollars meets demand at 80 dozen, where supply is at 3 dollars. The area between demand and 6 dollars out to 80 is shaded blue, labelled CS; the area between 6 dollars and supply out to 80 is shaded orange, labelled PS; the triangle between demand and supply from 80 to 160 is shaded grey, labelled DWL. In the second, titled Price held at 3 dollars 50, a dashed line at 3 dollars 50 meets supply at 120 dozen, where demand is at 5 dollars. The area between demand and 3 dollars 50 out to 120 is shaded blue, labelled CS; the thin area between 3 dollars 50 and supply out to 120 is shaded orange, labelled PS; and a smaller grey triangle between demand and supply from 120 to 160 is labelled DWL. Both panels have gridlines every 50 cents.}{dwl}{Holding the price (a) above or (b) below \$4 loses the trades in the grey triangle.}
+
+\begin{itemize}
+\item \emph{(a) Price held above \$4.} Say farms form a cartel and charge \$6. Then 80 dozen get sold at that price, so $\text{CS} = \tfrac{1}{2} \times 80 \times 2 = 80$ and $\text{PS} = 280$ (the rectangle from \$3 to \$6, $3 \times 80 = 240$, plus the small triangle below it, $\tfrac{1}{2} \times 80 \times 1 = 40$).
+\item \emph{(b) Price held below \$4.} Say the government caps the price at \$3.50. Then 120 dozen get sold at that price, so $\text{CS} = 360$ (the triangle above \$5, $\tfrac{1}{2} \times 120 \times 3 = 180$, plus the rectangle from \$3.50 to \$5, $1.5 \times 120 = 180$) and $\text{PS} = \tfrac{1}{2} \times 120 \times 1.5 = 90$.
+\end{itemize}
+Here, the deadweight loss is the surplus lost relative to the competitive equilibrium. Total surplus is $80 + 280 = 360$ in (a) and $360 + 90 = 450$ in (b). Compare each with the \$480 we found for the competitive equilibrium in Section~\ref{sec:gains}, and the difference is the DWL: $480 - 360 = 120$ in (a) and $480 - 450 = 30$ in (b). The cartel moves surplus from buyers to farms, and the cap moves it from farms to buyers.
+
+So the competitive equilibrium is \key{Pareto efficient}: no feasible change could make someone better off without making anyone worse off. With a deadweight loss, a buyer and a seller could both gain from a trade that is not happening. At E, no such trades are left. This result needs a perfectly competitive market at its equilibrium, plus two further conditions, which often fail in practice:
+\begin{itemize}
+\item trade has no \key{external effects}, costs or benefits imposed on others that the person acting does not take into account, such as carbon emissions;
+\item each trade is governed by a \key{complete contract}, one that covers everything either side cares about and can be enforced at almost no cost. An employment contract is incomplete, for example: it can set your hours and pay, but it cannot spell out how hard you work.
+\end{itemize}
+Efficiency also says nothing about fairness.
+
+\subsection{How the Gains Are Split}
+
+Surpluses show who gets what, and the split depends on the \key{elasticity} of the curves: a steep curve is inelastic, a flat one elastic. When demand is inelastic, many buyers value the good well above the price, so they gain a lot. When supply is inelastic, many units cost well below the price, so sellers gain a lot. The less elastic side keeps more: here demand is steeper, so buyers keep 2/3. You can see this for yourself: fix demand, then draw a steeper and a flatter supply curve through the same equilibrium point and compare the triangles. Then fix supply and do the same with demand.
+
+\section{Shifts in Demand and Supply}
+\secinfo{CORE 8.6 to 8.8. Lectures 18 and 19.}
+
+So far we have taken the demand and supply curves as given. But the curves shift when something outside the market changes. We call such a change an \key{exogenous shock}. A shock shifts a curve, meaning a different quantity at every price. The price then changes, which moves the market along the other curve. There are four possible shocks, each explained below.
+
+\subsection{Demand Shifts Right}
+
+A high-protein diet trend catches on, and more people want eggs. At any given price, buyers now want 120 more dozen than before.
+
+\figs{}{eggs-shift-a}{The egg market, dozens a week from 0 to 320 and dollars a dozen from 0 to 8. Demand falls from 8 dollars and supply rises from 2 dollars, crossing at A, 160 dozen at 4 dollars. A dashed new demand curve runs 120 dozen to the right. A light dashed line at 4 dollars from 160 to 280 dozen is labelled Excess demand, 120, with a light dashed drop to 280 on the horizontal axis. B marks 240 dozen at 5 dollars, where new demand meets supply, and small arrows run along the supply curve from A to B. Dashed guides run from A and B to both axes.}{shift-a}{Demand shifts right, and the market moves up the supply curve from A to B.}
+\begin{itemize}
+\item At the old price of \$4, there is now an excess demand of 120: buyers want 280 dozen, but farms offer only 160.
+\item Buyers cannot find enough eggs and compete for them. Farms see this, realize their eggs could sell for more, and raise their prices (for a while they are \key{price-makers}, earning a \key{disequilibrium rent}, a profit above what keeps them in business).
+\item As the price rises, more eggs are supplied: dozens that were not worth selling at \$4, because their MC was above \$4, can now be sold at a profit. The higher price also deters some buyers.
+\item With more eggs supplied and fewer wanted, the market reaches its new equilibrium at B: 240 dozen at \$5.
+\end{itemize}
+The demand curve shifted, not the supply curve, since farms' costs did not change. The adjustment happened along the supply curve.
+
+\subsection{Demand Shifts Left}
+
+A cholesterol scare turns people away from eggs. At any given price, buyers now want 120 fewer dozen than before.
+
+\figs{}{eggs-shift-b}{The egg market, dozens a week from 0 to 320 and dollars a dozen from 0 to 8. Demand falls from 8 dollars and supply rises from 2 dollars, crossing at A, 160 dozen at 4 dollars. A dashed new demand curve runs 120 dozen to the left. A light dashed line at 4 dollars from 40 to 160 dozen is labelled Excess supply, 120, with a light dashed drop to 40 on the horizontal axis. B marks 80 dozen at 3 dollars, where new demand meets supply, and small arrows run along the supply curve from A to B. Dashed guides run from A and B to both axes.}{shift-b}{Demand shifts left, and the market moves down the supply curve from A to B.}
+\begin{itemize}
+\item At the old price of \$4, there is now an excess supply of 120: farms offer 160 dozen, but buyers want only 40.
+\item Farms are left with unsold eggs. Rather than sell nothing, they accept lower offers, and the price falls.
+\item As the price falls, fewer eggs are supplied: dozens with an MC above the new price are no longer worth selling. The lower price also brings some buyers back.
+\item With fewer eggs supplied and more wanted, the market reaches its new equilibrium at B: 80 dozen at \$3.
+\end{itemize}
+The demand curve shifted, not the supply curve, since farms' costs did not change. The adjustment happened along the supply curve.
+
+\subsection{Supply Shifts Right}
+
+Cheaper feed makes eggs less costly to produce, lowering the cost of every dozen by \$1.50. At any given price, farms now want to sell 120 more dozen than before.
+
+\figs{}{eggs-shift-c}{The egg market, dozens a week from 0 to 320 and dollars a dozen from 0 to 8. Demand falls from 8 dollars and supply rises from 2 dollars, crossing at A, 160 dozen at 4 dollars. A dashed new supply curve runs 1 dollar 50 lower, which is 120 dozen to the right. A light dashed line at 4 dollars from 160 to 280 dozen is labelled Excess supply, 120, with a light dashed drop to 280 on the horizontal axis. B marks 200 dozen at 3 dollars, where demand meets new supply, and small arrows run along the demand curve from A to B. Dashed guides run from A and B to both axes.}{shift-c}{Supply shifts right, and the market moves down the demand curve from A to B.}
+\begin{itemize}
+\item At the old price of \$4, there is now an excess supply of 120: farms offer 280 dozen, but buyers want only 160.
+\item Farms are left with unsold eggs. Rather than sell nothing, they accept lower offers, and the price falls.
+\item As the price falls, more eggs are wanted: buyers whose WTP was below \$4 now find eggs worth buying. The lower price also leads farms to cut back on the dozens that cost the most to produce.
+\item With more eggs wanted and fewer supplied, the market reaches its new equilibrium at B: 200 dozen at \$3.
+\end{itemize}
+The supply curve shifted, not the demand curve, since nothing changed for buyers. The adjustment happened along the demand curve.
+
+\subsection{Supply Shifts Left}
+
+Bird flu kills hens, raising the cost of every dozen by \$1.50. At any given price, farms now want to sell 120 fewer dozen than before.
+
+\figs{}{eggs-shift-d}{The egg market, dozens a week from 0 to 320 and dollars a dozen from 0 to 8. Demand falls from 8 dollars and supply rises from 2 dollars, crossing at A, 160 dozen at 4 dollars. A dashed new supply curve runs 1 dollar 50 higher, which is 120 dozen to the left. A light dashed line at 4 dollars from 40 to 160 dozen is labelled Excess demand, 120, with a light dashed drop to 40 on the horizontal axis. B marks 120 dozen at 5 dollars, where demand meets new supply, and small arrows run along the demand curve from A to B. Dashed guides run from A and B to both axes.}{shift-d}{Supply shifts left, and the market moves up the demand curve from A to B.}
+\begin{itemize}
+\item At the old price of \$4, there is now an excess demand of 120: buyers want 160 dozen, but farms offer only 40.
+\item Buyers cannot find enough eggs and compete for them. Farms see this and raise their prices (for a while they are price-makers, earning a disequilibrium rent).
+\item As the price rises, fewer eggs are wanted: buyers whose WTP is below the new price stop buying. The higher price also makes it worth selling dozens that cost more to produce.
+\item With fewer eggs wanted and more supplied, the market reaches its new equilibrium at B: 120 dozen at \$5.
+\end{itemize}
+The supply curve shifted, not the demand curve, since nothing changed for buyers. The adjustment happened along the demand curve.
+
+\key{What do price and quantity tell us together?} Put the four shocks side by side: a shift in demand moves the price and quantity in the same direction, and a shift in supply moves them in opposite directions.
+
+\begin{center}
+\tagpdfsetup{table/header-rows={1}}
+\begin{tabular}{@{}l c c@{}}
+\toprule
+\textbf{Shock} & \textbf{Price} & \textbf{Quantity} \\
+\midrule
+Demand shifts right & $\uparrow$ & $\uparrow$ \\
+Demand shifts left & $\downarrow$ & $\downarrow$ \\
+Supply shifts right & $\downarrow$ & $\uparrow$ \\
+Supply shifts left & $\uparrow$ & $\downarrow$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+So the price alone does not tell you which curve shifted. Say the price rises. That could be because demand shifted right or because supply shifted left, since both push the price up. But now look at the quantity: if it rose too, demand shifted right; if it fell, supply shifted left. By looking at price and quantity together, you can try to figure out what is happening in a market.
+
+\subsection{Short Run and Long Run}
+
+What shifts the supply curve depends on what is held fixed. The short run and long run are not set lengths of time.
+\begin{itemize}
+\item In the \key{short run}, the number of firms and their capacity are fixed. Supply shifts when firms' costs or plans change: a new technology shifts it right, and a drought, a costlier input, a war, or producers agreeing to sell less shifts it left.
+\item In the \key{long run}, firms can invest, enter, or leave. Profit above what owners could earn elsewhere draws in new firms and shifts supply right. Losses drive firms out and shift it left.
+\end{itemize}
+
+To see what the long run changes, pick up from Figure~\ref{fig:shift-a}, where demand shifted right and the market moved from A to B, 240 dozen at \$5. That was the short run, with the same farms in the market. Figure~\ref{fig:longrun} adds what happens next, and there are two ways to think about it.
+
+\figs{}{eggs-longrun}{Two panels of the egg market of the earlier figure, carried on. In both, the demand curve and the supply curve meet at A, 160 dozen at 4 dollars, a dashed new demand curve lies 120 dozen to the right and meets supply at B, 240 dozen at 5 dollars, and C marks 280 dozen at 4 dollars on new demand. Small arrows run along supply from A to B. In the first, titled As another shift, a dashed new supply curve lies 120 dozen to the right of supply and meets new demand at C, a light dashed line at 5 dollars from 240 to 360 dozen is labelled Excess supply, 120, and small arrows run along new demand from B to C. In the second, titled As a flatter supply curve, supply is labelled Short-run supply, and a dashed horizontal line at 4 dollars through A and C is labelled Long-run supply, with small arrows along it from A to C.}{longrun}{From Figure~\ref{fig:shift-a}: the long run seen as (a) a shift in supply or (b) a flatter supply curve.}
+
+\begin{itemize}
+\item \emph{(a) As another shift.} Eggs at B sell at \$5, well above what it costs most farms to produce them. Those profits draw in new farms and bigger flocks, which offer 120 more at every price, so supply shifts right. At \$5, farms would now offer 360 but buyers want 240: an excess supply of 120. The price falls until the market clears at C, 280 at \$4.
+\item \emph{(b) As a flatter supply curve.} Skip the steps and compare A with C: demand shifted right, and the market ended up with 120 more dozen at the same \$4. Given time, firms respond, so supply is more elastic in the long run: a long-run supply curve joining A and C is flatter than the short-run one, flat at \$4 in this example. A steeper supply curve means more adjustment in the price: when demand shifts, the price moves more and the quantity less.
+\end{itemize}
+So the price rises sharply at first, then the rise is competed away as supply catches up, while the quantity keeps rising.
+
+Demand also responds more given time, as buyers find substitutes. (The same holds for demand: when supply shifts, a steep demand curve makes the price move more and the quantity less.) In the oil market, both supply and demand are inelastic in the short run, because new wells take years and users cannot switch fuels quickly, so a shift moves the price a lot and the quantity little.
+
+\section{Taxes and Price Controls}
+\secinfo{CORE 8.12 and 8.13. Lecture 20.}
+
+\subsection{Taxes}
+
+Governments tax goods to raise revenue and to change what people buy. A \key{percentage tax} on sellers raises their marginal cost of supplying each unit by that share, since they must hand that share to the government, so the supply curve rotates up. With a 100\% tax, supply rotates up to the dashed line in Figure~\ref{fig:tax}. The market moves from A to B: 80 dozen. Buyers pay \$6, sellers keep \$3, and the other \$3, which is 100\% of \$3, goes to the government.
+
+\figs{}{eggs-tax}{The egg market with a tax. Demand falls from 8 dollars. Supply rises from 2 dollars, and a dashed line labelled Supply with tax runs at twice its height, from 4 dollars. A marks 160 dozen at 4 dollars. B marks 80 at 6 dollars, where demand meets supply with tax, and a dot on the supply curve at 80 marks 3 dollars, what sellers keep. The triangle between demand and 6 dollars out to 80 is shaded blue, labelled CS. The rectangle between 3 and 6 dollars out to 80 is shaded green, labelled Tax. The triangle between 3 dollars and supply out to 80 is shaded orange, labelled PS. The triangle from 80 to 160 between the curves is shaded grey, labelled DWL.}{tax}{A 100\% tax: buyers pay \$6, sellers keep \$3, and the grey triangle is lost.}
+
+\key{Tax incidence} is how the burden of a tax is shared between buyers and sellers, whoever hands the money to the government. The law says sellers pay this tax, but buyers pay \$2 more than before and sellers keep only \$1 less, so buyers bear two thirds of it. The price buyers pay does not rise by the full tax, because buyers respond by buying less, and fewer dozens cost less to produce. As with the split of surplus, the less elastic side bears more, since it changes its behavior less. The tax also changes the surpluses:
+\begin{itemize}
+\item CS falls from \$320 to $\tfrac{1}{2} \times 80 \times (8 - 6) = 80$.
+\item PS falls from \$160 to $\tfrac{1}{2} \times 80 \times (3 - 2) = 40$.
+\item Tax revenue is $3 \times 80 = 240$.
+\item The 80 dozen no longer sold were worth more than they cost: $\text{DWL} = \tfrac{1}{2} \times 80 \times 3 = 120$.
+\end{itemize}
+To raise revenue with little deadweight loss, tax a good with inelastic demand, since the quantity barely falls, though buyers then bear most of the tax. To cut consumption of something harmful, such as tobacco or carbon, a tax works best when demand is elastic, so that the quantity falls a lot.
+
+\subsection{Price Ceilings}
+
+A government may instead cap the price below the market level, as a rent ceiling does for housing. We saw the \$3.50 cap in Figure~\ref{fig:dwl}: farms offer 120 dozen, fewer than buyers want at that price, so trade happens on the short side of the market, 120 dozen, with a deadweight loss of \$30. Buyers who get eggs at \$3.50 gain, but which buyers get them is no longer decided by willingness to pay, so the eggs need not go to those who value them most.
+
+Remember, these losses from taxes and price caps hold only if all the conditions in Section~\ref{sec:pareto} are met, and the real world is less than perfect. After the midterm we turn to markets that deviate from perfect competition, and there government interventions like these can make sense again.
+
+\end{document}

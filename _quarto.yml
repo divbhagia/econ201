@@ -25,6 +25,14 @@ project:
     - exams/midterm1/midterm1-help-sheet.pdf
     - exams/midterm1/midterm1-practice.pdf
     - exams/midterm1/midterm1-practice-solutions.pdf
+    # Module IV notes and Midterm 2 materials, listed one by one for the same
+    # reason.
+    - notes/module4/notes-module4.pdf
+    - exams/midterm2/midterm2-study-guide.pdf
+    - exams/midterm2/midterm2-practice-a.pdf
+    - exams/midterm2/midterm2-practice-a-solutions.pdf
+    - exams/midterm2/midterm2-practice-b.pdf
+    - exams/midterm2/midterm2-practice-b-solutions.pdf
     # Card schedule read by experiment/market-board.qmd at runtime
     - experiment/market-data.json
     # Last class's results, exported from the board; optional
