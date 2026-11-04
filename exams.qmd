@@ -8,9 +8,7 @@ format: html
 
 ## Midterm 2
 
-Monday, November 9, in class, 60 minutes. The exam covers Lectures 15 to 20.
-
-The exam has two parts, weighted equally at 10 points each: ten multiple-choice questions and one long-form question. Each part is its own sheet, printed front and back. **Write your name and your CWID, one digit per box, at the top of every sheet.** The exam is closed book and closed notes. Bring a basic calculator. There is no help sheet, since there is not much to put on one: the only formulas you might need are for the area of a triangle or a rectangle, and any question that needs one will give it.
+Monday, November 9, in class, 60 minutes, covering Lectures 15 to 20. The exam has two parts worth 10 points each: ten multiple-choice questions and one long-form question. It is closed book and closed notes. Bring a basic calculator; there is no help sheet.
 
 -   [Module IV notes (PDF)](notes/module4/notes-module4.pdf): nearly everything you need for this exam, organized by concept.
 -   [Study guide (PDF)](exams/midterm2/midterm2-study-guide.pdf): how to prepare, and what you should know.
