@@ -11,7 +11,9 @@ market, dollars a dozen and dozens a week.
 Evenly spaced ticks and gridlines on every figure, with every point the text
 quotes on a labelled tick (Div, 2026-11-03: no exceptions). The deadweight-loss
 figure has gridlines every 50 cents, labelled at whole dollars and at its $3.50
-cap, the one quoted price off the whole-dollar grid. Axes are labelled P and Q.
+cap, the one quoted price off the whole-dollar grid. The tax figure has
+whole-dollar gridlines, with $3.75 and $4.50 labelled at their guides in place
+of the $4 label, which would collide, so A carries its price. Axes are labelled P and Q.
 Everything prints at 8 points or more. The numbers are not real egg data.
 """
 import glob as _glob
@@ -78,10 +80,13 @@ assert cross(8, B, F(1, 2), K) == (200, 3) and (4 - F(1, 2)) * 80 == 280  # cost
 assert cross(8, B, F(7, 2), K) == (120, 5) and (4 - F(7, 2)) * 80 == 40   # cost up $1.50, left 120
 # The long run after demand shifts right: new farms offer 120 more at every price.
 assert cross(11, B, F(1, 2), K) == (280, 4) and (5 - F(1, 2)) * 80 == 360 and (11 - 5) * 40 == 240
-# A 100% tax on sellers: supply P = 4 + Q/40.
-assert cross(8, B, 4, 2 * K) == (80, 6) and 2 + F(80, 80) == 3 and 6 - 3 == 3
-assert tri(80, 2) == 80 and tri(80, 1) == 40 and 3 * 80 == 240 and tri(80, 3) == 120
-assert 80 + 40 + 240 + 120 == 480
+# A 20% tax on sellers: supply P = 12/5 + 3Q/200.
+assert cross(8, B, F(12, 5), F(6, 5) * K) == (140, F(9, 2)) and 2 + F(140, 80) == F(15, 4)
+assert F(9, 2) - F(15, 4) == F(3, 4) == F(1, 5) * F(15, 4)
+assert tri(140, F(7, 2)) == 245 and tri(140, F(7, 4)) == F(245, 2) and F(3, 4) * 140 == 105
+assert tri(20, F(3, 4)) == F(15, 2) and 245 + F(245, 2) + 105 + F(15, 2) == 480
+# A $0.75 unit tax on sellers reaches the same point: supply P = 11/4 + Q/80.
+assert cross(8, B, F(11, 4), K) == (140, F(9, 2))
 # Section 2: 25 shoppers, then three farms.
 SHOPPERS = [(6, 5), (4, 10), (2, 10)]
 FARMS = [(3, 10), (4, 10), (6, 20)]    # Sunny Side 10 at $3 and 10 at $6, Red Barn 10 at $4, Golden Yolk 10 at $6
@@ -402,23 +407,26 @@ tx(a2, 8, 4.38, "Long-run supply", SUPPLY, ha="left", fs=FONT - 1)
 save(fig, "eggs-longrun")
 
 fig, ax = single()
-style(ax)
-ax.fill_between([0, 80], [8, 6], 6, color=CS, zorder=1)
-ax.fill_between([0, 80], 3, 6, color=TAX, zorder=1)
-ax.fill_between([0, 80], [2, 3], 3, color=PS, zorder=1)
-ax.fill_between([80, 160], [6, 4], [3, 4], color=DWL, zorder=1)
-base(ax)
-ln(ax, 4, B, SUPPLY, 0, 160, ls=NEW)
-pt(ax, 160, 4, "A", *TOP)
-pt(ax, 80, 6, "B", *TOP)
-ax.plot([0, 80], [3, 3], color=INK, lw=1.5, ls=GUIDE, zorder=4)
-ax.plot(80, 3, marker="o", ms=8, color=INK, zorder=9)
-tx(ax, 22, 6.6, "CS")
-tx(ax, 60, 4.6, "Tax")
-tx(ax, 30, 2.65, "PS", fs=FONT - 1)
-ax.annotate("DWL", xy=(115, 4.25), xytext=(115, 1.25), fontsize=FONT - 1, fontweight="bold", ha="center",
+style(ax, qmax=200, qstep=20)
+ax.set_yticks(range(9), ["$0", "$1", "$2", "$3", "", "$5", "$6", "$7", "$8"])
+ax.set_yticks([3.75, 4.5], ["$3.75", "$4.50"], minor=True)
+ax.tick_params(which="minor", length=0, labelsize=FONT)
+ax.fill_between([0, 140], [8, 4.5], 4.5, color=CS, zorder=1)
+ax.fill_between([0, 140], 3.75, 4.5, color=TAX, zorder=1)
+ax.fill_between([0, 140], [2, 3.75], 3.75, color=PS, zorder=1)
+ax.fill_between([140, 160], [4.5, 4], [3.75, 4], color=DWL, zorder=1)
+base(ax, 200)
+ln(ax, F(12, 5), F(6, 5) * K, SUPPLY, 0, 200, ls=NEW)
+pt(ax, 160, 4, "A ($4)", 34, -2, "left", "center")
+pt(ax, 140, 4.5, "B", 0, 8, "center", "bottom")
+ax.plot([0, 140], [3.75, 3.75], color=INK, lw=1.5, ls=GUIDE, zorder=4)
+ax.plot(140, 3.75, marker="o", ms=8, color=INK, zorder=9)
+tx(ax, 35, 5.05, "CS")
+tx(ax, 70, 4.12, "Tax")
+tx(ax, 25, 3.3, "PS")
+ax.annotate("DWL", xy=(147, 4.1), xytext=(118, 1.8), fontsize=FONT, fontweight="bold", ha="center",
             arrowprops=dict(arrowstyle="-|>", color=INK, lw=1.2), zorder=9)
-tx(ax, 245, 2.25, "Demand", DEMAND, ha="left")
-tx(ax, 318, 6.3, "Supply", SUPPLY, ha="right")
-tx(ax, 168, 7.6, "Supply with tax", SUPPLY, ha="left")
+tx(ax, 196, 2.55, "Demand", DEMAND, ha="right")
+tx(ax, 72, 2.2, "Supply", SUPPLY, ha="left")
+tx(ax, 118, 6.3, "Supply with tax", SUPPLY, ha="left")
 save(fig, "eggs-tax")

@@ -1,0 +1,118 @@
+% !TEX program = lualatex
+% ECON 201, Worksheet 20: Taxes and Price Ceilings.
+% Compile with LuaLaTeX so the PDF is tagged. Build from the course root:
+%   latexmk -lualatex -cd worksheets/worksheet20.tex && latexmk -c -cd worksheets/worksheet20.tex
+% Two sides, one sheet. Every number here is computed by
+% slides/figures/make_lecture20.py. Front: gasoline at stations in town, demand
+% P = 8 - Q/10, supply P = 2 + Q/10, taxed supply P = 3 + 3Q/20. Back: apartments
+% near campus, demand P = 2100 - 3Q, supply P = 300 + 3Q, a rent cap of $900.
+% The script also draws figures/gasoline.pdf and figures/apartments.pdf.
+% No definitions panel: nothing here needs one.
+\DocumentMetadata{
+  pdfstandard=UA-2,
+  pdfversion=2.0,
+  lang=en-US,
+  tagging=on
+}
+\documentclass[11pt]{article}
+
+\usepackage[letterpaper, margin=0.75in, top=0.5in, bottom=0.45in]{geometry}
+\usepackage{fontspec}
+\setmainfont{Fira Sans}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{needspace}
+\usepackage[most]{tcolorbox}
+\definecolor{cream}{HTML}{FDF3EA}
+\definecolor{accent}{HTML}{BF5700}
+\usepackage{titlesec}
+\titleformat{\section}{\large\bfseries\color{accent}}{}{0pt}{}
+\titlespacing*{\section}{0pt}{4pt}{2pt}
+\usepackage{hyperref}
+\hypersetup{pdftitle={ECON 201 Worksheet: Taxes and Price Ceilings}, pdfauthor={Div Bhagia}, hidelinks}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2pt}
+
+% Ruled answer space: n lines. Plain TeX loop; pgffor's \foreach breaks the
+% enumerate counter when used inside an item.
+\newcount\answerlinecount
+\newcommand{\answerlines}[1]{%
+  \par\vspace{1pt}\answerlinecount=#1
+  \loop\ifnum\answerlinecount>0
+    \rule{\linewidth}{0.3pt}\par\vspace{5pt}%
+    \advance\answerlinecount by -1
+  \repeat
+  \vspace{-5pt}}
+
+\begin{document}
+
+{\LARGE\bfseries\color{accent} Worksheet: Taxes and Price Ceilings}\hfill{\large ECON 201}
+
+\vspace{4pt}
+\section{Gasoline at stations in town}
+
+Many stations in town sell the same regular gasoline. In the graph, the solid
+lines show the original demand and supply curves.
+
+\begin{center}
+\includegraphics[width=0.74\textwidth, alt={A plotting grid, price in dollars a
+gallon on the vertical axis from 0 to 8 with gridlines every dollar, and
+thousand gallons of gasoline a day on the horizontal axis from 0 to 60 with
+gridlines every 10. The demand curve falls in a straight line from 8 dollars at
+zero gallons to 2 dollars at 60 thousand. The supply curve rises in a straight
+line from 2 dollars at zero gallons to 8 dollars at 60 thousand. They cross at
+30 thousand gallons and 5 dollars. A dashed line labelled Supply with tax runs
+50 percent above supply, rising from 3 dollars at zero gallons to 8 dollars, and
+crosses demand at 20 thousand gallons and 6 dollars.}]{figures/gasoline.pdf}
+\end{center}
+
+\vspace{4pt}
+1. What are the equilibrium price and quantity? Mark this point, A, on the graph.
+\answerlines{1}
+
+2. The city puts a 50\% tax on sellers, so their marginal cost of supplying each
+gallon is 50\% higher: the dashed line shows supply with the tax. How many gallons
+are sold, what do buyers pay, and what do sellers keep?
+\answerlines{2}
+
+3. What share of the tax do buyers bear, and what share do sellers bear?
+\answerlines{2}
+
+\clearpage
+\section{Apartments near campus}
+
+Many landlords near campus rent out similar apartments. In the graph, the lines
+show the demand and supply curves.
+
+\begin{center}
+\includegraphics[width=0.74\textwidth, alt={A plotting grid, rent in dollars a
+month on the vertical axis from 0 to 2,100 with gridlines every 300 dollars, and
+the number of apartments on the horizontal axis from 0 to 600 with gridlines
+every 100. The demand curve falls in a straight line from 2,100 dollars at zero
+apartments to 300 dollars at 600. The supply curve rises in a straight line from
+300 dollars at zero apartments to 2,100 dollars at 600. They cross at 300
+apartments and 1,200 dollars.}]{figures/apartments.pdf}
+\end{center}
+
+\vspace{4pt}
+4. What are the equilibrium rent and quantity? Mark this point, A, on the graph.
+\answerlines{1}
+
+5. The city caps the rent at \$900 a month. How many apartments do landlords
+offer, how many do renters want, and how many are rented?
+\answerlines{2}
+
+6. Do the apartments go to the renters who value them most? Explain.
+\answerlines{2}
+
+\vspace{10pt}
+\emph{Practice at home}: for the gasoline tax, calculate the consumer surplus,
+producer surplus, tax revenue, and deadweight loss. Do the same for the rent cap:
+consumer surplus, producer surplus, and deadweight loss.
+
+\end{document}

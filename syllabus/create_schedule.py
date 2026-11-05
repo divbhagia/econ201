@@ -121,6 +121,12 @@ MODULE_PRACTICE = {
     "Firms as Price Setters": "practice/practice-firms-as-price-setters",
 }
 
+# Module-level notes: module label -> PDF. Listed modules get a Notes button on
+# their content page.
+MODULE_NOTES = {
+    "Markets with Many Buyers and Sellers": "notes/module4/notes-module4.pdf",
+}
+
 # \multirow cannot span a page break: a merge that would straddle one is
 # split before these sessions (or date labels, for closures) and continues
 # unlabeled on the next page. Re-tune when pagination shifts.
@@ -385,6 +391,9 @@ MATERIALS = {
     # No practice link: lecture 19's last slide points to lecture 18's page.
     19: {"slides": "slides/lecture19.html", "slides_pdf": "slides/lecture19.pdf",
          "worksheet": "worksheets/worksheet19.pdf"},
+    # No worksheet: it never got class time, and is in worksheets/archive/.
+    20: {"slides": "slides/lecture20.html", "slides_pdf": "slides/lecture20.pdf",
+         "practice": "practice/practice20.html"},
 }
 
 # Lecture 2's practice page bundles guided reading; from lecture 3 on the
@@ -577,6 +586,14 @@ for idx, (label, sessions) in enumerate(MODULES.items()):
     # student can move between modules without going back to the navbar.
     mp = MODULE_PRACTICE.get(label)
     mp_html = ""
+    if MODULE_NOTES.get(label):
+        mp_html = (
+            '<p class="lecture-links">\n'
+            f'<a class="btn btn-outline-primary" href="../{MODULE_NOTES[label]}" '
+            f'target="_blank" rel="noopener" role="button" '
+            f'aria-label="Notes for this module, PDF (opens in a new tab)">'
+            f'Module notes (PDF)</a>\n'
+            '</p>\n\n')
     if mp:
         mp_html = (
             '<p class="lecture-links">\n'

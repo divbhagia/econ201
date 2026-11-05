@@ -7,6 +7,10 @@ format: html
 
 Materials are posted as we go. See the [Schedule](../schedule.qmd) for dates and assessments.
 
+<p class="lecture-links">
+<a class="btn btn-outline-primary" href="../notes/module4/notes-module4.pdf" target="_blank" rel="noopener" role="button" aria-label="Notes for this module, PDF (opens in a new tab)">Module notes (PDF)</a>
+</p>
+
 ::: {.lecture}
 <h2>Lecture 14: Classroom market experiment</h2>
 
@@ -66,5 +70,7 @@ Materials are posted as we go. See the [Schedule](../schedule.qmd) for dates and
 <h2>Lecture 20: Salt taxes and rent control: Governments in the market</h2>
 
 <p><strong>Reading:</strong> 8.12&ndash;8.13</p>
-<p class="lecture-links dim">Materials posted closer to the date.</p>
+<p class="lecture-links"><a class="btn btn-outline-primary" href="../slides/lecture20.html" target="_blank" rel="noopener" role="button" aria-label="Lecture 20 slides (opens in a new tab)">Slides</a>
+<a class="btn btn-outline-primary" href="../slides/lecture20.pdf" target="_blank" rel="noopener" role="button" aria-label="Lecture 20 slides as a tagged PDF (opens in a new tab)">Slides (PDF)</a>
+<a class="btn btn-outline-primary" href="../practice/practice20.html" target="_blank" rel="noopener" role="button" aria-label="Lecture 20 practice problems (opens in a new tab)">Practice problems</a></p>
 :::
