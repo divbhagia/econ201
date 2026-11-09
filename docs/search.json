@@ -266,75 +266,14 @@
     "text": "SGMH 1506, Monday & Wednesday, 1:00-2:15 PM     Office hours:\n\n\nWednesday, 2:30-5:15 PM, or\nBy appointment (in-person or on Zoom)"
   },
   {
-    "objectID": "exams.html",
-    "href": "exams.html",
-    "title": "Exams",
+    "objectID": "content/the-big-picture.html",
+    "href": "content/the-big-picture.html",
+    "title": "The Big Picture",
     "section": "",
-    "text": "Monday, November 9, in class, 60 minutes, covering Lectures 15 to 20. The exam has two parts worth 10 points each: ten multiple-choice questions and one long-form question. It is closed book and closed notes. Bring a basic calculator; there is no help sheet.\n\nModule IV notes (PDF): nearly everything you need for this exam, organized by concept.\nStudy guide (PDF): how to prepare, and what you should know.\nPractice Exam A (PDF), with solutions (PDF).\nPractice Exam B (PDF), with solutions (PDF).\n\nTake the practice exams timed, with no notes, then check your answers against the solutions."
-  },
-  {
-    "objectID": "exams.html#midterm-2",
-    "href": "exams.html#midterm-2",
-    "title": "Exams",
-    "section": "",
-    "text": "Monday, November 9, in class, 60 minutes, covering Lectures 15 to 20. The exam has two parts worth 10 points each: ten multiple-choice questions and one long-form question. It is closed book and closed notes. Bring a basic calculator; there is no help sheet.\n\nModule IV notes (PDF): nearly everything you need for this exam, organized by concept.\nStudy guide (PDF): how to prepare, and what you should know.\nPractice Exam A (PDF), with solutions (PDF).\nPractice Exam B (PDF), with solutions (PDF).\n\nTake the practice exams timed, with no notes, then check your answers against the solutions."
-  },
-  {
-    "objectID": "exams.html#midterm-1",
-    "href": "exams.html#midterm-1",
-    "title": "Exams",
-    "section": "Midterm 1",
-    "text": "Midterm 1\nMonday, October 12, in class, 65 minutes. The exam covers Lectures 3 to 13.\nThe exam has three parts, weighted equally: multiple-choice questions, short-answer problems, and one long-form question. Each part is its own sheet, printed front and back. Write your name and your CWID, one digit per box, at the top of every sheet. Closed book and closed notes; bring a basic calculator.\n\nStudy guide (PDF): work through it topic by topic. You can use it on screen or print it.\nPractice exam (PDF), with solutions (PDF): the same format as the real exam. Take it timed, with only the help sheet, then check your answers.\nHelp sheet (PDF): the sheet you will be given with the exam, so you know what to expect. You do not need to print it."
-  },
-  {
-    "objectID": "content/review.html",
-    "href": "content/review.html",
-    "title": "Review",
-    "section": "",
-    "text": "Materials are posted as we go. See the Schedule for dates and assessments.\n\n\nLecture 25: Review and Synthesis I\n\n\nMaterials posted closer to the date.\n\n\n\n\nLecture 26: Review and Synthesis II\n\n\nMaterials posted closer to the date.",
+    "text": "Materials are posted as we go. See the Schedule for dates and assessments.\n\n\nLecture 1: Introduction to the course\n\n\nSlides Slides (PDF)\n\n\n\n\nLecture 2: The capitalist takeoff: Prosperity and its shadows\n\n\nReading: 1.1–1.5; 1.8–1.10\n\n\nSlides Slides (PDF) Notes Guided reading and practice Worksheet",
     "crumbs": [
       "Content",
-      "VI. Review"
-    ]
-  },
-  {
-    "objectID": "content/market-successes-and-failures.html",
-    "href": "content/market-successes-and-failures.html",
-    "title": "Market Successes and Failures",
-    "section": "",
-    "text": "Materials are posted as we go. See the Schedule for dates and assessments.\n\n\nLecture 21: Bananas, fish, and cancer: Private vs. social value wedge\n\n\nReading: 10.1–10.2\n\n\nMaterials posted closer to the date.\n\n\n\n\nLecture 22: Closing the wedge: Property rights, bargaining, and regulation\n\n\nReading: 10.3–10.5\n\n\nMaterials posted closer to the date.\n\n\n\n\nLecture 23: Free riders and empty oceans: Public goods and common resources\n\n\nReading: 10.6–10.7\n\n\nMaterials posted closer to the date.\n\n\n\n\nLecture 24: The limits of markets\n\n\nReading: 10.8–10.11\n\n\nMaterials posted closer to the date.",
-    "crumbs": [
-      "Content",
-      "V. Market Successes and Failures"
-    ]
-  },
-  {
-    "objectID": "content/economists-toolkit.html",
-    "href": "content/economists-toolkit.html",
-    "title": "The Economist’s Toolkit",
-    "section": "",
-    "text": "Materials are posted as we go. See the Schedule for dates and assessments.\n\nProblems (PDF) Solutions (PDF)\n\n\n\nLecture 3: Making economic decisions: Opportunity cost, rents, and incentives\n\n\nReading: 2.2\n\n\nSlides Slides (PDF) Practice problems Worksheet\n\n\n\n\nLecture 4: Why do markets matter? Specialization and comparative advantage\n\n\nReading: 2.3\n\n\nSlides Slides (PDF) Practice problems Worksheet",
-    "crumbs": [
-      "Content",
-      "II. The Economist's Toolkit"
-    ]
-  },
-  {
-    "objectID": "accessibility.html",
-    "href": "accessibility.html",
-    "title": "Accessibility",
-    "section": "",
-    "text": "This site is designed to conform to the Web Content Accessibility Guidelines (WCAG) 2.1, Level AA, the standard adopted by the U.S. Department of Justice for state and local government web content under Title II of the ADA (28 CFR Part 35).\nWhat that looks like here:\n\nPages are semantic HTML with proper headings, landmarks, and labels, and work with keyboard navigation and screen readers.\nMathematics is rendered as MathML, so screen readers can read equations term by term rather than encountering an image.\nFigures carry text descriptions, tables carry header markup, and color is never the only carrier of meaning. Text contrast meets or exceeds the 4.5:1 minimum.\nPages reflow for small screens and zoom to 200% without horizontal scrolling; wide tables and equations scroll within their own frame and are keyboard-reachable.\nEvery PDF on the site (the syllabus, worksheets, slide decks) is tagged and validated against the PDF/UA-2 standard with veraPDF.\nLecture slides are keyboard-navigable and their content is available to screen readers. Each deck is also available as a tagged PDF (one slide per page, validated against PDF/UA-2) from the module pages under Content.\n\nIf you hit a barrier on this site or in any course material, please email me at dbhagia@fullerton.edu and I will fix it or provide the material in a form that works for you. For accommodations at CSUF more broadly, contact Disability Support Services.\nLast reviewed: August 2026."
-  },
-  {
-    "objectID": "content/firms-as-price-setters.html",
-    "href": "content/firms-as-price-setters.html",
-    "title": "Firms as Price Setters",
-    "section": "",
-    "text": "Materials are posted as we go. See the Schedule for dates and assessments.\n\nProblems (PDF) Solutions (PDF)\n\n\n\nLecture 5: Winning brands and the price of Cheerios\n\n\nReading: 7.1–7.2\n\n\nSlides Slides (PDF) Worksheet\n\n\n\n\nLecture 6: What does it cost to make a car? Scale and the cost of production\n\n\nReading: 7.3–7.4\n\n\nSlides Slides (PDF) Practice problems Worksheet\n\n\n\n\nLecture 7: Who can get away with raising prices? Demand and elasticity\n\n\nReading: 7.5\n\n\nSlides Slides (PDF) Practice problems Worksheet\n\n\n\n\nLecture 8: Steak, ramen, and recessions: Other elasticities\n\n\nSlides Slides (PDF) Practice problems Worksheet\n\n\n\n\nLecture 9: Sweet spot: Choosing the price and quantity that maximize profit\n\n\nReading: 7.6\n\n\nSlides Slides (PDF) Practice problems Worksheet\n\n\n\n\nLecture 10: The surplus from a sale and who captures it\n\n\nReading: 7.7\n\n\nSlides Slides (PDF) Practice problems Worksheet\n\n\n\n\nLecture 11: Leaving gains on the table: Pareto efficiency and deadweight loss\n\n\nReading: 7.7\n\n\nSlides Slides (PDF) Practice problems Worksheet\n\n\n\n\nLecture 12: Standing out from the crowd: Market power, differentiation, and natural monopoly\n\n\nReading: 7.6; 7.8–7.9; 7.11–7.12\n\n\nSlides Slides (PDF) Notes Practice problems\n\n\n\n\nLecture 13: Price wars: Strategic price setting and competition policy\n\n\nReading: 4.2–4.4; 7.10\n\n\nSlides Slides (PDF) Practice problems Interactive",
-    "crumbs": [
-      "Content",
-      "III. Firms as Price Setters"
+      "I. The Big Picture"
     ]
   },
   {
@@ -349,14 +288,82 @@
     ]
   },
   {
-    "objectID": "content/the-big-picture.html",
-    "href": "content/the-big-picture.html",
-    "title": "The Big Picture",
+    "objectID": "content/firms-as-price-setters.html",
+    "href": "content/firms-as-price-setters.html",
+    "title": "Firms as Price Setters",
     "section": "",
-    "text": "Materials are posted as we go. See the Schedule for dates and assessments.\n\n\nLecture 1: Introduction to the course\n\n\nSlides Slides (PDF)\n\n\n\n\nLecture 2: The capitalist takeoff: Prosperity and its shadows\n\n\nReading: 1.1–1.5; 1.8–1.10\n\n\nSlides Slides (PDF) Notes Guided reading and practice Worksheet",
+    "text": "Materials are posted as we go. See the Schedule for dates and assessments.\n\nProblems (PDF) Solutions (PDF)\n\n\n\nLecture 5: Winning brands and the price of Cheerios\n\n\nReading: 7.1–7.2\n\n\nSlides Slides (PDF) Worksheet\n\n\n\n\nLecture 6: What does it cost to make a car? Scale and the cost of production\n\n\nReading: 7.3–7.4\n\n\nSlides Slides (PDF) Practice problems Worksheet\n\n\n\n\nLecture 7: Who can get away with raising prices? Demand and elasticity\n\n\nReading: 7.5\n\n\nSlides Slides (PDF) Practice problems Worksheet\n\n\n\n\nLecture 8: Steak, ramen, and recessions: Other elasticities\n\n\nSlides Slides (PDF) Practice problems Worksheet\n\n\n\n\nLecture 9: Sweet spot: Choosing the price and quantity that maximize profit\n\n\nReading: 7.6\n\n\nSlides Slides (PDF) Practice problems Worksheet\n\n\n\n\nLecture 10: The surplus from a sale and who captures it\n\n\nReading: 7.7\n\n\nSlides Slides (PDF) Practice problems Worksheet\n\n\n\n\nLecture 11: Leaving gains on the table: Pareto efficiency and deadweight loss\n\n\nReading: 7.7\n\n\nSlides Slides (PDF) Practice problems Worksheet\n\n\n\n\nLecture 12: Standing out from the crowd: Market power, differentiation, and natural monopoly\n\n\nReading: 7.6; 7.8–7.9; 7.11–7.12\n\n\nSlides Slides (PDF) Notes Practice problems\n\n\n\n\nLecture 13: Price wars: Strategic price setting and competition policy\n\n\nReading: 4.2–4.4; 7.10\n\n\nSlides Slides (PDF) Practice problems Interactive",
     "crumbs": [
       "Content",
-      "I. The Big Picture"
+      "III. Firms as Price Setters"
+    ]
+  },
+  {
+    "objectID": "assessments.html",
+    "href": "assessments.html",
+    "title": "Assessments",
+    "section": "",
+    "text": "A two-part economic naturalist assignment: find a pattern of events or behavior you have observed, ask why it happens, and answer the question with an idea from this course. Both parts are submitted as text on Canvas before class, and each PDF below has the full instructions and the grading rubric.\n\nPart 1: Proposal (PDF): due Monday, November 16, worth 5% of your grade. One paragraph of no more than 150 words that describes what you observed, states your question, and gives your first guess at the answer. You will get feedback on it before Part 2.\nPart 2: Essay (PDF): due Monday, December 7, worth 10%. An essay of no more than 400 words that answers your question, following that feedback."
+  },
+  {
+    "objectID": "assessments.html#writing-assignment",
+    "href": "assessments.html#writing-assignment",
+    "title": "Assessments",
+    "section": "",
+    "text": "A two-part economic naturalist assignment: find a pattern of events or behavior you have observed, ask why it happens, and answer the question with an idea from this course. Both parts are submitted as text on Canvas before class, and each PDF below has the full instructions and the grading rubric.\n\nPart 1: Proposal (PDF): due Monday, November 16, worth 5% of your grade. One paragraph of no more than 150 words that describes what you observed, states your question, and gives your first guess at the answer. You will get feedback on it before Part 2.\nPart 2: Essay (PDF): due Monday, December 7, worth 10%. An essay of no more than 400 words that answers your question, following that feedback."
+  },
+  {
+    "objectID": "assessments.html#midterm-2",
+    "href": "assessments.html#midterm-2",
+    "title": "Assessments",
+    "section": "Midterm 2",
+    "text": "Midterm 2\nMonday, November 9, in class, 60 minutes, covering Lectures 15 to 20. The exam has two parts worth 10 points each: ten multiple-choice questions and one long-form question. It is closed book and closed notes. Bring a basic calculator; there is no help sheet.\n\nModule IV notes (PDF): nearly everything you need for this exam, organized by concept.\nStudy guide (PDF): how to prepare, and what you should know.\nPractice Exam A (PDF), with solutions (PDF).\nPractice Exam B (PDF), with solutions (PDF).\n\nTake the practice exams timed, with no notes, then check your answers against the solutions."
+  },
+  {
+    "objectID": "assessments.html#midterm-1",
+    "href": "assessments.html#midterm-1",
+    "title": "Assessments",
+    "section": "Midterm 1",
+    "text": "Midterm 1\nMonday, October 12, in class, 65 minutes. The exam covers Lectures 3 to 13.\nThe exam has three parts, weighted equally: multiple-choice questions, short-answer problems, and one long-form question. Each part is its own sheet, printed front and back. Write your name and your CWID, one digit per box, at the top of every sheet. Closed book and closed notes; bring a basic calculator.\n\nStudy guide (PDF): work through it topic by topic. You can use it on screen or print it.\nPractice exam (PDF), with solutions (PDF): the same format as the real exam. Take it timed, with only the help sheet, then check your answers.\nHelp sheet (PDF): the sheet you will be given with the exam, so you know what to expect. You do not need to print it."
+  },
+  {
+    "objectID": "accessibility.html",
+    "href": "accessibility.html",
+    "title": "Accessibility",
+    "section": "",
+    "text": "This site is designed to conform to the Web Content Accessibility Guidelines (WCAG) 2.1, Level AA, the standard adopted by the U.S. Department of Justice for state and local government web content under Title II of the ADA (28 CFR Part 35).\nWhat that looks like here:\n\nPages are semantic HTML with proper headings, landmarks, and labels, and work with keyboard navigation and screen readers.\nMathematics is rendered as MathML, so screen readers can read equations term by term rather than encountering an image.\nFigures carry text descriptions, tables carry header markup, and color is never the only carrier of meaning. Text contrast meets or exceeds the 4.5:1 minimum.\nPages reflow for small screens and zoom to 200% without horizontal scrolling; wide tables and equations scroll within their own frame and are keyboard-reachable.\nEvery PDF on the site (the syllabus, worksheets, slide decks) is tagged and validated against the PDF/UA-2 standard with veraPDF.\nLecture slides are keyboard-navigable and their content is available to screen readers. Each deck is also available as a tagged PDF (one slide per page, validated against PDF/UA-2) from the module pages under Content.\n\nIf you hit a barrier on this site or in any course material, please email me at dbhagia@fullerton.edu and I will fix it or provide the material in a form that works for you. For accommodations at CSUF more broadly, contact Disability Support Services.\nLast reviewed: August 2026."
+  },
+  {
+    "objectID": "content/economists-toolkit.html",
+    "href": "content/economists-toolkit.html",
+    "title": "The Economist’s Toolkit",
+    "section": "",
+    "text": "Materials are posted as we go. See the Schedule for dates and assessments.\n\nProblems (PDF) Solutions (PDF)\n\n\n\nLecture 3: Making economic decisions: Opportunity cost, rents, and incentives\n\n\nReading: 2.2\n\n\nSlides Slides (PDF) Practice problems Worksheet\n\n\n\n\nLecture 4: Why do markets matter? Specialization and comparative advantage\n\n\nReading: 2.3\n\n\nSlides Slides (PDF) Practice problems Worksheet",
+    "crumbs": [
+      "Content",
+      "II. The Economist's Toolkit"
+    ]
+  },
+  {
+    "objectID": "content/market-successes-and-failures.html",
+    "href": "content/market-successes-and-failures.html",
+    "title": "Market Successes and Failures",
+    "section": "",
+    "text": "Materials are posted as we go. See the Schedule for dates and assessments.\n\n\nLecture 21: Bananas, fish, and cancer: Private vs. social value wedge\n\n\nReading: 10.1–10.2\n\n\nMaterials posted closer to the date.\n\n\n\n\nLecture 22: Closing the wedge: Property rights, bargaining, and regulation\n\n\nReading: 10.3–10.5\n\n\nMaterials posted closer to the date.\n\n\n\n\nLecture 23: Free riders and empty oceans: Public goods and common resources\n\n\nReading: 10.6–10.7\n\n\nMaterials posted closer to the date.\n\n\n\n\nLecture 24: The limits of markets\n\n\nReading: 10.8–10.11\n\n\nMaterials posted closer to the date.",
+    "crumbs": [
+      "Content",
+      "V. Market Successes and Failures"
+    ]
+  },
+  {
+    "objectID": "content/review.html",
+    "href": "content/review.html",
+    "title": "Review",
+    "section": "",
+    "text": "Materials are posted as we go. See the Schedule for dates and assessments.\n\n\nLecture 25: Review and Synthesis I\n\n\nMaterials posted closer to the date.\n\n\n\n\nLecture 26: Review and Synthesis II\n\n\nMaterials posted closer to the date.",
+    "crumbs": [
+      "Content",
+      "VI. Review"
     ]
   },
   {

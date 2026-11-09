@@ -1,10 +1,19 @@
 ---
-title: "Exams"
+title: "Assessments"
 toc: false
 number-sections: false
 sidebar: false
 format: html
+aliases:
+  - exams.html
 ---
+
+## Writing Assignment
+
+A two-part economic naturalist assignment: find a pattern of events or behavior you have observed, ask why it happens, and answer the question with an idea from this course. Both parts are submitted as text on Canvas before class, and each PDF below has the full instructions and the grading rubric.
+
+-   [Part 1: Proposal (PDF)](writing/writing1.pdf): due Monday, November 16, worth 5% of your grade. One paragraph of no more than 150 words that describes what you observed, states your question, and gives your first guess at the answer. You will get feedback on it before Part 2.
+-   [Part 2: Essay (PDF)](writing/writing2.pdf): due Monday, December 7, worth 10%. An essay of no more than 400 words that answers your question, following that feedback.
 
 ## Midterm 2
 
