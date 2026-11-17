@@ -68,10 +68,10 @@ PLAN = {
     ),
     21: ("Salt taxes and rent control: Governments in the market", "8.12--8.13"),
     22: (r"\textbf{Midterm 2}", ""),
-    23: ("Bananas, fish, and cancer: Private vs. social value wedge", "10.1--10.2"),
+    23: ("Bananas, fish, and cancer: Private vs. social value wedge", "10.1--10.3"),
     24: (
         "Closing the wedge: Property rights, bargaining, and regulation",
-        "10.3--10.5",
+        "10.4--10.5",
     ),
     25: ("Free riders and empty oceans: Public goods and common resources", "10.6--10.7"),
     26: ("The limits of markets", "10.8--10.11"),
@@ -394,6 +394,8 @@ MATERIALS = {
     # No worksheet: it never got class time, and is in worksheets/archive/.
     20: {"slides": "slides/lecture20.html", "slides_pdf": "slides/lecture20.pdf",
          "practice": "practice/practice20.html"},
+    21: {"slides": "slides/lecture21.html", "slides_pdf": "slides/lecture21.pdf",
+         "practice": "practice/practice21.html"},
 }
 
 # Lecture 2's practice page bundles guided reading; from lecture 3 on the

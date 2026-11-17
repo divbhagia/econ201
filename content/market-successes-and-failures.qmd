@@ -10,14 +10,16 @@ Materials are posted as we go. See the [Schedule](../schedule.qmd) for dates and
 ::: {.lecture}
 <h2>Lecture 21: Bananas, fish, and cancer: Private vs. social value wedge</h2>
 
-<p><strong>Reading:</strong> 10.1&ndash;10.2</p>
-<p class="lecture-links dim">Materials posted closer to the date.</p>
+<p><strong>Reading:</strong> 10.1&ndash;10.3</p>
+<p class="lecture-links"><a class="btn btn-outline-primary" href="../slides/lecture21.html" target="_blank" rel="noopener" role="button" aria-label="Lecture 21 slides (opens in a new tab)">Slides</a>
+<a class="btn btn-outline-primary" href="../slides/lecture21.pdf" target="_blank" rel="noopener" role="button" aria-label="Lecture 21 slides as a tagged PDF (opens in a new tab)">Slides (PDF)</a>
+<a class="btn btn-outline-primary" href="../practice/practice21.html" target="_blank" rel="noopener" role="button" aria-label="Lecture 21 practice problems (opens in a new tab)">Practice problems</a></p>
 :::
 
 ::: {.lecture}
 <h2>Lecture 22: Closing the wedge: Property rights, bargaining, and regulation</h2>
 
-<p><strong>Reading:</strong> 10.3&ndash;10.5</p>
+<p><strong>Reading:</strong> 10.4&ndash;10.5</p>
 <p class="lecture-links dim">Materials posted closer to the date.</p>
 :::
 

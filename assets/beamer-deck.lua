@@ -102,21 +102,33 @@ function Para(el)
   end
 end
 
--- Air between top-level list items (sub-points stay tight), matching the web
--- deck. ltx-talk's own inter-item code overrides the class-level knobs, so it
--- is set from inside the first item, globally, where it survives.
+-- Air between top-level list items, and a smaller share of it between
+-- sub-points, matching the web deck. ltx-talk's own inter-item code overrides
+-- the class-level knobs, so it is set from inside the first item, globally,
+-- where it survives; a nested list therefore hands the parent's value back
+-- when it ends.
+local NESTED_SEP = '0.4\\listsep'
 local function space_lists(blocks, depth)
-  for _, b in ipairs(blocks) do
+  local i = 1
+  while i <= #blocks do
+    local b = blocks[i]
     if b.t == 'BulletList' or b.t == 'OrderedList' then
-      for i, item in ipairs(b.content) do
+      for _, item in ipairs(b.content) do
         space_lists(item, depth + 1)
       end
-      if depth == 0 and #b.content > 0 then
-        b.content[1]:insert(1, pandoc.RawBlock('latex', '\\global\\itemsep=\\listsep'))
+      if #b.content > 0 then
+        local own = depth == 0 and '\\listsep' or NESTED_SEP
+        b.content[1]:insert(1, pandoc.RawBlock('latex', '\\global\\itemsep=' .. own))
+        if depth > 0 then
+          local parent = depth == 1 and '\\listsep' or NESTED_SEP
+          blocks:insert(i + 1, pandoc.RawBlock('latex', '\\global\\itemsep=' .. parent))
+          i = i + 1
+        end
       end
     elseif b.t == 'Div' or b.t == 'BlockQuote' then
       space_lists(b.content, depth)
     end
+    i = i + 1
   end
 end
 -- How much of the frame a figure may take depends on what else is on the
