@@ -210,6 +210,26 @@ Now suppose the legal framework gives the fishermen a right to clean water.
 :::
 ::::::
 
+## Bargaining: Who Gets What?
+
+::: plain
+What does each side end up with after bargaining?
+:::
+
+::: {.fixedtable .wide .grouptable}
+| Plantations | Fishermen | Payment |
+|:--|:--|:--|
+| *Case 1: right to pollute* (no bargaining: A, 80,000 tons) |  |  |
+| Profit on 38K tons, plus the payment | Pollution cost of 38K tons, and they pay | At least the lost profit, at most the fishermen's gain |
+| *Case 2: right to clean water* (no bargaining: C, no bananas) |  |  |
+| Profit on 38K tons, minus the payment | Pollution cost of 38K tons, and they are paid | At least the pollution cost, at most the plantations' gain |
+
+: {tbl-colwidths="[30,33,37]"}
+:::
+
+-   Both cases end at 38,000 tons, and both sides gain from the bargain.
+-   The right decides who pays whom. Bargaining power decides how much.
+
 ## Efficiency and Equity
 
 -   *Efficiency*: bargaining reaches the Pareto-efficient output whoever holds the initial rights. It is 38,000 tons in both cases.

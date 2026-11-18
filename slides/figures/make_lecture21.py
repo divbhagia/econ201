@@ -29,9 +29,6 @@ Output, in slides/img/:
   banana-one-less.svg      A with the MEC of the last ton marked
   banana-efficient.svg     A and B
   banana-bargain.svg       lost profit, net social gain and the fishermen's gain, A to B
-  banana-cap.svg           a cap on output at B and the plantations' lost profit
-  banana-tax.svg           the after-tax price and the growers' new choice
-  banana-compensation.svg  compensation paid at B
   banana-panels-*.svg      Lecture 22: two panels per policy (cap, tax, compensation),
                            the fishermen's pollution cost and the plantations' profit
   banana-clean-water.svg   the fishermen's right to clean water: pollution cost, net
@@ -275,48 +272,6 @@ def fig_bargain(out: Path) -> None:
     save(fig, out)
 
 
-def fig_cap(out: Path) -> None:
-    """Regulation: output capped at B, and the surplus the plantations lose between B and A."""
-    fig, ax = axes()
-    between(ax, mpc, lambda q: P, Q_B, Q_A, PROFIT_AREA)
-    cost_lines(ax)
-    price_line(ax)
-    ax.plot([Q_B, Q_B], [0, 860], color=EXTERNAL, lw=5, solid_capstyle="butt", zorder=6)
-    label(ax, Q_B, 860, "Cap", EXTERNAL, 0, 6, ha="center")
-    guide(ax, Q_A, P)
-    point_a(ax)
-    point_b(ax)
-    pointer(ax, "Lost profit", (58, 368), (46, 225))
-    save(fig, out)
-
-
-def fig_tax(out: Path) -> None:
-    fig, ax = axes()
-    cost_lines(ax)
-    price_line(ax)
-    after = P - TAX
-    price_line(ax, after, "", ls=DASH)
-    label(ax, 68, after, "After-tax price", INK, 0, -8, va="top", fs=FONT - 3)
-    guide(ax, Q_B, P)
-    ax.plot([Q_B, Q_B], [float(after), P], color=EXTERNAL, lw=7, solid_capstyle="butt", zorder=6)
-    point_b(ax)
-    point(ax, Q_B, after)
-    pointer(ax, f"Tax = {money(TAX)}", (Q_B + 1, 345), (43, 150))
-    save(fig, out)
-
-
-def fig_compensation(out: Path) -> None:
-    fig, ax = axes()
-    between(ax, mpc, msc, 0, Q_B, EXT_AREA)
-    cost_lines(ax)
-    price_line(ax)
-    guide(ax, Q_B, P)
-    point_b(ax)
-    point(ax, Q_B, mpc(Q_B))
-    pointer(ax, "Compensation", (20, 282), (3, 130))
-    save(fig, out)
-
-
 def fig_clean_water(out: Path) -> None:
     """The other allocation of rights: from no bananas at all, the plantations pay to grow up to B."""
     fig, ax = axes()
@@ -459,9 +414,6 @@ def main() -> int:
     fig_one_less(IMG / "banana-one-less.svg")
     fig_efficient(IMG / "banana-efficient.svg")
     fig_bargain(IMG / "banana-bargain.svg")
-    fig_cap(IMG / "banana-cap.svg")
-    fig_tax(IMG / "banana-tax.svg")
-    fig_compensation(IMG / "banana-compensation.svg")
     fig_clean_water(IMG / "banana-clean-water.svg")
     for policy in ("cap", "tax", "compensation"):
         fig_panels(policy, IMG / f"banana-panels-{policy}.svg")
