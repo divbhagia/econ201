@@ -20,7 +20,10 @@ Materials are posted as we go. See the [Schedule](../schedule.qmd) for dates and
 <h2>Lecture 22: Closing the wedge: Property rights, bargaining, and regulation</h2>
 
 <p><strong>Reading:</strong> 10.4&ndash;10.5</p>
-<p class="lecture-links dim">Materials posted closer to the date.</p>
+<p class="lecture-links"><a class="btn btn-outline-primary" href="../slides/lecture22.html" target="_blank" rel="noopener" role="button" aria-label="Lecture 22 slides (opens in a new tab)">Slides</a>
+<a class="btn btn-outline-primary" href="../slides/lecture22.pdf" target="_blank" rel="noopener" role="button" aria-label="Lecture 22 slides as a tagged PDF (opens in a new tab)">Slides (PDF)</a>
+<a class="btn btn-outline-primary" href="../practice/practice22.html" target="_blank" rel="noopener" role="button" aria-label="Lecture 22 practice problems (opens in a new tab)">Practice problems</a>
+<a class="btn btn-outline-primary" href="../worksheets/worksheet22.pdf" target="_blank" rel="noopener" role="button" aria-label="Lecture 22 worksheet (opens in a new tab)">Worksheet</a></p>
 :::
 
 ::: {.lecture}

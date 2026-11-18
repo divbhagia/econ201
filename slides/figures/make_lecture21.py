@@ -32,6 +32,8 @@ Output, in slides/img/:
   banana-cap.svg           a cap on output at B and the plantations' lost profit
   banana-tax.svg           the after-tax price and the growers' new choice
   banana-compensation.svg  compensation paid at B
+  banana-panels-*.svg      Lecture 22: two panels per policy (cap, tax, compensation),
+                           the fishermen's pollution cost and the plantations' profit
   banana-clean-water.svg   the fishermen's right to clean water: pollution cost, net
                            social gain and the plantations' gain, C to B
 """
@@ -333,6 +335,113 @@ def fig_clean_water(out: Path) -> None:
     save(fig, out)
 
 
+# The Lecture 22 policy slides: two panels side by side, the fishermen's
+# pollution cost and the plantations' profit, each showing what is left at B
+# (solid) and what the move from A to B takes away (hatched). Set across the
+# full slide width, so the type is sized for a 15 inch figure.
+PANELS = (15, 5.5)         # fills the PDF frame's width and height with only the explanation above
+PF = 26                     # panel type, large for a full-width figure: titles 29pt, ticks 23pt, key 21pt
+COST_LEFT, COST_GONE = "#7fcfb4", "#d9f2ea"
+PROFIT_LEFT, PROFIT_GONE = "#f0b27a", "#fbe6d3"
+TAX_PAID = "#cbbbe6"
+TITLE = "#8f4100"
+PANEL_TOP = 700             # last tick on the panels' price axis
+
+
+def panel_axes(ax, policy, ylabel=True):
+    ax.set_xlim(0, X_END)
+    ax.set_ylim(0, PANEL_TOP * 1.07)             # everything of interest is below MSC at A, $675
+    ax.set_xticks(range(0, X_MAX + 1, 20))
+    ax.xaxis.set_major_formatter(FuncFormatter(lambda x, _: f"{x:.0f}K" if x else "0"))   # 38K, as on the slides
+    ax.set_yticks(range(0, PANEL_TOP + 1, 100))
+    ax.yaxis.set_major_formatter(FuncFormatter(lambda y, _: money(y)))
+    ax.grid(color=GRID, lw=1, zorder=0)
+    ax.set_axisbelow("line")
+    for sp in ("top", "right"):
+        ax.spines[sp].set_visible(False)
+    ax.tick_params(length=0, pad=6, labelsize=PF - 3)
+    qs = grid_q(0, X_END)
+    for f, color in ((mpc, PRIVATE), (msc, SOCIAL)):
+        ax.plot([float(q) for q in qs], [float(f(q)) for q in qs], color=color, lw=3.4,
+                solid_capstyle="round", zorder=5)
+    ax.plot([0, X_END], [P, P], color=INK, lw=2.4, zorder=4)
+    ax.text(97, float(mpc(97)) + 22, "MPC", color=PRIVATE, fontsize=PF, fontweight="bold", ha="center")
+    ax.text(70, float(msc(70)) + 16, "MSC", color=SOCIAL, fontsize=PF, fontweight="bold", ha="right")
+    ax.text(3, P + 12, "Price", color=INK, fontsize=PF, fontweight="bold", ha="left")
+    for q in (Q_A, Q_B):
+        ax.plot([q, q], [0, P], color=INK, lw=1.8, ls=DASH, zorder=4)
+    for q, name, dx, dy in ((Q_A, "A", 2, -62), (Q_B, "B", -8, 16)):
+        ax.plot(q, P, marker="o", ms=10, color=INK, zorder=9)
+        ax.text(q + dx, P + dy, name, color=INK, fontsize=PF + 1, fontweight="bold")
+    if policy == "cap":
+        ax.plot([Q_B, Q_B], [0, PANEL_TOP - 40], color=EXTERNAL, lw=5, solid_capstyle="butt", zorder=6)
+        ax.text(Q_B, PANEL_TOP - 30, "Cap", color=EXTERNAL, fontsize=PF, fontweight="bold", ha="center")
+    if policy == "tax":
+        after = float(P - TAX)
+        ax.plot([0, X_END], [after, after], color=INK, lw=2.2, ls=DASH, zorder=4)
+        ax.text(X_END - 2, after - 12, "After-tax\nprice", color=INK, fontsize=PF - 3, fontweight="bold",
+                ha="right", va="top", linespacing=1.1, zorder=7,        # two lines, clear of the guide at A
+                bbox=dict(facecolor="white", edgecolor="none", pad=1.5))
+    ax.set_xlabel("Q (tons of bananas a year)", fontsize=PF - 2, labelpad=6)
+    if ylabel:
+        ax.set_ylabel("Dollars a ton", fontsize=PF - 2, labelpad=6)
+
+
+def panel_area(ax, lower, upper, q0, q1, color, hatch=None, edge=None):
+    qs = grid_q(q0, q1)
+    ax.fill_between([float(q) for q in qs], [float(lower(q)) for q in qs], [float(upper(q)) for q in qs],
+                    facecolor=color, edgecolor=edge or "none", hatch=hatch, lw=0, zorder=1)
+
+
+def panel_key(ax, entries):
+    """A one-row key between the panel title and the plot, so nothing sits on the graph itself."""
+    from matplotlib.patches import Patch
+    handles = [Patch(facecolor=c, edgecolor=(e or c), hatch=h, lw=0.8) for _, c, h, e in entries]
+    ax.legend(handles, [t for t, *_ in entries], loc="lower left", bbox_to_anchor=(-0.01, 1.0),
+              ncol=len(entries), fontsize=PF - 5, frameon=False, handlelength=1.4, handleheight=1.0,
+              columnspacing=1.2, handletextpad=0.5, borderaxespad=0.2, borderpad=0.1)
+
+
+def fig_panels(policy: str, out: Path) -> None:
+    """policy is "cap", "tax" or "compensation"."""
+    price, after = (lambda q: P), (lambda q: P - TAX)
+    gone_cost = (COST_GONE, "///", "#2a9d7c")
+    gone_profit = (PROFIT_GONE, "///", "#c9742d")
+    fig, (left, right) = plt.subplots(1, 2, figsize=PANELS, dpi=100)
+
+    panel_axes(left, policy)
+    left.set_title("Fishermen's pollution cost", fontsize=PF + 3, fontweight="bold", color=TITLE, pad=40)   # room for the key
+    panel_area(left, mpc, msc, Q_B, Q_A, *gone_cost)
+    paid = (COST_LEFT, "..", "#1f7a5f")          # the same dotted area as on the plantations' side
+    if policy == "compensation":
+        # The pollution at B is still there, but the plantations pay for it, so the
+        # fishermen do not bear it: drawn as the payment, not as a cost they carry.
+        panel_area(left, mpc, msc, 0, Q_B, *paid)
+        panel_key(left, [("Compensated", *paid), ("Avoided", *gone_cost)])
+    else:
+        panel_area(left, mpc, msc, 0, Q_B, COST_LEFT)
+        panel_key(left, [("Still borne", COST_LEFT, None, None), ("Avoided", *gone_cost)])
+
+    panel_axes(right, policy, ylabel=False)
+    right.set_title("Plantations' profit", fontsize=PF + 3, fontweight="bold", color=TITLE, pad=40)   # room for the key
+    panel_area(right, mpc, price, Q_B, Q_A, *gone_profit)
+    entries = [("Kept", PROFIT_LEFT, None, None)]
+    if policy == "cap":
+        panel_area(right, mpc, price, 0, Q_B, PROFIT_LEFT)
+    elif policy == "tax":
+        panel_area(right, mpc, after, 0, Q_B, PROFIT_LEFT)
+        panel_area(right, after, price, 0, Q_B, TAX_PAID, "..", "#6b4fa8")
+        entries.append(("Tax paid", TAX_PAID, "..", "#6b4fa8"))
+    else:
+        panel_area(right, msc, price, 0, Q_B, PROFIT_LEFT)
+        panel_area(right, mpc, msc, 0, Q_B, *paid)
+        entries.append(("Compensation paid", *paid))
+    entries.append(("Lost", *gone_profit))
+    panel_key(right, entries)
+    fig.tight_layout(pad=0.25, w_pad=1.6)        # little margin, so the graphs fill the slide
+    save(fig, out)
+
+
 def main() -> int:
     print("Q (thousand tons)   MPC     MEC     MSC")
     for q in (0, Q_B, Q_A, 100):
@@ -354,6 +463,8 @@ def main() -> int:
     fig_tax(IMG / "banana-tax.svg")
     fig_compensation(IMG / "banana-compensation.svg")
     fig_clean_water(IMG / "banana-clean-water.svg")
+    for policy in ("cap", "tax", "compensation"):
+        fig_panels(policy, IMG / f"banana-panels-{policy}.svg")
     return 0
 
 

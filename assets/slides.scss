@@ -275,6 +275,13 @@ $presentation-font-size-root: 37px;
 }
 // Header row bold (the default), first column bold in the accent (Div's call).
 .reveal .gridtable table td:first-child { color: #BF5700; font-weight: 700; }
+// A table in groups: ::: {.fixedtable .wide .grouptable}. A row whose only
+// filled cell is the first is a heading for the rows under it; it loses its
+// rule and gains air above. Keep in step with grouptable in beamer-deck.lua.
+.reveal .grouptable table tr:has(td:nth-child(2):empty) td { border-bottom: none; padding-top: 0.55em; padding-bottom: 0; }
+.reveal .grouptable table td { padding-top: 0.15em; padding-bottom: 0.3em; }
+// A long heading runs on across the empty cells beside it instead of wrapping in its own column.
+.reveal .grouptable table tr:has(td:nth-child(2):empty) td:first-child { white-space: nowrap; overflow: visible; }
 // A worksheet table shown in steps: wrap it in ::: {.fixedtable} so it keeps
 // one width as its rows fill in, instead of growing to fit the numbers.
 .reveal .fixedtable table { width: 70%; table-layout: fixed; }
@@ -289,6 +296,16 @@ $presentation-font-size-root: 37px;
 // Quarto's reveal columns are not flex by default, which left this
 // centering inert; flex makes a short image column centre on its text.
 .reveal .columns { display: flex; align-items: center; }
+// Columns under a lead sentence (::: plain) start at the top, right below the
+// sentence, instead of centring on a taller figure, which left a wide gap
+// above the text (Div, lecture 22). Keep in step with lead_above_columns in
+// assets/beamer-deck.lua.
+// Quarto adds 0.8em above a columns block (.reveal .slide .columns:nth-child(3))
+// and 0.4em above every list item; both go here, so the first bullet sits as
+// far below the sentence as one bullet sits below another.
+.reveal .slide .plain + div.columns { align-items: flex-start; margin-block-start: 0; }
+.reveal .slide .plain + div.columns .column > ul > li:first-child,
+.reveal .slide .plain + div.columns .column > ol > li:first-child { margin-top: 0; }
 // A lone image in a column arrives wrapped in a paragraph with a top margin;
 // drop it so figure and text start level.
 .reveal .column > p:first-child { margin-top: 0; }

@@ -164,8 +164,27 @@ local function slide_fig_height(blocks)
   return out
 end
 
+-- Columns under a lead sentence (::: plain, or a bare paragraph): the paragraph
+-- break, the columns row and the list's own top space stacked up to nearly two
+-- blank lines, so the text looked detached from its lead (Div, lecture 22).
+-- Pull the row up to about the gap between two bullets. Keep in step with
+-- `.plain + .columns` in assets/slides.scss.
+local function lead_above_columns(blocks)
+  local out = pandoc.List()
+  for _, b in ipairs(blocks) do
+    local prev = out[#out]
+    if b.t == 'Div' and b.classes:includes('columns') and prev
+       and (prev.t == 'Para' or (prev.t == 'Div' and prev.classes:includes('plain'))) then
+      out:insert(pandoc.RawBlock('latex', '\\vspace{-1.1em}'))
+    end
+    out:insert(b)
+  end
+  return out
+end
+
 function Pandoc(doc)
   space_lists(doc.blocks, 0)
+  doc.blocks = lead_above_columns(doc.blocks)
   doc.blocks = slide_fig_height(doc.blocks)
   return doc
 end
@@ -243,7 +262,8 @@ local function fixedtable(div)
   local lift = div.classes:includes('formulas') and '0.9em' or '0.3em'
   local out = pandoc.List({})
   if tall then
-    local size = div.classes:includes('gridtable') and '\\small' or ''
+    -- {.fullsize}: a short grid table keeps the body type size (Div, lecture 22).
+    local size = (div.classes:includes('gridtable') and not div.classes:includes('fullsize')) and '\\small' or ''
     out:insert(pandoc.RawBlock('latex', '\\begingroup' .. size .. '\\setlength{\\extrarowheight}{' .. lift .. '}'))
   end
   local grid = div.classes:includes('gridtable')
@@ -255,6 +275,29 @@ local function fixedtable(div)
       for w in spec:gmatch('%d+') do
         i = i + 1
         if tbl.colspecs[i] then tbl.colspecs[i][2] = 0.95 * tonumber(w) / 100 end
+      end
+      -- {.grouptable}: a row whose only filled cell is the first is a heading
+      -- for the rows under it (a policy, a case). Set it across the whole
+      -- table with air above, and make the header row bold.
+      if div.classes:includes('grouptable') then
+        local n = #tbl.colspecs
+        -- wrap-none: a long heading must stay on one source line for the match below
+        local tex = pandoc.write(pandoc.Pandoc({tbl}), 'latex', pandoc.WriterOptions({wrap_text = 'wrap-none'}))
+        tex = tex:gsub('(\\begin{minipage}%[b%]{\\linewidth}\\raggedright)\n', '%1\\bfseries\n')
+        -- A rule closes each group, so the table reads as blocks: heading,
+        -- its row, a line (Div, lecture 22). The first heading sits under the
+        -- header's own rule and needs none.
+        local seen = 0
+        tex = tex:gsub('\n([^\n&]+) ' .. string.rep('& ', n - 1) .. '\\\\\n', function(cell)
+          seen = seen + 1
+          local rule = seen > 1 and '\\midrule\\noalign{}\n' or ''
+          return '\n' .. rule .. '\\multicolumn{' .. n .. '}{@{}l@{}}{' .. cell .. '} \\\\\n'
+        end)
+        -- The LaTeX writer leaves the closing rule in the table's foot, which
+        -- does not print here; set it after the last row instead.
+        tex = tex:gsub('\\bottomrule\\noalign{}\n\\endlastfoot', '\\endlastfoot')
+        tex = tex:gsub('\\end{longtable}', '\\bottomrule\\noalign{}\n\\end{longtable}')
+        return pandoc.RawBlock('latex', tex)
       end
       if not grid then return tbl end
       -- {.gridtable}: rules between every row and column, as on the web
